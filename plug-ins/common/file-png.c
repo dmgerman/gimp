@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3f5280108
+DECL|struct|__anon2b5428c00108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3f5280208
+DECL|struct|__anon2b5428c00208
 block|{
 DECL|member|run
 name|gboolean
@@ -335,7 +335,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3f5280308
+DECL|struct|__anon2b5428c00308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -509,11 +509,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GFile
 modifier|*
@@ -532,7 +534,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 specifier|const
@@ -569,14 +572,17 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
-name|gint32
-name|orig_image_ID
+name|GimpImage
+modifier|*
+name|orig_image
 parameter_list|,
 name|gboolean
 modifier|*
@@ -605,11 +611,13 @@ name|guchar
 modifier|*
 name|remap
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -619,8 +627,9 @@ specifier|static
 name|gboolean
 name|save_dialog
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gboolean
 name|alpha
@@ -1292,8 +1301,9 @@ name|profile_loaded
 init|=
 name|FALSE
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GimpMetadata
 modifier|*
@@ -1345,7 +1355,7 @@ name|FALSE
 expr_stmt|;
 break|break;
 block|}
-name|image_id
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -1368,9 +1378,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -1386,7 +1395,7 @@ name|metadata
 operator|=
 name|gimp_image_metadata_load_prepare
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 literal|"image/png"
 argument_list|,
@@ -1425,7 +1434,7 @@ name|GIMP_METADATA_LOAD_COLORSPACE
 expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 literal|"image/png"
 argument_list|,
@@ -1459,7 +1468,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1472,7 +1481,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|png_save (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image_id,gint32 drawable_id,GFile * file,const GimpValueArray * args,gpointer run_data)
+DECL|function|png_save (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,GFile * file,const GimpValueArray * args,gpointer run_data)
 name|png_save
 parameter_list|(
 name|GimpProcedure
@@ -1482,11 +1491,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GFile
 modifier|*
@@ -1513,8 +1524,9 @@ decl_stmt|;
 name|GimpMetadataSaveFlags
 name|metadata_flags
 decl_stmt|;
-name|gint32
-name|orig_image_ID
+name|GimpImage
+modifier|*
+name|orig_image
 decl_stmt|;
 name|GimpExportReturn
 name|export
@@ -1540,9 +1552,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|orig_image_ID
+name|orig_image
 operator|=
-name|image_id
+name|image
 expr_stmt|;
 switch|switch
 condition|(
@@ -1567,10 +1579,10 @@ operator|=
 name|gimp_export_image
 argument_list|(
 operator|&
-name|image_id
+name|image
 argument_list|,
 operator|&
-name|drawable_id
+name|drawable
 argument_list|,
 literal|"PNG"
 argument_list|,
@@ -1613,7 +1625,7 @@ name|metadata
 operator|=
 name|gimp_image_metadata_save_prepare
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|,
 literal|"image/png"
 argument_list|,
@@ -1707,7 +1719,7 @@ name|alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* If the image has no transparency, then there is usually        * no need to save a bKGD chunk.  For more information, see:        * http://bugzilla.gnome.org/show_bug.cgi?id=92395        */
@@ -1728,7 +1740,7 @@ condition|(
 operator|!
 name|save_dialog
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|,
 name|alpha
 argument_list|)
@@ -1878,11 +1890,11 @@ argument_list|(
 name|file
 argument_list|)
 argument_list|,
-name|image_id
+name|image
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
-name|orig_image_ID
+name|orig_image
 argument_list|,
 operator|&
 name|profile_saved
@@ -1985,7 +1997,7 @@ name|GIMP_METADATA_SAVE_COLOR_PROFILE
 expr_stmt|;
 name|gimp_image_metadata_save_finish
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|,
 literal|"image/png"
 argument_list|,
@@ -2029,7 +2041,7 @@ name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -2450,7 +2462,8 @@ end_comment
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,gboolean interactive,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
 name|load_image
 parameter_list|(
@@ -2558,14 +2571,15 @@ name|fp
 decl_stmt|;
 comment|/* File pointer */
 specifier|volatile
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 comment|/* Image -- protected for setjmp() */
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 comment|/* Layer */
@@ -2656,8 +2670,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|info
@@ -2693,8 +2706,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 if|if
@@ -2728,6 +2740,10 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 return|;
 block|}
@@ -2812,8 +2828,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|png_init_io
@@ -3199,8 +3214,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|width
@@ -3236,10 +3250,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|image
-operator|==
-operator|-
-literal|1
 condition|)
 block|{
 name|g_set_error
@@ -3268,8 +3280,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/*    * Attach the color profile, if any    */
@@ -3280,6 +3291,10 @@ condition|)
 block|{
 name|gimp_image_set_color_profile
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 name|profile
@@ -3319,6 +3334,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 name|parasite
@@ -3341,6 +3360,10 @@ name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 name|_
@@ -3358,18 +3381,25 @@ literal|100
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -3378,7 +3408,10 @@ name|file_format
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*    * Find out everything we can about the image resolution    * This is only practical with the new 1.0 APIs, I'm afraid    * due to a bug in libpng-1.0.6, see png-implement for details    */
@@ -3449,6 +3482,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 name|parasite
@@ -3621,6 +3658,10 @@ name|image_yres
 decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 operator|&
@@ -3667,6 +3708,10 @@ name|xres
 expr_stmt|;
 name|gimp_image_set_resolution
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 name|image_xres
@@ -3686,6 +3731,10 @@ name|PNG_RESOLUTION_METER
 case|:
 name|gimp_image_set_resolution
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 operator|(
@@ -3705,6 +3754,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_unit
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 name|GIMP_UNIT_MM
@@ -3723,6 +3776,10 @@ block|}
 block|}
 name|gimp_image_set_filename
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 name|filename
@@ -3762,6 +3819,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_colormap
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 operator|(
@@ -3785,7 +3846,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*    * Temporary buffer...    */
@@ -4230,6 +4294,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 argument_list|,
 name|parasite
@@ -4310,7 +4378,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|file_format
@@ -4413,6 +4484,10 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
+operator|(
+name|GimpImage
+operator|*
+operator|)
 name|image
 return|;
 block|}
@@ -4728,7 +4803,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,gboolean * profile_saved,GError ** error)
+DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GimpImage * orig_image,gboolean * profile_saved,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -4736,14 +4811,17 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
-name|gint32
-name|orig_image_ID
+name|GimpImage
+modifier|*
+name|orig_image
 parameter_list|,
 name|gboolean
 modifier|*
@@ -4924,7 +5002,7 @@ name|space
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|#
@@ -4945,7 +5023,7 @@ name|profile
 operator|=
 name|gimp_image_get_color_profile
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|)
 expr_stmt|;
 if|if
@@ -4984,21 +5062,21 @@ name|PNG_FORMAT_GRAYA16
 operator|||
 name|gimp_image_get_precision
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 operator|==
 name|GIMP_PRECISION_U8_LINEAR
 operator|||
 name|gimp_image_get_precision
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 operator|==
 name|GIMP_PRECISION_U8_NON_LINEAR
 operator|||
 name|gimp_image_get_precision
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 operator|==
 name|GIMP_PRECISION_U8_PERCEPTUAL
@@ -5013,7 +5091,7 @@ name|profile
 operator|=
 name|gimp_image_get_effective_color_profile
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|)
 expr_stmt|;
 name|out_linear
@@ -5033,7 +5111,7 @@ name|profile
 operator|=
 name|gimp_image_get_effective_color_profile
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|)
 expr_stmt|;
 if|if
@@ -5109,7 +5187,7 @@ name|space
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -5125,7 +5203,7 @@ switch|switch
 condition|(
 name|gimp_image_get_precision
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 condition|)
 block|{
@@ -5369,7 +5447,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|width
@@ -5390,7 +5468,7 @@ name|type
 operator|=
 name|gimp_drawable_type
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*    * Initialise remap[]    */
@@ -5620,7 +5698,7 @@ name|file_format
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|pngg
@@ -5638,7 +5716,7 @@ name|png_colorp
 operator|)
 name|gimp_image_get_colormap
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|pngg
@@ -5667,7 +5745,7 @@ name|file_format
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* fix up transparency */
@@ -5681,9 +5759,9 @@ name|info
 argument_list|,
 name|remap
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6132,7 +6210,7 @@ name|parasite
 operator|=
 name|gimp_image_get_parasite
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|,
 literal|"gamma"
 argument_list|)
@@ -6179,7 +6257,7 @@ condition|)
 block|{
 name|gimp_drawable_offsets
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|offx
@@ -6221,7 +6299,7 @@ condition|)
 block|{
 name|gimp_image_get_resolution
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|,
 operator|&
 name|xres
@@ -6385,7 +6463,7 @@ name|parasite
 operator|=
 name|gimp_image_get_parasite
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|,
 literal|"icc-profile-name"
 argument_list|)
@@ -6487,7 +6565,7 @@ name|parasite
 operator|=
 name|gimp_image_get_parasite
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|,
 literal|"gimp-comment"
 argument_list|)
@@ -7882,7 +7960,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|respin_cmap (png_structp pp,png_infop info,guchar * remap,gint32 image_ID,gint32 drawable_ID)
+DECL|function|respin_cmap (png_structp pp,png_infop info,guchar * remap,GimpImage * image,GimpDrawable * drawable)
 name|respin_cmap
 parameter_list|(
 name|png_structp
@@ -7895,11 +7973,13 @@ name|guchar
 modifier|*
 name|remap
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 specifier|static
@@ -7926,7 +8006,7 @@ name|before
 operator|=
 name|gimp_image_get_colormap
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|colors
@@ -7936,7 +8016,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*    * Make sure there is something in the colormap.    */
@@ -8339,11 +8419,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_dialog (gint32 image_ID,gboolean alpha)
+DECL|function|save_dialog (GimpImage * image,gboolean alpha)
 name|save_dialog
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gboolean
 name|alpha
@@ -8761,7 +8842,7 @@ name|parasite
 operator|=
 name|gimp_image_get_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 literal|"gimp-comment"
 argument_list|)
