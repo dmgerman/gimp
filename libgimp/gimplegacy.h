@@ -536,21 +536,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Retrieve the error message and return status for the last procedure  * call.  */
-end_comment
-
-begin_function_decl
-specifier|const
-name|gchar
-modifier|*
-name|gimp_get_pdb_error
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* gimp_plugin API that should now be done by using GimpProcedure  */
 end_comment
 
