@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3153900108
+DECL|struct|__anon29d072e70108
 block|{
 DECL|member|filename
 name|gchar
@@ -258,11 +258,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -285,11 +287,13 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint32
 name|run_mode
@@ -859,7 +863,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|mail_run (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image_id,gint32 drawable_id,const GimpValueArray * args,gpointer run_data)
+DECL|function|mail_run (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,const GimpValueArray * args,gpointer run_data)
 name|mail_run
 parameter_list|(
 name|GimpProcedure
@@ -869,11 +873,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -915,7 +921,7 @@ name|filename
 init|=
 name|gimp_image_get_filename
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -1079,9 +1085,9 @@ name|mail_info
 operator|.
 name|filename
 argument_list|,
-name|image_id
+name|image
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|run_mode
 argument_list|)
@@ -1138,7 +1144,7 @@ end_function
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|send_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode)
+DECL|function|send_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,gint32 run_mode)
 name|send_image
 parameter_list|(
 specifier|const
@@ -1146,11 +1152,13 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint32
 name|run_mode
@@ -1260,9 +1268,9 @@ name|gimp_file_save
 argument_list|(
 name|run_mode
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|tmpname
 argument_list|,
@@ -1284,7 +1292,7 @@ ifndef|#
 directive|ifndef
 name|SENDMAIL
 comment|/* xdg-email */
-comment|/* From xdg-email doc:    * "Some e-mail applications require the file to remain present    * after xdg-email returns."    * As a consequence, the file cannot be removed at the end of the    * function. We actually have no way to ever know *when* the file can    * be removed since the caller could leave the email window opened for    * hours. Yet we still want to clean sometimes and not have temporary    * images piling up.    * So I use a known directory that we control under $GIMP_DIRECTORY/tmp/,    * and clean it out each time the plugin runs. This means that *if* you    * are in the above case (your email client requires the file to stay    * alive), * you cannot run twice the plugin at the same time.    */
+comment|/* From xdg-email doc:    * "Some e-mail applications require the file to remain present    * after xdg-email returns."    * As a consequence, the file cannot be removed at the end of the    * function. We actually have no way to ever know *when* the file can    * be removed since the caller could leave the email window opened for    * hours. Yet we still want to clean sometimes and not have temporary    * images piling up.    * So I use a known directory that we control under $GIMP_DIRECTORY/tmp/,    * and clean it out each time the plugin runs. This means that *if* you    * are in the above case (your email client requires the file to stay    * alive), you cannot run twice the plugin at the same time.    */
 name|tmp_dir
 operator|=
 name|gimp_directory_file
