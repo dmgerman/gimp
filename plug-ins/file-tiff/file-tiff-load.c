@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4d87a50108
+DECL|struct|__anon2761af8d0108
 block|{
 DECL|member|compression
 name|gint
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4d87a50208
+DECL|struct|__anon2761af8d0208
 block|{
 DECL|member|ID
 name|gint32
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4d87a50303
+DECL|enum|__anon2761af8d0303
 block|{
 DECL|enumerator|GIMP_TIFF_LOAD_ASSOCALPHA
 name|GIMP_TIFF_LOAD_ASSOCALPHA
@@ -2684,8 +2684,11 @@ name|g_message
 argument_list|(
 literal|"Could not create a new image: %s"
 argument_list|,
-name|gimp_get_pdb_error
+name|gimp_pdb_get_last_error
+argument_list|(
+name|gimp_get_pdb
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
