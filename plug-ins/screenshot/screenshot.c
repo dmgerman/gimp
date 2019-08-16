@@ -275,9 +275,10 @@ name|GdkMonitor
 modifier|*
 name|monitor
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -790,8 +791,11 @@ name|monitor
 init|=
 name|NULL
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|NULL
 decl_stmt|;
 name|GError
 modifier|*
@@ -1187,7 +1191,7 @@ argument_list|(
 name|monitor
 argument_list|,
 operator|&
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|error
@@ -1226,7 +1230,7 @@ argument_list|()
 decl_stmt|;
 name|gimp_image_convert_color_profile
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|srgb_profile
 argument_list|,
@@ -1270,7 +1274,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -1288,7 +1292,7 @@ expr_stmt|;
 block|}
 name|gimp_image_clean_all
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1314,7 +1318,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_new
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* Give some sort of feedback that the shot is done */
@@ -1370,7 +1374,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1386,16 +1390,17 @@ end_comment
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|shoot (GdkMonitor * monitor,gint32 * image_ID,GError ** error)
+DECL|function|shoot (GdkMonitor * monitor,GimpImage ** image,GError ** error)
 name|shoot
 parameter_list|(
 name|GdkMonitor
 modifier|*
 name|monitor
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -1420,7 +1425,7 @@ name|shootvals
 argument_list|,
 name|monitor
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
 name|error
 argument_list|)
@@ -1444,7 +1449,7 @@ name|shootvals
 argument_list|,
 name|monitor
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
 name|error
 argument_list|)
@@ -1465,7 +1470,7 @@ name|shootvals
 argument_list|,
 name|monitor
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
 name|error
 argument_list|)
@@ -1485,7 +1490,7 @@ name|shootvals
 argument_list|,
 name|monitor
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
 name|error
 argument_list|)
@@ -1505,7 +1510,7 @@ name|shootvals
 argument_list|,
 name|monitor
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
 name|error
 argument_list|)
@@ -1527,7 +1532,7 @@ name|shootvals
 argument_list|,
 name|monitor
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
 name|error
 argument_list|)

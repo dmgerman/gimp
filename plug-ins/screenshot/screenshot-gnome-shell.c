@@ -173,7 +173,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|screenshot_gnome_shell_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,gint32 * image_ID,GError ** error)
+DECL|function|screenshot_gnome_shell_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,GimpImage ** image,GError ** error)
 name|screenshot_gnome_shell_shoot
 parameter_list|(
 name|ScreenshotValues
@@ -184,9 +184,10 @@ name|GdkMonitor
 modifier|*
 name|monitor
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -568,7 +569,7 @@ modifier|*
 name|profile
 decl_stmt|;
 operator|*
-name|image_ID
+name|image
 operator|=
 name|gimp_file_load
 argument_list|(
@@ -582,7 +583,7 @@ expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 literal|"screenshot.png"
 argument_list|)
@@ -602,7 +603,7 @@ block|{
 name|gimp_image_set_color_profile
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|profile
 argument_list|)

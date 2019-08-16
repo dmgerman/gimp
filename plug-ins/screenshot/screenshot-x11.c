@@ -126,7 +126,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|create_image
 parameter_list|(
 name|cairo_surface_t
@@ -1711,10 +1712,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_select_shape (gint32 image,cairo_region_t * shape)
+DECL|function|image_select_shape (GimpImage * image,cairo_region_t * shape)
 name|image_select_shape
 parameter_list|(
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|cairo_region_t
@@ -1805,7 +1807,8 @@ end_comment
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|create_image (cairo_surface_t * surface,cairo_region_t * shape,const gchar * name)
 name|create_image
 parameter_list|(
@@ -1823,10 +1826,12 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 name|gdouble
@@ -1923,8 +1928,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -1963,7 +1967,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_edit_clear
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_selection_none
@@ -1987,10 +1994,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|add_cursor_image (gint32 image,GdkDisplay * display)
+DECL|function|add_cursor_image (GimpImage * image,GdkDisplay * display)
 name|add_cursor_image
 parameter_list|(
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|GdkDisplay
@@ -2017,10 +2025,12 @@ name|GeglRectangle
 modifier|*
 name|roi
 decl_stmt|;
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|GimpLayer
+modifier|*
 name|active
 decl_stmt|;
 name|cursor
@@ -2079,7 +2089,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iter
@@ -2096,12 +2109,18 @@ literal|0
 argument_list|,
 name|gimp_drawable_width
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_drawable_height
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
@@ -2365,8 +2384,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -2472,7 +2490,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|screenshot_x11_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,gint32 * image_ID,GError ** error)
+DECL|function|screenshot_x11_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,GimpImage ** image,GError ** error)
 name|screenshot_x11_shoot
 parameter_list|(
 name|ScreenshotValues
@@ -2483,9 +2501,10 @@ name|GdkMonitor
 modifier|*
 name|monitor
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -3021,7 +3040,7 @@ argument_list|)
 expr_stmt|;
 block|}
 operator|*
-name|image_ID
+name|image
 operator|=
 name|create_image
 argument_list|(
@@ -3075,7 +3094,7 @@ condition|)
 name|add_cursor_image
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|display
 argument_list|)
@@ -3095,7 +3114,7 @@ block|{
 name|gimp_image_set_color_profile
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|profile
 argument_list|)

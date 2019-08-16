@@ -157,7 +157,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|screenshot_freedesktop_dbus_signal (GDBusProxy * proxy,gchar * sender_name,gchar * signal_name,GVariant * parameters,gint32 * image_ID)
+DECL|function|screenshot_freedesktop_dbus_signal (GDBusProxy * proxy,gchar * sender_name,gchar * signal_name,GVariant * parameters,GimpImage ** image)
 name|screenshot_freedesktop_dbus_signal
 parameter_list|(
 name|GDBusProxy
@@ -176,9 +176,10 @@ name|GVariant
 modifier|*
 name|parameters
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|)
 block|{
 if|if
@@ -259,7 +260,7 @@ name|file
 argument_list|)
 decl_stmt|;
 operator|*
-name|image_ID
+name|image
 operator|=
 name|gimp_file_load
 argument_list|(
@@ -273,7 +274,7 @@ expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 literal|"screenshot.png"
 argument_list|)
@@ -320,7 +321,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|screenshot_freedesktop_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,gint32 * image_ID,GError ** error)
+DECL|function|screenshot_freedesktop_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,GimpImage ** image,GError ** error)
 name|screenshot_freedesktop_shoot
 parameter_list|(
 name|ScreenshotValues
@@ -331,9 +332,10 @@ name|GdkMonitor
 modifier|*
 name|monitor
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -470,9 +472,9 @@ name|NULL
 argument_list|)
 expr_stmt|;
 operator|*
-name|image_ID
+name|image
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
@@ -485,7 +487,7 @@ argument_list|(
 name|screenshot_freedesktop_dbus_signal
 argument_list|)
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|gtk_main
@@ -505,7 +507,7 @@ comment|/* Signal got a response. */
 if|if
 condition|(
 operator|*
-name|image_ID
+name|image
 condition|)
 block|{
 name|GimpColorProfile
@@ -528,7 +530,7 @@ block|{
 name|gimp_image_set_color_profile
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|profile
 argument_list|)

@@ -52,9 +52,10 @@ name|GdkScreen
 modifier|*
 name|screen
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|,
 name|GError
 modifier|*

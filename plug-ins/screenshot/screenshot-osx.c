@@ -117,7 +117,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|screenshot_osx_shoot (ScreenshotValues * shootvals,GdkScreen * screen,gint32 * image_ID,GError ** error)
+DECL|function|screenshot_osx_shoot (ScreenshotValues * shootvals,GdkScreen * screen,GimpImage ** image,GError ** error)
 name|screenshot_osx_shoot
 parameter_list|(
 name|ScreenshotValues
@@ -128,9 +128,10 @@ name|GdkScreen
 modifier|*
 name|screen
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|,
 name|GError
 modifier|*
@@ -343,7 +344,7 @@ condition|)
 block|{
 comment|/* don't attach a profile, screencapture attached one        */
 operator|*
-name|image_ID
+name|image
 operator|=
 name|gimp_file_load
 argument_list|(
@@ -357,7 +358,7 @@ expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 literal|"screenshot.png"
 argument_list|)
