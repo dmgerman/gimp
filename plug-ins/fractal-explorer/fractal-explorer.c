@@ -229,11 +229,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -251,8 +253,9 @@ specifier|static
 name|void
 name|explorer
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1316,7 +1319,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|explorer_run (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image_id,gint32 drawable_id,const GimpValueArray * args,gpointer run_data)
+DECL|function|explorer_run (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,const GimpValueArray * args,gpointer run_data)
 name|explorer_run
 parameter_list|(
 name|GimpProcedure
@@ -1326,11 +1329,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -1373,7 +1378,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|sel_x
@@ -1788,7 +1793,7 @@ argument_list|)
 expr_stmt|;
 name|explorer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -1841,11 +1846,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|explorer (gint32 drawable_id)
+DECL|function|explorer (GimpDrawable * drawable)
 name|explorer
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -1899,7 +1905,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x
@@ -1920,21 +1926,21 @@ name|width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -1986,14 +1992,14 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|dest_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|xbild
@@ -2155,14 +2161,14 @@ expr_stmt|;
 comment|/*  update the processed region  */
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|x
 argument_list|,
