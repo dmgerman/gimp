@@ -551,7 +551,7 @@ name|gimp_image_select_rectangle
 argument_list|(
 name|gfig_context
 operator|->
-name|image_id
+name|image
 argument_list|,
 name|selopt
 operator|.
@@ -618,7 +618,7 @@ name|gimp_selection_none
 argument_list|(
 name|gfig_context
 operator|->
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -697,7 +697,7 @@ name|brshtype
 argument_list|,
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 literal|10
 argument_list|,

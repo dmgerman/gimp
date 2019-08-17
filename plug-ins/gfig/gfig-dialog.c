@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c77aa110108
+DECL|struct|__anon2c157aa40108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -925,7 +925,8 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
-name|gint
+name|GimpLayer
+modifier|*
 name|newlayer
 decl_stmt|;
 name|GtkWidget
@@ -990,7 +991,7 @@ name|gimp_drawable_width
 argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|img_height
@@ -999,7 +1000,7 @@ name|gimp_drawable_height
 argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|img_type
@@ -1008,7 +1009,7 @@ name|gimp_drawable_type_with_alpha
 argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*    * See if there is a "gfig" parasite.  If so, this is a gfig layer,    * and we start by clearing it to transparent.    * If not, we create a new transparent layer.    */
@@ -1025,9 +1026,12 @@ name|parasite
 operator|=
 name|gimp_item_get_parasite
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
+argument_list|)
 argument_list|,
 literal|"gfig"
 argument_list|)
@@ -1075,7 +1079,7 @@ name|gimp_drawable_fill
 argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 name|GIMP_FILL_TRANSPARENT
 argument_list|)
@@ -1100,7 +1104,7 @@ name|gimp_layer_new
 argument_list|(
 name|gfig_context
 operator|->
-name|image_id
+name|image
 argument_list|,
 literal|"GFig"
 argument_list|,
@@ -1116,13 +1120,16 @@ name|gimp_image_get_default_new_layer_mode
 argument_list|(
 name|gfig_context
 operator|->
-name|image_id
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_fill
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|newlayer
+argument_list|)
 argument_list|,
 name|GIMP_FILL_TRANSPARENT
 argument_list|)
@@ -1131,12 +1138,11 @@ name|gimp_image_insert_layer
 argument_list|(
 name|gfig_context
 operator|->
-name|image_id
+name|image
 argument_list|,
 name|newlayer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -1144,9 +1150,12 @@ argument_list|)
 expr_stmt|;
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 operator|=
+name|GIMP_DRAWABLE
+argument_list|(
 name|newlayer
+argument_list|)
 expr_stmt|;
 name|gfig_context
 operator|->
@@ -2747,11 +2756,14 @@ name|gimp_image_remove_layer
 argument_list|(
 name|gfig_context
 operator|->
-name|image_id
+name|image
 argument_list|,
+name|GIMP_LAYER
+argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -8023,14 +8035,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gfig_paint (BrushType brush_type,gint32 drawable_ID,gint seg_count,gdouble line_pnts[])
+DECL|function|gfig_paint (BrushType brush_type,GimpDrawable * drawable,gint seg_count,gdouble line_pnts[])
 name|gfig_paint
 parameter_list|(
 name|BrushType
 name|brush_type
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|seg_count
@@ -8050,7 +8063,7 @@ name|BRUSH_BRUSH_TYPE
 case|:
 name|gimp_paintbrush
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|selvals
 operator|.
@@ -8073,7 +8086,7 @@ name|BRUSH_PENCIL_TYPE
 case|:
 name|gimp_pencil
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|seg_count
 argument_list|,
@@ -8086,7 +8099,7 @@ name|BRUSH_AIRBRUSH_TYPE
 case|:
 name|gimp_airbrush
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|selvals
 operator|.
@@ -8103,9 +8116,9 @@ name|BRUSH_PATTERN_TYPE
 case|:
 name|gimp_clone
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|GIMP_CLONE_PATTERN
 argument_list|,
@@ -8525,7 +8538,7 @@ name|gimp_drawable_edit_gradient_fill
 argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 name|GIMP_GRADIENT_SHAPEBURST_DIMPLED
 argument_list|,
@@ -8563,7 +8576,7 @@ name|gimp_drawable_edit_gradient_fill
 argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 name|GIMP_GRADIENT_LINEAR
 argument_list|,
@@ -8594,7 +8607,7 @@ name|gimp_drawable_edit_gradient_fill
 argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 name|GIMP_GRADIENT_LINEAR
 argument_list|,
@@ -8630,7 +8643,7 @@ name|gimp_drawable_edit_fill
 argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 name|fill_type
 argument_list|)
@@ -8687,7 +8700,7 @@ name|gimp_drawable_fill
 argument_list|(
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 name|GIMP_FILL_TRANSPARENT
 argument_list|)

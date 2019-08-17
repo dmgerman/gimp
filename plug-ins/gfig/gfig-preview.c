@@ -688,7 +688,7 @@ name|gimp_image_get_thumbnail
 argument_list|(
 name|gfig_context
 operator|->
-name|image_id
+name|image
 argument_list|,
 name|preview_width
 argument_list|,

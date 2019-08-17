@@ -1386,7 +1386,7 @@ name|brshtype
 argument_list|,
 name|gfig_context
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 name|i
 argument_list|,

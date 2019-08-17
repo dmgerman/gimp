@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a1e8c70108
+DECL|struct|__anon2a2407dc0108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a1e8c70208
+DECL|struct|__anon2a2407dc0208
 block|{
 DECL|member|type
 name|SelectionType
@@ -310,7 +310,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a1e8c70308
+DECL|struct|__anon2a2407dc0308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -505,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a1e8c70408
+DECL|struct|__anon2a2407dc0408
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -516,14 +516,16 @@ name|gboolean
 name|show_background
 decl_stmt|;
 comment|/* show thumbnail of image behind figure */
-DECL|member|image_id
-name|gint32
-name|image_id
+DECL|member|image
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
-comment|/* Gimp image id */
-DECL|member|drawable_id
-name|gint32
-name|drawable_id
+comment|/* Gimp image */
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 comment|/* Gimp drawable to paint on */
 DECL|member|current_obj
@@ -722,8 +724,9 @@ parameter_list|(
 name|BrushType
 name|brush_type
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|seg_count
