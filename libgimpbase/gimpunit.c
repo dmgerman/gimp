@@ -549,6 +549,15 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|unit
+operator|==
+name|GIMP_UNIT_PIXEL
+condition|)
+return|return
+literal|0.0
+return|;
 return|return
 name|_gimp_unit_vtable
 operator|.
