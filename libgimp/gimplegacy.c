@@ -1370,40 +1370,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_file_handler_priority:  * @procedure_name: The name of the procedure to set the priority of.  * @priority: The procedure priority.  *  * Sets the priority of a file handler procedure.  *  * Sets the priority of a file handler procedure. When more than one  * procedure matches a given file, the procedure with the lowest  * priority is used; if more than one procedure has the lowest  * priority, it is unspecified which one of them is used. The default  * priority for file handler procedures is 0.  *  * Returns: TRUE on success.  *  * Since: 2.10.6  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_register_file_handler_priority (const gchar * procedure_name,gint priority)
-name|gimp_register_file_handler_priority
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|,
-name|gint
-name|priority
-parameter_list|)
-block|{
-name|ASSERT_NO_PLUG_IN_EXISTS
-argument_list|(
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-return|return
-name|_gimp_register_file_handler_priority
-argument_list|(
-name|procedure_name
-argument_list|,
-name|priority
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_register_file_handler_mime:  * @procedure_name: The name of the procedure to associate a MIME type with.  * @mime_types: A comma-separated list of MIME types, such as \"image/jpeg\".  *  * Associates MIME types with a file handler procedure.  *  * Registers MIME types for a file handler procedure. This allows GIMP  * to determine the MIME type of the file opened or saved using this  * procedure. It is recommended that only one MIME type is registered  * per file procedure; when registering more than one MIME type, GIMP  * will associate the first one with files opened or saved with this  * procedure.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
