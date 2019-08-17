@@ -84,7 +84,8 @@ name|TIFF
 modifier|*
 name|tif
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|gdouble
@@ -151,7 +152,8 @@ name|TiffSaveVals
 modifier|*
 name|tsvals
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|TIFF
@@ -294,14 +296,15 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_paths (TIFF * tif,gint32 image,gdouble width,gdouble height,gint offset_x,gint offset_y)
+DECL|function|save_paths (TIFF * tif,GimpImage * image,gdouble width,gdouble height,gint offset_x,gint offset_y)
 name|save_paths
 parameter_list|(
 name|TIFF
 modifier|*
 name|tif
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|gdouble
@@ -323,12 +326,15 @@ init|=
 literal|2000
 decl_stmt|;
 comment|/* Photoshop paths have IDs>= 2000 */
-name|gint
-name|num_vectors
-decl_stmt|,
+name|GList
 modifier|*
 name|vectors
-decl_stmt|,
+decl_stmt|;
+name|GList
+modifier|*
+name|iter
+decl_stmt|;
+name|gint
 name|v
 decl_stmt|;
 name|gint
@@ -348,16 +354,12 @@ operator|=
 name|gimp_image_get_vectors
 argument_list|(
 name|image
-argument_list|,
-operator|&
-name|num_vectors
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|num_vectors
-operator|<=
-literal|0
+operator|!
+name|vectors
 condition|)
 return|return
 name|FALSE
@@ -372,19 +374,26 @@ expr_stmt|;
 comment|/* Only up to 1000 paths supported */
 for|for
 control|(
+name|iter
+operator|=
+name|vectors
+operator|,
 name|v
 operator|=
 literal|0
 init|;
+name|iter
+operator|&&
 name|v
 operator|<
-name|MIN
-argument_list|(
-name|num_vectors
-argument_list|,
 literal|1000
-argument_list|)
 condition|;
+name|iter
+operator|=
+name|iter
+operator|->
+name|next
+operator|,
 name|v
 operator|++
 control|)
@@ -456,10 +465,9 @@ name|name
 operator|=
 name|gimp_item_get_name
 argument_list|(
-name|vectors
-index|[
-name|v
-index|]
+name|iter
+operator|->
+name|data
 argument_list|)
 expr_stmt|;
 name|tmpname
@@ -668,10 +676,9 @@ name|strokes
 operator|=
 name|gimp_vectors_get_strokes
 argument_list|(
-name|vectors
-index|[
-name|v
-index|]
+name|iter
+operator|->
+name|data
 argument_list|,
 operator|&
 name|num_strokes
@@ -713,10 +720,9 @@ name|type
 operator|=
 name|gimp_vectors_stroke_get_points
 argument_list|(
-name|vectors
-index|[
-name|v
-index|]
+name|iter
+operator|->
+name|data
 argument_list|,
 name|strokes
 index|[
@@ -1100,7 +1106,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_list_free
 argument_list|(
 name|vectors
 argument_list|)
@@ -1118,7 +1124,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_layer (TIFF * tif,TiffSaveVals * tsvals,const Babl * space,gint32 image,gint32 layer,gint32 page,gint32 num_pages,gint32 orig_image,gint * saved_bpp,gboolean out_linear,GError ** error)
+DECL|function|save_layer (TIFF * tif,TiffSaveVals * tsvals,const Babl * space,GimpImage * image,GimpLayer * layer,gint32 page,gint32 num_pages,GimpImage * orig_image,gint * saved_bpp,gboolean out_linear,GError ** error)
 name|save_layer
 parameter_list|(
 name|TIFF
@@ -1134,10 +1140,12 @@ name|Babl
 modifier|*
 name|space
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 parameter_list|,
 name|gint32
@@ -1146,7 +1154,8 @@ parameter_list|,
 name|gint32
 name|num_pages
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|orig_image
 parameter_list|,
 comment|/* the export function might */
@@ -1383,7 +1392,10 @@ name|layer_name
 operator|=
 name|gimp_item_get_name
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Disabled because this isn't in older releases of libtiff, and it    * wasn't helping much anyway    */
@@ -1411,14 +1423,20 @@ name|drawable_type
 operator|=
 name|gimp_drawable_type
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|format
@@ -2300,7 +2318,10 @@ name|format
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2706,7 +2727,10 @@ expr_stmt|;
 block|}
 name|gimp_drawable_offsets
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 operator|&
 name|offset_x
@@ -3106,14 +3130,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_thumbnail (TiffSaveVals * tsvals,gint32 image,TIFF * tif)
+DECL|function|save_thumbnail (TiffSaveVals * tsvals,GimpImage * image,TIFF * tif)
 name|save_thumbnail
 parameter_list|(
 name|TiffSaveVals
 modifier|*
 name|tsvals
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|TIFF
@@ -3430,7 +3455,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_metadata (GFile * file,TiffSaveVals * tsvals,gint32 image,GimpMetadata * metadata,GimpMetadataSaveFlags metadata_flags,gint saved_bpp)
+DECL|function|save_metadata (GFile * file,TiffSaveVals * tsvals,GimpImage * image,GimpMetadata * metadata,GimpMetadataSaveFlags metadata_flags,gint saved_bpp)
 name|save_metadata
 parameter_list|(
 name|GFile
@@ -3441,7 +3466,8 @@ name|TiffSaveVals
 modifier|*
 name|tsvals
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|GimpMetadata
@@ -3711,7 +3737,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_image (GFile * file,TiffSaveVals * tsvals,gint32 image,gint32 orig_image,const gchar * image_comment,gint * saved_bpp,GimpMetadata * metadata,GimpMetadataSaveFlags metadata_flags,GError ** error)
+DECL|function|save_image (GFile * file,TiffSaveVals * tsvals,GimpImage * image,GimpImage * orig_image,const gchar * image_comment,gint * saved_bpp,GimpMetadata * metadata,GimpMetadataSaveFlags metadata_flags,GError ** error)
 name|save_image
 parameter_list|(
 name|GFile
@@ -3722,10 +3748,12 @@ name|TiffSaveVals
 modifier|*
 name|tsvals
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|orig_image
 parameter_list|,
 comment|/* the export function */
@@ -3792,21 +3820,26 @@ decl_stmt|;
 name|gint32
 name|num_layers
 decl_stmt|,
-modifier|*
-name|layers
-decl_stmt|,
 name|current_layer
 init|=
 literal|0
+decl_stmt|;
+name|GList
+modifier|*
+name|layers
 decl_stmt|;
 name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
 name|image
-argument_list|,
-operator|&
+argument_list|)
+expr_stmt|;
 name|num_layers
+operator|=
+name|g_list_length
+argument_list|(
+name|layers
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init_printf
@@ -4148,14 +4181,16 @@ name|space
 argument_list|,
 name|image
 argument_list|,
+name|g_list_nth_data
+argument_list|(
 name|layers
-index|[
+argument_list|,
 name|num_layers
 operator|-
 name|current_layer
 operator|-
 literal|1
-index|]
+argument_list|)
 argument_list|,
 name|current_layer
 argument_list|,
@@ -4317,14 +4352,16 @@ name|space
 argument_list|,
 name|image
 argument_list|,
+name|g_list_nth_data
+argument_list|(
 name|layers
-index|[
+argument_list|,
 name|num_layers
 operator|-
 name|current_layer
 operator|-
 literal|1
-index|]
+argument_list|)
 argument_list|,
 name|current_layer
 argument_list|,
@@ -4417,6 +4454,11 @@ name|TRUE
 expr_stmt|;
 name|out
 label|:
+name|g_list_free
+argument_list|(
+name|layers
+argument_list|)
+expr_stmt|;
 return|return
 name|status
 return|;

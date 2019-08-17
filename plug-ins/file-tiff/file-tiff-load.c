@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761af8d0108
+DECL|struct|__anon2c757b770108
 block|{
 DECL|member|compression
 name|gint
@@ -95,11 +95,12 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761af8d0208
+DECL|struct|__anon2c757b770208
 block|{
-DECL|member|ID
-name|gint32
-name|ID
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 DECL|member|buffer
 name|GeglBuffer
@@ -131,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2761af8d0303
+DECL|enum|__anon2c757b770303
 block|{
 DECL|enumerator|GIMP_TIFF_LOAD_ASSOCALPHA
 name|GIMP_TIFF_LOAD_ASSOCALPHA
@@ -255,7 +256,8 @@ name|TIFF
 modifier|*
 name|tif
 parameter_list|,
-name|gint
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|gint
@@ -410,7 +412,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|load_image (GFile * file,GimpRunMode run_mode,gint32 * image,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
+DECL|function|load_image (GFile * file,GimpRunMode run_mode,GimpImage ** image,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
 name|load_image
 parameter_list|(
 name|GFile
@@ -420,7 +422,8 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 modifier|*
 name|image
 parameter_list|,
@@ -487,7 +490,7 @@ decl_stmt|;
 operator|*
 name|image
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|gimp_progress_init_printf
 argument_list|(
@@ -1056,7 +1059,8 @@ name|image_type
 init|=
 name|GIMP_RGB
 decl_stmt|;
-name|gint
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 name|gint
@@ -2669,10 +2673,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 operator|*
 name|image
-operator|<
-literal|1
 condition|)
 block|{
 name|TIFFClose
@@ -2745,11 +2748,8 @@ name|g_list_prepend
 argument_list|(
 name|images_list
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 operator|*
 name|image
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3572,7 +3572,10 @@ name|base_format
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3589,7 +3592,10 @@ argument_list|)
 argument_list|,
 name|gimp_drawable_get_format
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3599,9 +3605,12 @@ index|[
 literal|0
 index|]
 operator|.
-name|ID
+name|drawable
 operator|=
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 expr_stmt|;
 name|channel
 index|[
@@ -3612,7 +3621,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|channel
@@ -3669,8 +3681,10 @@ index|[
 name|i
 index|]
 operator|.
-name|ID
+name|drawable
 operator|=
+name|GIMP_DRAWABLE
+argument_list|(
 name|gimp_channel_new
 argument_list|(
 operator|*
@@ -3690,21 +3704,24 @@ argument_list|,
 operator|&
 name|color
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_image_insert_channel
 argument_list|(
 operator|*
 name|image
 argument_list|,
+name|GIMP_CHANNEL
+argument_list|(
 name|channel
 index|[
 name|i
 index|]
 operator|.
-name|ID
+name|drawable
+argument_list|)
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -3723,7 +3740,7 @@ index|[
 name|i
 index|]
 operator|.
-name|ID
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* Unlike color channels, we don't care about the source                * TRC for extra channels. We just want to import them                * as-is without any value conversion. Since extra                * channels are always linear in GIMP, we consider TIFF                * extra channels with unspecified data to be linear too.                * Only exception are 8-bit non-linear images whose                * channel are Y' for legacy/compatibility reasons.                */
@@ -3929,7 +3946,10 @@ name|flip_horizontal
 condition|)
 name|gimp_item_transform_flip_simple
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|GIMP_ORIENTATION_HORIZONTAL
 argument_list|,
@@ -3947,7 +3967,10 @@ name|flip_vertical
 condition|)
 name|gimp_item_transform_flip_simple
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|GIMP_ORIENTATION_VERTICAL
 argument_list|,
@@ -4091,8 +4114,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -4149,12 +4171,9 @@ block|{
 operator|*
 name|image
 operator|=
-name|GPOINTER_TO_INT
-argument_list|(
 name|list
 operator|->
 name|data
-argument_list|)
 expr_stmt|;
 name|list
 operator|=
@@ -4179,12 +4198,9 @@ control|)
 block|{
 name|gimp_display_new
 argument_list|(
-name|GPOINTER_TO_INT
-argument_list|(
 name|list
 operator|->
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4562,14 +4578,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_paths (TIFF * tif,gint image,gint width,gint height,gint offset_x,gint offset_y)
+DECL|function|load_paths (TIFF * tif,GimpImage * image,gint width,gint height,gint offset_x,gint offset_y)
 name|load_paths
 parameter_list|(
 name|TIFF
 modifier|*
 name|tif
 parameter_list|,
-name|gint
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|gint
@@ -4895,7 +4912,8 @@ name|rec
 init|=
 name|pos
 decl_stmt|;
-name|gint32
+name|GimpVectors
+modifier|*
 name|vectors
 decl_stmt|;
 name|gdouble
@@ -4934,8 +4952,7 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 name|path_index
 argument_list|)

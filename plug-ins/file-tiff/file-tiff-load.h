@@ -27,7 +27,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2973b6750108
+DECL|struct|__anon2c4ffd0c0108
 block|{
 DECL|member|o_pages
 name|gint
@@ -67,7 +67,8 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 modifier|*
 name|image
 parameter_list|,

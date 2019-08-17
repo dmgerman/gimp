@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27724e0c0108
+DECL|struct|__anon2b20eda90108
 block|{
 DECL|member|compression
 name|gint
@@ -75,10 +75,12 @@ name|TiffSaveVals
 modifier|*
 name|tsvals
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|orig_image
 parameter_list|,
 specifier|const

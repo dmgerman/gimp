@@ -215,10 +215,12 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
-name|gint32
+name|GimpDrawable
+modifier|*
 name|drawable
 parameter_list|,
 name|GFile
@@ -241,7 +243,8 @@ specifier|static
 name|gboolean
 name|image_is_monochrome
 parameter_list|(
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|)
 function_decl|;
@@ -252,7 +255,8 @@ specifier|static
 name|gboolean
 name|image_is_multi_layer
 parameter_list|(
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|)
 function_decl|;
@@ -722,10 +726,11 @@ decl_stmt|;
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 init|=
-literal|0
+name|NULL
 decl_stmt|;
 name|gboolean
 name|resolution_loaded
@@ -793,9 +798,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|image
-operator|<
-literal|1
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -899,7 +903,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|tiff_save (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image,gint32 drawable,GFile * file,const GimpValueArray * args,gpointer run_data)
+DECL|function|tiff_save (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,GFile * file,const GimpValueArray * args,gpointer run_data)
 name|tiff_save
 parameter_list|(
 name|GimpProcedure
@@ -909,10 +913,12 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
-name|gint32
+name|GimpDrawable
+modifier|*
 name|drawable
 parameter_list|,
 name|GFile
@@ -944,7 +950,8 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
-name|gint32
+name|GimpImage
+modifier|*
 name|orig_image
 init|=
 name|image
@@ -1578,10 +1585,11 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|image_is_monochrome (gint32 image)
+DECL|function|image_is_monochrome (GimpImage * image)
 name|image_is_monochrome
 parameter_list|(
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -1599,10 +1607,10 @@ name|FALSE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
 name|image
-operator|!=
-operator|-
-literal|1
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1721,14 +1729,15 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|image_is_multi_layer (gint32 image)
+DECL|function|image_is_multi_layer (GimpImage * image)
 name|image_is_multi_layer
 parameter_list|(
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|)
 block|{
-name|gint32
+name|GList
 modifier|*
 name|layers
 decl_stmt|;
@@ -1740,12 +1749,16 @@ operator|=
 name|gimp_image_get_layers
 argument_list|(
 name|image
-argument_list|,
-operator|&
-name|n_layers
 argument_list|)
 expr_stmt|;
-name|g_free
+name|n_layers
+operator|=
+name|g_list_length
+argument_list|(
+name|layers
+argument_list|)
+expr_stmt|;
+name|g_list_free
 argument_list|(
 name|layers
 argument_list|)
