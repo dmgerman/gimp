@@ -350,8 +350,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brushes-refresh"
-argument_list|,
 literal|"Refresh current brushes. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all brushes currently in the user's brush path and updates the brush dialogs accordingly."
@@ -398,8 +396,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brushes-get-list"
 argument_list|,
 literal|"Retrieve a complete listing of the available brushes."
 argument_list|,

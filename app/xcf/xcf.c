@@ -426,8 +426,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-xcf-save"
-argument_list|,
 literal|"Saves file in the .xcf file format"
 argument_list|,
 literal|"The XCF file format has been designed "
@@ -688,8 +686,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-xcf-load"
 argument_list|,
 literal|"Loads file saved in the .xcf file format"
 argument_list|,

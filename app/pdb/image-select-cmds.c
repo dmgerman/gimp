@@ -1617,8 +1617,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-select-color"
-argument_list|,
 literal|"Create a selection by selecting all pixels (in the specified drawable) with the same (or similar) color to that specified."
 argument_list|,
 literal|"This tool creates a selection over the specified image. A by-color selection is determined by the supplied color under the constraints of the current context settings. Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold and criterion context values) are included in the selection. To select transparent regions, the color specified must also have minimum alpha.\n"
@@ -1753,8 +1751,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-select-contiguous-color"
 argument_list|,
 literal|"Create a selection by selecting all pixels around specified coordinates with the same (or similar) color to that at the coordinates."
 argument_list|,
@@ -1916,8 +1912,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-select-rectangle"
 argument_list|,
 literal|"Create a rectangular selection over the specified image;"
 argument_list|,
@@ -2099,8 +2093,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-select-round-rectangle"
 argument_list|,
 literal|"Create a rectangular selection with round corners over the specified image;"
 argument_list|,
@@ -2327,8 +2319,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-select-ellipse"
-argument_list|,
 literal|"Create an elliptical selection over the specified image."
 argument_list|,
 literal|"This tool creates an elliptical selection over the specified image. The elliptical region can be either added to, subtracted from, or replace the contents of the previous selection mask.\n"
@@ -2510,8 +2500,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-select-polygon"
-argument_list|,
 literal|"Create a polygonal selection over the specified image."
 argument_list|,
 literal|"This tool creates a polygonal selection over the specified image. The polygonal region can be either added to, subtracted from, or replace the contents of the previous selection mask. The polygon is specified through an array of floating point numbers and its length. The length of array must be 2n, where n is the number of points. Each point is defined by 2 floating point values which correspond to the x and y coordinates. If the final point does not connect to the starting point, a connecting segment is automatically added.\n"
@@ -2640,8 +2628,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-select-item"
 argument_list|,
 literal|"Transforms the specified item into a selection"
 argument_list|,

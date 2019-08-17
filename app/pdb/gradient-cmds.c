@@ -6061,8 +6061,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-new"
-argument_list|,
 literal|"Creates a new gradient"
 argument_list|,
 literal|"This procedure creates a new, uninitialized gradient"
@@ -6157,8 +6155,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-duplicate"
 argument_list|,
 literal|"Duplicates a gradient"
 argument_list|,
@@ -6255,8 +6251,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-is-editable"
-argument_list|,
 literal|"Tests if gradient can be edited"
 argument_list|,
 literal|"Returns TRUE if you have permission to change the gradient"
@@ -6345,8 +6339,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-rename"
 argument_list|,
 literal|"Rename a gradient"
 argument_list|,
@@ -6467,8 +6459,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-delete"
-argument_list|,
 literal|"Deletes a gradient"
 argument_list|,
 literal|"This procedure deletes a gradient"
@@ -6539,8 +6529,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-get-number-of-segments"
 argument_list|,
 literal|"Returns the number of segments of the specified gradient"
 argument_list|,
@@ -6634,8 +6622,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-get-uniform-samples"
 argument_list|,
 literal|"Sample the specified in uniform parts."
 argument_list|,
@@ -6785,8 +6771,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-get-custom-samples"
 argument_list|,
 literal|"Sample the specified gradient in custom positions."
 argument_list|,
@@ -6953,8 +6937,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-get-left-color"
-argument_list|,
 literal|"Retrieves the left endpoint color of the specified segment"
 argument_list|,
 literal|"This procedure retrieves the left endpoint color of the specified segment of the specified gradient."
@@ -7091,8 +7073,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-set-left-color"
-argument_list|,
 literal|"Sets the left endpoint color of the specified segment"
 argument_list|,
 literal|"This procedure sets the left endpoint color of the specified segment of the specified gradient."
@@ -7227,8 +7207,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-segment-get-right-color"
 argument_list|,
 literal|"Retrieves the right endpoint color of the specified segment"
 argument_list|,
@@ -7366,8 +7344,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-set-right-color"
-argument_list|,
 literal|"Sets the right endpoint color of the specified segment"
 argument_list|,
 literal|"This procedure sets the right endpoint color of the specified segment of the specified gradient."
@@ -7503,8 +7479,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-get-left-pos"
-argument_list|,
 literal|"Retrieves the left endpoint position of the specified segment"
 argument_list|,
 literal|"This procedure retrieves the left endpoint position of the specified segment of the specified gradient."
@@ -7620,8 +7594,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-segment-set-left-pos"
 argument_list|,
 literal|"Sets the left endpoint position of the specified segment"
 argument_list|,
@@ -7762,8 +7734,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-get-middle-pos"
-argument_list|,
 literal|"Retrieves the middle point position of the specified segment"
 argument_list|,
 literal|"This procedure retrieves the middle point position of the specified segment of the specified gradient."
@@ -7879,8 +7849,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-segment-set-middle-pos"
 argument_list|,
 literal|"Sets the middle point position of the specified segment"
 argument_list|,
@@ -8021,8 +7989,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-get-right-pos"
-argument_list|,
 literal|"Retrieves the right endpoint position of the specified segment"
 argument_list|,
 literal|"This procedure retrieves the right endpoint position of the specified segment of the specified gradient."
@@ -8138,8 +8104,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-segment-set-right-pos"
 argument_list|,
 literal|"Sets the right endpoint position of the specified segment"
 argument_list|,
@@ -8280,8 +8244,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-get-blending-function"
-argument_list|,
 literal|"Retrieves the gradient segment's blending function"
 argument_list|,
 literal|"This procedure retrieves the blending function of the segment at the specified gradient name and segment index."
@@ -8395,8 +8357,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-get-coloring-type"
-argument_list|,
 literal|"Retrieves the gradient segment's coloring type"
 argument_list|,
 literal|"This procedure retrieves the coloring type of the segment at the specified gradient name and segment index."
@@ -8509,8 +8469,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-segment-range-set-blending-function"
 argument_list|,
 literal|"Change the blending function of a segments range"
 argument_list|,
@@ -8647,8 +8605,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-range-set-coloring-type"
-argument_list|,
 literal|"Change the coloring type of a segments range"
 argument_list|,
 literal|"This function changes the coloring type of a segment range to the specified coloring type."
@@ -8784,8 +8740,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-range-flip"
-argument_list|,
 literal|"Flip the segment range"
 argument_list|,
 literal|"This function flips a segment range."
@@ -8900,8 +8854,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-segment-range-replicate"
 argument_list|,
 literal|"Replicate the segment range"
 argument_list|,
@@ -9040,8 +8992,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-range-split-midpoint"
-argument_list|,
 literal|"Splits each segment in the segment range at midpoint"
 argument_list|,
 literal|"This function splits each segment in the segment range at its midpoint."
@@ -9156,8 +9106,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-segment-range-split-uniform"
 argument_list|,
 literal|"Splits each segment in the segment range uniformly"
 argument_list|,
@@ -9296,8 +9244,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-range-delete"
-argument_list|,
 literal|"Delete the segment range"
 argument_list|,
 literal|"This function deletes a segment range."
@@ -9412,8 +9358,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-segment-range-redistribute-handles"
 argument_list|,
 literal|"Uniformly redistribute the segment range's handles"
 argument_list|,
@@ -9530,8 +9474,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-range-blend-colors"
-argument_list|,
 literal|"Blend the colors of the segment range."
 argument_list|,
 literal|"This function blends the colors (but not the opacity) of the segments' range of the gradient. Using it, the colors' transition will be uniform across the range."
@@ -9647,8 +9589,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradient-segment-range-blend-opacity"
-argument_list|,
 literal|"Blend the opacity of the segment range."
 argument_list|,
 literal|"This function blends the opacity (but not the colors) of the segments' range of the gradient. Using it, the opacity's transition will be uniform across the range."
@@ -9763,8 +9703,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradient-segment-range-move"
 argument_list|,
 literal|"Move the position of an entire segment range by a delta."
 argument_list|,

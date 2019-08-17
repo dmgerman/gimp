@@ -5910,8 +5910,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-new"
-argument_list|,
 literal|"Creates a new empty vectors object."
 argument_list|,
 literal|"Creates a new empty vectors object. The vectors object needs to be added to the image using 'gimp-image-insert-vectors'."
@@ -6027,8 +6025,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-new-from-text-layer"
-argument_list|,
 literal|"Creates a new vectors object from a text layer."
 argument_list|,
 literal|"Creates a new vectors object from a text layer. The vectors object needs to be added to the image using 'gimp-image-insert-vectors'."
@@ -6142,8 +6138,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-copy"
-argument_list|,
 literal|"Copy a vectors object."
 argument_list|,
 literal|"This procedure copies the specified vectors object and returns the copy."
@@ -6234,8 +6228,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-get-strokes"
 argument_list|,
 literal|"List the strokes associated with the passed path."
 argument_list|,
@@ -6343,8 +6335,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-stroke-get-length"
 argument_list|,
 literal|"Measure the length of the given stroke."
 argument_list|,
@@ -6482,8 +6472,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-stroke-get-point-at-dist"
 argument_list|,
 literal|"Get point at a specified distance along the stroke."
 argument_list|,
@@ -6709,8 +6697,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-remove-stroke"
-argument_list|,
 literal|"remove the stroke from a vectors object."
 argument_list|,
 literal|"Remove the stroke from a vectors object."
@@ -6802,8 +6788,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-stroke-close"
-argument_list|,
 literal|"closes the specified stroke."
 argument_list|,
 literal|"Closes the specified stroke."
@@ -6894,8 +6878,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-stroke-translate"
 argument_list|,
 literal|"translate the given stroke."
 argument_list|,
@@ -7031,8 +7013,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-stroke-scale"
 argument_list|,
 literal|"scales the given stroke."
 argument_list|,
@@ -7170,8 +7150,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-stroke-rotate"
 argument_list|,
 literal|"rotates the given stroke."
 argument_list|,
@@ -7333,8 +7311,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-stroke-flip"
-argument_list|,
 literal|"flips the given stroke."
 argument_list|,
 literal|"Rotates the given stroke around given center by angle (in degrees)."
@@ -7483,8 +7459,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-stroke-flip-free"
 argument_list|,
 literal|"flips the given stroke about an arbitrary axis."
 argument_list|,
@@ -7669,8 +7643,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-stroke-get-points"
-argument_list|,
 literal|"returns the control points of a stroke."
 argument_list|,
 literal|"returns the control points of a stroke. The interpretation of the coordinates returned depends on the type of the stroke. For Gimp 2.4 this is always a bezier stroke, where the coordinates are the control points."
@@ -7838,8 +7810,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-stroke-new-from-points"
-argument_list|,
 literal|"Adds a stroke of a given type to the vectors object."
 argument_list|,
 literal|"Adds a stroke of a given type to the vectors object. The coordinates of the control points can be specified. For now only strokes of the type GIMP_VECTORS_STROKE_TYPE_BEZIER are supported. The control points are specified as a pair of float values for the x- and y-coordinate. The Bezier stroke type needs a multiple of three control points. Each Bezier segment endpoint (anchor, A) has two additional control points (C) associated. They are specified in the order CACCACCAC..."
@@ -8006,8 +7976,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-stroke-interpolate"
 argument_list|,
 literal|"returns polygonal approximation of the stroke."
 argument_list|,
@@ -8179,8 +8147,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-bezier-stroke-new-moveto"
-argument_list|,
 literal|"Adds a bezier stroke with a single moveto to the vectors object."
 argument_list|,
 literal|"Adds a bezier stroke with a single moveto to the vectors object."
@@ -8318,8 +8284,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-bezier-stroke-lineto"
-argument_list|,
 literal|"Extends a bezier stroke with a lineto."
 argument_list|,
 literal|"Extends a bezier stroke with a lineto."
@@ -8456,8 +8420,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-bezier-stroke-conicto"
 argument_list|,
 literal|"Extends a bezier stroke with a conic bezier spline."
 argument_list|,
@@ -8641,8 +8603,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-bezier-stroke-cubicto"
 argument_list|,
 literal|"Extends a bezier stroke with a cubic bezier spline."
 argument_list|,
@@ -8873,8 +8833,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-bezier-stroke-new-ellipse"
-argument_list|,
 literal|"Adds a bezier stroke describing an ellipse the vectors object."
 argument_list|,
 literal|"Adds a bezier stroke describing an ellipse the vectors object."
@@ -9081,8 +9039,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-import-from-file"
-argument_list|,
 literal|"Import paths from an SVG file."
 argument_list|,
 literal|"This procedure imports paths from an SVG file. SVG elements other than paths and basic shapes are ignored."
@@ -9249,8 +9205,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-import-from-string"
 argument_list|,
 literal|"Import paths from an SVG string."
 argument_list|,
@@ -9441,8 +9395,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-vectors-export-to-file"
-argument_list|,
 literal|"save a path as an SVG file."
 argument_list|,
 literal|"This procedure creates an SVG file to save a Vectors object, that is, a path. The resulting file can be edited using a vector graphics application, or later reloaded into GIMP. If you pass 0 as the 'vectors' argument, then all paths in the image will be exported."
@@ -9559,8 +9511,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-vectors-export-to-string"
 argument_list|,
 literal|"Save a path as an SVG string."
 argument_list|,

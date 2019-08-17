@@ -670,8 +670,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-floating-sel-remove"
-argument_list|,
 literal|"Remove the specified floating selection from its associated drawable."
 argument_list|,
 literal|"This procedure removes the floating selection completely, without any side effects. The associated drawable is then set to active."
@@ -740,8 +738,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-floating-sel-anchor"
 argument_list|,
 literal|"Anchor the specified floating selection to its associated drawable."
 argument_list|,
@@ -812,8 +808,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-floating-sel-to-layer"
-argument_list|,
 literal|"Transforms the specified floating selection into a layer."
 argument_list|,
 literal|"This procedure transforms the specified floating selection into a layer with the same offsets and extents. The composited image will look precisely the same, but the floating selection layer will no longer be clipped to the extents of the drawable it was attached to. The floating selection will become the active layer. This procedure will not work if the floating selection has a different base type from the underlying image. This might be the case if the floating selection is above an auxiliary channel or a layer mask."
@@ -882,8 +876,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-floating-sel-attach"
 argument_list|,
 literal|"Attach the specified layer as floating to the specified drawable."
 argument_list|,

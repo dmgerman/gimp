@@ -1626,8 +1626,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-channel-new"
-argument_list|,
 literal|"Create a new channel."
 argument_list|,
 literal|"This procedure creates a new channel with the specified width, height, name, opacity and color.\n"
@@ -1831,8 +1829,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-channel-new-from-component"
-argument_list|,
 literal|"Create a new channel from a color component"
 argument_list|,
 literal|"This procedure creates a new channel from a color component.\n"
@@ -1969,8 +1965,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-channel-copy"
-argument_list|,
 literal|"Copy a channel."
 argument_list|,
 literal|"This procedure copies the specified channel and returns the copy.\n"
@@ -2062,8 +2056,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-channel-combine-masks"
 argument_list|,
 literal|"Combine two channel masks."
 argument_list|,
@@ -2220,8 +2212,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-channel-get-show-masked"
-argument_list|,
 literal|"Get the composite method of the specified channel."
 argument_list|,
 literal|"This procedure returns the specified channel's composite method. If it is TRUE, then the channel is composited with the image so that masked regions are shown. Otherwise, selected regions are shown."
@@ -2309,8 +2299,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-channel-set-show-masked"
-argument_list|,
 literal|"Set the composite method of the specified channel."
 argument_list|,
 literal|"This procedure sets the specified channel's composite method. If it is TRUE, then the channel is composited with the image so that masked regions are shown. Otherwise, selected regions are shown."
@@ -2397,8 +2385,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-channel-get-opacity"
 argument_list|,
 literal|"Get the opacity of the specified channel."
 argument_list|,
@@ -2491,8 +2477,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-channel-set-opacity"
-argument_list|,
 literal|"Set the opacity of the specified channel."
 argument_list|,
 literal|"This procedure sets the specified channel's opacity."
@@ -2584,8 +2568,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-channel-get-color"
-argument_list|,
 literal|"Get the compositing color of the specified channel."
 argument_list|,
 literal|"This procedure returns the specified channel's compositing color."
@@ -2674,8 +2656,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-channel-set-color"
 argument_list|,
 literal|"Set the compositing color of the specified channel."
 argument_list|,

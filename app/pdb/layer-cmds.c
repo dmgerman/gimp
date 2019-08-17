@@ -5197,8 +5197,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-new"
-argument_list|,
 literal|"Create a new layer."
 argument_list|,
 literal|"This procedure creates a new layer with the specified width, height, and type. Name, opacity, and mode are also supplied parameters. The new layer still needs to be added to the image, as this is not automatic. Add the new layer with the 'gimp-image-insert-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
@@ -5420,8 +5418,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-new-from-visible"
-argument_list|,
 literal|"Create a new layer from what is visible in an image."
 argument_list|,
 literal|"This procedure creates a new layer from what is visible in the given image. The new layer still needs to be added to the destination image, as this is not automatic. Add the new layer with the 'gimp-image-insert-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
@@ -5559,8 +5555,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-new-from-drawable"
-argument_list|,
 literal|"Create a new layer by copying an existing drawable."
 argument_list|,
 literal|"This procedure creates a new layer as a copy of the specified drawable. The new layer still needs to be added to the image, as this is not automatic. Add the new layer with the 'gimp-image-insert-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
@@ -5674,8 +5668,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-group-new"
-argument_list|,
 literal|"Create a new layer group."
 argument_list|,
 literal|"This procedure creates a new layer group. Attributes such as layer mode and opacity should be set with explicit procedure calls. Add the new layer group (which is a kind of layer) with the 'gimp-image-insert-layer' command.\n"
@@ -5767,8 +5759,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-copy"
 argument_list|,
 literal|"Copy a layer."
 argument_list|,
@@ -5879,8 +5869,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-add-alpha"
-argument_list|,
 literal|"Add an alpha channel to the layer if it doesn't already have one."
 argument_list|,
 literal|"This procedure adds an additional component to the specified layer if it does not already possess an alpha channel. An alpha channel makes it possible to clear and erase to transparency, instead of the background color. This transforms layers of type RGB to RGBA, GRAY to GRAYA, and INDEXED to INDEXEDA."
@@ -5950,8 +5938,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-flatten"
-argument_list|,
 literal|"Remove the alpha channel from the layer if it has one."
 argument_list|,
 literal|"This procedure removes the alpha channel from a layer, blending all (partially) transparent pixels in the layer against the background color. This transforms layers of type RGBA to RGB, GRAYA to GRAY, and INDEXEDA to INDEXED."
@@ -6020,8 +6006,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-scale"
 argument_list|,
 literal|"Scale the layer using the default interpolation method."
 argument_list|,
@@ -6153,8 +6137,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-resize"
 argument_list|,
 literal|"Resize the layer to the specified extents."
 argument_list|,
@@ -6313,8 +6295,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-resize-to-image-size"
-argument_list|,
 literal|"Resize a layer to the image size."
 argument_list|,
 literal|"This procedure resizes the layer so that it's new width and height are equal to the width and height of its image container."
@@ -6383,8 +6363,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-set-offsets"
 argument_list|,
 literal|"Set the layer offsets."
 argument_list|,
@@ -6498,8 +6476,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-create-mask"
 argument_list|,
 literal|"Create a layer mask for the specified layer."
 argument_list|,
@@ -6623,8 +6599,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-get-mask"
-argument_list|,
 literal|"Get the specified layer's mask if it exists."
 argument_list|,
 literal|"This procedure returns the specified layer's mask, or -1 if none exists."
@@ -6715,8 +6689,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-from-mask"
 argument_list|,
 literal|"Get the specified mask's layer."
 argument_list|,
@@ -6809,8 +6781,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-add-mask"
-argument_list|,
 literal|"Add a layer mask to the specified layer."
 argument_list|,
 literal|"This procedure adds a layer mask to the specified layer. Layer masks serve as an additional alpha channel for a layer. This procedure will fail if a number of prerequisites aren't met. The layer cannot already have a layer mask. The specified mask must exist and have the same dimensions as the layer. The layer must have been created for use with the specified image and the mask must have been created with the procedure 'gimp-layer-create-mask'."
@@ -6902,8 +6872,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-remove-mask"
-argument_list|,
 literal|"Remove the specified layer mask from the layer."
 argument_list|,
 literal|"This procedure removes the specified layer mask from the layer. If the mask doesn't exist, an error is returned."
@@ -6993,8 +6961,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-is-floating-sel"
-argument_list|,
 literal|"Is the specified layer a floating selection?"
 argument_list|,
 literal|"This procedure returns whether the layer is a floating selection. Floating selections are special cases of layers which are attached to a specific drawable."
@@ -7081,8 +7047,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-get-lock-alpha"
 argument_list|,
 literal|"Get the lock alpha channel setting of the specified layer."
 argument_list|,
@@ -7171,8 +7135,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-set-lock-alpha"
-argument_list|,
 literal|"Set the lock alpha channel setting of the specified layer."
 argument_list|,
 literal|"This procedure sets the specified layer's lock alpha channel setting."
@@ -7259,8 +7221,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-get-apply-mask"
 argument_list|,
 literal|"Get the apply mask setting of the specified layer."
 argument_list|,
@@ -7349,8 +7309,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-set-apply-mask"
-argument_list|,
 literal|"Set the apply mask setting of the specified layer."
 argument_list|,
 literal|"This procedure sets the specified layer's apply mask setting. This controls whether the layer's mask is currently affecting the alpha channel. If there is no layer mask, this function will return an error."
@@ -7437,8 +7395,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-get-show-mask"
 argument_list|,
 literal|"Get the show mask setting of the specified layer."
 argument_list|,
@@ -7527,8 +7483,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-set-show-mask"
-argument_list|,
 literal|"Set the show mask setting of the specified layer."
 argument_list|,
 literal|"This procedure sets the specified layer's show mask setting. This controls whether the layer or its mask is visible. TRUE indicates that the mask should be visible. If there is no layer mask, this function will return an error."
@@ -7615,8 +7569,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-get-edit-mask"
 argument_list|,
 literal|"Get the edit mask setting of the specified layer."
 argument_list|,
@@ -7705,8 +7657,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-set-edit-mask"
-argument_list|,
 literal|"Set the edit mask setting of the specified layer."
 argument_list|,
 literal|"This procedure sets the specified layer's edit mask setting. This controls whether the layer or it's mask is currently active for editing. If the specified layer has no layer mask, then this procedure will return an error."
@@ -7793,8 +7743,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-get-opacity"
 argument_list|,
 literal|"Get the opacity of the specified layer."
 argument_list|,
@@ -7887,8 +7835,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-set-opacity"
-argument_list|,
 literal|"Set the opacity of the specified layer."
 argument_list|,
 literal|"This procedure sets the specified layer's opacity."
@@ -7980,8 +7926,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-get-mode"
-argument_list|,
 literal|"Get the combination mode of the specified layer."
 argument_list|,
 literal|"This procedure returns the specified layer's combination mode."
@@ -8070,8 +8014,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-set-mode"
 argument_list|,
 literal|"Set the combination mode of the specified layer."
 argument_list|,
@@ -8162,8 +8104,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-get-blend-space"
-argument_list|,
 literal|"Get the blend space of the specified layer."
 argument_list|,
 literal|"This procedure returns the specified layer's blend space."
@@ -8252,8 +8192,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-set-blend-space"
 argument_list|,
 literal|"Set the blend space of the specified layer."
 argument_list|,
@@ -8344,8 +8282,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-get-composite-space"
-argument_list|,
 literal|"Get the composite space of the specified layer."
 argument_list|,
 literal|"This procedure returns the specified layer's composite space."
@@ -8434,8 +8370,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-set-composite-space"
 argument_list|,
 literal|"Set the composite space of the specified layer."
 argument_list|,
@@ -8526,8 +8460,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-layer-get-composite-mode"
-argument_list|,
 literal|"Get the composite mode of the specified layer."
 argument_list|,
 literal|"This procedure returns the specified layer's composite mode."
@@ -8616,8 +8548,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-layer-set-composite-mode"
 argument_list|,
 literal|"Set the composite mode of the specified layer."
 argument_list|,

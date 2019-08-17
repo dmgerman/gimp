@@ -4347,8 +4347,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-airbrush"
-argument_list|,
 literal|"Paint in the current brush with varying pressure. Paint application is time-dependent."
 argument_list|,
 literal|"This tool simulates the use of an airbrush. Paint pressure represents the relative intensity of the paint application. High pressure results in a thicker layer of paint while low pressure results in a thinner layer."
@@ -4478,8 +4476,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-airbrush-default"
-argument_list|,
 literal|"Paint in the current brush with varying pressure. Paint application is time-dependent."
 argument_list|,
 literal|"This tool simulates the use of an airbrush. It is similar to 'gimp-airbrush' except that the pressure is derived from the airbrush tools options box. It the option has not been set the default for the option will be used."
@@ -4586,8 +4582,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-clone"
 argument_list|,
 literal|"Clone from the source to the dest drawable using the current brush"
 argument_list|,
@@ -4784,8 +4778,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-clone-default"
-argument_list|,
 literal|"Clone from the source to the dest drawable using the current brush"
 argument_list|,
 literal|"This tool clones (copies) from the source drawable starting at the specified source coordinates to the dest drawable. This function performs exactly the same as the 'gimp-clone' function except that the tools arguments are obtained from the clones option dialog. It this dialog has not been activated then the dialogs default values will be used."
@@ -4892,8 +4884,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-convolve"
 argument_list|,
 literal|"Convolve (Blur, Sharpen) using the current brush."
 argument_list|,
@@ -5044,8 +5034,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-convolve-default"
-argument_list|,
 literal|"Convolve (Blur, Sharpen) using the current brush."
 argument_list|,
 literal|"This tool convolves the specified drawable with either a sharpening or blurring kernel. This function performs exactly the same as the 'gimp-convolve' function except that the tools arguments are obtained from the convolve option dialog. It this dialog has not been activated then the dialogs default values will be used."
@@ -5152,8 +5140,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-dodgeburn"
 argument_list|,
 literal|"Dodgeburn image with varying exposure."
 argument_list|,
@@ -5324,8 +5310,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-dodgeburn-default"
-argument_list|,
 literal|"Dodgeburn image with varying exposure. This is the same as the gimp_dodgeburn() function except that the exposure, type and mode are taken from the tools option dialog. If the dialog has not been activated then the defaults as used by the dialog will be used."
 argument_list|,
 literal|"Dodgeburn. More details here later."
@@ -5432,8 +5416,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-eraser"
 argument_list|,
 literal|"Erase using the current brush."
 argument_list|,
@@ -5582,8 +5564,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-eraser-default"
-argument_list|,
 literal|"Erase using the current brush."
 argument_list|,
 literal|"This tool erases using the current brush mask. This function performs exactly the same as the 'gimp-eraser' function except that the tools arguments are obtained from the eraser option dialog. It this dialog has not been activated then the dialogs default values will be used."
@@ -5690,8 +5670,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-heal"
 argument_list|,
 literal|"Heal from the source to the dest drawable using the current brush"
 argument_list|,
@@ -5868,8 +5846,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-heal-default"
-argument_list|,
 literal|"Heal from the source to the dest drawable using the current brush"
 argument_list|,
 literal|"This tool heals from the source drawable starting at the specified source coordinates to the dest drawable. This function performs exactly the same as the 'gimp-heal' function except that the tools arguments are obtained from the healing option dialog. It this dialog has not been activated then the dialogs default values will be used."
@@ -5976,8 +5952,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-paintbrush"
 argument_list|,
 literal|"Paint in the current brush with optional fade out parameter and pull colors from a gradient."
 argument_list|,
@@ -6150,8 +6124,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-paintbrush-default"
-argument_list|,
 literal|"Paint in the current brush. The fade out parameter and pull colors from a gradient parameter are set from the paintbrush options dialog. If this dialog has not been activated then the dialog defaults will be used."
 argument_list|,
 literal|"This tool is similar to the standard paintbrush. It draws linearly interpolated lines through the specified stroke coordinates. It operates on the specified drawable in the foreground color with the active brush. The 'fade-out' parameter is measured in pixels and allows the brush stroke to linearly fall off (value obtained from the option dialog). The pressure is set to the maximum at the beginning of the stroke. As the distance of the stroke nears the fade-out value, the pressure will approach zero. The gradient-length (value obtained from the option dialog) is the distance to spread the gradient over. It is measured in pixels. If the gradient-length is 0, no gradient is used."
@@ -6259,8 +6231,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-pencil"
-argument_list|,
 literal|"Paint in the current brush without sub-pixel sampling."
 argument_list|,
 literal|"This tool is the standard pencil. It draws linearly interpolated lines through the specified stroke coordinates. It operates on the specified drawable in the foreground color with the active brush. The brush mask is treated as though it contains only black and white values. Any value below half is treated as black; any above half, as white."
@@ -6367,8 +6337,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-smudge"
 argument_list|,
 literal|"Smudge image with varying pressure."
 argument_list|,
@@ -6498,8 +6466,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-smudge-default"
 argument_list|,
 literal|"Smudge image with varying pressure."
 argument_list|,

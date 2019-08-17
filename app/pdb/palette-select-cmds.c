@@ -519,8 +519,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-palettes-popup"
-argument_list|,
 literal|"Invokes the Gimp palette selection."
 argument_list|,
 literal|"This procedure opens the palette selection dialog."
@@ -640,8 +638,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-palettes-close-popup"
-argument_list|,
 literal|"Close the palette selection dialog."
 argument_list|,
 literal|"This procedure closes an opened palette selection dialog."
@@ -712,8 +708,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-palettes-set-popup"
 argument_list|,
 literal|"Sets the current palette in a palette selection dialog."
 argument_list|,

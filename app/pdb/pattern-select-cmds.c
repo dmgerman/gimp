@@ -519,8 +519,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-patterns-popup"
-argument_list|,
 literal|"Invokes the Gimp pattern selection."
 argument_list|,
 literal|"This procedure opens the pattern selection dialog."
@@ -640,8 +638,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-patterns-close-popup"
-argument_list|,
 literal|"Close the pattern selection dialog."
 argument_list|,
 literal|"This procedure closes an opened pattern selection dialog."
@@ -712,8 +708,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-patterns-set-popup"
 argument_list|,
 literal|"Sets the current pattern in a pattern selection dialog."
 argument_list|,

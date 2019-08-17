@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c3207b0103
+DECL|enum|__anon2c1ad70b0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1589,17 +1589,8 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-name|gimp_canonicalize_identifier
-argument_list|(
 name|str
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|procedure
-operator|->
-name|original_name
-operator|=
-name|str
 expr_stmt|;
 if|if
 condition|(
@@ -4671,9 +4662,10 @@ name|writer
 argument_list|,
 literal|"\"%s\" %d"
 argument_list|,
+name|gimp_object_get_name
+argument_list|(
 name|procedure
-operator|->
-name|original_name
+argument_list|)
 argument_list|,
 name|procedure
 operator|->

@@ -12246,8 +12246,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-is-valid"
-argument_list|,
 literal|"Returns TRUE if the image is valid."
 argument_list|,
 literal|"This procedure checks if the given image ID is valid and refers to an existing image."
@@ -12337,8 +12335,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-list"
-argument_list|,
 literal|"Returns the list of images currently open."
 argument_list|,
 literal|"This procedure returns the list of images currently open in GIMP."
@@ -12423,8 +12419,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-new"
 argument_list|,
 literal|"Creates a new image with the specified width, height, and type."
 argument_list|,
@@ -12560,8 +12554,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-new-with-precision"
 argument_list|,
 literal|"Creates a new image with the specified width, height, type and precision."
 argument_list|,
@@ -12716,8 +12708,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-duplicate"
-argument_list|,
 literal|"Duplicate the specified image"
 argument_list|,
 literal|"This procedure duplicates the specified image, copying all layers, channels, and image information."
@@ -12809,8 +12799,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-delete"
-argument_list|,
 literal|"Delete the specified image."
 argument_list|,
 literal|"If there are no displays associated with this image it will be deleted. This means that you can not delete an image through the PDB that was created by the user. If the associated display was however created through the PDB and you know the display ID, you may delete the display. Removal of the last associated display will then delete the image."
@@ -12879,8 +12867,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-base-type"
 argument_list|,
 literal|"Get the base type of the image."
 argument_list|,
@@ -12971,8 +12957,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-precision"
-argument_list|,
 literal|"Get the precision of the image."
 argument_list|,
 literal|"This procedure returns the image's precision."
@@ -13062,8 +13046,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-default-new-layer-mode"
-argument_list|,
 literal|"Get the default mode for newly created layers of this image."
 argument_list|,
 literal|"Returns the default mode for newly created layers of this image."
@@ -13152,8 +13134,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-width"
 argument_list|,
 literal|"Return the width of the image"
 argument_list|,
@@ -13246,8 +13226,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-height"
-argument_list|,
 literal|"Return the height of the image"
 argument_list|,
 literal|"This procedure returns the image's height. This value is independent of any of the layers in this image. This is the \"canvas\" height."
@@ -13338,8 +13316,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-layers"
 argument_list|,
 literal|"Returns the list of layers contained in the specified image."
 argument_list|,
@@ -13448,8 +13424,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-channels"
-argument_list|,
 literal|"Returns the list of channels contained in the specified image."
 argument_list|,
 literal|"This procedure returns the list of channels contained in the specified image. This does not include the selection mask, or layer masks. The order is from topmost to bottommost. Note that \"channels\" are custom channels and do not include the image's color components."
@@ -13556,8 +13530,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-vectors"
 argument_list|,
 literal|"Returns the list of vectors contained in the specified image."
 argument_list|,
@@ -13666,8 +13638,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-active-drawable"
-argument_list|,
 literal|"Get the image's active drawable"
 argument_list|,
 literal|"This procedure returns the ID of the image's active drawable. This can be either a layer, a channel, or a layer mask. The active drawable is specified by the active image channel. If that is -1, then by the active image layer. If the active image layer has a layer mask and the layer mask is in edit mode, then the layer mask is the active drawable."
@@ -13759,8 +13729,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-unset-active-channel"
-argument_list|,
 literal|"Unsets the active channel in the specified image."
 argument_list|,
 literal|"If an active channel exists, it is unset. There then exists no active channel, and if desired, one can be set through a call to 'Set Active Channel'. No error is returned in the case of no existing active channel."
@@ -13829,8 +13797,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-floating-sel"
 argument_list|,
 literal|"Return the floating selection of the image."
 argument_list|,
@@ -13923,8 +13889,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-floating-sel-attached-to"
-argument_list|,
 literal|"Return the drawable the floating selection is attached to."
 argument_list|,
 literal|"This procedure returns the drawable the image's floating selection is attached to, if it exists. If it doesn't exist, -1 is returned as the drawable ID."
@@ -14015,8 +13979,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-pick-color"
 argument_list|,
 literal|"Determine the color at the given drawable coordinates"
 argument_list|,
@@ -14235,8 +14197,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-pick-correlate-layer"
-argument_list|,
 literal|"Find the layer visible at the specified coordinates."
 argument_list|,
 literal|"This procedure finds the layer which is visible at the specified coordinates. Layers which do not qualify are those whose extents do not pass within the specified coordinates, or which are transparent at the specified coordinates. This procedure will return -1 if no layer is found."
@@ -14371,8 +14331,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-insert-layer"
 argument_list|,
 literal|"Add the specified layer to the image."
 argument_list|,
@@ -14509,8 +14467,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-remove-layer"
-argument_list|,
 literal|"Remove the specified layer from the image."
 argument_list|,
 literal|"This procedure removes the specified layer from the image. If the layer doesn't exist, an error is returned. If there are no layers left in the image, this call will fail. If this layer is the last layer remaining, the image will become empty and have no active layer."
@@ -14602,8 +14558,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-freeze-layers"
-argument_list|,
 literal|"Freeze the image's layer list."
 argument_list|,
 literal|"This procedure freezes the layer list of the image, suppressing any updates to the Layers dialog in response to changes to the image's layers. This can significantly improve performance while applying changes affecting the layer list.\n"
@@ -14675,8 +14629,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-thaw-layers"
-argument_list|,
 literal|"Thaw the image's layer list."
 argument_list|,
 literal|"This procedure thaws the layer list of the image, re-enabling updates to the Layers dialog.\n"
@@ -14747,8 +14699,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-insert-channel"
 argument_list|,
 literal|"Add the specified channel to the image."
 argument_list|,
@@ -14885,8 +14835,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-remove-channel"
-argument_list|,
 literal|"Remove the specified channel from the image."
 argument_list|,
 literal|"This procedure removes the specified channel from the image. If the channel doesn't exist, an error is returned."
@@ -14978,8 +14926,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-freeze-channels"
-argument_list|,
 literal|"Freeze the image's channel list."
 argument_list|,
 literal|"This procedure freezes the channel list of the image, suppressing any updates to the Channels dialog in response to changes to the image's channels. This can significantly improve performance while applying changes affecting the channel list.\n"
@@ -15051,8 +14997,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-thaw-channels"
-argument_list|,
 literal|"Thaw the image's channel list."
 argument_list|,
 literal|"This procedure thaws the channel list of the image, re-enabling updates to the Channels dialog.\n"
@@ -15123,8 +15067,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-insert-vectors"
 argument_list|,
 literal|"Add the specified vectors to the image."
 argument_list|,
@@ -15261,8 +15203,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-remove-vectors"
-argument_list|,
 literal|"Remove the specified path from the image."
 argument_list|,
 literal|"This procedure removes the specified path from the image. If the path doesn't exist, an error is returned."
@@ -15354,8 +15294,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-freeze-vectors"
-argument_list|,
 literal|"Freeze the image's vectors list."
 argument_list|,
 literal|"This procedure freezes the vectors list of the image, suppressing any updates to the Paths dialog in response to changes to the image's vectors. This can significantly improve performance while applying changes affecting the vectors list.\n"
@@ -15427,8 +15365,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-thaw-vectors"
-argument_list|,
 literal|"Thaw the image's vectors list."
 argument_list|,
 literal|"This procedure thaws the vectors list of the image, re-enabling updates to the Paths dialog.\n"
@@ -15499,8 +15435,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-item-position"
 argument_list|,
 literal|"Returns the position of the item in its level of its item tree."
 argument_list|,
@@ -15615,8 +15549,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-raise-item"
-argument_list|,
 literal|"Raise the specified item in its level in its item tree"
 argument_list|,
 literal|"This procedure raises the specified item one step in the item tree. The procedure call will fail if there is no item above it."
@@ -15707,8 +15639,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-lower-item"
 argument_list|,
 literal|"Lower the specified item in its level in its item tree"
 argument_list|,
@@ -15801,8 +15731,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-raise-item-to-top"
-argument_list|,
 literal|"Raise the specified item to the top of its level in its item tree"
 argument_list|,
 literal|"This procedure raises the specified item to top of its level in the item tree. It will not move the item if there is no item above it."
@@ -15894,8 +15822,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-lower-item-to-bottom"
-argument_list|,
 literal|"Lower the specified item to the bottom of its level in its item tree"
 argument_list|,
 literal|"This procedure lowers the specified item to bottom of its level in the item tree. It will not move the layer if there is no layer below it."
@@ -15986,8 +15912,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-reorder-item"
 argument_list|,
 literal|"Reorder the specified item within its item tree"
 argument_list|,
@@ -16124,8 +16048,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-flatten"
-argument_list|,
 literal|"Flatten all visible layers into a single layer. Discard all invisible layers."
 argument_list|,
 literal|"This procedure combines the visible layers in a manner analogous to merging with the CLIP_TO_IMAGE merge type. Non-visible layers are discarded, and the resulting image is stripped of its alpha channel."
@@ -16216,8 +16138,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-merge-visible-layers"
 argument_list|,
 literal|"Merge the visible image layers into one."
 argument_list|,
@@ -16344,8 +16264,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-merge-down"
 argument_list|,
 literal|"Merge the layer passed and the first visible layer below."
 argument_list|,
@@ -16495,8 +16413,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-colormap"
-argument_list|,
 literal|"Returns the image's colormap"
 argument_list|,
 literal|"This procedure returns an actual pointer to the image's colormap, as well as the number of bytes contained in the colormap. The actual number of colors in the transmitted colormap will be 'num-bytes' / 3. If the image is not in Indexed color mode, no colormap is returned."
@@ -16603,8 +16519,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-set-colormap"
 argument_list|,
 literal|"Sets the entries in the image's colormap."
 argument_list|,
@@ -16713,8 +16627,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-metadata"
-argument_list|,
 literal|"Returns the image's metadata."
 argument_list|,
 literal|"Returns exif/iptc/xmp metadata from the image."
@@ -16807,8 +16719,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-set-metadata"
 argument_list|,
 literal|"Set the image's metadata."
 argument_list|,
@@ -16903,8 +16813,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-clean-all"
-argument_list|,
 literal|"Set the image dirty count to 0."
 argument_list|,
 literal|"This procedure sets the specified image's dirty count to 0, allowing operations to occur without having a 'dirtied' image. This is especially useful for creating and loading images which should not initially be considered dirty, even though layers must be created, filled, and installed in the image. Note that save plug-ins must NOT call this function themselves after saving the image."
@@ -16973,8 +16881,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-is-dirty"
 argument_list|,
 literal|"Checks if the image has unsaved changes."
 argument_list|,
@@ -17062,8 +16968,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-thumbnail"
 argument_list|,
 literal|"Get a thumbnail of an image."
 argument_list|,
@@ -17282,8 +17186,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-active-layer"
-argument_list|,
 literal|"Returns the specified image's active layer."
 argument_list|,
 literal|"If there is an active layer, its ID will be returned, otherwise, -1. If a channel is currently active, then no layer will be. If a layer mask is active, then this will return the associated layer."
@@ -17374,8 +17276,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-set-active-layer"
 argument_list|,
 literal|"Sets the specified image's active layer."
 argument_list|,
@@ -17468,8 +17368,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-active-channel"
-argument_list|,
 literal|"Returns the specified image's active channel."
 argument_list|,
 literal|"If there is an active channel, this will return the channel ID, otherwise, -1."
@@ -17560,8 +17458,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-set-active-channel"
 argument_list|,
 literal|"Sets the specified image's active channel."
 argument_list|,
@@ -17654,8 +17550,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-active-vectors"
-argument_list|,
 literal|"Returns the specified image's active vectors."
 argument_list|,
 literal|"If there is an active path, its ID will be returned, otherwise, -1."
@@ -17746,8 +17640,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-set-active-vectors"
 argument_list|,
 literal|"Sets the specified image's active vectors."
 argument_list|,
@@ -17840,8 +17732,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-selection"
-argument_list|,
 literal|"Returns the specified image's selection."
 argument_list|,
 literal|"This will always return a valid ID for a selection -- which is represented as a channel internally."
@@ -17932,8 +17822,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-component-active"
 argument_list|,
 literal|"Returns if the specified image's image component is active."
 argument_list|,
@@ -18042,8 +17930,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-set-component-active"
-argument_list|,
 literal|"Sets if the specified image's image component is active."
 argument_list|,
 literal|"This procedure sets if the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is active or inactive -- whether or not it can be modified. If the specified component is not valid for the image type, an error is returned."
@@ -18150,8 +18036,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-component-visible"
 argument_list|,
 literal|"Returns if the specified image's image component is visible."
 argument_list|,
@@ -18260,8 +18144,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-set-component-visible"
-argument_list|,
 literal|"Sets if the specified image's image component is visible."
 argument_list|,
 literal|"This procedure sets if the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is visible or invisible -- whether or not it can be seen. If the specified component is not valid for the image type, an error is returned."
@@ -18369,8 +18251,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-filename"
-argument_list|,
 literal|"Returns the specified image's filename."
 argument_list|,
 literal|"This procedure returns the specified image's filename in the filesystem encoding. The image has a filename only if it was loaded or imported from a file or has since been saved or exported. Otherwise, this function returns %NULL. See also 'gimp-image-get-uri'."
@@ -18463,8 +18343,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-set-filename"
 argument_list|,
 literal|"Sets the specified image's filename."
 argument_list|,
@@ -18559,8 +18437,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-uri"
-argument_list|,
 literal|"Returns the URI for the specified image."
 argument_list|,
 literal|"This procedure returns the URI associated with the specified image. The image has an URI only if it was loaded or imported from a file or has since been saved or exported. Otherwise, this function returns %NULL. See also gimp-image-get-imported-uri to get the URI of the current file if it was imported from a non-GIMP file format and not yet saved, or gimp-image-get-exported-uri if the image has been exported to a non-GIMP file format."
@@ -18653,8 +18529,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-xcf-uri"
 argument_list|,
 literal|"Returns the XCF URI for the specified image."
 argument_list|,
@@ -18749,8 +18623,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-imported-uri"
-argument_list|,
 literal|"Returns the imported URI for the specified image."
 argument_list|,
 literal|"This procedure returns the URI associated with the specified image if the image was imported from a non-native Gimp format. If the image was not imported, or has since been saved in the native Gimp format, this procedure returns %NULL."
@@ -18843,8 +18715,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-exported-uri"
 argument_list|,
 literal|"Returns the exported URI for the specified image."
 argument_list|,
@@ -18939,8 +18809,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-name"
-argument_list|,
 literal|"Returns the specified image's name."
 argument_list|,
 literal|"This procedure returns the image's name. If the image has a filename or an URI, then the returned name contains the filename's or URI's base name (the last component of the path). Otherwise it is the translated string \"Untitled\". The returned name is formatted like the image name in the image window title, it may contain '[]', '(imported)' etc. and should only be used to label user interface elements. Never use it to construct filenames."
@@ -19033,8 +18901,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-resolution"
 argument_list|,
 literal|"Returns the specified image's resolution."
 argument_list|,
@@ -19151,8 +19017,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-set-resolution"
-argument_list|,
 literal|"Sets the specified image's resolution."
 argument_list|,
 literal|"This procedure sets the specified image's resolution in dots per inch. This value is independent of any of the layers in this image. No scaling or resizing is performed."
@@ -19268,8 +19132,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-unit"
-argument_list|,
 literal|"Returns the specified image's unit."
 argument_list|,
 literal|"This procedure returns the specified image's unit. This value is independent of any of the layers in this image. See the gimp_unit_*() procedure definitions for the valid range of unit IDs and a description of the unit system."
@@ -19360,8 +19222,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-set-unit"
 argument_list|,
 literal|"Sets the specified image's unit."
 argument_list|,
@@ -19454,8 +19314,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-tattoo-state"
-argument_list|,
 literal|"Returns the tattoo state associated with the image."
 argument_list|,
 literal|"This procedure returns the tattoo state of the image. Use only by save/load plug-ins that wish to preserve an images tattoo state. Using this function at other times will produce unexpected results."
@@ -19547,8 +19405,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-set-tattoo-state"
-argument_list|,
 literal|"Set the tattoo state associated with the image."
 argument_list|,
 literal|"This procedure sets the tattoo state of the image. Use only by save/load plug-ins that wish to preserve an images tattoo state. Using this function at other times will produce unexpected results. A full check of uniqueness of states in layers, channels and paths will be performed by this procedure and a execution failure will be returned if this fails. A failure will also be returned if the new tattoo state value is less than the maximum tattoo value from all of the tattoos from the paths, layers and channels. After the image data has been loaded and all the tattoos have been set then this is the last procedure that should be called. If effectively does a status check on the tattoo values that have been set to make sure that all is OK."
@@ -19639,8 +19495,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-layer-by-tattoo"
 argument_list|,
 literal|"Find a layer with a given tattoo in an image."
 argument_list|,
@@ -19755,8 +19609,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-channel-by-tattoo"
-argument_list|,
 literal|"Find a channel with a given tattoo in an image."
 argument_list|,
 literal|"This procedure returns the channel with the given tattoo in the specified image."
@@ -19870,8 +19722,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-vectors-by-tattoo"
-argument_list|,
 literal|"Find a vectors with a given tattoo in an image."
 argument_list|,
 literal|"This procedure returns the vectors with the given tattoo in the specified image."
@@ -19984,8 +19834,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-layer-by-name"
 argument_list|,
 literal|"Find a layer with a given name in an image."
 argument_list|,
@@ -20102,8 +19950,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-get-channel-by-name"
-argument_list|,
 literal|"Find a channel with a given name in an image."
 argument_list|,
 literal|"This procedure returns the channel with the given name in the specified image."
@@ -20218,8 +20064,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-vectors-by-name"
 argument_list|,
 literal|"Find a vectors with a given name in an image."
 argument_list|,
@@ -20336,8 +20180,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-attach-parasite"
-argument_list|,
 literal|"Add a parasite to an image."
 argument_list|,
 literal|"This procedure attaches a parasite to an image. It has no return values."
@@ -20422,8 +20264,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-detach-parasite"
 argument_list|,
 literal|"Removes a parasite from an image."
 argument_list|,
@@ -20517,8 +20357,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-parasite"
 argument_list|,
 literal|"Look up a parasite in an image"
 argument_list|,
@@ -20628,8 +20466,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-parasite-list"
 argument_list|,
 literal|"List all parasites."
 argument_list|,

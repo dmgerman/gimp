@@ -4428,8 +4428,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-get-format"
-argument_list|,
 literal|"Returns the drawable's Babl format"
 argument_list|,
 literal|"This procedure returns the drawable's Babl format.\n"
@@ -4523,8 +4521,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-get-thumbnail-format"
 argument_list|,
 literal|"Returns the drawable's thumbnail Babl format"
 argument_list|,
@@ -4620,8 +4616,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-type"
-argument_list|,
 literal|"Returns the drawable's type."
 argument_list|,
 literal|"This procedure returns the drawable's type."
@@ -4710,8 +4704,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-type-with-alpha"
 argument_list|,
 literal|"Returns the drawable's type with alpha."
 argument_list|,
@@ -4847,8 +4839,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-has-alpha"
-argument_list|,
 literal|"Returns TRUE if the drawable has an alpha channel."
 argument_list|,
 literal|"This procedure returns whether the specified drawable has an alpha channel. This can only be true for layers, and the associated type will be one of: { RGBA , GRAYA, INDEXEDA }."
@@ -4935,8 +4925,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-is-rgb"
 argument_list|,
 literal|"Returns whether the drawable is an RGB type."
 argument_list|,
@@ -5025,8 +5013,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-is-gray"
-argument_list|,
 literal|"Returns whether the drawable is a grayscale type."
 argument_list|,
 literal|"This procedure returns TRUE if the specified drawable is of type { Gray, GrayA }."
@@ -5114,8 +5100,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-is-indexed"
-argument_list|,
 literal|"Returns whether the drawable is an indexed type."
 argument_list|,
 literal|"This procedure returns TRUE if the specified drawable is of type { Indexed, IndexedA }."
@@ -5202,8 +5186,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-bpp"
 argument_list|,
 literal|"Returns the bytes per pixel."
 argument_list|,
@@ -5296,8 +5278,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-width"
-argument_list|,
 literal|"Returns the width of the drawable."
 argument_list|,
 literal|"This procedure returns the specified drawable's width in pixels."
@@ -5389,8 +5369,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-height"
-argument_list|,
 literal|"Returns the height of the drawable."
 argument_list|,
 literal|"This procedure returns the specified drawable's height in pixels."
@@ -5481,8 +5459,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-offsets"
 argument_list|,
 literal|"Returns the offsets for the drawable."
 argument_list|,
@@ -5596,8 +5572,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-mask-bounds"
 argument_list|,
 literal|"Find the bounding box of the current selection in relation to the specified drawable."
 argument_list|,
@@ -5775,8 +5749,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-mask-intersect"
-argument_list|,
 literal|"Find the bounding box of the current selection in relation to the specified drawable."
 argument_list|,
 literal|"This procedure returns whether there is an intersection between the drawable and the selection. Unlike 'gimp-drawable-mask-bounds', the intersection's bounds are returned as x, y, width, height.\n"
@@ -5953,8 +5925,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-merge-shadow"
-argument_list|,
 literal|"Merge the shadow buffer with the specified drawable."
 argument_list|,
 literal|"This procedure combines the contents of the drawable's shadow buffer (for temporary processing) with the specified drawable. The 'undo' parameter specifies whether to add an undo step for the operation. Requesting no undo is useful for such applications as 'auto-apply'."
@@ -6042,8 +6012,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-free-shadow"
-argument_list|,
 literal|"Free the specified drawable's shadow data (if it exists)."
 argument_list|,
 literal|"This procedure is intended as a memory saving device. If any shadow memory has been allocated, it will be freed automatically when the drawable is removed from the image, or when the plug-in procedure which allocated it returns."
@@ -6112,8 +6080,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-update"
 argument_list|,
 literal|"Update the specified region of the drawable."
 argument_list|,
@@ -6272,8 +6238,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-get-pixel"
-argument_list|,
 literal|"Gets the value of the pixel at the specified coordinates."
 argument_list|,
 literal|"This procedure gets the pixel value at the specified coordinates. The 'num_channels' argument must always be equal to the bytes-per-pixel value for the specified drawable."
@@ -6426,8 +6390,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-set-pixel"
 argument_list|,
 literal|"Sets the value of the pixel at the specified coordinates."
 argument_list|,
@@ -6582,8 +6544,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-fill"
-argument_list|,
 literal|"Fill the drawable with the specified fill mode."
 argument_list|,
 literal|"This procedure fills the drawable. If the fill mode is foreground the current foreground color is used. If the fill mode is background, the current background color is used. If the fill type is white, then white is used. Transparent fill only affects layers with an alpha channel, in which case the alpha channel is set to transparent. If the drawable has no alpha channel, it is filled to white. No fill leaves the drawable's contents undefined.\n"
@@ -6673,8 +6633,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-offset"
 argument_list|,
 literal|"Offset the drawable by the specified amounts in the X and Y directions"
 argument_list|,
@@ -6826,8 +6784,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-thumbnail"
 argument_list|,
 literal|"Get a thumbnail of a drawable."
 argument_list|,
@@ -7045,8 +7001,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-sub-thumbnail"
 argument_list|,
 literal|"Get a thumbnail of a sub-area of a drawable drawable."
 argument_list|,
@@ -7352,8 +7306,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-foreground-extract"
 argument_list|,
 literal|"Extract the foreground of a drawable using a given trimap."
 argument_list|,

@@ -112,6 +112,11 @@ DECL|member|parent_instance
 name|GimpProcedure
 name|parent_instance
 decl_stmt|;
+DECL|member|operation
+name|gchar
+modifier|*
+name|operation
+decl_stmt|;
 DECL|member|default_run_mode
 name|GimpRunMode
 name|default_run_mode

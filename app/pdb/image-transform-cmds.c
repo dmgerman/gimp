@@ -1009,8 +1009,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-resize"
-argument_list|,
 literal|"Resize the image to the specified extents."
 argument_list|,
 literal|"This procedure resizes the image so that it's new width and height are equal to the supplied parameters. Offsets are also provided which describe the position of the previous image's content. All channels within the image are resized according to the specified parameters; this includes the image selection mask. All layers within the image are repositioned according to the specified offsets."
@@ -1168,8 +1166,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-resize-to-layers"
-argument_list|,
 literal|"Resize the image to fit all layers."
 argument_list|,
 literal|"This procedure resizes the image to the bounding box of all layers of the image. All channels within the image are resized to the new size; this includes the image selection mask. All layers within the image are repositioned to the new image area."
@@ -1238,8 +1234,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-scale"
 argument_list|,
 literal|"Scale the image using the default interpolation method."
 argument_list|,
@@ -1353,8 +1347,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-crop"
 argument_list|,
 literal|"Crop the image to the specified extents."
 argument_list|,
@@ -1513,8 +1505,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-flip"
-argument_list|,
 literal|"Flips the image horizontally or vertically."
 argument_list|,
 literal|"This procedure flips (mirrors) the image."
@@ -1618,8 +1608,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-rotate"
 argument_list|,
 literal|"Rotates the image by the specified degrees."
 argument_list|,

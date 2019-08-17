@@ -4165,8 +4165,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-is-valid"
-argument_list|,
 literal|"Returns TRUE if the item is valid."
 argument_list|,
 literal|"This procedure checks if the given item ID is valid and refers to an existing item."
@@ -4255,8 +4253,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-get-image"
 argument_list|,
 literal|"Returns the item's image."
 argument_list|,
@@ -4349,8 +4345,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-delete"
-argument_list|,
 literal|"Delete a item."
 argument_list|,
 literal|"This procedure deletes the specified item. This must not be done if the image containing this item was already deleted or if the item was already removed from the image. The only case in which this procedure is useful is if you want to get rid of a item which has not yet been added to an image."
@@ -4419,8 +4413,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-is-drawable"
 argument_list|,
 literal|"Returns whether the item is a drawable."
 argument_list|,
@@ -4509,8 +4501,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-is-layer"
-argument_list|,
 literal|"Returns whether the item is a layer."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item is a layer."
@@ -4597,8 +4587,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-is-text-layer"
 argument_list|,
 literal|"Returns whether the item is a text layer."
 argument_list|,
@@ -4687,8 +4675,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-is-channel"
-argument_list|,
 literal|"Returns whether the item is a channel."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item is a channel."
@@ -4775,8 +4761,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-is-layer-mask"
 argument_list|,
 literal|"Returns whether the item is a layer mask."
 argument_list|,
@@ -4865,8 +4849,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-is-selection"
-argument_list|,
 literal|"Returns whether the item is a selection."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item is a selection."
@@ -4953,8 +4935,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-is-vectors"
 argument_list|,
 literal|"Returns whether the item is a vectors."
 argument_list|,
@@ -5043,8 +5023,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-is-group"
-argument_list|,
 literal|"Returns whether the item is a group item."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item is a group item which can have children."
@@ -5131,8 +5109,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-get-parent"
 argument_list|,
 literal|"Returns the item's parent item."
 argument_list|,
@@ -5224,8 +5200,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-get-children"
 argument_list|,
 literal|"Returns the item's list of children."
 argument_list|,
@@ -5334,8 +5308,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-get-expanded"
-argument_list|,
 literal|"Returns whether the item is expanded."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item is expanded."
@@ -5423,8 +5395,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-set-expanded"
-argument_list|,
 literal|"Sets the expanded state of the item."
 argument_list|,
 literal|"This procedure expands or collapses the item."
@@ -5511,8 +5481,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-get-name"
 argument_list|,
 literal|"Get the name of the specified item."
 argument_list|,
@@ -5607,8 +5575,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-set-name"
-argument_list|,
 literal|"Set the name of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's name."
@@ -5702,8 +5668,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-get-visible"
-argument_list|,
 literal|"Get the visibility of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's visibility."
@@ -5790,8 +5754,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-set-visible"
 argument_list|,
 literal|"Set the visibility of the specified item."
 argument_list|,
@@ -5880,8 +5842,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-get-linked"
-argument_list|,
 literal|"Get the linked state of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's linked state."
@@ -5968,8 +5928,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-set-linked"
 argument_list|,
 literal|"Set the linked state of the specified item."
 argument_list|,
@@ -6058,8 +6016,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-get-lock-content"
-argument_list|,
 literal|"Get the 'lock content' state of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's lock content state."
@@ -6146,8 +6102,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-set-lock-content"
 argument_list|,
 literal|"Set the 'lock content' state of the specified item."
 argument_list|,
@@ -6236,8 +6190,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-get-lock-position"
-argument_list|,
 literal|"Get the 'lock position' state of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's lock position state."
@@ -6325,8 +6277,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-set-lock-position"
-argument_list|,
 literal|"Set the 'lock position' state of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's lock position state."
@@ -6413,8 +6363,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-get-color-tag"
 argument_list|,
 literal|"Get the color tag of the specified item."
 argument_list|,
@@ -6505,8 +6453,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-set-color-tag"
-argument_list|,
 literal|"Set the color tag of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's color tag."
@@ -6595,8 +6541,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-get-tattoo"
 argument_list|,
 literal|"Get the tattoo of the specified item."
 argument_list|,
@@ -6689,8 +6633,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-set-tattoo"
-argument_list|,
 literal|"Set the tattoo of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's tattoo. A tattoo is a unique and permanent identifier attached to a item that can be used to uniquely identify a item within an image even between sessions."
@@ -6782,8 +6724,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-attach-parasite"
-argument_list|,
 literal|"Add a parasite to an item."
 argument_list|,
 literal|"This procedure attaches a parasite to an item. It has no return values."
@@ -6868,8 +6808,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-detach-parasite"
 argument_list|,
 literal|"Removes a parasite from an item."
 argument_list|,
@@ -6963,8 +6901,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-get-parasite"
 argument_list|,
 literal|"Look up a parasite in an item"
 argument_list|,
@@ -7074,8 +7010,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-get-parasite-list"
 argument_list|,
 literal|"List all parasites."
 argument_list|,

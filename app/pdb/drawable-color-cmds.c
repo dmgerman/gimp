@@ -3348,8 +3348,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-brightness-contrast"
-argument_list|,
 literal|"Modify brightness/contrast in the specified drawable."
 argument_list|,
 literal|"This procedures allows the brightness and contrast of the specified drawable to be modified. Both 'brightness' and 'contrast' parameters are defined between -0.5 and 0.5."
@@ -3466,8 +3464,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-color-balance"
 argument_list|,
 literal|"Modify the color balance of the specified drawable."
 argument_list|,
@@ -3648,8 +3644,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-colorize-hsl"
-argument_list|,
 literal|"Render the drawable as a grayscale image seen through a colored glass."
 argument_list|,
 literal|"Desaturates the drawable, then tints it with the specified color. This tool is only valid on RGB color images. It will not operate on grayscale drawables."
@@ -3787,8 +3781,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-curves-explicit"
-argument_list|,
 literal|"Modifies the intensity curve(s) for specified drawable."
 argument_list|,
 literal|"Modifies the intensity mapping for one channel in the specified drawable. The channel can be either an intensity component, or the value. The 'values' parameter is an array of doubles which explicitly defines how each pixel value in the drawable will be modified. Use the 'gimp-curves-spline' function to modify intensity levels with Catmull Rom splines."
@@ -3915,8 +3907,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-curves-spline"
 argument_list|,
 literal|"Modifies the intensity curve(s) for specified drawable."
 argument_list|,
@@ -4045,8 +4035,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-desaturate"
-argument_list|,
 literal|"Desaturate the contents of the specified drawable, with the specified formula."
 argument_list|,
 literal|"This procedure desaturates the contents of the specified drawable, with the specified formula. This procedure only works on drawables of type RGB color."
@@ -4136,8 +4124,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-equalize"
-argument_list|,
 literal|"Equalize the contents of the specified drawable."
 argument_list|,
 literal|"This procedure equalizes the contents of the specified drawable. Each intensity channel is equalized independently. The equalized intensity is given as inten' = (255 - inten). The 'mask_only' option specifies whether to adjust only the area of the image within the selection bounds, or the entire image based on the histogram of the selected area. If there is no selection, the entire image is adjusted based on the histogram for the entire image."
@@ -4224,8 +4210,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-histogram"
 argument_list|,
 literal|"Returns information on the intensity histogram for the specified drawable."
 argument_list|,
@@ -4498,8 +4482,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-hue-saturation"
-argument_list|,
 literal|"Modify hue, lightness, and saturation in the specified drawable."
 argument_list|,
 literal|"This procedure allows the hue, lightness, and saturation in the specified drawable to be modified. The 'hue-range' parameter provides the capability to limit range of affected hues. The 'overlap' parameter provides blending into neighboring hue channels when rendering."
@@ -4683,8 +4665,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-invert"
-argument_list|,
 literal|"Invert the contents of the specified drawable."
 argument_list|,
 literal|"This procedure inverts the contents of the specified drawable. Each intensity channel is inverted independently. The inverted intensity is given as inten' = (255 - inten). If 'linear' is TRUE, the drawable is inverted in linear space."
@@ -4771,8 +4751,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-levels"
 argument_list|,
 literal|"Modifies intensity levels in the specified drawable."
 argument_list|,
@@ -5009,8 +4987,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-levels-stretch"
-argument_list|,
 literal|"Automatically modifies intensity levels in the specified drawable."
 argument_list|,
 literal|"This procedure allows intensity levels in the specified drawable to be remapped according to a set of guessed parameters. It is equivalent to clicking the \"Auto\" button in the Levels tool."
@@ -5079,8 +5055,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-posterize"
 argument_list|,
 literal|"Posterize the specified drawable."
 argument_list|,
@@ -5172,8 +5146,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-threshold"
 argument_list|,
 literal|"Threshold the specified drawable."
 argument_list|,

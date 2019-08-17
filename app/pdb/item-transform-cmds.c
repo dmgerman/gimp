@@ -4684,8 +4684,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-transform-translate"
-argument_list|,
 literal|"Translate the item by the specified offsets."
 argument_list|,
 literal|"This procedure translates the item by the amounts specified in the off_x and off_y arguments. These can be negative, and are considered offsets from the current position. The offsets will be rounded to the nearest pixel unless the item is a path.\n"
@@ -4824,8 +4822,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-transform-flip-simple"
 argument_list|,
 literal|"Flip the specified item either vertically or horizontally."
 argument_list|,
@@ -4999,8 +4995,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-transform-flip"
 argument_list|,
 literal|"Flip the specified item around a given line."
 argument_list|,
@@ -5190,8 +5184,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-transform-perspective"
 argument_list|,
 literal|"Perform a possibly non-affine transformation on the specified item."
 argument_list|,
@@ -5476,8 +5468,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-transform-rotate-simple"
-argument_list|,
 literal|"Rotate the specified item about given coordinates through the specified angle."
 argument_list|,
 literal|"This function rotates the specified item.\n"
@@ -5658,8 +5648,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-transform-rotate"
 argument_list|,
 literal|"Rotate the specified item about given coordinates through the specified angle."
 argument_list|,
@@ -5844,8 +5832,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-transform-scale"
 argument_list|,
 literal|"Scale the specified item."
 argument_list|,
@@ -6038,8 +6024,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-item-transform-shear"
-argument_list|,
 literal|"Shear the specified item about its center by the specified magnitude."
 argument_list|,
 literal|"This procedure shears the specified item.\n"
@@ -6196,8 +6180,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-transform-2d"
 argument_list|,
 literal|"Transform the specified item in 2d."
 argument_list|,
@@ -6458,8 +6440,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-item-transform-matrix"
 argument_list|,
 literal|"Transform the specified item in 2d."
 argument_list|,

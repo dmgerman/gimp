@@ -868,8 +868,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gimprc-query"
-argument_list|,
 literal|"Queries the gimprc file parser for information on a specified token."
 argument_list|,
 literal|"This procedure is used to locate additional information contained in the gimprc file considered extraneous to the operation of GIMP. Plug-ins that need configuration information can expect it will be stored in the user gimprc file and can use this procedure to retrieve it. This query procedure will return the value associated with the specified token. This corresponds _only_ to entries with the format: (<token><value>). The value must be a string. Entries not corresponding to this format will cause warnings to be issued on gimprc parsing and will not be queryable."
@@ -964,8 +962,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gimprc-set"
 argument_list|,
 literal|"Sets a gimprc token to a value and saves it in the gimprc."
 argument_list|,
@@ -1062,8 +1058,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-get-default-comment"
-argument_list|,
 literal|"Get the default image comment as specified in the Preferences."
 argument_list|,
 literal|"Returns a copy of the default image comment."
@@ -1135,8 +1129,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-get-default-unit"
-argument_list|,
 literal|"Get the default unit (taken from the user's locale)."
 argument_list|,
 literal|"Returns the default unit's integer ID."
@@ -1205,8 +1197,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-get-monitor-resolution"
 argument_list|,
 literal|"Get the monitor resolution as specified in the Preferences."
 argument_list|,
@@ -1301,8 +1291,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-get-color-configuration"
-argument_list|,
 literal|"Get a serialized version of the color management configuration."
 argument_list|,
 literal|"Returns a string that can be deserialized into a GimpColorConfig object representing the current color management configuration."
@@ -1373,8 +1361,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-get-module-load-inhibit"
 argument_list|,
 literal|"Get the list of modules which should not be loaded."
 argument_list|,

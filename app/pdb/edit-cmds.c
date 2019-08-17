@@ -2111,8 +2111,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-edit-cut"
-argument_list|,
 literal|"Cut from the specified drawable."
 argument_list|,
 literal|"If there is a selection in the image, then the area specified by the selection is cut from the specified drawable and placed in an internal GIMP edit buffer. It can subsequently be retrieved using the 'gimp-edit-paste' command. If there is no selection, then the specified drawable will be removed and its contents stored in the internal GIMP edit buffer. This procedure will fail if the selected area lies completely outside the bounds of the current drawable and there is nothing to copy from."
@@ -2199,8 +2197,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-edit-copy"
 argument_list|,
 literal|"Copy from the specified drawable."
 argument_list|,
@@ -2289,8 +2285,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-edit-copy-visible"
-argument_list|,
 literal|"Copy from the projection."
 argument_list|,
 literal|"If there is a selection in the image, then the area specified by the selection is copied from the projection and placed in an internal GIMP edit buffer. It can subsequently be retrieved using the 'gimp-edit-paste' command. If there is no selection, then the projection's contents will be stored in the internal GIMP edit buffer."
@@ -2377,8 +2371,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-edit-paste"
 argument_list|,
 literal|"Paste buffer to the specified drawable."
 argument_list|,
@@ -2489,8 +2481,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-edit-paste-as-new-image"
-argument_list|,
 literal|"Paste buffer to a new image."
 argument_list|,
 literal|"This procedure pastes a copy of the internal GIMP edit buffer to a new image. The GIMP edit buffer will be empty unless a call was previously made to either 'gimp-edit-cut' or 'gimp-edit-copy'. This procedure returns the new image or -1 if the edit buffer was empty."
@@ -2559,8 +2549,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-edit-named-cut"
 argument_list|,
 literal|"Cut into a named buffer."
 argument_list|,
@@ -2679,8 +2667,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-edit-named-copy"
-argument_list|,
 literal|"Copy into a named buffer."
 argument_list|,
 literal|"This procedure works like 'gimp-edit-copy', but additionally stores the copied buffer into a named buffer that will stay available for later pasting, regardless of any intermediate copy or cut operations."
@@ -2798,8 +2784,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-edit-named-copy-visible"
-argument_list|,
 literal|"Copy from the projection into a named buffer."
 argument_list|,
 literal|"This procedure works like 'gimp-edit-copy-visible', but additionally stores the copied buffer into a named buffer that will stay available for later pasting, regardless of any intermediate copy or cut operations."
@@ -2916,8 +2900,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-edit-named-paste"
 argument_list|,
 literal|"Paste named buffer to the specified drawable."
 argument_list|,
@@ -3051,8 +3033,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-edit-named-paste-as-new-image"
 argument_list|,
 literal|"Paste named buffer to a new image."
 argument_list|,

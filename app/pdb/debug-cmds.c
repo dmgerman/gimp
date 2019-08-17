@@ -312,8 +312,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-debug-timer-start"
-argument_list|,
 literal|"Starts measuring elapsed time."
 argument_list|,
 literal|"This procedure starts a timer, measuring the elapsed time since the call. Each call to this procedure should be matched by a call to 'gimp-debug-timer-end', which returns the elapsed time.\n"
@@ -363,8 +361,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-debug-timer-end"
 argument_list|,
 literal|"Finishes measuring elapsed time."
 argument_list|,

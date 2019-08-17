@@ -344,8 +344,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-palettes-refresh"
-argument_list|,
 literal|"Refreshes current palettes. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all palettes currently in the user's palette path and updates the palette dialogs accordingly."
@@ -392,8 +390,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-palettes-get-list"
 argument_list|,
 literal|"Retrieves a list of all of the available palettes"
 argument_list|,

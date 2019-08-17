@@ -920,8 +920,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-version"
-argument_list|,
 literal|"Returns the host GIMP version."
 argument_list|,
 literal|"This procedure returns the version number of the currently running GIMP."
@@ -993,8 +991,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-getpid"
-argument_list|,
 literal|"Returns the PID of the host GIMP process."
 argument_list|,
 literal|"This procedure returns the process ID of the currently running GIMP."
@@ -1064,8 +1060,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-quit"
-argument_list|,
 literal|"Causes GIMP to exit gracefully."
 argument_list|,
 literal|"If there are unsaved images in an interactive GIMP session, the user will be asked for confirmation. If force is TRUE, the application is quit without querying the user to save any dirty images."
@@ -1131,8 +1125,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-attach-parasite"
-argument_list|,
 literal|"Add a global parasite."
 argument_list|,
 literal|"This procedure attaches a global parasite. It has no return values."
@@ -1195,8 +1187,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-detach-parasite"
 argument_list|,
 literal|"Removes a global parasite."
 argument_list|,
@@ -1268,8 +1258,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-get-parasite"
 argument_list|,
 literal|"Look up a global parasite."
 argument_list|,
@@ -1358,8 +1346,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-get-parasite-list"
-argument_list|,
 literal|"List all parasites."
 argument_list|,
 literal|"Returns a list of all currently attached global parasites."
@@ -1444,8 +1430,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-temp-name"
 argument_list|,
 literal|"Generates a unique filename."
 argument_list|,

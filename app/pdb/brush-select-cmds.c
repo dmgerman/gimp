@@ -657,8 +657,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brushes-popup"
-argument_list|,
 literal|"Invokes the Gimp brush selection."
 argument_list|,
 literal|"This procedure opens the brush selection dialog."
@@ -842,8 +840,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brushes-close-popup"
-argument_list|,
 literal|"Close the brush selection dialog."
 argument_list|,
 literal|"This procedure closes an opened brush selection dialog."
@@ -914,8 +910,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brushes-set-popup"
 argument_list|,
 literal|"Sets the current brush in a brush selection dialog."
 argument_list|,

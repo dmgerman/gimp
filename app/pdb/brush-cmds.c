@@ -3877,8 +3877,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brush-new"
-argument_list|,
 literal|"Creates a new brush."
 argument_list|,
 literal|"This procedure creates a new, uninitialized brush."
@@ -3973,8 +3971,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-duplicate"
 argument_list|,
 literal|"Duplicates a brush."
 argument_list|,
@@ -4071,8 +4067,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brush-is-generated"
-argument_list|,
 literal|"Tests if brush is generated."
 argument_list|,
 literal|"Returns TRUE if this brush is parametric, FALSE for other types."
@@ -4161,8 +4155,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-rename"
 argument_list|,
 literal|"Renames a brush."
 argument_list|,
@@ -4283,8 +4275,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brush-delete"
-argument_list|,
 literal|"Deletes a brush."
 argument_list|,
 literal|"This procedure deletes a brush."
@@ -4355,8 +4345,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-is-editable"
 argument_list|,
 literal|"Tests if brush can be edited."
 argument_list|,
@@ -4446,8 +4434,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-get-info"
 argument_list|,
 literal|"Retrieves information about the specified brush."
 argument_list|,
@@ -4607,8 +4593,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-get-pixels"
 argument_list|,
 literal|"Retrieves information about the specified brush."
 argument_list|,
@@ -4845,8 +4829,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brush-get-spacing"
-argument_list|,
 literal|"Gets the brush spacing."
 argument_list|,
 literal|"This procedure returns the spacing setting for the specified brush. The return value is an integer between 0 and 1000 which represents percentage of the maximum of the width and height of the mask."
@@ -4939,8 +4921,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-set-spacing"
 argument_list|,
 literal|"Sets the brush spacing."
 argument_list|,
@@ -5035,8 +5015,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brush-get-shape"
-argument_list|,
 literal|"Gets the shape of a generated brush."
 argument_list|,
 literal|"This procedure gets the shape value for a generated brush. If called for any other type of brush, it does not succeed. The current possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square (GIMP_BRUSH_GENERATED_SQUARE), and Diamond (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added in the future."
@@ -5127,8 +5105,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-set-shape"
 argument_list|,
 literal|"Sets the shape of a generated brush."
 argument_list|,
@@ -5241,8 +5217,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brush-get-radius"
-argument_list|,
 literal|"Gets the radius of a generated brush."
 argument_list|,
 literal|"This procedure gets the radius value for a generated brush. If called for any other type of brush, it does not succeed."
@@ -5336,8 +5310,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-set-radius"
 argument_list|,
 literal|"Sets the radius of a generated brush."
 argument_list|,
@@ -5456,8 +5428,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brush-get-spikes"
-argument_list|,
 literal|"Gets the number of spikes for a generated brush."
 argument_list|,
 literal|"This procedure gets the number of spikes for a generated brush. If called for any other type of brush, it does not succeed."
@@ -5550,8 +5520,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-set-spikes"
 argument_list|,
 literal|"Sets the number of spikes for a generated brush."
 argument_list|,
@@ -5668,8 +5636,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brush-get-hardness"
-argument_list|,
 literal|"Gets the hardness of a generated brush."
 argument_list|,
 literal|"This procedure gets the hardness of a generated brush. The hardness of a brush is the amount its intensity fades at the outside edge, as a float between 0.0 and 1.0. If called for any other type of brush, the function does not succeed."
@@ -5763,8 +5729,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-set-hardness"
 argument_list|,
 literal|"Sets the hardness of a generated brush."
 argument_list|,
@@ -5883,8 +5847,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brush-get-aspect-ratio"
-argument_list|,
 literal|"Gets the aspect ratio of a generated brush."
 argument_list|,
 literal|"This procedure gets the aspect ratio of a generated brush. If called for any other type of brush, it does not succeed. The return value is a float between 0.0 and 1000.0."
@@ -5978,8 +5940,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-set-aspect-ratio"
 argument_list|,
 literal|"Sets the aspect ratio of a generated brush."
 argument_list|,
@@ -6098,8 +6058,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-brush-get-angle"
-argument_list|,
 literal|"Gets the rotation angle of a generated brush."
 argument_list|,
 literal|"This procedure gets the angle of rotation for a generated brush. If called for any other type of brush, it does not succeed."
@@ -6193,8 +6151,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-brush-set-angle"
 argument_list|,
 literal|"Sets the rotation angle of a generated brush."
 argument_list|,

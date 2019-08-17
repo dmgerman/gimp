@@ -641,8 +641,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-pattern-get-info"
-argument_list|,
 literal|"Retrieve information about the specified pattern."
 argument_list|,
 literal|"This procedure retrieves information about the specified pattern. This includes the pattern extents (width and height)."
@@ -779,8 +777,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-pattern-get-pixels"
 argument_list|,
 literal|"Retrieve information about the specified pattern (including pixels)."
 argument_list|,

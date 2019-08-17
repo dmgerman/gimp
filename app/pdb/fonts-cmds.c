@@ -353,8 +353,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-fonts-refresh"
-argument_list|,
 literal|"Refresh current fonts. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all fonts currently in the user's font path and updates the font dialogs accordingly. Depending on the amount of fonts on the system, this can take considerable time."
@@ -401,8 +399,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-fonts-get-list"
 argument_list|,
 literal|"Retrieve the list of loaded fonts."
 argument_list|,

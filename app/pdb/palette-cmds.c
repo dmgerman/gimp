@@ -2538,8 +2538,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-palette-new"
-argument_list|,
 literal|"Creates a new palette"
 argument_list|,
 literal|"This procedure creates a new, uninitialized palette"
@@ -2635,8 +2633,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-palette-duplicate"
-argument_list|,
 literal|"Duplicates a palette"
 argument_list|,
 literal|"This procedure creates an identical palette by a different name"
@@ -2731,8 +2727,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-palette-rename"
 argument_list|,
 literal|"Rename a palette"
 argument_list|,
@@ -2853,8 +2847,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-palette-delete"
-argument_list|,
 literal|"Deletes a palette"
 argument_list|,
 literal|"This procedure deletes a palette"
@@ -2925,8 +2917,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-palette-is-editable"
 argument_list|,
 literal|"Tests if palette can be edited"
 argument_list|,
@@ -3016,8 +3006,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-palette-get-info"
 argument_list|,
 literal|"Retrieve information about the specified palette."
 argument_list|,
@@ -3111,8 +3099,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-palette-get-colors"
 argument_list|,
 literal|"Gets all colors from the specified palette."
 argument_list|,
@@ -3223,8 +3209,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-palette-get-columns"
-argument_list|,
 literal|"Retrieves the number of columns to use to display this palette"
 argument_list|,
 literal|"This procedures retrieves the preferred number of columns to use when the palette is being displayed."
@@ -3318,8 +3302,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-palette-set-columns"
-argument_list|,
 literal|"Sets the number of columns to use when displaying the palette"
 argument_list|,
 literal|"This procedures controls how many colors are shown per row when the palette is being displayed. This value can only be changed if the palette is writable. The maximum allowed value is 64."
@@ -3412,8 +3394,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-palette-add-entry"
 argument_list|,
 literal|"Adds a palette entry to the specified palette."
 argument_list|,
@@ -3552,8 +3532,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-palette-delete-entry"
-argument_list|,
 literal|"Deletes a palette entry from the specified palette."
 argument_list|,
 literal|"This procedure deletes an entry from the specified palette. It returns an error if the entry palette does not exist."
@@ -3646,8 +3624,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-palette-entry-get-color"
 argument_list|,
 literal|"Gets the specified palette entry from the specified palette."
 argument_list|,
@@ -3762,8 +3738,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-palette-entry-set-color"
-argument_list|,
 literal|"Sets the specified palette entry in the specified palette."
 argument_list|,
 literal|"This procedure sets the color of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
@@ -3876,8 +3850,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-palette-entry-get-name"
 argument_list|,
 literal|"Gets the specified palette entry from the specified palette."
 argument_list|,
@@ -3995,8 +3967,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-palette-entry-set-name"
 argument_list|,
 literal|"Sets the specified palette entry in the specified palette."
 argument_list|,

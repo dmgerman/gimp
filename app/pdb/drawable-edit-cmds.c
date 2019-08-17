@@ -1649,8 +1649,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-edit-clear"
-argument_list|,
 literal|"Clear selected area of drawable."
 argument_list|,
 literal|"This procedure clears the specified drawable. If the drawable has an alpha channel, the cleared pixels will become transparent. If the drawable does not have an alpha channel, cleared pixels will be set to the background color. This procedure only affects regions within a selection if there is a selection active.\n"
@@ -1721,8 +1719,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-edit-fill"
 argument_list|,
 literal|"Fill selected area of drawable."
 argument_list|,
@@ -1814,8 +1810,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-edit-bucket-fill"
 argument_list|,
 literal|"Fill the area by a seed fill starting at the specified coordinates."
 argument_list|,
@@ -1954,8 +1948,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-edit-gradient-fill"
 argument_list|,
 literal|"Draw a gradient between the starting and ending coordinates with the specified gradient type."
 argument_list|,
@@ -2246,8 +2238,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-drawable-edit-stroke-selection"
-argument_list|,
 literal|"Stroke the current selection"
 argument_list|,
 literal|"This procedure strokes the current selection, painting along the selection boundary with the active paint method and brush, or using a plain line with configurable properties. The paint is applied to the specified drawable regardless of the active selection.\n"
@@ -2318,8 +2308,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-drawable-edit-stroke-item"
 argument_list|,
 literal|"Stroke the specified item"
 argument_list|,

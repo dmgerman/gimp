@@ -241,8 +241,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"file-gbr-load"
-argument_list|,
 literal|"Loads GIMP brushes"
 argument_list|,
 literal|"Loads GIMP brushes (1 or 4 bpp "
@@ -457,8 +455,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"file-gbr-save-internal"
 argument_list|,
 literal|"Exports Gimp brush file (.GBR)"
 argument_list|,
@@ -763,8 +759,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"file-gih-load"
-argument_list|,
 literal|"Loads GIMP animated brushes"
 argument_list|,
 literal|"This procedure loads a GIMP brush "
@@ -977,8 +971,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"file-gih-save-internal"
 argument_list|,
 literal|"Exports Gimp animated brush file (.gih)"
 argument_list|,
@@ -1307,8 +1299,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"file-pat-load"
-argument_list|,
 literal|"Loads GIMP patterns"
 argument_list|,
 literal|"Loads GIMP patterns"
@@ -1520,8 +1510,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"file-pat-save-internal"
 argument_list|,
 literal|"Exports Gimp pattern file (.PAT)"
 argument_list|,
@@ -1803,8 +1791,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"file-gex-load"
 argument_list|,
 literal|"Loads GIMP extension"
 argument_list|,

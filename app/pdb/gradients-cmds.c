@@ -344,8 +344,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradients-refresh"
-argument_list|,
 literal|"Refresh current gradients. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all gradients currently in the user's gradient path and updates the gradient dialogs accordingly."
@@ -392,8 +390,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradients-get-list"
 argument_list|,
 literal|"Retrieve the list of loaded gradients."
 argument_list|,

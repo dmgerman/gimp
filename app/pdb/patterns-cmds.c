@@ -350,8 +350,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-patterns-refresh"
-argument_list|,
 literal|"Refresh current patterns. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all patterns currently in the user's pattern path and updates all pattern dialogs accordingly."
@@ -398,8 +396,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-patterns-get-list"
 argument_list|,
 literal|"Retrieve a complete listing of the available patterns."
 argument_list|,

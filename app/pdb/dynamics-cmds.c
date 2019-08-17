@@ -326,8 +326,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-dynamics-refresh"
-argument_list|,
 literal|"Refresh current paint dynamics. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all paint dynamics currently in the user's paint dynamics path and updates the paint dynamics dialogs accordingly."
@@ -374,8 +372,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-dynamics-get-list"
 argument_list|,
 literal|"Retrieve the list of loaded paint dynamics."
 argument_list|,

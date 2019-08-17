@@ -535,8 +535,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-fonts-popup"
-argument_list|,
 literal|"Invokes the Gimp font selection."
 argument_list|,
 literal|"This procedure opens the font selection dialog."
@@ -656,8 +654,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-fonts-close-popup"
-argument_list|,
 literal|"Close the font selection dialog."
 argument_list|,
 literal|"This procedure closes an opened font selection dialog."
@@ -728,8 +724,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-fonts-set-popup"
 argument_list|,
 literal|"Sets the current font in a font selection dialog."
 argument_list|,

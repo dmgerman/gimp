@@ -558,8 +558,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradients-popup"
-argument_list|,
 literal|"Invokes the Gimp gradients selection."
 argument_list|,
 literal|"This procedure opens the gradient selection dialog."
@@ -703,8 +701,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-gradients-close-popup"
-argument_list|,
 literal|"Close the gradient selection dialog."
 argument_list|,
 literal|"This procedure closes an opened gradient selection dialog."
@@ -775,8 +771,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-gradients-set-popup"
 argument_list|,
 literal|"Sets the current gradient in a gradient selection dialog."
 argument_list|,

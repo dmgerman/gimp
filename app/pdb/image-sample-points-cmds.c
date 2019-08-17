@@ -811,8 +811,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-add-sample-point"
-argument_list|,
 literal|"Add a sample point to an image."
 argument_list|,
 literal|"This procedure adds a sample point to an image. It takes the input image and the position of the new sample points as parameters. It returns the sample point ID of the new sample point."
@@ -948,8 +946,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-delete-sample-point"
-argument_list|,
 literal|"Deletes a sample point from an image."
 argument_list|,
 literal|"This procedure takes an image and a sample point ID as input and removes the specified sample point from the specified image."
@@ -1040,8 +1036,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-find-next-sample-point"
 argument_list|,
 literal|"Find next sample point on an image."
 argument_list|,
@@ -1157,8 +1151,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-sample-point-position"
 argument_list|,
 literal|"Get position of a sample point on an image."
 argument_list|,

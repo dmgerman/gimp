@@ -3101,9 +3101,10 @@ name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
+name|gimp_object_get_name
+argument_list|(
 name|procedure
-operator|->
-name|original_name
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

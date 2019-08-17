@@ -21785,8 +21785,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-alienmap2"
-argument_list|,
 literal|"Alter colors in various psychedelic ways"
 argument_list|,
 literal|"No help yet. Just try it and you'll see!"
@@ -22118,8 +22116,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-antialias"
-argument_list|,
 literal|"Antialias using the Scale3X edge-extrapolation algorithm"
 argument_list|,
 literal|"No more help."
@@ -22230,8 +22226,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-apply-canvas"
 argument_list|,
 literal|"Add a canvas texture to the image"
 argument_list|,
@@ -22387,8 +22381,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-applylens"
 argument_list|,
 literal|"Simulate an elliptical lens over the image"
 argument_list|,
@@ -22577,8 +22569,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-autocrop"
-argument_list|,
 literal|"Remove empty borders from the image"
 argument_list|,
 literal|"Remove empty borders from the image."
@@ -22689,8 +22679,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-autocrop-layer"
 argument_list|,
 literal|"Crop the active layer based on empty borders of the input drawable"
 argument_list|,
@@ -22803,8 +22791,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-autostretch-hsv"
-argument_list|,
 literal|"Stretch contrast to cover the maximum possible range"
 argument_list|,
 literal|"This simple plug-in does an automatic contrast stretch. For each channel in the image, it finds the minimum and maximum values... it uses those values to stretch the individual histograms to the full contrast range. For some images it may do just what you want; for others it may be total crap :). This version differs from Contrast Autostretch in that it works in HSV space, and preserves hue."
@@ -22915,8 +22901,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-bump-map"
 argument_list|,
 literal|"Create an embossing effect using a bump map"
 argument_list|,
@@ -23263,8 +23247,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-bump-map-tiled"
-argument_list|,
 literal|"Create an embossing effect using a tiled image as a bump map"
 argument_list|,
 literal|"This plug-in uses the algorithm described by John Schlag, \"Fast Embossing Effects on Raster Image Data\" in Graphics GEMS IV (ISBN 0-12-336155-9). It takes a drawable to be tiled and applied as a bump map to another image and produces a nice embossing effect."
@@ -23610,8 +23592,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-c-astretch"
-argument_list|,
 literal|"Stretch contrast to cover the maximum possible range"
 argument_list|,
 literal|"This simple plug-in does an automatic contrast stretch. For each channel in the image, it finds the minimum and maximum values... it uses those values to stretch the individual histograms to the full contrast range. For some images it may do just what you want; for others it may not work that well."
@@ -23722,8 +23702,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-cartoon"
 argument_list|,
 literal|"Simulate a cartoon by enhancing edges"
 argument_list|,
@@ -23880,8 +23858,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-colors-channel-mixer"
 argument_list|,
 literal|"Alter colors by mixing RGB Channels"
 argument_list|,
@@ -24232,8 +24208,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-colortoalpha"
-argument_list|,
 literal|"Convert a specified color to transparency"
 argument_list|,
 literal|"This replaces as much of a given color as possible in each pixel with a corresponding amount of alpha, then readjusts the color accordingly."
@@ -24364,8 +24338,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-convmatrix"
 argument_list|,
 literal|"Apply a generic 5x5 convolution matrix"
 argument_list|,
@@ -24640,8 +24612,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-cubism"
-argument_list|,
 literal|"Convert the image into randomly rotated square blobs"
 argument_list|,
 literal|"Convert the image into randomly rotated square blobs."
@@ -24819,8 +24789,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-deinterlace"
-argument_list|,
 literal|"Fix images where every other row is missing"
 argument_list|,
 literal|"Deinterlace is useful for processing images from video capture cards. When only the odd or even fields get captured, deinterlace can be used to interpolate between the existing fields to correct this."
@@ -24953,8 +24921,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-diffraction"
 argument_list|,
 literal|"Generate diffraction patterns"
 argument_list|,
@@ -25333,8 +25299,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-displace"
-argument_list|,
 literal|"Displace pixels as indicated by displacement maps"
 argument_list|,
 literal|"Displaces the contents of the specified drawable by the amounts specified by 'amount-x' and 'amount-y' multiplied by the luminance of corresponding pixels in the 'displace-map' drawables."
@@ -25595,8 +25559,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-displace-polar"
 argument_list|,
 literal|"Displace pixels as indicated by displacement maps"
 argument_list|,
@@ -25859,8 +25821,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-dog"
-argument_list|,
 literal|"Edge detection with control of edge thickness"
 argument_list|,
 literal|"Applies two Gaussian blurs to the drawable, and subtracts the results. This is robust and widely used method for detecting edges."
@@ -26052,8 +26012,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-edge"
-argument_list|,
 literal|"Several simple methods for detecting edges"
 argument_list|,
 literal|"Perform edge detection on the contents of the specified drawable. AMOUNT is an arbitrary constant, WRAPMODE is like displace plug-in (useful for tileable image). EDGEMODE sets the kind of matrix transform applied to the pixels, SOBEL was the method used in older versions."
@@ -26230,8 +26188,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-emboss"
 argument_list|,
 literal|"Simulate an image created by embossing"
 argument_list|,
@@ -26428,8 +26384,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-engrave"
-argument_list|,
 literal|"Simulate an antique engraving"
 argument_list|,
 literal|"Creates a black-and-white 'engraved' version of an image as seen in old illustrations."
@@ -26580,8 +26534,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-exchange"
 argument_list|,
 literal|"Swap one color with another"
 argument_list|,
@@ -26892,8 +26844,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-flarefx"
-argument_list|,
 literal|"Add a lens flare effect"
 argument_list|,
 literal|"Adds a lens flare effects. Makes your image look like it was snapped with a cheap camera with a lot of lens :)"
@@ -27048,8 +26998,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-fractal-trace"
 argument_list|,
 literal|"Transform image with the Mandelbrot Fractal"
 argument_list|,
@@ -27302,8 +27250,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-gauss"
-argument_list|,
 literal|"Simplest, most commonly used way of blurring"
 argument_list|,
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect. The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius. Horizontal and vertical blurring can be independently invoked by specifying only one to run. The 'method' parameter is ignored."
@@ -27481,8 +27427,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-gauss-iir"
-argument_list|,
 literal|"Apply a gaussian blur"
 argument_list|,
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect. The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius. Horizontal and vertical blurring can be independently invoked by specifying only one to run."
@@ -27652,8 +27596,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-gauss-iir2"
-argument_list|,
 literal|"Apply a gaussian blur"
 argument_list|,
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect. The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius. Horizontal and vertical blurring can be independently invoked by specifying only one to run."
@@ -27808,8 +27750,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-gauss-rle"
 argument_list|,
 literal|"Apply a gaussian blur"
 argument_list|,
@@ -27980,8 +27920,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-gauss-rle2"
-argument_list|,
 literal|"Apply a gaussian blur"
 argument_list|,
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect. The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius. Horizontal and vertical blurring can be independently invoked by specifying only one to run."
@@ -28137,8 +28075,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-glasstile"
-argument_list|,
 literal|"Simulate distortion caused by square glass tiles"
 argument_list|,
 literal|"Divide the image into square glassblocks in which the image is refracted."
@@ -28293,8 +28229,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-hsv-noise"
 argument_list|,
 literal|"Randomize hue, saturation and value independently"
 argument_list|,
@@ -28495,8 +28429,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-illusion"
-argument_list|,
 literal|"Superimpose many altered copies of the image"
 argument_list|,
 literal|"Produce illusion."
@@ -28652,8 +28584,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-laplace"
-argument_list|,
 literal|"High-resolution edge detection"
 argument_list|,
 literal|"This plug-in creates one-pixel wide edges from the image, with the value proportional to the gradient. It uses the Laplace operator (a 3x3 kernel with -8 in the middle). The image has to be laplacered to get useful results, a gauss_iir with 1.5 - 5.0 depending on the noise in the image is best."
@@ -28764,8 +28694,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-lens-distortion"
 argument_list|,
 literal|"Corrects lens distortion"
 argument_list|,
@@ -29022,8 +28950,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-make-seamless"
-argument_list|,
 literal|"Alters edges to make the image seamlessly tileable"
 argument_list|,
 literal|"This plug-in creates a seamless tileable from the input drawable."
@@ -29134,8 +29060,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-maze"
 argument_list|,
 literal|"Draw a labyrinth"
 argument_list|,
@@ -29402,8 +29326,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-mblur"
-argument_list|,
 literal|"Simulate movement using directional blur"
 argument_list|,
 literal|"This plug-in simulates the effect seen when photographing a moving object at a slow shutter speed. Done by adding multiple displaced copies."
@@ -29628,8 +29550,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-mblur-inward"
-argument_list|,
 literal|"Simulate movement using directional blur"
 argument_list|,
 literal|"This procedure is equivalent to plug-in-mblur but performs the zoom blur inward instead of outward."
@@ -29853,8 +29773,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-mosaic"
 argument_list|,
 literal|"Convert the image into irregular tiles"
 argument_list|,
@@ -30231,8 +30149,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-neon"
-argument_list|,
 literal|"Simulate the glowing boundary of a neon light"
 argument_list|,
 literal|"This filter works in a manner similar to the edge plug-in, but uses the first derivative of the gaussian operator to achieve resolution independence. The IIR method of calculating the effect is utilized to keep the processing time constant between large and small standard deviations."
@@ -30387,8 +30303,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-newsprint"
 argument_list|,
 literal|"Halftone the image to give newspaper-like effect"
 argument_list|,
@@ -30765,8 +30679,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-normalize"
-argument_list|,
 literal|"Stretch brightness values to cover the full range"
 argument_list|,
 literal|"This plug-in performs almost the same operation as the 'contrast autostretch' plug-in, except that it won't allow the color channels to normalize independently. This is actually what most people probably want instead of contrast-autostretch; use c-a only if you wish to remove an undesirable color-tint from a source image which is supposed to contain pure-white and pure-black."
@@ -30877,8 +30789,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-nova"
 argument_list|,
 literal|"Add a starburst to the image"
 argument_list|,
@@ -31121,8 +31031,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-oilify"
-argument_list|,
 literal|"Smear colors to simulate an oil painting"
 argument_list|,
 literal|"This function performs the well-known oil-paint effect on the specified drawable."
@@ -31277,8 +31185,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-oilify-enhanced"
 argument_list|,
 literal|"Smear colors to simulate an oil painting"
 argument_list|,
@@ -31500,8 +31406,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-papertile"
 argument_list|,
 literal|"Cut image into paper tiles, and slide them"
 argument_list|,
@@ -31781,8 +31685,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-photocopy"
-argument_list|,
 literal|"Simulate color distortion produced by a copy machine"
 argument_list|,
 literal|"Propagates dark values in an image based on each pixel's relative darkness to a neighboring average. The idea behind this filter is to give the look of a photocopied version of the image, with toner transferred based on the relative darkness of a particular region. This is achieved by darkening areas of the image which are measured to be darker than a neighborhood average and setting other pixels to white. In this way, sufficiently large shifts in intensity are darkened to black. The rate at which they are darkened to black is determined by the second pct_black parameter. The mask_radius parameter controls the size of the pixel neighborhood over which the average intensity is computed and then compared to each pixel in the neighborhood to decide whether or not to darken it to black. Large values for mask_radius result in very thick black areas bordering the regions of white and much less detail for black areas everywhere including inside regions of color. Small values result in\n"
@@ -31983,8 +31885,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-pixelize"
-argument_list|,
 literal|"Simplify image into an array of solid-colored squares"
 argument_list|,
 literal|"Pixelize the contents of the specified drawable with specified pixelizing width."
@@ -32117,8 +32017,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-pixelize2"
 argument_list|,
 literal|"Simplify image into an array of solid-colored rectangles"
 argument_list|,
@@ -32274,8 +32172,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-plasma"
 argument_list|,
 literal|"Create a random plasma texture"
 argument_list|,
@@ -32433,8 +32329,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-polar-coords"
 argument_list|,
 literal|"Convert image to or from polar coordinates"
 argument_list|,
@@ -32645,8 +32539,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-red-eye-removal"
-argument_list|,
 literal|"Remove the red eye effect caused by camera flashes"
 argument_list|,
 literal|"This procedure removes the red eye effect caused by camera flashes by using a percentage based red color threshold. Make a selection containing the eyes, and apply the filter while adjusting the threshold to accurately remove the red eyes."
@@ -32779,8 +32671,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-randomize-hurl"
 argument_list|,
 literal|"Completely randomize a fraction of pixels"
 argument_list|,
@@ -32977,8 +32867,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-randomize-pick"
-argument_list|,
 literal|"Randomly interchange some pixels with neighbors"
 argument_list|,
 literal|"This plug-in replaces a pixel with a random adjacent pixel. You may select the percentage of pixels to modify and the number of times to repeat the process."
@@ -33174,8 +33062,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-randomize-slur"
-argument_list|,
 literal|"Randomly slide some pixels downward (similar to melting"
 argument_list|,
 literal|"This plug-in \"slurs\" (melts like a bunch of icicles) an image. You may select the percentage of pixels to modify and the number of times to repeat the process."
@@ -33370,8 +33256,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-rgb-noise"
 argument_list|,
 literal|"Distort colors by random amounts"
 argument_list|,
@@ -33607,8 +33491,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-ripple"
 argument_list|,
 literal|"Displace pixels in a ripple pattern"
 argument_list|,
@@ -33867,8 +33749,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-rotate"
-argument_list|,
 literal|"Rotates a layer or the whole image by 90, 180 or 270 degrees"
 argument_list|,
 literal|"This plug-in does rotate the active layer or the whole image clockwise by multiples of 90 degrees. When the whole image is chosen, the image is resized if necessary."
@@ -34019,8 +33899,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-noisify"
 argument_list|,
 literal|"Adds random noise to image channels"
 argument_list|,
@@ -34239,8 +34117,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-sel-gauss"
-argument_list|,
 literal|"Blur neighboring pixels, but only in low-contrast areas"
 argument_list|,
 literal|"This filter functions similar to the regular gaussian blur filter except that neighbouring pixels that differ more than the given maxdelta parameter will not be blended with. This way with the correct parameters, an image can be smoothed out without losing details. However, this filter can be rather slow."
@@ -34396,8 +34272,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-semiflatten"
-argument_list|,
 literal|"Replace partial transparency with the current background color"
 argument_list|,
 literal|"This plug-in flattens pixels in an RGBA image that aren't completely transparent against the current GIMP background color."
@@ -34508,8 +34382,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-shift"
 argument_list|,
 literal|"Shift each row or column of pixels by a random amount"
 argument_list|,
@@ -34665,8 +34537,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-sinus"
 argument_list|,
 literal|"Generate complex sinusoidal textures"
 argument_list|,
@@ -35054,8 +34924,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-sobel"
-argument_list|,
 literal|"Specialized direction-dependent edge detection"
 argument_list|,
 literal|"This plug-in calculates the gradient with a sobel operator. The user can specify which direction to use. When both directions are used, the result is the RMS of the two gradients; if only one direction is used, the result either the absolute value of the gradient, or 127 + gradient (if the 'keep sign' switch is on). This way, information about the direction of the gradient is preserved. Resulting images are not autoscaled.\""
@@ -35220,8 +35088,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-softglow"
 argument_list|,
 literal|"Simulate glow by making highlights intense and fuzzy"
 argument_list|,
@@ -35399,8 +35265,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-solid-noise"
 argument_list|,
 literal|"Create a random cloud-like texture"
 argument_list|,
@@ -35639,8 +35503,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-spread"
-argument_list|,
 literal|"Move pixels around randomly"
 argument_list|,
 literal|"Spreads the pixels of the specified drawable. Pixels are randomly moved to another location whose distance varies from the original by the horizontal and vertical spread amounts."
@@ -35796,8 +35658,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-threshold-alpha"
-argument_list|,
 literal|"Make transparency all-or-nothing"
 argument_list|,
 literal|"Make transparency all-or-nothing."
@@ -35930,8 +35790,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-unsharp-mask"
 argument_list|,
 literal|"The most widely useful method for sharpening an image"
 argument_list|,
@@ -36110,8 +35968,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-video"
-argument_list|,
 literal|"Simulate distortion produced by a fuzzy or low-res monitor"
 argument_list|,
 literal|"This function simulates the degradation of being on an old low-dotpitch RGB video monitor to the specified drawable."
@@ -36281,8 +36137,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-vinvert"
-argument_list|,
 literal|"Invert the brightness of each pixel"
 argument_list|,
 literal|"This function takes an indexed/RGB image and inverts its 'value' in HSV space. The upshot of this is that the color and saturation at any given point remains the same, but its brightness is effectively inverted. Quite strange. Sometimes produces unpleasant color artifacts on images from lossy sources (ie. JPEG)."
@@ -36393,8 +36247,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-vpropagate"
 argument_list|,
 literal|"Propagate certain colors to neighboring pixels"
 argument_list|,
@@ -36639,8 +36491,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-dilate"
-argument_list|,
 literal|"Grow lighter areas of the image"
 argument_list|,
 literal|"Dilate image."
@@ -36883,8 +36733,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-erode"
 argument_list|,
 literal|"Shrink lighter areas of the image"
 argument_list|,
@@ -37129,8 +36977,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-waves"
-argument_list|,
 literal|"Distort the image with waves"
 argument_list|,
 literal|"Distort the image with waves."
@@ -37346,8 +37192,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-whirl-pinch"
-argument_list|,
 literal|"Distort an image by whirling and pinching"
 argument_list|,
 literal|"Distorts the image by whirling and pinching, which are two common center-based, circular distortions. Whirling is like projecting the image onto the surface of water in a toilet and flushing. Pinching is similar to projecting the image onto an elastic surface and pressing or pulling on the center of the surface."
@@ -37528,8 +37372,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"plug-in-wind"
 argument_list|,
 literal|"Smear image to give windblown effect"
 argument_list|,

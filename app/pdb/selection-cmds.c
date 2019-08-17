@@ -2103,8 +2103,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-selection-bounds"
-argument_list|,
 literal|"Find the bounding box of the current selection."
 argument_list|,
 literal|"This procedure returns whether there is a selection for the specified image. If there is one, the upper left and lower right corners of the bounding box are returned. These coordinates are relative to the image. Please note that the pixel specified by the lower right coordinate of the bounding box is not part of the selection. The selection ends at the upper left corner of this pixel. This means the width of the selection can be calculated as (x2 - x1), its height as (y2 - y1)."
@@ -2280,8 +2278,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-selection-value"
-argument_list|,
 literal|"Find the value of the selection at the specified coordinates."
 argument_list|,
 literal|"This procedure returns the value of the selection at the specified coordinates. If the coordinates lie out of bounds, 0 is returned."
@@ -2417,8 +2413,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-selection-is-empty"
-argument_list|,
 literal|"Determine whether the selection is empty."
 argument_list|,
 literal|"This procedure returns TRUE if the selection for the specified image is empty."
@@ -2505,8 +2499,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-selection-translate"
 argument_list|,
 literal|"Translate the selection by the specified offsets."
 argument_list|,
@@ -2620,8 +2612,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-selection-float"
 argument_list|,
 literal|"Float the selection from the specified drawable with initial offsets as specified."
 argument_list|,
@@ -2758,8 +2748,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-selection-invert"
-argument_list|,
 literal|"Invert the selection mask."
 argument_list|,
 literal|"This procedure inverts the selection mask. For every pixel in the selection channel, its new value is calculated as (255 - old-value)."
@@ -2828,8 +2816,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-selection-sharpen"
 argument_list|,
 literal|"Sharpen the selection mask."
 argument_list|,
@@ -2900,8 +2886,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-selection-all"
-argument_list|,
 literal|"Select all of the image."
 argument_list|,
 literal|"This procedure sets the selection mask to completely encompass the image. Every pixel in the selection channel is set to 255."
@@ -2971,8 +2955,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-selection-none"
-argument_list|,
 literal|"Deselect the entire image."
 argument_list|,
 literal|"This procedure deselects the entire image. Every pixel in the selection channel is set to 0."
@@ -3041,8 +3023,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-selection-feather"
 argument_list|,
 literal|"Feather the image's selection"
 argument_list|,
@@ -3135,8 +3115,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-selection-border"
-argument_list|,
 literal|"Border the image's selection"
 argument_list|,
 literal|"This procedure borders the selection. Bordering creates a new selection which is defined along the boundary of the previous selection at every point within the specified radius."
@@ -3227,8 +3205,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-selection-grow"
 argument_list|,
 literal|"Grow the image's selection"
 argument_list|,
@@ -3321,8 +3297,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-selection-shrink"
-argument_list|,
 literal|"Shrink the image's selection"
 argument_list|,
 literal|"This procedure shrinks the selection. Shrinking involves trimming the existing selection boundary on all sides by the specified number of pixels."
@@ -3414,8 +3388,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-selection-flood"
-argument_list|,
 literal|"Remove holes from the image's selection"
 argument_list|,
 literal|"This procedure removes holes from the selection, that can come from selecting a patchy area with the Fuzzy Select Tool. In technical terms this procedure floods the selection. See the Algorithms page in the developer wiki for details."
@@ -3484,8 +3456,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-selection-save"
 argument_list|,
 literal|"Copy the selection mask to a new channel."
 argument_list|,

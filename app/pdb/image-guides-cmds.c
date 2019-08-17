@@ -1096,8 +1096,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-add-hguide"
-argument_list|,
 literal|"Add a horizontal guide to an image."
 argument_list|,
 literal|"This procedure adds a horizontal guide to an image. It takes the input image and the y-position of the new guide as parameters. It returns the guide ID of the new guide."
@@ -1210,8 +1208,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-add-vguide"
 argument_list|,
 literal|"Add a vertical guide to an image."
 argument_list|,
@@ -1326,8 +1322,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-delete-guide"
-argument_list|,
 literal|"Deletes a guide from an image."
 argument_list|,
 literal|"This procedure takes an image and a guide ID as input and removes the specified guide from the specified image."
@@ -1418,8 +1412,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-find-next-guide"
 argument_list|,
 literal|"Find next guide on an image."
 argument_list|,
@@ -1535,8 +1527,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-guide-orientation"
 argument_list|,
 literal|"Get orientation of a guide on an image."
 argument_list|,
@@ -1663,8 +1653,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-get-guide-position"
 argument_list|,
 literal|"Get position of a guide on an image."
 argument_list|,

@@ -1149,8 +1149,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-progress-init"
-argument_list|,
 literal|"Initializes the progress bar for the current plug-in."
 argument_list|,
 literal|"Initializes the progress bar for the current plug-in. It is only valid to call this procedure from a plug-in."
@@ -1244,8 +1242,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-progress-update"
-argument_list|,
 literal|"Updates the progress bar for the current plug-in."
 argument_list|,
 literal|"Updates the progress bar for the current plug-in. It is only valid to call this procedure from a plug-in."
@@ -1316,8 +1312,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-progress-pulse"
-argument_list|,
 literal|"Pulses the progress bar for the current plug-in."
 argument_list|,
 literal|"Updates the progress bar for the current plug-in. It is only valid to call this procedure from a plug-in. Use this function instead of 'gimp-progress-update' if you cannot tell how much progress has been made. This usually causes the the progress bar to enter \"activity mode\", where a block bounces back and forth."
@@ -1364,8 +1358,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-progress-set-text"
 argument_list|,
 literal|"Changes the text in the progress bar for the current plug-in."
 argument_list|,
@@ -1438,8 +1430,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-progress-end"
-argument_list|,
 literal|"Ends the progress bar for the current plug-in."
 argument_list|,
 literal|"Ends the progress display for the current plug-in. Most plug-ins don't need to call this, they just exit when the work is done. It is only valid to call this procedure from a plug-in."
@@ -1486,8 +1476,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-progress-get-window-handle"
 argument_list|,
 literal|"Returns the native window ID of the toplevel window this plug-in's progress is displayed in."
 argument_list|,
@@ -1557,8 +1545,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-progress-install"
 argument_list|,
 literal|"Installs a progress callback for the current plug-in."
 argument_list|,
@@ -1631,8 +1617,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-progress-uninstall"
-argument_list|,
 literal|"Uninstalls the progress callback for the current plug-in."
 argument_list|,
 literal|"This function uninstalls any progress callback installed with 'gimp-progress-install' before."
@@ -1703,8 +1687,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-progress-cancel"
 argument_list|,
 literal|"Cancels a running progress."
 argument_list|,

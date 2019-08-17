@@ -1077,8 +1077,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-convert-rgb"
-argument_list|,
 literal|"Convert specified image to RGB color"
 argument_list|,
 literal|"This procedure converts the specified image to RGB color. This process requires an image in Grayscale or Indexed color mode. No image content is lost in this process aside from the colormap for an indexed image."
@@ -1148,8 +1146,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-convert-grayscale"
-argument_list|,
 literal|"Convert specified image to grayscale"
 argument_list|,
 literal|"This procedure converts the specified image to grayscale. This process requires an image in RGB or Indexed color mode."
@@ -1218,8 +1214,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-convert-indexed"
 argument_list|,
 literal|"Convert specified image to and Indexed image"
 argument_list|,
@@ -1412,8 +1406,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-convert-set-dither-matrix"
-argument_list|,
 literal|"Set dither matrix for conversion to indexed"
 argument_list|,
 literal|"This procedure sets the dither matrix used when converting images to INDEXED mode with positional dithering."
@@ -1542,8 +1534,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-convert-precision"
 argument_list|,
 literal|"Convert the image to the specified precision"
 argument_list|,

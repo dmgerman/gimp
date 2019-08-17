@@ -794,8 +794,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-display-is-valid"
-argument_list|,
 literal|"Returns TRUE if the display is valid."
 argument_list|,
 literal|"This procedure checks if the given display ID is valid and refers to an existing display."
@@ -884,8 +882,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-display-new"
 argument_list|,
 literal|"Create a new display for the specified image."
 argument_list|,
@@ -978,8 +974,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-display-delete"
-argument_list|,
 literal|"Delete the specified display."
 argument_list|,
 literal|"This procedure removes the specified display. If this is the last remaining display for the underlying image, then the image is deleted also. Note that the display is closed no matter if the image is dirty or not. Better save the image before calling this procedure."
@@ -1048,8 +1042,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-display-get-window-handle"
 argument_list|,
 literal|"Get a handle to the native window for an image display."
 argument_list|,
@@ -1142,8 +1134,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-displays-flush"
-argument_list|,
 literal|"Flush all internal changes to the user interface"
 argument_list|,
 literal|"This procedure takes no arguments and returns nothing except a success status. Its purpose is to flush all pending updates of image manipulations to the user interface. It should be called whenever appropriate."
@@ -1190,8 +1180,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-displays-reconnect"
 argument_list|,
 literal|"Reconnect displays from one image to another image."
 argument_list|,

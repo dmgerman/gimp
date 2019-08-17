@@ -1554,8 +1554,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-grid-get-spacing"
-argument_list|,
 literal|"Gets the spacing of an image's grid."
 argument_list|,
 literal|"This procedure retrieves the horizontal and vertical spacing of an image's grid. It takes the image as parameter."
@@ -1670,8 +1668,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-grid-set-spacing"
 argument_list|,
 literal|"Sets the spacing of an image's grid."
 argument_list|,
@@ -1788,8 +1784,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-grid-get-offset"
-argument_list|,
 literal|"Gets the offset of an image's grid."
 argument_list|,
 literal|"This procedure retrieves the horizontal and vertical offset of an image's grid. It takes the image as parameter."
@@ -1904,8 +1898,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-grid-set-offset"
 argument_list|,
 literal|"Sets the offset of an image's grid."
 argument_list|,
@@ -2022,8 +2014,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-grid-get-foreground-color"
-argument_list|,
 literal|"Sets the foreground color of an image's grid."
 argument_list|,
 literal|"This procedure gets the foreground color of an image's grid."
@@ -2112,8 +2102,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-grid-set-foreground-color"
 argument_list|,
 literal|"Gets the foreground color of an image's grid."
 argument_list|,
@@ -2204,8 +2192,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-grid-get-background-color"
-argument_list|,
 literal|"Sets the background color of an image's grid."
 argument_list|,
 literal|"This procedure gets the background color of an image's grid."
@@ -2294,8 +2280,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-grid-set-background-color"
 argument_list|,
 literal|"Gets the background color of an image's grid."
 argument_list|,
@@ -2386,8 +2370,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-image-grid-get-style"
-argument_list|,
 literal|"Gets the style of an image's grid."
 argument_list|,
 literal|"This procedure retrieves the style of an image's grid."
@@ -2476,8 +2458,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-image-grid-set-style"
 argument_list|,
 literal|"Sets the style unit of an image's grid."
 argument_list|,

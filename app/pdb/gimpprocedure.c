@@ -625,15 +625,6 @@ name|gimp_string_get_memsize
 argument_list|(
 name|procedure
 operator|->
-name|original_name
-argument_list|)
-expr_stmt|;
-name|memsize
-operator|+=
-name|gimp_string_get_memsize
-argument_list|(
-name|procedure
-operator|->
 name|blurb
 argument_list|)
 expr_stmt|;
@@ -1121,17 +1112,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * original_name,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * deprecated)
+DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * deprecated)
 name|gimp_procedure_set_strings
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|original_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1175,15 +1161,6 @@ expr_stmt|;
 name|gimp_procedure_free_strings
 argument_list|(
 name|procedure
-argument_list|)
-expr_stmt|;
-name|procedure
-operator|->
-name|original_name
-operator|=
-name|g_strdup
-argument_list|(
-name|original_name
 argument_list|)
 expr_stmt|;
 name|procedure
@@ -1251,17 +1228,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_static_strings (GimpProcedure * procedure,const gchar * original_name,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * deprecated)
+DECL|function|gimp_procedure_set_static_strings (GimpProcedure * procedure,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * deprecated)
 name|gimp_procedure_set_static_strings
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|original_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1306,16 +1278,6 @@ name|gimp_procedure_free_strings
 argument_list|(
 name|procedure
 argument_list|)
-expr_stmt|;
-name|procedure
-operator|->
-name|original_name
-operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
-name|original_name
 expr_stmt|;
 name|procedure
 operator|->
@@ -1388,16 +1350,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_take_strings (GimpProcedure * procedure,gchar * original_name,gchar * blurb,gchar * help,gchar * authors,gchar * copyright,gchar * date,gchar * deprecated)
+DECL|function|gimp_procedure_take_strings (GimpProcedure * procedure,gchar * blurb,gchar * help,gchar * authors,gchar * copyright,gchar * date,gchar * deprecated)
 name|gimp_procedure_take_strings
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
-parameter_list|,
-name|gchar
-modifier|*
-name|original_name
 parameter_list|,
 name|gchar
 modifier|*
@@ -1436,12 +1394,6 @@ name|gimp_procedure_free_strings
 argument_list|(
 name|procedure
 argument_list|)
-expr_stmt|;
-name|procedure
-operator|->
-name|original_name
-operator|=
-name|original_name
 expr_stmt|;
 name|procedure
 operator|->
@@ -3015,13 +2967,15 @@ comment|/* Assume there always is a name, don't bother with NULL checks */
 return|return
 name|strcmp
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|proc1
-operator|->
-name|original_name
+argument_list|)
 argument_list|,
+name|gimp_object_get_name
+argument_list|(
 name|proc2
-operator|->
-name|original_name
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -3050,13 +3004,6 @@ operator|->
 name|static_strings
 condition|)
 block|{
-name|g_free
-argument_list|(
-name|procedure
-operator|->
-name|original_name
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|procedure
@@ -3100,12 +3047,6 @@ name|deprecated
 argument_list|)
 expr_stmt|;
 block|}
-name|procedure
-operator|->
-name|original_name
-operator|=
-name|NULL
-expr_stmt|;
 name|procedure
 operator|->
 name|blurb

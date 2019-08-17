@@ -1545,8 +1545,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-unit-get-number-of-units"
-argument_list|,
 literal|"Returns the number of units."
 argument_list|,
 literal|"This procedure returns the number of defined units."
@@ -1616,8 +1614,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-unit-get-number-of-built-in-units"
-argument_list|,
 literal|"Returns the number of built-in units."
 argument_list|,
 literal|"This procedure returns the number of defined units built-in to GIMP."
@@ -1686,8 +1682,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-unit-new"
 argument_list|,
 literal|"Creates a new unit and returns it's integer ID."
 argument_list|,
@@ -1923,8 +1917,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-unit-get-deletion-flag"
-argument_list|,
 literal|"Returns the deletion flag of the unit."
 argument_list|,
 literal|"This procedure returns the deletion flag of the unit. If this value is TRUE the unit's definition will not be saved in the user's unitrc file on gimp exit."
@@ -2012,8 +2004,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-unit-set-deletion-flag"
-argument_list|,
 literal|"Sets the deletion flag of a unit."
 argument_list|,
 literal|"This procedure sets the unit's deletion flag. If the deletion flag of a unit is TRUE on gimp exit, this unit's definition will not be saved in the user's unitrc."
@@ -2100,8 +2090,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-unit-get-identifier"
 argument_list|,
 literal|"Returns the textual identifier of the unit."
 argument_list|,
@@ -2196,8 +2184,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-unit-get-factor"
-argument_list|,
 literal|"Returns the factor of the unit."
 argument_list|,
 literal|"This procedure returns the unit's factor which indicates how many units make up an inch. Note that asking for the factor of \"pixels\" will produce an error."
@@ -2290,8 +2276,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-unit-get-digits"
-argument_list|,
 literal|"Returns the number of digits of the unit."
 argument_list|,
 literal|"This procedure returns the number of digits you should provide in input or output functions to get approximately the same accuracy as with two digits and inches. Note that asking for the digits of \"pixels\" will produce an error."
@@ -2382,8 +2366,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-unit-get-symbol"
 argument_list|,
 literal|"Returns the symbol of the unit."
 argument_list|,
@@ -2478,8 +2460,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-unit-get-abbreviation"
-argument_list|,
 literal|"Returns the abbreviation of the unit."
 argument_list|,
 literal|"This procedure returns the abbreviation of the unit (\"in\" for inches)."
@@ -2573,8 +2553,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-unit-get-singular"
-argument_list|,
 literal|"Returns the singular form of the unit."
 argument_list|,
 literal|"This procedure returns the singular form of the unit."
@@ -2667,8 +2645,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-unit-get-plural"
 argument_list|,
 literal|"Returns the plural form of the unit."
 argument_list|,

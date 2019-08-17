@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdb-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprocedure.h"
 end_include
 
@@ -536,12 +542,10 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 block|}
 return|return
 name|gimp_procedure_get_return_values
@@ -673,12 +677,10 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 block|}
 return|return
 name|gimp_procedure_get_return_values
@@ -808,12 +810,10 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 block|}
 return|return
 name|gimp_procedure_get_return_values
@@ -924,41 +924,32 @@ decl_stmt|;
 if|if
 condition|(
 name|plug_in
-condition|)
-block|{
-name|gchar
-modifier|*
-name|canonical
-init|=
-name|gimp_canonicalize_identifier
+operator|&&
+name|gimp_pdb_is_canonical_procedure
 argument_list|(
 name|procedure_name
+argument_list|,
+name|error
 argument_list|)
-decl_stmt|;
+condition|)
+block|{
 name|success
 operator|=
 name|gimp_plug_in_menu_register
 argument_list|(
 name|plug_in
 argument_list|,
-name|canonical
+name|procedure_name
 argument_list|,
 name|menu_path
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|canonical
-argument_list|)
-expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 block|}
 return|return
 name|gimp_procedure_get_return_values
@@ -1105,23 +1096,19 @@ operator|->
 name|call_mode
 operator|==
 name|GIMP_PLUG_IN_CALL_QUERY
+operator|&&
+name|gimp_pdb_is_canonical_procedure
+argument_list|(
+name|procedure_name
+argument_list|,
+name|error
+argument_list|)
 condition|)
 block|{
 name|GimpPlugInProcedure
 modifier|*
 name|proc
 decl_stmt|;
-name|gchar
-modifier|*
-name|canonical
-decl_stmt|;
-name|canonical
-operator|=
-name|gimp_canonicalize_identifier
-argument_list|(
-name|procedure_name
-argument_list|)
-expr_stmt|;
 name|proc
 operator|=
 name|gimp_plug_in_procedure_find
@@ -1132,12 +1119,7 @@ name|plug_in_def
 operator|->
 name|procedures
 argument_list|,
-name|canonical
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|canonical
+name|procedure_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -1162,12 +1144,10 @@ name|FALSE
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 block|}
 return|return
 name|gimp_procedure_get_return_values
@@ -1270,12 +1250,10 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 block|}
 return|return
 name|gimp_procedure_get_return_values
@@ -1367,12 +1345,10 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
@@ -1446,8 +1422,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-plugins-query"
 argument_list|,
 literal|"Queries the plug-in database for its contents."
 argument_list|,
@@ -1750,8 +1724,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-plugin-domain-register"
-argument_list|,
 literal|"Registers a textdomain for localisation."
 argument_list|,
 literal|"This procedure adds a textdomain to the list of domains Gimp searches for strings when translating its menu entries. There is no need to call this function for plug-ins that have their strings included in the 'gimp-std-plugins' domain as that is used by default. If the compiled message catalog is not in the standard location, you may specify an absolute path to another location. This procedure can only be called in the query function of a plug-in and it has to be called before any procedure is installed."
@@ -1849,8 +1821,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-plugin-help-register"
-argument_list|,
 literal|"Register a help path for a plug-in."
 argument_list|,
 literal|"This procedure registers user documentation for the calling plug-in with the GIMP help system. The domain_uri parameter points to the root directory where the plug-in help is installed. For each supported language there should be a file called 'gimp-help.xml' that maps the help IDs to the actual help files."
@@ -1945,8 +1915,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-plugin-menu-branch-register"
 argument_list|,
 literal|"Register a sub-menu."
 argument_list|,
@@ -2043,8 +2011,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-plugin-menu-register"
-argument_list|,
 literal|"Register an additional menu path for a plug-in procedure."
 argument_list|,
 literal|"This procedure installs an additional menu entry for the given procedure."
@@ -2139,8 +2105,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-plugin-icon-register"
 argument_list|,
 literal|"Register an icon for a plug-in procedure."
 argument_list|,
@@ -2271,8 +2235,6 @@ name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-plugin-set-pdb-error-handler"
-argument_list|,
 literal|"Sets an error handler for procedure calls."
 argument_list|,
 literal|"This procedure changes the way that errors in procedure calls are handled. By default GIMP will raise an error dialog if a procedure call made by a plug-in fails. Using this procedure the plug-in can change this behavior. If the error handler is set to %GIMP_PDB_ERROR_HANDLER_PLUGIN, then the plug-in is responsible for calling 'gimp-get-pdb-error' and handling the error whenever one if its procedure calls fails. It can do this by displaying the error message or by forwarding it in its own return values."
@@ -2339,8 +2301,6 @@ expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
-argument_list|,
-literal|"gimp-plugin-get-pdb-error-handler"
 argument_list|,
 literal|"Retrieves the active error handler for procedure calls."
 argument_list|,
