@@ -82,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab8c070108
+DECL|struct|__anon28809d3e0108
 block|{
 DECL|member|ref_count
 name|gint
@@ -1782,6 +1782,10 @@ operator|==
 name|G_TOKEN_INT
 condition|)
 block|{
+comment|/* use a temp value because for whatever reason writing        *        * *dest = -scanner->value.v_int;        *        * fails.        */
+name|gint64
+name|int_value
+decl_stmt|;
 name|g_scanner_get_next_token
 argument_list|(
 name|scanner
@@ -1791,8 +1795,7 @@ if|if
 condition|(
 name|negate
 condition|)
-operator|*
-name|dest
+name|int_value
 operator|=
 operator|-
 name|scanner
@@ -1802,14 +1805,18 @@ operator|.
 name|v_int
 expr_stmt|;
 else|else
-operator|*
-name|dest
+name|int_value
 operator|=
 name|scanner
 operator|->
 name|value
 operator|.
 name|v_int
+expr_stmt|;
+operator|*
+name|dest
+operator|=
+name|int_value
 expr_stmt|;
 return|return
 name|TRUE
@@ -1954,7 +1961,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aab8c070203
+DECL|enum|__anon28809d3e0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
