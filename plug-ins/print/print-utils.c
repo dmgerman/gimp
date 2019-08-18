@@ -106,11 +106,12 @@ end_function
 begin_function
 name|GKeyFile
 modifier|*
-DECL|function|print_utils_key_file_load_from_parasite (gint32 image_ID,const gchar * parasite_name)
+DECL|function|print_utils_key_file_load_from_parasite (GimpImage * image,const gchar * parasite_name)
 name|print_utils_key_file_load_from_parasite
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -145,7 +146,7 @@ name|parasite
 operator|=
 name|gimp_image_get_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|parasite_name
 argument_list|)
@@ -367,15 +368,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|print_utils_key_file_save_as_parasite (GKeyFile * key_file,gint32 image_ID,const gchar * parasite_name)
+DECL|function|print_utils_key_file_save_as_parasite (GKeyFile * key_file,GimpImage * image,const gchar * parasite_name)
 name|print_utils_key_file_save_as_parasite
 parameter_list|(
 name|GKeyFile
 modifier|*
 name|key_file
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -464,7 +466,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|parasite
 argument_list|)

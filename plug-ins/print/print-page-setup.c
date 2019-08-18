@@ -124,15 +124,16 @@ end_endif
 
 begin_function
 name|void
-DECL|function|print_page_setup_load (GtkPrintOperation * operation,gint32 image_ID)
+DECL|function|print_page_setup_load (GtkPrintOperation * operation,GimpImage * image)
 name|print_page_setup_load
 parameter_list|(
 name|GtkPrintOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GKeyFile
@@ -151,7 +152,7 @@ name|key_file
 operator|=
 name|print_utils_key_file_load_from_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|PRINT_PAGE_SETUP_NAME
 argument_list|)
@@ -217,15 +218,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|print_page_setup_save (GtkPrintOperation * operation,gint32 image_ID)
+DECL|function|print_page_setup_save (GtkPrintOperation * operation,GimpImage * image)
 name|print_page_setup_save
 parameter_list|(
 name|GtkPrintOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GtkPageSetup
@@ -269,7 +271,7 @@ name|print_utils_key_file_save_as_parasite
 argument_list|(
 name|key_file
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
 name|PRINT_PAGE_SETUP_NAME
 argument_list|)

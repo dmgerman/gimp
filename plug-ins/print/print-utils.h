@@ -21,8 +21,9 @@ name|GKeyFile
 modifier|*
 name|print_utils_key_file_load_from_parasite
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -56,8 +57,9 @@ name|GKeyFile
 modifier|*
 name|key_file
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar

@@ -51,8 +51,9 @@ name|cairo_surface_t
 modifier|*
 name|print_surface_from_drawable
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -124,7 +125,7 @@ name|print_surface_from_drawable
 argument_list|(
 name|data
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 name|error
 argument_list|)
@@ -294,11 +295,12 @@ begin_function
 specifier|static
 name|cairo_surface_t
 modifier|*
-DECL|function|print_surface_from_drawable (gint32 drawable_ID,GError ** error)
+DECL|function|print_surface_from_drawable (GimpDrawable * drawable,GError ** error)
 name|print_surface_from_drawable
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -312,7 +314,7 @@ name|buffer
 init|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -333,7 +335,7 @@ name|width
 init|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -342,7 +344,7 @@ name|height
 init|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 decl_stmt|;
 name|GeglBufferIterator
@@ -370,7 +372,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -394,7 +396,7 @@ name|cairo_image_surface_create
 argument_list|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|?
 name|CAIRO_FORMAT_ARGB32

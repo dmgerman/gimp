@@ -114,8 +114,9 @@ name|GKeyFile
 modifier|*
 name|print_settings_key_file_from_parasite
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -170,7 +171,7 @@ name|print_settings_key_file_from_parasite
 argument_list|(
 name|data
 operator|->
-name|image_id
+name|image
 argument_list|)
 decl_stmt|;
 if|if
@@ -240,7 +241,7 @@ name|gimp_image_is_valid
 argument_list|(
 name|data
 operator|->
-name|image_id
+name|image
 argument_list|)
 condition|)
 block|{
@@ -254,7 +255,7 @@ name|gimp_image_get_resolution
 argument_list|(
 name|data
 operator|->
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|xres
@@ -458,7 +459,7 @@ name|key_file
 argument_list|,
 name|data
 operator|->
-name|image_id
+name|image
 argument_list|,
 name|PRINT_SETTINGS_NAME
 argument_list|)
@@ -723,11 +724,12 @@ begin_function
 specifier|static
 name|GKeyFile
 modifier|*
-DECL|function|print_settings_key_file_from_parasite (gint32 image_ID)
+DECL|function|print_settings_key_file_from_parasite (GimpImage * image)
 name|print_settings_key_file_from_parasite
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GKeyFile
@@ -738,7 +740,7 @@ name|key_file
 operator|=
 name|print_utils_key_file_load_from_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|PRINT_SETTINGS_NAME
 argument_list|)

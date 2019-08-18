@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29915ee50103
+DECL|enum|__anon2a0a3a7e0103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -80,9 +80,10 @@ DECL|member|inside
 name|gboolean
 name|inside
 decl_stmt|;
-DECL|member|drawable_id
-name|gint32
-name|drawable_id
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 DECL|member|image_offset_x
 name|gdouble
@@ -435,8 +436,9 @@ name|cairo_surface_t
 modifier|*
 name|print_preview_get_thumbnail
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|width
@@ -2161,9 +2163,12 @@ name|NULL
 operator|&&
 name|gimp_item_is_valid
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|preview
 operator|->
-name|drawable_id
+name|drawable
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -2175,7 +2180,7 @@ name|print_preview_get_thumbnail
 argument_list|(
 name|preview
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 name|MIN
 argument_list|(
@@ -2298,21 +2303,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * print_preview_new:  * @page: page setup  * @drawable_id: the drawable to print  *  * Creates a new #PrintPreview widget.  *  * Returns: the new #PrintPreview widget.  **/
+comment|/**  * print_preview_new:  * @page: page setup  * @drawable: the drawable to print  *  * Creates a new #PrintPreview widget.  *  * Returns: the new #PrintPreview widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|print_preview_new (GtkPageSetup * page,gint32 drawable_id)
+DECL|function|print_preview_new (GtkPageSetup * page,GimpDrawable * drawable)
 name|print_preview_new
 parameter_list|(
 name|GtkPageSetup
 modifier|*
 name|page
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|PrintPreview
@@ -2340,9 +2346,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|->
-name|drawable_id
+name|drawable
 operator|=
-name|drawable_id
+name|drawable
 expr_stmt|;
 name|print_preview_set_page_setup
 argument_list|(
@@ -2411,7 +2417,7 @@ name|gimp_drawable_width
 argument_list|(
 name|preview
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 operator|*
 literal|72.0
@@ -2424,7 +2430,7 @@ name|gimp_drawable_height
 argument_list|(
 name|preview
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 operator|*
 literal|72.0
@@ -3224,11 +3230,12 @@ begin_function
 specifier|static
 name|cairo_surface_t
 modifier|*
-DECL|function|print_preview_get_thumbnail (gint32 drawable_id,gint width,gint height)
+DECL|function|print_preview_get_thumbnail (GimpDrawable * drawable,gint width,gint height)
 name|print_preview_get_thumbnail
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|width
@@ -3299,7 +3306,7 @@ name|data
 operator|=
 name|gimp_drawable_get_thumbnail_data
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|width

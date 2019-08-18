@@ -120,8 +120,9 @@ name|GtkPageSetup
 modifier|*
 name|page
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

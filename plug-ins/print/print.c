@@ -237,11 +237,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -259,8 +261,9 @@ specifier|static
 name|GimpPDBStatusType
 name|print_image
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gboolean
 name|interactive
@@ -284,8 +287,9 @@ specifier|static
 name|GimpPDBStatusType
 name|page_setup
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -317,8 +321,9 @@ name|GtkPrintOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gint
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -356,9 +361,10 @@ name|GtkPrintContext
 modifier|*
 name|context
 parameter_list|,
-name|gint32
+name|GimpLayer
 modifier|*
-name|layer_ID
+modifier|*
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -415,8 +421,9 @@ name|gchar
 modifier|*
 name|print_temp_proc_name
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -427,8 +434,9 @@ name|gchar
 modifier|*
 name|print_temp_proc_install
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -785,7 +793,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|print_run (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image_id,gint32 drawable_id,const GimpValueArray * args,gpointer run_data)
+DECL|function|print_run (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,const GimpValueArray * args,gpointer run_data)
 name|print_run
 parameter_list|(
 name|GimpProcedure
@@ -795,11 +803,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -848,7 +858,7 @@ name|status
 operator|=
 name|print_image
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|run_mode
 operator|==
@@ -906,7 +916,7 @@ name|status
 operator|=
 name|page_setup
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -943,11 +953,12 @@ end_function
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|print_image (gint32 image_ID,gboolean interactive,GError ** error)
+DECL|function|print_image (GimpImage * image,gboolean interactive,GError ** error)
 name|print_image
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gboolean
 name|interactive
@@ -965,7 +976,8 @@ decl_stmt|;
 name|GtkPrintOperationResult
 name|result
 decl_stmt|;
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 name|PrintData
@@ -985,9 +997,9 @@ name|layer
 operator|=
 name|gimp_layer_new_from_visible
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
 name|PRINT_PROC_NAME
 argument_list|)
@@ -1008,28 +1020,31 @@ name|print_operation_set_name
 argument_list|(
 name|operation
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|print_page_setup_load
 argument_list|(
 name|operation
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* fill in the PrintData struct */
 name|data
 operator|.
-name|image_id
+name|image
 operator|=
-name|image_ID
+name|image
 expr_stmt|;
 name|data
 operator|.
-name|drawable_id
+name|drawable
 operator|=
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 expr_stmt|;
 name|data
 operator|.
@@ -1044,7 +1059,7 @@ name|image_unit
 operator|=
 name|gimp_image_get_unit
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|data
@@ -1085,7 +1100,7 @@ name|operation
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|data
@@ -1167,7 +1182,7 @@ name|temp_proc
 operator|=
 name|print_temp_proc_install
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_extension_enable
@@ -1270,7 +1285,7 @@ name|print_page_setup_save
 argument_list|(
 name|operation
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -1322,12 +1337,18 @@ if|if
 condition|(
 name|gimp_item_is_valid
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 condition|)
 name|gimp_item_delete
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1372,11 +1393,12 @@ end_ifndef
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|page_setup (gint32 image_ID)
+DECL|function|page_setup (GimpImage * image)
 name|page_setup
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GtkPrintOperation
@@ -1407,7 +1429,7 @@ name|print_page_setup_load
 argument_list|(
 name|operation
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|print_page_setup_dialog
@@ -1419,7 +1441,7 @@ name|print_page_setup_save
 argument_list|(
 name|operation
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1432,7 +1454,7 @@ name|name
 operator|=
 name|print_temp_proc_name
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* we don't want the core to show an error message if the    * temporary procedure does not exist    */
@@ -1453,9 +1475,9 @@ argument_list|()
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_TYPE_IMAGE_ID
+name|GIMP_TYPE_IMAGE
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1548,15 +1570,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|print_operation_set_name (GtkPrintOperation * operation,gint image_ID)
+DECL|function|print_operation_set_name (GtkPrintOperation * operation,GimpImage * image)
 name|print_operation_set_name
 parameter_list|(
 name|GtkPrintOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gint
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|gchar
@@ -1565,7 +1588,7 @@ name|name
 init|=
 name|gimp_image_get_name
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 decl_stmt|;
 name|gtk_print_operation_set_job_name
@@ -1625,7 +1648,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|end_print (GtkPrintOperation * operation,GtkPrintContext * context,gint32 * layer_ID)
+DECL|function|end_print (GtkPrintOperation * operation,GtkPrintContext * context,GimpLayer ** layer)
 name|end_print
 parameter_list|(
 name|GtkPrintOperation
@@ -1636,9 +1659,10 @@ name|GtkPrintContext
 modifier|*
 name|context
 parameter_list|,
-name|gint32
+name|GimpLayer
 modifier|*
-name|layer_ID
+modifier|*
+name|layer
 parameter_list|)
 block|{
 comment|/* we don't need the print layer any longer, delete it */
@@ -1646,22 +1670,27 @@ if|if
 condition|(
 name|gimp_item_is_valid
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 operator|*
-name|layer_ID
+name|layer
+argument_list|)
 argument_list|)
 condition|)
 block|{
 name|gimp_item_delete
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 operator|*
-name|layer_ID
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 operator|*
-name|layer_ID
+name|layer
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 block|}
 name|gimp_progress_end
@@ -1805,8 +1834,9 @@ name|gpointer
 name|run_data
 parameter_list|)
 block|{
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
 name|GIMP_VALUES_GET_IMAGE
 argument_list|(
@@ -1823,7 +1853,7 @@ name|print_page_setup_load
 argument_list|(
 name|print_operation
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1843,11 +1873,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|print_temp_proc_name (gint32 image_ID)
+DECL|function|print_temp_proc_name (GimpImage * image)
 name|print_temp_proc_name
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 return|return
@@ -1856,7 +1887,7 @@ argument_list|(
 name|PRINT_TEMP_PROC_NAME
 literal|"-%d"
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 return|;
 block|}
@@ -1866,11 +1897,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|print_temp_proc_install (gint32 image_ID)
+DECL|function|print_temp_proc_install (GimpImage * image)
 name|print_temp_proc_install
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPlugIn
@@ -1886,7 +1918,7 @@ name|name
 init|=
 name|print_temp_proc_name
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 decl_stmt|;
 name|GimpProcedure

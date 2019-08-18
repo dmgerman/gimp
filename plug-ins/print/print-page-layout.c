@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289b858f0108
+DECL|struct|__anon2a087f340108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon289b858f0203
+DECL|enum|__anon2a087f340203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -406,7 +406,7 @@ end_decl_stmt
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|print_page_layout_gui (PrintData * data,const gchar * help_id)
+DECL|function|print_page_layout_gui (PrintData * data,const gchar * help)
 name|print_page_layout_gui
 parameter_list|(
 name|PrintData
@@ -416,7 +416,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_id
+name|help
 parameter_list|)
 block|{
 name|GtkWidget
@@ -474,7 +474,7 @@ name|gimp_drawable_width
 argument_list|(
 name|data
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|info
@@ -485,7 +485,7 @@ name|gimp_drawable_height
 argument_list|(
 name|data
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|setup
@@ -844,7 +844,7 @@ name|setup
 argument_list|,
 name|data
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|print_preview_set_use_full_page
@@ -944,7 +944,7 @@ name|main_hbox
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|help_id
+name|help
 argument_list|,
 name|NULL
 argument_list|,
@@ -4775,7 +4775,7 @@ name|info
 operator|->
 name|data
 operator|->
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|xres
