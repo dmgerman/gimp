@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29002be80103
+DECL|enum|__anon29a0d4ba0103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29002be80203
+DECL|enum|__anon29a0d4ba0203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29002be80303
+DECL|enum|__anon29a0d4ba0303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29002be80408
+DECL|struct|__anon29a0d4ba0408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -989,7 +989,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|3
+literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1003,7 +1003,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|4
+literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1017,7 +1017,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1031,7 +1031,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|6
+literal|3
 argument_list|)
 argument_list|)
 expr_stmt|;
