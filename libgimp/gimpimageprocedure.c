@@ -350,11 +350,13 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|gint
 name|i
@@ -368,7 +370,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|GIMP_VALUES_GET_IMAGE
 argument_list|(
@@ -377,7 +379,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|drawable_id
+name|drawable
 operator|=
 name|GIMP_VALUES_GET_DRAWABLE
 argument_list|(
@@ -446,9 +448,9 @@ name|procedure
 argument_list|,
 name|run_mode
 argument_list|,
-name|image_id
+name|image
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|remaining
 argument_list|,

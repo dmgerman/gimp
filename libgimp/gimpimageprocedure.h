@@ -31,7 +31,7 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_comment
-comment|/**  * GimpRunImageFunc:  * @procedure:   the #GimpProcedure that runs.  * @run_mode:    the #GimpRunMode.  * @image_id:    the image id.  * @drawable_id: the drawable id.  * @args:        the @procedure's remaining arguments.  * @run_data:    the run_data given in gimp_image_procedure_new().  *  * The image function is run during the lifetime of the GIMP session,  * each time a plug-in image procedure is called.  *  * Returns: (transfer full): the @procedure's return values.  *  * Since: 3.0  **/
+comment|/**  * GimpRunImageFunc:  * @procedure: the #GimpProcedure that runs.  * @run_mode:  the #GimpRunMode.  * @image:     the #GimpImage.  * @drawable:  the #GimpDrawable.  * @args:      the @procedure's remaining arguments.  * @run_data:  the run_data given in gimp_image_procedure_new().  *  * The image function is run during the lifetime of the GIMP session,  * each time a plug-in image procedure is called.  *  * Returns: (transfer full): the @procedure's return values.  *  * Since: 3.0  **/
 end_comment
 
 begin_typedef
@@ -51,11 +51,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|GimpValueArray
