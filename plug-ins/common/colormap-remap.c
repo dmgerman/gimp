@@ -771,7 +771,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|3
+literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -783,7 +783,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|4
+literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -946,7 +946,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|3
+literal|0
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -959,7 +959,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|4
+literal|1
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1887,7 +1887,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bc9860103
+DECL|enum|__anon2b154e420103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

@@ -1599,7 +1599,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|3
+literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1613,7 +1613,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|4
+literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1627,7 +1627,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1641,7 +1641,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|6
+literal|3
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1655,7 +1655,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|7
+literal|4
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1669,7 +1669,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|8
+literal|5
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1683,7 +1683,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|9
+literal|6
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1697,7 +1697,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|10
+literal|7
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1711,7 +1711,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|11
+literal|8
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1725,7 +1725,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|12
+literal|9
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1739,7 +1739,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|13
+literal|10
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1753,7 +1753,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|14
+literal|11
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1767,7 +1767,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|15
+literal|12
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1781,7 +1781,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|16
+literal|13
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1795,7 +1795,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|17
+literal|14
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1809,7 +1809,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|18
+literal|15
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1823,7 +1823,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|19
+literal|16
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1837,7 +1837,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|20
+literal|17
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1851,7 +1851,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|21
+literal|18
 argument_list|)
 argument_list|)
 expr_stmt|;

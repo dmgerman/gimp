@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c63ac7d0108
+DECL|struct|__anon29b3db350108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c63ac7d0208
+DECL|struct|__anon29b3db350208
 block|{
 DECL|member|advanced_adj
 name|GtkAdjustment
@@ -1218,7 +1218,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|3
+literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1260,7 +1260,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|4
+literal|1
 argument_list|)
 argument_list|,
 operator|&
@@ -1279,7 +1279,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1295,7 +1295,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|6
+literal|3
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1308,7 +1308,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|7
+literal|4
 argument_list|)
 argument_list|,
 operator|&
@@ -1330,7 +1330,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|8
+literal|5
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1347,7 +1347,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|9
+literal|6
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1361,7 +1361,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|10
+literal|7
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1377,7 +1377,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|11
+literal|8
 argument_list|)
 argument_list|)
 argument_list|,

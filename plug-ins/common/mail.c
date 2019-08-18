@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bdd2850108
+DECL|struct|__anon2b7b485a0108
 block|{
 DECL|member|filename
 name|gchar
@@ -1005,7 +1005,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|3
+literal|0
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1024,7 +1024,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|4
+literal|1
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1043,7 +1043,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1062,7 +1062,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|6
+literal|3
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1081,7 +1081,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|7
+literal|4
 argument_list|)
 argument_list|)
 argument_list|,
