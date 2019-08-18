@@ -355,7 +355,7 @@ name|gimp_procedure_set_image_types
 argument_list|(
 name|procedure
 argument_list|,
-literal|"RGB*, INDEXED*, GRAY*"
+literal|"*"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_menu_label
@@ -366,6 +366,13 @@ name|N_
 argument_list|(
 literal|"GIMP pattern"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_icon_name
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_PATTERN
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_documentation
@@ -390,13 +397,6 @@ argument_list|,
 literal|"Tim Newsome"
 argument_list|,
 literal|"1997"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_icon_name
-argument_list|(
-name|procedure
-argument_list|,
-name|GIMP_ICON_PATTERN
 argument_list|)
 expr_stmt|;
 name|gimp_file_procedure_set_mime_types

@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b567b0f0108
+DECL|struct|__anon29353d5b0108
 block|{
 DECL|member|description
 name|gchar
@@ -397,7 +397,7 @@ name|gimp_procedure_set_image_types
 argument_list|(
 name|procedure
 argument_list|,
-literal|"RGB*, INDEXED*, GRAY*"
+literal|"*"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_menu_label
@@ -408,6 +408,13 @@ name|N_
 argument_list|(
 literal|"GIMP brush"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_icon_name
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_BRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_documentation
@@ -434,13 +441,6 @@ literal|"Tim Newsome, Jens Lautenbacher, "
 literal|"Sven Neumann"
 argument_list|,
 literal|"1997-2000"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_icon_name
-argument_list|(
-name|procedure
-argument_list|,
-name|GIMP_ICON_BRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_file_procedure_set_mime_types

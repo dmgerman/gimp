@@ -577,6 +577,13 @@ literal|"Silicon Graphics IRIS image"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_procedure_set_icon_name
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_BRUSH
+argument_list|)
+expr_stmt|;
 name|gimp_procedure_set_documentation
 argument_list|(
 name|procedure
@@ -597,13 +604,6 @@ argument_list|,
 literal|"Copyright 1997-1998 by Michael Sweet"
 argument_list|,
 name|PLUG_IN_VERSION
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_icon_name
-argument_list|(
-name|procedure
-argument_list|,
-name|GIMP_ICON_BRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_file_procedure_set_mime_types

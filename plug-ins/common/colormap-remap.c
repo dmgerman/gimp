@@ -180,6 +180,15 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|,
+name|gint32
+name|image_id
+parameter_list|,
+name|gint32
+name|drawable_id
+parameter_list|,
 specifier|const
 name|GimpValueArray
 modifier|*
@@ -372,7 +381,7 @@ condition|)
 block|{
 name|procedure
 operator|=
-name|gimp_procedure_new
+name|gimp_image_procedure_new
 argument_list|(
 name|plug_in
 argument_list|,
@@ -402,6 +411,13 @@ name|N_
 argument_list|(
 literal|"R_earrange Colormap..."
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_icon_name
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_COLORMAP
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_menu_path
@@ -444,69 +460,6 @@ argument_list|,
 literal|"Mukund Sivaraman<muks@mukund.org>"
 argument_list|,
 literal|"June 2006"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_icon_name
-argument_list|(
-name|procedure
-argument_list|,
-name|GIMP_ICON_COLORMAP
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_enum
-argument_list|(
-literal|"run-mode"
-argument_list|,
-literal|"Run mode"
-argument_list|,
-literal|"The run mode"
-argument_list|,
-name|GIMP_TYPE_RUN_MODE
-argument_list|,
-name|GIMP_RUN_NONINTERACTIVE
-argument_list|,
-name|G_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_image_id
-argument_list|(
-literal|"image"
-argument_list|,
-literal|"Image"
-argument_list|,
-literal|"The input image"
-argument_list|,
-name|FALSE
-argument_list|,
-name|G_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_drawable_id
-argument_list|(
-literal|"drawable"
-argument_list|,
-literal|"Drawable"
-argument_list|,
-literal|"The input drawable"
-argument_list|,
-name|FALSE
-argument_list|,
-name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -564,7 +517,7 @@ condition|)
 block|{
 name|procedure
 operator|=
-name|gimp_procedure_new
+name|gimp_image_procedure_new
 argument_list|(
 name|plug_in
 argument_list|,
@@ -596,6 +549,13 @@ literal|"_Swap Colors"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_procedure_set_icon_name
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_COLORMAP
+argument_list|)
+expr_stmt|;
 name|gimp_procedure_set_documentation
 argument_list|(
 name|procedure
@@ -623,69 +583,6 @@ argument_list|,
 literal|"Mukund Sivaraman<muks@mukund.org>"
 argument_list|,
 literal|"June 2006"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_icon_name
-argument_list|(
-name|procedure
-argument_list|,
-name|GIMP_ICON_COLORMAP
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_enum
-argument_list|(
-literal|"run-mode"
-argument_list|,
-literal|"Run mode"
-argument_list|,
-literal|"The run mode"
-argument_list|,
-name|GIMP_TYPE_RUN_MODE
-argument_list|,
-name|GIMP_RUN_NONINTERACTIVE
-argument_list|,
-name|G_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_image_id
-argument_list|(
-literal|"image"
-argument_list|,
-literal|"Image"
-argument_list|,
-literal|"The input image"
-argument_list|,
-name|FALSE
-argument_list|,
-name|G_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_drawable_id
-argument_list|(
-literal|"drawable"
-argument_list|,
-literal|"Drawable"
-argument_list|,
-literal|"The input drawable"
-argument_list|,
-name|FALSE
-argument_list|,
-name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -745,12 +642,21 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|remap_run (GimpProcedure * procedure,const GimpValueArray * args,gpointer run_data)
+DECL|function|remap_run (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image_id,gint32 drawable_id,const GimpValueArray * args,gpointer run_data)
 name|remap_run
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
+parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|,
+name|gint32
+name|image_id
+parameter_list|,
+name|gint32
+name|drawable_id
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -761,12 +667,6 @@ name|gpointer
 name|run_data
 parameter_list|)
 block|{
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
 name|guchar
 name|map
 index|[
@@ -786,36 +686,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|run_mode
-operator|=
-name|g_value_get_enum
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|0
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|image_ID
-operator|=
-name|gimp_value_get_image_id
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|1
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  Make sure that the image is indexed  */
 if|if
 condition|(
 name|gimp_image_base_type
 argument_list|(
-name|image_ID
+name|image_id
 argument_list|)
 operator|!=
 name|GIMP_INDEXED
@@ -880,7 +756,7 @@ name|g_free
 argument_list|(
 name|gimp_image_get_colormap
 argument_list|(
-name|image_ID
+name|image_id
 argument_list|,
 operator|&
 name|n_cols
@@ -924,7 +800,7 @@ condition|(
 operator|!
 name|remap_dialog
 argument_list|(
-name|image_ID
+name|image_id
 argument_list|,
 name|map
 argument_list|)
@@ -1000,7 +876,7 @@ condition|(
 operator|!
 name|remap
 argument_list|(
-name|image_ID
+name|image_id
 argument_list|,
 name|n_cols
 argument_list|,
@@ -1113,7 +989,7 @@ name|g_free
 argument_list|(
 name|gimp_image_get_colormap
 argument_list|(
-name|image_ID
+name|image_id
 argument_list|,
 operator|&
 name|n_cols
@@ -1169,7 +1045,7 @@ condition|(
 operator|!
 name|remap
 argument_list|(
-name|image_ID
+name|image_id
 argument_list|,
 name|n_cols
 argument_list|,
@@ -2011,7 +1887,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ade29d90103
+DECL|enum|__anon289bc9860103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

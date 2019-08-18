@@ -373,6 +373,13 @@ literal|"Exercise in _C minor"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_procedure_set_icon_name
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_GEGL
+argument_list|)
+expr_stmt|;
 name|gimp_procedure_add_menu_path
 argument_list|(
 name|procedure
@@ -403,13 +410,6 @@ argument_list|,
 literal|"Ãyvind KolÃ¥s<pippin@gimp.org>"
 argument_list|,
 literal|"21 march 2012"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_icon_name
-argument_list|(
-name|procedure
-argument_list|,
-name|GIMP_ICON_GEGL
 argument_list|)
 expr_stmt|;
 block|}

@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7f8e8e0103
+DECL|enum|__anon29aa007c0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7f8e8e0208
+DECL|struct|__anon29aa007c0208
 block|{
 DECL|member|title
 specifier|const
@@ -694,6 +694,13 @@ literal|"U_nits"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_procedure_set_icon_name
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_TOOL_MEASURE
+argument_list|)
+expr_stmt|;
 name|gimp_procedure_add_menu_path
 argument_list|(
 name|procedure
@@ -724,13 +731,6 @@ argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"2000"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_icon_name
-argument_list|(
-name|procedure
-argument_list|,
-name|GIMP_ICON_TOOL_MEASURE
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

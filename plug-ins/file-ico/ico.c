@@ -450,6 +450,13 @@ literal|"Microsoft Windows icon"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_procedure_set_icon_name
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_BRUSH
+argument_list|)
+expr_stmt|;
 name|gimp_procedure_set_documentation
 argument_list|(
 name|procedure
@@ -470,13 +477,6 @@ argument_list|,
 literal|"Christian Kreibich<christian@whoop.org>"
 argument_list|,
 literal|"2002"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_icon_name
-argument_list|(
-name|procedure
-argument_list|,
-name|GIMP_ICON_BRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_file_procedure_set_mime_types
@@ -729,6 +729,13 @@ literal|"Microsoft Windows icon"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_procedure_set_icon_name
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_BRUSH
+argument_list|)
+expr_stmt|;
 name|gimp_procedure_set_documentation
 argument_list|(
 name|procedure
@@ -749,13 +756,6 @@ argument_list|,
 literal|"Christian Kreibich<christian@whoop.org>"
 argument_list|,
 literal|"2002"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_icon_name
-argument_list|(
-name|procedure
-argument_list|,
-name|GIMP_ICON_BRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_file_procedure_set_mime_types

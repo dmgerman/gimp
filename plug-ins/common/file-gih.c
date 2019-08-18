@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b134190108
+DECL|struct|__anon28be70f40108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b134190208
+DECL|struct|__anon28be70f40208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -542,6 +542,13 @@ literal|"GIMP brush (animated)"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_procedure_set_icon_name
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_BRUSH
+argument_list|)
+expr_stmt|;
 name|gimp_procedure_set_documentation
 argument_list|(
 name|procedure
@@ -570,13 +577,6 @@ argument_list|,
 literal|"Tor Lillqvist"
 argument_list|,
 literal|"1999"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_icon_name
-argument_list|(
-name|procedure
-argument_list|,
-name|GIMP_ICON_BRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_file_procedure_set_mime_types

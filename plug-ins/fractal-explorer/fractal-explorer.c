@@ -226,6 +226,15 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|,
+name|gint32
+name|image_id
+parameter_list|,
+name|gint32
+name|drawable_id
+parameter_list|,
 specifier|const
 name|GimpValueArray
 modifier|*
@@ -644,13 +653,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_id
-name|gint32
-name|drawable_id
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|fractalexplorer_list
 specifier|static
 name|GList
@@ -875,7 +877,7 @@ condition|)
 block|{
 name|procedure
 operator|=
-name|gimp_procedure_new
+name|gimp_image_procedure_new
 argument_list|(
 name|plug_in
 argument_list|,
@@ -939,62 +941,6 @@ literal|"Daniel Cotting (cotting@multimania.com, "
 literal|"www.multimania.com/cotting)"
 argument_list|,
 literal|"December, 1998"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_enum
-argument_list|(
-literal|"run-mode"
-argument_list|,
-literal|"Run mode"
-argument_list|,
-literal|"The run mode"
-argument_list|,
-name|GIMP_TYPE_RUN_MODE
-argument_list|,
-name|GIMP_RUN_NONINTERACTIVE
-argument_list|,
-name|G_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_image_id
-argument_list|(
-literal|"image"
-argument_list|,
-literal|"Image"
-argument_list|,
-literal|"The input image"
-argument_list|,
-name|FALSE
-argument_list|,
-name|G_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_drawable_id
-argument_list|(
-literal|"drawable"
-argument_list|,
-literal|"Drawable"
-argument_list|,
-literal|"The input drawable"
-argument_list|,
-name|FALSE
-argument_list|,
-name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1444,12 +1390,21 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|explorer_run (GimpProcedure * procedure,const GimpValueArray * args,gpointer run_data)
+DECL|function|explorer_run (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image_id,gint32 drawable_id,const GimpValueArray * args,gpointer run_data)
 name|explorer_run
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
+parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|,
+name|gint32
+name|image_id
+parameter_list|,
+name|gint32
+name|drawable_id
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -1460,9 +1415,6 @@ name|gpointer
 name|run_data
 parameter_list|)
 block|{
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
 name|gint
 name|pwidth
 decl_stmt|;
@@ -1488,18 +1440,6 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|run_mode
-operator|=
-name|g_value_get_enum
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|drawable_id
