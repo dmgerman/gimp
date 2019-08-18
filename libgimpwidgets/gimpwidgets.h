@@ -369,6 +369,7 @@ begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 comment|/*  *  Widget Constructors  */
+comment|/* specify radio buttons as va_list:  *  const gchar  *label,  *  gint          item_data,  *  GtkWidget   **widget_ptr,  */
 name|GtkWidget
 modifier|*
 name|gimp_int_radio_group_new
@@ -391,7 +392,6 @@ name|gint
 name|initial
 argument_list|,
 comment|/* item_data */
-comment|/* specify radio buttons as va_list:                                        *  const gchar  *label,                                        *  gint          item_data,                                        *  GtkWidget   **widget_ptr,                                        */
 operator|...
 argument_list|)
 name|G_GNUC_NULL_TERMINATED
@@ -412,6 +412,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* specify radio buttons as va_list:  *  const gchar    *label,  *  GCallback       callback,  *  gpointer        callback_data,  *  gpointer        item_data,  *  GtkWidget     **widget_ptr,  *  gboolean        active,  */
+end_comment
+
 begin_decl_stmt
 name|GtkWidget
 modifier|*
@@ -425,12 +429,15 @@ name|gchar
 operator|*
 name|frame_title
 argument_list|,
-comment|/* specify radio buttons as va_list:                                      *  const gchar    *label,                                      *  GCallback       callback,                                      *  gpointer        callback_data,                                      *  gpointer        item_data,                                      *  GtkWidget     **widget_ptr,                                      *  gboolean        active,                                      */
 operator|...
 argument_list|)
 name|G_GNUC_NULL_TERMINATED
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/* specify radio buttons as va_list:  *  const gchar    *label,  *  gpointer        item_data,  *  GtkWidget     **widget_ptr,  */
+end_comment
 
 begin_decl_stmt
 name|GtkWidget
@@ -455,7 +462,6 @@ name|gpointer
 name|initial
 argument_list|,
 comment|/* item_data */
-comment|/* specify radio buttons as va_list:                                      *  const gchar    *label,                                      *  gpointer        item_data,                                      *  GtkWidget     **widget_ptr,                                      */
 operator|...
 argument_list|)
 name|G_GNUC_NULL_TERMINATED

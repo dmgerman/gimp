@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2958a1aa0103
+DECL|enum|__anon28f9c6cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2958a1aa0203
+DECL|enum|__anon28f9c6cd0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -934,7 +934,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_clone:  * @display: a #GimpColorDisplay  *  * Creates a copy of @display.  *  * Returns: (transfer full): a duplicate of @display.  *  * Since: 1.3.10  **/
+comment|/**  * gimp_color_display_clone:  * @display: a #GimpColorDisplay  *  * Creates a copy of @display.  *  * Returns: (transfer full): a duplicate of @display.  *  * Since: 2.0  **/
 end_comment
 
 begin_function
@@ -1055,7 +1055,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_load_state:  * @display: a #GimpColorDisplay  * @state:   a #GimpParasite  *  * Configures @display from the contents of the parasite @state.  * @state must be a properly serialized configuration for a  * #GimpColorDisplay, such as saved by gimp_color_display_save_state().  *  * Since: 1.3.10  **/
+comment|/**  * gimp_color_display_load_state:  * @display: a #GimpColorDisplay  * @state:   a #GimpParasite  *  * Configures @display from the contents of the parasite @state.  * @state must be a properly serialized configuration for a  * #GimpColorDisplay, such as saved by gimp_color_display_save_state().  *  * Since: 2.0  **/
 end_comment
 
 begin_function
@@ -1113,7 +1113,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_save_state:  * @display: a #GimpColorDisplay  *  * Saves the configuration state of @display as a new parasite.  *  * Returns: (transfer full): a #GimpParasite  *  * Since: 1.3.10  **/
+comment|/**  * gimp_color_display_save_state:  * @display: a #GimpColorDisplay  *  * Saves the configuration state of @display as a new parasite.  *  * Returns: (transfer full): a #GimpParasite  *  * Since: 2.0  **/
 end_comment
 
 begin_function
@@ -1187,7 +1187,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_configure:  * @display: a #GimpColorDisplay  *  * Creates a configuration widget for @display which can be added to a  * container widget.  *  * Returns: (transfer full): a new configuration widget for @display, or  *          %NULL if no specific widget exists.  *  * Since: 1.3.10  **/
+comment|/**  * gimp_color_display_configure:  * @display: a #GimpColorDisplay  *  * Creates a configuration widget for @display which can be added to a  * container widget.  *  * Returns: (transfer full): a new configuration widget for @display, or  *          %NULL if no specific widget exists.  *  * Since: 2.0  **/
 end_comment
 
 begin_function

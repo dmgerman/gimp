@@ -1095,7 +1095,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb59df0108
+DECL|struct|__anon2b2559420108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1321,7 +1321,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_widget_track_monitor:  * @widget:                   a #GtkWidget  * @monitor_changed_callback: the callback when @widget's monitor changes  * @user_data:                data passed to @monitor_changed_callback  *  * This function behaves as if #GtkWidget had a signal  *  * GtkWidget::monitor_changed(GtkWidget *widget, gpointer user_data)  *  * That is emitted whenever @widget's toplevel window is moved from  * one monitor to another. This function automatically connects to  * the right toplevel #GtkWindow, even across moving @widget between  * toplevel windows.  *  * Note that this function tracks the toplevel, not @widget itself, so  * all a window's widgets are always considered to be on the same  * monitor. This is because this function is mainly used for fetching  * the new monitor's color profile, and it makes little sense to use  * different profiles for the widgets of one window.  *  * Since: 2.10  **/
+comment|/**  * gimp_widget_track_monitor:  * @widget:                   a #GtkWidget  * @monitor_changed_callback: the callback when @widget's monitor changes  * @user_data:                data passed to @monitor_changed_callback  * @user_data_destroy:        destroy function for @user_data.  *  * This function behaves as if #GtkWidget had a signal  *  * GtkWidget::monitor_changed(GtkWidget *widget, gpointer user_data)  *  * That is emitted whenever @widget's toplevel window is moved from  * one monitor to another. This function automatically connects to  * the right toplevel #GtkWindow, even across moving @widget between  * toplevel windows.  *  * Note that this function tracks the toplevel, not @widget itself, so  * all a window's widgets are always considered to be on the same  * monitor. This is because this function is mainly used for fetching  * the new monitor's color profile, and it makes little sense to use  * different profiles for the widgets of one window.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

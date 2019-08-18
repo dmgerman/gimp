@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fcdb870103
+DECL|enum|__anon2a42b0f00103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1574,7 +1574,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_model_visible_changed:  * @selector: A #GimpColorSelector widget.  *  * Emits the "model-visible-changed" signal.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_selector_model_visible_changed:  * @selector: A #GimpColorSelector widget.  * @model:    The #GimpColorSelectorModel where visibility changed.  *  * Emits the "model-visible-changed" signal.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
