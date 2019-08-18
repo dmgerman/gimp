@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -201,9 +207,10 @@ name|row
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|gimp_is_canonical_identifier
+argument_list|(
 name|procedure_name
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

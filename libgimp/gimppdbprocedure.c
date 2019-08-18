@@ -42,7 +42,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277ff9b30103
+DECL|enum|__anon29c3d3250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -654,9 +654,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|gimp_is_canonical_identifier
+argument_list|(
 name|name
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
