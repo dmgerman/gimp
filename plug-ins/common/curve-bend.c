@@ -124,7 +124,7 @@ DECL|macro|PLUG_IN_ITER_NAME
 define|#
 directive|define
 name|PLUG_IN_ITER_NAME
-value|"plug_in_curve_bend_Iterator"
+value|"plug-in-curve-bend-Iterator"
 end_define
 
 begin_define
@@ -655,7 +655,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f550a0108
+DECL|struct|__anon273ae60c0108
 block|{
 DECL|member|drawable_id
 name|guint32
@@ -722,7 +722,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f550a0208
+DECL|struct|__anon273ae60c0208
 block|{
 DECL|member|y
 name|gint32
