@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dce5d50108
+DECL|struct|__anon2af2e45f0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -609,6 +609,13 @@ name|NULL
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|run_mode
 operator|=
