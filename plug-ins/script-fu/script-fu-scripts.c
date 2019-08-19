@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c27fe0108
+DECL|struct|__anon2990b8e00108
 block|{
 DECL|member|script
 name|SFScript
@@ -3669,14 +3669,11 @@ argument_list|)
 return|;
 name|run_mode
 operator|=
-name|g_value_get_enum
-argument_list|(
-name|gimp_value_array_index
+name|GIMP_VALUES_GET_ENUM
 argument_list|(
 name|args
 argument_list|,
 literal|0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|ts_set_run_mode
@@ -4025,7 +4022,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2b1c27fe0208
+DECL|struct|__anon2990b8e00208
 block|{
 DECL|member|old
 specifier|const

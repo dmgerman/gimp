@@ -527,14 +527,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_value_set_image_id
-argument_list|(
-name|gimp_value_array_index
+name|GIMP_VALUES_SET_IMAGE
 argument_list|(
 name|return_vals
 argument_list|,
 literal|1
-argument_list|)
 argument_list|,
 name|image_ID
 argument_list|)

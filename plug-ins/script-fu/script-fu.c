@@ -995,14 +995,11 @@ literal|0
 condition|)
 name|ts_set_run_mode
 argument_list|(
-name|g_value_get_enum
-argument_list|(
-name|gimp_value_array_index
+name|GIMP_VALUES_GET_ENUM
 argument_list|(
 name|args
 argument_list|,
 literal|0
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -1808,14 +1808,11 @@ block|{
 name|gint32
 name|image_ID
 init|=
-name|gimp_value_get_image_id
-argument_list|(
-name|gimp_value_array_index
+name|GIMP_VALUES_GET_IMAGE
 argument_list|(
 name|args
 argument_list|,
 literal|0
-argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
