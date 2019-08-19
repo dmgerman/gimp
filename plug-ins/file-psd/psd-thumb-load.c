@@ -132,7 +132,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|create_gimp_image
 parameter_list|(
 name|PSDimage
@@ -152,8 +153,9 @@ specifier|static
 name|gint
 name|add_image_resources
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -176,7 +178,8 @@ comment|/* Main file load function */
 end_comment
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_thumbnail_image (const gchar * filename,gint * width,gint * height,GError ** load_error)
 name|load_thumbnail_image
 parameter_list|(
@@ -210,11 +213,11 @@ decl_stmt|;
 name|PSDimage
 name|img_a
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|GError
 modifier|*
@@ -237,8 +240,7 @@ operator|-
 literal|1
 condition|)
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 name|gimp_progress_init_printf
 argument_list|(
@@ -311,8 +313,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* ----- Read the PSD file Header block ----- */
@@ -424,7 +425,7 @@ argument_list|(
 literal|"Create GIMP image"
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|create_gimp_image
 argument_list|(
@@ -436,9 +437,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|0
+operator|!
+name|image
 condition|)
 goto|goto
 name|load_error
@@ -457,7 +457,7 @@ if|if
 condition|(
 name|add_image_resources
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|img_a
@@ -480,12 +480,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_clean_all
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -508,7 +508,7 @@ operator|.
 name|rows
 expr_stmt|;
 return|return
-name|image_id
+name|image
 return|;
 comment|/* ----- Process load errors ----- */
 name|load_error
@@ -545,13 +545,11 @@ block|}
 comment|/* Delete partially loaded image */
 if|if
 condition|(
-name|image_id
-operator|>
-literal|0
+name|image
 condition|)
 name|gimp_image_delete
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* Close file if Open */
@@ -570,8 +568,7 @@ name|f
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 end_function
@@ -1195,7 +1192,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|create_gimp_image (PSDimage * img_a,const gchar * filename)
 name|create_gimp_image
 parameter_list|(
@@ -1209,11 +1207,11 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|img_a
 operator|->
@@ -1231,7 +1229,7 @@ argument_list|(
 literal|"Create image"
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|gimp_image_new
 argument_list|(
@@ -1250,18 +1248,18 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
-name|image_id
+name|image
 return|;
 block|}
 end_function
@@ -1269,11 +1267,12 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_image_resources (gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|add_image_resources (GimpImage * image,PSDimage * img_a,FILE * f,GError ** error)
 name|add_image_resources
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -1390,7 +1389,7 @@ argument_list|(
 operator|&
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,

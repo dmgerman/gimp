@@ -116,8 +116,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -141,8 +142,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -166,8 +168,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -191,8 +194,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -220,8 +224,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -249,8 +254,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -274,8 +280,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -303,8 +310,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -332,8 +340,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -357,8 +366,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -382,8 +392,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -407,8 +418,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -432,8 +444,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -461,8 +474,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -486,8 +500,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -515,8 +530,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -540,8 +556,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -569,8 +586,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -829,15 +847,16 @@ end_function
 
 begin_function
 name|gint
-DECL|function|load_image_resource (PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
+DECL|function|load_image_resource (PSDimageres * res_a,GimpImage * image,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
 name|load_image_resource
 parameter_list|(
 name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -1013,7 +1032,7 @@ name|load_resource_ps_only
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1031,7 +1050,7 @@ name|load_resource_1005
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1058,7 +1077,7 @@ name|load_resource_1006
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|img_a
 argument_list|,
@@ -1075,7 +1094,7 @@ name|load_resource_1007
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|img_a
 argument_list|,
@@ -1092,7 +1111,7 @@ name|load_resource_1008
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1114,7 +1133,7 @@ name|load_resource_1022
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|img_a
 argument_list|,
@@ -1138,7 +1157,7 @@ name|load_resource_1024
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|img_a
 argument_list|,
@@ -1162,7 +1181,7 @@ name|load_resource_2000
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1177,7 +1196,7 @@ name|load_resource_1028
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1199,7 +1218,7 @@ name|load_resource_1032
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1217,7 +1236,7 @@ name|load_resource_1039
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1244,7 +1263,7 @@ name|load_resource_1045
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|img_a
 argument_list|,
@@ -1261,7 +1280,7 @@ name|load_resource_1046
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1283,7 +1302,7 @@ name|load_resource_1053
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|img_a
 argument_list|,
@@ -1300,7 +1319,7 @@ name|load_resource_1058
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1319,7 +1338,7 @@ name|load_resource_1077
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|img_a
 argument_list|,
@@ -1348,7 +1367,7 @@ name|load_resource_2000
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1360,7 +1379,7 @@ name|load_resource_unknown
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1437,15 +1456,16 @@ end_function
 
 begin_function
 name|gint
-DECL|function|load_thumbnail_resource (PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_thumbnail_resource (PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_thumbnail_resource
 parameter_list|(
 name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -1520,7 +1540,7 @@ name|load_resource_1033
 argument_list|(
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|f
 argument_list|,
@@ -1605,7 +1625,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_unknown (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_unknown (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_unknown
 parameter_list|(
 specifier|const
@@ -1613,8 +1633,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -1744,7 +1765,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -1773,7 +1794,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_ps_only (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_ps_only (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_ps_only
 parameter_list|(
 specifier|const
@@ -1781,8 +1802,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -1912,7 +1934,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -1941,7 +1963,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1005 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1005 (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_1005
 parameter_list|(
 specifier|const
@@ -1949,8 +1971,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -2197,7 +2220,7 @@ expr_stmt|;
 comment|/* Resolution always recorded as pixels / inch in a fixed point implied      decimal int32 with 16 bits before point and 16 after (i.e. cast as      double and divide resolution by 2^16 */
 name|gimp_image_set_resolution
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|res_info
 operator|.
@@ -2244,7 +2267,7 @@ expr_stmt|;
 block|}
 name|gimp_image_set_unit
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|image_unit
 argument_list|)
@@ -2258,7 +2281,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1006 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1006 (const PSDimageres * res_a,GimpImage * image,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1006
 parameter_list|(
 specifier|const
@@ -2266,8 +2289,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -2421,7 +2445,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1007 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1007 (const PSDimageres * res_a,GimpImage * image,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1007
 parameter_list|(
 specifier|const
@@ -2429,8 +2453,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -3118,7 +3143,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1008 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1008 (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_1008
 parameter_list|(
 specifier|const
@@ -3126,8 +3151,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -3215,7 +3241,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -3239,7 +3265,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1022 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1022 (const PSDimageres * res_a,GimpImage * image,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1022
 parameter_list|(
 specifier|const
@@ -3247,8 +3273,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -3363,7 +3390,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1024 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1024 (const PSDimageres * res_a,GimpImage * image,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1024
 parameter_list|(
 specifier|const
@@ -3371,8 +3398,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -3454,7 +3482,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1028 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1028 (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_1028
 parameter_list|(
 specifier|const
@@ -3462,8 +3490,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -3635,7 +3664,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -3711,7 +3740,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -3743,7 +3772,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1032 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1032 (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_1032
 parameter_list|(
 specifier|const
@@ -3751,8 +3780,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -4049,7 +4079,7 @@ name|PSD_VERTICAL
 condition|)
 name|gimp_image_add_vguide
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|guide
 operator|.
@@ -4059,7 +4089,7 @@ expr_stmt|;
 else|else
 name|gimp_image_add_hguide
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|guide
 operator|.
@@ -4076,7 +4106,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1033 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1033 (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_1033
 parameter_list|(
 specifier|const
@@ -4084,8 +4114,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -4118,8 +4149,9 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-name|gint32
-name|layer_id
+name|GimpLayer
+modifier|*
+name|layer
 decl_stmt|;
 name|guchar
 modifier|*
@@ -4580,7 +4612,7 @@ expr_stmt|;
 comment|/* Create image layer */
 name|gimp_image_resize
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|cinfo
 operator|.
@@ -4595,11 +4627,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|layer_id
+name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -4620,7 +4652,7 @@ literal|100
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4628,7 +4660,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|format
@@ -4840,12 +4875,11 @@ expr_stmt|;
 comment|/* At this point you may want to check to see whether any    * corrupt-data warnings occurred (test whether    * jerr.num_warnings is nonzero).    */
 name|gimp_image_insert_layer
 argument_list|(
-name|image_id
+name|image
 argument_list|,
-name|layer_id
+name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -4864,7 +4898,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1039 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1039 (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_1039
 parameter_list|(
 specifier|const
@@ -4872,8 +4906,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -4976,7 +5011,7 @@ condition|)
 block|{
 name|gimp_image_set_color_profile
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|profile
 argument_list|)
@@ -5001,7 +5036,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1045 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1045 (const PSDimageres * res_a,GimpImage * image,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1045
 parameter_list|(
 specifier|const
@@ -5009,8 +5044,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -5208,7 +5244,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1046 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1046 (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_1046
 parameter_list|(
 specifier|const
@@ -5216,8 +5252,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -5319,7 +5356,7 @@ name|cmap
 operator|=
 name|gimp_image_get_colormap
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|cmap_count
@@ -5335,7 +5372,7 @@ name|cmap_count
 condition|)
 name|gimp_image_set_colormap
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|cmap
 argument_list|,
@@ -5357,7 +5394,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1053 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1053 (const PSDimageres * res_a,GimpImage * image,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1053
 parameter_list|(
 specifier|const
@@ -5365,8 +5402,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -5533,7 +5571,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1058 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_1058 (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_1058
 parameter_list|(
 specifier|const
@@ -5541,8 +5579,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -5677,7 +5716,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -5706,7 +5745,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1077 (const PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|load_resource_1077 (const PSDimageres * res_a,GimpImage * image,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1077
 parameter_list|(
 specifier|const
@@ -5714,8 +5753,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -6397,7 +6437,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_2000 (const PSDimageres * res_a,gint32 image_id,FILE * f,GError ** error)
+DECL|function|load_resource_2000 (const PSDimageres * res_a,GimpImage * image,FILE * f,GError ** error)
 name|load_resource_2000
 parameter_list|(
 specifier|const
@@ -6405,8 +6445,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*
@@ -6434,11 +6475,11 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-name|gint32
-name|vector_id
+name|GimpVectors
+modifier|*
+name|vectors
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gint16
 name|type
@@ -6609,14 +6650,14 @@ name|image_width
 operator|=
 name|gimp_image_width
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|image_height
 operator|=
 name|gimp_image_height
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* Create path */
@@ -6630,11 +6671,11 @@ name|PSD_WORKING_PATH
 condition|)
 block|{
 comment|/* use "Working Path" for the path name to match the Photoshop display */
-name|vector_id
+name|vectors
 operator|=
 name|gimp_vectors_new
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 literal|"Working Path"
 argument_list|)
@@ -6643,11 +6684,11 @@ block|}
 else|else
 block|{
 comment|/* Use the name stored in the PSD to name the path */
-name|vector_id
+name|vectors
 operator|=
 name|gimp_vectors_new
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|res_a
 operator|->
@@ -6657,12 +6698,11 @@ expr_stmt|;
 block|}
 name|gimp_image_insert_vectors
 argument_list|(
-name|image_id
+name|image
 argument_list|,
-name|vector_id
+name|vectors
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -7367,7 +7407,7 @@ block|}
 comment|/* Add sub-path */
 name|gimp_vectors_stroke_new_from_points
 argument_list|(
-name|vector_id
+name|vectors
 argument_list|,
 name|GIMP_VECTORS_STROKE_TYPE_BEZIER
 argument_list|,

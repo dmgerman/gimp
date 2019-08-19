@@ -44,8 +44,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -79,8 +80,9 @@ name|PSDimageres
 modifier|*
 name|res_a
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|FILE
 modifier|*

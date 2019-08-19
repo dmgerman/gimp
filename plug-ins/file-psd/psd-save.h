@@ -25,8 +25,9 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GError
 modifier|*

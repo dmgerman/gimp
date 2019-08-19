@@ -196,7 +196,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|create_gimp_image
 parameter_list|(
 name|PSDimage
@@ -216,8 +217,9 @@ specifier|static
 name|gint
 name|add_color_map
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -231,8 +233,9 @@ specifier|static
 name|gint
 name|add_image_resources
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -263,8 +266,9 @@ specifier|static
 name|gint
 name|add_layers
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -292,8 +296,9 @@ specifier|static
 name|gint
 name|add_merged_image
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -461,7 +466,8 @@ comment|/* Main file load function */
 end_comment
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,gboolean merged_image_only,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** load_error)
 name|load_image
 parameter_list|(
@@ -503,11 +509,11 @@ modifier|*
 modifier|*
 name|lyr_a
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|GError
 modifier|*
@@ -530,8 +536,7 @@ operator|-
 literal|1
 condition|)
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 name|gimp_progress_init_printf
 argument_list|(
@@ -604,8 +609,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|img_a
@@ -804,7 +808,7 @@ argument_list|(
 literal|"Create GIMP image"
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|create_gimp_image
 argument_list|(
@@ -816,9 +820,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|0
+operator|!
+name|image
 condition|)
 goto|goto
 name|load_error
@@ -842,7 +845,7 @@ if|if
 condition|(
 name|add_color_map
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|img_a
@@ -872,7 +875,7 @@ if|if
 condition|(
 name|add_image_resources
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|img_a
@@ -911,7 +914,7 @@ if|if
 condition|(
 name|add_layers
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|img_a
@@ -948,7 +951,7 @@ if|if
 condition|(
 name|add_merged_image
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|img_a
@@ -977,7 +980,10 @@ name|g_debug
 argument_list|(
 literal|"Close file& return, image id: %d"
 argument_list|,
-name|image_id
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|IFDBG
@@ -992,12 +998,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_clean_all
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1006,7 +1012,7 @@ name|f
 argument_list|)
 expr_stmt|;
 return|return
-name|image_id
+name|image
 return|;
 comment|/* ----- Process load errors ----- */
 name|load_error
@@ -1043,13 +1049,11 @@ block|}
 comment|/* Delete partially loaded image */
 if|if
 condition|(
-name|image_id
-operator|>
-literal|0
+name|image
 condition|)
 name|gimp_image_delete
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* Close file if Open */
@@ -1068,8 +1072,7 @@ name|f
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 end_function
@@ -5913,7 +5916,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|create_gimp_image (PSDimage * img_a,const gchar * filename)
 name|create_gimp_image
 parameter_list|(
@@ -5927,11 +5931,11 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|GimpPrecision
 name|precision
@@ -5987,8 +5991,7 @@ literal|"Invalid color mode"
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 break|break;
 block|}
@@ -6034,8 +6037,7 @@ literal|"Invalid precision"
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 break|break;
 block|}
@@ -6049,7 +6051,7 @@ argument_list|(
 literal|"Create image"
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|gimp_image_new_with_precision
 argument_list|(
@@ -6070,18 +6072,18 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
-name|image_id
+name|image
 return|;
 block|}
 end_function
@@ -6089,11 +6091,12 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_color_map (gint32 image_id,PSDimage * img_a)
+DECL|function|add_color_map (GimpImage * image,PSDimage * img_a)
 name|add_color_map
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -6122,7 +6125,7 @@ condition|)
 block|{
 name|gimp_image_set_colormap
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|img_a
 operator|->
@@ -6165,7 +6168,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -6193,11 +6196,12 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_image_resources (gint32 image_id,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
+DECL|function|add_image_resources (GimpImage * image,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
 name|add_image_resources
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -6379,7 +6383,7 @@ argument_list|(
 operator|&
 name|res_a
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|img_a
 argument_list|,
@@ -6408,11 +6412,12 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_layers (gint32 image_id,PSDimage * img_a,PSDlayer ** lyr_a,FILE * f,GError ** error)
+DECL|function|add_layers (GimpImage * image,PSDimage * img_a,PSDlayer ** lyr_a,FILE * f,GError ** error)
 name|add_layers
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -6442,11 +6447,11 @@ name|GArray
 modifier|*
 name|parent_group_stack
 decl_stmt|;
-name|gint32
-name|parent_group_id
+name|GimpLayer
+modifier|*
+name|parent_group
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|guchar
 modifier|*
@@ -6509,23 +6514,23 @@ comment|/* Layer mask height */
 name|gint32
 name|layer_size
 decl_stmt|;
-name|gint32
-name|layer_id
+name|GimpLayer
+modifier|*
+name|layer
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
-name|gint32
-name|mask_id
+name|GimpLayerMask
+modifier|*
+name|mask
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
-name|gint32
-name|active_layer_id
+name|GimpLayer
+modifier|*
+name|active_layer
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gint
 name|lidx
@@ -6652,7 +6657,8 @@ name|FALSE
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|gint32
+name|GimpLayer
+operator|*
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6660,7 +6666,7 @@ name|g_array_append_val
 argument_list|(
 name|parent_group_stack
 argument_list|,
-name|parent_group_id
+name|parent_group
 argument_list|)
 expr_stmt|;
 for|for
@@ -7821,13 +7827,14 @@ name|len
 operator|>
 literal|0
 condition|)
-name|parent_group_id
+name|parent_group
 operator|=
 name|g_array_index
 argument_list|(
 name|parent_group_stack
 argument_list|,
-name|gint32
+name|GimpLayer
+operator|*
 argument_list|,
 name|parent_group_stack
 operator|->
@@ -7837,10 +7844,9 @@ literal|1
 argument_list|)
 expr_stmt|;
 else|else
-name|parent_group_id
+name|parent_group
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 comment|/* root */
 name|IFDBG
@@ -7990,11 +7996,11 @@ argument_list|(
 literal|"Create placeholder group layer"
 argument_list|)
 expr_stmt|;
-name|layer_id
+name|layer
 operator|=
 name|gimp_layer_group_new
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* add this group layer as the new parent */
@@ -8002,7 +8008,7 @@ name|g_array_append_val
 argument_list|(
 name|parent_group_stack
 argument_list|,
-name|layer_id
+name|layer
 argument_list|)
 expr_stmt|;
 block|}
@@ -8016,13 +8022,14 @@ operator|->
 name|len
 condition|)
 block|{
-name|layer_id
+name|layer
 operator|=
 name|g_array_index
 argument_list|(
 name|parent_group_stack
 argument_list|,
-name|gint32
+name|GimpLayer
+operator|*
 argument_list|,
 name|parent_group_stack
 operator|->
@@ -8039,7 +8046,13 @@ name|g_debug
 argument_list|(
 literal|"End group layer id %d."
 argument_list|,
-name|layer_id
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* since the layers are stored in reverse, the group                        * layer start marker actually means we're done with                        * that layer group                        */
@@ -8056,7 +8069,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_offsets
 argument_list|(
-name|layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|,
 operator|&
 name|l_x
@@ -8069,14 +8085,20 @@ name|l_w
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|l_h
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -8091,10 +8113,9 @@ argument_list|(
 literal|"WARNING: Unmatched group layer start marker."
 argument_list|)
 expr_stmt|;
-name|layer_id
+name|layer
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 block|}
 block|}
@@ -8200,11 +8221,11 @@ argument_list|,
 name|image_type
 argument_list|)
 expr_stmt|;
-name|layer_id
+name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|lyr_a
 index|[
@@ -8227,16 +8248,18 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|layer_id
+name|layer
 operator|!=
-operator|-
-literal|1
+name|NULL
 condition|)
 block|{
 comment|/* Set the layer name.  Note that we do this even for group-end                * markers, to avoid having the default group name collide with                * subsequent layers; the real group name is set by the group                * start marker.                */
 name|gimp_item_set_name
 argument_list|(
-name|layer_id
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
 argument_list|,
 name|lyr_a
 index|[
@@ -8275,7 +8298,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_layer_set_mode
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|mode_info
 operator|.
@@ -8284,7 +8307,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_layer_set_blend_space
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|mode_info
 operator|.
@@ -8293,7 +8316,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_layer_set_composite_space
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|mode_info
 operator|.
@@ -8302,7 +8325,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_layer_set_composite_mode
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|mode_info
 operator|.
@@ -8312,7 +8335,7 @@ expr_stmt|;
 comment|/* Opacity */
 name|gimp_layer_set_opacity
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|lyr_a
 index|[
@@ -8329,7 +8352,7 @@ expr_stmt|;
 comment|/* Flags */
 name|gimp_layer_set_lock_alpha
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|lyr_a
 index|[
@@ -8343,7 +8366,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_set_visible
 argument_list|(
-name|layer_id
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
 argument_list|,
 name|lyr_a
 index|[
@@ -8359,7 +8385,7 @@ if|#
 directive|if
 literal|0
 comment|/* according to the spec, the 'irrelevant' flag indicates                    * that the layer's "pixel data is irrelevant to the                    * appearance of the document".  what this seems to mean is                    * not that the layer doesn't contribute to the image, but                    * rather that its appearance can be entirely derived from                    * sources other than the pixel data, such as vector data.                    * in particular, this doesn't mean that the layer is                    * invisible. since we only support raster layers atm, we can                    * just ignore this flag.                    */
-block|if (lyr_a[lidx]->layer_flags.irrelevant&&                       lyr_a[lidx]->group_type == 0)                     {                       gimp_item_set_visible (layer_id, FALSE);                     }
+block|if (lyr_a[lidx]->layer_flags.irrelevant&&                       lyr_a[lidx]->group_type == 0)                     {                       gimp_item_set_visible (GIMP_ITEM (layer), FALSE);                     }
 endif|#
 directive|endif
 comment|/* Position */
@@ -8375,7 +8401,7 @@ literal|0
 condition|)
 name|gimp_layer_set_offsets
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|l_x
 argument_list|,
@@ -8385,7 +8411,10 @@ expr_stmt|;
 comment|/* Color tag */
 name|gimp_item_set_color_tag
 argument_list|(
-name|layer_id
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
 argument_list|,
 name|psd_to_gimp_layer_color_tag
 argument_list|(
@@ -8413,7 +8442,10 @@ name|id
 condition|)
 name|gimp_item_set_tattoo
 argument_list|(
-name|layer_id
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
 argument_list|,
 name|lyr_a
 index|[
@@ -8438,7 +8470,10 @@ condition|)
 block|{
 name|gimp_item_set_expanded
 argument_list|(
-name|layer_id
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
 argument_list|,
 name|lyr_a
 index|[
@@ -8462,9 +8497,9 @@ operator|->
 name|layer_state
 condition|)
 block|{
-name|active_layer_id
+name|active_layer
 operator|=
-name|layer_id
+name|layer
 expr_stmt|;
 block|}
 comment|/* Set the layer data */
@@ -8496,7 +8531,10 @@ condition|)
 block|{
 name|gimp_drawable_fill
 argument_list|(
-name|layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|,
 name|GIMP_FILL_TRANSPARENT
 argument_list|)
@@ -8634,7 +8672,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
@@ -8726,35 +8767,35 @@ name|def_color
 operator|==
 literal|255
 condition|)
-name|mask_id
+name|mask
 operator|=
 name|gimp_layer_create_mask
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|GIMP_ADD_MASK_WHITE
 argument_list|)
 expr_stmt|;
 else|else
-name|mask_id
+name|mask
 operator|=
 name|gimp_layer_create_mask
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|GIMP_ADD_MASK_BLACK
 argument_list|)
 expr_stmt|;
 name|gimp_layer_add_mask
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
-name|mask_id
+name|mask
 argument_list|)
 expr_stmt|;
 name|gimp_layer_set_apply_mask
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 operator|!
 name|lyr_a
@@ -9189,21 +9230,21 @@ name|def_color
 operator|==
 literal|255
 condition|)
-name|mask_id
+name|mask
 operator|=
 name|gimp_layer_create_mask
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|GIMP_ADD_MASK_WHITE
 argument_list|)
 expr_stmt|;
 else|else
-name|mask_id
+name|mask
 operator|=
 name|gimp_layer_create_mask
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|GIMP_ADD_MASK_BLACK
 argument_list|)
@@ -9216,21 +9257,30 @@ name|g_debug
 argument_list|(
 literal|"New layer mask %d"
 argument_list|,
-name|mask_id
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|mask
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_layer_add_mask
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
-name|mask_id
+name|mask
 argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|mask_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
@@ -9267,7 +9317,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_layer_set_apply_mask
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 operator|!
 name|lyr_a
@@ -9316,11 +9366,11 @@ condition|)
 block|{
 name|gimp_image_insert_layer
 argument_list|(
-name|image_id
+name|image
 argument_list|,
-name|layer_id
+name|layer
 argument_list|,
-name|parent_group_id
+name|parent_group
 argument_list|,
 literal|0
 argument_list|)
@@ -9410,15 +9460,15 @@ expr_stmt|;
 comment|/* Set the active layer */
 if|if
 condition|(
-name|active_layer_id
+name|active_layer
 operator|>=
 literal|0
 condition|)
 name|gimp_image_set_active_layer
 argument_list|(
-name|image_id
+name|image
 argument_list|,
-name|active_layer_id
+name|active_layer
 argument_list|)
 expr_stmt|;
 return|return
@@ -9430,11 +9480,12 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_merged_image (gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
+DECL|function|add_merged_image (GimpImage * image,PSDimage * img_a,FILE * f,GError ** error)
 name|add_merged_image
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|PSDimage
 modifier|*
@@ -9492,17 +9543,17 @@ decl_stmt|;
 name|gint32
 name|layer_size
 decl_stmt|;
-name|gint32
-name|layer_id
+name|GimpLayer
+modifier|*
+name|layer
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
-name|gint32
-name|channel_id
+name|GimpChannel
+modifier|*
+name|channel
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gint16
 name|alpha_opacity
@@ -10299,11 +10350,11 @@ argument_list|(
 literal|"Draw merged image"
 argument_list|)
 expr_stmt|;
-name|layer_id
+name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -10324,18 +10375,17 @@ literal|100
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
-name|image_id
+name|image
 argument_list|,
-name|layer_id
+name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -10344,7 +10394,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
@@ -10596,10 +10649,7 @@ condition|(
 name|extra_channels
 comment|/* Extra alpha channels */
 operator|&&
-name|image_id
-operator|>
-operator|-
-literal|1
+name|image
 condition|)
 block|{
 name|IFDBG
@@ -10935,11 +10985,11 @@ operator|*
 name|bps
 argument_list|)
 expr_stmt|;
-name|channel_id
+name|channel
 operator|=
 name|gimp_channel_new
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|alpha_name
 argument_list|,
@@ -10965,12 +11015,11 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_insert_channel
 argument_list|(
-name|image_id
+name|image
 argument_list|,
-name|channel_id
+name|channel
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -10984,7 +11033,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|channel_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -10993,14 +11045,20 @@ name|alpha_id
 condition|)
 name|gimp_item_set_tattoo
 argument_list|(
-name|channel_id
+name|GIMP_ITEM
+argument_list|(
+name|channel
+argument_list|)
 argument_list|,
 name|alpha_id
 argument_list|)
 expr_stmt|;
 name|gimp_item_set_visible
 argument_list|(
-name|channel_id
+name|GIMP_ITEM
+argument_list|(
+name|channel
+argument_list|)
 argument_list|,
 name|alpha_visible
 argument_list|)

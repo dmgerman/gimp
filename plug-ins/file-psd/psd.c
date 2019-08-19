@@ -227,11 +227,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GFile
 modifier|*
@@ -828,8 +830,9 @@ decl_stmt|;
 name|gboolean
 name|interactive
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GimpMetadata
 modifier|*
@@ -881,7 +884,7 @@ name|FALSE
 expr_stmt|;
 break|break;
 block|}
-name|image_id
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -914,9 +917,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -932,7 +934,7 @@ name|metadata
 operator|=
 name|gimp_image_metadata_load_prepare
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 literal|"image/x-psd"
 argument_list|,
@@ -971,7 +973,7 @@ name|GIMP_METADATA_LOAD_COLORSPACE
 expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 literal|"image/x-psd"
 argument_list|,
@@ -1005,7 +1007,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1059,8 +1061,9 @@ name|height
 init|=
 literal|0
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -1085,7 +1088,7 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|load_thumbnail_image
 argument_list|(
@@ -1103,9 +1106,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -1134,7 +1136,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|GIMP_VALUES_SET_INT
@@ -1172,7 +1174,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|psd_save (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image_id,gint32 drawable_id,GFile * file,const GimpValueArray * args,gpointer run_data)
+DECL|function|psd_save (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,GFile * file,const GimpValueArray * args,gpointer run_data)
 name|psd_save
 parameter_list|(
 name|GimpProcedure
@@ -1182,11 +1184,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GFile
 modifier|*
@@ -1257,10 +1261,10 @@ operator|=
 name|gimp_export_image
 argument_list|(
 operator|&
-name|image_id
+name|image
 argument_list|,
 operator|&
-name|drawable_id
+name|drawable
 argument_list|,
 literal|"PSD"
 argument_list|,
@@ -1301,7 +1305,7 @@ name|metadata
 operator|=
 name|gimp_image_metadata_save_prepare
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 literal|"image/x-psd"
 argument_list|,
@@ -1318,7 +1322,7 @@ argument_list|(
 name|file
 argument_list|)
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|error
@@ -1339,7 +1343,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_metadata_save_finish
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 literal|"image/x-psd"
 argument_list|,
@@ -1369,7 +1373,7 @@ name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 if|if
