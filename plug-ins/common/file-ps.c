@@ -199,7 +199,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8fe690108
+DECL|struct|__anon2ad8f8730108
 block|{
 DECL|member|resolution
 name|guint
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8fe690208
+DECL|struct|__anon2ad8f8730208
 block|{
 DECL|member|width
 DECL|member|height
@@ -448,6 +448,13 @@ parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
+parameter_list|,
+name|GFile
+modifier|*
+name|file
+parameter_list|,
+name|gint
+name|size
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -1036,7 +1043,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8fe690308
+DECL|struct|__anon2ad8f8730308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1706,7 +1713,7 @@ condition|)
 block|{
 name|procedure
 operator|=
-name|gimp_procedure_new
+name|gimp_thumbnail_procedure_new
 argument_list|(
 name|plug_in
 argument_list|,
@@ -1742,55 +1749,6 @@ argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
 name|dversion
-argument_list|)
-expr_stmt|;
-name|GIMP_PROC_ARG_STRING
-argument_list|(
-name|procedure
-argument_list|,
-literal|"uri"
-argument_list|,
-literal|"URI"
-argument_list|,
-literal|"URI of the file to load"
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-expr_stmt|;
-name|GIMP_PROC_ARG_INT
-argument_list|(
-name|procedure
-argument_list|,
-literal|"thumb-size"
-argument_list|,
-literal|"Thumb Size"
-argument_list|,
-literal|"Preferred thumbnail size"
-argument_list|,
-literal|16
-argument_list|,
-literal|2014
-argument_list|,
-literal|256
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-expr_stmt|;
-name|GIMP_PROC_VAL_IMAGE
-argument_list|(
-name|procedure
-argument_list|,
-literal|"image"
-argument_list|,
-literal|"Image"
-argument_list|,
-literal|"Thumbnail image"
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2498,12 +2456,19 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|ps_load_thumb (GimpProcedure * procedure,const GimpValueArray * args,gpointer run_data)
+DECL|function|ps_load_thumb (GimpProcedure * procedure,GFile * file,gint size,const GimpValueArray * args,gpointer run_data)
 name|ps_load_thumb
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
+parameter_list|,
+name|GFile
+modifier|*
+name|file
+parameter_list|,
+name|gint
+name|size
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -2517,13 +2482,6 @@ block|{
 name|GimpValueArray
 modifier|*
 name|return_vals
-decl_stmt|;
-name|GFile
-modifier|*
-name|file
-decl_stmt|;
-name|gint
-name|size
 decl_stmt|;
 name|gint32
 name|image_id
@@ -2542,33 +2500,6 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|file
-operator|=
-name|g_file_new_for_uri
-argument_list|(
-name|g_value_get_string
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|0
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|size
-operator|=
-name|g_value_get_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  We should look for an embedded preview but for now we    *  just load the document at a small resolution and the    *  first page only.    */
@@ -2661,6 +2592,13 @@ literal|1
 argument_list|)
 argument_list|,
 name|image_id
+argument_list|)
+expr_stmt|;
+name|gimp_value_array_truncate
+argument_list|(
+name|return_vals
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 return|return
@@ -4014,7 +3952,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8fe690408
+DECL|struct|__anon2ad8f8730408
 block|{
 DECL|member|eol
 name|goffset

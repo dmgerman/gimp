@@ -196,6 +196,13 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
+name|GFile
+modifier|*
+name|file
+parameter_list|,
+name|gint
+name|size
+parameter_list|,
 specifier|const
 name|GimpValueArray
 modifier|*
@@ -635,7 +642,7 @@ condition|)
 block|{
 name|procedure
 operator|=
-name|gimp_procedure_new
+name|gimp_thumbnail_procedure_new
 argument_list|(
 name|plug_in
 argument_list|,
@@ -673,93 +680,6 @@ argument_list|,
 literal|"John Marshall"
 argument_list|,
 literal|"2007"
-argument_list|)
-expr_stmt|;
-name|GIMP_PROC_ARG_STRING
-argument_list|(
-name|procedure
-argument_list|,
-literal|"uri"
-argument_list|,
-literal|"URI"
-argument_list|,
-literal|"URI of the file to load"
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-expr_stmt|;
-name|GIMP_PROC_ARG_INT
-argument_list|(
-name|procedure
-argument_list|,
-literal|"thumb-size"
-argument_list|,
-literal|"Thumb Size"
-argument_list|,
-literal|"Preferred thumbnail size"
-argument_list|,
-literal|16
-argument_list|,
-literal|2014
-argument_list|,
-literal|256
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-expr_stmt|;
-name|GIMP_PROC_VAL_IMAGE
-argument_list|(
-name|procedure
-argument_list|,
-literal|"image"
-argument_list|,
-literal|"Image"
-argument_list|,
-literal|"Thumbnail image"
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-expr_stmt|;
-name|GIMP_PROC_VAL_INT
-argument_list|(
-name|procedure
-argument_list|,
-literal|"image-width"
-argument_list|,
-literal|"Image width"
-argument_list|,
-literal|"Width of the full-sized image"
-argument_list|,
-literal|1
-argument_list|,
-name|GIMP_MAX_IMAGE_SIZE
-argument_list|,
-literal|1
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-expr_stmt|;
-name|GIMP_PROC_VAL_INT
-argument_list|(
-name|procedure
-argument_list|,
-literal|"image-height"
-argument_list|,
-literal|"Image height"
-argument_list|,
-literal|"Height of the full-sized image"
-argument_list|,
-literal|1
-argument_list|,
-name|GIMP_MAX_IMAGE_SIZE
-argument_list|,
-literal|1
-argument_list|,
-name|GIMP_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1101,12 +1021,19 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|psd_load_thumb (GimpProcedure * procedure,const GimpValueArray * args,gpointer run_data)
+DECL|function|psd_load_thumb (GimpProcedure * procedure,GFile * file,gint size,const GimpValueArray * args,gpointer run_data)
 name|psd_load_thumb
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
+parameter_list|,
+name|GFile
+modifier|*
+name|file
+parameter_list|,
+name|gint
+name|size
 parameter_list|,
 specifier|const
 name|GimpValueArray
@@ -1121,7 +1048,6 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -1157,14 +1083,9 @@ argument_list|)
 expr_stmt|;
 name|filename
 operator|=
-name|g_value_get_string
+name|g_file_get_path
 argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|0
-argument_list|)
+name|file
 argument_list|)
 expr_stmt|;
 name|image_id
@@ -1244,6 +1165,13 @@ literal|3
 argument_list|)
 argument_list|,
 name|height
+argument_list|)
+expr_stmt|;
+name|gimp_value_array_truncate
+argument_list|(
+name|return_vals
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 return|return
