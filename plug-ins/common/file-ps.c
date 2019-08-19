@@ -199,7 +199,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c627e440108
+DECL|struct|__anon29d8fe690108
 block|{
 DECL|member|resolution
 name|guint
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c627e440208
+DECL|struct|__anon29d8fe690208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1036,7 +1036,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c627e440308
+DECL|struct|__anon29d8fe690308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1744,29 +1744,19 @@ argument_list|,
 name|dversion
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"filename"
+literal|"uri"
 argument_list|,
-literal|"Filename"
+literal|"URI"
 argument_list|,
-literal|"Name of the file "
-literal|"to load"
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
+literal|"URI of the file to load"
 argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_PROC_ARG_INT
@@ -2528,10 +2518,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 name|gint
 name|size
@@ -2555,8 +2544,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|filename
+name|file
 operator|=
+name|g_file_new_for_uri
+argument_list|(
 name|g_value_get_string
 argument_list|(
 name|gimp_value_array_index
@@ -2564,6 +2555,7 @@ argument_list|(
 name|args
 argument_list|,
 literal|0
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2623,7 +2615,10 @@ name|image_id
 operator|=
 name|load_image
 argument_list|(
-name|filename
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -4019,7 +4014,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c627e440408
+DECL|struct|__anon29d8fe690408
 block|{
 DECL|member|eol
 name|goffset

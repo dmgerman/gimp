@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f4b10a0108
+DECL|struct|__anon2b1cd3950108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f4b10a0208
+DECL|struct|__anon2b1cd3950208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -628,29 +628,19 @@ argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
-argument_list|(
 literal|"description"
 argument_list|,
 literal|"Description"
 argument_list|,
-literal|"Short description "
-literal|"of the gihtern"
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
+literal|"Short description of the gihtern"
 argument_list|,
 literal|"GIMP Gihtern"
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_PROC_ARG_INT

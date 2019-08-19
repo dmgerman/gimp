@@ -617,29 +617,19 @@ argument_list|,
 literal|"2006"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"filename"
+literal|"uri"
 argument_list|,
-literal|"Filename"
+literal|"URI"
 argument_list|,
-literal|"Name of the file "
-literal|"to load"
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
+literal|"URI of the file to load"
 argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_PROC_ARG_INT
@@ -897,10 +887,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 name|gint32
 name|image_id
@@ -921,8 +910,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|filename
+name|file
 operator|=
+name|g_file_new_for_uri
+argument_list|(
 name|g_value_get_string
 argument_list|(
 name|gimp_value_array_index
@@ -932,12 +923,16 @@ argument_list|,
 literal|0
 argument_list|)
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|image_id
 operator|=
 name|load_image
 argument_list|(
-name|filename
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1166,7 +1161,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1c2d700108
+DECL|struct|__anon28b30e2d0108
 block|{
 DECL|member|Width
 name|guint
@@ -1210,7 +1205,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1c2d700208
+DECL|struct|__anon28b30e2d0208
 block|{
 DECL|member|transparent
 name|gint

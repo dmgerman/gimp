@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35efe00108
+DECL|struct|__anon2be409520108
 block|{
 DECL|member|description
 name|gchar
@@ -492,29 +492,19 @@ argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
-argument_list|(
 literal|"description"
 argument_list|,
 literal|"Description"
 argument_list|,
-literal|"Short description "
-literal|"of the brush"
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+literal|"Short description of the brush"
 argument_list|,
 literal|"GIMP Brush"
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

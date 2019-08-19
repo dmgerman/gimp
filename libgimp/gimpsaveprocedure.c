@@ -254,62 +254,41 @@ literal|"drawable"
 argument_list|,
 literal|"Drawable"
 argument_list|,
-literal|"The drawable "
-literal|"to save"
+literal|"The drawable to save"
 argument_list|,
 name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
-argument_list|(
 literal|"uri"
 argument_list|,
 literal|"URI"
 argument_list|,
-literal|"The URI of the file "
-literal|"to save to"
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+literal|"The URI of the file to save to"
 argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
-argument_list|(
 literal|"raw-uri"
 argument_list|,
 literal|"Raw URI"
 argument_list|,
-literal|"The URI of the file "
-literal|"to save to"
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+literal|"The URI of the file to save to"
 argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
