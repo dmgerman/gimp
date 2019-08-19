@@ -1496,14 +1496,11 @@ name|priv
 operator|->
 name|error_status
 operator|=
-name|g_value_get_enum
-argument_list|(
-name|gimp_value_array_index
+name|GIMP_VALUES_GET_ENUM
 argument_list|(
 name|return_values
 argument_list|,
 literal|0
-argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch

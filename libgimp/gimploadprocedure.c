@@ -605,29 +605,23 @@ name|i
 decl_stmt|;
 name|run_mode
 operator|=
-name|g_value_get_enum
-argument_list|(
-name|gimp_value_array_index
+name|GIMP_VALUES_GET_ENUM
 argument_list|(
 name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|uri
 operator|=
-name|g_value_get_string
-argument_list|(
-name|gimp_value_array_index
+name|GIMP_VALUES_GET_STRING
 argument_list|(
 name|args
 argument_list|,
 literal|1
 argument_list|)
-argument_list|)
 expr_stmt|;
-comment|/* raw_uri = g_value_get_string (gimp_value_array_index (args, 2)); */
+comment|/* raw_uri = GIMP_VALUES_GET_STRING (args, 2); */
 name|file
 operator|=
 name|g_file_new_for_uri
