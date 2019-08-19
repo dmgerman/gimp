@@ -462,18 +462,15 @@ argument_list|,
 literal|"June 2006"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"num-colors"
 argument_list|,
 literal|"Num colors"
 argument_list|,
-literal|"Length of 'map' "
-literal|"argument"
+literal|"Length of 'map' argument"
 argument_list|,
 literal|1
 argument_list|,
@@ -483,23 +480,18 @@ literal|1
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_UINT8_ARRAY
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_uint8_array
-argument_list|(
 literal|"map"
 argument_list|,
 literal|"Map"
 argument_list|,
-literal|"Remap array "
-literal|"for the colormap"
+literal|"Remap array for the colormap"
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -585,18 +577,15 @@ argument_list|,
 literal|"June 2006"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_UCHAR
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_uchar
-argument_list|(
 literal|"index1"
 argument_list|,
 literal|"Index 1"
 argument_list|,
-literal|"First index in the "
-literal|"colormap"
+literal|"First index in the colormap"
 argument_list|,
 literal|0
 argument_list|,
@@ -606,20 +595,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_UCHAR
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_uchar
-argument_list|(
 literal|"index2"
 argument_list|,
 literal|"Index 2"
 argument_list|,
-literal|"First (other) index "
-literal|"in the colormap"
+literal|"Second (other) index in the colormap"
 argument_list|,
 literal|0
 argument_list|,
@@ -628,7 +613,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1887,7 +1871,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b154e420103
+DECL|enum|__anon2b7395600103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29353d5b0108
+DECL|struct|__anon2c2f727d0108
 block|{
 DECL|member|description
 name|gchar
@@ -473,12 +473,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"spacing"
 argument_list|,
 literal|"Spacing"
@@ -492,7 +490,6 @@ argument_list|,
 literal|10
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

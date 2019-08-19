@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be70f40108
+DECL|struct|__anon27ffaa4e0108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be70f40208
+DECL|struct|__anon27ffaa4e0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -609,12 +609,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"spacing"
 argument_list|,
 literal|"Spacing"
@@ -628,7 +626,6 @@ argument_list|,
 literal|10
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -656,12 +653,10 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"cell-width"
 argument_list|,
 literal|"Cell width"
@@ -676,14 +671,11 @@ literal|10
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"cell-height"
 argument_list|,
 literal|"Cell height"
@@ -698,14 +690,11 @@ literal|10
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"display-cols"
 argument_list|,
 literal|"Display columns"
@@ -720,14 +709,11 @@ literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"display-rows"
 argument_list|,
 literal|"Display rows"
@@ -742,20 +728,16 @@ literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"dimension"
 argument_list|,
 literal|"Dimension"
 argument_list|,
-literal|"Dimension of the "
-literal|"brush pipe"
+literal|"Dimension of the brush pipe"
 argument_list|,
 literal|1
 argument_list|,
@@ -765,37 +747,29 @@ literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_UINT8_ARRAY
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_uint8_array
-argument_list|(
 literal|"rank"
 argument_list|,
 literal|"Rank"
 argument_list|,
-literal|"Ranks of the "
-literal|"dimensions"
+literal|"Ranks of the dimensions"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"dimension"
 argument_list|,
 literal|"Dimension"
 argument_list|,
-literal|"Dimension of the "
-literal|"brush pipe"
+literal|"Dimension of the brush pipe"
 argument_list|,
 literal|1
 argument_list|,
@@ -805,14 +779,11 @@ literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING_ARRAY
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string_array
-argument_list|(
 literal|"sel"
 argument_list|,
 literal|"Sel"
@@ -820,7 +791,6 @@ argument_list|,
 literal|"Selection modes"
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

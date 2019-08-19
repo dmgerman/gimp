@@ -943,25 +943,17 @@ argument_list|,
 literal|"December, 1998"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"fractal-type"
 argument_list|,
 literal|"Fractal type"
 argument_list|,
-literal|"0: Mandelbrot; "
-literal|"1: Julia; "
-literal|"2: Barnsley 1; "
-literal|"3: Barnsley 2; "
-literal|"4: Barnsley 3; "
-literal|"5: Spider; "
-literal|"6: ManOWar; "
-literal|"7: Lambda; "
-literal|"8: Sierpinski"
+literal|"0: Mandelbrot; 1: Julia; 2: Barnsley 1; "
+literal|"3: Barnsley 2; 4: Barnsley 3; 5: Spider; "
+literal|"6: ManOWar; 7: Lambda; 8: Sierpinski"
 argument_list|,
 literal|0
 argument_list|,
@@ -971,20 +963,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"xmin"
 argument_list|,
 literal|"X min"
 argument_list|,
-literal|"xmin fractal image "
-literal|"delimiter"
+literal|"xmin fractal image delimiter"
 argument_list|,
 operator|-
 name|G_MAXDOUBLE
@@ -995,20 +983,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"xmax"
 argument_list|,
 literal|"X max"
 argument_list|,
-literal|"xmax fractal image "
-literal|"delimiter"
+literal|"xmax fractal image delimiter"
 argument_list|,
 operator|-
 name|G_MAXDOUBLE
@@ -1019,20 +1003,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"ymin"
 argument_list|,
 literal|"Y min"
 argument_list|,
-literal|"ymin fractal image "
-literal|"delimiter"
+literal|"ymin fractal image delimiter"
 argument_list|,
 operator|-
 name|G_MAXDOUBLE
@@ -1043,20 +1023,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"ymax"
 argument_list|,
 literal|"Y max"
 argument_list|,
-literal|"ymax fractal image "
-literal|"delimiter"
+literal|"ymax fractal image delimiter"
 argument_list|,
 operator|-
 name|G_MAXDOUBLE
@@ -1067,14 +1043,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"iter"
 argument_list|,
 literal|"Iter"
@@ -1090,14 +1063,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"cx"
 argument_list|,
 literal|"CX"
@@ -1113,14 +1083,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"cy"
 argument_list|,
 literal|"CY"
@@ -1136,23 +1103,17 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"color-mode"
 argument_list|,
 literal|"Color mode"
 argument_list|,
-literal|"0: Apply colormap as "
-literal|"specified by the "
-literal|"parameters below; "
-literal|"1: Apply active gradient "
-literal|"to final image"
+literal|"0: Apply colormap as specified by the parameters "
+literal|"below; 1: Apply active gradient to final image"
 argument_list|,
 literal|0
 argument_list|,
@@ -1162,14 +1123,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"red-stretch"
 argument_list|,
 literal|"Red stretch"
@@ -1185,14 +1143,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"green-stretch"
 argument_list|,
 literal|"Green stretch"
@@ -1208,14 +1163,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"blues-tretch"
 argument_list|,
 literal|"Blue stretch"
@@ -1231,20 +1183,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"red-mode"
 argument_list|,
 literal|"Red mode"
 argument_list|,
-literal|"Red application mode "
-literal|"(0:SIN;1:COS;2:NONE)"
+literal|"Red application mode (0:SIN; 1:COS; 2:NONE)"
 argument_list|,
 literal|0
 argument_list|,
@@ -1254,20 +1202,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"green-mode"
 argument_list|,
 literal|"Green mode"
 argument_list|,
-literal|"Green application mode "
-literal|"(0:SIN;1:COS;2:NONE)"
+literal|"Green application mode (0:SIN; 1:COS; 2:NONE)"
 argument_list|,
 literal|0
 argument_list|,
@@ -1277,20 +1221,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"blue-mode"
 argument_list|,
 literal|"Blue mode"
 argument_list|,
-literal|"Blue application mode "
-literal|"(0:SIN;1:COS;2:NONE)"
+literal|"Blue application mode (0:SIN; 1:COS; 2:NONE)"
 argument_list|,
 literal|0
 argument_list|,
@@ -1300,14 +1240,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"red-invert"
 argument_list|,
 literal|"Red invert"
@@ -1318,14 +1255,11 @@ name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"green-invert"
 argument_list|,
 literal|"Green invert"
@@ -1336,14 +1270,11 @@ name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"blue-invert"
 argument_list|,
 literal|"Blue invert"
@@ -1354,20 +1285,16 @@ name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"n-colors"
 argument_list|,
 literal|"N volors"
 argument_list|,
-literal|"Number of Colors "
-literal|"for mapping"
+literal|"Number of Colors for mapping"
 argument_list|,
 literal|2
 argument_list|,
@@ -1376,7 +1303,6 @@ argument_list|,
 literal|512
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

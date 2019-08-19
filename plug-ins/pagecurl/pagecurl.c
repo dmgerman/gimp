@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a0d4ba0103
+DECL|enum|__anon2c3bdc4f0103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a0d4ba0203
+DECL|enum|__anon2c3bdc4f0203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a0d4ba0303
+DECL|enum|__anon2c3bdc4f0303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0d4ba0408
+DECL|struct|__anon2c3bdc4f0408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -821,17 +821,16 @@ argument_list|,
 name|PLUG_IN_VERSION
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"colors"
 argument_list|,
 literal|"Colors"
 argument_list|,
-literal|"FG- and BG-Color (0), Current gradient (1), Current gradient reversed (2)"
+literal|"FG- and BG-Color (0), Current gradient (1), "
+literal|"Current gradient reversed (2)"
 argument_list|,
 name|CURL_COLORS_FG_BG
 argument_list|,
@@ -841,19 +840,17 @@ name|CURL_COLORS_FG_BG
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"edge"
 argument_list|,
 literal|"Edge"
 argument_list|,
-literal|"Edge to curl (1-4, clockwise, starting in the lower right edge)"
+literal|"Edge to curl (1-4, clockwise, starting in the "
+literal|"lower right edge)"
 argument_list|,
 name|CURL_EDGE_LOWER_RIGHT
 argument_list|,
@@ -863,14 +860,11 @@ name|CURL_EDGE_LOWER_RIGHT
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"orientation"
 argument_list|,
 literal|"Orientation"
@@ -885,14 +879,11 @@ name|CURL_ORIENTATION_VERTICAL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"shade"
 argument_list|,
 literal|"Shade"
@@ -903,14 +894,11 @@ name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_return_value
+name|GIMP_PROC_VAL_LAYER
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
-argument_list|(
 literal|"curl-layer"
 argument_list|,
 literal|"Curl layer"
@@ -920,7 +908,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

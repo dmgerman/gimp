@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b485a0108
+DECL|struct|__anon288948f20108
 block|{
 DECL|member|filename
 name|gchar
@@ -773,69 +773,55 @@ argument_list|,
 literal|"1995-1997"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"filename"
 argument_list|,
 literal|"Filename"
 argument_list|,
-literal|"The name of the file "
-literal|"to save the image in"
+literal|"The name of the file to save the image in"
 argument_list|,
 name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"to-address"
 argument_list|,
 literal|"To address"
 argument_list|,
-literal|"The email address "
-literal|"to send to"
+literal|"The email address to send to"
 argument_list|,
 name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"from-address"
 argument_list|,
 literal|"From address"
 argument_list|,
-literal|"The email address "
-literal|"for the From: field"
+literal|"The email address for the From: field"
 argument_list|,
 name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"subject"
 argument_list|,
 literal|"Subject"
@@ -846,14 +832,11 @@ name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"comment"
 argument_list|,
 literal|"Comment"
@@ -863,7 +846,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

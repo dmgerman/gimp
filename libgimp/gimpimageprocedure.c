@@ -213,12 +213,10 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_ENUM
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_enum
-argument_list|(
 literal|"run-mode"
 argument_list|,
 literal|"Run mode"
@@ -231,14 +229,11 @@ name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_IMAGE
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
-argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
@@ -249,14 +244,11 @@ name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DRAWABLE
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
-argument_list|(
 literal|"drawable"
 argument_list|,
 literal|"Drawable"
@@ -266,7 +258,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

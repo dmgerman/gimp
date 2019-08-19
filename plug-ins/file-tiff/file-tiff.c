@@ -644,23 +644,16 @@ argument_list|,
 literal|"tif,tiff"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"compression"
 argument_list|,
 literal|"Compression"
 argument_list|,
-literal|"Compression type: "
-literal|"{ NONE (0), "
-literal|"LZW (1), "
-literal|"PACKBITS (2), "
-literal|"DEFLATE (3), "
-literal|"JPEG (4), "
-literal|"CCITT G3 Fax (5), "
+literal|"Compression type: { NONE (0), LZW (1), PACKBITS (2), "
+literal|"DEFLATE (3), JPEG (4), CCITT G3 Fax (5), "
 literal|"CCITT G4 Fax (6) }"
 argument_list|,
 literal|0
@@ -671,29 +664,21 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"save-transp-pixels"
 argument_list|,
 literal|"Save transp pixels"
 argument_list|,
-literal|"Keep the color data "
-literal|"masked by an alpha "
-literal|"channel intact "
-literal|"(do not store "
-literal|"premultiplied "
-literal|"components)"
+literal|"Keep the color data masked by an alpha channel "
+literal|"intact (do not store premultiplied components)"
 argument_list|,
 name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

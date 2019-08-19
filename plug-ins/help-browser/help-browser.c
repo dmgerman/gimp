@@ -440,12 +440,10 @@ argument_list|,
 literal|"1999-2008"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_ENUM
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_enum
-argument_list|(
 literal|"run-mode"
 argument_list|,
 literal|"Run mode"
@@ -458,14 +456,11 @@ name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"num-domain-names"
 argument_list|,
 literal|"Num domain names"
@@ -480,14 +475,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING_ARRAY
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string_array
-argument_list|(
 literal|"domain-names"
 argument_list|,
 literal|"Domain names"
@@ -496,14 +488,11 @@ literal|"Domain names"
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"num-domain-uris"
 argument_list|,
 literal|"Num domain URIs"
@@ -518,14 +507,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING_ARRAY
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string_array
-argument_list|(
 literal|"domain-uris"
 argument_list|,
 literal|"Domain URIs"
@@ -533,7 +519,6 @@ argument_list|,
 literal|"Domain URIs"
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -723,12 +708,10 @@ argument_list|,
 literal|"1999-2008"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"help-domain"
 argument_list|,
 literal|"Help domain"
@@ -739,14 +722,11 @@ name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"help-locales"
 argument_list|,
 literal|"Help locales"
@@ -757,14 +737,11 @@ name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"help-id"
 argument_list|,
 literal|"Help ID"
@@ -774,7 +751,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_add_temp_procedure

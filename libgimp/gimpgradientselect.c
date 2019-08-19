@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad56fc10108
+DECL|struct|__anon28dcebab0108
 block|{
 DECL|member|gradient_callback
 name|gchar
@@ -226,12 +226,10 @@ operator|)
 name|gimp_gradient_data_free
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"gradient-name"
 argument_list|,
 literal|"Gradient name"
@@ -242,14 +240,11 @@ name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"gradient-width"
 argument_list|,
 literal|"Gradient width"
@@ -264,42 +259,33 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_FLOAT_ARRAY
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_float_array
-argument_list|(
 literal|"gradient-data"
 argument_list|,
 literal|"Gradient data"
 argument_list|,
-literal|"The gradient "
-literal|"data"
+literal|"The gradient data"
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"closing"
 argument_list|,
 literal|"Closing"
 argument_list|,
-literal|"If the dialog was "
-literal|"closing"
+literal|"If the dialog was closing"
 argument_list|,
 name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_add_temp_procedure

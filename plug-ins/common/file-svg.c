@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27623ccc0108
+DECL|struct|__anon2b679bd50108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -632,18 +632,15 @@ argument_list|,
 name|LOAD_THUMB_PROC
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"resolution"
 argument_list|,
 literal|"Resolution"
 argument_list|,
-literal|"Resolution to use for "
-literal|"rendering the SVG"
+literal|"Resolution to use for rendering the SVG"
 argument_list|,
 name|GIMP_MIN_RESOLUTION
 argument_list|,
@@ -653,22 +650,17 @@ literal|90
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"width"
 argument_list|,
 literal|"Width"
 argument_list|,
-literal|"Width (in pixels) to load "
-literal|"the SVG in. "
-literal|"(0 for original width, "
-literal|"a negative width to "
+literal|"Width (in pixels) to load the SVG in. "
+literal|"(0 for original width, a negative width to "
 literal|"specify a maximum width)"
 argument_list|,
 operator|-
@@ -680,22 +672,17 @@ literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"height"
 argument_list|,
 literal|"Height"
 argument_list|,
-literal|"Height (in pixels) to load "
-literal|"the SVG in. "
-literal|"(0 for original heght, "
-literal|"a negative width to "
+literal|"Height (in pixels) to load the SVG in. "
+literal|"(0 for original heght, a negative width to "
 literal|"specify a maximum height)"
 argument_list|,
 operator|-
@@ -707,20 +694,16 @@ literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"paths"
 argument_list|,
 literal|"Paths"
 argument_list|,
-literal|"(0) don't import paths, "
-literal|"(1) paths individually, "
+literal|"(0) don't import paths, (1) paths individually, "
 literal|"(2) paths merged"
 argument_list|,
 literal|0
@@ -730,7 +713,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -811,12 +793,10 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"thumb-size"
 argument_list|,
 literal|"Thumb Size"
@@ -831,14 +811,11 @@ literal|256
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_return_value
+name|GIMP_PROC_VAL_IMAGE
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
-argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
@@ -849,20 +826,16 @@ name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_return_value
+name|GIMP_PROC_VAL_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"image-width"
 argument_list|,
 literal|"Image width"
 argument_list|,
-literal|"Width of the "
-literal|"full-sized image"
+literal|"Width of the full-sized image"
 argument_list|,
 literal|1
 argument_list|,
@@ -872,20 +845,16 @@ literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_return_value
+name|GIMP_PROC_VAL_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"image-height"
 argument_list|,
 literal|"Image height"
 argument_list|,
-literal|"Height of the "
-literal|"full-sized image"
+literal|"Height of the full-sized image"
 argument_list|,
 literal|1
 argument_list|,
@@ -894,7 +863,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

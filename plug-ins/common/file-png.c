@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2771b9510108
+DECL|struct|__anon2b2f90630108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2771b9510208
+DECL|struct|__anon2b2f90630208
 block|{
 DECL|member|run
 name|gboolean
@@ -335,7 +335,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2771b9510308
+DECL|struct|__anon2b2f90630308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -1102,12 +1102,10 @@ argument_list|,
 literal|"png"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"interlace"
 argument_list|,
 literal|"Interlace"
@@ -1118,20 +1116,16 @@ name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"compression"
 argument_list|,
 literal|"Compression"
 argument_list|,
-literal|"Deflate Compression "
-literal|"factor (0..9)"
+literal|"Deflate Compression factor (0..9)"
 argument_list|,
 literal|0
 argument_list|,
@@ -1141,14 +1135,11 @@ literal|9
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"bkgd"
 argument_list|,
 literal|"bKGD"
@@ -1159,14 +1150,11 @@ name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"gama"
 argument_list|,
 literal|"gAMA"
@@ -1177,14 +1165,11 @@ name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"offs"
 argument_list|,
 literal|"oFFs"
@@ -1195,14 +1180,11 @@ name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"phys"
 argument_list|,
 literal|"pHYs"
@@ -1213,14 +1195,11 @@ name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"time"
 argument_list|,
 literal|"tIME"
@@ -1231,14 +1210,11 @@ name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"comment"
 argument_list|,
 literal|"Comment"
@@ -1249,25 +1225,20 @@ name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"save-trans"
 argument_list|,
 literal|"Save trans"
 argument_list|,
-literal|"Preserve color of "
-literal|"transparent pixels?"
+literal|"Preserve color of transparent pixels?"
 argument_list|,
 name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

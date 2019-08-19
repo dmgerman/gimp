@@ -376,12 +376,10 @@ argument_list|,
 literal|"23th june 1997"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_ENUM
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_enum
-argument_list|(
 literal|"run-mode"
 argument_list|,
 literal|"Run mode"
@@ -393,7 +391,6 @@ argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

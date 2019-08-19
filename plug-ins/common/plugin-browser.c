@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b021eff0103
+DECL|enum|__anon2a53a7d80103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b021eff0203
+DECL|enum|__anon2a53a7d80203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b021eff0308
+DECL|struct|__anon2a53a7d80308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b021eff0408
+DECL|struct|__anon2a53a7d80408
 block|{
 DECL|member|menu
 name|gchar
@@ -628,12 +628,10 @@ argument_list|,
 literal|"1999"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_ENUM
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_enum
-argument_list|(
 literal|"run-mode"
 argument_list|,
 literal|"Run mode"
@@ -645,7 +643,6 @@ argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

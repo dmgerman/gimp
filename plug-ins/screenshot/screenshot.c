@@ -619,12 +619,10 @@ name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_ENUM
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_enum
-argument_list|(
 literal|"run-mode"
 argument_list|,
 literal|"Run mode"
@@ -637,21 +635,16 @@ name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"shoot-type"
 argument_list|,
 literal|"Shoot type"
 argument_list|,
-literal|"The shoot type "
-literal|"{ SHOOT-WINDOW (0), "
-literal|"SHOOT-ROOT (1), "
+literal|"The shoot type { SHOOT-WINDOW (0), SHOOT-ROOT (1), "
 literal|"SHOOT-REGION (2) }"
 argument_list|,
 literal|0
@@ -662,20 +655,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"x1"
 argument_list|,
 literal|"X1"
 argument_list|,
-literal|"Region left x coord "
-literal|"for SHOOT-WINDOW"
+literal|"Region left x coord for SHOOT-WINDOW"
 argument_list|,
 name|G_MININT
 argument_list|,
@@ -685,20 +674,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"y1"
 argument_list|,
 literal|"Y1"
 argument_list|,
-literal|"Region top y coord "
-literal|"for SHOOT-WINDOW"
+literal|"Region top y coord for SHOOT-WINDOW"
 argument_list|,
 name|G_MININT
 argument_list|,
@@ -708,20 +693,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"x2"
 argument_list|,
 literal|"X2"
 argument_list|,
-literal|"Region right x coord "
-literal|"for SHOOT-WINDOW"
+literal|"Region right x coord for SHOOT-WINDOW"
 argument_list|,
 name|G_MININT
 argument_list|,
@@ -731,20 +712,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"y2"
 argument_list|,
 literal|"Y2"
 argument_list|,
-literal|"Region bottom y coord "
-literal|"for SHOOT-WINDOW"
+literal|"Region bottom y coord for SHOOT-WINDOW"
 argument_list|,
 name|G_MININT
 argument_list|,
@@ -754,14 +731,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_return_value
+name|GIMP_PROC_VAL_IMAGE
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
-argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
@@ -771,7 +745,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

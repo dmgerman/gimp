@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b840c850108
+DECL|struct|__anon2ae7e8670108
 block|{
 DECL|member|palette_callback
 name|gchar
@@ -218,12 +218,10 @@ operator|)
 name|gimp_palette_data_free
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"palette-name"
 argument_list|,
 literal|"Palette name"
@@ -234,14 +232,11 @@ name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"num-colors"
 argument_list|,
 literal|"Num colors"
@@ -256,25 +251,20 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"closing"
 argument_list|,
 literal|"Closing"
 argument_list|,
-literal|"If the dialog was "
-literal|"closing"
+literal|"If the dialog was closing"
 argument_list|,
 name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_add_temp_procedure

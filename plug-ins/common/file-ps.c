@@ -199,7 +199,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d54e4e0108
+DECL|struct|__anon2baebdfd0108
 block|{
 DECL|member|resolution
 name|guint
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d54e4e0208
+DECL|struct|__anon2baebdfd0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1036,7 +1036,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d54e4e0308
+DECL|struct|__anon2baebdfd0308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1547,18 +1547,15 @@ argument_list|,
 name|LOAD_PS_THUMB_PROC
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"resolution"
 argument_list|,
 literal|"Resolution"
 argument_list|,
-literal|"Resolution to interpret "
-literal|"image (dpi)"
+literal|"Resolution to interpret image (dpi)"
 argument_list|,
 name|MIN_RESOLUTION
 argument_list|,
@@ -1568,14 +1565,11 @@ literal|100
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"width"
 argument_list|,
 literal|"Width"
@@ -1590,14 +1584,11 @@ literal|826
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"height"
 argument_list|,
 literal|"Height"
@@ -1612,60 +1603,46 @@ literal|1170
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"check-bbox"
 argument_list|,
 literal|"Check bbox"
 argument_list|,
-literal|"FALSE: Use width/height, "
-literal|"TRUE: Use BoundingBox"
+literal|"FALSE: Use width/height, TRUE: Use BoundingBox"
 argument_list|,
 name|TRUE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"pages"
 argument_list|,
 literal|"Pages"
 argument_list|,
-literal|"Pages to load "
-literal|"(e.g.: 1,3,5-7)"
+literal|"Pages to load (e.g.: 1,3,5-7)"
 argument_list|,
 literal|"1"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"coloring"
 argument_list|,
 literal|"Coloring"
 argument_list|,
-literal|"4: b/w, "
-literal|"5: grey, "
-literal|"6: color image, "
-literal|"7: automatic"
+literal|"4: b/w, 5: grey, 6: color image, 7: automatic"
 argument_list|,
 literal|4
 argument_list|,
@@ -1675,14 +1652,11 @@ literal|6
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"text-alpha-bits"
 argument_list|,
 literal|"Text alpha bits"
@@ -1697,14 +1671,11 @@ literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"graphoc-alpha-bits"
 argument_list|,
 literal|"Graphic alpha bits"
@@ -1718,7 +1689,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1799,12 +1769,10 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"thumb-size"
 argument_list|,
 literal|"Thumb Size"
@@ -1819,14 +1787,11 @@ literal|256
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_return_value
+name|GIMP_PROC_VAL_IMAGE
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
-argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
@@ -1836,7 +1801,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2007,20 +1971,16 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"width"
 argument_list|,
 literal|"Width"
 argument_list|,
-literal|"Width of the image in "
-literal|"PostScript file "
-literal|"(0: use input image "
-literal|"size)"
+literal|"Width of the image in PostScript file "
+literal|"(0: use input image size)"
 argument_list|,
 literal|0
 argument_list|,
@@ -2030,22 +1990,17 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"height"
 argument_list|,
 literal|"Height"
 argument_list|,
-literal|"Height of the image in "
-literal|"PostScript file "
-literal|"(0: use input image "
-literal|"size)"
+literal|"Height of the image in PostScript file "
+literal|"(0: use input image size)"
 argument_list|,
 literal|0
 argument_list|,
@@ -2055,20 +2010,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"x-offset"
 argument_list|,
 literal|"X offset"
 argument_list|,
-literal|"X-offset to image "
-literal|"from lower left corner"
+literal|"X-offset to image from lower left corner"
 argument_list|,
 operator|-
 name|GIMP_MAX_IMAGE_SIZE
@@ -2079,20 +2030,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"y-offset"
 argument_list|,
 literal|"Y offset"
 argument_list|,
-literal|"Y-offset to image "
-literal|"from lower left corner"
+literal|"Y-offset to image from lower left corner"
 argument_list|,
 operator|-
 name|GIMP_MAX_IMAGE_SIZE
@@ -2103,22 +2050,17 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"unit"
 argument_list|,
 literal|"Unit"
 argument_list|,
-literal|"Unit for "
-literal|"width/height/offset. "
-literal|"0: inches, "
-literal|"1: millimeters"
+literal|"Unit for width/height/offset. "
+literal|"0: inches, 1: millimeters"
 argument_list|,
 literal|0
 argument_list|,
@@ -2128,33 +2070,26 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"keep-ratio"
 argument_list|,
 literal|"Keep ratio"
 argument_list|,
-literal|"FALSE: use width/height, "
-literal|"TRUE: keep aspect ratio"
+literal|"FALSE: use width/height, TRUE: keep aspect ratio"
 argument_list|,
 name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"rotation"
 argument_list|,
 literal|"Rotation"
@@ -2169,40 +2104,31 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"eps-flag"
 argument_list|,
 literal|"EPG flag"
 argument_list|,
-literal|"FALSE: PostScript, "
-literal|"TRUE: Encapsulated "
-literal|"PostScript"
+literal|"FALSE: PostScript, TRUE: Encapsulated PostScript"
 argument_list|,
 name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"preview"
 argument_list|,
 literal|"Preview"
 argument_list|,
-literal|"0: no preview, "
-literal|">0: max. size of preview"
+literal|"0: no preview,>0: max. size of preview"
 argument_list|,
 literal|0
 argument_list|,
@@ -2212,20 +2138,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"level"
 argument_list|,
 literal|"Level"
 argument_list|,
-literal|"1: PostScript Level 1, "
-literal|"2: PostScript Level 2"
+literal|"1: PostScript Level 1, 2: PostScript Level 2"
 argument_list|,
 literal|1
 argument_list|,
@@ -2234,7 +2156,6 @@ argument_list|,
 literal|2
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4098,7 +4019,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d54e4e0408
+DECL|struct|__anon2baebdfd0408
 block|{
 DECL|member|eol
 name|goffset

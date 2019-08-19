@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a441a970108
+DECL|struct|__anon29fca6090108
 block|{
 DECL|member|brush_callback
 name|gchar
@@ -248,12 +248,10 @@ operator|)
 name|gimp_brush_data_free
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"brush-name"
 argument_list|,
 literal|"Brush name"
@@ -264,14 +262,11 @@ name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"opacity"
 argument_list|,
 literal|"Opacity"
@@ -286,14 +281,11 @@ literal|1.0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"spacing"
 argument_list|,
 literal|"Spacing"
@@ -309,14 +301,11 @@ literal|20
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_ENUM
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_enum
-argument_list|(
 literal|"paint-mode"
 argument_list|,
 literal|"Paint mode"
@@ -329,14 +318,11 @@ name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"mask-width"
 argument_list|,
 literal|"Brush width"
@@ -351,14 +337,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"mask-height"
 argument_list|,
 literal|"Brush height"
@@ -373,20 +356,16 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"mask-len"
 argument_list|,
 literal|"Mask length"
 argument_list|,
-literal|"Length of brush "
-literal|"mask data"
+literal|"Length of brush mask data"
 argument_list|,
 literal|0
 argument_list|,
@@ -396,42 +375,33 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_UINT8_ARRAY
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_uint8_array
-argument_list|(
 literal|"mask-data"
 argument_list|,
 literal|"Mask data"
 argument_list|,
-literal|"The brush mask "
-literal|"data"
+literal|"The brush mask data"
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"closing"
 argument_list|,
 literal|"Closing"
 argument_list|,
-literal|"If the dialog was "
-literal|"cloaing"
+literal|"If the dialog was closing"
 argument_list|,
 name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_add_temp_procedure

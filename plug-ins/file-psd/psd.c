@@ -700,12 +700,10 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"thumb-size"
 argument_list|,
 literal|"Thumb Size"
@@ -720,14 +718,11 @@ literal|256
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_return_value
+name|GIMP_PROC_VAL_IMAGE
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
-argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
@@ -738,20 +733,16 @@ name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_return_value
+name|GIMP_PROC_VAL_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"image-width"
 argument_list|,
 literal|"Image width"
 argument_list|,
-literal|"Width of the "
-literal|"full-sized image"
+literal|"Width of the full-sized image"
 argument_list|,
 literal|1
 argument_list|,
@@ -761,20 +752,16 @@ literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_return_value
+name|GIMP_PROC_VAL_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"image-height"
 argument_list|,
 literal|"Image height"
 argument_list|,
-literal|"Height of the "
-literal|"full-sized image"
+literal|"Height of the full-sized image"
 argument_list|,
 literal|1
 argument_list|,
@@ -783,7 +770,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

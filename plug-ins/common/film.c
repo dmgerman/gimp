@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3db350108
+DECL|struct|__anon294439f20108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3db350208
+DECL|struct|__anon294439f20208
 block|{
 DECL|member|advanced_adj
 name|GtkAdjustment
@@ -912,18 +912,15 @@ argument_list|,
 literal|"1997"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"film-height"
 argument_list|,
 literal|"Film height"
 argument_list|,
-literal|"Height of film (0: fit "
-literal|"to images)"
+literal|"Height of film (0: fit to images)"
 argument_list|,
 literal|0
 argument_list|,
@@ -933,14 +930,11 @@ literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_RGB
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_rgb
-argument_list|(
 literal|"film-color"
 argument_list|,
 literal|"Film color"
@@ -953,14 +947,11 @@ name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"number-start"
 argument_list|,
 literal|"Number start"
@@ -975,14 +966,11 @@ literal|1
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_STRING
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_string
-argument_list|(
 literal|"number-font"
 argument_list|,
 literal|"Number font"
@@ -993,14 +981,11 @@ name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_RGB
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_rgb
-argument_list|(
 literal|"number-color"
 argument_list|,
 literal|"Number color"
@@ -1013,14 +998,11 @@ name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"at-top"
 argument_list|,
 literal|"At top"
@@ -1031,14 +1013,11 @@ name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"at-bottom"
 argument_list|,
 literal|"At bottom"
@@ -1049,20 +1028,16 @@ name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"num-images"
 argument_list|,
 literal|"Num images"
 argument_list|,
-literal|"Number of images to "
-literal|"be used for film"
+literal|"Number of images to be used for film"
 argument_list|,
 literal|1
 argument_list|,
@@ -1072,33 +1047,24 @@ literal|1
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT32_ARRAY
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32_array
-argument_list|(
 literal|"image-ids"
 argument_list|,
 literal|"Image IDs"
 argument_list|,
-literal|"num-images "
-literal|"image IDs to "
-literal|"be used for "
-literal|"film"
+literal|"num-images image IDs to be used for film"
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_return_value
+name|GIMP_PROC_VAL_IMAGE
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
-argument_list|(
 literal|"new-image"
 argument_list|,
 literal|"New image"
@@ -1108,7 +1074,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

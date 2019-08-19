@@ -626,20 +626,15 @@ argument_list|,
 literal|"sgi,rgb,rgba,bw,icon"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
+name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"compression"
 argument_list|,
 literal|"Compression"
 argument_list|,
-literal|"Compression level "
-literal|"(0 = none, "
-literal|"1 = RLE, "
-literal|"2 = ARLE)"
+literal|"Compression level (0 = none, 1 = RLE, 2 = ARLE)"
 argument_list|,
 literal|0
 argument_list|,
@@ -648,7 +643,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|G_PARAM_STATIC_STRINGS
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
