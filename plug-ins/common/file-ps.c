@@ -199,7 +199,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baf7f3c0108
+DECL|struct|__anon294288380108
 block|{
 DECL|member|resolution
 name|guint
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baf7f3c0208
+DECL|struct|__anon294288380208
 block|{
 DECL|member|width
 DECL|member|height
@@ -480,11 +480,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GFile
 modifier|*
@@ -503,7 +505,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 specifier|const
@@ -528,11 +531,13 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -551,8 +556,9 @@ name|PSSaveVals
 modifier|*
 name|vals
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -587,8 +593,9 @@ name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|width
@@ -633,8 +640,9 @@ name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -653,11 +661,13 @@ name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -676,11 +686,13 @@ name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -699,11 +711,13 @@ name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -722,11 +736,13 @@ name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -771,7 +787,8 @@ end_empty_stmt
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|create_new_image
 parameter_list|(
 specifier|const
@@ -791,9 +808,10 @@ parameter_list|,
 name|GimpImageBaseType
 name|type
 parameter_list|,
-name|gint32
+name|GimpLayer
 modifier|*
-name|layer_ID
+modifier|*
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -927,7 +945,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_ps
 parameter_list|(
 specifier|const
@@ -1043,7 +1062,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baf7f3c0308
+DECL|struct|__anon294288380308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -2148,8 +2167,9 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -2352,7 +2372,7 @@ block|}
 name|check_load_vals
 argument_list|()
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -2369,9 +2389,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -2413,7 +2432,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -2453,8 +2472,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -2512,7 +2532,7 @@ expr_stmt|;
 name|check_load_vals
 argument_list|()
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -2527,9 +2547,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -2558,7 +2577,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_truncate
@@ -2578,7 +2597,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|ps_save (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image_id,gint32 drawable_id,GFile * file,const GimpValueArray * args,gpointer run_data)
+DECL|function|ps_save (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,GFile * file,const GimpValueArray * args,gpointer run_data)
 name|ps_save
 parameter_list|(
 name|GimpProcedure
@@ -2588,11 +2607,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GFile
 modifier|*
@@ -2617,8 +2638,9 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
-name|gint32
-name|orig_image_id
+name|GimpImage
+modifier|*
+name|orig_image
 decl_stmt|;
 name|GError
 modifier|*
@@ -2650,9 +2672,9 @@ argument_list|,
 name|SAVE_PS_PROC
 argument_list|)
 expr_stmt|;
-name|orig_image_id
+name|orig_image
 operator|=
-name|image_id
+name|image
 expr_stmt|;
 switch|switch
 condition|(
@@ -2677,10 +2699,10 @@ operator|=
 name|gimp_export_image
 argument_list|(
 operator|&
-name|image_id
+name|image
 argument_list|,
 operator|&
-name|drawable_id
+name|drawable
 argument_list|,
 name|psvals
 operator|.
@@ -2741,7 +2763,7 @@ argument_list|(
 operator|&
 name|psvals
 argument_list|,
-name|orig_image_id
+name|orig_image
 argument_list|)
 expr_stmt|;
 if|if
@@ -2927,7 +2949,7 @@ argument_list|(
 operator|&
 name|psvals
 argument_list|,
-name|orig_image_id
+name|orig_image
 argument_list|)
 expr_stmt|;
 name|check_save_vals
@@ -2939,9 +2961,9 @@ name|save_image
 argument_list|(
 name|file
 argument_list|,
-name|image_id
+name|image
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|error
@@ -2981,7 +3003,7 @@ name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -3889,7 +3911,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baf7f3c0408
+DECL|struct|__anon294288380408
 block|{
 DECL|member|eol
 name|goffset
@@ -4172,7 +4194,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,GError ** error)
 name|load_image
 parameter_list|(
@@ -4187,15 +4210,18 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-literal|0
+name|NULL
 decl_stmt|;
-name|gint32
+name|GimpImage
+modifier|*
 modifier|*
 name|image_list
 decl_stmt|,
+modifier|*
 modifier|*
 name|nl
 decl_stmt|;
@@ -4352,8 +4378,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|fclose
@@ -4412,15 +4437,15 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|image_list
 operator|=
 name|g_new
 argument_list|(
-name|gint32
+name|GimpImage
+operator|*
 argument_list|,
 literal|10
 argument_list|)
@@ -4581,7 +4606,7 @@ name|page_count
 argument_list|)
 condition|)
 block|{
-name|image_ID
+name|image
 operator|=
 name|load_ps
 argument_list|(
@@ -4602,15 +4627,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|==
-operator|-
-literal|1
+operator|!
+name|image
 condition|)
 break|break;
 name|gimp_image_set_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|(
 name|gdouble
@@ -4637,7 +4660,8 @@ block|{
 name|nl
 operator|=
 operator|(
-name|gint32
+name|GimpImage
+operator|*
 operator|*
 operator|)
 name|g_realloc
@@ -4652,7 +4676,8 @@ operator|)
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gint32
+name|GimpImage
+operator|*
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4678,16 +4703,15 @@ name|n_images
 operator|++
 index|]
 operator|=
-name|image_ID
+name|image
 expr_stmt|;
 block|}
 else|else
 comment|/* Skip an image */
 block|{
-name|image_ID
+name|image
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 if|if
 condition|(
@@ -4737,7 +4761,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|image_ID
+name|image
 operator|=
 name|image_list
 index|[
@@ -4758,7 +4782,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -4771,13 +4795,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gint32
+name|GimpLayer
+modifier|*
 name|current_layer
 decl_stmt|;
-name|gint32
-name|tmp_ID
+name|GimpDrawable
+modifier|*
+name|tmp_drawable
 decl_stmt|;
-name|tmp_ID
+name|tmp_drawable
 operator|=
 name|gimp_image_get_active_drawable
 argument_list|(
@@ -4791,33 +4817,38 @@ name|name
 operator|=
 name|gimp_item_get_name
 argument_list|(
-name|tmp_ID
+name|GIMP_ITEM
+argument_list|(
+name|tmp_drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|current_layer
 operator|=
 name|gimp_layer_new_from_drawable
 argument_list|(
-name|tmp_ID
+name|tmp_drawable
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_item_set_name
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|current_layer
+argument_list|)
 argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|current_layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -4840,7 +4871,7 @@ block|}
 block|}
 name|gimp_image_undo_enable
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -4898,7 +4929,7 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-name|image_ID
+name|image
 operator|=
 operator|(
 name|n_images
@@ -4911,8 +4942,7 @@ index|[
 literal|0
 index|]
 else|:
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 block|}
 name|g_free
@@ -4921,7 +4951,7 @@ name|image_list
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
@@ -4929,18 +4959,20 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (GFile * file,gint32 image_ID,gint32 drawable_ID,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GError ** error)
 name|save_image
 parameter_list|(
 name|GFile
 modifier|*
 name|file
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -4963,7 +4995,7 @@ name|drawable_type
 operator|=
 name|gimp_drawable_type
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure we're not exporting an image with an alpha channel  */
@@ -4971,7 +5003,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -5123,9 +5155,9 @@ name|save_index
 argument_list|(
 name|output
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|error
 argument_list|)
@@ -5144,9 +5176,9 @@ name|save_gray
 argument_list|(
 name|output
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|error
 argument_list|)
@@ -5165,9 +5197,9 @@ name|save_rgb
 argument_list|(
 name|output
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|error
 argument_list|)
@@ -5530,15 +5562,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ps_set_save_size (PSSaveVals * vals,gint32 image_ID)
+DECL|function|ps_set_save_size (PSSaveVals * vals,GimpImage * image)
 name|ps_set_save_size
 parameter_list|(
 name|PSSaveVals
 modifier|*
 name|vals
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|gdouble
@@ -5562,7 +5595,7 @@ name|unit
 decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|xres
@@ -5596,14 +5629,14 @@ name|width
 operator|=
 name|gimp_image_width
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_image_height
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|iw
@@ -5622,7 +5655,7 @@ name|unit
 operator|=
 name|gimp_image_get_unit
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|factor
@@ -8113,13 +8146,14 @@ block|}
 end_function
 
 begin_comment
-comment|/* Create an image. Sets layer_ID, drawable and rgn. Returns image_ID */
+comment|/* Create an image. Sets layer, drawable and rgn. Returns image */
 end_comment
 
 begin_function
 specifier|static
-name|gint32
-DECL|function|create_new_image (const gchar * filename,guint pagenum,guint width,guint height,GimpImageBaseType type,gint32 * layer_ID)
+name|GimpImage
+modifier|*
+DECL|function|create_new_image (const gchar * filename,guint pagenum,guint width,guint height,GimpImageBaseType type,GimpLayer ** layer)
 name|create_new_image
 parameter_list|(
 specifier|const
@@ -8139,13 +8173,15 @@ parameter_list|,
 name|GimpImageBaseType
 name|type
 parameter_list|,
-name|gint32
+name|GimpLayer
 modifier|*
-name|layer_ID
+modifier|*
+name|layer
 parameter_list|)
 block|{
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GimpImageType
 name|gdtype
@@ -8184,7 +8220,7 @@ operator|=
 name|GIMP_RGB_IMAGE
 expr_stmt|;
 block|}
-name|image_ID
+name|image
 operator|=
 name|gimp_image_new_with_precision
 argument_list|(
@@ -8199,7 +8235,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|tmp
@@ -8215,7 +8251,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|tmp
 argument_list|)
@@ -8238,11 +8274,11 @@ name|pagenum
 argument_list|)
 expr_stmt|;
 operator|*
-name|layer_ID
+name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|tmp
 argument_list|,
@@ -8256,7 +8292,7 @@ literal|100
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8267,19 +8303,18 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|*
-name|layer_ID
+name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
@@ -8451,7 +8486,8 @@ end_comment
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_ps (const gchar * filename,guint pagenum,FILE * ifp,gint llx,gint lly,gint urx,gint ury)
 name|load_ps
 parameter_list|(
@@ -8549,10 +8585,13 @@ decl_stmt|;
 name|GimpImageBaseType
 name|imagetype
 decl_stmt|;
-name|gint32
-name|layer_ID
-decl_stmt|,
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
+name|GimpLayer
+modifier|*
+name|layer
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -8805,10 +8844,9 @@ expr_stmt|;
 block|}
 else|else
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
-name|image_ID
+name|image
 operator|=
 name|create_new_image
 argument_list|(
@@ -8823,14 +8861,17 @@ argument_list|,
 name|imagetype
 argument_list|,
 operator|&
-name|layer_ID
+name|layer
 argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|layer_ID
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tile_height
@@ -8892,7 +8933,7 @@ block|}
 decl_stmt|;
 name|gimp_image_set_colormap
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|BWColorMap
 argument_list|,
@@ -9328,10 +9369,9 @@ return|return
 operator|(
 name|err
 condition|?
-operator|-
-literal|1
+name|NULL
 else|:
-name|image_ID
+name|image
 operator|)
 return|;
 block|}
@@ -9519,15 +9559,16 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_ps_setup (GOutputStream * output,gint32 drawable_ID,gint width,gint height,gint bpp,GError ** error)
+DECL|function|save_ps_setup (GOutputStream * output,GimpDrawable * drawable,gint width,gint height,gint bpp,GError ** error)
 name|save_ps_setup
 parameter_list|(
 name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|width
@@ -9876,7 +9917,7 @@ name|save_ps_preview
 argument_list|(
 name|output
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|error
 argument_list|)
@@ -10858,15 +10899,16 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_ps_preview (GOutputStream * output,gint32 drawable_ID,GError ** error)
+DECL|function|save_ps_preview (GOutputStream * output,GimpDrawable * drawable,GError ** error)
 name|save_ps_preview
 parameter_list|(
 name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -10960,7 +11002,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|cmap
@@ -10971,7 +11013,7 @@ name|drawable_type
 operator|=
 name|gimp_drawable_type
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -10999,7 +11041,10 @@ name|gimp_image_get_colormap
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
-name|drawable_ID
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 argument_list|,
 operator|&
@@ -11010,7 +11055,7 @@ name|format
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 break|break;
@@ -11729,18 +11774,20 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_gray (GOutputStream * output,gint32 image_ID,gint32 drawable_ID,GError ** error)
+DECL|function|save_gray (GOutputStream * output,GimpImage * image,GimpDrawable * drawable,GError ** error)
 name|save_gray
 parameter_list|(
 name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -11803,7 +11850,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|format
@@ -11865,7 +11912,7 @@ name|save_ps_setup
 argument_list|(
 name|output
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|width
 argument_list|,
@@ -12309,18 +12356,20 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_bw (GOutputStream * output,gint32 image_ID,gint32 drawable_ID,GError ** error)
+DECL|function|save_bw (GOutputStream * output,GimpImage * image,GimpDrawable * drawable,GError ** error)
 name|save_bw
 parameter_list|(
 name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -12409,7 +12458,7 @@ name|cmap
 operator|=
 name|gimp_image_get_colormap
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|ncols
@@ -12419,14 +12468,14 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|format
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -12515,7 +12564,7 @@ name|save_ps_setup
 argument_list|(
 name|output
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|width
 argument_list|,
@@ -13085,18 +13134,20 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_index (GOutputStream * output,gint32 image_ID,gint32 drawable_ID,GError ** error)
+DECL|function|save_index (GOutputStream * output,GimpImage * image,GimpDrawable * drawable,GError ** error)
 name|save_index
 parameter_list|(
 name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -13189,7 +13240,7 @@ name|cmap_start
 operator|=
 name|gimp_image_get_colormap
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|ncols
@@ -13434,9 +13485,9 @@ name|save_bw
 argument_list|(
 name|output
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|error
 argument_list|)
@@ -13445,14 +13496,14 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|format
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -13507,7 +13558,7 @@ name|save_ps_setup
 argument_list|(
 name|output
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|width
 argument_list|,
@@ -14033,18 +14084,20 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_rgb (GOutputStream * output,gint32 image_ID,gint32 drawable_ID,GError ** error)
+DECL|function|save_rgb (GOutputStream * output,GimpImage * image,GimpDrawable * drawable,GError ** error)
 name|save_rgb
 parameter_list|(
 name|GOutputStream
 modifier|*
 name|output
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GError
 modifier|*
@@ -14112,7 +14165,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|format
@@ -14172,7 +14225,7 @@ name|save_ps_setup
 argument_list|(
 name|output
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|width
 argument_list|,
