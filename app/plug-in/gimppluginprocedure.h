@@ -211,9 +211,9 @@ name|gchar
 modifier|*
 name|mime_types
 decl_stmt|;
-DECL|member|handles_uri
+DECL|member|handles_remote
 name|gboolean
-name|handles_uri
+name|handles_remote
 decl_stmt|;
 DECL|member|handles_raw
 name|gboolean
@@ -573,7 +573,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_plug_in_procedure_set_handles_uri
+name|gimp_plug_in_procedure_set_handles_remote
 parameter_list|(
 name|GimpPlugInProcedure
 modifier|*

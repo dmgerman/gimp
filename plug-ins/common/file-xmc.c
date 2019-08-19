@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28832f4c0108
+DECL|struct|__anon28f5a8470108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28832f4c0208
+DECL|struct|__anon28f5a8470208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1465,10 +1465,12 @@ operator|==
 literal|0
 condition|)
 block|{
-name|DM_XMC
+name|GFile
+modifier|*
+name|file
+init|=
+name|g_file_new_for_uri
 argument_list|(
-literal|"Starting to load file.\tparam.data=%s\n"
-argument_list|,
 name|param
 index|[
 literal|1
@@ -1478,19 +1480,25 @@ name|data
 operator|.
 name|d_string
 argument_list|)
+decl_stmt|;
+name|DM_XMC
+argument_list|(
+literal|"Starting to load file.\tparam.data=%s\n"
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
 argument_list|(
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -1558,10 +1566,12 @@ operator|==
 literal|0
 condition|)
 block|{
-name|DM_XMC
+name|GFile
+modifier|*
+name|file
+init|=
+name|g_file_new_for_uri
 argument_list|(
-literal|"Starting to load thumbnail.\tfilename=%s\tthumb-size=%d\n"
-argument_list|,
 name|param
 index|[
 literal|0
@@ -1570,6 +1580,16 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|)
+decl_stmt|;
+name|DM_XMC
+argument_list|(
+literal|"Starting to load thumbnail.\tfilename=%s\tthumb-size=%d\n"
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|param
 index|[
@@ -1585,14 +1605,10 @@ name|image_ID
 operator|=
 name|load_thumbnail
 argument_list|(
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|param
 index|[
@@ -1763,9 +1779,25 @@ operator|==
 literal|0
 condition|)
 block|{
+name|GFile
+modifier|*
+name|file
+init|=
+name|g_file_new_for_uri
+argument_list|(
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
+decl_stmt|;
 name|DM_XMC
 argument_list|(
-literal|"run: export %s\n"
+literal|"run: exprort %s\n"
 argument_list|,
 name|name
 argument_list|)
@@ -1830,7 +1862,8 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Cannot set the hot spot!\n"
-literal|"You must arrange layers so that all of them have an intersection."
+literal|"You must arrange layers so that all of them have "
+literal|"an intersection."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2276,14 +2309,10 @@ if|if
 condition|(
 name|save_image
 argument_list|(
-name|param
-index|[
-literal|3
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|image_ID
 argument_list|,
@@ -9177,7 +9206,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28832f4c0308
+DECL|struct|__anon28f5a8470308
 block|{
 DECL|member|size
 name|guint32

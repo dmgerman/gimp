@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac2102c0103
+DECL|enum|__anon2a2277600103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2037,18 +2037,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-if|if
-condition|(
-name|proc
-operator|->
-name|file_proc
-operator|&&
-name|proc
-operator|->
-name|handles_uri
-condition|)
-block|{
-comment|/*  for file procedures that handle URIs, make sure that the        *  passed string actually is an URI, not just a file path        *  (bug 758685)        */
 name|GimpProcedure
 modifier|*
 name|procedure
@@ -2064,6 +2052,17 @@ name|uri_value
 init|=
 name|NULL
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|proc
+operator|->
+name|file_proc
+condition|)
+return|return
+name|TRUE
+return|;
+comment|/*  make sure that the passed strings are actually URIs, not just a    *  file path (bug 758685)    */
 if|if
 condition|(
 operator|(
@@ -2251,7 +2250,6 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 return|return
 name|TRUE
@@ -5277,8 +5275,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_procedure_set_handles_uri (GimpPlugInProcedure * proc)
-name|gimp_plug_in_procedure_set_handles_uri
+DECL|function|gimp_plug_in_procedure_set_handles_remote (GimpPlugInProcedure * proc)
+name|gimp_plug_in_procedure_set_handles_remote
 parameter_list|(
 name|GimpPlugInProcedure
 modifier|*
@@ -5295,7 +5293,7 @@ argument_list|)
 expr_stmt|;
 name|proc
 operator|->
-name|handles_uri
+name|handles_remote
 operator|=
 name|TRUE
 expr_stmt|;

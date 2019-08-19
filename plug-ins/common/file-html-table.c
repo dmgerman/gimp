@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54f4e00108
+DECL|struct|__anon29fd32200108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -447,7 +447,7 @@ argument_list|,
 literal|"text/html"
 argument_list|)
 expr_stmt|;
-name|gimp_register_file_handler_uri
+name|gimp_register_file_handler_remote
 argument_list|(
 name|SAVE_PROC
 argument_list|)

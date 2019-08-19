@@ -262,7 +262,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_register_file_handler_uri
+name|_gimp_register_file_handler_remote
 parameter_list|(
 specifier|const
 name|gchar

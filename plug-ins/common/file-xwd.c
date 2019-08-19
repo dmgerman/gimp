@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2961f6120108
+DECL|struct|__anon2992fd310108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2961f6120208
+DECL|struct|__anon2992fd310208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2961f6120308
+DECL|struct|__anon2992fd310308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2961f6120408
+DECL|struct|__anon2992fd310408
 block|{
 DECL|member|npixel
 name|gint
@@ -1214,7 +1214,7 @@ argument_list|,
 literal|"image/x-xwindowdump"
 argument_list|)
 expr_stmt|;
-name|gimp_register_file_handler_uri
+name|gimp_register_file_handler_remote
 argument_list|(
 name|SAVE_PROC
 argument_list|)

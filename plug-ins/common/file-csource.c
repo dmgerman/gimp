@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298edaa60108
+DECL|struct|__anon28ca92bc0108
 block|{
 DECL|member|prefixed_name
 name|gchar
@@ -362,7 +362,7 @@ argument_list|,
 literal|"text/x-csrc"
 argument_list|)
 expr_stmt|;
-name|gimp_register_file_handler_uri
+name|gimp_register_file_handler_remote
 argument_list|(
 name|SAVE_PROC
 argument_list|)

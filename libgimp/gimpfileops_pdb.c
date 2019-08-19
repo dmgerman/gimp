@@ -1278,13 +1278,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_register_file_handler_uri:  * @procedure_name: The name of the procedure to enable URIs for.  *  * Registers a file handler procedure as capable of handling URIs.  *  * Registers a file handler procedure as capable of handling URIs. This  * allows GIMP to call the procedure directly for all kinds of URIs,  * and the 'filename' traditionally passed to file procedures turns  * into an URI.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * _gimp_register_file_handler_remote:  * @procedure_name: The name of the procedure to enable remote URIs for.  *  * Registers a file handler procedure as capable of handling remote  * URIs.  *  * Registers a file handler procedure as capable of handling remote  * URIs. This allows GIMP to call the procedure directly for all kinds  * of URIs, not only on local file:// URIs.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_register_file_handler_uri (const gchar * procedure_name)
-name|_gimp_register_file_handler_uri
+DECL|function|_gimp_register_file_handler_remote (const gchar * procedure_name)
+name|_gimp_register_file_handler_remote
 parameter_list|(
 specifier|const
 name|gchar
@@ -1335,7 +1335,7 @@ name|gimp_pdb_run_procedure_array
 argument_list|(
 name|pdb
 argument_list|,
-literal|"gimp-register-file-handler-uri"
+literal|"gimp-register-file-handler-remote"
 argument_list|,
 name|args
 argument_list|)
@@ -1345,7 +1345,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure_array
 argument_list|(
-literal|"gimp-register-file-handler-uri"
+literal|"gimp-register-file-handler-remote"
 argument_list|,
 name|args
 argument_list|)

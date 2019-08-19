@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ffaa4e0108
+DECL|struct|__anon28f4b10a0108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ffaa4e0208
+DECL|struct|__anon28f4b10a0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -599,7 +599,7 @@ argument_list|,
 literal|"gih"
 argument_list|)
 expr_stmt|;
-name|gimp_file_procedure_set_handles_uri
+name|gimp_file_procedure_set_handles_remote
 argument_list|(
 name|GIMP_FILE_PROCEDURE
 argument_list|(

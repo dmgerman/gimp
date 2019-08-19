@@ -922,8 +922,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_manager_register_handles_uri (GimpPlugInManager * manager,const gchar * name)
-name|gimp_plug_in_manager_register_handles_uri
+DECL|function|gimp_plug_in_manager_register_handles_remote (GimpPlugInManager * manager,const gchar * name)
+name|gimp_plug_in_manager_register_handles_remote
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
@@ -1008,7 +1008,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_plug_in_procedure_set_handles_uri
+name|gimp_plug_in_procedure_set_handles_remote
 argument_list|(
 name|file_proc
 argument_list|)

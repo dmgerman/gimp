@@ -304,21 +304,21 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_file_procedure_set_handles_uri
+name|gimp_file_procedure_set_handles_remote
 parameter_list|(
 name|GimpFileProcedure
 modifier|*
 name|procedure
 parameter_list|,
 name|gboolean
-name|handles_uri
+name|handles_remote
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_file_procedure_get_handles_uri
+name|gimp_file_procedure_get_handles_remote
 parameter_list|(
 name|GimpFileProcedure
 modifier|*

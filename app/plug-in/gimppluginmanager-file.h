@@ -115,7 +115,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_plug_in_manager_register_handles_uri
+name|gimp_plug_in_manager_register_handles_remote
 parameter_list|(
 name|GimpPlugInManager
 modifier|*

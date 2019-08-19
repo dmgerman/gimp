@@ -308,12 +308,6 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|file_proc
-operator|->
-name|handles_uri
-condition|)
 name|g_value_take_string
 argument_list|(
 name|gimp_value_array_index
@@ -326,24 +320,6 @@ argument_list|,
 name|g_file_get_uri
 argument_list|(
 name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
-name|g_value_transform
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|1
-argument_list|)
-argument_list|,
-name|gimp_value_array_index
-argument_list|(
-name|new_args
-argument_list|,
-literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1255,12 +1231,6 @@ literal|2
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|file_proc
-operator|->
-name|handles_uri
-condition|)
 name|g_value_take_string
 argument_list|(
 name|gimp_value_array_index
@@ -1273,24 +1243,6 @@ argument_list|,
 name|g_file_get_uri
 argument_list|(
 name|file
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
-name|g_value_transform
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|args
-argument_list|,
-literal|3
-argument_list|)
-argument_list|,
-name|gimp_value_array_index
-argument_list|(
-name|new_args
-argument_list|,
-literal|3
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2394,8 +2346,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|register_file_handler_uri_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|register_file_handler_uri_invoker
+DECL|function|register_file_handler_remote_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|register_file_handler_remote_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -2461,7 +2413,7 @@ argument_list|,
 name|error
 argument_list|)
 operator|&&
-name|gimp_plug_in_manager_register_handles_uri
+name|gimp_plug_in_manager_register_handles_remote
 argument_list|(
 name|gimp
 operator|->
@@ -4186,12 +4138,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-register-file-handler-uri    */
+comment|/*    * gimp-register-file-handler-remote    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|register_file_handler_uri_invoker
+name|register_file_handler_remote_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -4201,16 +4153,16 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-register-file-handler-uri"
+literal|"gimp-register-file-handler-remote"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"Registers a file handler procedure as capable of handling URIs."
+literal|"Registers a file handler procedure as capable of handling remote URIs."
 argument_list|,
-literal|"Registers a file handler procedure as capable of handling URIs. This allows GIMP to call the procedure directly for all kinds of URIs, and the 'filename' traditionally passed to file procedures turns into an URI."
+literal|"Registers a file handler procedure as capable of handling remote URIs. This allows GIMP to call the procedure directly for all kinds of URIs, not only on local file:// URIs."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4231,7 +4183,7 @@ literal|"procedure-name"
 argument_list|,
 literal|"procedure name"
 argument_list|,
-literal|"The name of the procedure to enable URIs for."
+literal|"The name of the procedure to enable remote URIs for."
 argument_list|,
 name|FALSE
 argument_list|,

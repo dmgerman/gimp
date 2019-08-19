@@ -57,9 +57,9 @@ DECL|member|priority
 name|gint
 name|priority
 decl_stmt|;
-DECL|member|handles_uri
+DECL|member|handles_remote
 name|gboolean
-name|handles_uri
+name|handles_remote
 decl_stmt|;
 block|}
 struct|;
@@ -474,7 +474,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_procedure_set_prefixes:  * @procedure: A #GimpFileProcedure.  * @prefixes:  A comma separated list of prefixes this procedure can  *             handle (i.e. "http:,ftp:").  *  * It should almost never be neccessary to register prefixes with file  * procedures, because most sorty of URIs should be handled by GIO.  *  * Since: 3.0  **/
+comment|/**  * gimp_file_procedure_set_prefixes:  * @procedure: A #GimpFileProcedure.  * @prefixes:  A comma separated list of prefixes this procedure can  *             handle (i.e. "http:,ftp:").  *  * It should almost never be neccessary to register prefixes with file  * procedures, because most sorts of URIs should be handled by GIO.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -716,20 +716,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_procedure_set_handles_uri:  * @procedure:   A #GimpFileProcedure.  * @handles_uri: The procedure's handles uri flag.  *  * Registers a file procedure as capable of handling arbitrary URIs  * via GIO.  *  * When @handles_uri is set to %TRUE, the procedure will get a #GFile  * passed that can point to a remote file.  *  * When @handles_uri is set to %FALSE, the procedure will get a local  * #GFile passed and can use g_file_get_path() to get to a filename  * that can be used with whatever non-GIO means of dealing with the  * file.  *  * Since: 3.0  **/
+comment|/**  * gimp_file_procedure_set_handles_remote:  * @procedure:      A #GimpFileProcedure.  * @handles_remote: The procedure's 'handles remote' flag.  *  * Registers a file procedure as capable of handling arbitrary remote  * URIs via GIO.  *  * When @handles_remote is set to %TRUE, the procedure will get a  * #GFile passed that can point to a remote file.  *  * When @handles_remote is set to %FALSE, the procedure will get a  * local #GFile passed and can use g_file_get_path() to get to a  * filename that can be used with whatever non-GIO means of dealing  * with the file.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_file_procedure_set_handles_uri (GimpFileProcedure * procedure,gint handles_uri)
-name|gimp_file_procedure_set_handles_uri
+DECL|function|gimp_file_procedure_set_handles_remote (GimpFileProcedure * procedure,gint handles_remote)
+name|gimp_file_procedure_set_handles_remote
 parameter_list|(
 name|GimpFileProcedure
 modifier|*
 name|procedure
 parameter_list|,
 name|gint
-name|handles_uri
+name|handles_remote
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -744,21 +744,21 @@ name|procedure
 operator|->
 name|priv
 operator|->
-name|handles_uri
+name|handles_remote
 operator|=
-name|handles_uri
+name|handles_remote
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_procedure_get_handles_uri:  * @procedure: A #GimpFileProcedure.  *  * Returns: The procedure's handles uri flag as set with  *          gimp_file_procedure_set_handles_uri().  *  * Since: 3.0  **/
+comment|/**  * gimp_file_procedure_get_handles_remote:  * @procedure: A #GimpFileProcedure.  *  * Returns: The procedure's 'handles remote' flag as set with  *          gimp_file_procedure_set_handles_remote().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_file_procedure_get_handles_uri (GimpFileProcedure * procedure)
-name|gimp_file_procedure_get_handles_uri
+DECL|function|gimp_file_procedure_get_handles_remote (GimpFileProcedure * procedure)
+name|gimp_file_procedure_get_handles_remote
 parameter_list|(
 name|GimpFileProcedure
 modifier|*
@@ -780,7 +780,7 @@ name|procedure
 operator|->
 name|priv
 operator|->
-name|handles_uri
+name|handles_remote
 return|;
 block|}
 end_function

@@ -419,7 +419,7 @@ argument_list|,
 literal|"pat"
 argument_list|)
 expr_stmt|;
-name|gimp_file_procedure_set_handles_uri
+name|gimp_file_procedure_set_handles_remote
 argument_list|(
 name|GIMP_FILE_PROCEDURE
 argument_list|(

@@ -198,6 +198,7 @@ literal|"The list of matching names"
 block|}
 block|}
 decl_stmt|;
+comment|/* FIXME filename encoding */
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC

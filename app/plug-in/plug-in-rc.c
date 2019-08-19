@@ -86,7 +86,7 @@ DECL|macro|PLUG_IN_RC_FILE_VERSION
 define|#
 directive|define
 name|PLUG_IN_RC_FILE_VERSION
-value|9
+value|10
 end_define
 
 begin_comment
@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ad70b0103
+DECL|enum|__anon295c90c00103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -315,8 +315,8 @@ block|,
 DECL|enumerator|MIME_TYPES
 name|MIME_TYPES
 block|,
-DECL|enumerator|HANDLES_URI
-name|HANDLES_URI
+DECL|enumerator|HANDLES_REMOTE
+name|HANDLES_REMOTE
 block|,
 DECL|enumerator|HANDLES_RAW
 name|HANDLES_RAW
@@ -676,11 +676,11 @@ name|scanner
 argument_list|,
 name|LOAD_PROC
 argument_list|,
-literal|"handles-uri"
+literal|"handles-remote"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|HANDLES_URI
+name|HANDLES_REMOTE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -774,11 +774,11 @@ name|scanner
 argument_list|,
 name|SAVE_PROC
 argument_list|,
-literal|"handles-uri"
+literal|"handles-remote"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|HANDLES_URI
+name|HANDLES_REMOTE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2691,9 +2691,9 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|HANDLES_URI
+name|HANDLES_REMOTE
 case|:
-name|gimp_plug_in_procedure_set_handles_uri
+name|gimp_plug_in_procedure_set_handles_remote
 argument_list|(
 name|proc
 argument_list|)
@@ -5124,14 +5124,14 @@ if|if
 condition|(
 name|proc
 operator|->
-name|handles_uri
+name|handles_remote
 condition|)
 block|{
 name|gimp_config_writer_open
 argument_list|(
 name|writer
 argument_list|,
-literal|"handles-uri"
+literal|"handles-remote"
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_close

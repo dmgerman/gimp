@@ -407,7 +407,7 @@ argument_list|,
 literal|"image/x-xcf"
 argument_list|)
 expr_stmt|;
-name|gimp_plug_in_procedure_set_handles_uri
+name|gimp_plug_in_procedure_set_handles_remote
 argument_list|(
 name|proc
 argument_list|)
@@ -668,7 +668,7 @@ argument_list|,
 literal|"image/x-xcf"
 argument_list|)
 expr_stmt|;
-name|gimp_plug_in_procedure_set_handles_uri
+name|gimp_plug_in_procedure_set_handles_remote
 argument_list|(
 name|proc
 argument_list|)

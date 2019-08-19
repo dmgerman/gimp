@@ -222,7 +222,7 @@ argument_list|,
 literal|"image/gimp-x-gbr"
 argument_list|)
 expr_stmt|;
-name|gimp_plug_in_procedure_set_handles_uri
+name|gimp_plug_in_procedure_set_handles_remote
 argument_list|(
 name|proc
 argument_list|)
@@ -439,7 +439,7 @@ if|#
 directive|if
 literal|0
 comment|/* do not register as file procedure */
-block|gimp_plug_in_procedure_set_image_types (proc, "RGB*, GRAY*, INDEXED*");   gimp_plug_in_procedure_set_file_proc (proc, "gbr", "", NULL);   gimp_plug_in_procedure_set_mime_types (proc, "image/x-gimp-gbr");   gimp_plug_in_procedure_set_handles_uri (proc);
+block|gimp_plug_in_procedure_set_image_types (proc, "RGB*, GRAY*, INDEXED*");   gimp_plug_in_procedure_set_file_proc (proc, "gbr", "", NULL);   gimp_plug_in_procedure_set_mime_types (proc, "image/x-gimp-gbr");   gimp_plug_in_procedure_set_handles_remote (proc);
 endif|#
 directive|endif
 name|gimp_object_set_static_name
@@ -740,7 +740,7 @@ argument_list|,
 literal|"image/gimp-x-gih"
 argument_list|)
 expr_stmt|;
-name|gimp_plug_in_procedure_set_handles_uri
+name|gimp_plug_in_procedure_set_handles_remote
 argument_list|(
 name|proc
 argument_list|)
@@ -955,7 +955,7 @@ if|#
 directive|if
 literal|0
 comment|/* do not register as file procedure */
-block|gimp_plug_in_procedure_set_image_types (proc, "RGB*, GRAY*, INDEXED*");   gimp_plug_in_procedure_set_file_proc (proc, "gih", "", NULL);   gimp_plug_in_procedure_set_mime_types (proc, "image/x-gimp-gih");   gimp_plug_in_procedure_set_handles_uri (proc);
+block|gimp_plug_in_procedure_set_image_types (proc, "RGB*, GRAY*, INDEXED*");   gimp_plug_in_procedure_set_file_proc (proc, "gih", "", NULL);   gimp_plug_in_procedure_set_mime_types (proc, "image/x-gimp-gih");   gimp_plug_in_procedure_set_handles_remote (proc);
 endif|#
 directive|endif
 name|gimp_object_set_static_name
@@ -1280,7 +1280,7 @@ argument_list|,
 literal|"image/gimp-x-pat"
 argument_list|)
 expr_stmt|;
-name|gimp_plug_in_procedure_set_handles_uri
+name|gimp_plug_in_procedure_set_handles_remote
 argument_list|(
 name|proc
 argument_list|)
@@ -1494,7 +1494,7 @@ if|#
 directive|if
 literal|0
 comment|/* do not register as file procedure */
-block|gimp_plug_in_procedure_set_image_types (proc, "RGB*, GRAY*, INDEXED*");   gimp_plug_in_procedure_set_file_proc (proc, "pat", "", NULL);   gimp_plug_in_procedure_set_mime_types (proc, "image/x-gimp-pat");   gimp_plug_in_procedure_set_handles_uri (proc);
+block|gimp_plug_in_procedure_set_image_types (proc, "RGB*, GRAY*, INDEXED*");   gimp_plug_in_procedure_set_file_proc (proc, "pat", "", NULL);   gimp_plug_in_procedure_set_mime_types (proc, "image/x-gimp-pat");   gimp_plug_in_procedure_set_handles_remote (proc);
 endif|#
 directive|endif
 name|gimp_object_set_static_name
@@ -1773,7 +1773,7 @@ argument_list|,
 literal|"image/gimp-x-gex"
 argument_list|)
 expr_stmt|;
-name|gimp_plug_in_procedure_set_handles_uri
+name|gimp_plug_in_procedure_set_handles_remote
 argument_list|(
 name|proc
 argument_list|)

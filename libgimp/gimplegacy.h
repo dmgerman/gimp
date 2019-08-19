@@ -650,7 +650,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_register_file_handler_uri
+name|gimp_register_file_handler_remote
 parameter_list|(
 specifier|const
 name|gchar

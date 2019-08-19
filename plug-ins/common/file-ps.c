@@ -199,7 +199,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baebdfd0108
+DECL|struct|__anon2c627e440108
 block|{
 DECL|member|resolution
 name|guint
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baebdfd0208
+DECL|struct|__anon2c627e440208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1036,7 +1036,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baebdfd0308
+DECL|struct|__anon2c627e440308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1961,7 +1961,7 @@ argument_list|,
 name|dversion
 argument_list|)
 expr_stmt|;
-name|gimp_file_procedure_set_handles_uri
+name|gimp_file_procedure_set_handles_remote
 argument_list|(
 name|GIMP_FILE_PROCEDURE
 argument_list|(
@@ -4019,7 +4019,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baebdfd0408
+DECL|struct|__anon2c627e440408
 block|{
 DECL|member|eol
 name|goffset

@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cb63700103
+DECL|enum|__anon28c8c2de0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cb63700203
+DECL|enum|__anon28c8c2de0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -7167,6 +7167,22 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
+name|GFile
+modifier|*
+name|file
+init|=
+name|g_file_new_for_uri
+argument_list|(
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
+decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -7177,14 +7193,10 @@ if|if
 condition|(
 name|mng_save_image
 argument_list|(
-name|param
-index|[
-literal|3
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
 argument_list|,
 name|image_id
 argument_list|,

@@ -502,7 +502,7 @@ argument_list|,
 literal|"1995-1996,1998-2003"
 argument_list|)
 expr_stmt|;
-name|gimp_file_procedure_set_handles_uri
+name|gimp_file_procedure_set_handles_remote
 argument_list|(
 name|GIMP_FILE_PROCEDURE
 argument_list|(
@@ -614,7 +614,7 @@ argument_list|,
 literal|"1995-1996,2000-2003"
 argument_list|)
 expr_stmt|;
-name|gimp_file_procedure_set_handles_uri
+name|gimp_file_procedure_set_handles_remote
 argument_list|(
 name|GIMP_FILE_PROCEDURE
 argument_list|(

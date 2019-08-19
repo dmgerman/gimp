@@ -284,7 +284,7 @@ argument_list|,
 literal|"text/x-chdr"
 argument_list|)
 expr_stmt|;
-name|gimp_register_file_handler_uri
+name|gimp_register_file_handler_remote
 argument_list|(
 name|SAVE_PROC
 argument_list|)
