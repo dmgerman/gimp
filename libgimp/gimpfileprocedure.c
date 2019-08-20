@@ -474,7 +474,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_procedure_set_prefixes:  * @procedure: A #GimpFileProcedure.  * @prefixes:  A comma separated list of prefixes this procedure can  *             handle (i.e. "http:,ftp:").  *  * It should almost never be neccessary to register prefixes with file  * procedures, because most sorts of URIs should be handled by GIO.  *  * Since: 3.0  **/
+comment|/**  * gimp_file_procedure_set_prefixes:  * @procedure: A #GimpFileProcedure.  * @prefixes:  A comma separated list of prefixes this procedure can  *             handle (i.e. "http:,ftp:").  *  * It should almost never be necessary to register prefixes with file  * procedures, because most sorts of URIs should be handled by GIO.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

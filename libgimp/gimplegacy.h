@@ -175,7 +175,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/**  * GimpParamDef:  * @type:        the parameter's type.  * @name:        the parameter's name.  * @description: the parameter's desctiption.  **/
+comment|/**  * GimpParamDef:  * @type:        the parameter's type.  * @name:        the parameter's name.  * @description: the parameter's description.  **/
 end_comment
 
 begin_struct

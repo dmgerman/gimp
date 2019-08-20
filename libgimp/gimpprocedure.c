@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b203f3a0103
+DECL|enum|__anon2c1a0df90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2225,7 +2225,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_add_menu_path:  * @procedure: A #GimpProcedure.  * @menu_path: The @procedure's additional menu path.  *  * Adds a menu path to te procedure. Only procedures which have a menu  * label can add a menu path.  *  * Menu paths are untranslated paths to menus and submenus with the  * syntax:  *  *&lt;Prefix&gt;/Path/To/Submenu  *  * for instance:  *  *&lt;Image&gt;/Layer/Transform  *  * See also: gimp_plug_in_add_menu_branch().  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_add_menu_path:  * @procedure: A #GimpProcedure.  * @menu_path: The @procedure's additional menu path.  *  * Adds a menu path to the procedure. Only procedures which have a menu  * label can add a menu path.  *  * Menu paths are untranslated paths to menus and submenus with the  * syntax:  *  *&lt;Prefix&gt;/Path/To/Submenu  *  * for instance:  *  *&lt;Image&gt;/Layer/Transform  *  * See also: gimp_plug_in_add_menu_branch().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
