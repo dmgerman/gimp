@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3945f0103
+DECL|enum|__anon29f057680103
 block|{
 DECL|enumerator|COMBO_VALUE
 name|COMBO_VALUE
@@ -813,7 +813,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28b3945f0208
+DECL|struct|__anon29f057680208
 block|{
 DECL|member|format
 name|int
@@ -10434,7 +10434,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_F_ilter:"
+literal|"F_ilter:"
 argument_list|)
 argument_list|,
 literal|0.0
