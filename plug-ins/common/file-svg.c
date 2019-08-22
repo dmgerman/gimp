@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1147680108
+DECL|struct|__anon2ae61a6f0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -303,7 +303,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 specifier|const
@@ -817,8 +818,9 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -957,7 +959,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|image_id
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -969,9 +971,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -999,7 +1000,7 @@ name|num_vectors
 decl_stmt|;
 name|gimp_vectors_import_from_file
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|filename
 argument_list|,
@@ -1069,7 +1070,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1119,8 +1120,9 @@ name|height
 init|=
 literal|0
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -1187,7 +1189,7 @@ operator|=
 operator|-
 name|size
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -1202,9 +1204,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -1233,7 +1234,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|GIMP_VALUES_SET_INT
@@ -1269,7 +1270,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,GError ** load_error)
 name|load_image
 parameter_list|(
@@ -1284,10 +1286,12 @@ modifier|*
 name|load_error
 parameter_list|)
 block|{
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 name|GdkPixbuf
@@ -1375,8 +1379,7 @@ name|error
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|gimp_progress_init
@@ -1468,8 +1471,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
