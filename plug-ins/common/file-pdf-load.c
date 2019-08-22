@@ -434,7 +434,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e66470103
+DECL|enum|__anon2b44ee690103
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -673,7 +673,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e66470208
+DECL|struct|__anon2b44ee690208
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -720,7 +720,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e66470308
+DECL|struct|__anon2b44ee690308
 block|{
 DECL|member|n_pages
 name|gint
@@ -896,7 +896,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 name|PopplerDocument
@@ -1010,10 +1011,12 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer_from_surface
 parameter_list|(
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 specifier|const
@@ -1422,11 +1425,11 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|PopplerDocument
 modifier|*
@@ -1814,7 +1817,7 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -1862,9 +1865,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -1893,7 +1895,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1946,11 +1948,11 @@ decl_stmt|;
 name|gdouble
 name|scale
 decl_stmt|;
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gint
 name|num_pages
@@ -2143,9 +2145,8 @@ name|scale
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|image
-operator|<
-literal|1
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -2599,11 +2600,13 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
-DECL|function|layer_from_surface (gint32 image,const gchar * layer_name,gint position,cairo_surface_t * surface,gdouble progress_start,gdouble progress_scale)
+name|GimpLayer
+modifier|*
+DECL|function|layer_from_surface (GimpImage * image,const gchar * layer_name,gint position,cairo_surface_t * surface,gdouble progress_start,gdouble progress_scale)
 name|layer_from_surface
 parameter_list|(
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 specifier|const
@@ -2625,7 +2628,8 @@ name|gdouble
 name|progress_scale
 parameter_list|)
 block|{
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 name|layer
@@ -2651,8 +2655,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 name|position
 argument_list|)
@@ -2853,7 +2856,8 @@ end_endif
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (PopplerDocument * doc,const gchar * filename,GimpRunMode run_mode,GimpPageSelectorTarget target,guint32 resolution,gboolean antialias,PdfSelectedPages * pages)
 name|load_image
 parameter_list|(
@@ -2883,12 +2887,14 @@ modifier|*
 name|pages
 parameter_list|)
 block|{
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-literal|0
+name|NULL
 decl_stmt|;
-name|gint32
+name|GimpImage
+modifier|*
 modifier|*
 name|images
 init|=
@@ -2915,7 +2921,8 @@ name|images
 operator|=
 name|g_new0
 argument_list|(
-name|gint32
+name|GimpImage
+operator|*
 argument_list|,
 name|pages
 operator|->
@@ -3040,14 +3047,14 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|image_ID
+name|image
 condition|)
 block|{
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|image_ID
+name|image
 operator|=
 name|gimp_image_new
 argument_list|(
@@ -3060,7 +3067,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -3098,7 +3105,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|name
 argument_list|)
@@ -3110,7 +3117,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|resolution
 argument_list|,
@@ -3135,7 +3142,7 @@ argument_list|)
 expr_stmt|;
 name|layer_from_surface
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|page_label
 argument_list|,
@@ -3194,19 +3201,19 @@ index|[
 name|i
 index|]
 operator|=
-name|image_ID
+name|image
 expr_stmt|;
 name|gimp_image_undo_enable
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_clean_all
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
 literal|0
 expr_stmt|;
@@ -3219,17 +3226,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
+name|image
 condition|)
 block|{
 name|gimp_image_undo_enable
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_clean_all
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3274,7 +3281,7 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-name|image_ID
+name|image
 operator|=
 name|images
 index|[
@@ -3288,7 +3295,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
@@ -3490,7 +3497,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e66470408
+DECL|struct|__anon2b44ee690408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3515,7 +3522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e66470508
+DECL|struct|__anon2b44ee690508
 block|{
 DECL|member|selector
 name|GimpPageSelector
