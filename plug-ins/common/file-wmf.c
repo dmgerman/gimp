@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c9cb20108
+DECL|struct|__anon2b9f3e2e0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -287,7 +287,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 specifier|const
@@ -787,7 +788,8 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 decl_stmt|;
 name|GError
@@ -915,9 +917,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|image
-operator|<
-literal|1
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -990,14 +991,15 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
 name|gint
 name|height
-decl_stmt|;
-name|gint32
-name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -1147,9 +1149,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|image
-operator|<
-literal|1
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -4778,7 +4779,8 @@ end_comment
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,GError ** error)
 name|load_image
 parameter_list|(
@@ -4793,10 +4795,12 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 name|GeglBuffer
@@ -4846,8 +4850,7 @@ operator|!
 name|pixels
 condition|)
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 name|image
 operator|=
@@ -4909,7 +4912,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
@@ -4955,8 +4961,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
