@@ -147,6 +147,12 @@ directive|include
 file|<tlhelp32.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<process.h>
+end_include
+
 begin_undef
 undef|#
 directive|undef
