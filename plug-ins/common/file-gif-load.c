@@ -258,7 +258,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 specifier|const
@@ -666,8 +667,9 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -692,7 +694,7 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -711,9 +713,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -745,7 +746,7 @@ name|promote_to_rgb
 condition|)
 name|gimp_image_set_colormap
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|gimp_cmap
 argument_list|,
@@ -771,7 +772,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -811,8 +812,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -830,7 +832,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -847,9 +849,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -868,7 +869,7 @@ name|promote_to_rgb
 condition|)
 name|gimp_image_set_colormap
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 name|gimp_cmap
 argument_list|,
@@ -894,7 +895,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|GIMP_VALUES_SET_INT
@@ -905,7 +906,7 @@ literal|2
 argument_list|,
 name|gimp_image_width
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -917,7 +918,7 @@ literal|3
 argument_list|,
 name|gimp_image_height
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1064,7 +1065,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29bf94680108
+DECL|struct|__anon2b2a385f0108
 block|{
 DECL|member|Width
 name|guint
@@ -1108,7 +1109,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29bf94680208
+DECL|struct|__anon2b2a385f0208
 block|{
 DECL|member|transparent
 name|gint
@@ -1281,16 +1282,18 @@ parameter_list|,
 name|guint
 name|screenheight
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,gboolean thumbnail,GError ** error)
 name|load_image
 parameter_list|(
@@ -1344,11 +1347,11 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gboolean
 name|status
@@ -1409,8 +1412,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 if|if
@@ -1437,8 +1439,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 if|if
@@ -1481,8 +1482,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|g_strlcpy
@@ -1536,8 +1536,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 if|if
@@ -1564,8 +1563,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|GifScreen
@@ -1703,8 +1701,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 block|}
@@ -1766,9 +1763,9 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
-comment|/* will be -1 if failed on first image! */
+comment|/* will be NULL if failed on first image! */
 block|}
 if|if
 condition|(
@@ -1784,7 +1781,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 if|if
@@ -1820,9 +1817,9 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
-comment|/* will be -1 if failed on first image! */
+comment|/* will be NULL if failed on first image! */
 block|}
 name|DoExtension
 argument_list|(
@@ -1880,9 +1877,9 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
-comment|/* will be -1 if failed on first image! */
+comment|/* will be NULL if failed on first image! */
 block|}
 name|useGlobalColormap
 operator|=
@@ -1947,9 +1944,9 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
-comment|/* will be -1 if failed on first image! */
+comment|/* will be NULL if failed on first image! */
 block|}
 name|status
 operator|=
@@ -2044,7 +2041,7 @@ operator|.
 name|Height
 argument_list|,
 operator|&
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2149,7 +2146,7 @@ operator|.
 name|Height
 argument_list|,
 operator|&
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2175,7 +2172,7 @@ name|thumbnail
 condition|)
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|comment_parasite
 argument_list|)
@@ -2203,7 +2200,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
@@ -3962,7 +3959,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|ReadImage (FILE * fd,const gchar * filename,gint len,gint height,CMap cmap,gint ncols,gint format,gint interlace,gint number,guint leftpos,guint toppos,guint screenwidth,guint screenheight,gint32 * image_ID)
+DECL|function|ReadImage (FILE * fd,const gchar * filename,gint len,gint height,CMap cmap,gint ncols,gint format,gint interlace,gint number,guint leftpos,guint toppos,guint screenwidth,guint screenheight,GimpImage ** image)
 name|ReadImage
 parameter_list|(
 name|FILE
@@ -4007,9 +4004,10 @@ parameter_list|,
 name|guint
 name|screenheight
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|)
 block|{
 specifier|static
@@ -4018,8 +4016,9 @@ name|frame_number
 init|=
 literal|1
 decl_stmt|;
-name|gint32
-name|layer_ID
+name|GimpLayer
+modifier|*
+name|layer
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -4096,10 +4095,9 @@ literal|"Bogus frame dimensions"
 argument_list|)
 expr_stmt|;
 operator|*
-name|image_ID
+name|image
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 return|return
 name|FALSE
@@ -4126,10 +4124,9 @@ literal|"EOF / read error on image data"
 argument_list|)
 expr_stmt|;
 operator|*
-name|image_ID
+name|image
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 return|return
 name|FALSE
@@ -4155,10 +4152,9 @@ literal|"Error while reading"
 argument_list|)
 expr_stmt|;
 operator|*
-name|image_ID
+name|image
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 return|return
 name|FALSE
@@ -4193,7 +4189,7 @@ operator|=
 name|height
 expr_stmt|;
 operator|*
-name|image_ID
+name|image
 operator|=
 name|gimp_image_new
 argument_list|(
@@ -4207,7 +4203,7 @@ expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|filename
 argument_list|)
@@ -4300,7 +4296,7 @@ block|}
 name|gimp_image_set_colormap
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|gimp_cmap
 argument_list|,
@@ -4360,12 +4356,12 @@ operator|-
 literal|1
 condition|)
 block|{
-name|layer_ID
+name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|framename
 argument_list|,
@@ -4380,19 +4376,19 @@ argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
-name|layer_ID
+name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|framename
 argument_list|,
@@ -4407,7 +4403,7 @@ argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4540,7 +4536,7 @@ directive|endif
 name|gimp_image_convert_rgb
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4732,12 +4728,12 @@ name|Gif89
 operator|.
 name|disposal
 expr_stmt|;
-name|layer_ID
+name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|framename
 argument_list|,
@@ -4756,7 +4752,7 @@ argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4776,19 +4772,21 @@ expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
-name|layer_ID
+name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_item_transform_translate
 argument_list|(
-name|layer_ID
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
 argument_list|,
 operator|(
 name|gint
@@ -4844,11 +4842,16 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_image_delete
+argument_list|(
 operator|*
-name|image_ID
+name|image
+argument_list|)
+expr_stmt|;
+operator|*
+name|image
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 return|return
 name|FALSE
@@ -5350,7 +5353,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|layer_ID
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
