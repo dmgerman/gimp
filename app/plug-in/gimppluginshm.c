@@ -241,9 +241,9 @@ DECL|struct|_GimpPlugInShm
 struct|struct
 name|_GimpPlugInShm
 block|{
-DECL|member|shm_ID
+DECL|member|shm_id
 name|gint
-name|shm_ID
+name|shm_id
 decl_stmt|;
 DECL|member|shm_addr
 name|guchar
@@ -287,7 +287,7 @@ argument_list|)
 decl_stmt|;
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 operator|=
 operator|-
 literal|1
@@ -302,7 +302,7 @@ comment|/* Use SysV shared memory mechanisms for transferring tile data. */
 block|{
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 operator|=
 name|shmget
 argument_list|(
@@ -319,7 +319,7 @@ if|if
 condition|(
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 operator|!=
 operator|-
 literal|1
@@ -337,7 +337,7 @@ name|shmat
 argument_list|(
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 argument_list|,
 name|NULL
 argument_list|,
@@ -373,7 +373,7 @@ name|shmctl
 argument_list|(
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 argument_list|,
 name|IPC_RMID
 argument_list|,
@@ -382,7 +382,7 @@ argument_list|)
 expr_stmt|;
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 operator|=
 operator|-
 literal|1
@@ -408,7 +408,7 @@ name|shmctl
 argument_list|(
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 argument_list|,
 name|IPC_RMID
 argument_list|,
@@ -532,7 +532,7 @@ condition|)
 block|{
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 operator|=
 name|pid
 expr_stmt|;
@@ -677,7 +677,7 @@ condition|)
 block|{
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 operator|=
 name|pid
 expr_stmt|;
@@ -748,7 +748,7 @@ if|if
 condition|(
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 operator|==
 operator|-
 literal|1
@@ -776,7 +776,7 @@ literal|"attached shared memory segment ID = %d"
 argument_list|,
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -807,7 +807,7 @@ if|if
 condition|(
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 operator|!=
 operator|-
 literal|1
@@ -833,7 +833,7 @@ name|shmctl
 argument_list|(
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 argument_list|,
 name|IPC_RMID
 argument_list|,
@@ -895,7 +895,7 @@ literal|"/gimp-shm-%d"
 argument_list|,
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 argument_list|)
 expr_stmt|;
 name|shm_unlink
@@ -913,7 +913,7 @@ literal|"detached shared memory segment ID = %d"
 argument_list|,
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -929,8 +929,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_plug_in_shm_get_ID (GimpPlugInShm * shm)
-name|gimp_plug_in_shm_get_ID
+DECL|function|gimp_plug_in_shm_get_id (GimpPlugInShm * shm)
+name|gimp_plug_in_shm_get_id
 parameter_list|(
 name|GimpPlugInShm
 modifier|*
@@ -950,7 +950,7 @@ expr_stmt|;
 return|return
 name|shm
 operator|->
-name|shm_ID
+name|shm_id
 return|;
 block|}
 end_function

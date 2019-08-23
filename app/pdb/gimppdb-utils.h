@@ -520,7 +520,7 @@ modifier|*
 name|image
 parameter_list|,
 name|gint
-name|guide_ID
+name|guide_id
 parameter_list|,
 name|GError
 modifier|*
@@ -540,7 +540,7 @@ modifier|*
 name|image
 parameter_list|,
 name|gint
-name|sample_point_ID
+name|sample_point_id
 parameter_list|,
 name|GError
 modifier|*
@@ -560,7 +560,7 @@ modifier|*
 name|vectors
 parameter_list|,
 name|gint
-name|stroke_ID
+name|stroke_id
 parameter_list|,
 name|GimpPDBItemModify
 name|modify

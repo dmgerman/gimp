@@ -1624,7 +1624,7 @@ name|FALSE
 return|;
 name|image
 operator|=
-name|gimp_image_get_by_ID
+name|gimp_image_get_by_id
 argument_list|(
 name|ispec
 operator|->
@@ -1860,7 +1860,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_image_get_by_ID
+name|gimp_image_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -1922,7 +1922,7 @@ name|v_int
 operator|=
 name|image
 condition|?
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -2316,7 +2316,7 @@ name|FALSE
 return|;
 name|item
 operator|=
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|ispec
 operator|->
@@ -2588,7 +2588,7 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|=
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -2667,7 +2667,7 @@ name|v_int
 operator|=
 name|item
 condition|?
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -3206,7 +3206,7 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|=
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -3295,7 +3295,7 @@ name|v_int
 operator|=
 name|drawable
 condition|?
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -3775,7 +3775,7 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|=
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -3856,7 +3856,7 @@ name|v_int
 operator|=
 name|layer
 condition|?
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4205,7 +4205,7 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|=
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -4294,7 +4294,7 @@ name|v_int
 operator|=
 name|channel
 condition|?
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4712,7 +4712,7 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|=
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -4793,7 +4793,7 @@ name|v_int
 operator|=
 name|layer_mask
 condition|?
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5142,7 +5142,7 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|=
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -5223,7 +5223,7 @@ name|v_int
 operator|=
 name|selection
 condition|?
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5572,7 +5572,7 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|=
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -5653,7 +5653,7 @@ name|v_int
 operator|=
 name|vectors
 condition|?
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6044,7 +6044,7 @@ name|FALSE
 return|;
 name|display
 operator|=
-name|gimp_get_display_by_ID
+name|gimp_get_display_by_id
 argument_list|(
 name|ispec
 operator|->
@@ -6280,7 +6280,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_get_display_by_ID
+name|gimp_get_display_by_id
 argument_list|(
 name|gimp
 argument_list|,

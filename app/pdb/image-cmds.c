@@ -527,7 +527,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
@@ -1887,7 +1887,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2088,7 +2088,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2289,7 +2289,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

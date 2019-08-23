@@ -5460,7 +5460,7 @@ name|image
 operator|->
 name|gimp
 operator|->
-name|next_guide_ID
+name|next_guide_id
 operator|++
 argument_list|,
 name|GIMP_GUIDE_STYLE_SPLIT_VIEW

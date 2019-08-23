@@ -967,7 +967,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_get_display_name (Gimp * gimp,gint display_ID,GObject ** monitor,gint * monitor_number)
+DECL|function|gimp_get_display_name (Gimp * gimp,gint display_id,GObject ** monitor,gint * monitor_number)
 name|gimp_get_display_name
 parameter_list|(
 name|Gimp
@@ -975,7 +975,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|display_ID
+name|display_id
 parameter_list|,
 name|GObject
 modifier|*
@@ -1032,7 +1032,7 @@ name|get_display_name
 argument_list|(
 name|gimp
 argument_list|,
-name|display_ID
+name|display_id
 argument_list|,
 name|monitor
 argument_list|,
@@ -1281,15 +1281,15 @@ end_function
 begin_function
 name|GimpObject
 modifier|*
-DECL|function|gimp_get_display_by_ID (Gimp * gimp,gint ID)
-name|gimp_get_display_by_ID
+DECL|function|gimp_get_display_by_id (Gimp * gimp,gint id)
+name|gimp_get_display_by_id
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|ID
+name|id
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1319,7 +1319,7 @@ name|display_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
-name|ID
+name|id
 argument_list|)
 return|;
 return|return
@@ -1330,8 +1330,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_get_display_ID (Gimp * gimp,GimpObject * display)
-name|gimp_get_display_ID
+DECL|function|gimp_get_display_id (Gimp * gimp,GimpObject * display)
+name|gimp_get_display_id
 parameter_list|(
 name|Gimp
 modifier|*

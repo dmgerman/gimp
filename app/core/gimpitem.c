@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a23c13e0103
+DECL|enum|__anon2a53b0d90103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a23c13e0203
+DECL|enum|__anon2a53b0d90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7286,8 +7286,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_item_get_ID (GimpItem * item)
-name|gimp_item_get_ID
+DECL|function|gimp_item_get_id (GimpItem * item)
+name|gimp_item_get_id
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -7319,8 +7319,8 @@ end_function
 begin_function
 name|GimpItem
 modifier|*
-DECL|function|gimp_item_get_by_ID (Gimp * gimp,gint item_id)
-name|gimp_item_get_by_ID
+DECL|function|gimp_item_get_by_id (Gimp * gimp,gint item_id)
+name|gimp_item_get_by_id
 parameter_list|(
 name|Gimp
 modifier|*
@@ -7726,7 +7726,7 @@ name|gimp
 operator|->
 name|item_table
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -7736,7 +7736,7 @@ name|private
 operator|->
 name|ID
 operator|=
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|replace
 argument_list|)
@@ -7752,7 +7752,7 @@ name|gimp
 operator|->
 name|item_table
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)

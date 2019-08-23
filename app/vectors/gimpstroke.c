@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c3098f0103
+DECL|enum|__anon2c3405740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1557,8 +1557,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_stroke_set_ID (GimpStroke * stroke,gint id)
-name|gimp_stroke_set_ID
+DECL|function|gimp_stroke_set_id (GimpStroke * stroke,gint id)
+name|gimp_stroke_set_id
 parameter_list|(
 name|GimpStroke
 modifier|*
@@ -1580,7 +1580,7 @@ name|g_return_if_fail
 argument_list|(
 name|stroke
 operator|->
-name|ID
+name|id
 operator|==
 literal|0
 comment|/* we don't want changing IDs... */
@@ -1588,7 +1588,7 @@ argument_list|)
 expr_stmt|;
 name|stroke
 operator|->
-name|ID
+name|id
 operator|=
 name|id
 expr_stmt|;
@@ -1597,8 +1597,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_stroke_get_ID (GimpStroke * stroke)
-name|gimp_stroke_get_ID
+DECL|function|gimp_stroke_get_id (GimpStroke * stroke)
+name|gimp_stroke_get_id
 parameter_list|(
 name|GimpStroke
 modifier|*
@@ -1619,7 +1619,7 @@ expr_stmt|;
 return|return
 name|stroke
 operator|->
-name|ID
+name|id
 return|;
 block|}
 end_function
@@ -4931,7 +4931,7 @@ condition|)
 block|{
 name|stroke
 operator|->
-name|ID
+name|id
 operator|=
 literal|0
 expr_stmt|;

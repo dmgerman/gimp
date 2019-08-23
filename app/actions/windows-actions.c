@@ -1624,7 +1624,7 @@ literal|"%s-%d.%d"
 argument_list|,
 name|escaped
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)

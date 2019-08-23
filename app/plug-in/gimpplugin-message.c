@@ -686,7 +686,7 @@ if|if
 condition|(
 name|request
 operator|->
-name|drawable_ID
+name|drawable_id
 operator|==
 operator|-
 literal|1
@@ -752,7 +752,7 @@ name|tile_rect
 decl_stmt|;
 name|tile_data
 operator|.
-name|drawable_ID
+name|drawable_id
 operator|=
 operator|-
 literal|1
@@ -940,7 +940,7 @@ operator|(
 name|GimpDrawable
 operator|*
 operator|)
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|plug_in
 operator|->
@@ -950,7 +950,7 @@ name|gimp
 argument_list|,
 name|tile_info
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -991,7 +991,7 @@ argument_list|)
 argument_list|,
 name|tile_info
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1045,7 +1045,7 @@ argument_list|)
 argument_list|,
 name|tile_info
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1122,7 +1122,7 @@ argument_list|)
 argument_list|,
 name|tile_info
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1175,7 +1175,7 @@ argument_list|)
 argument_list|,
 name|tile_info
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1405,7 +1405,7 @@ operator|(
 name|GimpDrawable
 operator|*
 operator|)
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|plug_in
 operator|->
@@ -1415,7 +1415,7 @@ name|gimp
 argument_list|,
 name|request
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -1456,7 +1456,7 @@ argument_list|)
 argument_list|,
 name|request
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1510,7 +1510,7 @@ argument_list|)
 argument_list|,
 name|request
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1637,11 +1637,11 @@ operator|)
 expr_stmt|;
 name|tile_data
 operator|.
-name|drawable_ID
+name|drawable_id
 operator|=
 name|request
 operator|->
-name|drawable_ID
+name|drawable_id
 expr_stmt|;
 name|tile_data
 operator|.

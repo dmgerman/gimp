@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1cd2040103
+DECL|enum|__anon290a79b50103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -490,7 +490,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1cd2040203
+DECL|enum|__anon290a79b50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5558,7 +5558,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -8086,8 +8086,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_ID (GimpImage * image)
-name|gimp_image_get_ID
+DECL|function|gimp_image_get_id (GimpImage * image)
+name|gimp_image_get_id
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -8119,8 +8119,8 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_image_get_by_ID (Gimp * gimp,gint image_id)
-name|gimp_image_get_by_ID
+DECL|function|gimp_image_get_by_id (Gimp * gimp,gint image_id)
+name|gimp_image_get_by_id
 parameter_list|(
 name|Gimp
 modifier|*

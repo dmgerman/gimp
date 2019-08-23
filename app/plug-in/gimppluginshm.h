@@ -39,7 +39,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_plug_in_shm_get_ID
+name|gimp_plug_in_shm_get_id
 parameter_list|(
 name|GimpPlugInShm
 modifier|*

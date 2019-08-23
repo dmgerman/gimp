@@ -118,9 +118,9 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-DECL|member|image_ID
+DECL|member|image_id
 name|gint
-name|image_ID
+name|image_id
 decl_stmt|;
 DECL|member|undo_group_count
 name|gint
@@ -161,9 +161,9 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-DECL|member|item_ID
+DECL|member|item_id
 name|gint
-name|item_ID
+name|item_id
 decl_stmt|;
 DECL|member|shadow_buffer
 name|gboolean
@@ -1329,7 +1329,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_image_get_by_ID
+name|gimp_image_get_by_id
 argument_list|(
 name|plug_in
 operator|->
@@ -1339,7 +1339,7 @@ name|gimp
 argument_list|,
 name|cleanup
 operator|->
-name|image_ID
+name|image_id
 argument_list|)
 operator|==
 name|cleanup
@@ -1382,7 +1382,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|plug_in
 operator|->
@@ -1392,7 +1392,7 @@ name|gimp
 argument_list|,
 name|cleanup
 operator|->
-name|item_ID
+name|item_id
 argument_list|)
 operator|==
 name|cleanup
@@ -1456,9 +1456,9 @@ name|image
 expr_stmt|;
 name|cleanup
 operator|->
-name|image_ID
+name|image_id
 operator|=
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -1899,9 +1899,9 @@ name|item
 expr_stmt|;
 name|cleanup
 operator|->
-name|item_ID
+name|item_id
 operator|=
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)

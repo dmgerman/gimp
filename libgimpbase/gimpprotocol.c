@@ -1911,7 +1911,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|shm_ID
+name|shm_id
 argument_list|,
 literal|1
 argument_list|,
@@ -2151,7 +2151,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gdisp_ID
+name|gdisp_id
 argument_list|,
 literal|1
 argument_list|,
@@ -2480,7 +2480,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|shm_ID
+name|shm_id
 argument_list|,
 literal|1
 argument_list|,
@@ -2710,7 +2710,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gdisp_ID
+name|gdisp_id
 argument_list|,
 literal|1
 argument_list|,
@@ -3013,7 +3013,7 @@ operator|)
 operator|&
 name|tile_req
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|,
 literal|1
 argument_list|,
@@ -3129,7 +3129,7 @@ operator|)
 operator|&
 name|tile_req
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|,
 literal|1
 argument_list|,
@@ -3313,7 +3313,7 @@ operator|)
 operator|&
 name|tile_data
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|,
 literal|1
 argument_list|,
@@ -3574,7 +3574,7 @@ operator|)
 operator|&
 name|tile_data
 operator|->
-name|drawable_ID
+name|drawable_id
 argument_list|,
 literal|1
 argument_list|,

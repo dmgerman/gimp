@@ -1763,14 +1763,14 @@ name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)

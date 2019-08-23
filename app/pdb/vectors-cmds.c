@@ -758,7 +758,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_stroke_get_ID
+name|gimp_stroke_get_id
 argument_list|(
 name|cur_stroke
 argument_list|)
@@ -3268,7 +3268,7 @@ argument_list|)
 expr_stmt|;
 name|stroke_id
 operator|=
-name|gimp_stroke_get_ID
+name|gimp_stroke_get_id
 argument_list|(
 name|stroke
 argument_list|)
@@ -3836,7 +3836,7 @@ argument_list|)
 expr_stmt|;
 name|stroke_id
 operator|=
-name|gimp_stroke_get_ID
+name|gimp_stroke_get_id
 argument_list|(
 name|stroke
 argument_list|)
@@ -4929,7 +4929,7 @@ argument_list|)
 expr_stmt|;
 name|stroke_id
 operator|=
-name|gimp_stroke_get_ID
+name|gimp_stroke_get_id
 argument_list|(
 name|stroke
 argument_list|)
@@ -5209,7 +5209,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5513,7 +5513,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

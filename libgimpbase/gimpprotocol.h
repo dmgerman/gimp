@@ -26,7 +26,7 @@ directive|define
 name|GIMP_PROTOCOL_VERSION
 value|0x0109
 name|enum
-DECL|enum|__anon297c54670103
+DECL|enum|__anon2ba7b15c0103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -72,7 +72,7 @@ begin_typedef
 unit|};
 typedef|typedef
 enum|enum
-DECL|enum|__anon297c54670203
+DECL|enum|__anon2ba7b15c0203
 block|{
 DECL|enumerator|GP_PARAM_DEF_TYPE_DEFAULT
 name|GP_PARAM_DEF_TYPE_DEFAULT
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297c54670303
+DECL|enum|__anon2ba7b15c0303
 block|{
 DECL|enumerator|GP_PARAM_TYPE_INT
 name|GP_PARAM_TYPE_INT
@@ -345,9 +345,9 @@ DECL|member|tile_height
 name|guint32
 name|tile_height
 decl_stmt|;
-DECL|member|shm_ID
+DECL|member|shm_id
 name|gint32
-name|shm_ID
+name|shm_id
 decl_stmt|;
 DECL|member|check_size
 name|gint8
@@ -385,9 +385,9 @@ DECL|member|export_iptc
 name|gint8
 name|export_iptc
 decl_stmt|;
-DECL|member|gdisp_ID
+DECL|member|gdisp_id
 name|gint32
-name|gdisp_ID
+name|gdisp_id
 decl_stmt|;
 DECL|member|app_name
 name|gchar
@@ -439,9 +439,9 @@ DECL|struct|_GPTileReq
 struct|struct
 name|_GPTileReq
 block|{
-DECL|member|drawable_ID
+DECL|member|drawable_id
 name|gint32
-name|drawable_ID
+name|drawable_id
 decl_stmt|;
 DECL|member|tile_num
 name|guint32
@@ -460,9 +460,9 @@ DECL|struct|_GPTileData
 struct|struct
 name|_GPTileData
 block|{
-DECL|member|drawable_ID
+DECL|member|drawable_id
 name|gint32
-name|drawable_ID
+name|drawable_id
 decl_stmt|;
 DECL|member|tile_num
 name|guint32
@@ -683,7 +683,7 @@ name|guint
 name|flags
 decl_stmt|;
 union|union
-DECL|union|__anon297c5467040a
+DECL|union|__anon2ba7b15c040a
 block|{
 DECL|member|m_int
 name|GPParamDefInt
@@ -781,7 +781,7 @@ modifier|*
 name|type_name
 decl_stmt|;
 union|union
-DECL|union|__anon297c5467050a
+DECL|union|__anon2ba7b15c050a
 block|{
 DECL|member|d_int
 name|gint32

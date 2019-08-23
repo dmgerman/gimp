@@ -533,7 +533,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|display_ID
+name|display_id
 parameter_list|,
 name|GObject
 modifier|*
@@ -615,7 +615,7 @@ begin_function_decl
 specifier|static
 name|GimpObject
 modifier|*
-name|gui_display_get_by_ID
+name|gui_display_get_by_id
 parameter_list|(
 name|Gimp
 modifier|*
@@ -630,7 +630,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint
-name|gui_display_get_ID
+name|gui_display_get_id
 parameter_list|(
 name|GimpObject
 modifier|*
@@ -1067,7 +1067,7 @@ name|gui
 operator|.
 name|display_get_by_id
 operator|=
-name|gui_display_get_by_ID
+name|gui_display_get_by_id
 expr_stmt|;
 name|gimp
 operator|->
@@ -1075,7 +1075,7 @@ name|gui
 operator|.
 name|display_get_id
 operator|=
-name|gui_display_get_ID
+name|gui_display_get_id
 expr_stmt|;
 name|gimp
 operator|->
@@ -1418,7 +1418,7 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gui_get_display_name (Gimp * gimp,gint display_ID,GObject ** monitor,gint * monitor_number)
+DECL|function|gui_get_display_name (Gimp * gimp,gint display_id,GObject ** monitor,gint * monitor_number)
 name|gui_get_display_name
 parameter_list|(
 name|Gimp
@@ -1426,7 +1426,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|display_ID
+name|display_id
 parameter_list|,
 name|GObject
 modifier|*
@@ -1450,17 +1450,17 @@ name|gdk_display
 decl_stmt|;
 if|if
 condition|(
-name|display_ID
+name|display_id
 operator|>
 literal|0
 condition|)
 name|display
 operator|=
-name|gimp_display_get_by_ID
+name|gimp_display_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
-name|display_ID
+name|display_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -1757,15 +1757,15 @@ begin_function
 specifier|static
 name|GimpObject
 modifier|*
-DECL|function|gui_display_get_by_ID (Gimp * gimp,gint ID)
-name|gui_display_get_by_ID
+DECL|function|gui_display_get_by_id (Gimp * gimp,gint id)
+name|gui_display_get_by_id
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|ID
+name|id
 parameter_list|)
 block|{
 return|return
@@ -1773,11 +1773,11 @@ operator|(
 name|GimpObject
 operator|*
 operator|)
-name|gimp_display_get_by_ID
+name|gimp_display_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
-name|ID
+name|id
 argument_list|)
 return|;
 block|}
@@ -1786,8 +1786,8 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gui_display_get_ID (GimpObject * display)
-name|gui_display_get_ID
+DECL|function|gui_display_get_id (GimpObject * display)
+name|gui_display_get_id
 parameter_list|(
 name|GimpObject
 modifier|*
@@ -1795,7 +1795,7 @@ name|display
 parameter_list|)
 block|{
 return|return
-name|gimp_display_get_ID
+name|gimp_display_get_id
 argument_list|(
 name|GIMP_DISPLAY
 argument_list|(

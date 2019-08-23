@@ -198,7 +198,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_display_get_ID
+name|gimp_display_get_id
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -210,14 +210,14 @@ end_function_decl
 begin_function_decl
 name|GimpDisplay
 modifier|*
-name|gimp_display_get_by_ID
+name|gimp_display_get_by_id
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|ID
+name|id
 parameter_list|)
 function_decl|;
 end_function_decl

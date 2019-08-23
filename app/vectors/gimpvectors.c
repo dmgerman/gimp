@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbfc28f0103
+DECL|enum|__anon274ad3da0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1389,7 +1389,7 @@ argument_list|)
 expr_stmt|;
 name|vectors
 operator|->
-name|last_stroke_ID
+name|last_stroke_id
 operator|=
 literal|0
 expr_stmt|;
@@ -2993,7 +2993,7 @@ expr_stmt|;
 block|}
 name|vectors
 operator|->
-name|last_stroke_ID
+name|last_stroke_id
 operator|=
 literal|0
 expr_stmt|;
@@ -3757,7 +3757,7 @@ argument_list|)
 expr_stmt|;
 name|dest_vectors
 operator|->
-name|last_stroke_ID
+name|last_stroke_id
 operator|=
 literal|0
 expr_stmt|;
@@ -3876,16 +3876,16 @@ argument_list|)
 expr_stmt|;
 name|dest_vectors
 operator|->
-name|last_stroke_ID
+name|last_stroke_id
 operator|++
 expr_stmt|;
-name|gimp_stroke_set_ID
+name|gimp_stroke_set_id
 argument_list|(
 name|newstroke
 argument_list|,
 name|dest_vectors
 operator|->
-name|last_stroke_ID
+name|last_stroke_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -3999,16 +3999,16 @@ argument_list|)
 expr_stmt|;
 name|vectors
 operator|->
-name|last_stroke_ID
+name|last_stroke_id
 operator|++
 expr_stmt|;
-name|gimp_stroke_set_ID
+name|gimp_stroke_set_id
 argument_list|(
 name|stroke
 argument_list|,
 name|vectors
 operator|->
-name|last_stroke_ID
+name|last_stroke_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -4343,8 +4343,8 @@ end_function
 begin_function
 name|GimpStroke
 modifier|*
-DECL|function|gimp_vectors_stroke_get_by_ID (GimpVectors * vectors,gint id)
-name|gimp_vectors_stroke_get_by_ID
+DECL|function|gimp_vectors_stroke_get_by_id (GimpVectors * vectors,gint id)
+name|gimp_vectors_stroke_get_by_id
 parameter_list|(
 name|GimpVectors
 modifier|*
@@ -4390,7 +4390,7 @@ control|)
 block|{
 if|if
 condition|(
-name|gimp_stroke_get_ID
+name|gimp_stroke_get_id
 argument_list|(
 name|list
 operator|->

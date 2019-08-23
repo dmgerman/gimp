@@ -147,7 +147,7 @@ name|image
 operator|->
 name|gimp
 operator|->
-name|next_sample_point_ID
+name|next_sample_point_id
 operator|++
 argument_list|)
 expr_stmt|;
@@ -655,7 +655,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_aux_item_get_ID
+name|gimp_aux_item_get_id
 argument_list|(
 name|GIMP_AUX_ITEM
 argument_list|(
@@ -773,7 +773,7 @@ name|sample_point
 return|;
 if|if
 condition|(
-name|gimp_aux_item_get_ID
+name|gimp_aux_item_get_id
 argument_list|(
 name|GIMP_AUX_ITEM
 argument_list|(

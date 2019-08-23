@@ -810,7 +810,7 @@ name|i
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -1496,7 +1496,7 @@ name|i
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

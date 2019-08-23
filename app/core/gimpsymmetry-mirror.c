@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949df1a0103
+DECL|enum|__anon2af9a5cc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1697,7 +1697,7 @@ name|orientation
 argument_list|,
 name|gimp
 operator|->
-name|next_guide_ID
+name|next_guide_id
 operator|++
 argument_list|,
 name|GIMP_GUIDE_STYLE_MIRROR

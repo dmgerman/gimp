@@ -115,9 +115,9 @@ modifier|*
 name|stroke_to_list
 decl_stmt|;
 comment|/* Map from GimpStroke to strokes listnode */
-DECL|member|last_stroke_ID
+DECL|member|last_stroke_id
 name|gint
-name|last_stroke_ID
+name|last_stroke_id
 decl_stmt|;
 DECL|member|freeze_count
 name|gint
@@ -693,7 +693,7 @@ end_function_decl
 begin_function_decl
 name|GimpStroke
 modifier|*
-name|gimp_vectors_stroke_get_by_ID
+name|gimp_vectors_stroke_get_by_id
 parameter_list|(
 name|GimpVectors
 modifier|*

@@ -324,7 +324,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4f78f70103
+DECL|enum|__anon2bf023d70103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -352,7 +352,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4f78f70203
+DECL|enum|__anon2bf023d70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1022,13 +1022,13 @@ argument_list|)
 expr_stmt|;
 name|gimp
 operator|->
-name|next_guide_ID
+name|next_guide_id
 operator|=
 literal|1
 expr_stmt|;
 name|gimp
 operator|->
-name|next_sample_point_ID
+name|next_sample_point_id
 operator|=
 literal|1
 expr_stmt|;
@@ -1083,7 +1083,7 @@ argument_list|)
 expr_stmt|;
 name|gimp
 operator|->
-name|next_display_ID
+name|next_display_id
 operator|=
 literal|1
 expr_stmt|;

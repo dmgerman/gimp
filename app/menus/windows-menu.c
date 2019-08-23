@@ -737,7 +737,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"windows-display-%04d-merge-id"
 argument_list|,
-name|gimp_display_get_ID
+name|gimp_display_get_id
 argument_list|(
 name|display
 argument_list|)
@@ -946,7 +946,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"windows-display-%04d-merge-id"
 argument_list|,
-name|gimp_display_get_ID
+name|gimp_display_get_id
 argument_list|(
 name|display
 argument_list|)

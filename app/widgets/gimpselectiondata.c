@@ -1888,7 +1888,7 @@ argument_list|,
 name|gimp_get_pid
 argument_list|()
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -2008,7 +2008,7 @@ argument_list|()
 condition|)
 block|{
 return|return
-name|gimp_image_get_by_ID
+name|gimp_image_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -2068,7 +2068,7 @@ argument_list|,
 name|gimp_get_pid
 argument_list|()
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -2215,7 +2215,7 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|gimp_image_get_by_ID
+name|gimp_image_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -2286,7 +2286,7 @@ argument_list|,
 name|gimp_get_pid
 argument_list|()
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2406,7 +2406,7 @@ argument_list|()
 condition|)
 block|{
 return|return
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp
 argument_list|,

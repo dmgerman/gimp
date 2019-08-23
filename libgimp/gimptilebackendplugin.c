@@ -1335,7 +1335,7 @@ name|msg
 decl_stmt|;
 name|tile_req
 operator|.
-name|drawable_ID
+name|drawable_id
 operator|=
 name|priv
 operator|->
@@ -1429,7 +1429,7 @@ if|if
 condition|(
 name|tile_data
 operator|->
-name|drawable_ID
+name|drawable_id
 operator|!=
 name|priv
 operator|->
@@ -1479,7 +1479,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|g_printerr ("tile_data: %d %d %d %d %d %d\n"                   "tile:      %d %d %d %d %d %d\n",                   tile_data->drawable_ID,                   tile_data->tile_num,                   tile_data->shadow,                   tile_data->width,                   tile_data->height,                   tile_data->bpp,                   priv->drawable_id,                   tile->tile_num,                   priv->shadow,                   tile->ewidth,                   tile->eheight,                   priv->bpp);
+block|g_printerr ("tile_data: %d %d %d %d %d %d\n"                   "tile:      %d %d %d %d %d %d\n",                   tile_data->drawable_id,                   tile_data->tile_num,                   tile_data->shadow,                   tile_data->width,                   tile_data->height,                   tile_data->bpp,                   priv->drawable_id,                   tile->tile_num,                   priv->shadow,                   tile->ewidth,                   tile->eheight,                   priv->bpp);
 endif|#
 directive|endif
 name|g_printerr
@@ -1630,7 +1630,7 @@ name|msg
 decl_stmt|;
 name|tile_req
 operator|.
-name|drawable_ID
+name|drawable_id
 operator|=
 operator|-
 literal|1
@@ -1717,7 +1717,7 @@ name|data
 expr_stmt|;
 name|tile_data
 operator|.
-name|drawable_ID
+name|drawable_id
 operator|=
 name|priv
 operator|->

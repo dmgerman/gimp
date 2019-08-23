@@ -103,9 +103,9 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-DECL|member|ID
+DECL|member|id
 name|gint
-name|ID
+name|id
 decl_stmt|;
 DECL|member|anchors
 name|GQueue
@@ -932,7 +932,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_stroke_set_ID
+name|gimp_stroke_set_id
 parameter_list|(
 name|GimpStroke
 modifier|*
@@ -946,7 +946,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_stroke_get_ID
+name|gimp_stroke_get_id
 parameter_list|(
 name|GimpStroke
 modifier|*

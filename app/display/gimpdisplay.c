@@ -177,7 +177,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2a28b60103
+DECL|enum|__anon2ad0d68b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -817,7 +817,7 @@ name|display
 operator|->
 name|gimp
 operator|->
-name|next_display_ID
+name|next_display_id
 operator|++
 expr_stmt|;
 if|if
@@ -826,7 +826,7 @@ name|display
 operator|->
 name|gimp
 operator|->
-name|next_display_ID
+name|next_display_id
 operator|==
 name|G_MAXINT
 condition|)
@@ -834,14 +834,14 @@ name|display
 operator|->
 name|gimp
 operator|->
-name|next_display_ID
+name|next_display_id
 operator|=
 literal|1
 expr_stmt|;
 block|}
 do|while
 condition|(
-name|gimp_display_get_by_ID
+name|gimp_display_get_by_id
 argument_list|(
 name|display
 operator|->
@@ -2059,8 +2059,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_display_get_ID (GimpDisplay * display)
-name|gimp_display_get_ID
+DECL|function|gimp_display_get_id (GimpDisplay * display)
+name|gimp_display_get_id
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -2100,15 +2100,15 @@ end_function
 begin_function
 name|GimpDisplay
 modifier|*
-DECL|function|gimp_display_get_by_ID (Gimp * gimp,gint ID)
-name|gimp_display_get_by_ID
+DECL|function|gimp_display_get_by_id (Gimp * gimp,gint id)
+name|gimp_display_get_by_id
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|ID
+name|id
 parameter_list|)
 block|{
 name|GList
@@ -2154,12 +2154,12 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_display_get_ID
+name|gimp_display_get_id
 argument_list|(
 name|display
 argument_list|)
 operator|==
-name|ID
+name|id
 condition|)
 return|return
 name|display
@@ -2201,7 +2201,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"windows-display-%04d"
 argument_list|,
-name|gimp_display_get_ID
+name|gimp_display_get_id
 argument_list|(
 name|display
 argument_list|)

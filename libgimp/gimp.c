@@ -674,10 +674,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|_gdisp_ID
+DECL|variable|_gdisp_id
 specifier|static
 name|gint
-name|_gdisp_ID
+name|_gdisp_id
 init|=
 operator|-
 literal|1
@@ -818,7 +818,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon28fcdb530103
+DECL|enum|__anon28d62ee30103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2641,7 +2641,7 @@ block|{
 return|return
 name|gimp_display_get_by_id
 argument_list|(
-name|_gdisp_ID
+name|_gdisp_id
 argument_list|)
 return|;
 block|}
@@ -3411,11 +3411,11 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
-name|_gdisp_ID
+name|_gdisp_id
 operator|=
 name|config
 operator|->
-name|gdisp_ID
+name|gdisp_id
 expr_stmt|;
 name|_wm_class
 operator|=
@@ -3545,7 +3545,7 @@ name|_gimp_shm_open
 argument_list|(
 name|config
 operator|->
-name|shm_ID
+name|shm_id
 argument_list|)
 expr_stmt|;
 block|}

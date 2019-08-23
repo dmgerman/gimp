@@ -1679,7 +1679,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

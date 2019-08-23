@@ -153,7 +153,7 @@ end_decl_stmt
 
 begin_function_decl
 name|guint32
-name|gimp_aux_item_get_ID
+name|gimp_aux_item_get_id
 parameter_list|(
 name|GimpAuxItem
 modifier|*

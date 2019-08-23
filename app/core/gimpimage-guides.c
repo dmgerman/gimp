@@ -130,7 +130,7 @@ name|image
 operator|->
 name|gimp
 operator|->
-name|next_guide_ID
+name|next_guide_id
 operator|++
 argument_list|)
 expr_stmt|;
@@ -232,7 +232,7 @@ name|image
 operator|->
 name|gimp
 operator|->
-name|next_guide_ID
+name|next_guide_id
 operator|++
 argument_list|)
 expr_stmt|;
@@ -679,7 +679,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_aux_item_get_ID
+name|gimp_aux_item_get_id
 argument_list|(
 name|GIMP_AUX_ITEM
 argument_list|(
@@ -797,7 +797,7 @@ name|guide
 return|;
 if|if
 condition|(
-name|gimp_aux_item_get_ID
+name|gimp_aux_item_get_id
 argument_list|(
 name|GIMP_AUX_ITEM
 argument_list|(

@@ -169,7 +169,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|display_ID
+name|display_id
 parameter_list|,
 name|GObject
 modifier|*
@@ -609,7 +609,7 @@ end_function_decl
 begin_function_decl
 name|GimpObject
 modifier|*
-name|gimp_get_display_by_ID
+name|gimp_get_display_by_id
 parameter_list|(
 name|Gimp
 modifier|*
@@ -623,7 +623,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_get_display_ID
+name|gimp_get_display_id
 parameter_list|(
 name|Gimp
 modifier|*
@@ -882,7 +882,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gint
-name|display_ID
+name|display_id
 parameter_list|,
 name|GObject
 modifier|*

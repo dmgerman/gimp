@@ -1629,7 +1629,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_item_get_ID
+name|gimp_item_get_id
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -1641,7 +1641,7 @@ end_function_decl
 begin_function_decl
 name|GimpItem
 modifier|*
-name|gimp_item_get_by_ID
+name|gimp_item_get_by_id
 parameter_list|(
 name|Gimp
 modifier|*

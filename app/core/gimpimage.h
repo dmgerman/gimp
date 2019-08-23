@@ -778,7 +778,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_image_get_ID
+name|gimp_image_get_id
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -790,7 +790,7 @@ end_function_decl
 begin_function_decl
 name|GimpImage
 modifier|*
-name|gimp_image_get_by_ID
+name|gimp_image_get_by_id
 parameter_list|(
 name|Gimp
 modifier|*

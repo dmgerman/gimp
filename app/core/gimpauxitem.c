@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2937c34c0103
+DECL|enum|__anon2a52a1870103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2937c34c0203
+DECL|enum|__anon2a52a1870203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -64,9 +64,9 @@ DECL|struct|_GimpAuxItemPrivate
 struct|struct
 name|_GimpAuxItemPrivate
 block|{
-DECL|member|aux_item_ID
+DECL|member|aux_item_id
 name|guint32
-name|aux_item_ID
+name|aux_item_id
 decl_stmt|;
 block|}
 struct|;
@@ -315,7 +315,7 @@ name|aux_item
 operator|->
 name|priv
 operator|->
-name|aux_item_ID
+name|aux_item_id
 argument_list|)
 expr_stmt|;
 break|break;
@@ -378,7 +378,7 @@ name|aux_item
 operator|->
 name|priv
 operator|->
-name|aux_item_ID
+name|aux_item_id
 operator|=
 name|g_value_get_uint
 argument_list|(
@@ -403,8 +403,8 @@ end_function
 
 begin_function
 name|guint32
-DECL|function|gimp_aux_item_get_ID (GimpAuxItem * aux_item)
-name|gimp_aux_item_get_ID
+DECL|function|gimp_aux_item_get_id (GimpAuxItem * aux_item)
+name|gimp_aux_item_get_id
 parameter_list|(
 name|GimpAuxItem
 modifier|*
@@ -426,7 +426,7 @@ name|aux_item
 operator|->
 name|priv
 operator|->
-name|aux_item_ID
+name|aux_item_id
 return|;
 block|}
 end_function

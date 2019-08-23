@@ -1933,7 +1933,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -1974,7 +1974,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2102,7 +2102,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2250,7 +2250,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2260,7 +2260,7 @@ argument_list|(
 name|item2
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item2
 argument_list|)
@@ -2364,7 +2364,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2374,7 +2374,7 @@ argument_list|(
 name|not_descendant
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|not_descendant
 argument_list|)
@@ -2470,7 +2470,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2509,7 +2509,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2618,7 +2618,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2661,7 +2661,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2747,7 +2747,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2832,7 +2832,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|item
 argument_list|)
@@ -2921,7 +2921,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -3086,7 +3086,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -3187,7 +3187,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -3279,7 +3279,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -3380,7 +3380,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -3402,7 +3402,7 @@ end_function
 begin_function
 name|GimpGuide
 modifier|*
-DECL|function|gimp_pdb_image_get_guide (GimpImage * image,gint guide_ID,GError ** error)
+DECL|function|gimp_pdb_image_get_guide (GimpImage * image,gint guide_id,GError ** error)
 name|gimp_pdb_image_get_guide
 parameter_list|(
 name|GimpImage
@@ -3410,7 +3410,7 @@ modifier|*
 name|image
 parameter_list|,
 name|gint
-name|guide_ID
+name|guide_id
 parameter_list|,
 name|GError
 modifier|*
@@ -3452,7 +3452,7 @@ name|gimp_image_get_guide
 argument_list|(
 name|image
 argument_list|,
-name|guide_ID
+name|guide_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -3480,12 +3480,12 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|guide_ID
+name|guide_id
 argument_list|)
 expr_stmt|;
 return|return
@@ -3497,7 +3497,7 @@ end_function
 begin_function
 name|GimpSamplePoint
 modifier|*
-DECL|function|gimp_pdb_image_get_sample_point (GimpImage * image,gint sample_point_ID,GError ** error)
+DECL|function|gimp_pdb_image_get_sample_point (GimpImage * image,gint sample_point_id,GError ** error)
 name|gimp_pdb_image_get_sample_point
 parameter_list|(
 name|GimpImage
@@ -3505,7 +3505,7 @@ modifier|*
 name|image
 parameter_list|,
 name|gint
-name|sample_point_ID
+name|sample_point_id
 parameter_list|,
 name|GError
 modifier|*
@@ -3547,7 +3547,7 @@ name|gimp_image_get_sample_point
 argument_list|(
 name|image
 argument_list|,
-name|sample_point_ID
+name|sample_point_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -3575,12 +3575,12 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|sample_point_ID
+name|sample_point_id
 argument_list|)
 expr_stmt|;
 return|return
@@ -3592,7 +3592,7 @@ end_function
 begin_function
 name|GimpStroke
 modifier|*
-DECL|function|gimp_pdb_get_vectors_stroke (GimpVectors * vectors,gint stroke_ID,GimpPDBItemModify modify,GError ** error)
+DECL|function|gimp_pdb_get_vectors_stroke (GimpVectors * vectors,gint stroke_id,GimpPDBItemModify modify,GError ** error)
 name|gimp_pdb_get_vectors_stroke
 parameter_list|(
 name|GimpVectors
@@ -3600,7 +3600,7 @@ modifier|*
 name|vectors
 parameter_list|,
 name|gint
-name|stroke_ID
+name|stroke_id
 parameter_list|,
 name|GimpPDBItemModify
 name|modify
@@ -3677,11 +3677,11 @@ condition|)
 block|{
 name|stroke
 operator|=
-name|gimp_vectors_stroke_get_by_ID
+name|gimp_vectors_stroke_get_by_id
 argument_list|(
 name|vectors
 argument_list|,
-name|stroke_ID
+name|stroke_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -3702,7 +3702,7 @@ argument_list|(
 literal|"Vectors object %d does not contain stroke with ID %d"
 argument_list|)
 argument_list|,
-name|gimp_item_get_ID
+name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -3710,7 +3710,7 @@ name|vectors
 argument_list|)
 argument_list|)
 argument_list|,
-name|stroke_ID
+name|stroke_id
 argument_list|)
 expr_stmt|;
 block|}

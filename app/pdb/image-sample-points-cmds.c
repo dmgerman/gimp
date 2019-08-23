@@ -234,7 +234,7 @@ argument_list|)
 expr_stmt|;
 name|sample_point
 operator|=
-name|gimp_aux_item_get_ID
+name|gimp_aux_item_get_id
 argument_list|(
 name|GIMP_AUX_ITEM
 argument_list|(
@@ -520,7 +520,7 @@ name|sp
 condition|)
 name|next_sample_point
 operator|=
-name|gimp_aux_item_get_ID
+name|gimp_aux_item_get_id
 argument_list|(
 name|GIMP_AUX_ITEM
 argument_list|(
@@ -551,7 +551,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)

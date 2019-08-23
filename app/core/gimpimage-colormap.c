@@ -201,7 +201,7 @@ argument_list|(
 literal|"Colormap of Image #%d (%s)"
 argument_list|)
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -218,7 +218,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"gimp-indexed-image-palette-%d"
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
@@ -516,7 +516,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"-gimp-indexed-format-%d"
 argument_list|,
-name|gimp_image_get_ID
+name|gimp_image_get_id
 argument_list|(
 name|image
 argument_list|)
