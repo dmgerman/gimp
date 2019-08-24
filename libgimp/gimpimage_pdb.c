@@ -3864,7 +3864,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_pick_color:  * @image: The image.  * @drawable: The drawable to pick from.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: (out caller-allocates): The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_pick_color:  * @image: The image.  * @drawable: (nullable): The drawable to pick from.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: (out caller-allocates): The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -4040,7 +4040,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_pick_color: (skip)  * @image_ID: The image.  * @drawable_ID: The drawable to pick from.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: (out caller-allocates): The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_pick_color: (skip)  * @image_ID: The image.  * @drawable_ID: (nullable): The drawable to pick from.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: (out caller-allocates): The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -4472,7 +4472,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_layer:  * @image: The image.  * @layer: The layer.  * @parent: The parent layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the specified parent is a valid layer group (See  * gimp_item_is_group() and gimp_layer_group_new()) then the layer is  * added inside the group. If the parent is 0, the layer is added  * inside the main stack, outside of any group. The position argument  * specifies the location of the layer inside the stack (or the group,  * if a valid parent was supplied), starting from the top (0) and  * increasing. If the position is specified as -1 and the parent is  * specified as 0, then the layer is inserted above the active layer,  * or inside the group if the active layer is a layer group. The layer  * type must be compatible with the image base type.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_insert_layer:  * @image: The image.  * @layer: The layer.  * @parent: (nullable): The parent layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the specified parent is a valid layer group (See  * gimp_item_is_group() and gimp_layer_group_new()) then the layer is  * added inside the group. If the parent is 0, the layer is added  * inside the main stack, outside of any group. The position argument  * specifies the location of the layer inside the stack (or the group,  * if a valid parent was supplied), starting from the top (0) and  * increasing. If the position is specified as -1 and the parent is  * specified as 0, then the layer is inserted above the active layer,  * or inside the group if the active layer is a layer group. The layer  * type must be compatible with the image base type.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -4612,7 +4612,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_insert_layer: (skip)  * @image_ID: The image.  * @layer_ID: The layer.  * @parent_ID: The parent layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the specified parent is a valid layer group (See  * gimp_item_is_group() and gimp_layer_group_new()) then the layer is  * added inside the group. If the parent is 0, the layer is added  * inside the main stack, outside of any group. The position argument  * specifies the location of the layer inside the stack (or the group,  * if a valid parent was supplied), starting from the top (0) and  * increasing. If the position is specified as -1 and the parent is  * specified as 0, then the layer is inserted above the active layer,  * or inside the group if the active layer is a layer group. The layer  * type must be compatible with the image base type.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_insert_layer: (skip)  * @image_ID: The image.  * @layer_ID: The layer.  * @parent_ID: (nullable): The parent layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the specified parent is a valid layer group (See  * gimp_item_is_group() and gimp_layer_group_new()) then the layer is  * added inside the group. If the parent is 0, the layer is added  * inside the main stack, outside of any group. The position argument  * specifies the location of the layer inside the stack (or the group,  * if a valid parent was supplied), starting from the top (0) and  * increasing. If the position is specified as -1 and the parent is  * specified as 0, then the layer is inserted above the active layer,  * or inside the group if the active layer is a layer group. The layer  * type must be compatible with the image base type.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -5373,7 +5373,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_channel:  * @image: The image.  * @channel: The channel.  * @parent: The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_insert_channel:  * @image: The image.  * @channel: The channel.  * @parent: (nullable): The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -5513,7 +5513,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_insert_channel: (skip)  * @image_ID: The image.  * @channel_ID: The channel.  * @parent_ID: The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_insert_channel: (skip)  * @image_ID: The image.  * @channel_ID: The channel.  * @parent_ID: (nullable): The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -6274,7 +6274,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_vectors:  * @image: The image.  * @vectors: The vectors.  * @parent: The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_insert_vectors:  * @image: The image.  * @vectors: The vectors.  * @parent: (nullable): The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -6414,7 +6414,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_insert_vectors: (skip)  * @image_ID: The image.  * @vectors_ID: The vectors.  * @parent_ID: The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_insert_vectors: (skip)  * @image_ID: The image.  * @vectors_ID: The vectors.  * @parent_ID: (nullable): The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -8334,7 +8334,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_reorder_item:  * @image: The image.  * @item: The item to reorder.  * @parent: The new parent item.  * @position: The new position of the item.  *  * Reorder the specified item within its item tree  *  * This procedure reorders the specified item within its item tree.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_reorder_item:  * @image: The image.  * @item: The item to reorder.  * @parent: (nullable): The new parent item.  * @position: The new position of the item.  *  * Reorder the specified item within its item tree  *  * This procedure reorders the specified item within its item tree.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -8474,7 +8474,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_reorder_item: (skip)  * @image_ID: The image.  * @item_ID: The item to reorder.  * @parent_ID: The new parent item.  * @position: The new position of the item.  *  * Reorder the specified item within its item tree  *  * This procedure reorders the specified item within its item tree.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * _gimp_image_reorder_item: (skip)  * @image_ID: The image.  * @item_ID: The item to reorder.  * @parent_ID: (nullable): The new parent item.  * @position: The new position of the item.  *  * Reorder the specified item within its item tree  *  * This procedure reorders the specified item within its item tree.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
