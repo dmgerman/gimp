@@ -30,8 +30,9 @@ name|WebPSaveParams
 modifier|*
 name|params
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

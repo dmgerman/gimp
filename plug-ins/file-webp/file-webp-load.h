@@ -17,7 +17,8 @@ name|__WEBP_LOAD_H__
 end_define
 
 begin_function_decl
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 specifier|const

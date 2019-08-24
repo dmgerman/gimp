@@ -236,15 +236,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_dialog (WebPSaveParams * params,gint32 image_ID)
+DECL|function|save_dialog (WebPSaveParams * params,GimpImage * image)
 name|save_dialog
 parameter_list|(
 name|WebPSaveParams
 modifier|*
 name|params
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GtkWidget
@@ -295,6 +296,10 @@ name|GtkAdjustment
 modifier|*
 name|alpha_quality_scale
 decl_stmt|;
+name|GList
+modifier|*
+name|list
+decl_stmt|;
 name|gint32
 name|nlayers
 decl_stmt|;
@@ -315,15 +320,23 @@ name|row
 init|=
 literal|0
 decl_stmt|;
-name|g_free
-argument_list|(
+name|list
+operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|image_ID
-argument_list|,
-operator|&
-name|nlayers
+name|image
 argument_list|)
+expr_stmt|;
+name|nlayers
+operator|=
+name|g_list_length
+argument_list|(
+name|list
+argument_list|)
+expr_stmt|;
+name|g_list_free
+argument_list|(
+name|list
 argument_list|)
 expr_stmt|;
 name|animation_supported

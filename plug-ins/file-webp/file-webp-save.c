@@ -165,11 +165,13 @@ parameter_list|,
 name|gint32
 name|nLayers
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|WebPSaveParams
 modifier|*
@@ -195,15 +197,17 @@ parameter_list|,
 name|gint32
 name|nLayers
 parameter_list|,
-name|gint32
+name|GList
 modifier|*
-name|allLayers
+name|layers
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|WebPSaveParams
 modifier|*
@@ -222,8 +226,9 @@ specifier|static
 name|void
 name|webp_decide_output
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|WebPSaveParams
 modifier|*
@@ -503,7 +508,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_layer (const gchar * filename,gint32 nLayers,gint32 image_ID,gint32 drawable_ID,WebPSaveParams * params,GError ** error)
+DECL|function|save_layer (const gchar * filename,gint32 nLayers,GimpImage * image,GimpDrawable * drawable,WebPSaveParams * params,GError ** error)
 name|save_layer
 parameter_list|(
 specifier|const
@@ -514,11 +519,13 @@ parameter_list|,
 name|gint32
 name|nLayers
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|WebPSaveParams
 modifier|*
@@ -631,7 +638,7 @@ name|res
 decl_stmt|;
 name|webp_decide_output
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|params
 argument_list|,
@@ -697,7 +704,7 @@ name|space
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* The do...while() loop is a neat little trick that makes it easier    * to jump to error handling code while still ensuring proper    * cleanup    */
@@ -768,7 +775,7 @@ name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -827,7 +834,7 @@ name|geglbuffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|extent
@@ -1523,10 +1530,11 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|get_layer_delay (gint32 layer)
+DECL|function|get_layer_delay (GimpLayer * layer)
 name|get_layer_delay
 parameter_list|(
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 parameter_list|)
 block|{
@@ -1541,7 +1549,10 @@ name|layer_name
 operator|=
 name|gimp_item_get_name
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|delay_ms
@@ -1651,10 +1662,11 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|get_layer_needs_combine (gint32 layer)
+DECL|function|get_layer_needs_combine (GimpLayer * layer)
 name|get_layer_needs_combine
 parameter_list|(
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 parameter_list|)
 block|{
@@ -1669,7 +1681,10 @@ name|layer_name
 operator|=
 name|gimp_item_get_name
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|needs_combine
@@ -1854,7 +1869,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_animation (const gchar * filename,gint32 nLayers,gint32 * allLayers,gint32 image_ID,gint32 drawable_ID,WebPSaveParams * params,GError ** error)
+DECL|function|save_animation (const gchar * filename,gint32 nLayers,GList * layers,GimpImage * image,GimpDrawable * drawable,WebPSaveParams * params,GError ** error)
 name|save_animation
 parameter_list|(
 specifier|const
@@ -1865,15 +1880,17 @@ parameter_list|,
 name|gint32
 name|nLayers
 parameter_list|,
-name|gint32
+name|GList
 modifier|*
-name|allLayers
+name|layers
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|WebPSaveParams
 modifier|*
@@ -1980,7 +1997,7 @@ name|FALSE
 return|;
 name|webp_decide_output
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|params
 argument_list|,
@@ -2046,12 +2063,12 @@ name|space
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_freeze
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|WebPDataInit
@@ -2062,6 +2079,10 @@ argument_list|)
 expr_stmt|;
 do|do
 block|{
+name|GList
+modifier|*
+name|list
+decl_stmt|;
 name|gint
 name|loop
 decl_stmt|;
@@ -2241,14 +2262,30 @@ expr_stmt|;
 block|}
 for|for
 control|(
+name|list
+operator|=
+name|g_list_last
+argument_list|(
+name|layers
+argument_list|)
+operator|,
 name|loop
 operator|=
 literal|0
 init|;
+name|list
+operator|&&
 name|loop
 operator|<
 name|nLayers
 condition|;
+name|list
+operator|=
+name|g_list_previous
+argument_list|(
+name|list
+argument_list|)
+operator|,
 name|loop
 operator|++
 control|)
@@ -2277,34 +2314,40 @@ block|{
 literal|0
 block|}
 decl_stmt|;
-name|gint32
+name|GimpDrawable
+modifier|*
 name|drawable
 init|=
-name|allLayers
-index|[
-name|nLayers
-operator|-
-literal|1
-operator|-
-name|loop
-index|]
+name|list
+operator|->
+name|data
 decl_stmt|;
 name|gint
 name|delay
-init|=
-name|get_layer_delay
-argument_list|(
-name|drawable
-argument_list|)
 decl_stmt|;
 name|gboolean
 name|needs_combine
-init|=
-name|get_layer_needs_combine
+decl_stmt|;
+name|delay
+operator|=
+name|get_layer_delay
+argument_list|(
+name|GIMP_LAYER
 argument_list|(
 name|drawable
 argument_list|)
-decl_stmt|;
+argument_list|)
+expr_stmt|;
+name|needs_combine
+operator|=
+name|get_layer_needs_combine
+argument_list|(
+name|GIMP_LAYER
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Obtain the drawable type */
 name|has_alpha
 operator|=
@@ -2367,7 +2410,10 @@ expr_stmt|;
 comment|/* fix layers to avoid offset errors */
 name|gimp_layer_resize_to_image_size
 argument_list|(
+name|GIMP_LAYER
+argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Retrieve the buffer for the layer */
@@ -3026,7 +3072,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,GimpMetadata * metadata,GimpMetadataSaveFlags metadata_flags,WebPSaveParams * params,GError ** error)
+DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GimpMetadata * metadata,GimpMetadataSaveFlags metadata_flags,WebPSaveParams * params,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -3034,11 +3080,13 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpMetadata
 modifier|*
@@ -3066,39 +3114,25 @@ name|status
 init|=
 name|FALSE
 decl_stmt|;
-name|gint32
+name|GList
 modifier|*
 name|layers
-decl_stmt|;
-name|gint
-name|nlayers
 decl_stmt|;
 name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|image_ID
-argument_list|,
-operator|&
-name|nlayers
+name|image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|nlayers
-operator|==
-literal|0
-condition|)
-block|{
-name|g_free
-argument_list|(
+operator|!
 name|layers
-argument_list|)
-expr_stmt|;
+condition|)
 return|return
 name|FALSE
 return|;
-block|}
 name|g_printerr
 argument_list|(
 literal|"Saving WebP file %s\n"
@@ -3119,13 +3153,16 @@ name|save_animation
 argument_list|(
 name|filename
 argument_list|,
-name|nlayers
+name|g_list_length
+argument_list|(
+name|layers
+argument_list|)
 argument_list|,
 name|layers
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|params
 argument_list|,
@@ -3141,11 +3178,14 @@ name|save_layer
 argument_list|(
 name|filename
 argument_list|,
-name|nlayers
+name|g_list_length
+argument_list|(
+name|layers
+argument_list|)
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|params
 argument_list|,
@@ -3241,7 +3281,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_metadata_save_finish
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 literal|"image/webp"
 argument_list|,
@@ -3270,11 +3310,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|webp_decide_output (gint32 image_ID,WebPSaveParams * params,GimpColorProfile ** profile,gboolean * out_linear)
+DECL|function|webp_decide_output (GimpImage * image,WebPSaveParams * params,GimpColorProfile ** profile,gboolean * out_linear)
 name|webp_decide_output
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|WebPSaveParams
 modifier|*
@@ -3317,7 +3358,7 @@ name|profile
 operator|=
 name|gimp_image_get_color_profile
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* If a profile is explicitly set, follow its TRC, whatever the        * storage format.        */
@@ -3351,7 +3392,7 @@ name|profile
 operator|=
 name|gimp_image_get_effective_color_profile
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -3367,7 +3408,7 @@ if|if
 condition|(
 name|gimp_image_get_precision
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 operator|!=
 name|GIMP_PRECISION_U8_LINEAR

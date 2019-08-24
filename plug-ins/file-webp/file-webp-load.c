@@ -78,11 +78,12 @@ end_include
 begin_function
 specifier|static
 name|void
-DECL|function|create_layer (gint32 image_ID,uint8_t * layer_data,gint32 position,gchar * name,gint width,gint height)
+DECL|function|create_layer (GimpImage * image,uint8_t * layer_data,gint32 position,gchar * name,gint width,gint height)
 name|create_layer
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|uint8_t
 modifier|*
@@ -102,8 +103,9 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|gint32
-name|layer_ID
+name|GimpLayer
+modifier|*
+name|layer
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -112,11 +114,11 @@ decl_stmt|;
 name|GeglRectangle
 name|extent
 decl_stmt|;
-name|layer_ID
+name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|name
 argument_list|,
@@ -130,18 +132,17 @@ literal|100
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
-name|layer_ID
+name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 name|position
 argument_list|)
@@ -151,7 +152,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|layer_ID
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Copy the image data to the region */
@@ -200,7 +204,8 @@ block|}
 end_function
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,gboolean interactive,GError ** error)
 name|load_image
 parameter_list|(
@@ -233,8 +238,9 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|WebPMux
 modifier|*
@@ -296,8 +302,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* Validate WebP data */
@@ -338,8 +343,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|wp_data
@@ -370,8 +374,7 @@ operator|!
 name|mux
 condition|)
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 name|WebPMuxGetFeatures
 argument_list|(
@@ -424,7 +427,7 @@ expr_stmt|;
 comment|/* TODO: decode the image in "chunks" or "tiles" */
 comment|/* TODO: check if an alpha channel is present */
 comment|/* Create the new image and associated layer */
-name|image_ID
+name|image
 operator|=
 name|gimp_image_new
 argument_list|(
@@ -474,7 +477,7 @@ name|profile
 condition|)
 name|gimp_image_set_color_profile
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|profile
 argument_list|)
@@ -519,13 +522,12 @@ name|mux
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|create_layer
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|outdata
 argument_list|,
@@ -624,8 +626,7 @@ name|mux
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* dec_options.color_mode is MODE_RGBA by default here */
@@ -807,7 +808,7 @@ argument_list|)
 expr_stmt|;
 name|create_layer
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|outdata
 argument_list|,
@@ -922,7 +923,7 @@ name|metadata
 operator|=
 name|gimp_image_metadata_load_prepare
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 literal|"image/webp"
 argument_list|,
@@ -952,7 +953,7 @@ name|GIMP_METADATA_LOAD_COLORSPACE
 expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 literal|"image/webp"
 argument_list|,
@@ -982,7 +983,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|filename
 argument_list|)
@@ -997,7 +998,7 @@ name|profile
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
