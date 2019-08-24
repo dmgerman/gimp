@@ -2967,6 +2967,7 @@ name|object
 argument_list|,
 literal|"id"
 argument_list|,
+operator|&
 name|id
 argument_list|,
 name|NULL
