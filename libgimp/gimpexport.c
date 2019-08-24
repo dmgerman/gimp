@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d5a750108
+DECL|struct|__anon28801b2b0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -275,11 +275,6 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|g_clear_object
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 operator|*
 name|drawable
 operator|=
