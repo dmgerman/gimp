@@ -88,7 +88,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6e45950103
+DECL|enum|__anon28eb80440103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -173,7 +173,7 @@ end_function_decl
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c6e45950208
+DECL|struct|__anon28eb80440208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -400,7 +400,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|save_image (const gchar * filename,gint32 image,gint32 drawable_ID,GimpRunMode run_mode,GError ** error)
+DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GimpRunMode run_mode,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -408,11 +408,13 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -515,28 +517,28 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|drawable_type
 operator|=
 name|gimp_drawable_type
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|drawable_width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|drawable_height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -758,7 +760,7 @@ name|format
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|cmap

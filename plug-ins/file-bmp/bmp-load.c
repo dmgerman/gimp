@@ -121,7 +121,8 @@ end_endif
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|ReadImage
 parameter_list|(
 name|FILE
@@ -1001,7 +1002,8 @@ block|}
 end_function
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,GError ** error)
 name|load_image
 parameter_list|(
@@ -1053,11 +1055,11 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gchar
 name|magick
@@ -3163,8 +3165,8 @@ argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
-comment|/* Get the Image and return the ID or -1 on error*/
-name|image_ID
+comment|/* Get the Image and return the image or NULL on error*/
+name|image
 operator|=
 name|ReadImage
 argument_list|(
@@ -3208,9 +3210,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|<
-literal|0
+operator|!
+name|image
 condition|)
 goto|goto
 name|out
@@ -3256,7 +3257,7 @@ literal|0.0254
 expr_stmt|;
 name|gimp_image_set_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|xresolution
 argument_list|,
@@ -3274,7 +3275,7 @@ literal|0
 condition|)
 name|gimp_image_flip
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_ORIENTATION_VERTICAL
 argument_list|)
@@ -3291,14 +3292,15 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|ReadImage (FILE * fd,const gchar * filename,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gboolean gray,const BitmapChannel * masks,GError ** error)
 name|ReadImage
 parameter_list|(
@@ -3367,10 +3369,12 @@ name|ypos
 init|=
 literal|0
 decl_stmt|;
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 name|GeglBuffer
@@ -3491,8 +3495,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* Make a new image in GIMP */
@@ -3596,8 +3599,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 if|if
@@ -3626,8 +3628,7 @@ name|width
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 if|if
@@ -3656,8 +3657,7 @@ name|height
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|image
@@ -3709,8 +3709,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -5236,7 +5235,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set

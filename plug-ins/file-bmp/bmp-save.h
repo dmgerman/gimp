@@ -25,11 +25,13 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpRunMode
 name|run_mode
