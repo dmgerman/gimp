@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292527b40108
+DECL|struct|__anon2c88a9090108
 block|{
 DECL|member|quality
 name|gdouble
@@ -100,15 +100,17 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|orig_image_ID_global
+name|GimpImage
+modifier|*
+name|orig_image_global
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|drawable_ID_global
+name|GimpDrawable
+modifier|*
+name|drawable_global
 decl_stmt|;
 end_decl_stmt
 
@@ -121,14 +123,17 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
-name|gint32
-name|orig_image_ID
+name|GimpImage
+modifier|*
+name|orig_image
 parameter_list|,
 name|gboolean
 name|preview

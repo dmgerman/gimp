@@ -25,8 +25,9 @@ name|jpeg_decompress_struct
 modifier|*
 name|cinfo
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -35,8 +36,9 @@ begin_function_decl
 name|gboolean
 name|jpeg_restore_original_settings
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -59,8 +61,9 @@ modifier|*
 modifier|*
 name|jpeg_restore_original_tables
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|num_quant_tables
@@ -72,8 +75,9 @@ begin_function_decl
 name|void
 name|jpeg_swap_original_settings
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl

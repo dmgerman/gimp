@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fb1cda0108
+DECL|struct|__anon27620aa50108
 block|{
 DECL|member|cinfo
 name|struct
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fb1cda0208
+DECL|struct|__anon27620aa50208
 block|{
 DECL|member|run
 name|gboolean
@@ -1178,7 +1178,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,gboolean preview,GError ** error)
+DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GimpImage * orig_image,gboolean preview,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -1186,14 +1186,17 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
-name|gint32
-name|orig_image_ID
+name|GimpImage
+modifier|*
+name|orig_image
 parameter_list|,
 name|gboolean
 name|preview
@@ -1275,21 +1278,21 @@ name|drawable_type
 operator|=
 name|gimp_drawable_type
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|space
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -1445,7 +1448,7 @@ name|profile
 operator|=
 name|gimp_image_get_color_profile
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|)
 expr_stmt|;
 comment|/* If a profile is explicitly set, follow its TRC, whatever the        * storage format.        */
@@ -1473,7 +1476,7 @@ name|profile
 operator|=
 name|gimp_image_get_effective_color_profile
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1488,7 +1491,7 @@ if|if
 condition|(
 name|gimp_image_get_precision
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 operator|!=
 name|GIMP_PRECISION_U8_LINEAR
@@ -1568,7 +1571,7 @@ name|space
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -1812,7 +1815,7 @@ name|quant_tables
 operator|=
 name|jpeg_restore_original_tables
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|num_quant_tables
 argument_list|)
@@ -1914,7 +1917,7 @@ operator|=
 operator|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|?
 name|jsvals
@@ -2315,7 +2318,7 @@ name|yresolution
 decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|,
 operator|&
 name|xresolution
@@ -2344,7 +2347,7 @@ name|gimp_unit_get_factor
 argument_list|(
 name|gimp_image_get_unit
 argument_list|(
-name|orig_image_ID
+name|orig_image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2904,7 +2907,7 @@ block|{
 comment|/* we freeze undo saving so that we can avoid sucking up            * tile cache with our unneeded preview steps. */
 name|gimp_image_undo_freeze
 argument_list|(
-name|preview_image_ID
+name|preview_image
 argument_list|)
 expr_stmt|;
 name|undo_touched
@@ -2916,11 +2919,11 @@ name|save_image
 argument_list|(
 name|tn
 argument_list|,
-name|preview_image_ID
+name|preview_image
 argument_list|,
-name|drawable_ID_global
+name|drawable_global
 argument_list|,
-name|orig_image_ID_global
+name|orig_image_global
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2929,16 +2932,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|display_ID
-operator|==
-operator|-
-literal|1
+operator|!
+name|display
 condition|)
-name|display_ID
+name|display
 operator|=
 name|gimp_display_new
 argument_list|(
-name|preview_image_ID
+name|preview_image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3011,27 +3012,26 @@ if|if
 condition|(
 name|gimp_image_is_valid
 argument_list|(
-name|preview_image_ID
+name|preview_image
 argument_list|)
 operator|&&
 name|gimp_item_is_valid
 argument_list|(
-name|preview_layer_ID
+name|preview_layer
 argument_list|)
 condition|)
 block|{
 comment|/*  assuming that reference counting is working correctly,           we do not need to delete the layer, removing it from           the image should be sufficient  */
 name|gimp_image_remove_layer
 argument_list|(
-name|preview_image_ID
+name|preview_image
 argument_list|,
-name|preview_layer_ID
+name|preview_layer
 argument_list|)
 expr_stmt|;
-name|preview_layer_ID
+name|preview_layer
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 block|}
 block|}
@@ -5233,7 +5233,7 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID_global
+name|drawable_global
 argument_list|)
 condition|)
 block|{
@@ -6325,7 +6325,7 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID_global
+name|drawable_global
 argument_list|)
 condition|)
 block|{

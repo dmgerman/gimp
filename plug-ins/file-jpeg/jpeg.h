@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba42d4c0103
+DECL|enum|__anon2adcc32f0103
 block|{
 DECL|enumerator|JPEG_SUBSAMPLING_2x2_1x1_1x1
 name|JPEG_SUBSAMPLING_2x2_1x1_1x1
@@ -145,16 +145,18 @@ end_typedef
 
 begin_decl_stmt
 specifier|extern
-name|gint32
+name|GimpImage
+modifier|*
 specifier|volatile
-name|preview_image_ID
+name|preview_image
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|preview_layer_ID
+name|GimpLayer
+modifier|*
+name|preview_layer
 decl_stmt|;
 end_decl_stmt
 
@@ -174,8 +176,9 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|display_ID
+name|GimpDisplay
+modifier|*
+name|display
 decl_stmt|;
 end_decl_stmt
 

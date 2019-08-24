@@ -110,8 +110,9 @@ specifier|static
 name|gboolean
 name|jpeg_load_resolution
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|struct
 name|jpeg_decompress_struct
@@ -167,22 +168,25 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|preview_image_ID
-name|gint32
+DECL|variable|preview_image
+name|GimpImage
+modifier|*
 specifier|volatile
-name|preview_image_ID
+name|preview_image
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|preview_layer_ID
-name|gint32
-name|preview_layer_ID
+DECL|variable|preview_layer
+name|GimpLayer
+modifier|*
+name|preview_layer
 decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gboolean preview,gboolean * resolution_loaded,GError ** error)
 name|load_image
 parameter_list|(
@@ -207,12 +211,14 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gint32
+name|GimpImage
+modifier|*
 specifier|volatile
-name|image_ID
+name|image
 decl_stmt|;
-name|gint32
-name|layer_ID
+name|GimpLayer
+modifier|*
+name|layer
 decl_stmt|;
 name|struct
 name|jpeg_decompress_struct
@@ -366,14 +372,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
-name|image_ID
+name|image
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 comment|/* Establish the setjmp return context for my_error_exit to use. */
 if|if
@@ -404,17 +408,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
+name|image
 operator|&&
 operator|!
 name|preview
 condition|)
 name|gimp_image_delete
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -434,8 +435,7 @@ name|buffer
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* Now we can initialize the JPEG decompression object. */
@@ -661,8 +661,7 @@ name|jpeg_color_space
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 break|break;
 block|}
@@ -678,9 +677,9 @@ argument_list|(
 literal|"JPEG preview"
 argument_list|)
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
-name|preview_image_ID
+name|preview_image
 expr_stmt|;
 block|}
 else|else
@@ -709,7 +708,7 @@ argument_list|(
 literal|"Background"
 argument_list|)
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
 name|gimp_image_new_with_precision
 argument_list|(
@@ -728,12 +727,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|filename
 argument_list|)
@@ -744,7 +743,7 @@ argument_list|(
 operator|&
 name|cinfo
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* Step 5.1: check for comments, or Exif metadata in APP1 markers */
@@ -907,7 +906,7 @@ if|if
 condition|(
 name|jpeg_load_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|cinfo
@@ -969,7 +968,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -1048,7 +1047,7 @@ condition|)
 block|{
 name|gimp_image_set_color_profile
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|profile
 argument_list|)
@@ -1067,11 +1066,11 @@ argument_list|)
 expr_stmt|;
 comment|/* Do not attach the "jpeg-save-options" parasite to the image        * because this conflicts with the global defaults (bug #75398).        */
 block|}
-name|layer_ID
+name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|layer_name
 argument_list|,
@@ -1089,7 +1088,7 @@ literal|100
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1097,9 +1096,9 @@ if|if
 condition|(
 name|preview
 condition|)
-name|preview_layer_ID
+name|preview_layer
 operator|=
-name|layer_ID
+name|layer
 expr_stmt|;
 comment|/* Step 6: while (scan lines remain to be read) */
 comment|/*           jpeg_read_scanlines(...); */
@@ -1108,7 +1107,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|layer_ID
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|format
@@ -1125,7 +1127,10 @@ literal|"Y' u8"
 argument_list|,
 name|gimp_drawable_get_format
 argument_list|(
-name|layer_ID
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1388,18 +1393,17 @@ expr_stmt|;
 block|}
 name|gimp_image_insert_layer
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
-name|layer_ID
+name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
@@ -1407,11 +1411,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|jpeg_load_resolution (gint32 image_ID,struct jpeg_decompress_struct * cinfo)
+DECL|function|jpeg_load_resolution (GimpImage * image,struct jpeg_decompress_struct * cinfo)
 name|jpeg_load_resolution
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|struct
 name|jpeg_decompress_struct
@@ -1476,7 +1481,7 @@ name|yresolution
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|xresolution
@@ -1509,7 +1514,7 @@ literal|2.54
 expr_stmt|;
 name|gimp_image_set_unit
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_UNIT_MM
 argument_list|)
@@ -1529,7 +1534,7 @@ break|break;
 block|}
 name|gimp_image_set_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|xresolution
 argument_list|,
@@ -1642,7 +1647,8 @@ block|}
 end_function
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_thumbnail_image (GFile * file,gint * width,gint * height,GimpImageType * type,GError ** error)
 name|load_thumbnail_image
 parameter_list|(
@@ -1668,12 +1674,12 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gint32
+name|GimpImage
+modifier|*
 specifier|volatile
-name|image_ID
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|struct
 name|jpeg_decompress_struct
@@ -1702,7 +1708,7 @@ name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
 name|gimp_image_metadata_load_thumbnail
 argument_list|(
@@ -1713,13 +1719,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 name|cinfo
 operator|.
@@ -1797,19 +1801,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
+name|image
 condition|)
 name|gimp_image_delete
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* Establish the setjmp return context for my_error_exit to use. */
@@ -1832,19 +1832,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
+name|image
 condition|)
 name|gimp_image_delete
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* Now we can initialize the JPEG decompression object. */
@@ -1958,13 +1954,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_delete
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 break|break;
 block|}
@@ -1982,7 +1977,7 @@ name|infile
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function

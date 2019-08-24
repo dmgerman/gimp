@@ -68,12 +68,12 @@ file|"jpeg-settings.h"
 end_include
 
 begin_comment
-comment|/**  * jpeg_detect_original_settings:  * @cinfo: a pointer to a JPEG decompressor info.  * @image_ID: the image to which the parasite should be attached.  *  * Analyze the image being decompressed (@cinfo) and extract the  * sampling factors, quantization tables and overall image quality.  * Store this information in a parasite and attach it to @image_ID.  *  * This function must be called after jpeg_read_header() so that  * @cinfo contains the quantization tables and the sampling factors  * for each component.  *  * Returns: TRUE if a parasite has been attached to @image_ID.  */
+comment|/**  * jpeg_detect_original_settings:  * @cinfo: a pointer to a JPEG decompressor info.  * @image: the image to which the parasite should be attached.  *  * Analyze the image being decompressed (@cinfo) and extract the  * sampling factors, quantization tables and overall image quality.  * Store this information in a parasite and attach it to @image.  *  * This function must be called after jpeg_read_header() so that  * @cinfo contains the quantization tables and the sampling factors  * for each component.  *  * Returns: TRUE if a parasite has been attached to @image.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|jpeg_detect_original_settings (struct jpeg_decompress_struct * cinfo,gint32 image_ID)
+DECL|function|jpeg_detect_original_settings (struct jpeg_decompress_struct * cinfo,GimpImage * image)
 name|jpeg_detect_original_settings
 parameter_list|(
 name|struct
@@ -81,8 +81,9 @@ name|jpeg_decompress_struct
 modifier|*
 name|cinfo
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|guint
@@ -390,7 +391,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -407,20 +408,21 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * TODO: compare the JPEG color space found in the parasite with the  * GIMP color space of the drawable to be saved.  If one of them is  * grayscale and the other isn't, then the quality setting may be used  * but the subsampling parameters and quantization tables should be  * ignored.  The drawable_ID needs to be passed around because the  * color space of the drawable may be different from that of the image  * (e.g., when saving a mask or channel).  */
+comment|/*  * TODO: compare the JPEG color space found in the parasite with the  * GIMP color space of the drawable to be saved.  If one of them is  * grayscale and the other isn't, then the quality setting may be used  * but the subsampling parameters and quantization tables should be  * ignored.  The drawable needs to be passed around because the  * color space of the drawable may be different from that of the image  * (e.g., when saving a mask or channel).  */
 end_comment
 
 begin_comment
-comment|/**  * jpeg_restore_original_settings:  * @image_ID: the image that may contain original jpeg settings in a parasite.  * @quality: where to store the original jpeg quality.  * @subsmp: where to store the original subsampling type.  * @num_quant_tables: where to store the number of quantization tables found.  *  * Retrieve the original JPEG settings (quality, type of subsampling  * and number of quantization tables) from the parasite attached to  * @image_ID.  If the number of quantization tables is greater than  * zero, then these tables can be retrieved from the parasite by  * calling jpeg_restore_original_tables().  *  * Returns: TRUE if a valid parasite was attached to the image  */
+comment|/**  * jpeg_restore_original_settings:  * @image: the image that may contain original jpeg settings in a parasite.  * @quality: where to store the original jpeg quality.  * @subsmp: where to store the original subsampling type.  * @num_quant_tables: where to store the number of quantization tables found.  *  * Retrieve the original JPEG settings (quality, type of subsampling  * and number of quantization tables) from the parasite attached to  * @image.  If the number of quantization tables is greater than  * zero, then these tables can be retrieved from the parasite by  * calling jpeg_restore_original_tables().  *  * Returns: TRUE if a valid parasite was attached to the image  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|jpeg_restore_original_settings (gint32 image_ID,gint * quality,JpegSubsampling * subsmp,gint * num_quant_tables)
+DECL|function|jpeg_restore_original_settings (GimpImage * image,gint * quality,JpegSubsampling * subsmp,gint * num_quant_tables)
 name|jpeg_restore_original_settings
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -502,7 +504,7 @@ name|parasite
 operator|=
 name|gimp_image_get_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 literal|"jpeg-settings"
 argument_list|)
@@ -838,18 +840,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * jpeg_restore_original_tables:  * @image_ID: the image that may contain original jpeg settings in a parasite.  * @num_quant_tables: the number of quantization tables to restore.  *  * Retrieve the original quantization tables from the parasite  * attached to @image_ID.  Each table is an array of coefficients that  * can be associated with a component of a JPEG image when saving it.  *  * An array of newly allocated tables is returned if @num_quant_tables  * matches the number of tables saved in the parasite.  These tables  * are returned as arrays of unsigned integers even if they will never  * use more than 16 bits (8 bits in most cases) because the IJG JPEG  * library expects arrays of unsigned integers.  When these tables are  * not needed anymore, the caller should free them using g_free().  If  * no parasite exists or if it cannot be used, this function returns  * NULL.  *  * Returns: (nullable): an array of quantization tables, or NULL.  */
+comment|/**  * jpeg_restore_original_tables:  * @image: the image that may contain original jpeg settings in a parasite.  * @num_quant_tables: the number of quantization tables to restore.  *  * Retrieve the original quantization tables from the parasite  * attached to @image.  Each table is an array of coefficients that  * can be associated with a component of a JPEG image when saving it.  *  * An array of newly allocated tables is returned if @num_quant_tables  * matches the number of tables saved in the parasite.  These tables  * are returned as arrays of unsigned integers even if they will never  * use more than 16 bits (8 bits in most cases) because the IJG JPEG  * library expects arrays of unsigned integers.  When these tables are  * not needed anymore, the caller should free them using g_free().  If  * no parasite exists or if it cannot be used, this function returns  * NULL.  *  * Returns: (nullable): an array of quantization tables, or NULL.  */
 end_comment
 
 begin_function
 name|guint
 modifier|*
 modifier|*
-DECL|function|jpeg_restore_original_tables (gint32 image_ID,gint num_quant_tables)
+DECL|function|jpeg_restore_original_tables (GimpImage * image,gint num_quant_tables)
 name|jpeg_restore_original_tables
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|num_quant_tables
@@ -888,7 +891,7 @@ name|parasite
 operator|=
 name|gimp_image_get_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 literal|"jpeg-settings"
 argument_list|)
@@ -1064,16 +1067,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * jpeg_swap_original_settings:  * @image_ID: the image that may contain original jpeg settings in a parasite.  *  * Swap the horizontal and vertical axis for the saved subsampling  * parameters and quantization tables.  This should be done if the  * image has been rotated by +90 or -90 degrees or if it has been  * mirrored along its diagonal.  */
+comment|/**  * jpeg_swap_original_settings:  * @image: the image that may contain original jpeg settings in a parasite.  *  * Swap the horizontal and vertical axis for the saved subsampling  * parameters and quantization tables.  This should be done if the  * image has been rotated by +90 or -90 degrees or if it has been  * mirrored along its diagonal.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|jpeg_swap_original_settings (gint32 image_ID)
+DECL|function|jpeg_swap_original_settings (GimpImage * image)
 name|jpeg_swap_original_settings
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpParasite
@@ -1115,7 +1119,7 @@ name|parasite
 operator|=
 name|gimp_image_get_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 literal|"jpeg-settings"
 argument_list|)
@@ -1430,7 +1434,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|parasite
 argument_list|)
