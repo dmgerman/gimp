@@ -96,7 +96,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e80bf30103
+DECL|enum|__anon2b8568d70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3855,6 +3855,15 @@ name|key
 decl_stmt|,
 name|value
 decl_stmt|;
+if|if
+condition|(
+name|plug_in
+operator|->
+name|priv
+operator|->
+name|displays
+condition|)
+block|{
 name|g_hash_table_iter_init
 argument_list|(
 operator|&
@@ -3903,6 +3912,16 @@ name|iter
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+if|if
+condition|(
+name|plug_in
+operator|->
+name|priv
+operator|->
+name|images
+condition|)
+block|{
 name|g_hash_table_iter_init
 argument_list|(
 operator|&
@@ -3951,6 +3970,16 @@ name|iter
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+if|if
+condition|(
+name|plug_in
+operator|->
+name|priv
+operator|->
+name|items
+condition|)
+block|{
 name|g_hash_table_iter_init
 argument_list|(
 operator|&
@@ -4000,8 +4029,15 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 else|else
 block|{
+if|#
+directive|if
+literal|0
+block|g_printerr ("remaining displays: %d\n"                   "remaining images:   %d\n"                   "remaining items;    %d\n",                   plug_in->priv->displays ?                   g_hash_table_size (plug_in->priv->displays) : -1,                   plug_in->priv->images ?                   g_hash_table_size (plug_in->priv->images) : -1,                   plug_in->priv->items ?                   g_hash_table_size (plug_in->priv->items) : -1);
+endif|#
+directive|endif
 name|gimp_plug_in_destroy_proxies
 argument_list|(
 name|plug_in
