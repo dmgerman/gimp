@@ -697,7 +697,7 @@ name|procedure
 argument_list|,
 literal|"Add text at the specified location as a floating selection or a new layer."
 argument_list|,
-literal|"This tool requires a fontname matching an installed PangoFT2 font. You can specify the fontsize in units of pixels or points, and the appropriate metric is specified using the size_type argument. The x and y parameters together control the placement of the new text by specifying the upper left corner of the text bounding box. If the specified drawable parameter is valid, the text will be created as a floating selection attached to the drawable. If the drawable parameter is not valid (-1), the text will appear as a new layer. Finally, a border can be specified around the final rendered text. The border is measured in pixels. Parameter size-type is not used and is currently ignored. If you need to display a font in points, divide the size in points by 72.0 and multiply it by the image's vertical resolution."
+literal|"This tool requires a fontname matching an installed PangoFT2 font. You can specify the fontsize in units of pixels or points, and the appropriate metric is specified using the size_type argument. The x and y parameters together control the placement of the new text by specifying the upper left corner of the text bounding box. If the specified drawable parameter is valid, the text will be created as a floating selection attached to the drawable. If the drawable parameter is not valid (%NULL), the text will appear as a new layer. Finally, a border can be specified around the final rendered text. The border is measured in pixels. Parameter size-type is not used and is currently ignored. If you need to display a font in points, divide the size in points by 72.0 and multiply it by the image's vertical resolution."
 argument_list|,
 literal|"Martin Edlman& Sven Neumann"
 argument_list|,
@@ -740,7 +740,7 @@ literal|"drawable"
 argument_list|,
 literal|"drawable"
 argument_list|,
-literal|"The affected drawable: (-1 for a new text layer)"
+literal|"The affected drawable: (%NULL for a new text layer)"
 argument_list|,
 name|pdb
 operator|->
@@ -940,13 +940,13 @@ literal|"text-layer"
 argument_list|,
 literal|"text layer"
 argument_list|,
-literal|"The new text layer or -1 if no layer was created."
+literal|"The new text layer or %NULL if no layer was created."
 argument_list|,
 name|pdb
 operator|->
 name|gimp
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
