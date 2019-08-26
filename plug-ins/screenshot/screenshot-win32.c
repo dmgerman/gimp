@@ -311,11 +311,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_id
+DECL|variable|image
 specifier|static
-name|gint32
+name|GimpImage
 modifier|*
-name|image_id
+modifier|*
+name|image
 decl_stmt|;
 end_decl_stmt
 
@@ -470,7 +471,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c877d490108
+DECL|struct|__anon27d6eafe0108
 typedef|typedef
 struct|struct
 block|{
@@ -517,7 +518,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c877d490208
+DECL|struct|__anon27d6eafe0208
 typedef|typedef
 struct|struct
 block|{
@@ -601,7 +602,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|screenshot_win32_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,gint32 * image_ID,GError ** error)
+DECL|function|screenshot_win32_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,GimpImage ** _image,GError ** error)
 name|screenshot_win32_shoot
 parameter_list|(
 name|ScreenshotValues
@@ -612,9 +613,10 @@ name|GdkMonitor
 modifier|*
 name|monitor
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|_image
 parameter_list|,
 name|GError
 modifier|*
@@ -628,9 +630,9 @@ init|=
 name|GIMP_PDB_EXECUTION_ERROR
 decl_stmt|;
 comment|/* leave "shootvals->monitor" alone until somebody patches the code    * to be able to get a monitor's color profile    */
-name|image_id
+name|image
 operator|=
-name|image_ID
+name|_image
 expr_stmt|;
 name|winsnapvals
 operator|.
@@ -720,7 +722,7 @@ block|{
 name|gimp_image_set_color_profile
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|profile
 argument_list|)
@@ -956,11 +958,13 @@ name|imageType
 decl_stmt|,
 name|layerType
 decl_stmt|;
-name|gint32
-name|new_image_id
+name|GimpImage
+modifier|*
+name|new_image
 decl_stmt|;
-name|gint32
-name|layer_id
+name|GimpLayer
+modifier|*
+name|layer
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -1030,7 +1034,7 @@ operator|=
 name|GIMP_RGB_IMAGE
 expr_stmt|;
 comment|/* Create the GIMP image and layers */
-name|new_image_id
+name|new_image
 operator|=
 name|gimp_image_new
 argument_list|(
@@ -1041,11 +1045,11 @@ argument_list|,
 name|imageType
 argument_list|)
 expr_stmt|;
-name|layer_id
+name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
 name|_
 argument_list|(
@@ -1065,18 +1069,17 @@ literal|100
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
-name|layer_id
+name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -1123,7 +1126,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* fill the buffer */
@@ -1165,7 +1171,7 @@ condition|)
 block|{
 name|gimp_layer_resize
 argument_list|(
-name|layer_id
+name|layer
 argument_list|,
 name|width
 argument_list|,
@@ -1178,7 +1184,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_resize
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
 name|width
 argument_list|,
@@ -1191,9 +1197,9 @@ argument_list|)
 expr_stmt|;
 block|}
 operator|*
-name|image_id
+name|image
 operator|=
-name|new_image_id
+name|new_image
 expr_stmt|;
 return|return;
 block|}
