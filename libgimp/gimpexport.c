@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28801b2b0108
+DECL|struct|__anon27cea4820108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -141,7 +141,7 @@ literal|0
 decl_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
 argument_list|)
@@ -156,9 +156,10 @@ name|iter
 condition|;
 name|iter
 operator|=
+name|g_list_next
+argument_list|(
 name|iter
-operator|->
-name|next
+argument_list|)
 control|)
 block|{
 if|if
@@ -296,7 +297,7 @@ argument_list|)
 expr_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
 argument_list|)
@@ -389,21 +390,12 @@ control|)
 block|{
 if|if
 condition|(
-name|gimp_item_get_id
-argument_list|(
 name|iter
 operator|->
 name|data
-argument_list|)
 operator|!=
-name|gimp_item_get_id
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
 operator|*
 name|drawable
-argument_list|)
-argument_list|)
 condition|)
 name|gimp_image_remove_layer
 argument_list|(
@@ -493,7 +485,7 @@ name|iter
 decl_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
 argument_list|)
@@ -567,7 +559,7 @@ name|iter
 decl_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
 argument_list|)
@@ -693,7 +685,7 @@ decl_stmt|;
 comment|/* check alpha */
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
 argument_list|)
@@ -827,7 +819,7 @@ name|iter
 decl_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
 argument_list|)
@@ -3028,7 +3020,7 @@ block|}
 comment|/* check alpha and layer masks */
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 operator|*
 name|image
@@ -3226,7 +3218,7 @@ name|children
 decl_stmt|;
 name|children
 operator|=
-name|gimp_item_get_children
+name|gimp_item_list_children
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

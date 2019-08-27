@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4dec060103
+DECL|enum|__anon2795880c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -463,14 +463,98 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_list:  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: (element-type GimpImage) (transfer container):  *          The list of images currently open.  *          The returned value must be freed with g_list_free(). Image  *          elements belong to libgimp and must not be freed.  **/
+comment|/**  * gimp_get_images:  * @num_images: (out): The number of images in the returned array.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: (array length=num_images) (transfer container):  *          The list of images currently open.  *          The returned array must be freed with g_free(). Image  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|GimpImage
+modifier|*
+modifier|*
+DECL|function|gimp_get_images (gint * num_images)
+name|gimp_get_images
+parameter_list|(
+name|gint
+modifier|*
+name|num_images
+parameter_list|)
+block|{
+name|GimpImage
+modifier|*
+modifier|*
+name|images
+decl_stmt|;
+name|gint
+modifier|*
+name|ids
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|ids
+operator|=
+name|_gimp_image_list
+argument_list|(
+name|num_images
+argument_list|)
+expr_stmt|;
+name|images
+operator|=
+name|g_new
+argument_list|(
+name|GimpImage
+operator|*
+argument_list|,
+operator|*
+name|num_images
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+operator|*
+name|num_images
+condition|;
+name|i
+operator|++
+control|)
+name|images
+index|[
+name|i
+index|]
+operator|=
+name|gimp_image_get_by_id
+argument_list|(
+name|ids
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|ids
+argument_list|)
+expr_stmt|;
+return|return
+name|images
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_list_images:  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: (element-type GimpImage) (transfer container):  *          The list of images currently open.  *          The returned list must be freed with g_list_free(). Image  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_list (void)
-name|gimp_image_list
+DECL|function|gimp_list_images (void)
+name|gimp_list_images
 parameter_list|(
 name|void
 parameter_list|)
@@ -542,14 +626,293 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layers:  * @image: The image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (element-type GimpImage) (transfer container):  *          The list of layers contained in the image.  *          The returned value must be freed with g_list_free(). Layer  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
+comment|/**  * gimp_image_get_layers:  * @image:      The image.  * @num_layers: (out): The number of layers in the returned array.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (array length=num_layers) (transfer container):  *          The list of layers contained in the image.  *          The returned array must be freed with g_free(). Layer  *          elements belong to libgimp and must not be freed.  **/
+end_comment
+
+begin_function
+name|GimpLayer
+modifier|*
+modifier|*
+DECL|function|gimp_image_get_layers (GimpImage * image,gint * num_layers)
+name|gimp_image_get_layers
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gint
+modifier|*
+name|num_layers
+parameter_list|)
+block|{
+name|GimpLayer
+modifier|*
+modifier|*
+name|layers
+decl_stmt|;
+name|gint
+modifier|*
+name|ids
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|ids
+operator|=
+name|_gimp_image_get_layers
+argument_list|(
+name|image
+argument_list|,
+name|num_layers
+argument_list|)
+expr_stmt|;
+name|layers
+operator|=
+name|g_new
+argument_list|(
+name|GimpLayer
+operator|*
+argument_list|,
+operator|*
+name|num_layers
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+operator|*
+name|num_layers
+condition|;
+name|i
+operator|++
+control|)
+name|layers
+index|[
+name|i
+index|]
+operator|=
+name|GIMP_LAYER
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
+name|ids
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|ids
+argument_list|)
+expr_stmt|;
+return|return
+name|layers
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_get_channels:  * @image:        The image.  * @num_channels: (out): The number of channels in the returned array.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * "channels" are custom channels and do not include the image's color  * components.  *  * Returns: (array length=num_channels) (transfer container):  *          The list of channels contained in the image.  *          The returned array must be freed with g_free(). Channel  *          elements belong to libgimp and must not be freed.  **/
+end_comment
+
+begin_function
+name|GimpChannel
+modifier|*
+modifier|*
+DECL|function|gimp_image_get_channels (GimpImage * image,gint * num_channels)
+name|gimp_image_get_channels
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gint
+modifier|*
+name|num_channels
+parameter_list|)
+block|{
+name|GimpChannel
+modifier|*
+modifier|*
+name|channels
+decl_stmt|;
+name|gint
+modifier|*
+name|ids
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|ids
+operator|=
+name|_gimp_image_get_channels
+argument_list|(
+name|image
+argument_list|,
+name|num_channels
+argument_list|)
+expr_stmt|;
+name|channels
+operator|=
+name|g_new
+argument_list|(
+name|GimpChannel
+operator|*
+argument_list|,
+operator|*
+name|num_channels
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+operator|*
+name|num_channels
+condition|;
+name|i
+operator|++
+control|)
+name|channels
+index|[
+name|i
+index|]
+operator|=
+name|GIMP_CHANNEL
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
+name|ids
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|ids
+argument_list|)
+expr_stmt|;
+return|return
+name|channels
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_get_vectors:  * @image:        The image.  * @num_vectors: (out): The number of vectors in the returned array.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (array length=num_vectors) (transfer container):  *          The list of vectors contained in the image.  *          The returned array must be freed with g_free(). Vectors  *          elements belong to libgimp and must not be freed.  **/
+end_comment
+
+begin_function
+name|GimpVectors
+modifier|*
+modifier|*
+DECL|function|gimp_image_get_vectors (GimpImage * image,gint * num_vectors)
+name|gimp_image_get_vectors
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gint
+modifier|*
+name|num_vectors
+parameter_list|)
+block|{
+name|GimpVectors
+modifier|*
+modifier|*
+name|vectors
+decl_stmt|;
+name|gint
+modifier|*
+name|ids
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|ids
+operator|=
+name|_gimp_image_get_vectors
+argument_list|(
+name|image
+argument_list|,
+name|num_vectors
+argument_list|)
+expr_stmt|;
+name|vectors
+operator|=
+name|g_new
+argument_list|(
+name|GimpVectors
+operator|*
+argument_list|,
+operator|*
+name|num_vectors
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+operator|*
+name|num_vectors
+condition|;
+name|i
+operator|++
+control|)
+name|vectors
+index|[
+name|i
+index|]
+operator|=
+name|GIMP_VECTORS
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
+name|ids
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|ids
+argument_list|)
+expr_stmt|;
+return|return
+name|vectors
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_list_layers:  * @image: The image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (element-type GimpImage) (transfer container):  *          The list of layers contained in the image.  *          The returned list must be freed with g_list_free(). Layer  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_get_layers (GimpImage * image)
-name|gimp_image_get_layers
+DECL|function|gimp_image_list_layers (GimpImage * image)
+name|gimp_image_list_layers
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -613,33 +976,29 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|layers
-operator|=
-name|g_list_reverse
-argument_list|(
-name|layers
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|ids
 argument_list|)
 expr_stmt|;
 return|return
+name|g_list_reverse
+argument_list|(
 name|layers
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channels:  * @image: The image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (element-type GimpChannel) (transfer container):  *          The list of channels contained in the image.  *          The returned value must be freed with g_list_free(). Channel  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
+comment|/**  * gimp_image_list_channels:  * @image: The image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * "channels" are custom channels and do not include the image's  * color components.  *  * Returns: (element-type GimpChannel) (transfer container):  *          The list of channels contained in the image.  *          The returned list must be freed with g_list_free(). Channel  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_get_channels (GimpImage * image)
-name|gimp_image_get_channels
+DECL|function|gimp_image_list_channels (GimpImage * image)
+name|gimp_image_list_channels
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -703,33 +1062,29 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|channels
-operator|=
-name|g_list_reverse
-argument_list|(
-name|channels
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|ids
 argument_list|)
 expr_stmt|;
 return|return
+name|g_list_reverse
+argument_list|(
 name|channels
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors:  * @image: The image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (element-type GimpVectors) (transfer container):  *          The list of vectors contained in the image.  *          The returned value must be freed with g_list_free(). Vectors  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
+comment|/**  * gimp_image_list_vectors:  * @image: The image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (element-type GimpVectors) (transfer container):  *          The list of vectors contained in the image.  *          The returned value must be freed with g_list_free(). Vectors  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_get_vectors (GimpImage * image)
-name|gimp_image_get_vectors
+DECL|function|gimp_image_list_vectors (GimpImage * image)
+name|gimp_image_list_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -793,20 +1148,16 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|vectors
-operator|=
-name|g_list_reverse
-argument_list|(
-name|vectors
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|ids
 argument_list|)
 expr_stmt|;
 return|return
+name|g_list_reverse
+argument_list|(
 name|vectors
+argument_list|)
 return|;
 block|}
 end_function
@@ -865,7 +1216,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_colormap:  * @image:      The image.  * @colormap:   The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of colors is specified by the \"num_colors\" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the \"cmap\" array.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_colormap:  * @image:      The image.  * @colormap:   The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of colors is specified by the "num_colors" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the "cmap" array.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1269,7 +1620,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channels_deprecated: (skip)  * @image_id: The image.  * @num_channels: (out): The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (array length=num_channels):  *          The list of channels contained in the image.  *          The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_channels_deprecated: (skip)  * @image_id: The image.  * @num_channels: (out): The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * "channels" are custom channels and do not include the image's  * color components.  *  * Returns: (array length=num_channels):  *          The list of channels contained in the image.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
@@ -1365,7 +1716,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_colormap_deprecated: (skip)  * @image_id:   The image.  * @colormap:   The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of colors is specified by the \"num_colors\" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the \"cmap\" array.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_colormap_deprecated: (skip)  * @image_id:   The image.  * @colormap:   The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of colors is specified by the "num_colors" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the "cmap" array.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

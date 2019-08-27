@@ -95,7 +95,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f31a340103
+DECL|enum|__anon29a27c930103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -108,7 +108,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f31a340203
+DECL|enum|__anon29a27c930203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f31a340308
+DECL|struct|__anon29a27c930308
 block|{
 DECL|member|interlace
 name|gint
@@ -2516,7 +2516,7 @@ argument_list|)
 expr_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 operator|*
 name|image
@@ -2922,7 +2922,7 @@ block|}
 comment|/* get a list of layers for this image */
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
 argument_list|)
@@ -3518,14 +3518,18 @@ name|nlayers
 operator|*
 name|rows
 expr_stmt|;
+name|layers
+operator|=
+name|g_list_reverse
+argument_list|(
+name|layers
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
 operator|=
-name|g_list_last
-argument_list|(
 name|layers
-argument_list|)
 operator|,
 name|i
 operator|=
@@ -3541,7 +3545,7 @@ literal|0
 condition|;
 name|list
 operator|=
-name|g_list_previous
+name|g_list_next
 argument_list|(
 name|list
 argument_list|)
@@ -4663,10 +4667,6 @@ name|GimpParasite
 modifier|*
 name|GIF2_CMNT
 decl_stmt|;
-name|GList
-modifier|*
-name|layers
-decl_stmt|;
 name|gint32
 name|nlayers
 decl_stmt|;
@@ -4678,23 +4678,15 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
-name|layers
-operator|=
+name|g_free
+argument_list|(
 name|gimp_image_get_layers
 argument_list|(
 name|image
-argument_list|)
-expr_stmt|;
+argument_list|,
+operator|&
 name|nlayers
-operator|=
-name|g_list_length
-argument_list|(
-name|layers
 argument_list|)
-expr_stmt|;
-name|g_list_free
-argument_list|(
-name|layers
 argument_list|)
 expr_stmt|;
 name|animation_supported

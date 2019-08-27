@@ -39,7 +39,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e9e5860103
+DECL|enum|__anon27c3e5810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -457,14 +457,104 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_children:  * @item: The item.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (element-type GimpItem) (transfer container):  *          The item's list of children.  *          The returned value must be freed with g_list_free(). Item  *          elements belong to libgimp and must not be unrefed.  *  * Since: 3.0  **/
+comment|/**  * gimp_item_get_children:  * @item:         The item.  * @num_children: (out): The number of items in the returned array.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (array length=num_children) (transfer container):  *          The item's list of children.  *          The returned array must be freed with g_free(). Item  *          elements belong to libgimp and must not be unrefed.  **/
+end_comment
+
+begin_function
+name|GimpItem
+modifier|*
+modifier|*
+DECL|function|gimp_item_get_children (GimpItem * item,gint * num_children)
+name|gimp_item_get_children
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|gint
+modifier|*
+name|num_children
+parameter_list|)
+block|{
+name|GimpItem
+modifier|*
+modifier|*
+name|children
+decl_stmt|;
+name|gint
+modifier|*
+name|ids
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|ids
+operator|=
+name|_gimp_item_get_children
+argument_list|(
+name|item
+argument_list|,
+name|num_children
+argument_list|)
+expr_stmt|;
+name|children
+operator|=
+name|g_new
+argument_list|(
+name|GimpItem
+operator|*
+argument_list|,
+operator|*
+name|num_children
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+operator|*
+name|num_children
+condition|;
+name|i
+operator|++
+control|)
+name|children
+index|[
+name|i
+index|]
+operator|=
+name|gimp_item_get_by_id
+argument_list|(
+name|ids
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|ids
+argument_list|)
+expr_stmt|;
+return|return
+name|children
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_item_list_children:  * @item: The item.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (element-type GimpItem) (transfer container):  *          The item's list of children.  *          The returned ist must be freed with g_list_free(). Item  *          elements belong to libgimp and must not be unrefed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_item_get_children (GimpItem * item)
-name|gimp_item_get_children
+DECL|function|gimp_item_list_children (GimpItem * item)
+name|gimp_item_list_children
 parameter_list|(
 name|GimpItem
 modifier|*

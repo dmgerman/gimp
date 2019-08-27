@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27db4f8a0108
+DECL|struct|__anon2abb2c7f0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -987,7 +987,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27db4f8a0208
+DECL|struct|__anon2abb2c7f0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -6357,19 +6357,33 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* get layers */
+comment|/* get layers, in bottom-to-top order */
 name|orig_layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|orig_image
 argument_list|)
 expr_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
+argument_list|)
+expr_stmt|;
+name|orig_layers
+operator|=
+name|g_list_reverse
+argument_list|(
+name|orig_layers
+argument_list|)
+expr_stmt|;
+name|layers
+operator|=
+name|g_list_reverse
+argument_list|(
+name|layers
 argument_list|)
 expr_stmt|;
 comment|/* create new XcursorImages. */
@@ -6418,17 +6432,11 @@ for|for
 control|(
 name|list
 operator|=
-name|g_list_last
-argument_list|(
 name|layers
-argument_list|)
 operator|,
 name|orig_list
 operator|=
-name|g_list_last
-argument_list|(
 name|orig_layers
-argument_list|)
 operator|,
 name|i
 operator|=
@@ -6440,14 +6448,14 @@ name|orig_list
 condition|;
 name|list
 operator|=
-name|g_list_previous
+name|g_list_next
 argument_list|(
 name|layers
 argument_list|)
 operator|,
 name|orig_list
 operator|=
-name|g_list_previous
+name|g_list_next
 argument_list|(
 name|orig_list
 argument_list|)
@@ -9220,7 +9228,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon27db4f8a0308
+DECL|struct|__anon2abb2c7f0308
 block|{
 DECL|member|size
 name|guint32
@@ -10009,7 +10017,7 @@ argument_list|)
 expr_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
 argument_list|)

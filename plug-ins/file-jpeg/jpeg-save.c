@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27620aa50108
+DECL|struct|__anon29d62c3f0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27620aa50208
+DECL|struct|__anon29d62c3f0208
 block|{
 DECL|member|run
 name|gboolean
@@ -3017,11 +3017,14 @@ argument_list|)
 operator|&&
 name|gimp_item_is_valid
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|preview_layer
+argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/*  assuming that reference counting is working correctly,           we do not need to delete the layer, removing it from           the image should be sufficient  */
+comment|/* assuming that reference counting is working correctly, we do        * not need to delete the layer, removing it from the image        * should be sufficient        */
 name|gimp_image_remove_layer
 argument_list|(
 name|preview_image

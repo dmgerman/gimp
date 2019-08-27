@@ -293,9 +293,26 @@ name|GIMP_DEPRECATED_REPLACE_NEW_API
 end_ifndef
 
 begin_function_decl
-name|GList
+name|GimpItem
+modifier|*
 modifier|*
 name|gimp_item_get_children
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|gint
+modifier|*
+name|num_children
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GList
+modifier|*
+name|gimp_item_list_children
 parameter_list|(
 name|GimpItem
 modifier|*

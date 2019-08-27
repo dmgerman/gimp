@@ -1075,7 +1075,7 @@ argument_list|)
 expr_stmt|;
 name|images
 operator|=
-name|gimp_image_list
+name|gimp_list_images
 argument_list|()
 expr_stmt|;
 for|for
@@ -1088,9 +1088,10 @@ name|list
 condition|;
 name|list
 operator|=
+name|g_list_next
+argument_list|(
 name|list
-operator|->
-name|next
+argument_list|)
 control|)
 block|{
 name|GimpImage
@@ -1120,7 +1121,7 @@ condition|)
 block|{
 name|items
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
 argument_list|)
@@ -1162,7 +1163,7 @@ condition|)
 block|{
 name|items
 operator|=
-name|gimp_image_get_channels
+name|gimp_image_list_channels
 argument_list|(
 name|image
 argument_list|)
@@ -1199,7 +1200,7 @@ condition|)
 block|{
 name|items
 operator|=
-name|gimp_image_get_vectors
+name|gimp_image_list_vectors
 argument_list|(
 name|image
 argument_list|)
@@ -1366,9 +1367,10 @@ name|list
 condition|;
 name|list
 operator|=
+name|g_list_next
+argument_list|(
 name|list
-operator|->
-name|next
+argument_list|)
 control|)
 block|{
 name|GimpItem
@@ -1593,7 +1595,7 @@ name|children
 decl_stmt|;
 name|children
 operator|=
-name|gimp_item_get_children
+name|gimp_item_list_children
 argument_list|(
 name|item
 argument_list|)

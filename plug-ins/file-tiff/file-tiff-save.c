@@ -351,7 +351,7 @@ name|ps_tag
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_image_get_vectors
+name|gimp_image_list_vectors
 argument_list|(
 name|image
 argument_list|)
@@ -390,9 +390,10 @@ literal|1000
 condition|;
 name|iter
 operator|=
+name|g_list_next
+argument_list|(
 name|iter
-operator|->
-name|next
+argument_list|)
 operator|,
 name|v
 operator|++
@@ -3819,7 +3820,8 @@ block|}
 decl_stmt|;
 name|gint32
 name|num_layers
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|current_layer
 init|=
 literal|0
@@ -3830,9 +3832,16 @@ name|layers
 decl_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
+argument_list|)
+expr_stmt|;
+name|layers
+operator|=
+name|g_list_reverse
+argument_list|(
+name|layers
 argument_list|)
 expr_stmt|;
 name|num_layers
@@ -4185,11 +4194,7 @@ name|g_list_nth_data
 argument_list|(
 name|layers
 argument_list|,
-name|num_layers
-operator|-
 name|current_layer
-operator|-
-literal|1
 argument_list|)
 argument_list|,
 name|current_layer
@@ -4356,11 +4361,7 @@ name|g_list_nth_data
 argument_list|(
 name|layers
 argument_list|,
-name|num_layers
-operator|-
 name|current_layer
-operator|-
-literal|1
 argument_list|)
 argument_list|,
 name|current_layer
@@ -4390,7 +4391,7 @@ operator|*
 name|saved_bpp
 condition|)
 block|{
-comment|/* this should never happen.                * if it does, decide if it's really an error.                */
+comment|/* this should never happen. if it does, decide if it's                * really an error.                */
 name|g_set_error
 argument_list|(
 name|error

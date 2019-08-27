@@ -503,7 +503,7 @@ argument_list|)
 expr_stmt|;
 name|images
 operator|=
-name|gimp_image_list
+name|gimp_list_images
 argument_list|()
 expr_stmt|;
 name|gimp_image_combo_box_model_add
@@ -598,9 +598,10 @@ name|list
 condition|;
 name|list
 operator|=
+name|g_list_next
+argument_list|(
 name|list
-operator|->
-name|next
+argument_list|)
 control|)
 block|{
 name|GimpImage

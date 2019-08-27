@@ -1385,7 +1385,7 @@ expr_stmt|;
 comment|/*  There is no needs to process the layers recursively, because    *  indexed images cannot have layer groups.    */
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
 argument_list|)
@@ -1860,7 +1860,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a3960b0103
+DECL|enum|__anon28c860fd0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

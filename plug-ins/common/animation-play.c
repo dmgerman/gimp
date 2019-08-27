@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279494be0103
+DECL|enum|__anon278415cc0103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279494be0208
+DECL|struct|__anon278415cc0208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279494be0308
+DECL|struct|__anon278415cc0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -4060,7 +4060,7 @@ operator|=
 name|gtk_combo_box_text_new
 argument_list|()
 expr_stmt|;
-comment|/* 2 styles of default frame disposals: cumulative layers and one frame per layer. */
+comment|/* 2 styles of default frame disposals: cumulative layers and one    * frame per layer.    */
 name|text
 operator|=
 name|g_strdup
@@ -4533,7 +4533,7 @@ argument_list|()
 expr_stmt|;
 return|return;
 block|}
-comment|/* We only use RGB images for display because indexed images would somehow      render terrible colors. Layers from other types will be automatically      converted. */
+comment|/* We only use RGB images for display because indexed images would    * somehow render terrible colors. Layers from other types will be    * automatically converted.    */
 name|frames_image
 operator|=
 name|gimp_image_new
@@ -4555,10 +4555,7 @@ for|for
 control|(
 name|iter
 operator|=
-name|g_list_last
-argument_list|(
 name|layers
-argument_list|)
 operator|,
 name|i
 operator|=
@@ -4568,9 +4565,10 @@ name|iter
 condition|;
 name|iter
 operator|=
+name|g_list_next
+argument_list|(
 name|iter
-operator|->
-name|prev
+argument_list|)
 operator|,
 name|i
 operator|++
@@ -4877,9 +4875,16 @@ argument_list|)
 expr_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
+argument_list|)
+expr_stmt|;
+name|layers
+operator|=
+name|g_list_reverse
+argument_list|(
+name|layers
 argument_list|)
 expr_stmt|;
 if|if
