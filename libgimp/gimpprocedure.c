@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296207ee0103
+DECL|enum|__anon2c18aa760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1182,9 +1182,13 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|n_args
+init|=
+literal|0
 decl_stmt|;
 name|gint
 name|n_return_vals
+init|=
+literal|0
 decl_stmt|;
 name|GList
 modifier|*
