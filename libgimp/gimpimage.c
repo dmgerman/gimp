@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c9b0c0103
+DECL|enum|__anon2b670d720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1659,63 +1659,6 @@ argument_list|,
 name|colormap
 argument_list|,
 name|num_colors
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_image_get_metadata_deprecated: (skip)  * @image_id: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (nullable) (transfer full): The exif/ptc/xmp metadata,  *          or %NULL if there is none.  *  * Since: 2.10  **/
-end_comment
-
-begin_function
-name|GimpMetadata
-modifier|*
-DECL|function|gimp_image_get_metadata_deprecated (gint32 image_id)
-name|gimp_image_get_metadata_deprecated
-parameter_list|(
-name|gint32
-name|image_id
-parameter_list|)
-block|{
-return|return
-name|gimp_image_get_metadata
-argument_list|(
-name|gimp_image_get_by_id
-argument_list|(
-name|image_id
-argument_list|)
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_image_set_metadata_deprecated: (skip)  * @image_id: The image.  * @metadata: The exif/ptc/xmp metadata.  *  * Set the image's metadata.  *  * Sets exif/iptc/xmp metadata on the image, or deletes it if  * @metadata is %NULL.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_image_set_metadata_deprecated (gint32 image_id,GimpMetadata * metadata)
-name|gimp_image_set_metadata_deprecated
-parameter_list|(
-name|gint32
-name|image_id
-parameter_list|,
-name|GimpMetadata
-modifier|*
-name|metadata
-parameter_list|)
-block|{
-return|return
-name|gimp_image_set_metadata
-argument_list|(
-name|gimp_image_get_by_id
-argument_list|(
-name|image_id
-argument_list|)
-argument_list|,
-name|metadata
 argument_list|)
 return|;
 block|}
