@@ -21,9 +21,22 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_struct
+DECL|struct|_GimpLayerPrivate
+struct|struct
+name|_GimpLayerPrivate
+block|{
+DECL|member|unused
+name|gpointer
+name|unused
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpLayer,gimp_layer,GIMP_TYPE_DRAWABLE)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpLayer,gimp_layer,GIMP_TYPE_DRAWABLE)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpLayer
 argument_list|,
@@ -63,7 +76,17 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
-block|{ }
+block|{
+name|layer
+operator|->
+name|priv
+operator|=
+name|gimp_layer_get_instance_private
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_comment

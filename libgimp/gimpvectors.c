@@ -15,9 +15,22 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_struct
+DECL|struct|_GimpVectorsPrivate
+struct|struct
+name|_GimpVectorsPrivate
+block|{
+DECL|member|unused
+name|gpointer
+name|unused
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpVectors,gimp_vectors,GIMP_TYPE_ITEM)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpVectors,gimp_vectors,GIMP_TYPE_ITEM)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpVectors
 argument_list|,
@@ -57,7 +70,17 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|)
-block|{ }
+block|{
+name|vectors
+operator|->
+name|priv
+operator|=
+name|gimp_vectors_get_instance_private
+argument_list|(
+name|vectors
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 end_unit

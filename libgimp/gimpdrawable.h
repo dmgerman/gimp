@@ -129,6 +129,15 @@ name|GimpDrawableClass
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpDrawablePrivate
+typedef|typedef
+name|struct
+name|_GimpDrawablePrivate
+name|GimpDrawablePrivate
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpDrawable
 struct|struct
@@ -137,6 +146,11 @@ block|{
 DECL|member|parent_instance
 name|GimpItem
 name|parent_instance
+decl_stmt|;
+DECL|member|priv
+name|GimpDrawablePrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;

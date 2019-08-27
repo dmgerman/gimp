@@ -123,6 +123,15 @@ name|GimpSelectionClass
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpSelectionPrivate
+typedef|typedef
+name|struct
+name|_GimpSelectionPrivate
+name|GimpSelectionPrivate
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpSelection
 struct|struct
@@ -131,6 +140,11 @@ block|{
 DECL|member|parent_instance
 name|GimpChannel
 name|parent_instance
+decl_stmt|;
+DECL|member|priv
+name|GimpSelectionPrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;
@@ -221,16 +235,6 @@ name|void
 function_decl|(
 modifier|*
 name|_gimp_reserved8
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-DECL|member|_gimp_reserved9
-name|void
-function_decl|(
-modifier|*
-name|_gimp_reserved9
 function_decl|)
 parameter_list|(
 name|void

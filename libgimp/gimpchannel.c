@@ -15,9 +15,22 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_struct
+DECL|struct|_GimpChannelPrivate
+struct|struct
+name|_GimpChannelPrivate
+block|{
+DECL|member|unused
+name|gpointer
+name|unused
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpChannel,gimp_channel,GIMP_TYPE_DRAWABLE)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpChannel,gimp_channel,GIMP_TYPE_DRAWABLE)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpChannel
 argument_list|,
@@ -57,7 +70,17 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
-block|{ }
+block|{
+name|channel
+operator|->
+name|priv
+operator|=
+name|gimp_channel_get_instance_private
+argument_list|(
+name|channel
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_comment

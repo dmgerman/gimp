@@ -27,9 +27,22 @@ directive|include
 file|"gimptilebackendplugin.h"
 end_include
 
+begin_struct
+DECL|struct|_GimpDrawablePrivate
+struct|struct
+name|_GimpDrawablePrivate
+block|{
+DECL|member|unused
+name|gpointer
+name|unused
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_macro
-DECL|function|G_DEFINE_ABSTRACT_TYPE (GimpDrawable,gimp_drawable,GIMP_TYPE_ITEM)
-name|G_DEFINE_ABSTRACT_TYPE
+DECL|function|G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (GimpDrawable,gimp_drawable,GIMP_TYPE_ITEM)
+name|G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDrawable
 argument_list|,
@@ -69,7 +82,17 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
-block|{ }
+block|{
+name|drawable
+operator|->
+name|priv
+operator|=
+name|gimp_drawable_get_instance_private
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_comment

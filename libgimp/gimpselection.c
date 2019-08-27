@@ -15,9 +15,22 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_struct
+DECL|struct|_GimpSelectionPrivate
+struct|struct
+name|_GimpSelectionPrivate
+block|{
+DECL|member|unused
+name|gpointer
+name|unused
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpSelection,gimp_selection,GIMP_TYPE_CHANNEL)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpSelection,gimp_selection,GIMP_TYPE_CHANNEL)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpSelection
 argument_list|,
@@ -57,11 +70,21 @@ name|GimpSelection
 modifier|*
 name|selection
 parameter_list|)
-block|{ }
+block|{
+name|selection
+operator|->
+name|priv
+operator|=
+name|gimp_selection_get_instance_private
+argument_list|(
+name|selection
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_float:  * @image: ignored  * @drawable: The drawable from which to float selection.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: (transfer full): The floated layer.  */
+comment|/**  * gimp_selection_float:  * @image:    ignored  * @drawable: The drawable from which to float selection.  * @offx:     x offset for translation.  * @offy:     y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: (transfer none): The floated layer.  */
 end_comment
 
 begin_function

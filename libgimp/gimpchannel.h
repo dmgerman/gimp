@@ -129,6 +129,15 @@ name|GimpChannelClass
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpChannelPrivate
+typedef|typedef
+name|struct
+name|_GimpChannelPrivate
+name|GimpChannelPrivate
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpChannel
 struct|struct
@@ -137,6 +146,11 @@ block|{
 DECL|member|parent_instance
 name|GimpDrawable
 name|parent_instance
+decl_stmt|;
+DECL|member|priv
+name|GimpChannelPrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;
@@ -227,16 +241,6 @@ name|void
 function_decl|(
 modifier|*
 name|_gimp_reserved8
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-DECL|member|_gimp_reserved9
-name|void
-function_decl|(
-modifier|*
-name|_gimp_reserved9
 function_decl|)
 parameter_list|(
 name|void

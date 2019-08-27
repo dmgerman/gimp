@@ -240,16 +240,6 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-DECL|member|_gimp_reserved9
-name|void
-function_decl|(
-modifier|*
-name|_gimp_reserved9
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
 block|}
 struct|;
 end_struct
