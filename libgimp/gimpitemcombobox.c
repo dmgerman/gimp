@@ -1880,12 +1880,8 @@ condition|)
 block|{
 if|if
 condition|(
-name|item_ID
-operator|>
-literal|0
-operator|&&
 operator|!
-name|_gimp_item_is_valid
+name|gimp_item_get_by_id
 argument_list|(
 name|item_ID
 argument_list|)

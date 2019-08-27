@@ -931,7 +931,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|_gimp_image_is_valid
+name|gimp_image_get_by_id
 argument_list|(
 name|image_ID
 argument_list|)
