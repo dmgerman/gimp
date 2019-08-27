@@ -243,6 +243,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_line_art_is_frozen
+parameter_list|(
+name|GimpLineArt
+modifier|*
+name|line_art
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GeglBuffer
 modifier|*
 name|gimp_line_art_get

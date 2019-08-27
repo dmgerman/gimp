@@ -1888,6 +1888,17 @@ operator|->
 name|fill_mask
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_line_art_is_frozen
+argument_list|(
+name|tool
+operator|->
+name|priv
+operator|->
+name|line_art
+argument_list|)
+condition|)
 name|gimp_line_art_thaw
 argument_list|(
 name|tool

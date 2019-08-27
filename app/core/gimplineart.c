@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bbce0e0103
+DECL|enum|__anon2c3ba6a50103
 block|{
 DECL|enumerator|COMPUTING_START
 name|COMPUTING_START
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bbce0e0203
+DECL|enum|__anon2c3ba6a50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -259,7 +259,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bbce0e0308
+DECL|struct|__anon2c3ba6a50308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -291,7 +291,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bbce0e0408
+DECL|struct|__anon2c3ba6a50408
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -2360,6 +2360,26 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_line_art_is_frozen (GimpLineArt * line_art)
+name|gimp_line_art_is_frozen
+parameter_list|(
+name|GimpLineArt
+modifier|*
+name|line_art
+parameter_list|)
+block|{
+return|return
+name|line_art
+operator|->
+name|priv
+operator|->
+name|frozen
+return|;
 block|}
 end_function
 
