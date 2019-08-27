@@ -61,10 +61,6 @@ block|{ }
 end_function
 
 begin_comment
-comment|/* Public API. */
-end_comment
-
-begin_comment
 comment|/**  * gimp_channel_new:  * @image:   The image to which to add the channel.  * @name:    The channel name.  * @width:   The channel width.  * @height:  The channel height.  * @opacity: The channel opacity.  * @color:   The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width and  * height. Name, opacity, and color are also supplied parameters. The  * new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with the gimp_image_insert_channel()  * command. Other attributes such as channel show masked, should be  * set with explicit procedure calls. The channel's contents are  * undefined initially.  *  * Returns: (transfer none): The newly created channel.  *          The object belongs to libgimp and you should not free it.  */
 end_comment
 
@@ -112,78 +108,6 @@ argument_list|,
 name|opacity
 argument_list|,
 name|color
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/* Deprecated API. */
-end_comment
-
-begin_comment
-comment|/**  * gimp_channel_new_deprecated: (skip)  * @image_ID: The image to which to add the channel.  * @name: The channel name.  * @width: The channel width.  * @height: The channel height.  * @opacity: The channel opacity.  * @color: The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width and  * height. Name, opacity, and color are also supplied parameters. The  * new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with the gimp_image_insert_channel()  * command. Other attributes such as channel show masked, should be  * set with explicit procedure calls. The channel's contents are  * undefined initially.  *  * Returns: The newly created channel.  */
-end_comment
-
-begin_function
-name|gint32
-DECL|function|gimp_channel_new_deprecated (gint32 image_id,const gchar * name,guint width,guint height,gdouble opacity,const GimpRGB * color)
-name|gimp_channel_new_deprecated
-parameter_list|(
-name|gint32
-name|image_id
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|guint
-name|width
-parameter_list|,
-name|guint
-name|height
-parameter_list|,
-name|gdouble
-name|opacity
-parameter_list|,
-specifier|const
-name|GimpRGB
-modifier|*
-name|color
-parameter_list|)
-block|{
-name|GimpChannel
-modifier|*
-name|channel
-decl_stmt|;
-name|channel
-operator|=
-name|gimp_channel_new
-argument_list|(
-name|gimp_image_get_by_id
-argument_list|(
-name|image_id
-argument_list|)
-argument_list|,
-name|name
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|,
-name|opacity
-argument_list|,
-name|color
-argument_list|)
-expr_stmt|;
-return|return
-name|gimp_item_get_id
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|channel
-argument_list|)
 argument_list|)
 return|;
 block|}
