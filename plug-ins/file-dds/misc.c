@@ -54,11 +54,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|decode_ycocg_image (gint32 drawableID,gboolean shadow)
+DECL|function|decode_ycocg_image (GimpDrawable * drawable,gboolean shadow)
 name|decode_ycocg_image
 parameter_list|(
-name|gint32
-name|drawableID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gboolean
 name|shadow
@@ -118,7 +119,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -130,7 +131,7 @@ name|sbuffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -465,14 +466,14 @@ name|shadow
 condition|)
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|,
 literal|0
 argument_list|,
@@ -498,11 +499,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|decode_ycocg_scaled_image (gint32 drawableID,gboolean shadow)
+DECL|function|decode_ycocg_scaled_image (GimpDrawable * drawable,gboolean shadow)
 name|decode_ycocg_scaled_image
 parameter_list|(
-name|gint32
-name|drawableID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gboolean
 name|shadow
@@ -564,7 +566,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -576,7 +578,7 @@ name|sbuffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -948,14 +950,14 @@ name|shadow
 condition|)
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|,
 literal|0
 argument_list|,
@@ -981,11 +983,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|decode_alpha_exp_image (gint32 drawableID,gboolean shadow)
+DECL|function|decode_alpha_exp_image (GimpDrawable * drawable,gboolean shadow)
 name|decode_alpha_exp_image
 parameter_list|(
-name|gint32
-name|drawableID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gboolean
 name|shadow
@@ -1031,7 +1034,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -1043,7 +1046,7 @@ name|sbuffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
@@ -1342,14 +1345,14 @@ name|shadow
 condition|)
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawableID
+name|drawable
 argument_list|,
 literal|0
 argument_list|,

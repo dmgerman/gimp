@@ -100,7 +100,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a31cb4f0108
+DECL|struct|__anon290f1abd0108
 block|{
 DECL|member|rshift
 DECL|member|gshift
@@ -245,7 +245,8 @@ name|dds_load_info_t
 modifier|*
 name|d
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|unsigned
@@ -290,7 +291,8 @@ name|dds_load_info_t
 modifier|*
 name|d
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|char
@@ -331,7 +333,8 @@ name|dds_load_info_t
 modifier|*
 name|d
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|char
@@ -403,25 +406,27 @@ end_decl_stmt
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|read_dds (gchar * filename,gint32 * imageID,gboolean interactive_dds)
+DECL|function|read_dds (gchar * filename,GimpImage ** ret_image,gboolean interactive_dds)
 name|read_dds
 parameter_list|(
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
+name|GimpImage
 modifier|*
-name|imageID
+modifier|*
+name|ret_image
 parameter_list|,
 name|gboolean
 name|interactive_dds
 parameter_list|)
 block|{
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 init|=
-literal|0
+name|NULL
 decl_stmt|;
 name|unsigned
 name|char
@@ -455,11 +460,9 @@ decl_stmt|;
 name|dds_load_info_t
 name|d
 decl_stmt|;
-name|gint
+name|GList
 modifier|*
 name|layers
-decl_stmt|,
-name|layer_count
 decl_stmt|;
 name|GimpImageBaseType
 name|type
@@ -1239,10 +1242,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|image
-operator|==
-operator|-
-literal|1
 condition|)
 block|{
 name|g_message
@@ -2499,23 +2500,15 @@ argument_list|)
 expr_stmt|;
 name|layers
 operator|=
-name|gimp_image_get_layers
+name|gimp_image_list_layers
 argument_list|(
 name|image
-argument_list|,
-operator|&
-name|layer_count
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|layers
-operator|==
-name|NULL
-operator|||
-name|layer_count
-operator|==
-literal|0
 condition|)
 block|{
 name|g_message
@@ -2532,18 +2525,17 @@ argument_list|(
 name|image
 argument_list|,
 name|layers
-index|[
-literal|0
-index|]
+operator|->
+name|data
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_list_free
 argument_list|(
 name|layers
 argument_list|)
 expr_stmt|;
 operator|*
-name|imageID
+name|ret_image
 operator|=
 name|image
 expr_stmt|;
@@ -4762,7 +4754,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|load_layer (FILE * fp,dds_header_t * hdr,dds_load_info_t * d,gint32 image,unsigned int level,char * prefix,unsigned int * l,guchar * pixels,unsigned char * buf)
+DECL|function|load_layer (FILE * fp,dds_header_t * hdr,dds_load_info_t * d,GimpImage * image,unsigned int level,char * prefix,unsigned int * l,guchar * pixels,unsigned char * buf)
 name|load_layer
 parameter_list|(
 name|FILE
@@ -4777,7 +4769,8 @@ name|dds_load_info_t
 modifier|*
 name|d
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|unsigned
@@ -4832,7 +4825,8 @@ name|z
 decl_stmt|,
 name|n
 decl_stmt|;
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 name|unsigned
@@ -5183,7 +5177,10 @@ name|type
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -5197,7 +5194,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-literal|0
+name|NULL
 argument_list|,
 operator|*
 name|l
@@ -5213,7 +5210,10 @@ operator|++
 condition|)
 name|gimp_item_set_visible
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5222,7 +5222,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|layerw
@@ -7065,7 +7068,10 @@ argument_list|)
 case|:
 name|decode_alpha_exp_image
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -7085,7 +7091,10 @@ argument_list|)
 case|:
 name|decode_ycocg_image
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -7105,7 +7114,10 @@ argument_list|)
 case|:
 name|decode_ycocg_scaled_image
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -7124,7 +7136,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|load_mipmaps (FILE * fp,dds_header_t * hdr,dds_load_info_t * d,gint32 image,char * prefix,unsigned int * l,guchar * pixels,unsigned char * buf)
+DECL|function|load_mipmaps (FILE * fp,dds_header_t * hdr,dds_load_info_t * d,GimpImage * image,char * prefix,unsigned int * l,guchar * pixels,unsigned char * buf)
 name|load_mipmaps
 parameter_list|(
 name|FILE
@@ -7139,7 +7151,8 @@ name|dds_load_info_t
 modifier|*
 name|d
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|char
@@ -7248,7 +7261,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|load_face (FILE * fp,dds_header_t * hdr,dds_load_info_t * d,gint32 image,char * prefix,unsigned int * l,guchar * pixels,unsigned char * buf)
+DECL|function|load_face (FILE * fp,dds_header_t * hdr,dds_load_info_t * d,GimpImage * image,char * prefix,unsigned int * l,guchar * pixels,unsigned char * buf)
 name|load_face
 parameter_list|(
 name|FILE
@@ -7263,7 +7276,8 @@ name|dds_load_info_t
 modifier|*
 name|d
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|char

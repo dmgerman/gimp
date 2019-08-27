@@ -20,8 +20,9 @@ begin_function_decl
 name|void
 name|decode_ycocg_image
 parameter_list|(
-name|gint32
-name|drawableID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gboolean
 name|shadow
@@ -33,8 +34,9 @@ begin_function_decl
 name|void
 name|decode_ycocg_scaled_image
 parameter_list|(
-name|gint32
-name|drawableID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gboolean
 name|shadow
@@ -46,8 +48,9 @@ begin_function_decl
 name|void
 name|decode_alpha_exp_image
 parameter_list|(
-name|gint32
-name|drawableID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gboolean
 name|shadow
