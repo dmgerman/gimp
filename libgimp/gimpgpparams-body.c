@@ -533,14 +533,14 @@ name|param_def
 operator|->
 name|type_name
 argument_list|,
-literal|"GimpParamSpecString"
+literal|"GimpParamString"
 argument_list|)
 condition|)
 name|param_def
 operator|->
 name|type_name
 operator|=
-literal|"GParamSpecString"
+literal|"GParamString"
 expr_stmt|;
 name|param_def
 operator|->
