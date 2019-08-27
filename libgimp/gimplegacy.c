@@ -1234,56 +1234,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_magic_load_handler:  * @procedure_name: The name of the procedure to be used for loading.  * @extensions: comma separated list of extensions this handler can load (i.e. "jpg,jpeg").  * @prefixes: comma separated list of prefixes this handler can load (i.e. "http:,ftp:").  * @magics: comma separated list of magic file information this handler can load (i.e. "0,string,GIF").  *  * Registers a file load handler procedure.  *  * Registers a procedural database procedure to be called to load files  * of a particular file format using magic file information.  *  * Returns: TRUE on success.  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_register_magic_load_handler (const gchar * procedure_name,const gchar * extensions,const gchar * prefixes,const gchar * magics)
-name|gimp_register_magic_load_handler
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|extensions
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|prefixes
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|magics
-parameter_list|)
-block|{
-name|ASSERT_NO_PLUG_IN_EXISTS
-argument_list|(
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-return|return
-name|_gimp_register_magic_load_handler
-argument_list|(
-name|procedure_name
-argument_list|,
-name|extensions
-argument_list|,
-name|prefixes
-argument_list|,
-name|magics
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_register_save_handler:  * @procedure_name: The name of the procedure to be used for saving.  * @extensions: comma separated list of extensions this handler can save (i.e. "jpg,jpeg").  * @prefixes: comma separated list of prefixes this handler can save (i.e. "http:,ftp:").  *  * Registers a file save handler procedure.  *  * Registers a procedural database procedure to be called to save files  * in a particular file format.  *  * Returns: TRUE on success.  **/
 end_comment
 
