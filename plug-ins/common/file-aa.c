@@ -424,6 +424,17 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
+name|gimp_procedure_set_attribution
+argument_list|(
+name|procedure
+argument_list|,
+literal|"Tim Newsome<nuisance@cmu.edu>"
+argument_list|,
+literal|"Tim Newsome<nuisance@cmu.edu>"
+argument_list|,
+literal|"1997"
+argument_list|)
+expr_stmt|;
 name|gimp_file_procedure_set_mime_types
 argument_list|(
 name|GIMP_FILE_PROCEDURE
