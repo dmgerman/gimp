@@ -363,7 +363,7 @@ name|builder
 argument_list|,
 name|args
 operator|->
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 comment|/* Fetch a fresh copy of the metadata */
@@ -377,7 +377,7 @@ name|gimp_image_get_metadata
 argument_list|(
 name|args
 operator|->
-name|image_id
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;

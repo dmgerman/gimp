@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4382a0108
+DECL|struct|__anon28bf13e30108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -36,9 +36,10 @@ name|GExiv2Metadata
 modifier|*
 name|metadata
 decl_stmt|;
-DECL|member|image_id
-name|gint32
-name|image_id
+DECL|member|image
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 DECL|member|filename
 name|gchar
@@ -54,7 +55,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4382a0208
+DECL|struct|__anon28bf13e30208
 block|{
 DECL|member|tag
 name|gchar
@@ -87,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4382a0308
+DECL|struct|__anon28bf13e30308
 block|{
 DECL|member|data
 name|gchar
@@ -108,7 +109,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4382a0408
+DECL|struct|__anon28bf13e30408
 block|{
 DECL|member|data
 name|gint32
@@ -128,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4382a0508
+DECL|struct|__anon28bf13e30508
 block|{
 DECL|member|header
 name|gchar
@@ -153,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4382a0608
+DECL|struct|__anon28bf13e30608
 block|{
 DECL|member|id
 name|gchar

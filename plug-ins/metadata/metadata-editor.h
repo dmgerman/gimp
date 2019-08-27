@@ -29,8 +29,9 @@ name|GtkBuilder
 modifier|*
 name|builder
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
