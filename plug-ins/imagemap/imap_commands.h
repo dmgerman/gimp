@@ -163,8 +163,9 @@ name|ObjectList_t
 modifier|*
 name|list
 parameter_list|,
-name|gint32
-name|_drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

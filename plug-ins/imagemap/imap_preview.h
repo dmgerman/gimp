@@ -23,13 +23,14 @@ file|<libgimp/gimp.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon27d227320108
+DECL|struct|__anon2a9ef6d30108
 typedef|typedef
 struct|struct
 block|{
-DECL|member|drawable_id
-name|gint32
-name|drawable_id
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 DECL|member|window
 name|GtkWidget
@@ -82,8 +83,9 @@ name|Preview_t
 modifier|*
 name|make_preview
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

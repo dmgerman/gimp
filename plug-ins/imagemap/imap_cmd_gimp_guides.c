@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b5315ea0108
+DECL|struct|__anon2c2126c30108
 typedef|typedef
 struct|struct
 block|{
@@ -84,9 +84,10 @@ name|ObjectList_t
 modifier|*
 name|list
 decl_stmt|;
-DECL|member|drawable_id
-name|gint32
-name|drawable_id
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 DECL|member|alternate
 name|GtkWidget
@@ -201,14 +202,18 @@ name|gchar
 modifier|*
 name|url
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|param
 operator|->
-name|drawable_id
+name|drawable
+argument_list|)
 argument_list|)
 decl_stmt|;
 comment|/* First get some dialog values */
@@ -275,7 +280,7 @@ name|GINT_TO_POINTER
 argument_list|(
 name|gimp_image_width
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|)
 argument_list|)
@@ -331,7 +336,7 @@ name|GINT_TO_POINTER
 argument_list|(
 name|gimp_image_height
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|)
 argument_list|)
@@ -353,7 +358,7 @@ name|guide_num
 operator|=
 name|gimp_image_find_next_guide
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 literal|0
 argument_list|)
@@ -370,7 +375,7 @@ name|position
 init|=
 name|gimp_image_get_guide_position
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|guide_num
 argument_list|)
@@ -379,7 +384,7 @@ if|if
 condition|(
 name|gimp_image_get_guide_orientation
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|guide_num
 argument_list|)
@@ -424,7 +429,7 @@ name|guide_num
 operator|=
 name|gimp_image_find_next_guide
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|guide_num
 argument_list|)
@@ -1099,7 +1104,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|init_gimp_guides_dialog (GimpGuidesDialog_t * dialog,ObjectList_t * list,gint32 drawable_id)
+DECL|function|init_gimp_guides_dialog (GimpGuidesDialog_t * dialog,ObjectList_t * list,GimpDrawable * drawable)
 name|init_gimp_guides_dialog
 parameter_list|(
 name|GimpGuidesDialog_t
@@ -1110,8 +1115,9 @@ name|ObjectList_t
 modifier|*
 name|list
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|dialog
@@ -1122,9 +1128,9 @@ name|list
 expr_stmt|;
 name|dialog
 operator|->
-name|drawable_id
+name|drawable
 operator|=
-name|drawable_id
+name|drawable
 expr_stmt|;
 block|}
 end_function
@@ -1132,15 +1138,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_create_gimp_guides_dialog (ObjectList_t * list,gint32 drawable_id)
+DECL|function|do_create_gimp_guides_dialog (ObjectList_t * list,GimpDrawable * drawable)
 name|do_create_gimp_guides_dialog
 parameter_list|(
 name|ObjectList_t
 modifier|*
 name|list
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 specifier|static
@@ -1164,7 +1171,7 @@ name|dialog
 argument_list|,
 name|list
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|default_dialog_show
@@ -1211,7 +1218,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b5315ea0208
+DECL|struct|__anon2c2126c30208
 typedef|typedef
 struct|struct
 block|{
@@ -1224,9 +1231,10 @@ name|ObjectList_t
 modifier|*
 name|list
 decl_stmt|;
-DECL|member|drawable_id
-name|gint32
-name|drawable_id
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 DECL|typedef|GimpGuidesCommand_t
 block|}
@@ -1237,15 +1245,16 @@ end_typedef
 begin_function
 name|Command_t
 modifier|*
-DECL|function|gimp_guides_command_new (ObjectList_t * list,gint32 drawable_id)
+DECL|function|gimp_guides_command_new (ObjectList_t * list,GimpDrawable * drawable)
 name|gimp_guides_command_new
 parameter_list|(
 name|ObjectList_t
 modifier|*
 name|list
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GimpGuidesCommand_t
@@ -1267,9 +1276,9 @@ name|list
 expr_stmt|;
 name|command
 operator|->
-name|drawable_id
+name|drawable
 operator|=
-name|drawable_id
+name|drawable
 expr_stmt|;
 return|return
 name|command_init
@@ -1320,7 +1329,7 @@ name|list
 argument_list|,
 name|command
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 return|return

@@ -242,15 +242,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_rgb_image (Preview_t * preview_base,gint32 drawable_id)
+DECL|function|render_rgb_image (Preview_t * preview_base,GimpDrawable * drawable)
 name|render_rgb_image
 parameter_list|(
 name|Preview_t
 modifier|*
 name|preview_base
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -282,14 +283,14 @@ name|dwidth
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|dheight
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|pwidth
@@ -321,7 +322,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_get
@@ -414,15 +415,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_preview (Preview_t * preview_base,gint32 drawable_id)
+DECL|function|render_preview (Preview_t * preview_base,GimpDrawable * drawable)
 name|render_preview
 parameter_list|(
 name|Preview_t
 modifier|*
 name|preview_base
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|render_background
@@ -434,7 +436,7 @@ name|render_rgb_image
 argument_list|(
 name|preview_base
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -684,7 +686,7 @@ name|preview
 argument_list|,
 name|preview
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|preview_redraw
@@ -969,7 +971,7 @@ name|preview
 argument_list|,
 name|preview
 operator|->
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -1021,11 +1023,12 @@ end_function
 begin_function
 name|Preview_t
 modifier|*
-DECL|function|make_preview (gint32 drawable_id)
+DECL|function|make_preview (GimpDrawable * drawable)
 name|make_preview
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|Preview_t
@@ -1085,9 +1088,9 @@ name|height
 decl_stmt|;
 name|data
 operator|->
-name|drawable_id
+name|drawable
 operator|=
-name|drawable_id
+name|drawable
 expr_stmt|;
 name|data
 operator|->
@@ -1186,7 +1189,7 @@ name|width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|data
@@ -1199,7 +1202,7 @@ name|height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
@@ -1729,7 +1732,7 @@ name|render_preview
 argument_list|(
 name|data
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
