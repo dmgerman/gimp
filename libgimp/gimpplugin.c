@@ -96,7 +96,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac9205b0103
+DECL|enum|__anon2908a2610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3643,6 +3643,13 @@ name|return_values
 init|=
 name|NULL
 decl_stmt|;
+name|gimp_plug_in_push_procedure
+argument_list|(
+name|plug_in
+argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
 name|arguments
 operator|=
 name|_gimp_gp_params_to_value_array
@@ -3666,13 +3673,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_plug_in_push_procedure
-argument_list|(
-name|plug_in
-argument_list|,
-name|procedure
-argument_list|)
-expr_stmt|;
 name|return_values
 operator|=
 name|gimp_procedure_run
@@ -3680,13 +3680,6 @@ argument_list|(
 name|procedure
 argument_list|,
 name|arguments
-argument_list|)
-expr_stmt|;
-name|gimp_plug_in_pop_procedure
-argument_list|(
-name|plug_in
-argument_list|,
-name|procedure
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
@@ -3725,6 +3718,13 @@ expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
 name|return_values
+argument_list|)
+expr_stmt|;
+name|gimp_plug_in_pop_procedure
+argument_list|(
+name|plug_in
+argument_list|,
+name|procedure
 argument_list|)
 expr_stmt|;
 block|}
