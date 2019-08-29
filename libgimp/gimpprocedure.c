@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276c0edb0103
+DECL|enum|__anon2761348a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4271,8 +4271,6 @@ name|error
 operator|=
 name|g_error_new
 argument_list|(
-literal|0
-argument_list|,
 literal|0
 argument_list|,
 literal|0
