@@ -331,15 +331,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
 argument_list|,
 literal|"Output image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -493,15 +491,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
 argument_list|,
 literal|"Input image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -513,7 +509,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -521,8 +517,6 @@ literal|"Drawable"
 argument_list|,
 literal|"Active drawable "
 literal|"of input image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -847,15 +841,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
 argument_list|,
 literal|"Output image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1009,15 +1001,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
 argument_list|,
 literal|"Input image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1029,7 +1019,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -1037,8 +1027,6 @@ literal|"Drawable"
 argument_list|,
 literal|"Active drawable "
 literal|"of input image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1386,15 +1374,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
 argument_list|,
 literal|"Output image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1548,15 +1534,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
 argument_list|,
 literal|"Input image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1568,7 +1552,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
@@ -1576,8 +1560,6 @@ literal|"Drawable"
 argument_list|,
 literal|"Active drawable "
 literal|"of input image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,

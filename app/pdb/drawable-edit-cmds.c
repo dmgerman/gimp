@@ -202,7 +202,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_value_get_drawable
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -210,8 +210,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -326,7 +324,7 @@ name|fill_type
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_value_get_drawable
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -334,8 +332,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|fill_type
@@ -534,7 +530,7 @@ name|y
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_value_get_drawable
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -542,8 +538,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|fill_type
@@ -836,7 +830,7 @@ name|y2
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_value_get_drawable
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -844,8 +838,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|gradient_type
@@ -1245,7 +1237,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_value_get_drawable
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1253,8 +1245,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1447,7 +1437,7 @@ name|item
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_value_get_drawable
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1455,13 +1445,11 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1469,8 +1457,6 @@ name|args
 argument_list|,
 literal|1
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1668,17 +1654,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
 literal|"drawable"
 argument_list|,
 literal|"The drawable to clear from"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1739,17 +1721,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
 literal|"drawable"
 argument_list|,
 literal|"The drawable to fill to"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1831,17 +1809,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
 literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1968,17 +1942,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
 literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2257,17 +2227,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
 literal|"drawable"
 argument_list|,
 literal|"The drawable to stroke to"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2328,17 +2294,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
 literal|"drawable"
 argument_list|,
 literal|"The drawable to stroke to"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2350,17 +2312,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The item to stroke"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,

@@ -72,12 +72,9 @@ name|G_TYPE_STRING
 argument_list|,
 name|message
 argument_list|,
-name|GIMP_TYPE_DISPLAY_ID
+name|GIMP_TYPE_DISPLAY
 argument_list|,
-name|gimp_display_get_id
-argument_list|(
 name|gdisplay
-argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

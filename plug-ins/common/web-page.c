@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2879bbd10108
+DECL|struct|__anon2bf14de40108
 block|{
 DECL|member|url
 name|char
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2879bbd10208
+DECL|struct|__anon2bf14de40208
 block|{
 DECL|member|url
 name|char
@@ -544,6 +544,8 @@ argument_list|,
 literal|"Image"
 argument_list|,
 literal|"The output image"
+argument_list|,
+name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)

@@ -176,7 +176,7 @@ name|color
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -184,8 +184,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|operation
@@ -202,7 +200,7 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
-name|gimp_value_get_drawable
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -210,8 +208,6 @@ name|args
 argument_list|,
 literal|2
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_value_get_rgb
@@ -392,7 +388,7 @@ name|y
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -400,8 +396,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|operation
@@ -418,7 +412,7 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
-name|gimp_value_get_drawable
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -426,8 +420,6 @@ name|args
 argument_list|,
 literal|2
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|x
@@ -626,7 +618,7 @@ name|height
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -634,8 +626,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|operation
@@ -841,7 +831,7 @@ name|corner_radius_y
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -849,8 +839,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|operation
@@ -1082,7 +1070,7 @@ name|height
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1090,8 +1078,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|operation
@@ -1291,7 +1277,7 @@ name|segs
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1299,8 +1285,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|operation
@@ -1467,7 +1451,7 @@ name|item
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1475,8 +1459,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|operation
@@ -1493,7 +1475,7 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1501,8 +1483,6 @@ name|args
 argument_list|,
 literal|2
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1638,17 +1618,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The affected image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1680,17 +1656,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
 literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1773,17 +1745,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The affected image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1815,17 +1783,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
 literal|"drawable"
 argument_list|,
 literal|"The affected drawable"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1932,17 +1896,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2113,17 +2073,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2338,17 +2294,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2519,17 +2471,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2648,17 +2596,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2690,17 +2634,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The item to render to the selection"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,

@@ -175,7 +175,7 @@ name|NULL
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -183,8 +183,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|width
@@ -312,7 +310,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_channel
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -393,7 +391,7 @@ name|NULL
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -401,8 +399,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|component
@@ -500,7 +496,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_channel
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -573,7 +569,7 @@ name|NULL
 decl_stmt|;
 name|channel
 operator|=
-name|gimp_value_get_channel
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -581,8 +577,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -692,7 +686,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_channel
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -768,7 +762,7 @@ name|offy
 decl_stmt|;
 name|channel1
 operator|=
-name|gimp_value_get_channel
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -776,13 +770,11 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|channel2
 operator|=
-name|gimp_value_get_channel
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -790,8 +782,6 @@ name|args
 argument_list|,
 literal|1
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|operation
@@ -941,7 +931,7 @@ name|FALSE
 decl_stmt|;
 name|channel
 operator|=
-name|gimp_value_get_channel
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -949,8 +939,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1052,7 +1040,7 @@ name|show_masked
 decl_stmt|;
 name|channel
 operator|=
-name|gimp_value_get_channel
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1060,8 +1048,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|show_masked
@@ -1161,7 +1147,7 @@ literal|0.0
 decl_stmt|;
 name|channel
 operator|=
-name|gimp_value_get_channel
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1169,8 +1155,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1274,7 +1258,7 @@ name|opacity
 decl_stmt|;
 name|channel
 operator|=
-name|gimp_value_get_channel
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1282,8 +1266,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|opacity
@@ -1395,7 +1377,7 @@ block|}
 decl_stmt|;
 name|channel
 operator|=
-name|gimp_value_get_channel
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1403,8 +1385,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1516,7 +1496,7 @@ name|color
 decl_stmt|;
 name|channel
 operator|=
-name|gimp_value_get_channel
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1524,8 +1504,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_value_get_rgb
@@ -1645,17 +1623,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image to which to add the channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1777,17 +1751,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
 literal|"The newly created channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1847,17 +1817,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image to which to add the channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1913,17 +1879,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
 literal|"The newly created channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1983,17 +1945,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
 literal|"The channel to copy"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2005,17 +1963,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel-copy"
 argument_list|,
 literal|"channel copy"
 argument_list|,
 literal|"The newly copied channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2074,17 +2028,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel1"
 argument_list|,
 literal|"channel1"
 argument_list|,
 literal|"The channel1"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2096,17 +2046,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel2"
 argument_list|,
 literal|"channel2"
 argument_list|,
 literal|"The channel2"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2229,17 +2175,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
 literal|"The channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2316,17 +2258,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
 literal|"The channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2403,17 +2341,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
 literal|"The channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2494,17 +2428,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
 literal|"The channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2585,17 +2515,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
 literal|"The channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2674,17 +2600,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 argument_list|(
 literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
 literal|"The channel"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,

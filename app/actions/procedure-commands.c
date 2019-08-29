@@ -412,7 +412,7 @@ argument_list|)
 operator|>
 name|n_args
 operator|&&
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -428,7 +428,7 @@ condition|(
 name|image
 condition|)
 block|{
-name|gimp_value_set_image
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -559,7 +559,7 @@ argument_list|)
 operator|>
 name|n_args
 operator|&&
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -575,7 +575,7 @@ condition|(
 name|image
 condition|)
 block|{
-name|gimp_value_set_image
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -599,7 +599,7 @@ argument_list|)
 operator|>
 name|n_args
 operator|&&
-name|GIMP_IS_PARAM_SPEC_ITEM_ID
+name|GIMP_IS_PARAM_SPEC_ITEM
 argument_list|(
 name|procedure
 operator|->
@@ -621,7 +621,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_SPEC_ITEM_ID
+name|G_PARAM_SPEC_VALUE_TYPE
 argument_list|(
 name|procedure
 operator|->
@@ -630,12 +630,10 @@ index|[
 name|n_args
 index|]
 argument_list|)
-operator|->
-name|item_type
 argument_list|)
 condition|)
 block|{
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -768,7 +766,7 @@ argument_list|)
 operator|>
 name|n_args
 operator|&&
-name|GIMP_IS_PARAM_SPEC_DISPLAY_ID
+name|GIMP_IS_PARAM_SPEC_DISPLAY
 argument_list|(
 name|procedure
 operator|->
@@ -784,7 +782,7 @@ condition|(
 name|display
 condition|)
 block|{
-name|gimp_value_set_display
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -793,10 +791,7 @@ argument_list|,
 name|n_args
 argument_list|)
 argument_list|,
-name|GIMP_OBJECT
-argument_list|(
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|n_args
@@ -829,7 +824,7 @@ argument_list|)
 operator|>
 name|n_args
 operator|&&
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -858,7 +853,7 @@ condition|(
 name|image
 condition|)
 block|{
-name|gimp_value_set_image
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -882,7 +877,7 @@ argument_list|)
 operator|>
 name|n_args
 operator|&&
-name|GIMP_IS_PARAM_SPEC_DRAWABLE_ID
+name|GIMP_IS_PARAM_SPEC_DRAWABLE
 argument_list|(
 name|procedure
 operator|->
@@ -907,7 +902,7 @@ condition|(
 name|drawable
 condition|)
 block|{
-name|gimp_value_set_drawable
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

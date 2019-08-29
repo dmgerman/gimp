@@ -43,82 +43,75 @@ directive|define
 name|__LIBGIMP_GIMP_PARAM_SPECS_H__
 end_define
 
-begin_decl_stmt
+begin_macro
 name|G_BEGIN_DECLS
+end_macro
+
+begin_comment
 comment|/* For information look into the C source or the html documentation */
-comment|/*  * GIMP_TYPE_IMAGE_ID  */
-DECL|macro|GIMP_TYPE_IMAGE_ID
-define|#
-directive|define
-name|GIMP_TYPE_IMAGE_ID
-value|(gimp_image_id_get_type ())
-DECL|macro|GIMP_VALUE_HOLDS_IMAGE_ID (value)
-define|#
-directive|define
-name|GIMP_VALUE_HOLDS_IMAGE_ID
-parameter_list|(
-name|value
-parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                           GIMP_TYPE_IMAGE_ID))
-name|GType
-name|gimp_image_id_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
+end_comment
 
 begin_comment
-comment|/*  * GIMP_TYPE_PARAM_IMAGE_ID  */
+comment|/*  * GIMP_TYPE_PARAM_IMAGE  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_PARAM_IMAGE_ID
+DECL|macro|GIMP_VALUE_HOLDS_IMAGE (value)
 define|#
 directive|define
-name|GIMP_TYPE_PARAM_IMAGE_ID
-value|(gimp_param_image_id_get_type ())
+name|GIMP_VALUE_HOLDS_IMAGE
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                          GIMP_TYPE_IMAGE))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_IMAGE_ID (pspec)
+DECL|macro|GIMP_TYPE_PARAM_IMAGE
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_IMAGE_ID
-parameter_list|(
-name|pspec
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_IMAGE_ID, GimpParamSpecImageID))
+name|GIMP_TYPE_PARAM_IMAGE
+value|(gimp_param_image_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_IMAGE_ID (pspec)
+DECL|macro|GIMP_PARAM_SPEC_IMAGE (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_PARAM_SPEC_IMAGE
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_IMAGE_ID))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_IMAGE, GimpParamSpecImage))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_PARAM_SPEC_IMAGE (pspec)
+define|#
+directive|define
+name|GIMP_IS_PARAM_SPEC_IMAGE
+parameter_list|(
+name|pspec
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_IMAGE))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecImageID
+DECL|typedef|GimpParamSpecImage
 typedef|typedef
 name|struct
-name|_GimpParamSpecImageID
-name|GimpParamSpecImageID
+name|_GimpParamSpecImage
+name|GimpParamSpecImage
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecImageID
+DECL|struct|_GimpParamSpecImage
 struct|struct
-name|_GimpParamSpecImageID
+name|_GimpParamSpecImage
 block|{
 DECL|member|parent_instance
-name|GParamSpecInt
+name|GParamSpecObject
 name|parent_instance
 decl_stmt|;
 DECL|member|none_ok
@@ -131,7 +124,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_image_id_get_type
+name|gimp_param_image_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -142,7 +135,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 parameter_list|(
 specifier|const
 name|gchar
@@ -168,115 +161,67 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint32
-name|gimp_value_get_image_id
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_image_id
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|gint32
-name|image_id
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
-comment|/*  * GIMP_TYPE_ITEM_ID  */
+comment|/*  * GIMP_TYPE_PARAM_ITEM  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_ITEM_ID
+DECL|macro|GIMP_VALUE_HOLDS_ITEM (value)
 define|#
 directive|define
-name|GIMP_TYPE_ITEM_ID
-value|(gimp_item_id_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_VALUE_HOLDS_ITEM_ID (value)
-define|#
-directive|define
-name|GIMP_VALUE_HOLDS_ITEM_ID
+name|GIMP_VALUE_HOLDS_ITEM
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                          GIMP_TYPE_ITEM_ID))
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_item_id_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  * GIMP_TYPE_PARAM_ITEM_ID  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_TYPE_PARAM_ITEM_ID
-define|#
-directive|define
-name|GIMP_TYPE_PARAM_ITEM_ID
-value|(gimp_param_item_id_get_type ())
+value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                         GIMP_TYPE_ITEM))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_ITEM_ID (pspec)
+DECL|macro|GIMP_TYPE_PARAM_ITEM
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_ITEM_ID
+name|GIMP_TYPE_PARAM_ITEM
+value|(gimp_param_item_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_SPEC_ITEM (pspec)
+define|#
+directive|define
+name|GIMP_PARAM_SPEC_ITEM
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_ITEM_ID, GimpParamSpecItemID))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_ITEM, GimpParamSpecItem))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_ITEM_ID (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_ITEM (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_ITEM_ID
+name|GIMP_IS_PARAM_SPEC_ITEM
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_ITEM_ID))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_ITEM))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecItemID
+DECL|typedef|GimpParamSpecItem
 typedef|typedef
 name|struct
-name|_GimpParamSpecItemID
-name|GimpParamSpecItemID
+name|_GimpParamSpecItem
+name|GimpParamSpecItem
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecItemID
+DECL|struct|_GimpParamSpecItem
 struct|struct
-name|_GimpParamSpecItemID
+name|_GimpParamSpecItem
 block|{
 DECL|member|parent_instance
-name|GParamSpecInt
+name|GParamSpecObject
 name|parent_instance
 decl_stmt|;
 DECL|member|none_ok
@@ -289,7 +234,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_item_id_get_type
+name|gimp_param_item_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -300,7 +245,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 parameter_list|(
 specifier|const
 name|gchar
@@ -326,115 +271,67 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint32
-name|gimp_value_get_item_id
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_item_id
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|gint32
-name|item_id
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
-comment|/*  * GIMP_TYPE_DRAWABLE_ID  */
+comment|/*  * GIMP_TYPE_PARAM_DRAWABLE  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_DRAWABLE_ID
+DECL|macro|GIMP_VALUE_HOLDS_DRAWABLE (value)
 define|#
 directive|define
-name|GIMP_TYPE_DRAWABLE_ID
-value|(gimp_drawable_id_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_VALUE_HOLDS_DRAWABLE_ID (value)
-define|#
-directive|define
-name|GIMP_VALUE_HOLDS_DRAWABLE_ID
+name|GIMP_VALUE_HOLDS_DRAWABLE
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                              GIMP_TYPE_DRAWABLE_ID))
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_drawable_id_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  * GIMP_TYPE_PARAM_DRAWABLE_ID  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_TYPE_PARAM_DRAWABLE_ID
-define|#
-directive|define
-name|GIMP_TYPE_PARAM_DRAWABLE_ID
-value|(gimp_param_drawable_id_get_type ())
+value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                             GIMP_TYPE_DRAWABLE))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_DRAWABLE_ID (pspec)
+DECL|macro|GIMP_TYPE_PARAM_DRAWABLE
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_DRAWABLE_ID
+name|GIMP_TYPE_PARAM_DRAWABLE
+value|(gimp_param_drawable_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_SPEC_DRAWABLE (pspec)
+define|#
+directive|define
+name|GIMP_PARAM_SPEC_DRAWABLE
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_DRAWABLE_ID, GimpParamSpecDrawableID))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_DRAWABLE, GimpParamSpecDrawable))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_DRAWABLE_ID (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_DRAWABLE (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_DRAWABLE_ID
+name|GIMP_IS_PARAM_SPEC_DRAWABLE
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_DRAWABLE_ID))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_DRAWABLE))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecDrawableID
+DECL|typedef|GimpParamSpecDrawable
 typedef|typedef
 name|struct
-name|_GimpParamSpecDrawableID
-name|GimpParamSpecDrawableID
+name|_GimpParamSpecDrawable
+name|GimpParamSpecDrawable
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecDrawableID
+DECL|struct|_GimpParamSpecDrawable
 struct|struct
-name|_GimpParamSpecDrawableID
+name|_GimpParamSpecDrawable
 block|{
 DECL|member|parent_instance
-name|GimpParamSpecItemID
+name|GimpParamSpecItem
 name|parent_instance
 decl_stmt|;
 block|}
@@ -443,7 +340,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_drawable_id_get_type
+name|gimp_param_drawable_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -454,7 +351,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 parameter_list|(
 specifier|const
 name|gchar
@@ -480,115 +377,67 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint32
-name|gimp_value_get_drawable_id
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_drawable_id
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|gint32
-name|drawable_id
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
-comment|/*  * GIMP_TYPE_LAYER_ID  */
+comment|/*  * GIMP_TYPE_PARAM_LAYER  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_LAYER_ID
+DECL|macro|GIMP_VALUE_HOLDS_LAYER (value)
 define|#
 directive|define
-name|GIMP_TYPE_LAYER_ID
-value|(gimp_layer_id_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_VALUE_HOLDS_LAYER_ID (value)
-define|#
-directive|define
-name|GIMP_VALUE_HOLDS_LAYER_ID
+name|GIMP_VALUE_HOLDS_LAYER
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                           GIMP_TYPE_LAYER_ID))
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_layer_id_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  * GIMP_TYPE_PARAM_LAYER_ID  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_TYPE_PARAM_LAYER_ID
-define|#
-directive|define
-name|GIMP_TYPE_PARAM_LAYER_ID
-value|(gimp_param_layer_id_get_type ())
+value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                          GIMP_TYPE_LAYER))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_LAYER_ID (pspec)
+DECL|macro|GIMP_TYPE_PARAM_LAYER
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_LAYER_ID
+name|GIMP_TYPE_PARAM_LAYER
+value|(gimp_param_layer_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_SPEC_LAYER (pspec)
+define|#
+directive|define
+name|GIMP_PARAM_SPEC_LAYER
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_LAYER_ID, GimpParamSpecLayerID))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_LAYER, GimpParamSpecLayer))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_LAYER_ID (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_LAYER (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_LAYER_ID
+name|GIMP_IS_PARAM_SPEC_LAYER
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_LAYER_ID))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_LAYER))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecLayerID
+DECL|typedef|GimpParamSpecLayer
 typedef|typedef
 name|struct
-name|_GimpParamSpecLayerID
-name|GimpParamSpecLayerID
+name|_GimpParamSpecLayer
+name|GimpParamSpecLayer
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecLayerID
+DECL|struct|_GimpParamSpecLayer
 struct|struct
-name|_GimpParamSpecLayerID
+name|_GimpParamSpecLayer
 block|{
 DECL|member|parent_instance
-name|GimpParamSpecDrawableID
+name|GimpParamSpecDrawable
 name|parent_instance
 decl_stmt|;
 block|}
@@ -597,7 +446,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_layer_id_get_type
+name|gimp_param_layer_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -608,7 +457,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 parameter_list|(
 specifier|const
 name|gchar
@@ -634,115 +483,67 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint32
-name|gimp_value_get_layer_id
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_layer_id
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|gint32
-name|layer_id
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
-comment|/*  * GIMP_TYPE_CHANNEL_ID  */
+comment|/*  * GIMP_TYPE_PARAM_CHANNEL  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_CHANNEL_ID
+DECL|macro|GIMP_VALUE_HOLDS_CHANNEL (value)
 define|#
 directive|define
-name|GIMP_TYPE_CHANNEL_ID
-value|(gimp_channel_id_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_VALUE_HOLDS_CHANNEL_ID (value)
-define|#
-directive|define
-name|GIMP_VALUE_HOLDS_CHANNEL_ID
+name|GIMP_VALUE_HOLDS_CHANNEL
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                             GIMP_TYPE_CHANNEL_ID))
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_channel_id_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  * GIMP_TYPE_PARAM_CHANNEL_ID  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_TYPE_PARAM_CHANNEL_ID
-define|#
-directive|define
-name|GIMP_TYPE_PARAM_CHANNEL_ID
-value|(gimp_param_channel_id_get_type ())
+value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                            GIMP_TYPE_CHANNEL))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_CHANNEL_ID (pspec)
+DECL|macro|GIMP_TYPE_PARAM_CHANNEL
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_CHANNEL_ID
+name|GIMP_TYPE_PARAM_CHANNEL
+value|(gimp_param_channel_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_SPEC_CHANNEL (pspec)
+define|#
+directive|define
+name|GIMP_PARAM_SPEC_CHANNEL
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_CHANNEL_ID, GimpParamSpecChannelID))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_CHANNEL, GimpParamSpecChannel))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_CHANNEL_ID (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_CHANNEL (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_CHANNEL_ID
+name|GIMP_IS_PARAM_SPEC_CHANNEL
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_CHANNEL_ID))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_CHANNEL))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecChannelID
+DECL|typedef|GimpParamSpecChannel
 typedef|typedef
 name|struct
-name|_GimpParamSpecChannelID
-name|GimpParamSpecChannelID
+name|_GimpParamSpecChannel
+name|GimpParamSpecChannel
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecChannelID
+DECL|struct|_GimpParamSpecChannel
 struct|struct
-name|_GimpParamSpecChannelID
+name|_GimpParamSpecChannel
 block|{
 DECL|member|parent_instance
-name|GimpParamSpecDrawableID
+name|GimpParamSpecDrawable
 name|parent_instance
 decl_stmt|;
 block|}
@@ -751,7 +552,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_channel_id_get_type
+name|gimp_param_channel_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -762,7 +563,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_channel_id
+name|gimp_param_spec_channel
 parameter_list|(
 specifier|const
 name|gchar
@@ -788,115 +589,67 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint32
-name|gimp_value_get_channel_id
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_channel_id
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|gint32
-name|channel_id
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
-comment|/*  * GIMP_TYPE_LAYER_MASK_ID  */
+comment|/*  * GIMP_TYPE_PARAM_LAYER_MASK  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_LAYER_MASK_ID
+DECL|macro|GIMP_VALUE_HOLDS_LAYER_MASK (value)
 define|#
 directive|define
-name|GIMP_TYPE_LAYER_MASK_ID
-value|(gimp_layer_mask_id_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_VALUE_HOLDS_LAYER_MASK_ID (value)
-define|#
-directive|define
-name|GIMP_VALUE_HOLDS_LAYER_MASK_ID
+name|GIMP_VALUE_HOLDS_LAYER_MASK
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                                GIMP_TYPE_LAYER_MASK_ID))
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_layer_mask_id_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  * GIMP_TYPE_PARAM_LAYER_MASK_ID  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_TYPE_PARAM_LAYER_MASK_ID
-define|#
-directive|define
-name|GIMP_TYPE_PARAM_LAYER_MASK_ID
-value|(gimp_param_layer_mask_id_get_type ())
+value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                               GIMP_TYPE_LAYER_MASK))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_LAYER_MASK_ID (pspec)
+DECL|macro|GIMP_TYPE_PARAM_LAYER_MASK
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_LAYER_MASK_ID
+name|GIMP_TYPE_PARAM_LAYER_MASK
+value|(gimp_param_layer_mask_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_SPEC_LAYER_MASK (pspec)
+define|#
+directive|define
+name|GIMP_PARAM_SPEC_LAYER_MASK
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_LAYER_MASK_ID, GimpParamSpecLayerMaskID))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_LAYER_MASK, GimpParamSpecLayerMask))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_LAYER_MASK_ID (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_LAYER_MASK (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_LAYER_MASK_ID
+name|GIMP_IS_PARAM_SPEC_LAYER_MASK
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_LAYER_MASK_ID))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_LAYER_MASK))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecLayerMaskID
+DECL|typedef|GimpParamSpecLayerMask
 typedef|typedef
 name|struct
-name|_GimpParamSpecLayerMaskID
-name|GimpParamSpecLayerMaskID
+name|_GimpParamSpecLayerMask
+name|GimpParamSpecLayerMask
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecLayerMaskID
+DECL|struct|_GimpParamSpecLayerMask
 struct|struct
-name|_GimpParamSpecLayerMaskID
+name|_GimpParamSpecLayerMask
 block|{
 DECL|member|parent_instance
-name|GimpParamSpecChannelID
+name|GimpParamSpecChannel
 name|parent_instance
 decl_stmt|;
 block|}
@@ -905,7 +658,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_layer_mask_id_get_type
+name|gimp_param_layer_mask_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -916,7 +669,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_layer_mask_id
+name|gimp_param_spec_layer_mask
 parameter_list|(
 specifier|const
 name|gchar
@@ -942,115 +695,67 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint32
-name|gimp_value_get_layer_mask_id
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_layer_mask_id
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|gint32
-name|layer_mask_id
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
-comment|/*  * GIMP_TYPE_SELECTION_ID  */
+comment|/*  * GIMP_TYPE_PARAM_SELECTION  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_SELECTION_ID
+DECL|macro|GIMP_VALUE_HOLDS_SELECTION (value)
 define|#
 directive|define
-name|GIMP_TYPE_SELECTION_ID
-value|(gimp_selection_id_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_VALUE_HOLDS_SELECTION_ID (value)
-define|#
-directive|define
-name|GIMP_VALUE_HOLDS_SELECTION_ID
+name|GIMP_VALUE_HOLDS_SELECTION
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                               GIMP_TYPE_SELECTION_ID))
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_selection_id_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  * GIMP_TYPE_PARAM_SELECTION_ID  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_TYPE_PARAM_SELECTION_ID
-define|#
-directive|define
-name|GIMP_TYPE_PARAM_SELECTION_ID
-value|(gimp_param_selection_id_get_type ())
+value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                              GIMP_TYPE_SELECTION))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_SELECTION_ID (pspec)
+DECL|macro|GIMP_TYPE_PARAM_SELECTION
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_SELECTION_ID
+name|GIMP_TYPE_PARAM_SELECTION
+value|(gimp_param_selection_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_SPEC_SELECTION (pspec)
+define|#
+directive|define
+name|GIMP_PARAM_SPEC_SELECTION
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_SELECTION_ID, GimpParamSpecSelectionID))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_SELECTION, GimpParamSpecSelection))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_SELECTION_ID (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_SELECTION (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_SELECTION_ID
+name|GIMP_IS_PARAM_SPEC_SELECTION
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_SELECTION_ID))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_SELECTION))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecSelectionID
+DECL|typedef|GimpParamSpecSelection
 typedef|typedef
 name|struct
-name|_GimpParamSpecSelectionID
-name|GimpParamSpecSelectionID
+name|_GimpParamSpecSelection
+name|GimpParamSpecSelection
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecSelectionID
+DECL|struct|_GimpParamSpecSelection
 struct|struct
-name|_GimpParamSpecSelectionID
+name|_GimpParamSpecSelection
 block|{
 DECL|member|parent_instance
-name|GimpParamSpecChannelID
+name|GimpParamSpecChannel
 name|parent_instance
 decl_stmt|;
 block|}
@@ -1059,7 +764,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_selection_id_get_type
+name|gimp_param_selection_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -1070,7 +775,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_selection_id
+name|gimp_param_spec_selection
 parameter_list|(
 specifier|const
 name|gchar
@@ -1096,115 +801,67 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint32
-name|gimp_value_get_selection_id
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_selection_id
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|gint32
-name|selection_id
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
-comment|/*  * GIMP_TYPE_VECTORS_ID  */
+comment|/*  * GIMP_TYPE_PARAM_VECTORS  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_VECTORS_ID
+DECL|macro|GIMP_VALUE_HOLDS_VECTORS (value)
 define|#
 directive|define
-name|GIMP_TYPE_VECTORS_ID
-value|(gimp_vectors_id_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_VALUE_HOLDS_VECTORS_ID (value)
-define|#
-directive|define
-name|GIMP_VALUE_HOLDS_VECTORS_ID
+name|GIMP_VALUE_HOLDS_VECTORS
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                             GIMP_TYPE_VECTORS_ID))
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_vectors_id_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  * GIMP_TYPE_PARAM_VECTORS_ID  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_TYPE_PARAM_VECTORS_ID
-define|#
-directive|define
-name|GIMP_TYPE_PARAM_VECTORS_ID
-value|(gimp_param_vectors_id_get_type ())
+value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                            GIMP_TYPE_VECTORS))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_VECTORS_ID (pspec)
+DECL|macro|GIMP_TYPE_PARAM_VECTORS
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_VECTORS_ID
+name|GIMP_TYPE_PARAM_VECTORS
+value|(gimp_param_vectors_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_SPEC_VECTORS (pspec)
+define|#
+directive|define
+name|GIMP_PARAM_SPEC_VECTORS
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_VECTORS_ID, GimpParamSpecVectorsID))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_VECTORS, GimpParamSpecVectors))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_VECTORS_ID (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_VECTORS (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_VECTORS_ID
+name|GIMP_IS_PARAM_SPEC_VECTORS
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_VECTORS_ID))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_VECTORS))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecVectorsID
+DECL|typedef|GimpParamSpecVectors
 typedef|typedef
 name|struct
-name|_GimpParamSpecVectorsID
-name|GimpParamSpecVectorsID
+name|_GimpParamSpecVectors
+name|GimpParamSpecVectors
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecVectorsID
+DECL|struct|_GimpParamSpecVectors
 struct|struct
-name|_GimpParamSpecVectorsID
+name|_GimpParamSpecVectors
 block|{
 DECL|member|parent_instance
-name|GimpParamSpecItemID
+name|GimpParamSpecItem
 name|parent_instance
 decl_stmt|;
 block|}
@@ -1213,7 +870,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_vectors_id_get_type
+name|gimp_param_vectors_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -1224,7 +881,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 parameter_list|(
 specifier|const
 name|gchar
@@ -1250,115 +907,67 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint32
-name|gimp_value_get_vectors_id
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_vectors_id
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|gint32
-name|vectors_id
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
-comment|/*  * GIMP_TYPE_DISPLAY_ID  */
+comment|/*  * GIMP_TYPE_PARAM_DISPLAY  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_DISPLAY_ID
+DECL|macro|GIMP_VALUE_HOLDS_DISPLAY (value)
 define|#
 directive|define
-name|GIMP_TYPE_DISPLAY_ID
-value|(gimp_display_id_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_VALUE_HOLDS_DISPLAY_ID (value)
-define|#
-directive|define
-name|GIMP_VALUE_HOLDS_DISPLAY_ID
+name|GIMP_VALUE_HOLDS_DISPLAY
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                             GIMP_TYPE_DISPLAY_ID))
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_display_id_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  * GIMP_TYPE_PARAM_DISPLAY_ID  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_TYPE_PARAM_DISPLAY_ID
-define|#
-directive|define
-name|GIMP_TYPE_PARAM_DISPLAY_ID
-value|(gimp_param_display_id_get_type ())
+value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                            GIMP_TYPE_DISPLAY))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_DISPLAY_ID (pspec)
+DECL|macro|GIMP_TYPE_PARAM_DISPLAY
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_DISPLAY_ID
+name|GIMP_TYPE_PARAM_DISPLAY
+value|(gimp_param_display_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_SPEC_DISPLAY (pspec)
+define|#
+directive|define
+name|GIMP_PARAM_SPEC_DISPLAY
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_DISPLAY_ID, GimpParamSpecDisplayID))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_DISPLAY, GimpParamSpecDisplay))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_DISPLAY_ID (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_DISPLAY (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_DISPLAY_ID
+name|GIMP_IS_PARAM_SPEC_DISPLAY
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_DISPLAY_ID))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_DISPLAY))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecDisplayID
+DECL|typedef|GimpParamSpecDisplay
 typedef|typedef
 name|struct
-name|_GimpParamSpecDisplayID
-name|GimpParamSpecDisplayID
+name|_GimpParamSpecDisplay
+name|GimpParamSpecDisplay
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecDisplayID
+DECL|struct|_GimpParamSpecDisplay
 struct|struct
-name|_GimpParamSpecDisplayID
+name|_GimpParamSpecDisplay
 block|{
 DECL|member|parent_instance
-name|GParamSpecInt
+name|GParamSpecObject
 name|parent_instance
 decl_stmt|;
 DECL|member|none_ok
@@ -1371,7 +980,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_display_id_get_type
+name|gimp_param_display_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -1382,7 +991,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_display_id
+name|gimp_param_spec_display
 parameter_list|(
 specifier|const
 name|gchar
@@ -1404,32 +1013,6 @@ name|none_ok
 parameter_list|,
 name|GParamFlags
 name|flags
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gint32
-name|gimp_value_get_display_id
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_display_id
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|gint32
-name|display_id
 parameter_list|)
 function_decl|;
 end_function_decl

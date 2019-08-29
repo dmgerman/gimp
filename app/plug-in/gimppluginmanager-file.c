@@ -325,7 +325,7 @@ operator|->
 name|generic_file_proc
 operator|&&
 operator|!
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -548,7 +548,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -559,7 +559,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_DRAWABLE_ID
+name|GIMP_IS_PARAM_SPEC_DRAWABLE
 argument_list|(
 name|procedure
 operator|->

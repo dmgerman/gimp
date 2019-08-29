@@ -83,8 +83,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|display_is_valid_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|display_is_valid_invoker
+DECL|function|display_id_is_valid_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|display_id_is_valid_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -113,22 +113,26 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
 name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|GimpObject
-modifier|*
-name|display
+name|gint
+name|display_id
 decl_stmt|;
 name|gboolean
 name|valid
 init|=
 name|FALSE
 decl_stmt|;
-name|display
+name|display_id
 operator|=
-name|gimp_value_get_display
+name|g_value_get_int
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -136,29 +140,47 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
 name|valid
 operator|=
 operator|(
-name|display
+name|gimp_get_display_by_id
+argument_list|(
+name|gimp
+argument_list|,
+name|display_id
+argument_list|)
 operator|!=
 name|NULL
 operator|)
 expr_stmt|;
+block|}
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
 name|procedure
 argument_list|,
-name|TRUE
+name|success
 argument_list|,
+name|error
+condition|?
+operator|*
+name|error
+else|:
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
 name|g_value_set_boolean
 argument_list|(
 name|gimp_value_array_index
@@ -232,7 +254,7 @@ name|NULL
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -240,8 +262,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -318,7 +338,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_display
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -381,7 +401,7 @@ name|display
 decl_stmt|;
 name|display
 operator|=
-name|gimp_value_get_display
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -389,8 +409,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -478,7 +496,7 @@ literal|0
 decl_stmt|;
 name|display
 operator|=
-name|gimp_value_get_display
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -486,8 +504,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -656,7 +672,7 @@ name|new_image
 decl_stmt|;
 name|old_image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -664,13 +680,11 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|new_image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -678,8 +692,6 @@ name|args
 argument_list|,
 literal|1
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -772,12 +784,12 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
-comment|/*    * gimp-display-is-valid    */
+comment|/*    * gimp-display-id-is-valid    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|display_is_valid_invoker
+name|display_id_is_valid_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -787,14 +799,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-display-is-valid"
+literal|"gimp-display-id-is-valid"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"Returns TRUE if the display is valid."
+literal|"Returns TRUE if the display ID is valid."
 argument_list|,
 literal|"This procedure checks if the given display ID is valid and refers to an existing display."
 argument_list|,
@@ -811,23 +823,21 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_display_id
+name|g_param_spec_int
 argument_list|(
-literal|"display"
+literal|"display-id"
 argument_list|,
-literal|"display"
+literal|"display id"
 argument_list|,
-literal|"The display to check"
+literal|"The display ID to check"
 argument_list|,
-name|pdb
-operator|->
-name|gimp
+name|G_MININT32
 argument_list|,
-name|FALSE
+name|G_MAXINT32
+argument_list|,
+literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
-operator||
-name|GIMP_PARAM_NO_VALIDATE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -900,17 +910,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -922,17 +928,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_display_id
+name|gimp_param_spec_display
 argument_list|(
 literal|"display"
 argument_list|,
 literal|"display"
 argument_list|,
 literal|"The new display"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -991,17 +993,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_display_id
+name|gimp_param_spec_display
 argument_list|(
 literal|"display"
 argument_list|,
 literal|"display"
 argument_list|,
 literal|"The display to delete"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1060,17 +1058,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_display_id
+name|gimp_param_spec_display
 argument_list|(
 literal|"display"
 argument_list|,
 literal|"display"
 argument_list|,
 literal|"The display to get the window handle from"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1198,17 +1192,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"old-image"
 argument_list|,
 literal|"old image"
 argument_list|,
 literal|"The old image (must have at least one display)"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1220,17 +1210,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"new-image"
 argument_list|,
 literal|"new image"
 argument_list|,
 literal|"The new image (must not have a display)"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,

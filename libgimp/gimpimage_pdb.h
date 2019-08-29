@@ -50,6 +50,16 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+name|gboolean
+name|gimp_image_id_is_valid
+parameter_list|(
+name|gint
+name|image_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|G_GNUC_INTERNAL
 name|gint
 modifier|*
@@ -67,17 +77,6 @@ ifndef|#
 directive|ifndef
 name|GIMP_DEPRECATED_REPLACE_NEW_API
 end_ifndef
-
-begin_function_decl
-name|gboolean
-name|gimp_image_is_valid
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|GimpImage
@@ -1293,14 +1292,6 @@ comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
 end_comment
 
 begin_define
-DECL|macro|gimp_image_is_valid
-define|#
-directive|define
-name|gimp_image_is_valid
-value|_gimp_image_is_valid
-end_define
-
-begin_define
 DECL|macro|gimp_image_new
 define|#
 directive|define
@@ -1888,16 +1879,6 @@ end_comment
 begin_comment
 comment|/* Below API are deprecated and should not be used by new plug-ins.  * They are not marked internal as a trick to keep the old API alive for now.  */
 end_comment
-
-begin_function_decl
-name|gboolean
-name|_gimp_image_is_valid
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|gint32

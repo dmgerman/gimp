@@ -50,18 +50,90 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-ifndef|#
-directive|ifndef
-name|GIMP_DEPRECATED_REPLACE_NEW_API
 name|gboolean
-name|gimp_item_is_valid
+name|gimp_item_id_is_valid
 parameter_list|(
-name|GimpItem
-modifier|*
-name|item
+name|gint
+name|item_id
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_id_is_drawable
+parameter_list|(
+name|gint
+name|item_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_id_is_layer
+parameter_list|(
+name|gint
+name|item_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_id_is_text_layer
+parameter_list|(
+name|gint
+name|item_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_id_is_channel
+parameter_list|(
+name|gint
+name|item_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_id_is_layer_mask
+parameter_list|(
+name|gint
+name|item_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_id_is_selection
+parameter_list|(
+name|gint
+name|item_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_id_is_vectors
+parameter_list|(
+name|gint
+name|item_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DEPRECATED_REPLACE_NEW_API
+end_ifndef
 
 begin_function_decl
 name|GimpImage
@@ -78,83 +150,6 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_item_delete
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_item_is_drawable
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_item_is_layer
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_item_is_text_layer
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_item_is_channel
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_item_is_layer_mask
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_item_is_selection
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_item_is_vectors
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -482,13 +477,7 @@ comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
 end_comment
 
 begin_define
-define|#
-directive|define
-name|gimp_item_is_valid
-value|_gimp_item_is_valid
-end_define
-
-begin_define
+DECL|macro|gimp_item_get_image
 define|#
 directive|define
 name|gimp_item_get_image
@@ -496,6 +485,7 @@ value|_gimp_item_get_image
 end_define
 
 begin_define
+DECL|macro|gimp_item_delete
 define|#
 directive|define
 name|gimp_item_delete
@@ -503,55 +493,7 @@ value|_gimp_item_delete
 end_define
 
 begin_define
-define|#
-directive|define
-name|gimp_item_is_drawable
-value|_gimp_item_is_drawable
-end_define
-
-begin_define
-define|#
-directive|define
-name|gimp_item_is_layer
-value|_gimp_item_is_layer
-end_define
-
-begin_define
-define|#
-directive|define
-name|gimp_item_is_text_layer
-value|_gimp_item_is_text_layer
-end_define
-
-begin_define
-define|#
-directive|define
-name|gimp_item_is_channel
-value|_gimp_item_is_channel
-end_define
-
-begin_define
-define|#
-directive|define
-name|gimp_item_is_layer_mask
-value|_gimp_item_is_layer_mask
-end_define
-
-begin_define
-define|#
-directive|define
-name|gimp_item_is_selection
-value|_gimp_item_is_selection
-end_define
-
-begin_define
-define|#
-directive|define
-name|gimp_item_is_vectors
-value|_gimp_item_is_vectors
-end_define
-
-begin_define
+DECL|macro|gimp_item_is_group
 define|#
 directive|define
 name|gimp_item_is_group
@@ -559,6 +501,7 @@ value|_gimp_item_is_group
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_parent
 define|#
 directive|define
 name|gimp_item_get_parent
@@ -566,6 +509,7 @@ value|_gimp_item_get_parent
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_expanded
 define|#
 directive|define
 name|gimp_item_get_expanded
@@ -573,6 +517,7 @@ value|_gimp_item_get_expanded
 end_define
 
 begin_define
+DECL|macro|gimp_item_set_expanded
 define|#
 directive|define
 name|gimp_item_set_expanded
@@ -580,6 +525,7 @@ value|_gimp_item_set_expanded
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_name
 define|#
 directive|define
 name|gimp_item_get_name
@@ -587,6 +533,7 @@ value|_gimp_item_get_name
 end_define
 
 begin_define
+DECL|macro|gimp_item_set_name
 define|#
 directive|define
 name|gimp_item_set_name
@@ -594,6 +541,7 @@ value|_gimp_item_set_name
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_visible
 define|#
 directive|define
 name|gimp_item_get_visible
@@ -601,6 +549,7 @@ value|_gimp_item_get_visible
 end_define
 
 begin_define
+DECL|macro|gimp_item_set_visible
 define|#
 directive|define
 name|gimp_item_set_visible
@@ -608,6 +557,7 @@ value|_gimp_item_set_visible
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_linked
 define|#
 directive|define
 name|gimp_item_get_linked
@@ -615,6 +565,7 @@ value|_gimp_item_get_linked
 end_define
 
 begin_define
+DECL|macro|gimp_item_set_linked
 define|#
 directive|define
 name|gimp_item_set_linked
@@ -622,6 +573,7 @@ value|_gimp_item_set_linked
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_lock_content
 define|#
 directive|define
 name|gimp_item_get_lock_content
@@ -629,6 +581,7 @@ value|_gimp_item_get_lock_content
 end_define
 
 begin_define
+DECL|macro|gimp_item_set_lock_content
 define|#
 directive|define
 name|gimp_item_set_lock_content
@@ -636,6 +589,7 @@ value|_gimp_item_set_lock_content
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_lock_position
 define|#
 directive|define
 name|gimp_item_get_lock_position
@@ -643,6 +597,7 @@ value|_gimp_item_get_lock_position
 end_define
 
 begin_define
+DECL|macro|gimp_item_set_lock_position
 define|#
 directive|define
 name|gimp_item_set_lock_position
@@ -650,6 +605,7 @@ value|_gimp_item_set_lock_position
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_color_tag
 define|#
 directive|define
 name|gimp_item_get_color_tag
@@ -657,6 +613,7 @@ value|_gimp_item_get_color_tag
 end_define
 
 begin_define
+DECL|macro|gimp_item_set_color_tag
 define|#
 directive|define
 name|gimp_item_set_color_tag
@@ -664,6 +621,7 @@ value|_gimp_item_set_color_tag
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_tattoo
 define|#
 directive|define
 name|gimp_item_get_tattoo
@@ -671,6 +629,7 @@ value|_gimp_item_get_tattoo
 end_define
 
 begin_define
+DECL|macro|gimp_item_set_tattoo
 define|#
 directive|define
 name|gimp_item_set_tattoo
@@ -678,6 +637,7 @@ value|_gimp_item_set_tattoo
 end_define
 
 begin_define
+DECL|macro|gimp_item_attach_parasite
 define|#
 directive|define
 name|gimp_item_attach_parasite
@@ -685,6 +645,7 @@ value|_gimp_item_attach_parasite
 end_define
 
 begin_define
+DECL|macro|gimp_item_detach_parasite
 define|#
 directive|define
 name|gimp_item_detach_parasite
@@ -692,6 +653,7 @@ value|_gimp_item_detach_parasite
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_parasite
 define|#
 directive|define
 name|gimp_item_get_parasite
@@ -699,6 +661,7 @@ value|_gimp_item_get_parasite
 end_define
 
 begin_define
+DECL|macro|gimp_item_get_parasite_list
 define|#
 directive|define
 name|gimp_item_get_parasite_list
@@ -719,16 +682,6 @@ comment|/* Below API are deprecated and should not be used by new plug-ins.  * T
 end_comment
 
 begin_function_decl
-name|gboolean
-name|_gimp_item_is_valid
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gint32
 name|_gimp_item_get_image
 parameter_list|(
@@ -741,76 +694,6 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|_gimp_item_delete
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|_gimp_item_is_drawable
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|_gimp_item_is_layer
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|_gimp_item_is_text_layer
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|_gimp_item_is_channel
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|_gimp_item_is_layer_mask
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|_gimp_item_is_selection
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|_gimp_item_is_vectors
 parameter_list|(
 name|gint32
 name|item_ID

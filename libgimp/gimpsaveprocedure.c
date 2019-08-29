@@ -241,6 +241,8 @@ literal|"Image"
 argument_list|,
 literal|"The image to save"
 argument_list|,
+name|FALSE
+argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
@@ -253,6 +255,8 @@ argument_list|,
 literal|"Drawable"
 argument_list|,
 literal|"The drawable to save"
+argument_list|,
+name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)

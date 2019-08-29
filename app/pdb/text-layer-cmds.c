@@ -198,7 +198,7 @@ name|NULL
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -206,8 +206,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|text
@@ -368,7 +366,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_layer
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -441,7 +439,7 @@ name|NULL
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -449,8 +447,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -585,7 +581,7 @@ name|text
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -593,8 +589,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|text
@@ -727,7 +721,7 @@ name|NULL
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -735,8 +729,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -876,7 +868,7 @@ name|NULL
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -884,8 +876,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1020,7 +1010,7 @@ name|font
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1028,8 +1018,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|font
@@ -1166,7 +1154,7 @@ name|GIMP_UNIT_PIXEL
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1174,8 +1162,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1330,7 +1316,7 @@ name|unit
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1338,8 +1324,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|font_size
@@ -1487,7 +1471,7 @@ name|FALSE
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1495,8 +1479,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1629,7 +1611,7 @@ name|antialias
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1637,8 +1619,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|antialias
@@ -1770,7 +1750,7 @@ literal|0
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1778,8 +1758,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1912,7 +1890,7 @@ name|style
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1920,8 +1898,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|style
@@ -2053,7 +2029,7 @@ name|FALSE
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2061,8 +2037,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -2195,7 +2169,7 @@ name|kerning
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2203,8 +2177,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|kerning
@@ -2337,7 +2309,7 @@ name|NULL
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2345,8 +2317,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -2481,7 +2451,7 @@ name|language
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2489,8 +2459,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|language
@@ -2622,7 +2590,7 @@ literal|0
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2630,8 +2598,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -2764,7 +2730,7 @@ name|direction
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2772,8 +2738,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|direction
@@ -2905,7 +2869,7 @@ literal|0
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2913,8 +2877,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -3047,7 +3009,7 @@ name|justify
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3055,8 +3017,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|justify
@@ -3196,7 +3156,7 @@ block|}
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3204,8 +3164,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -3333,7 +3291,7 @@ name|color
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3341,8 +3299,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_value_get_rgb
@@ -3476,7 +3432,7 @@ literal|0.0
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3484,8 +3440,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -3618,7 +3572,7 @@ name|indent
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3626,8 +3580,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|indent
@@ -3759,7 +3711,7 @@ literal|0.0
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3767,8 +3719,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -3901,7 +3851,7 @@ name|line_spacing
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3909,8 +3859,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|line_spacing
@@ -4042,7 +3990,7 @@ literal|0.0
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4050,8 +3998,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -4184,7 +4130,7 @@ name|letter_spacing
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4192,8 +4138,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|letter_spacing
@@ -4322,7 +4266,7 @@ name|height
 decl_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4330,8 +4274,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|width
@@ -4534,17 +4476,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4648,17 +4586,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The new text layer."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4717,17 +4651,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4810,17 +4740,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4903,17 +4829,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4996,17 +4918,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5089,17 +5007,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5182,17 +5096,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5296,17 +5206,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5409,17 +5315,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5496,17 +5398,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5583,17 +5481,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5672,17 +5566,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5761,17 +5651,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5848,17 +5734,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5935,17 +5817,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6028,17 +5906,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6121,17 +5995,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6210,17 +6080,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6299,17 +6165,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6388,17 +6250,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6477,17 +6335,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6566,17 +6420,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6655,17 +6505,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6747,17 +6593,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6840,17 +6682,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6932,17 +6770,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7025,17 +6859,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7117,17 +6947,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7210,17 +7036,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,

@@ -51,6 +51,16 @@ begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gboolean
+name|gimp_display_id_is_valid
+parameter_list|(
+name|gint
+name|display_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_displays_flush
 parameter_list|(
 name|void
@@ -63,17 +73,6 @@ ifndef|#
 directive|ifndef
 name|GIMP_DEPRECATED_REPLACE_NEW_API
 end_ifndef
-
-begin_function_decl
-name|gboolean
-name|gimp_display_is_valid
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|GimpDisplay
@@ -134,14 +133,6 @@ comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
 end_comment
 
 begin_define
-DECL|macro|gimp_display_is_valid
-define|#
-directive|define
-name|gimp_display_is_valid
-value|_gimp_display_is_valid
-end_define
-
-begin_define
 DECL|macro|gimp_display_new
 define|#
 directive|define
@@ -185,16 +176,6 @@ end_comment
 begin_comment
 comment|/* Below API are deprecated and should not be used by new plug-ins.  * They are not marked internal as a trick to keep the old API alive for now.  */
 end_comment
-
-begin_function_decl
-name|gboolean
-name|_gimp_display_is_valid
-parameter_list|(
-name|gint32
-name|display_ID
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|gint32

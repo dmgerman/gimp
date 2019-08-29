@@ -1575,7 +1575,7 @@ else|:
 name|GIMP_RUN_NONINTERACTIVE
 argument_list|)
 expr_stmt|;
-name|gimp_value_set_image
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

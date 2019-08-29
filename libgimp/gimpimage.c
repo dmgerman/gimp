@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b670d720103
+DECL|enum|__anon2af3eb750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -458,6 +458,32 @@ return|;
 block|}
 return|return
 name|NULL
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_is_valid:  * @image: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image is valid and refers to  * an existing image.  *  * Returns: Whether the image is valid.  *  * Since: 2.4  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_image_is_valid (GimpImage * image)
+name|gimp_image_is_valid
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+return|return
+name|gimp_image_id_is_valid
+argument_list|(
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
 return|;
 block|}
 end_function

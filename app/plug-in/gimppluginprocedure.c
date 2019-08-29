@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2277600103
+DECL|enum|__anon2a51f6c80103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2111,7 +2111,7 @@ literal|2
 index|]
 argument_list|)
 operator|&&
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -2153,7 +2153,7 @@ literal|0
 index|]
 argument_list|)
 operator|&&
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -2163,7 +2163,7 @@ literal|1
 index|]
 argument_list|)
 operator|&&
-name|GIMP_IS_PARAM_SPEC_DRAWABLE_ID
+name|GIMP_IS_PARAM_SPEC_DRAWABLE
 argument_list|(
 name|procedure
 operator|->
@@ -2874,7 +2874,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -2896,7 +2896,7 @@ literal|2
 index|]
 argument_list|)
 operator|==
-name|GIMP_TYPE_PARAM_LAYER_ID
+name|GIMP_TYPE_PARAM_LAYER
 operator|||
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
@@ -2908,7 +2908,7 @@ literal|2
 index|]
 argument_list|)
 operator|==
-name|GIMP_TYPE_PARAM_DRAWABLE_ID
+name|GIMP_TYPE_PARAM_DRAWABLE
 operator|)
 condition|)
 block|{
@@ -2954,7 +2954,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -2976,7 +2976,7 @@ literal|2
 index|]
 argument_list|)
 operator|==
-name|GIMP_TYPE_PARAM_CHANNEL_ID
+name|GIMP_TYPE_PARAM_CHANNEL
 operator|||
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
@@ -2988,7 +2988,7 @@ literal|2
 index|]
 argument_list|)
 operator|==
-name|GIMP_TYPE_PARAM_DRAWABLE_ID
+name|GIMP_TYPE_PARAM_DRAWABLE
 operator|)
 condition|)
 block|{
@@ -3034,7 +3034,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -3045,7 +3045,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_VECTORS_ID
+name|GIMP_IS_PARAM_SPEC_VECTORS
 argument_list|(
 name|procedure
 operator|->
@@ -3098,7 +3098,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -3192,7 +3192,7 @@ literal|1
 operator|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -3245,7 +3245,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
@@ -3256,7 +3256,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_DRAWABLE_ID
+name|GIMP_IS_PARAM_SPEC_DRAWABLE
 argument_list|(
 name|procedure
 operator|->

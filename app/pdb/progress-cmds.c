@@ -147,7 +147,7 @@ argument_list|)
 expr_stmt|;
 name|gdisplay
 operator|=
-name|gimp_value_get_display
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -155,8 +155,6 @@ name|args
 argument_list|,
 literal|1
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1190,17 +1188,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_display_id
+name|gimp_param_spec_display
 argument_list|(
 literal|"gdisplay"
 argument_list|,
 literal|"gdisplay"
 argument_list|,
 literal|"GimpDisplay to update progressbar in, or %NULL for a separate window"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|TRUE
 argument_list|,

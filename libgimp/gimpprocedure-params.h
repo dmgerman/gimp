@@ -1316,7 +1316,7 @@ comment|/*  display  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PROC_ARG_DISPLAY (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_ARG_DISPLAY (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_ARG_DISPLAY
@@ -1329,14 +1329,16 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                GIMP_TYPE_DISPLAY, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_display (name, nick, blurb,\                                none_ok, \                                flags))
 end_define
 
 begin_define
-DECL|macro|GIMP_PROC_VAL_DISPLAY (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_VAL_DISPLAY (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_VAL_DISPLAY
@@ -1349,10 +1351,12 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                    GIMP_TYPE_DISPLAY, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_display (name, nick, blurb,\                                    none_ok, \                                    flags))
 end_define
 
 begin_comment
@@ -1360,7 +1364,7 @@ comment|/*  image  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PROC_ARG_IMAGE (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_ARG_IMAGE (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_ARG_IMAGE
@@ -1373,14 +1377,16 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                GIMP_TYPE_IMAGE, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_image (name, nick, blurb,\                                none_ok, \                                flags))
 end_define
 
 begin_define
-DECL|macro|GIMP_PROC_VAL_IMAGE (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_VAL_IMAGE (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_VAL_IMAGE
@@ -1393,10 +1399,12 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                    GIMP_TYPE_IMAGE, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_image (name, nick, blurb,\                                    none_ok, \                                    flags))
 end_define
 
 begin_define
@@ -1434,7 +1442,7 @@ comment|/*  item  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PROC_ARG_ITEM (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_ARG_ITEM (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_ARG_ITEM
@@ -1447,14 +1455,16 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                GIMP_TYPE_ITEM, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_item (name, nick, blurb,\                                none_ok, \                                flags))
 end_define
 
 begin_define
-DECL|macro|GIMP_PROC_VAL_ITEM (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_VAL_ITEM (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_VAL_ITEM
@@ -1467,10 +1477,12 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                    GIMP_TYPE_ITEM, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_item (name, nick, blurb,\                                    none_ok, \                                    flags))
 end_define
 
 begin_define
@@ -1508,7 +1520,7 @@ comment|/*  drawable  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PROC_ARG_DRAWABLE (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_ARG_DRAWABLE (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_ARG_DRAWABLE
@@ -1521,14 +1533,16 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                GIMP_TYPE_DRAWABLE, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_drawable (name, nick, blurb,\                                none_ok, \                                flags))
 end_define
 
 begin_define
-DECL|macro|GIMP_PROC_VAL_DRAWABLE (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_VAL_DRAWABLE (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_VAL_DRAWABLE
@@ -1541,10 +1555,12 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                    GIMP_TYPE_DRAWABLE, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_drawable (name, nick, blurb,\                                    none_ok, \                                    flags))
 end_define
 
 begin_define
@@ -1582,7 +1598,7 @@ comment|/*  layer */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PROC_ARG_LAYER (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_ARG_LAYER (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_ARG_LAYER
@@ -1595,14 +1611,16 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                GIMP_TYPE_LAYER, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_layer (name, nick, blurb,\                                none_ok, \                                flags))
 end_define
 
 begin_define
-DECL|macro|GIMP_PROC_VAL_LAYER (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_VAL_LAYER (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_VAL_LAYER
@@ -1615,10 +1633,12 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                    GIMP_TYPE_LAYER, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_layer (name, nick, blurb,\                                    none_ok, \                                    flags))
 end_define
 
 begin_define
@@ -1656,7 +1676,7 @@ comment|/*  channel  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PROC_ARG_CHANNEL (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_ARG_CHANNEL (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_ARG_CHANNEL
@@ -1669,14 +1689,16 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                GIMP_TYPE_CHANNEL, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_channel (name, nick, blurb,\                                none_ok, \                                flags))
 end_define
 
 begin_define
-DECL|macro|GIMP_PROC_VAL_CHANNEL (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_VAL_CHANNEL (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_VAL_CHANNEL
@@ -1689,10 +1711,12 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                    GIMP_TYPE_CHANNEL, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_channe (name, nick, blurb,\                                    none_ok, \                                    flags))
 end_define
 
 begin_define
@@ -1730,7 +1754,7 @@ comment|/*  layer mask  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PROC_ARG_LAYER_MASK (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_ARG_LAYER_MASK (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_ARG_LAYER_MASK
@@ -1743,14 +1767,16 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                GIMP_TYPE_LAYER_MASK, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_layer_mask (name, nick, blurb,\                                none_ok, \                                flags))
 end_define
 
 begin_define
-DECL|macro|GIMP_PROC_VAL_LAYER_MASK (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_VAL_LAYER_MASK (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_VAL_LAYER_MASK
@@ -1763,10 +1789,12 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                    GIMP_TYPE_LAYER_MASK, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_layer_mask (name, nick, blurb,\                                    none_ok, \                                    flags))
 end_define
 
 begin_define
@@ -1804,7 +1832,7 @@ comment|/*  selection  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PROC_ARG_SELECTION (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_ARG_SELECTION (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_ARG_SELECTION
@@ -1817,14 +1845,16 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                GIMP_TYPE_SELECTION, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_selection (name, nick, blurb,\                                none_ok, \                                flags))
 end_define
 
 begin_define
-DECL|macro|GIMP_PROC_VAL_SELECTION (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_VAL_SELECTION (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_VAL_SELECTION
@@ -1837,10 +1867,12 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                    GIMP_TYPE_SELECTION, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_selection (name, nick, blurb,\                                    none_ok, \                                    flags))
 end_define
 
 begin_define
@@ -1878,7 +1910,7 @@ comment|/*  vectors  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PROC_ARG_VECTORS (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_ARG_VECTORS (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_ARG_VECTORS
@@ -1891,14 +1923,16 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                GIMP_TYPE_VECTORS, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_vectors (name, nick, blurb,\                                none_ok, \                                flags))
 end_define
 
 begin_define
-DECL|macro|GIMP_PROC_VAL_VECTORS (class,name,nick,blurb,flags)
+DECL|macro|GIMP_PROC_VAL_VECTORS (class,name,nick,blurb,none_ok,flags)
 define|#
 directive|define
 name|GIMP_PROC_VAL_VECTORS
@@ -1911,10 +1945,12 @@ name|nick
 parameter_list|,
 name|blurb
 parameter_list|,
+name|none_ok
+parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                    GIMP_TYPE_VECTORS, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_vectors (name, nick, blurb,\                                    none_ok, \                                    flags))
 end_define
 
 begin_define

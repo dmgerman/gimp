@@ -211,7 +211,7 @@ name|NULL
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -219,8 +219,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|name
@@ -270,7 +268,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_vectors
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -347,7 +345,7 @@ name|NULL
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -355,13 +353,11 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|gimp_value_get_layer
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -369,8 +365,6 @@ name|args
 argument_list|,
 literal|1
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -467,7 +461,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_vectors
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -540,7 +534,7 @@ name|NULL
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -548,8 +542,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -605,7 +597,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_vectors
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -683,7 +675,7 @@ name|NULL
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -691,8 +683,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -883,7 +873,7 @@ literal|0.0
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -891,8 +881,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -1074,7 +1062,7 @@ name|FALSE
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1082,8 +1070,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -1318,7 +1304,7 @@ name|stroke_id
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1326,8 +1312,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -1475,7 +1459,7 @@ name|stroke_id
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1483,8 +1467,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -1646,7 +1628,7 @@ name|off_y
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1654,8 +1636,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -1847,7 +1827,7 @@ name|scale_y
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1855,8 +1835,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -2051,7 +2029,7 @@ name|angle
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2059,8 +2037,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -2266,7 +2242,7 @@ name|axis
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2274,8 +2250,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -2473,7 +2447,7 @@ name|y2
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2481,8 +2455,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -2721,7 +2693,7 @@ name|FALSE
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2729,8 +2701,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -3043,7 +3013,7 @@ literal|0
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3051,8 +3021,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|type
@@ -3394,7 +3362,7 @@ name|FALSE
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3402,8 +3370,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -3699,7 +3665,7 @@ literal|0
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3707,8 +3673,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|x0
@@ -3940,7 +3904,7 @@ name|y0
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3948,8 +3912,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -4161,7 +4123,7 @@ name|y1
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4169,8 +4131,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -4432,7 +4392,7 @@ name|y2
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4440,8 +4400,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|stroke_id
@@ -4750,7 +4708,7 @@ literal|0
 decl_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4758,8 +4716,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|x0
@@ -5050,7 +5006,7 @@ name|NULL
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -5058,8 +5014,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|filename
@@ -5355,7 +5309,7 @@ name|NULL
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -5363,8 +5317,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|string
@@ -5639,7 +5591,7 @@ name|vectors
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -5647,8 +5599,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|filename
@@ -5665,7 +5615,7 @@ argument_list|)
 expr_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -5673,8 +5623,6 @@ name|args
 argument_list|,
 literal|2
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -5787,7 +5735,7 @@ name|NULL
 decl_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -5795,13 +5743,11 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|vectors
 operator|=
-name|gimp_value_get_vectors
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -5809,8 +5755,6 @@ name|args
 argument_list|,
 literal|1
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -5927,17 +5871,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5973,17 +5913,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"the current vector object, 0 if no vector exists in the image."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6042,17 +5978,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6064,17 +5996,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_layer_id
+name|gimp_param_spec_layer
 argument_list|(
 literal|"layer"
 argument_list|,
 literal|"layer"
 argument_list|,
 literal|"The text layer."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6086,17 +6014,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors of the text layer."
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6155,17 +6079,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object to copy"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6177,17 +6097,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors-copy"
 argument_list|,
 literal|"vectors copy"
 argument_list|,
 literal|"The newly copied vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6246,17 +6162,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6353,17 +6265,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6490,17 +6398,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6714,17 +6618,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6805,17 +6705,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6896,17 +6792,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7031,17 +6923,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7168,17 +7056,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7328,17 +7212,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7477,17 +7357,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7660,17 +7536,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7827,17 +7699,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7994,17 +7862,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8164,17 +8028,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8301,17 +8161,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8438,17 +8294,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8621,17 +8473,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8850,17 +8698,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9056,17 +8900,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9223,17 +9063,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9412,17 +9248,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9458,17 +9290,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object to be saved, or 0 for all in the image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9529,17 +9357,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
 literal|"The image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9551,17 +9375,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_vectors_id
+name|gimp_param_spec_vectors
 argument_list|(
 literal|"vectors"
 argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"The vectors object to save, or 0 for all in the image"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,

@@ -882,7 +882,7 @@ name|generic_file_proc
 condition|)
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -890,8 +890,6 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1447,7 +1445,7 @@ name|status
 operator|==
 name|GIMP_PDB_SUCCESS
 operator|&&
-name|GIMP_VALUE_HOLDS_IMAGE_ID
+name|GIMP_VALUE_HOLDS_IMAGE
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1460,7 +1458,7 @@ condition|)
 block|{
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1468,8 +1466,6 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if

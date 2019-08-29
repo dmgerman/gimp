@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1eecb0108
+DECL|struct|__anon2c35110e0108
 block|{
 DECL|member|film_height
 name|gint
@@ -210,7 +210,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1eecb0208
+DECL|struct|__anon2c35110e0208
 block|{
 DECL|member|advanced_adj
 name|GtkAdjustment
@@ -1071,6 +1071,8 @@ argument_list|,
 literal|"New image"
 argument_list|,
 literal|"Outout image"
+argument_list|,
+name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)

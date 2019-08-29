@@ -387,7 +387,7 @@ if|if
 condition|(
 name|image
 condition|)
-name|gimp_value_set_image
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -487,7 +487,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -495,8 +495,6 @@ name|args
 argument_list|,
 literal|1
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|uri

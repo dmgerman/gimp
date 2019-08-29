@@ -784,6 +784,12 @@ name|TRUE
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  make the GimpDisplay type known by name early, needed for the PDB */
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_DISPLAY
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -3443,7 +3449,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d464bb0108
+DECL|struct|__anon2974dbdc0108
 block|{
 DECL|member|path
 specifier|const

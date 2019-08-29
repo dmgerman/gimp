@@ -96,7 +96,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc96a8c0103
+DECL|enum|__anon2ac9205b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4270,7 +4270,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|_gimp_item_is_layer
+name|gimp_item_id_is_layer
 argument_list|(
 name|item_id
 argument_list|)
@@ -4293,7 +4293,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|_gimp_item_is_layer_mask
+name|gimp_item_id_is_layer_mask
 argument_list|(
 name|item_id
 argument_list|)
@@ -4316,7 +4316,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|_gimp_item_is_selection
+name|gimp_item_id_is_selection
 argument_list|(
 name|item_id
 argument_list|)
@@ -4339,7 +4339,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|_gimp_item_is_channel
+name|gimp_item_id_is_channel
 argument_list|(
 name|item_id
 argument_list|)
@@ -4362,7 +4362,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|_gimp_item_is_vectors
+name|gimp_item_id_is_vectors
 argument_list|(
 name|item_id
 argument_list|)

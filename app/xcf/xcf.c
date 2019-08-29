@@ -467,15 +467,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
 argument_list|,
 literal|"Input image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -487,15 +485,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_drawable_id
+name|gimp_param_spec_drawable
 argument_list|(
 literal|"drawable"
 argument_list|,
 literal|"Drawable"
 argument_list|,
 literal|"Active drawable of input image"
-argument_list|,
-name|gimp
 argument_list|,
 name|TRUE
 argument_list|,
@@ -780,15 +776,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_image_id
+name|gimp_param_spec_image
 argument_list|(
 literal|"image"
 argument_list|,
 literal|"Image"
 argument_list|,
 literal|"Output image"
-argument_list|,
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1792,7 +1786,7 @@ if|if
 condition|(
 name|image
 condition|)
-name|gimp_value_set_image
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1888,7 +1882,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gimp_value_get_image
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1896,8 +1890,6 @@ name|args
 argument_list|,
 literal|1
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|uri

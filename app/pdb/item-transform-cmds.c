@@ -188,7 +188,7 @@ name|off_y
 decl_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -196,8 +196,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|off_x
@@ -307,7 +305,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -383,7 +381,7 @@ name|axis
 decl_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -391,8 +389,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|flip_type
@@ -692,7 +688,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -771,7 +767,7 @@ name|y1
 decl_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -779,8 +775,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|x0
@@ -1150,7 +1144,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1241,7 +1235,7 @@ name|y3
 decl_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1249,8 +1243,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|x0
@@ -1684,7 +1676,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1763,7 +1755,7 @@ name|center_y
 decl_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1771,8 +1763,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|rotate_type
@@ -2091,7 +2081,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2170,7 +2160,7 @@ name|center_y
 decl_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2178,8 +2168,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|angle
@@ -2568,7 +2556,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2647,7 +2635,7 @@ name|y1
 decl_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2655,8 +2643,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|x0
@@ -3048,7 +3034,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3121,7 +3107,7 @@ name|magnitude
 decl_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3129,8 +3115,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|shear_type
@@ -3480,7 +3464,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3568,7 +3552,7 @@ name|dest_y
 decl_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3576,8 +3560,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|source_x
@@ -4009,7 +3991,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4103,7 +4085,7 @@ name|coeff_2_2
 decl_stmt|;
 name|item
 operator|=
-name|gimp_value_get_item
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4111,8 +4093,6 @@ name|args
 argument_list|,
 literal|0
 argument_list|)
-argument_list|,
-name|gimp
 argument_list|)
 expr_stmt|;
 name|coeff_0_0
@@ -4630,7 +4610,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_value_set_item
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4703,17 +4683,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4771,17 +4747,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The translated item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4846,17 +4818,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The affected item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4944,17 +4912,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The flipped item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5019,17 +4983,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The affected item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5133,17 +5093,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The flipped item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5210,17 +5166,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The affected item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5416,17 +5368,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The transformed item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5491,17 +5439,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The affected item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5597,17 +5541,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The rotated item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5672,17 +5612,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The affected item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5781,17 +5717,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The rotated item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5858,17 +5790,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The affected item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5972,17 +5900,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The scaled item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6049,17 +5973,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The affected item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6129,17 +6049,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The sheared item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6206,17 +6122,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The affected item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6389,17 +6301,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The transformed item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6466,17 +6374,13 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The affected item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6695,17 +6599,13 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_item_id
+name|gimp_param_spec_item
 argument_list|(
 literal|"item"
 argument_list|,
 literal|"item"
 argument_list|,
 literal|"The transformed item"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
 argument_list|,
 name|FALSE
 argument_list|,

@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293048520103
+DECL|enum|__anon2c4bad230103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293048520203
+DECL|enum|__anon2c4bad230203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -155,7 +155,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293048520303
+DECL|enum|__anon2c4bad230303
 block|{
 DECL|enumerator|C_IPTC_TAG
 name|C_IPTC_TAG
@@ -596,6 +596,8 @@ argument_list|,
 literal|"Image"
 argument_list|,
 literal|"The input image"
+argument_list|,
+name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)

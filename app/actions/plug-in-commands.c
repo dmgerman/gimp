@@ -541,7 +541,7 @@ name|num_args
 operator|>=
 literal|2
 operator|&&
-name|GIMP_IS_PARAM_SPEC_IMAGE_ID
+name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
 operator|->
