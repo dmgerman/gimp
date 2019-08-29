@@ -760,7 +760,7 @@ value|gimp_value_dup_uint8_array (gimp_value_array_index (args, n))
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_SET_UINT8_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_SET_UINT8_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_SET_UINT8_ARRAY
@@ -770,13 +770,15 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_set_uint8_array (gimp_value_array_index (args, n), value)
+value|gimp_value_set_uint8_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_TAKE_UINT8_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_TAKE_UINT8_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_TAKE_UINT8_ARRAY
@@ -786,9 +788,11 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_take_uint8_array (gimp_value_array_index (args, n), value)
+value|gimp_value_take_uint8_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_comment
@@ -864,7 +868,7 @@ value|gimp_value_dup_int16_array (gimp_value_array_index (args, n))
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_SET_INT16_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_SET_INT16_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_SET_INT16_ARRAY
@@ -874,13 +878,15 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_set_int16_array (gimp_value_array_index (args, n), value)
+value|gimp_value_set_int16_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_TAKE_INT16_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_TAKE_INT16_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_TAKE_INT16_ARRAY
@@ -890,9 +896,11 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_take_int16_array (gimp_value_array_index (args, n), value)
+value|gimp_value_take_int16_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_comment
@@ -968,7 +976,7 @@ value|gimp_value_dup_int32_array (gimp_value_array_index (args, n))
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_SET_INT32_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_SET_INT32_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_SET_INT32_ARRAY
@@ -978,13 +986,15 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_set_int32_array (gimp_value_array_index (args, n), value)
+value|gimp_value_set_int32_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_TAKE_INT32_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_TAKE_INT32_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_TAKE_INT32_ARRAY
@@ -994,9 +1004,11 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_take_int32_array (gimp_value_array_index (args, n), value)
+value|gimp_value_take_int32_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_comment
@@ -1072,7 +1084,7 @@ value|gimp_value_dup_float_array (gimp_value_array_index (args, n))
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_SET_FLOAT_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_SET_FLOAT_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_SET_FLOAT_ARRAY
@@ -1082,13 +1094,15 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_set_float_array (gimp_value_array_index (args, n), value)
+value|gimp_value_set_float_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_TAKE_FLOAT_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_TAKE_FLOAT_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_TAKE_FLOAT_ARRAY
@@ -1098,9 +1112,11 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_take_float_array (gimp_value_array_index (args, n), value)
+value|gimp_value_take_float_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_comment
@@ -1176,7 +1192,7 @@ value|gimp_value_dup_string_array (gimp_value_array_index (args, n))
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_SET_STRING_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_SET_STRING_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_SET_STRING_ARRAY
@@ -1186,13 +1202,15 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_set_string_array (gimp_value_array_index (args, n), value)
+value|gimp_value_set_string_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_TAKE_STRING_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_TAKE_STRING_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_TAKE_STRING_ARRAY
@@ -1202,9 +1220,11 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_take_string_array (gimp_value_array_index (args, n), value)
+value|gimp_value_take_string_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_comment
@@ -1280,7 +1300,7 @@ value|gimp_value_dup_rgb_array (gimp_value_array_index (args, n))
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_SET_RGB_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_SET_RGB_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_SET_RGB_ARRAY
@@ -1290,13 +1310,15 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_set_rgb_array (gimp_value_array_index (args, n), value)
+value|gimp_value_set_rgb_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_TAKE_RGB_ARRAY (args,n,value)
+DECL|macro|GIMP_VALUES_TAKE_RGB_ARRAY (args,n,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_TAKE_RGB_ARRAY
@@ -1306,9 +1328,11 @@ parameter_list|,
 name|n
 parameter_list|,
 name|value
+parameter_list|,
+name|length
 parameter_list|)
 define|\
-value|gimp_value_take_rgb_array (gimp_value_array_index (args, n), value)
+value|gimp_value_take_rgb_array (gimp_value_array_index (args, n), value, length)
 end_define
 
 begin_comment
