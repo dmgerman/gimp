@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af3eb750103
+DECL|enum|__anon28e4ee0f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -438,6 +438,11 @@ init|=
 name|gimp_get_plug_in
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|plug_in
+condition|)
+block|{
 name|GimpProcedure
 modifier|*
 name|procedure
@@ -453,6 +458,19 @@ argument_list|(
 name|procedure
 argument_list|,
 name|image_id
+argument_list|)
+return|;
+block|}
+return|return
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+literal|"id"
+argument_list|,
+name|image_id
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
