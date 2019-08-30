@@ -1880,6 +1880,10 @@ condition|)
 block|{
 if|if
 condition|(
+name|item_ID
+operator|>
+literal|0
+operator|&&
 operator|!
 name|gimp_item_get_by_id
 argument_list|(
