@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288c83090103
+DECL|enum|__anon2beff5420103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE
@@ -89,42 +89,135 @@ name|MapMode
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|Map
+typedef|typedef
+name|struct
+name|_Map
+name|Map
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|MapClass
+typedef|typedef
+name|struct
+name|_MapClass
+name|MapClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_Map
+struct|struct
+name|_Map
+block|{
+DECL|member|parent_instance
+name|GimpPlugIn
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_MapClass
+struct|struct
+name|_MapClass
+block|{
+DECL|member|parent_class
+name|GimpPlugInClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_define
+DECL|macro|MAP_TYPE
+define|#
+directive|define
+name|MAP_TYPE
+value|(map_get_type ())
+end_define
+
+begin_define
+DECL|macro|MAP
+define|#
+directive|define
+name|MAP
+value|(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), MAP_TYPE, Map))
+end_define
+
+begin_decl_stmt
+name|GType
+name|map_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 specifier|static
-name|void
-name|query
+name|GList
+modifier|*
+name|map_query_procedures
 parameter_list|(
-name|void
+name|GimpPlugIn
+modifier|*
+name|plug_in
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|run
+name|GimpProcedure
+modifier|*
+name|map_create_procedure
 parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GimpValueArray
+modifier|*
+name|map_run
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
 parameter_list|,
-name|gint
-name|nparams
+name|GimpRunMode
+name|run_mode
+parameter_list|,
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
-name|GimpParam
+name|GimpValueArray
 modifier|*
-name|param
+name|args
 parameter_list|,
-name|gint
-modifier|*
-name|nreturn_vals
-parameter_list|,
-name|GimpParam
-modifier|*
-modifier|*
-name|return_vals
+name|gpointer
+name|run_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -142,8 +235,9 @@ name|GeglBuffer
 modifier|*
 name|shadow_buffer
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|MapMode
 name|mode
@@ -157,8 +251,9 @@ name|gdouble
 modifier|*
 name|get_samples_gradient
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -169,186 +264,62 @@ name|gdouble
 modifier|*
 name|get_samples_palette
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|PLUG_IN_INFO
-specifier|const
-name|GimpPlugInInfo
-name|PLUG_IN_INFO
-init|=
-block|{
-name|NULL
-block|,
-comment|/* init_proc  */
-name|NULL
-block|,
-comment|/* quit_proc  */
-name|query
-block|,
-comment|/* query_proc */
-name|run
-block|,
-comment|/* run_proc   */
-block|}
-decl_stmt|;
-end_decl_stmt
+begin_macro
+DECL|function|G_DEFINE_TYPE (Map,map,GIMP_TYPE_PLUG_IN)
+name|G_DEFINE_TYPE
+argument_list|(
+argument|Map
+argument_list|,
+argument|map
+argument_list|,
+argument|GIMP_TYPE_PLUG_IN
+argument_list|)
+end_macro
 
 begin_macro
-DECL|function|MAIN ()
-name|MAIN
-argument_list|()
+name|GIMP_MAIN
+argument_list|(
+argument|MAP_TYPE
+argument_list|)
 end_macro
 
 begin_function
 specifier|static
 name|void
-name|query
+name|map_class_init
 parameter_list|(
-name|void
+name|MapClass
+modifier|*
+name|klass
 parameter_list|)
 block|{
-specifier|static
-specifier|const
-name|GimpParamDef
-name|args
-index|[]
+name|GimpPlugInClass
+modifier|*
+name|plug_in_class
 init|=
-block|{
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"run-mode"
-block|,
-literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
-block|}
-block|,
-block|{
-name|GIMP_PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Input image (unused)"
-block|}
-block|,
-block|{
-name|GIMP_PDB_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"Input drawable"
-block|}
-block|}
+name|GIMP_PLUG_IN_CLASS
+argument_list|(
+name|klass
+argument_list|)
 decl_stmt|;
-name|gimp_install_procedure
-argument_list|(
-name|GRADMAP_PROC
-argument_list|,
-name|N_
-argument_list|(
-literal|"Recolor the image using colors from the active gradient"
-argument_list|)
-argument_list|,
-literal|"This plug-in maps the contents of the specified "
-literal|"drawable with active gradient. It calculates "
-literal|"luminosity of each pixel and replaces the pixel "
-literal|"by the sample of active gradient at the position "
-literal|"proportional to that luminosity. Complete black "
-literal|"pixel becomes the leftmost color of the gradient, "
-literal|"and complete white becomes the rightmost. Works on "
-literal|"both Grayscale and RGB image with/without alpha "
-literal|"channel."
-argument_list|,
-literal|"Eiichi Takamori"
-argument_list|,
-literal|"Eiichi Takamori"
-argument_list|,
-literal|"1997"
-argument_list|,
-name|N_
-argument_list|(
-literal|"_Gradient Map"
-argument_list|)
-argument_list|,
-literal|"RGB*, GRAY*"
-argument_list|,
-name|GIMP_PLUGIN
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|args
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|args
-argument_list|,
-name|NULL
-argument_list|)
+name|plug_in_class
+operator|->
+name|query_procedures
+operator|=
+name|map_query_procedures
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|GRADMAP_PROC
-argument_list|,
-literal|"<Image>/Colors/Map"
-argument_list|)
-expr_stmt|;
-name|gimp_install_procedure
-argument_list|(
-name|PALETTEMAP_PROC
-argument_list|,
-name|N_
-argument_list|(
-literal|"Recolor the image using colors from the active palette"
-argument_list|)
-argument_list|,
-literal|"This plug-in maps the contents of the specified "
-literal|"drawable with the active palette. It calculates "
-literal|"luminosity of each pixel and replaces the pixel "
-literal|"by the palette sample  at the corresponding "
-literal|"index. A complete black "
-literal|"pixel becomes the lowest palette entry, "
-literal|"and complete white becomes the highest. Works on "
-literal|"both Grayscale and RGB image with/without alpha "
-literal|"channel."
-argument_list|,
-literal|"Bill Skaggs"
-argument_list|,
-literal|"Bill Skaggs"
-argument_list|,
-literal|"2004"
-argument_list|,
-name|N_
-argument_list|(
-literal|"_Palette Map"
-argument_list|)
-argument_list|,
-literal|"RGB*, GRAY*"
-argument_list|,
-name|GIMP_PLUGIN
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|args
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|args
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|PALETTEMAP_PROC
-argument_list|,
-literal|"<Image>/Colors/Map"
-argument_list|)
+name|plug_in_class
+operator|->
+name|create_procedure
+operator|=
+name|map_create_procedure
 expr_stmt|;
 block|}
 end_function
@@ -356,153 +327,86 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
-name|run
+DECL|function|map_init (Map * map)
+name|map_init
 parameter_list|(
+name|Map
+modifier|*
+name|map
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|GList
+modifier|*
+DECL|function|map_query_procedures (GimpPlugIn * plug_in)
+name|map_query_procedures
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|)
+block|{
+name|GList
+modifier|*
+name|list
+init|=
+name|NULL
+decl_stmt|;
+name|list
+operator|=
+name|g_list_append
+argument_list|(
+name|list
+argument_list|,
+name|g_strdup
+argument_list|(
+name|GRADMAP_PROC
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|list
+operator|=
+name|g_list_append
+argument_list|(
+name|list
+argument_list|,
+name|g_strdup
+argument_list|(
+name|PALETTEMAP_PROC
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|list
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GimpProcedure
+modifier|*
+DECL|function|map_create_procedure (GimpPlugIn * plug_in,const gchar * name)
+name|map_create_procedure
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|name
-parameter_list|,
-name|gint
-name|nparams
-parameter_list|,
-specifier|const
-name|GimpParam
-modifier|*
-name|param
-parameter_list|,
-name|gint
-modifier|*
-name|nreturn_vals
-parameter_list|,
-name|GimpParam
-modifier|*
-modifier|*
-name|return_vals
 parameter_list|)
 block|{
-specifier|static
-name|GimpParam
-name|values
-index|[
-literal|1
-index|]
-decl_stmt|;
-name|GimpPDBStatusType
-name|status
-init|=
-name|GIMP_PDB_SUCCESS
-decl_stmt|;
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-name|gint32
-name|drawable_id
-decl_stmt|;
-name|GeglBuffer
+name|GimpProcedure
 modifier|*
-name|shadow_buffer
-decl_stmt|;
-name|GeglBuffer
-modifier|*
-name|buffer
-decl_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|drawable_id
-operator|=
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_drawable
-expr_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
-name|gegl_init
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
-operator|*
-name|return_vals
-operator|=
-name|values
-expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|type
-operator|=
-name|GIMP_PDB_STATUS
-expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|status
-expr_stmt|;
-comment|/*  Get the specified drawable  */
-name|shadow_buffer
-operator|=
-name|gimp_drawable_get_shadow_buffer
-argument_list|(
-name|drawable_id
-argument_list|)
-expr_stmt|;
-name|buffer
-operator|=
-name|gimp_drawable_get_buffer
-argument_list|(
-name|drawable_id
-argument_list|)
-expr_stmt|;
-comment|/*  Make sure that the drawable is gray or RGB color  */
-if|if
-condition|(
-name|gimp_drawable_is_rgb
-argument_list|(
-name|drawable_id
-argument_list|)
-operator|||
-name|gimp_drawable_is_gray
-argument_list|(
-name|drawable_id
-argument_list|)
-condition|)
-block|{
-name|MapMode
-name|mode
+name|procedure
 init|=
-literal|0
+name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -515,16 +419,85 @@ name|GRADMAP_PROC
 argument_list|)
 condition|)
 block|{
-name|mode
+name|procedure
 operator|=
+name|gimp_image_procedure_new
+argument_list|(
+name|plug_in
+argument_list|,
+name|name
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|map_run
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
 name|GRADIENT_MODE
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|_
-argument_list|(
-literal|"Gradient Map"
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_image_types
+argument_list|(
+name|procedure
+argument_list|,
+literal|"RGB*, GRAY*"
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_menu_label
+argument_list|(
+name|procedure
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Gradient Map"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_menu_path
+argument_list|(
+name|procedure
+argument_list|,
+literal|"<Image>/Colors/Map"
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_documentation
+argument_list|(
+name|procedure
+argument_list|,
+name|N_
+argument_list|(
+literal|"Recolor the image using colors "
+literal|"from the active gradient"
+argument_list|)
+argument_list|,
+literal|"This plug-in maps the contents of "
+literal|"the specified drawable with active "
+literal|"gradient. It calculates luminosity "
+literal|"of each pixel and replaces the pixel "
+literal|"by the sample of active gradient at "
+literal|"the position proportional to that "
+literal|"luminosity. Complete black pixel "
+literal|"becomes the leftmost color of the "
+literal|"gradient, and complete white becomes "
+literal|"the rightmost. Works on both "
+literal|"Grayscale and RGB image "
+literal|"with/without alpha channel."
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_attribution
+argument_list|(
+name|procedure
+argument_list|,
+literal|"Eiichi Takamori"
+argument_list|,
+literal|"Eiichi Takamori"
+argument_list|,
+literal|"1997"
 argument_list|)
 expr_stmt|;
 block|}
@@ -540,10 +513,196 @@ name|PALETTEMAP_PROC
 argument_list|)
 condition|)
 block|{
-name|mode
+name|procedure
 operator|=
+name|gimp_image_procedure_new
+argument_list|(
+name|plug_in
+argument_list|,
+name|name
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|map_run
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
 name|PALETTE_MODE
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
+name|gimp_procedure_set_image_types
+argument_list|(
+name|procedure
+argument_list|,
+literal|"RGB*, GRAY*"
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_menu_label
+argument_list|(
+name|procedure
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Palette Map"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_menu_path
+argument_list|(
+name|procedure
+argument_list|,
+literal|"<Image>/Colors/Map"
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_documentation
+argument_list|(
+name|procedure
+argument_list|,
+name|N_
+argument_list|(
+literal|"Recolor the image using colors "
+literal|"from the active palette"
+argument_list|)
+argument_list|,
+literal|"This plug-in maps the contents of "
+literal|"the specified drawable with the "
+literal|"active palette. It calculates "
+literal|"luminosity of each pixel and "
+literal|"replaces the pixel by the palette "
+literal|"sample at the corresponding index. "
+literal|"A complete black pixel becomes the "
+literal|"lowest palette entry, and complete "
+literal|"white becomes the highest. Works on "
+literal|"both Grayscale and RGB image "
+literal|"with/without alpha channel."
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_attribution
+argument_list|(
+name|procedure
+argument_list|,
+literal|"Bill Skaggs"
+argument_list|,
+literal|"Bill Skaggs"
+argument_list|,
+literal|"2004"
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|procedure
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GimpValueArray
+modifier|*
+DECL|function|map_run (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,const GimpValueArray * args,gpointer run_data)
+name|map_run
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|,
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+specifier|const
+name|GimpValueArray
+modifier|*
+name|args
+parameter_list|,
+name|gpointer
+name|run_data
+parameter_list|)
+block|{
+name|MapMode
+name|mode
+init|=
+name|GPOINTER_TO_INT
+argument_list|(
+name|run_data
+argument_list|)
+decl_stmt|;
+name|GeglBuffer
+modifier|*
+name|shadow_buffer
+decl_stmt|;
+name|GeglBuffer
+modifier|*
+name|buffer
+decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|shadow_buffer
+operator|=
+name|gimp_drawable_get_shadow_buffer
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+name|buffer
+operator|=
+name|gimp_drawable_get_buffer
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+comment|/*  Make sure that the drawable is gray or RGB color  */
+if|if
+condition|(
+name|gimp_drawable_is_rgb
+argument_list|(
+name|drawable
+argument_list|)
+operator|||
+name|gimp_drawable_is_gray
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|mode
+operator|==
+name|GRADIENT_MODE
+condition|)
+block|{
+name|gimp_progress_init
+argument_list|(
+name|_
+argument_list|(
+literal|"Gradient Map"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|gimp_progress_init
 argument_list|(
 name|_
@@ -553,43 +712,30 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-name|status
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-block|{
-if|if
-condition|(
-name|mode
-condition|)
 name|map
 argument_list|(
 name|buffer
 argument_list|,
 name|shadow_buffer
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|mode
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 else|else
 block|{
-name|status
-operator|=
+return|return
+name|gimp_procedure_new_return_values
+argument_list|(
+name|procedure
+argument_list|,
 name|GIMP_PDB_EXECUTION_ERROR
-expr_stmt|;
+argument_list|,
+name|NULL
+argument_list|)
+return|;
 block|}
 name|g_object_unref
 argument_list|(
@@ -603,14 +749,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 literal|0
 argument_list|,
@@ -618,25 +764,14 @@ literal|0
 argument_list|,
 name|gimp_drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|gimp_drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|status
 expr_stmt|;
 if|if
 condition|(
@@ -647,13 +782,23 @@ condition|)
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
+return|return
+name|gimp_procedure_new_return_values
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_PDB_SUCCESS
+argument_list|,
+name|NULL
+argument_list|)
+return|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|map (GeglBuffer * buffer,GeglBuffer * shadow_buffer,gint32 drawable_id,MapMode mode)
+DECL|function|map (GeglBuffer * buffer,GeglBuffer * shadow_buffer,GimpDrawable * drawable,MapMode mode)
 name|map
 parameter_list|(
 name|GeglBuffer
@@ -664,8 +809,9 @@ name|GeglBuffer
 modifier|*
 name|shadow_buffer
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|MapMode
 name|mode
@@ -717,14 +863,14 @@ name|is_rgb
 operator|=
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -739,7 +885,7 @@ name|samples
 operator|=
 name|get_samples_gradient
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|interpolate
@@ -754,7 +900,7 @@ name|samples
 operator|=
 name|get_samples_palette
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|interpolate
@@ -1300,11 +1446,12 @@ begin_function
 specifier|static
 name|gdouble
 modifier|*
-DECL|function|get_samples_gradient (gint32 drawable_id)
+DECL|function|get_samples_gradient (GimpDrawable * drawable)
 name|get_samples_gradient
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|gchar
@@ -1351,7 +1498,7 @@ condition|(
 operator|!
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -1413,11 +1560,12 @@ begin_function
 specifier|static
 name|gdouble
 modifier|*
-DECL|function|get_samples_palette (gint32 drawable_id)
+DECL|function|get_samples_palette (GimpDrawable * drawable)
 name|get_samples_palette
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|gchar
@@ -1474,7 +1622,7 @@ name|is_rgb
 operator|=
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|factor
