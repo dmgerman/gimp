@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ba93b0108
+DECL|struct|__anon28f514760108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -221,8 +221,9 @@ specifier|static
 name|gboolean
 name|tileit_dialog
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -322,8 +323,9 @@ specifier|static
 name|void
 name|do_tiles
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -401,8 +403,9 @@ specifier|static
 name|void
 name|cache_preview
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -489,7 +492,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3ba93b0203
+DECL|enum|__anon28f514760203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -508,7 +511,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ba93b0308
+DECL|struct|__anon28f514760308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -579,7 +582,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ba93b0408
+DECL|struct|__anon28f514760408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -812,7 +815,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -868,8 +871,9 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -933,8 +937,12 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|drawable_ID
+name|drawable
 operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
 name|param
 index|[
 literal|2
@@ -943,12 +951,14 @@ operator|.
 name|data
 operator|.
 name|d_drawable
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -956,7 +966,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|sel_x1
@@ -1080,7 +1090,7 @@ condition|(
 operator|!
 name|tileit_dialog
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 return|return;
@@ -1136,12 +1146,12 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -1156,7 +1166,7 @@ argument_list|)
 expr_stmt|;
 name|do_tiles
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -1300,11 +1310,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|tileit_dialog (gint drawable_ID)
+DECL|function|tileit_dialog (GimpDrawable * drawable)
 name|tileit_dialog
 parameter_list|(
-name|gint
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1377,7 +1388,7 @@ argument_list|)
 expr_stmt|;
 name|cache_preview
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* Get the preview image */
@@ -2730,7 +2741,7 @@ name|grid2
 argument_list|,
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3977,11 +3988,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|cache_preview (gint32 drawable_ID)
+DECL|function|cache_preview (GimpDrawable * drawable)
 name|cache_preview
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -3990,7 +4002,7 @@ name|buffer
 init|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -4005,7 +4017,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -4102,11 +4114,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_tiles (gint32 drawable_ID)
+DECL|function|do_tiles (GimpDrawable * drawable)
 name|do_tiles
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -4155,21 +4168,21 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|dest_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -4472,14 +4485,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|sel_x1
 argument_list|,
