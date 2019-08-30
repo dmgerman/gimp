@@ -25,13 +25,6 @@ directive|include
 file|<glib.h>
 end_include
 
-begin_define
-DECL|macro|GIMP_DISABLE_COMPAT_CRUFT
-define|#
-directive|define
-name|GIMP_DISABLE_COMPAT_CRUFT
-end_define
-
 begin_include
 include|#
 directive|include
@@ -117,7 +110,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29dbf2ea0108
+DECL|struct|__anon2b53e53d0108
 block|{
 DECL|member|procedure
 name|gchar

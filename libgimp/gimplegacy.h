@@ -47,12 +47,6 @@ begin_macro
 name|G_BEGIN_DECLS
 end_macro
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_COMPAT_CRUFT
-end_ifndef
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -574,15 +568,6 @@ name|menu_path
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DISABLE_COMPAT_CRUFT */
-end_comment
 
 begin_macro
 name|G_END_DECLS

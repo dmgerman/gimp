@@ -9,13 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_define
-DECL|macro|GIMP_DISABLE_COMPAT_CRUFT
-define|#
-directive|define
-name|GIMP_DISABLE_COMPAT_CRUFT
-end_define
-
 begin_include
 include|#
 directive|include

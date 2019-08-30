@@ -331,13 +331,6 @@ directive|include
 file|<locale.h>
 end_include
 
-begin_define
-DECL|macro|GIMP_DISABLE_COMPAT_CRUFT
-define|#
-directive|define
-name|GIMP_DISABLE_COMPAT_CRUFT
-end_define
-
 begin_include
 include|#
 directive|include
@@ -818,7 +811,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon28efe6090103
+DECL|enum|__anon2b447db70103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME

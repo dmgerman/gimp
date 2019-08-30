@@ -9,13 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_define
-DECL|macro|GIMP_DISABLE_COMPAT_CRUFT
-define|#
-directive|define
-name|GIMP_DISABLE_COMPAT_CRUFT
-end_define
-
 begin_include
 include|#
 directive|include
@@ -42,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c3d3250103
+DECL|enum|__anon297c48090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
