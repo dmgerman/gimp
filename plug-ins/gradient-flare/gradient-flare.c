@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bc33030103
+DECL|enum|__anon2bdfe87e0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -387,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bc33030203
+DECL|enum|__anon2bdfe87e0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc33030308
+DECL|struct|__anon2bdfe87e0308
 block|{
 DECL|member|name
 name|gchar
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc33030408
+DECL|struct|__anon2bdfe87e0408
 block|{
 DECL|member|fp
 name|FILE
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bc33030503
+DECL|enum|__anon2bdfe87e0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -597,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc33030608
+DECL|struct|__anon2bdfe87e0608
 block|{
 DECL|member|init
 name|gint
@@ -619,7 +619,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27bc33030708
+DECL|struct|__anon2bdfe87e0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -698,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc33030808
+DECL|struct|__anon2bdfe87e0808
 block|{
 DECL|member|init
 name|gint
@@ -768,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc33030908
+DECL|struct|__anon2bdfe87e0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -795,7 +795,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc33030a08
+DECL|struct|__anon2bdfe87e0a08
 block|{
 DECL|member|init
 name|gint
@@ -965,7 +965,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc33030b08
+DECL|struct|__anon2bdfe87e0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -992,7 +992,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc33030c08
+DECL|struct|__anon2bdfe87e0c08
 block|{
 DECL|member|format
 specifier|const
@@ -1235,7 +1235,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc33030d08
+DECL|struct|__anon2bdfe87e0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1312,7 +1312,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc33030e08
+DECL|struct|__anon2bdfe87e0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -2286,18 +2286,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_ID
+DECL|variable|image
 specifier|static
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_ID
+DECL|variable|drawable
 specifier|static
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -3972,7 +3974,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -4094,8 +4096,10 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
+name|gimp_image_get_by_id
+argument_list|(
 name|param
 index|[
 literal|1
@@ -4104,9 +4108,14 @@ operator|.
 name|data
 operator|.
 name|d_image
+argument_list|)
 expr_stmt|;
-name|drawable_ID
+name|drawable
 operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
 name|param
 index|[
 literal|2
@@ -4115,6 +4124,8 @@ operator|.
 name|data
 operator|.
 name|d_drawable
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|dinfo
 operator|.
@@ -4122,7 +4133,7 @@ name|is_color
 operator|=
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|dinfo
@@ -4131,7 +4142,7 @@ name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -4211,7 +4222,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|dinfo
@@ -4577,12 +4588,12 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -4780,14 +4791,14 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|dest_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* Render it ! */
@@ -4833,14 +4844,14 @@ argument_list|()
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|dinfo
 operator|.
@@ -8753,7 +8764,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon27bc33030f08
+DECL|struct|__anon2bdfe87e0f08
 block|{
 DECL|member|values
 name|guchar
@@ -12050,7 +12061,7 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -12416,7 +12427,7 @@ name|width
 init|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gint
@@ -12424,7 +12435,7 @@ name|height
 init|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gint
@@ -12588,7 +12599,7 @@ name|width
 init|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gint
@@ -12596,7 +12607,7 @@ name|height
 init|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gint
@@ -13166,7 +13177,7 @@ name|width
 init|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gint
@@ -13174,7 +13185,7 @@ name|height
 init|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gint
@@ -13635,7 +13646,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|xres
@@ -13654,7 +13665,7 @@ name|gimp_coordinates_new
 argument_list|(
 name|gimp_image_get_unit
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|,
 literal|"%a"
@@ -13691,7 +13702,7 @@ literal|0
 argument_list|,
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 argument_list|,
 name|_
@@ -13714,7 +13725,7 @@ literal|0
 argument_list|,
 name|gimp_drawable_height
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -13882,7 +13893,7 @@ literal|0.0
 argument_list|,
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 operator|/
 literal|2
@@ -14731,7 +14742,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon27bc33031008
+DECL|struct|__anon2bdfe87e1008
 block|{
 DECL|member|label
 specifier|const
