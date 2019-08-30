@@ -84,7 +84,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_float:  * @image:    ignored  * @drawable: The drawable from which to float selection.  * @offx:     x offset for translation.  * @offy:     y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: (transfer none): The floated layer.  *  * Since: 3.0  */
+comment|/**  * gimp_selection_float:  * @image:    ignored  * @drawable: The drawable from which to float selection.  * @offx:     x offset for translation.  * @offy:     y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: (transfer none): The floated layer.  */
 end_comment
 
 begin_function
