@@ -144,17 +144,6 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
-name|GimpRunMode
-name|run_mode
-parameter_list|,
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
 specifier|const
 name|GimpValueArray
 modifier|*
@@ -338,7 +327,7 @@ condition|)
 block|{
 name|procedure
 operator|=
-name|gimp_image_procedure_new
+name|gimp_procedure_new
 argument_list|(
 name|plug_in
 argument_list|,
@@ -458,23 +447,12 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|glob_run (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,const GimpValueArray * args,gpointer run_data)
+DECL|function|glob_run (GimpProcedure * procedure,const GimpValueArray * args,gpointer run_data)
 name|glob_run
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
-parameter_list|,
-name|GimpRunMode
-name|run_mode
-parameter_list|,
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
 parameter_list|,
 specifier|const
 name|GimpValueArray
