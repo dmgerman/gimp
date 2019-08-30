@@ -164,10 +164,11 @@ comment|/* PLUG_IN_INFO */
 end_comment
 
 begin_decl_stmt
-DECL|variable|drawable_id
+DECL|variable|drawable
 specifier|static
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -527,8 +528,12 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Get the active drawable info */
-name|drawable_id
+name|drawable
 operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
 name|param
 index|[
 literal|2
@@ -537,12 +542,14 @@ operator|.
 name|data
 operator|.
 name|d_drawable
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|img_has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|random_generator
@@ -567,7 +574,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -678,12 +685,12 @@ operator|&&
 operator|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -820,18 +827,19 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-DECL|function|get_u8_format (gint32 drawable_id)
+DECL|function|get_u8_format (GimpDrawable * drawable)
 name|get_u8_format
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -839,7 +847,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 return|return
@@ -862,7 +870,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 return|return
@@ -938,7 +946,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -973,7 +981,7 @@ name|format
 operator|=
 name|get_u8_format
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -987,7 +995,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 name|ppm_new
@@ -1012,7 +1020,7 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|iter
@@ -1677,7 +1685,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -1703,7 +1711,7 @@ name|format
 operator|=
 name|get_u8_format
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -1765,7 +1773,7 @@ name|dest_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|iter
@@ -2378,14 +2386,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|x1
 argument_list|,
