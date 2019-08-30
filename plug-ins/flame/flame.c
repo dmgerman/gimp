@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon297274700108
+DECL|struct|__anon27a4a9a90108
 block|{
 DECL|member|randomize
 name|gint
@@ -229,8 +229,9 @@ specifier|static
 name|void
 name|flame
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -815,8 +816,9 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|GimpRunMode
 name|run_mode
@@ -847,8 +849,12 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|drawable_id
+name|drawable
 operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
 name|param
 index|[
 literal|2
@@ -857,6 +863,8 @@ operator|.
 name|data
 operator|.
 name|d_drawable
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -901,7 +909,7 @@ name|width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|config
@@ -912,7 +920,7 @@ name|height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -937,7 +945,7 @@ block|}
 block|}
 else|else
 block|{
-comment|/*  reusing a drawable_ID from the last run is a bad idea               since the drawable might have vanished  (bug #37761)   */
+comment|/*  reusing a drawable from the last run is a bad idea               since the drawable might have vanished  (bug #37761)   */
 if|if
 condition|(
 name|config
@@ -965,7 +973,7 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -979,7 +987,7 @@ argument_list|)
 expr_stmt|;
 name|flame
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -1228,15 +1236,27 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|GimpDrawable
+modifier|*
+name|drawable
+init|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
+name|config
+operator|.
+name|cmap_drawable
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|buffer
 init|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|config
-operator|.
-name|cmap_drawable
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gint
@@ -1297,7 +1317,7 @@ name|p
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'"
+literal|"R'G'B' u8"
 argument_list|)
 argument_list|,
 name|GEGL_SAMPLER_NEAREST
@@ -1348,11 +1368,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|flame (gint32 drawable_id)
+DECL|function|flame (GimpDrawable * drawable)
 name|flame
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 specifier|const
@@ -1376,21 +1397,21 @@ name|width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -1506,7 +1527,7 @@ name|buffer
 init|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gegl_buffer_set
@@ -1553,7 +1574,7 @@ name|src_buffer
 init|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 decl_stmt|;
 name|GeglBuffer
@@ -1562,7 +1583,7 @@ name|dest_buffer
 init|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gint
@@ -1783,14 +1804,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 literal|0
 argument_list|,
@@ -4456,14 +4477,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|cmap_constrain (gint32 image_id,gint32 drawable_id,gpointer data)
+DECL|function|cmap_constrain (GimpImage * image,GimpItem * item,gpointer data)
 name|cmap_constrain
 parameter_list|(
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpItem
+modifier|*
+name|item
 parameter_list|,
 name|gpointer
 name|data
@@ -4471,9 +4494,15 @@ parameter_list|)
 block|{
 return|return
 operator|!
+name|item
+operator|||
+operator|!
 name|gimp_drawable_is_indexed
 argument_list|(
-name|drawable_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|item
+argument_list|)
 argument_list|)
 return|;
 block|}
