@@ -655,7 +655,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273ae60c0108
+DECL|struct|__anon28f65b130108
 block|{
 DECL|member|drawable_id
 name|guint32
@@ -722,7 +722,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273ae60c0208
+DECL|struct|__anon28f65b130208
 block|{
 DECL|member|y
 name|gint32
@@ -2549,7 +2549,10 @@ condition|(
 operator|!
 name|gimp_item_is_layer
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layer_id
+argument_list|)
 argument_list|)
 condition|)
 block|{
