@@ -990,53 +990,6 @@ comment|/* Deprecated API. */
 end_comment
 
 begin_comment
-comment|/**  * gimp_drawable_get_thumbnail_data_deprecated: (skip)  * @drawable_ID: the drawable ID  * @width:       the requested thumbnail width  (<= 1024 pixels)  * @height:      the requested thumbnail height (<= 1024 pixels)  * @bpp:  *  * Retrieves thumbnail data for the drawable identified by @drawable_ID.  * The thumbnail will be not larger than the requested size.  *  * Returns: (transfer full) (nullable): thumbnail data or %NULL if  *          @drawable_ID is invalid.  **/
-end_comment
-
-begin_function
-name|guchar
-modifier|*
-DECL|function|gimp_drawable_get_thumbnail_data_deprecated (gint32 drawable_ID,gint * width,gint * height,gint * bpp)
-name|gimp_drawable_get_thumbnail_data_deprecated
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|,
-name|gint
-modifier|*
-name|width
-parameter_list|,
-name|gint
-modifier|*
-name|height
-parameter_list|,
-name|gint
-modifier|*
-name|bpp
-parameter_list|)
-block|{
-return|return
-name|gimp_drawable_get_thumbnail_data
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
-argument_list|(
-name|drawable_ID
-argument_list|)
-argument_list|)
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|,
-name|bpp
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_drawable_get_buffer_deprecated: (skip)  * @drawable_ID: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable. The buffer can be used  * like any other GEGL buffer. Its data will we synced back with the core  * drawable when the buffer gets destroyed, or when gegl_buffer_flush()  * is called.  *  * Returns: (transfer full): The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: 2.10  */
 end_comment
 

@@ -2039,41 +2039,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_layer_combo_box_new_deprecated: (skip)  * @constraint:   a #GimpItemConstraintDeprecatedFunc or %NULL  * @data:         a pointer that is passed to @constraint  * @data_destroy: Destroy function for @data  *  * Creates a new #GimpIntComboBox filled with all currently opened  * layers. See gimp_drawable_combo_box_new() for more information.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.2  **/
-end_comment
-
-begin_function
-name|GtkWidget
-modifier|*
-DECL|function|gimp_layer_combo_box_new_deprecated (GimpItemConstraintDeprecatedFunc constraint,gpointer data,GDestroyNotify data_destroy)
-name|gimp_layer_combo_box_new_deprecated
-parameter_list|(
-name|GimpItemConstraintDeprecatedFunc
-name|constraint
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|,
-name|GDestroyNotify
-name|data_destroy
-parameter_list|)
-block|{
-return|return
-name|gimp_item_combo_box_new_deprecated
-argument_list|(
-name|GIMP_TYPE_LAYER_COMBO_BOX
-argument_list|,
-name|constraint
-argument_list|,
-name|data
-argument_list|,
-name|data_destroy
-argument_list|)
-return|;
-block|}
-end_function
-
 begin_function
 specifier|static
 name|GtkWidget
