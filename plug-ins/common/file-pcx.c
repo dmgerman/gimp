@@ -699,7 +699,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|pcx_load
 argument_list|,
@@ -791,7 +791,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|pcx_save
 argument_list|,
@@ -1140,7 +1140,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c63a9af0108
+DECL|struct|__anon29d2c1cc0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1217,7 +1217,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2c63a9af0208
+DECL|struct|__anon29d2c1cc0208
 specifier|static
 struct|struct
 block|{

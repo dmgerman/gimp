@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc1984b0108
+DECL|struct|__anon2a3194220108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc1984b0208
+DECL|struct|__anon2a3194220208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc1984b0308
+DECL|struct|__anon2a3194220308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc1984b0408
+DECL|struct|__anon2a3194220408
 block|{
 DECL|member|npixel
 name|gint
@@ -1274,7 +1274,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|xwd_load
 argument_list|,
@@ -1370,7 +1370,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|xwd_save
 argument_list|,

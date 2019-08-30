@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon292344620108
+DECL|struct|__anon297274700108
 block|{
 DECL|member|randomize
 name|gint
@@ -576,7 +576,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(

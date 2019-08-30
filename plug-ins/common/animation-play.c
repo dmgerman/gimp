@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278415cc0103
+DECL|enum|__anon27dc7c550103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278415cc0208
+DECL|struct|__anon27dc7c550208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278415cc0308
+DECL|struct|__anon27dc7c550308
 block|{
 DECL|member|x
 DECL|member|y
@@ -1213,7 +1213,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|play_run
 argument_list|,

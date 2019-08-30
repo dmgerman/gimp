@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a51f6c80103
+DECL|enum|__anon28f79c580103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -574,7 +574,7 @@ argument_list|)
 operator|->
 name|proc_type
 operator|=
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 expr_stmt|;
 name|proc
 operator|->
@@ -1779,7 +1779,7 @@ name|procedure
 operator|->
 name|proc_type
 operator|==
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 condition|)
 return|return
 name|GIMP_PROCEDURE_CLASS
@@ -2283,11 +2283,11 @@ name|g_return_val_if_fail
 argument_list|(
 name|proc_type
 operator|==
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 operator|||
 name|proc_type
 operator|==
-name|GIMP_EXTENSION
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 argument_list|,
 name|NULL
 argument_list|)

@@ -135,7 +135,7 @@ name|procedure
 operator|=
 name|gimp_plug_in_procedure_new
 argument_list|(
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|file
 argument_list|)
@@ -149,7 +149,7 @@ name|procedure
 operator|->
 name|proc_type
 operator|=
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 expr_stmt|;
 name|procedure
 operator|->
@@ -371,7 +371,7 @@ name|procedure
 operator|=
 name|gimp_plug_in_procedure_new
 argument_list|(
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|file
 argument_list|)
@@ -385,7 +385,7 @@ name|procedure
 operator|->
 name|proc_type
 operator|=
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 expr_stmt|;
 name|procedure
 operator|->
@@ -647,7 +647,7 @@ name|procedure
 operator|=
 name|gimp_plug_in_procedure_new
 argument_list|(
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|file
 argument_list|)
@@ -661,7 +661,7 @@ name|procedure
 operator|->
 name|proc_type
 operator|=
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 expr_stmt|;
 name|procedure
 operator|->
@@ -881,7 +881,7 @@ name|procedure
 operator|=
 name|gimp_plug_in_procedure_new
 argument_list|(
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|file
 argument_list|)
@@ -895,7 +895,7 @@ name|procedure
 operator|->
 name|proc_type
 operator|=
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 expr_stmt|;
 name|procedure
 operator|->
@@ -1181,7 +1181,7 @@ name|procedure
 operator|=
 name|gimp_plug_in_procedure_new
 argument_list|(
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|file
 argument_list|)
@@ -1195,7 +1195,7 @@ name|procedure
 operator|->
 name|proc_type
 operator|=
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 expr_stmt|;
 name|procedure
 operator|->
@@ -1414,7 +1414,7 @@ name|procedure
 operator|=
 name|gimp_plug_in_procedure_new
 argument_list|(
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|file
 argument_list|)
@@ -1428,7 +1428,7 @@ name|procedure
 operator|->
 name|proc_type
 operator|=
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 expr_stmt|;
 name|procedure
 operator|->
@@ -1668,7 +1668,7 @@ name|procedure
 operator|=
 name|gimp_plug_in_procedure_new
 argument_list|(
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|file
 argument_list|)
@@ -1682,7 +1682,7 @@ name|procedure
 operator|->
 name|proc_type
 operator|=
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 expr_stmt|;
 name|procedure
 operator|->

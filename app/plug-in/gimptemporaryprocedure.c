@@ -263,7 +263,7 @@ argument_list|)
 operator|->
 name|proc_type
 operator|=
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 expr_stmt|;
 block|}
 end_function

@@ -688,7 +688,7 @@ name|script
 operator|->
 name|name
 argument_list|,
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 argument_list|,
 name|run_func
 argument_list|,

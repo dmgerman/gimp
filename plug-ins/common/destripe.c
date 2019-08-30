@@ -202,7 +202,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c852610108
+DECL|struct|__anon2ade41710108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -320,7 +320,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(

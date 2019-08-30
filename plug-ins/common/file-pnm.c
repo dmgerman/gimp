@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7c6f880108
+DECL|struct|__anon2ae731e50108
 block|{
 DECL|member|raw
 name|gint
@@ -986,7 +986,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c7c6f880208
+DECL|struct|__anon2ae731e50208
 block|{
 DECL|member|name
 name|gchar
@@ -1332,7 +1332,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|pnm_load
 argument_list|,
@@ -1437,7 +1437,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|pnm_save
 argument_list|,
@@ -1552,7 +1552,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|pnm_save
 argument_list|,
@@ -1667,7 +1667,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|pnm_save
 argument_list|,
@@ -1782,7 +1782,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|pnm_save
 argument_list|,
@@ -1897,7 +1897,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|pnm_save
 argument_list|,
@@ -4923,7 +4923,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon2c7c6f88030a
+DECL|union|__anon2ae731e5030a
 DECL|member|f
 DECL|member|i
 union|union

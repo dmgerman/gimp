@@ -279,7 +279,7 @@ name|proc_type
 condition|)
 block|{
 case|case
-name|GIMP_EXTENSION
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 case|:
 name|args
 operator|=
@@ -290,10 +290,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 case|:
 case|case
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 case|:
 if|if
 condition|(
@@ -497,7 +497,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 case|:
 name|g_warning
 argument_list|(

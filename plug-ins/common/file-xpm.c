@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9ccc7a0108
+DECL|struct|__anon2a43ddbe0108
 block|{
 DECL|member|threshold
 name|gint
@@ -165,7 +165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9ccc7a0208
+DECL|struct|__anon2a43ddbe0208
 block|{
 DECL|member|r
 name|guchar
@@ -642,7 +642,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|xpm_load
 argument_list|,
@@ -743,7 +743,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|xpm_save
 argument_list|,

@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaadea30108
+DECL|struct|__anon2966d6f00108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaadea30208
+DECL|struct|__anon2966d6f00208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -521,7 +521,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|gih_save
 argument_list|,

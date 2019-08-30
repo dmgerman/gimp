@@ -1154,7 +1154,7 @@ argument_list|)
 operator|->
 name|proc_type
 operator|==
-name|GIMP_EXTENSION
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 condition|)
 block|{
 name|plug_in

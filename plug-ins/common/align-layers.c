@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e72e70103
+DECL|enum|__anon2c4a658a0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -83,7 +83,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e72e70203
+DECL|enum|__anon2c4a658a0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e72e70303
+DECL|enum|__anon2c4a658a0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -121,7 +121,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e72e70403
+DECL|enum|__anon2c4a658a0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -138,7 +138,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e72e70508
+DECL|struct|__anon2c4a658a0508
 block|{
 DECL|member|step_x
 name|gint
@@ -486,7 +486,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e72e70608
+DECL|struct|__anon2c4a658a0608
 block|{
 DECL|member|h_style
 name|gint
@@ -662,7 +662,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|align_layers_run
 argument_list|,

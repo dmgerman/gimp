@@ -487,7 +487,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|gif_load
 argument_list|,
@@ -592,7 +592,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|gif_load_thumb
 argument_list|,
@@ -1065,7 +1065,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b2a385f0108
+DECL|struct|__anon27f2d26b0108
 block|{
 DECL|member|Width
 name|guint
@@ -1109,7 +1109,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b2a385f0208
+DECL|struct|__anon27f2d26b0208
 block|{
 DECL|member|transparent
 name|gint

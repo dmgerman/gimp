@@ -322,7 +322,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -658,7 +658,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c077350108
+DECL|struct|__anon2796a4a30108
 block|{
 DECL|member|fg
 name|guchar

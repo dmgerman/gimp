@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c4dd070103
+DECL|enum|__anon2b06e7430103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c4dd070203
+DECL|enum|__anon2b06e7430203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -1909,7 +1909,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(

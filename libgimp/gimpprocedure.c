@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761348a0103
+DECL|enum|__anon2a43eac70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -545,7 +545,7 @@ literal|"The procedure's type"
 argument_list|,
 name|GIMP_TYPE_PDB_PROC_TYPE
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -1849,7 +1849,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func:  the run function for the new procedure.  * @run_data:  user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * @proc_type should be %GIMP_PLUGIN for "normal" plug-ins.  *  * Using %GIMP_EXTENSION means that the plug-in will add temporary  * procedures. Therefore, the GIMP core will wait until the  * %GIMP_EXTENSION procedure has called  * gimp_procedure_extension_ready(), which means that the procedure  * has done its initialization, installed its temporary procedures and  * is ready to run.  *  *<emphasis>Not calling gimp_procedure_extension_ready() from a  * %GIMP_EXTENSION procedure will cause the GIMP core to lock  * up.</emphasis>  *  * Additionally, a %GIMP_EXTENSION procedure with no arguments added  * is an "automatic" extension that will be automatically started on  * each GIMP startup.  *  * %GIMP_TEMPORARY must be used for temporary procedures that are  * created during a plug-ins lifetime. They must be added to the  * #GimpPlugIn using gimp_plug_in_add_temp_procedure().  *  * @run_func is called via gimp_procedure_run().  *  * For %GIMP_PLUGIN and %GIMP_EXTENSION procedures the call of  * @run_func is basically the lifetime of the plug-in.  *  * Returns: a new #GimpProcedure.  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func:  the run function for the new procedure.  * @run_data:  user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * @proc_type should be %GIMP_PDB_PROC_TYPE_PLUGIN for "normal" plug-ins.  *  * Using %GIMP_PDB_PROC_TYPE_EXTENSION means that the plug-in will add  * temporary procedures. Therefore, the GIMP core will wait until the  * %GIMP_PDB_PROC_TYPE_EXTENSION procedure has called  * gimp_procedure_extension_ready(), which means that the procedure  * has done its initialization, installed its temporary procedures and  * is ready to run.  *  *<emphasis>Not calling gimp_procedure_extension_ready() from a  * %GIMP_PDB_PROC_TYPE_EXTENSION procedure will cause the GIMP core to  * lock up.</emphasis>  *  * Additionally, a %GIMP_PDB_PROC_TYPE_EXTENSION procedure with no  * arguments added is an "automatic" extension that will be  * automatically started on each GIMP startup.  *  * %GIMP_PDB_PROC_TYPE_TEMPORARY must be used for temporary procedures  * that are created during a plug-ins lifetime. They must be added to  * the #GimpPlugIn using gimp_plug_in_add_temp_procedure().  *  * @run_func is called via gimp_procedure_run().  *  * For %GIMP_PDB_PROC_TYPE_PLUGIN and %GIMP_PDB_PROC_TYPE_EXTENSION  * procedures the call of @run_func is basically the lifetime of the  * plug-in.  *  * Returns: a new #GimpProcedure.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1908,7 +1908,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|proc_type
 operator|!=
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 argument_list|,
 name|NULL
 argument_list|)
@@ -2065,7 +2065,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|)
 expr_stmt|;
 return|return
@@ -4311,7 +4311,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_extension_ready:  * @procedure: A #GimpProcedure  *  * Notify the main GIMP application that the extension has been  * properly initialized and is ready to run.  *  * This function<emphasis>must</emphasis> be called from every  * procedure's #GimpRunFunc that was created as #GIMP_EXTENSION.  *  * Subsequently, extensions can process temporary procedure run  * requests using either gimp_plug_in_extension_enable() or  * gimp_plug_in_extension_process().  *  * See also: gimp_procedure_new().  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_extension_ready:  * @procedure: A #GimpProcedure  *  * Notify the main GIMP application that the extension has been  * properly initialized and is ready to run.  *  * This function<emphasis>must</emphasis> be called from every  * procedure's #GimpRunFunc that was created as  * #GIMP_PDB_PROC_TYPE_EXTENSION.  *  * Subsequently, extensions can process temporary procedure run  * requests using either gimp_plug_in_extension_enable() or  * gimp_plug_in_extension_process().  *  * See also: gimp_procedure_new().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -4344,7 +4344,7 @@ name|priv
 operator|->
 name|proc_type
 operator|==
-name|GIMP_EXTENSION
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 argument_list|)
 expr_stmt|;
 name|plug_in

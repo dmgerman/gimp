@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5428c00108
+DECL|struct|__anon2bd36d550108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5428c00208
+DECL|struct|__anon2bd36d550208
 block|{
 DECL|member|run
 name|gboolean
@@ -335,7 +335,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5428c00308
+DECL|struct|__anon2bd36d550308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -943,7 +943,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|png_load
 argument_list|,
@@ -1039,7 +1039,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|png_save
 argument_list|,

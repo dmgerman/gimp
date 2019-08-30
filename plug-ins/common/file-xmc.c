@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abb2c7f0108
+DECL|struct|__anon29be1bbb0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -987,7 +987,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2abb2c7f0208
+DECL|struct|__anon29be1bbb0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1194,7 +1194,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|xmc_load
 argument_list|,
@@ -1298,7 +1298,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|xmc_load_thumb
 argument_list|,
@@ -1353,7 +1353,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|xmc_save
 argument_list|,
@@ -9228,7 +9228,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2abb2c7f0308
+DECL|struct|__anon29be1bbb0308
 block|{
 DECL|member|size
 name|guint32

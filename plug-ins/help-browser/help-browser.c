@@ -404,7 +404,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 argument_list|,
 name|help_browser_run
 argument_list|,
@@ -662,7 +662,7 @@ name|plug_in
 argument_list|,
 name|GIMP_HELP_BROWSER_TEMP_EXT_PROC
 argument_list|,
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 argument_list|,
 name|temp_proc_run
 argument_list|,

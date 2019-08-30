@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5d579e0108
+DECL|struct|__anon2bad28170108
 block|{
 DECL|member|progress_callback
 name|gchar
@@ -329,7 +329,7 @@ name|plug_in
 argument_list|,
 name|progress_callback
 argument_list|,
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 argument_list|,
 name|gimp_temp_progress_run
 argument_list|,

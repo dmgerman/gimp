@@ -455,7 +455,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 argument_list|,
 name|script_fu_run
 argument_list|,
@@ -508,7 +508,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|script_fu_run
 argument_list|,
@@ -599,7 +599,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|script_fu_run
 argument_list|,
@@ -670,7 +670,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|script_fu_run
 argument_list|,
@@ -817,7 +817,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|script_fu_run
 argument_list|,
@@ -1420,7 +1420,7 @@ name|plug_in
 argument_list|,
 literal|"script-fu-refresh"
 argument_list|,
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 argument_list|,
 name|script_fu_refresh_proc
 argument_list|,

@@ -722,7 +722,16 @@ name|g_return_val_if_fail
 argument_list|(
 name|proc_type
 operator|!=
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|proc_type
+operator|!=
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 argument_list|,
 name|NULL
 argument_list|)

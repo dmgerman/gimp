@@ -3465,10 +3465,10 @@ name|type
 condition|)
 block|{
 case|case
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 case|:
 case|case
-name|GIMP_EXTENSION
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 case|:
 name|procedure
 operator|=
@@ -3485,7 +3485,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 case|:
 name|procedure
 operator|=
@@ -3806,10 +3806,10 @@ name|type
 condition|)
 block|{
 case|case
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 case|:
 case|case
-name|GIMP_EXTENSION
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 case|:
 name|gimp_plug_in_def_add_procedure
 argument_list|(
@@ -3822,7 +3822,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 case|:
 name|gimp_plug_in_add_temp_proc
 argument_list|(

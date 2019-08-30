@@ -53,6 +53,25 @@ directive|ifndef
 name|GIMP_DISABLE_COMPAT_CRUFT
 end_ifndef
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GIMP_DEPRECATED_REPLACE_NEW_API
+end_ifdef
+
+begin_define
+DECL|macro|GIMP_PLUGIN
+define|#
+directive|define
+name|GIMP_PLUGIN
+value|GIMP_PDB_PROC_TYPE_PLUGIN
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/**  * GimpInitProc:  *  * The init procedure is run at every GIMP startup.  */
 end_comment

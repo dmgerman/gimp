@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287f7fe80108
+DECL|struct|__anon29673c6b0108
 block|{
 DECL|member|scales
 name|gint
@@ -404,7 +404,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|wavelet_run
 argument_list|,

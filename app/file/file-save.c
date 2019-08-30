@@ -923,7 +923,7 @@ argument_list|)
 operator|->
 name|proc_type
 operator|==
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 condition|)
 name|gimp_imagefile_save_thumbnail
 argument_list|(

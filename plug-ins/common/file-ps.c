@@ -199,7 +199,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294288380108
+DECL|struct|__anon28f7731f0108
 block|{
 DECL|member|resolution
 name|guint
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294288380208
+DECL|struct|__anon28f7731f0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1062,7 +1062,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294288380308
+DECL|struct|__anon28f7731f0308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1426,7 +1426,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|ps_load
 argument_list|,
@@ -1738,7 +1738,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|ps_load_thumb
 argument_list|,
@@ -1799,7 +1799,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|ps_save
 argument_list|,
@@ -3911,7 +3911,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294288380408
+DECL|struct|__anon28f7731f0408
 block|{
 DECL|member|eol
 name|goffset

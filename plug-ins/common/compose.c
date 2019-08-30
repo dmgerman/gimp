@@ -100,14 +100,14 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb19fb30108
+DECL|struct|__anon28d7cf2e0108
 block|{
 DECL|member|is_object
 name|gboolean
 name|is_object
 decl_stmt|;
 union|union
-DECL|union|__anon2bb19fb3020a
+DECL|union|__anon28d7cf2e020a
 block|{
 DECL|member|object
 name|gpointer
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb19fb30308
+DECL|struct|__anon28d7cf2e0308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb19fb30408
+DECL|struct|__anon28d7cf2e0408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb19fb30508
+DECL|struct|__anon28d7cf2e0508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb19fb30608
+DECL|struct|__anon28d7cf2e0608
 block|{
 DECL|member|width
 DECL|member|height
@@ -1553,7 +1553,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|compose_run
 argument_list|,
@@ -1711,7 +1711,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|compose_run
 argument_list|,
@@ -1849,7 +1849,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|compose_run
 argument_list|,

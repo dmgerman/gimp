@@ -117,7 +117,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be365100108
+DECL|struct|__anon29dbf2ea0108
 block|{
 DECL|member|procedure
 name|gchar
@@ -455,7 +455,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 argument_list|,
 name|help_run
 argument_list|,
@@ -714,7 +714,7 @@ name|plug_in
 argument_list|,
 name|GIMP_HELP_TEMP_EXT_PROC
 argument_list|,
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 argument_list|,
 name|help_temp_run
 argument_list|,

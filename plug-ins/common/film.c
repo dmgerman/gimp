@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c35110e0108
+DECL|struct|__anon2afc5aa10108
 block|{
 DECL|member|film_height
 name|gint
@@ -210,7 +210,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c35110e0208
+DECL|struct|__anon2afc5aa10208
 block|{
 DECL|member|advanced_adj
 name|GtkAdjustment
@@ -854,7 +854,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|film_run
 argument_list|,

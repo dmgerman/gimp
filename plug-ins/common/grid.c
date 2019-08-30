@@ -254,7 +254,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276e535b0108
+DECL|struct|__anon27dd05200108
 block|{
 DECL|member|hwidth
 name|gint
@@ -563,7 +563,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(

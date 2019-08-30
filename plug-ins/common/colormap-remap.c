@@ -391,7 +391,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|remap_run
 argument_list|,
@@ -519,7 +519,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|remap_run
 argument_list|,
@@ -1860,7 +1860,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c860fd0103
+DECL|enum|__anon29e275bd0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

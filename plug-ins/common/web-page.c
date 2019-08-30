@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf14de40108
+DECL|struct|__anon2b93604c0108
 block|{
 DECL|member|url
 name|char
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf14de40208
+DECL|struct|__anon2b93604c0208
 block|{
 DECL|member|url
 name|char
@@ -413,7 +413,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|webpage_run
 argument_list|,

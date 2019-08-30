@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2889f7590108
+DECL|struct|__anon29cdefc40108
 block|{
 DECL|member|read_channel
 name|GIOChannel
@@ -408,7 +408,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|busy_dialog_run
 argument_list|,
@@ -421,12 +421,15 @@ name|gimp_procedure_set_documentation
 argument_list|(
 name|procedure
 argument_list|,
-literal|"Show a dialog while waiting for an operation to finish"
+literal|"Show a dialog while waiting for an "
+literal|"operation to finish"
 argument_list|,
-literal|"Used by GIMP to display a dialog, containing a "
-literal|"spinner and a custom message, while waiting for an "
-literal|"ongoing operation to finish. Optionally, the dialog "
-literal|"may provide a \"Cancel\" button, which can be used "
+literal|"Used by GIMP to display a dialog, "
+literal|"containing a spinner and a custom "
+literal|"message, while waiting for an "
+literal|"ongoing operation to finish. "
+literal|"Optionally, the dialog may provide "
+literal|"a \"Cancel\" button, which can be used "
 literal|"to cancel the operation."
 argument_list|,
 name|name

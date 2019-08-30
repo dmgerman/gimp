@@ -447,7 +447,7 @@ name|procedure
 operator|->
 name|proc_type
 operator|=
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 expr_stmt|;
 block|}
 end_function

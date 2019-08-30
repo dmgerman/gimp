@@ -2658,7 +2658,7 @@ literal|"The procedure type"
 argument_list|,
 name|GIMP_TYPE_PDB_PROC_TYPE
 argument_list|,
-name|GIMP_INTERNAL
+name|GIMP_PDB_PROC_TYPE_INTERNAL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

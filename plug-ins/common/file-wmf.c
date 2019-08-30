@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f3e2e0108
+DECL|struct|__anon28fce8bb0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -554,7 +554,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|wmf_load
 argument_list|,
@@ -715,7 +715,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|wmf_load_thumb
 argument_list|,

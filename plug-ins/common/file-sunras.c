@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967dd340108
+DECL|struct|__anon28c0995d0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967dd340208
+DECL|struct|__anon28c0995d0208
 block|{
 DECL|member|val
 name|gint
@@ -249,7 +249,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967dd340308
+DECL|struct|__anon28c0995d0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1170,7 +1170,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|sunras_load
 argument_list|,
@@ -1262,7 +1262,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|sunras_save
 argument_list|,

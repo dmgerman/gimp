@@ -636,7 +636,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|dicom_load
 argument_list|,
@@ -733,7 +733,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|dicom_save
 argument_list|,
@@ -3144,7 +3144,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e45f90108
+DECL|struct|__anon2be8b2ff0108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5683,7 +5683,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2c3e45f90208
+DECL|struct|__anon2be8b2ff0208
 struct|struct
 block|{
 DECL|member|dicom
@@ -5811,7 +5811,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2c3e45f90308
+DECL|struct|__anon2be8b2ff0308
 struct|struct
 block|{
 DECL|member|dicom

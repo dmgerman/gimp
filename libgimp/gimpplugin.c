@@ -96,7 +96,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2908a2610103
+DECL|enum|__anon275d3ce10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1428,7 +1428,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_create_procedure:  * @plug_in:        A #GimpPlugIn  * @procedure_name: A procedure name.  *  * This functiond creates a new procedure and is called when a plug-in  * instance is started by GIMP when one of the %GIMP_PLUGIN or  * %GIMP_EXTENSION procedures it implements is invoked.  *  * This function will only ever be called with names returned by  * implementations of GimpPlugInClass::init_procedures() or  * GimpPlugInClass::query_procedures().  *  * Returns: (transfer full): The newly created #GimpProcedure.  **/
+comment|/**  * gimp_plug_in_create_procedure:  * @plug_in:        A #GimpPlugIn  * @procedure_name: A procedure name.  *  * This functiond creates a new procedure and is called when a plug-in  * instance is started by GIMP when one of the %GIMP_PDB_PROC_TYPE_PLUGIN or  * %GIMP_PDB_PROC_TYPE_EXTENSION procedures it implements is invoked.  *  * This function will only ever be called with names returned by  * implementations of GimpPlugInClass::init_procedures() or  * GimpPlugInClass::query_procedures().  *  * Returns: (transfer full): The newly created #GimpProcedure.  **/
 end_comment
 
 begin_function
@@ -1496,7 +1496,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_add_temp_procedure:  * @plug_in:   A #GimpPlugIn  * @procedure: A #GimpProcedure of type %GIMP_TEMPORARY.  *  * This function adds a temporary procedure to @plug_in. It is usually  * called from a %GIMP_EXTENSION procedure's GimpProcedure::run().  *  * A temporary procedure is a procedure which is only available while  * one of your plug-in's "real" procedures is running.  *  * The procedure's type<emphasis>must</emphasis> be %GIMP_TEMPORARY  * or the function will fail.  *  * NOTE: Normally, plug-in communication is triggered by the plug-in  * and the GIMP core only responds to the plug-in's requests. You must  * explicitly enable receiving of temporary procedure run requests  * using either gimp_plug_in_extension_enable() or  * gimp_plug_in_extension_process(). See this functions' documentation  * for details.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_add_temp_procedure:  * @plug_in:   A #GimpPlugIn  * @procedure: A #GimpProcedure of type %GIMP_PDB_PROC_TYPE_TEMPORARY.  *  * This function adds a temporary procedure to @plug_in. It is usually  * called from a %GIMP_PDB_PROC_TYPE_EXTENSION procedure's  * GimpProcedure::run().  *  * A temporary procedure is a procedure which is only available while  * one of your plug-in's "real" procedures is running.  *  * The procedure's type<emphasis>must</emphasis> be  * %GIMP_PDB_PROC_TYPE_TEMPORARY or the function will fail.  *  * NOTE: Normally, plug-in communication is triggered by the plug-in  * and the GIMP core only responds to the plug-in's requests. You must  * explicitly enable receiving of temporary procedure run requests  * using either gimp_plug_in_extension_enable() or  * gimp_plug_in_extension_process(). See this functions' documentation  * for details.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1536,7 +1536,7 @@ argument_list|(
 name|procedure
 argument_list|)
 operator|==
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 argument_list|)
 expr_stmt|;
 name|plug_in
@@ -1792,7 +1792,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_extension_enable:  * @plug_in: A #GimpPlugIn  *  * Enables asynchronous processing of messages from the main GIMP  * application.  *  * Normally, a plug-in is not called by GIMP except for the call to  * the procedure it implements. All subsequent communication is  * triggered by the plug-in and all messages sent from GIMP to the  * plug-in are just answers to requests the plug-in made.  *  * If the plug-in however registered temporary procedures using  * gimp_plug_in_add_temp_procedure(), it needs to be able to receive  * requests to execute them. Usually this will be done by running  * gimp_plug_in_extension_process() in an endless loop.  *  * If the plug-in cannot use gimp_plug_in_extension_process(), i.e. if  * it has a GUI and is hanging around in a #GMainLoop, it must call  * gimp_plug_in_extension_enable().  *  * Note that the plug-in does not need to be a #GIMP_EXTENSION to  * register temporary procedures.  *  * See also: gimp_plug_in_add_temp_procedure().  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_extension_enable:  * @plug_in: A #GimpPlugIn  *  * Enables asynchronous processing of messages from the main GIMP  * application.  *  * Normally, a plug-in is not called by GIMP except for the call to  * the procedure it implements. All subsequent communication is  * triggered by the plug-in and all messages sent from GIMP to the  * plug-in are just answers to requests the plug-in made.  *  * If the plug-in however registered temporary procedures using  * gimp_plug_in_add_temp_procedure(), it needs to be able to receive  * requests to execute them. Usually this will be done by running  * gimp_plug_in_extension_process() in an endless loop.  *  * If the plug-in cannot use gimp_plug_in_extension_process(), i.e. if  * it has a GUI and is hanging around in a #GMainLoop, it must call  * gimp_plug_in_extension_enable().  *  * Note that the plug-in does not need to be a  * #GIMP_PDB_PROC_TYPE_EXTENSION to register temporary procedures.  *  * See also: gimp_plug_in_add_temp_procedure().  *  * Since: 3.0  **/
 end_comment
 
 begin_function

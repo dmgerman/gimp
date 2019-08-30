@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon297dea350103
+DECL|enum|__anon2a29b7580103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1540,11 +1540,11 @@ if|if
 condition|(
 name|proc_type
 operator|!=
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 operator|&&
 name|proc_type
 operator|!=
-name|GIMP_EXTENSION
+name|GIMP_PDB_PROC_TYPE_EXTENSION
 condition|)
 block|{
 name|g_free

@@ -322,7 +322,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|guillotine_run
 argument_list|,
@@ -361,12 +361,14 @@ name|procedure
 argument_list|,
 name|N_
 argument_list|(
-literal|"Slice the image into subimages using guides"
+literal|"Slice the image into subimages "
+literal|"using guides"
 argument_list|)
 argument_list|,
-literal|"This function takes an image and slices it along "
-literal|"its guides, creating new images. The original "
-literal|"image is not modified."
+literal|"This function takes an image and "
+literal|"slices it along its guides, creating "
+literal|"new images. The original image is "
+literal|"not modified."
 argument_list|,
 name|name
 argument_list|)

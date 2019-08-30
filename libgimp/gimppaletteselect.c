@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2b1d8f0108
+DECL|struct|__anon2c4a9ce80108
 block|{
 DECL|member|palette_callback
 name|gchar
@@ -206,7 +206,7 @@ name|plug_in
 argument_list|,
 name|palette_callback
 argument_list|,
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 argument_list|,
 name|gimp_temp_palette_run
 argument_list|,

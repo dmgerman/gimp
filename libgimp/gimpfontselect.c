@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b607b10108
+DECL|struct|__anon2ad5efa90108
 block|{
 DECL|member|font_callback
 name|gchar
@@ -202,7 +202,7 @@ name|plug_in
 argument_list|,
 name|font_callback
 argument_list|,
-name|GIMP_TEMPORARY
+name|GIMP_PDB_PROC_TYPE_TEMPORARY
 argument_list|,
 name|gimp_temp_font_run
 argument_list|,

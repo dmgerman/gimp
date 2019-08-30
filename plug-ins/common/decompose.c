@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa198d80108
+DECL|struct|__anon2b986b490108
 block|{
 DECL|member|babl_name
 specifier|const
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa198d80208
+DECL|struct|__anon2b986b490208
 block|{
 DECL|member|type
 specifier|const
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa198d80308
+DECL|struct|__anon2b986b490308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1630,7 +1630,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|decompose_run
 argument_list|,

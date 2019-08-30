@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b437dd80108
+DECL|struct|__anon2af7fc3a0108
 block|{
 DECL|member|description
 name|gchar
@@ -386,7 +386,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|gbr_save
 argument_list|,

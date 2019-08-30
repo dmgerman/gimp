@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8379d40108
+DECL|struct|__anon29c62a330108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -543,7 +543,7 @@ name|plug_in
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|html_save
 argument_list|,
