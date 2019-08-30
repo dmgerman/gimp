@@ -176,7 +176,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_pixbuf:  * @image:          The RGB image to which to add the layer.  * @name:           The layer name.  * @pixbuf:         A GdkPixbuf.  * @opacity:        The layer opacity.  * @mode:           The layer combination mode.  * @progress_start: start of progress  * @progress_end:   end of progress  *  * Create a new layer from a %GdkPixbuf.  *  * This procedure creates a new layer from the given %GdkPixbuf.  The  * image has to be an RGB image and just like with gimp_layer_new()  * you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: (transfer none): The newly created layer.  *          The object belongs to libgimp and you should not free it.  *  * Since: 2.2  */
+comment|/**  * gimp_layer_new_from_pixbuf:  * @image:          The RGB image to which to add the layer.  * @name:           The layer name.  * @pixbuf:         A GdkPixbuf.  * @opacity:        The layer opacity.  * @mode:           The layer combination mode.  * @progress_start: start of progress  * @progress_end:   end of progress  *  * Create a new layer from a %GdkPixbuf.  *  * This procedure creates a new layer from the given %GdkPixbuf.  The  * image has to be an RGB image and just like with gimp_layer_new()  * you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: (transfer none): The newly created layer.  *          The object belongs to libgimp and you should not free it.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -403,7 +403,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_surface:  * @image:           The RGB image to which to add the layer.  * @name:            The layer name.  * @surface:         A Cairo image surface.  * @progress_start:  start of progress  * @progress_end:    end of progress  *  * Create a new layer from a #cairo_surface_t.  *  * This procedure creates a new layer from the given  * #cairo_surface_t. The image has to be an RGB image and just like  * with gimp_layer_new() you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: (transfer none): The newly created layer.  *          The object belongs to libgimp and you should not free it.  *  * Since: 2.8  */
+comment|/**  * gimp_layer_new_from_surface:  * @image:           The RGB image to which to add the layer.  * @name:            The layer name.  * @surface:         A Cairo image surface.  * @progress_start:  start of progress  * @progress_end:    end of progress  *  * Create a new layer from a #cairo_surface_t.  *  * This procedure creates a new layer from the given  * #cairo_surface_t. The image has to be an RGB image and just like  * with gimp_layer_new() you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: (transfer none): The newly created layer.  *          The object belongs to libgimp and you should not free it.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -636,7 +636,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Deprecate API. */
+comment|/* Deprecated API. */
 end_comment
 
 begin_comment

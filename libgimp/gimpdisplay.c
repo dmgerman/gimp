@@ -39,7 +39,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2938be360103
+DECL|enum|__anon29afa0dc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -475,7 +475,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_is_valid:  * @display: The display to check.  *  * Returns TRUE if the display is valid.  *  * This procedure checks if the given display is valid and refers to  * an existing display.  *  * Returns: Whether the display is valid.  *  * Since: 2.4  **/
+comment|/**  * gimp_display_is_valid:  * @display: The display to check.  *  * Returns TRUE if the display is valid.  *  * This procedure checks if the given display is valid and refers to  * an existing display.  *  * Returns: Whether the display is valid.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

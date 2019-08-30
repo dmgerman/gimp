@@ -39,7 +39,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b90e30103
+DECL|enum|__anon29d449670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -572,7 +572,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_valid:  * @item: The item to check.  *  * Returns TRUE if the item is valid.  *  * This procedure checks if the given item is valid and refers to an  * existing item.  *  * Returns: Whether the item is valid.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_is_valid:  * @item: The item to check.  *  * Returns TRUE if the item is valid.  *  * This procedure checks if the given item is valid and refers to an  * existing item.  *  * Returns: Whether the item is valid.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -598,7 +598,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_drawable:  * @item: The item.  *  * Returns whether the item is a drawable.  *  * This procedure returns TRUE if the specified item is a drawable.  *  * Returns: TRUE if the item is a drawable, FALSE otherwise.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_is_drawable:  * @item: The item.  *  * Returns whether the item is a drawable.  *  * This procedure returns TRUE if the specified item is a drawable.  *  * Returns: TRUE if the item is a drawable, FALSE otherwise.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -624,7 +624,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_layer:  * @item: The item.  *  * Returns whether the item is a layer.  *  * This procedure returns TRUE if the specified item is a layer.  *  * Returns: TRUE if the item is a layer, FALSE otherwise.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_is_layer:  * @item: The item.  *  * Returns whether the item is a layer.  *  * This procedure returns TRUE if the specified item is a layer.  *  * Returns: TRUE if the item is a layer, FALSE otherwise.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -650,7 +650,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_text_layer:  * @item: The item.  *  * Returns whether the item is a text layer.  *  * This procedure returns TRUE if the specified item is a text  * layer.  *  * Returns: TRUE if the item is a text layer, FALSE otherwise.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_is_text_layer:  * @item: The item.  *  * Returns whether the item is a text layer.  *  * This procedure returns TRUE if the specified item is a text  * layer.  *  * Returns: TRUE if the item is a text layer, FALSE otherwise.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -676,7 +676,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_channel:  * @item: The item.  *  * Returns whether the item is a channel.  *  * This procedure returns TRUE if the specified item is a channel.  *  * Returns: TRUE if the item is a channel, FALSE otherwise.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_is_channel:  * @item: The item.  *  * Returns whether the item is a channel.  *  * This procedure returns TRUE if the specified item is a channel.  *  * Returns: TRUE if the item is a channel, FALSE otherwise.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -702,7 +702,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_layer_mask:  * @item: The item.  *  * Returns whether the item is a layer mask.  *  * This procedure returns TRUE if the specified item is a layer  * mask.  *  * Returns: TRUE if the item is a layer mask, FALSE otherwise.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_is_layer_mask:  * @item: The item.  *  * Returns whether the item is a layer mask.  *  * This procedure returns TRUE if the specified item is a layer  * mask.  *  * Returns: TRUE if the item is a layer mask, FALSE otherwise.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -728,7 +728,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_selection:  * @item: The item.  *  * Returns whether the item is a selection.  *  * This procedure returns TRUE if the specified item is a selection.  *  * Returns: TRUE if the item is a selection, FALSE otherwise.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_is_selection:  * @item: The item.  *  * Returns whether the item is a selection.  *  * This procedure returns TRUE if the specified item is a selection.  *  * Returns: TRUE if the item is a selection, FALSE otherwise.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -754,7 +754,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_vectors:  * @item: The item.  *  * Returns whether the item is a vectors.  *  * This procedure returns TRUE if the specified item is a vectors.  *  * Returns: TRUE if the item is a vectors, FALSE otherwise.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_is_vectors:  * @item: The item.  *  * Returns whether the item is a vectors.  *  * This procedure returns TRUE if the specified item is a vectors.  *  * Returns: TRUE if the item is a vectors, FALSE otherwise.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -780,7 +780,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_children:  * @item:         The item.  * @num_children: (out): The number of items in the returned array.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (array length=num_children) (transfer container):  *          The item's list of children.  *          The returned array must be freed with g_free(). Item  *          elements belong to libgimp and must not be unrefed.  **/
+comment|/**  * gimp_item_get_children:  * @item:         The item.  * @num_children: (out): The number of items in the returned array.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (array length=num_children) (transfer container):  *          The item's list of children.  *          The returned array must be freed with g_free(). Item  *          elements belong to libgimp and must not be unrefed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

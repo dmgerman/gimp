@@ -100,7 +100,7 @@ comment|/* Public API. */
 end_comment
 
 begin_comment
-comment|/**  * gimp_drawable_get_thumbnail_data:  * @drawable: the drawable  * @width:    (inout): the requested thumbnail width  (<= 1024 pixels)  * @height:   (inout): the requested thumbnail height (<= 1024 pixels)  * @bpp:      (out):   the bytes per pixel of the returned thubmnail data  *  * Retrieves thumbnail data for the drawable identified by @drawable.  * The thumbnail will be not larger than the requested size.  *  * Returns: (transfer full) (nullable): thumbnail data or %NULL if  *          @drawable is invalid.  **/
+comment|/**  * gimp_drawable_get_thumbnail_data:  * @drawable: the drawable  * @width:    (inout): the requested thumbnail width  (<= 1024 pixels)  * @height:   (inout): the requested thumbnail height (<= 1024 pixels)  * @bpp:      (out):   the bytes per pixel of the returned thubmnail data  *  * Retrieves thumbnail data for the drawable identified by @drawable.  * The thumbnail will be not larger than the requested size.  *  * Returns: (transfer full) (nullable): thumbnail data or %NULL if  *          @drawable is invalid.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -181,7 +181,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_thumbnail:  * @drawable: the drawable  * @width:    the requested thumbnail width  (<= 1024 pixels)  * @height:   the requested thumbnail height (<= 1024 pixels)  * @alpha:    how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the drawable identified by  * @drawable. The thumbnail will be not larger than the requested  * size.  *  * Returns: (transfer full): a new #GdkPixbuf  *  * Since: 2.2  **/
+comment|/**  * gimp_drawable_get_thumbnail:  * @drawable: the drawable  * @width:    the requested thumbnail width  (<= 1024 pixels)  * @height:   the requested thumbnail height (<= 1024 pixels)  * @alpha:    how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the drawable identified by  * @drawable. The thumbnail will be not larger than the requested  * size.  *  * Returns: (transfer full): a new #GdkPixbuf  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -287,6 +287,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_drawable_get_sub_thumbnail_data:  * @drawable:             the drawable ID  * @src_x:                the x coordinate of the area  * @src_y:                the y coordinate of the area  * @src_width:            the width of the area  * @src_height:           the height of the area  * @dest_width: (inout):  the requested thumbnail width  (<= 1024 pixels)  * @dest_height: (inout): the requested thumbnail height (<= 1024 pixels)  * @bpp: (out):           the bytes per pixel of the returned thumbnail data  *  * Retrieves thumbnail data for the drawable identified by @drawable.  * The thumbnail will be not larger than the requested size.  *  * Returns: (transfer full) (nullable): thumbnail data or %NULL if  *          @drawable is invalid.  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|guchar
 modifier|*
@@ -385,7 +389,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_sub_thumbnail:  * @drawable:    the drawable ID  * @src_x:       the x coordinate of the area  * @src_y:       the y coordinate of the area  * @src_width:   the width of the area  * @src_height:  the height of the area  * @dest_width:  the requested thumbnail width  (<= 1024 pixels)  * @dest_height: the requested thumbnail height (<= 1024 pixels)  * @alpha:       how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the drawable identified by  * @drawable. The thumbnail will be not larger than the requested  * size.  *  * Returns: (transfer full): a new #GdkPixbuf  *  * Since: 2.2  **/
+comment|/**  * gimp_drawable_get_sub_thumbnail:  * @drawable:    the drawable ID  * @src_x:       the x coordinate of the area  * @src_y:       the y coordinate of the area  * @src_width:   the width of the area  * @src_height:  the height of the area  * @dest_width:  the requested thumbnail width  (<= 1024 pixels)  * @dest_height: the requested thumbnail height (<= 1024 pixels)  * @alpha:       how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the drawable identified by  * @drawable. The thumbnail will be not larger than the requested  * size.  *  * Returns: (transfer full): a new #GdkPixbuf  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -548,7 +552,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_buffer:  * @drawable: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable. The buffer can be used  * like any other GEGL buffer. Its data will we synced back with the core  * drawable when the buffer gets destroyed, or when gegl_buffer_flush()  * is called.  *  * Returns: (transfer full): The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: 2.10  */
+comment|/**  * gimp_drawable_get_buffer:  * @drawable: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable. The buffer can be used  * like any other GEGL buffer. Its data will we synced back with the core  * drawable when the buffer gets destroyed, or when gegl_buffer_flush()  * is called.  *  * Returns: (transfer full): The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -615,7 +619,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_shadow_buffer:  * @drawable: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable's shadow tiles. The  * buffer can be used like any other GEGL buffer. Its data will we  * synced back with the core drawable's shadow tiles when the buffer  * gets destroyed, or when gegl_buffer_flush() is called.  *  * Returns: (transfer full): The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: 2.10  */
+comment|/**  * gimp_drawable_get_shadow_buffer:  * @drawable: the ID of the #GimpDrawable to get the buffer for.  *  * Returns a #GeglBuffer of a specified drawable's shadow tiles. The  * buffer can be used like any other GEGL buffer. Its data will we  * synced back with the core drawable's shadow tiles when the buffer  * gets destroyed, or when gegl_buffer_flush() is called.  *  * Returns: (transfer full): The #GeglBuffer.  *  * See Also: gimp_drawable_get_shadow_buffer()  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -682,7 +686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_format:  * @drawable: the ID of the #GimpDrawable to get the format for.  *  * Returns the #Babl format of the drawable.  *  * Returns: The #Babl format.  *  * Since: 2.10  */
+comment|/**  * gimp_drawable_get_format:  * @drawable: the ID of the #GimpDrawable to get the format for.  *  * Returns the #Babl format of the drawable.  *  * Returns: The #Babl format.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -930,7 +934,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_thumbnail_format:  * @drawable: the ID of the #GimpDrawable to get the thumbnail format for.  *  * Returns the #Babl thumbnail format of the drawable.  *  * Returns: The #Babl thumbnail format.  *  * Since: 2.10.14  */
+comment|/**  * gimp_drawable_get_thumbnail_format:  * @drawable: the ID of the #GimpDrawable to get the thumbnail format for.  *  * Returns the #Babl thumbnail format of the drawable.  *  * Returns: The #Babl thumbnail format.  *  * Since: 3.0  */
 end_comment
 
 begin_function

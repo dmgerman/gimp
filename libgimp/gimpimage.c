@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e4ee0f0103
+DECL|enum|__anon28a5409b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -481,7 +481,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_is_valid:  * @image: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image is valid and refers to  * an existing image.  *  * Returns: Whether the image is valid.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_is_valid:  * @image: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image is valid and refers to  * an existing image.  *  * Returns: Whether the image is valid.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -670,7 +670,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layers:  * @image:      The image.  * @num_layers: (out): The number of layers in the returned array.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (array length=num_layers) (transfer container):  *          The list of layers contained in the image.  *          The returned array must be freed with g_free(). Layer  *          elements belong to libgimp and must not be freed.  **/
+comment|/**  * gimp_image_get_layers:  * @image:      The image.  * @num_layers: (out): The number of layers in the returned array.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (array length=num_layers) (transfer container):  *          The list of layers contained in the image.  *          The returned array must be freed with g_free(). Layer  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -763,7 +763,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channels:  * @image:        The image.  * @num_channels: (out): The number of channels in the returned array.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * "channels" are custom channels and do not include the image's color  * components.  *  * Returns: (array length=num_channels) (transfer container):  *          The list of channels contained in the image.  *          The returned array must be freed with g_free(). Channel  *          elements belong to libgimp and must not be freed.  **/
+comment|/**  * gimp_image_get_channels:  * @image:        The image.  * @num_channels: (out): The number of channels in the returned array.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * "channels" are custom channels and do not include the image's color  * components.  *  * Returns: (array length=num_channels) (transfer container):  *          The list of channels contained in the image.  *          The returned array must be freed with g_free(). Channel  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -856,7 +856,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors:  * @image:        The image.  * @num_vectors: (out): The number of vectors in the returned array.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (array length=num_vectors) (transfer container):  *          The list of vectors contained in the image.  *          The returned array must be freed with g_free(). Vectors  *          elements belong to libgimp and must not be freed.  **/
+comment|/**  * gimp_image_get_vectors:  * @image:        The image.  * @num_vectors: (out): The number of vectors in the returned array.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (array length=num_vectors) (transfer container):  *          The list of vectors contained in the image.  *          The returned array must be freed with g_free(). Vectors  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1207,7 +1207,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_colormap:  * @image:      The image.  * @num_colors: Returns the number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image  * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  */
+comment|/**  * gimp_image_get_colormap:  * @image:      The image.  * @num_colors: Returns the number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image  * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -1260,7 +1260,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_colormap:  * @image:      The image.  * @colormap:   The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of colors is specified by the "num_colors" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the "cmap" array.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_colormap:  * @image:      The image.  * @colormap:   The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of colors is specified by the "num_colors" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the "cmap" array.  *  * Returns: TRUE on success.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -1297,7 +1297,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_thumbnail_data:  * @image:  The image.  * @width:  (inout): The requested thumbnail width.  * @height: (inout): The requested thumbnail height.  * @bpp:    (out): The previews bpp.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value  * gives the number of bytes per pixel in the image.  *  * Returns: (transfer full): the thumbnail data.  **/
+comment|/**  * gimp_image_get_thumbnail_data:  * @image:  The image.  * @width:  (inout): The requested thumbnail width.  * @height: (inout): The requested thumbnail height.  * @bpp:    (out): The previews bpp.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value  * gives the number of bytes per pixel in the image.  *  * Returns: (transfer full): the thumbnail data.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1378,7 +1378,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_thumbnail:  * @image:  the image ID  * @width:  the requested thumbnail width  (<= 1024 pixels)  * @height: the requested thumbnail height (<= 1024 pixels)  * @alpha:  how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the image identified by @image->priv->id.  * The thumbnail will be not larger than the requested size.  *  * Returns: (transfer full): a new #GdkPixbuf  *  * Since: 2.2  **/
+comment|/**  * gimp_image_get_thumbnail:  * @image:  the image ID  * @width:  the requested thumbnail width  (<= 1024 pixels)  * @height: the requested thumbnail height (<= 1024 pixels)  * @alpha:  how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the image identified by @image->priv->id.  * The thumbnail will be not larger than the requested size.  *  * Returns: (transfer full): a new #GdkPixbuf  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1486,7 +1486,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_metadata:  * @image: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (nullable) (transfer full): The exif/ptc/xmp metadata,  *          or %NULL if there is none.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_metadata:  * @image: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (nullable) (transfer full): The exif/ptc/xmp metadata,  *          or %NULL if there is none.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1542,7 +1542,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_metadata:  * @image:    The image.  * @metadata: The exif/ptc/xmp metadata.  *  * Set the image's metadata.  *  * Sets exif/iptc/xmp metadata on the image, or deletes it if  * @metadata is %NULL.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_set_metadata:  * @image:    The image.  * @metadata: The exif/ptc/xmp metadata.  *  * Set the image's metadata.  *  * Sets exif/iptc/xmp metadata on the image, or deletes it if  * @metadata is %NULL.  *  * Returns: TRUE on success.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
