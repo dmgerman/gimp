@@ -72,14 +72,16 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dd193e0108
+DECL|struct|__anon2b7284d60108
 block|{
 DECL|member|image
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 decl_stmt|;
 DECL|member|drawable
-name|gint32
+name|GimpDrawable
+modifier|*
 name|drawable
 decl_stmt|;
 DECL|member|mode
@@ -103,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd193e0203
+DECL|enum|__anon2b7284d60203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -122,7 +124,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd193e0303
+DECL|enum|__anon2b7284d60303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -167,7 +169,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon27dd193e0408
+DECL|struct|__anon2b7284d60408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -642,7 +644,7 @@ argument_list|)
 argument_list|,
 literal|"RGB"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -757,6 +759,8 @@ name|args
 operator|.
 name|image
 operator|=
+name|gimp_image_get_by_id
+argument_list|(
 name|param
 index|[
 literal|1
@@ -765,11 +769,16 @@ operator|.
 name|data
 operator|.
 name|d_image
+argument_list|)
 expr_stmt|;
 name|args
 operator|.
 name|drawable
 operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
 name|param
 index|[
 literal|2
@@ -778,6 +787,8 @@ operator|.
 name|data
 operator|.
 name|d_drawable
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|rvals
 index|[
@@ -1062,10 +1073,11 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint
+name|GimpLayer
+modifier|*
 name|nl
 init|=
-literal|0
+name|NULL
 decl_stmt|;
 name|gint
 name|y
@@ -1300,7 +1312,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_fill
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|nl
+argument_list|)
 argument_list|,
 name|GIMP_FILL_TRANSPARENT
 argument_list|)
@@ -1313,8 +1328,7 @@ name|image
 argument_list|,
 name|nl
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -1424,7 +1438,10 @@ name|dest_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|nl
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2334,7 +2351,10 @@ condition|)
 block|{
 name|gimp_drawable_update
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|nl
+argument_list|)
 argument_list|,
 name|sel_x1
 argument_list|,

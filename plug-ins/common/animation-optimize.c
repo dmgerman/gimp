@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296771a30103
+DECL|enum|__anon29d850a20103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296771a30203
+DECL|enum|__anon29d850a20203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -172,7 +172,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|do_optimizations
 parameter_list|(
 name|GimpRunMode
@@ -349,18 +350,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_id
+DECL|variable|image
 specifier|static
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|new_image_id
+DECL|variable|new_image
 specifier|static
-name|gint32
-name|new_image_id
+name|GimpImage
+modifier|*
+name|new_image
 decl_stmt|;
 end_decl_stmt
 
@@ -375,7 +378,8 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|layers
 specifier|static
-name|gint32
+name|GimpLayer
+modifier|*
 modifier|*
 name|layers
 decl_stmt|;
@@ -523,7 +527,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -569,7 +573,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -612,7 +616,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -676,7 +680,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -717,7 +721,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -948,8 +952,10 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
+name|image
 operator|=
+name|gimp_image_get_by_id
+argument_list|(
 name|param
 index|[
 literal|1
@@ -958,8 +964,9 @@ operator|.
 name|data
 operator|.
 name|d_image
+argument_list|)
 expr_stmt|;
-name|new_image_id
+name|new_image
 operator|=
 name|do_optimizations
 argument_list|(
@@ -1016,7 +1023,10 @@ name|data
 operator|.
 name|d_image
 operator|=
-name|new_image_id
+name|gimp_image_get_id
+argument_list|(
+name|new_image
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1062,18 +1072,19 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-DECL|function|get_format (gint32 drawable_ID)
+DECL|function|get_format (GimpDrawable * drawable)
 name|get_format
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -1081,7 +1092,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 return|return
@@ -1103,7 +1114,7 @@ if|if
 condition|(
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -1111,7 +1122,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 return|return
@@ -1131,7 +1142,7 @@ block|}
 return|return
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 return|;
 block|}
@@ -1140,7 +1151,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_row (gint frame_num,DisposeType dispose,gint row_num,guchar * dest,gint dest_width,gint32 drawable_ID,gboolean cleanup)
+DECL|function|compose_row (gint frame_num,DisposeType dispose,gint row_num,guchar * dest,gint dest_width,GimpDrawable * drawable,gboolean cleanup)
 name|compose_row
 parameter_list|(
 name|gint
@@ -1159,8 +1170,9 @@ parameter_list|,
 name|gint
 name|dest_width
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gboolean
 name|cleanup
@@ -1244,7 +1256,7 @@ expr_stmt|;
 block|}
 name|gimp_drawable_offsets
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|rawx
@@ -1257,14 +1269,14 @@ name|rawwidth
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|rawheight
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* this frame has nothing to give us for this row; return */
@@ -1285,14 +1297,14 @@ name|format
 operator|=
 name|get_format
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|rawbpp
@@ -1331,7 +1343,7 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_get
@@ -1483,7 +1495,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|do_optimizations (GimpRunMode run_mode,gboolean diff_only)
 name|do_optimizations
 parameter_list|(
@@ -1517,8 +1530,9 @@ decl_stmt|;
 name|guint32
 name|frame_sizebytes
 decl_stmt|;
-name|gint32
-name|new_layer_id
+name|GimpLayer
+modifier|*
+name|new_layer
 decl_stmt|;
 name|DisposeType
 name|dispose
@@ -1555,11 +1569,11 @@ name|cumulated_delay
 init|=
 literal|0
 decl_stmt|;
-name|gint
+name|GimpLayer
+modifier|*
 name|last_true_frame
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gint
 name|buflen
@@ -1652,21 +1666,21 @@ name|width
 operator|=
 name|gimp_image_width
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_image_height
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|total_frames
@@ -1676,7 +1690,7 @@ name|imagetype
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|pixelstep
@@ -1781,7 +1795,7 @@ argument_list|,
 name|pixelstep
 argument_list|)
 expr_stmt|;
-name|new_image_id
+name|new_image
 operator|=
 name|gimp_image_new
 argument_list|(
@@ -1794,7 +1808,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1808,7 +1822,7 @@ name|palette
 operator|=
 name|gimp_image_get_colormap
 argument_list|(
-name|image_id
+name|image
 argument_list|,
 operator|&
 name|ncolors
@@ -1816,7 +1830,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_colormap
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
 name|palette
 argument_list|,
@@ -2049,9 +2063,12 @@ name|this_frame_num
 operator|++
 control|)
 block|{
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 init|=
+name|GIMP_DRAWABLE
+argument_list|(
 name|layers
 index|[
 name|total_frames
@@ -2062,6 +2079,7 @@ operator|+
 literal|1
 operator|)
 index|]
+argument_list|)
 decl_stmt|;
 name|dispose
 operator|=
@@ -2085,7 +2103,7 @@ index|]
 argument_list|,
 name|width
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2702,11 +2720,11 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-name|new_layer_id
+name|new_layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
 literal|"Backgroundx"
 argument_list|,
@@ -2720,18 +2738,17 @@ literal|100.0
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
-name|new_layer_id
+name|new_layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -2740,14 +2757,20 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|new_layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|new_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|format
 operator|=
 name|get_format
 argument_list|(
-name|new_layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|new_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
@@ -2797,9 +2820,12 @@ operator|++
 control|)
 block|{
 comment|/*            * BUILD THIS FRAME into our 'this_frame' buffer.            */
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 init|=
+name|GIMP_DRAWABLE
+argument_list|(
 name|layers
 index|[
 name|total_frames
@@ -2810,6 +2836,7 @@ operator|+
 literal|1
 operator|)
 index|]
+argument_list|)
 decl_stmt|;
 comment|/* Image has been closed/etc since we got the layer list? */
 comment|/* FIXME - How do we tell if a gimp_drawable_get() fails? */
@@ -2817,7 +2844,7 @@ if|if
 condition|(
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 operator|==
 literal|0
@@ -2875,7 +2902,7 @@ index|]
 argument_list|,
 name|width
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4083,6 +4110,8 @@ name|oldlayer_name
 operator|=
 name|gimp_item_get_name
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layers
 index|[
 name|total_frames
@@ -4093,6 +4122,7 @@ operator|+
 literal|1
 operator|)
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|buflen
@@ -4194,7 +4224,10 @@ name|oldlayer_name
 operator|=
 name|gimp_item_get_name
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|last_true_frame
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|buflen
@@ -4268,7 +4301,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_set_name
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|last_true_frame
+argument_list|)
 argument_list|,
 name|newlayer_name
 argument_list|)
@@ -4296,11 +4332,11 @@ name|this_delay
 expr_stmt|;
 name|last_true_frame
 operator|=
-name|new_layer_id
+name|new_layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
 name|newlayer_name
 argument_list|,
@@ -4318,7 +4354,7 @@ literal|100.0
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4329,12 +4365,11 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
-name|new_layer_id
+name|new_layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -4343,14 +4378,20 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|new_layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|new_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|format
 operator|=
 name|get_format
 argument_list|(
-name|new_layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|new_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
@@ -4415,7 +4456,7 @@ expr_stmt|;
 block|}
 name|gimp_image_undo_enable
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|)
 expr_stmt|;
 if|if
@@ -4426,7 +4467,7 @@ name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_display_new
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4475,7 +4516,7 @@ operator|=
 name|NULL
 expr_stmt|;
 return|return
-name|new_image_id
+name|new_image
 return|;
 block|}
 end_function
@@ -4505,6 +4546,8 @@ name|layer_name
 operator|=
 name|gimp_item_get_name
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layers
 index|[
 name|total_frames
@@ -4515,6 +4558,7 @@ operator|+
 literal|1
 operator|)
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|disposal
@@ -4558,6 +4602,8 @@ name|layer_name
 operator|=
 name|gimp_item_get_name
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|layers
 index|[
 name|total_frames
@@ -4568,6 +4614,7 @@ operator|+
 literal|1
 operator|)
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
