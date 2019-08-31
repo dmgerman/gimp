@@ -184,7 +184,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_tile_write
 parameter_list|(
 name|GimpTileBackendPlugin
@@ -225,7 +225,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_tile_init
 parameter_list|(
 name|GimpTileBackendPlugin
@@ -782,6 +782,24 @@ name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_tile_init
+argument_list|(
+name|backend_plugin
+argument_list|,
+operator|&
+name|gimp_tile
+argument_list|,
+name|y
+argument_list|,
+name|x
+argument_list|)
+condition|)
+return|return
+name|NULL
+return|;
 name|tile_size
 operator|=
 name|gegl_tile_backend_get_tile_size
@@ -801,18 +819,6 @@ operator|=
 name|gegl_tile_get_data
 argument_list|(
 name|tile
-argument_list|)
-expr_stmt|;
-name|gimp_tile_init
-argument_list|(
-name|backend_plugin
-argument_list|,
-operator|&
-name|gimp_tile
-argument_list|,
-name|y
-argument_list|,
-name|x
 argument_list|)
 expr_stmt|;
 name|gimp_tile_get
@@ -930,7 +936,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_tile_write (GimpTileBackendPlugin * backend_plugin,gint x,gint y,GeglTile * tile)
 name|gimp_tile_write
 parameter_list|(
@@ -980,6 +986,24 @@ name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_tile_init
+argument_list|(
+name|backend_plugin
+argument_list|,
+operator|&
+name|gimp_tile
+argument_list|,
+name|y
+argument_list|,
+name|x
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
 name|tile_size
 operator|=
 name|gegl_tile_backend_get_tile_size
@@ -992,18 +1016,6 @@ operator|=
 name|gegl_tile_get_data
 argument_list|(
 name|tile
-argument_list|)
-expr_stmt|;
-name|gimp_tile_init
-argument_list|(
-name|backend_plugin
-argument_list|,
-operator|&
-name|gimp_tile
-argument_list|,
-name|y
-argument_list|,
-name|x
 argument_list|)
 expr_stmt|;
 name|gimp_tile
@@ -1134,12 +1146,15 @@ operator|&
 name|gimp_tile
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_tile_init (GimpTileBackendPlugin * backend_plugin,GimpTile * tile,gint row,gint col)
 name|gimp_tile_init
 parameter_list|(
@@ -1166,6 +1181,29 @@ name|backend_plugin
 operator|->
 name|priv
 decl_stmt|;
+if|if
+condition|(
+name|row
+operator|>
+name|priv
+operator|->
+name|ntile_rows
+operator|-
+literal|1
+operator|||
+name|col
+operator|>
+name|priv
+operator|->
+name|ntile_cols
+operator|-
+literal|1
+condition|)
+block|{
+return|return
+name|FALSE
+return|;
+block|}
 name|tile
 operator|->
 name|tile_num
@@ -1262,6 +1300,9 @@ name|data
 operator|=
 name|NULL
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
