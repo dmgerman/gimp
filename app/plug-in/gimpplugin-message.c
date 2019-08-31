@@ -1228,7 +1228,7 @@ argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n\n"
-literal|"requested invalid tile (killing)"
+literal|"requested invalid tile #%d for writing (killing)"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -1241,6 +1241,10 @@ name|plug_in
 operator|->
 name|file
 argument_list|)
+argument_list|,
+name|tile_info
+operator|->
+name|tile_num
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1587,7 +1591,7 @@ argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n\n"
-literal|"requested invalid tile (killing)"
+literal|"requested invalid tile #%d for reading (killing)"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -1600,6 +1604,10 @@ name|plug_in
 operator|->
 name|file
 argument_list|)
+argument_list|,
+name|request
+operator|->
+name|tile_num
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
