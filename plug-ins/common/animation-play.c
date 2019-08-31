@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc7c550103
+DECL|enum|__anon2ae519640103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc7c550208
+DECL|struct|__anon2ae519640208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc7c550308
+DECL|struct|__anon2ae519640308
 block|{
 DECL|member|x
 DECL|member|y
@@ -183,10 +183,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/* Declare local functions.  */
-end_comment
 
 begin_define
 DECL|macro|PLAY_TYPE
