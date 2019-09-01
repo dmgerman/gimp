@@ -360,18 +360,19 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-DECL|function|get_u8_format (gint32 drawable_id)
+DECL|function|get_u8_format (GimpDrawable * drawable)
 name|get_u8_format
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -379,7 +380,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 return|return
@@ -402,7 +403,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 return|return
@@ -479,6 +480,13 @@ name|row
 decl_stmt|;
 name|gint32
 name|drawable_id
+init|=
+operator|-
+literal|1
+decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|gint
 name|rowstride
@@ -494,12 +502,20 @@ operator|&
 name|drawable_id
 argument_list|)
 expr_stmt|;
+name|drawable
+operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
+name|drawable_id
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|drawable_id
-operator|==
-operator|-
-literal|1
+operator|!
+name|drawable
 condition|)
 return|return;
 if|if
@@ -546,7 +562,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -566,7 +582,7 @@ name|format
 operator|=
 name|get_u8_format
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -620,7 +636,7 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -916,18 +932,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|void dummybrushdmenuselect (GtkWidget *w, gpointer data) {   ppm_kill (&brushppm);   ppm_new (&brushppm, 10,10);   brush_from_file = 0;   update_brush_preview (NULL); }
-endif|#
-directive|endif
-end_endif
-
 begin_function
 specifier|static
 name|void
@@ -1209,14 +1213,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|validdrawable (gint32 imageid,gint32 drawableid,gpointer data)
+DECL|function|validdrawable (GimpImage * image,GimpItem * item,gpointer data)
 name|validdrawable
 parameter_list|(
-name|gint32
-name|imageid
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawableid
+name|GimpItem
+modifier|*
+name|item
 parameter_list|,
 name|gpointer
 name|data
@@ -1226,12 +1232,18 @@ return|return
 operator|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawableid
+name|GIMP_DRAWABLE
+argument_list|(
+name|item
+argument_list|)
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawableid
+name|GIMP_DRAWABLE
+argument_list|(
+name|item
+argument_list|)
 argument_list|)
 operator|)
 return|;
