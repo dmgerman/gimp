@@ -287,6 +287,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_drawable_get_sub_thumbnail_data:  * @drawable:             the drawable ID  * @src_x:                the x coordinate of the area  * @src_y:                the y coordinate of the area  * @src_width:            the width of the area  * @src_height:           the height of the area  * @dest_width: (inout):  the requested thumbnail width  (<= 1024 pixels)  * @dest_height: (inout): the requested thumbnail height (<= 1024 pixels)  * @bpp: (out):           the bytes per pixel of the returned thumbnail data  *  * Retrieves thumbnail data for the drawable identified by @drawable.  * The thumbnail will be not larger than the requested size.  *  * Returns: (transfer full) (nullable): thumbnail data or %NULL if  *          @drawable is invalid.  **/
+end_comment
+
 begin_function
 name|guchar
 modifier|*
