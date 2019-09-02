@@ -88,8 +88,9 @@ begin_function_decl
 name|gboolean
 name|main_dialog
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

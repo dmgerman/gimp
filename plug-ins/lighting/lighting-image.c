@@ -54,16 +54,18 @@ file|"lighting-ui.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|input_drawable_id
-name|gint32
-name|input_drawable_id
+DECL|variable|input_drawable
+name|GimpDrawable
+modifier|*
+name|input_drawable
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|output_drawable_id
-name|gint32
-name|output_drawable_id
+DECL|variable|output_drawable
+name|GimpDrawable
+modifier|*
+name|output_drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -84,9 +86,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|bump_drawable_id
-name|gint32
-name|bump_drawable_id
+DECL|variable|bump_drawable
+name|GimpDrawable
+modifier|*
+name|bump_drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -108,9 +111,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|env_drawable_id
-name|gint32
-name|env_drawable_id
+DECL|variable|env_drawable
+name|GimpDrawable
+modifier|*
+name|env_drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -1705,11 +1709,12 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|image_setup (gint32 drawable_id,gint interactive)
+DECL|function|image_setup (GimpDrawable * drawable,gint interactive)
 name|image_setup
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|interactive
@@ -1728,19 +1733,19 @@ argument_list|()
 expr_stmt|;
 comment|/* Get some useful info on the input drawable */
 comment|/* ========================================== */
-name|input_drawable_id
+name|input_drawable
 operator|=
-name|drawable_id
+name|drawable
 expr_stmt|;
-name|output_drawable_id
+name|output_drawable
 operator|=
-name|drawable_id
+name|drawable
 expr_stmt|;
 name|ret
 operator|=
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|border_x1
@@ -1779,21 +1784,21 @@ name|width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|input_drawable_id
+name|input_drawable
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|input_drawable_id
+name|input_drawable
 argument_list|)
 expr_stmt|;
 name|source_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|input_drawable_id
+name|input_drawable
 argument_list|)
 expr_stmt|;
 name|maxcounter
@@ -1857,19 +1862,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|bumpmap_setup (gint32 bumpmap_id)
+DECL|function|bumpmap_setup (GimpDrawable * bumpmap)
 name|bumpmap_setup
 parameter_list|(
-name|gint32
-name|bumpmap_id
+name|GimpDrawable
+modifier|*
+name|bumpmap
 parameter_list|)
 block|{
 if|if
 condition|(
-name|bumpmap_id
-operator|!=
-operator|-
-literal|1
+name|bumpmap
 operator|&&
 operator|!
 name|bump_buffer
@@ -1879,14 +1882,14 @@ name|bump_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|bumpmap_id
+name|bumpmap
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|bumpmap_id
+name|bumpmap
 argument_list|)
 condition|)
 name|bump_format
@@ -1911,19 +1914,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|envmap_setup (gint32 envmap_id)
+DECL|function|envmap_setup (GimpDrawable * envmap)
 name|envmap_setup
 parameter_list|(
-name|gint32
-name|envmap_id
+name|GimpDrawable
+modifier|*
+name|envmap
 parameter_list|)
 block|{
 if|if
 condition|(
-name|envmap_id
-operator|!=
-operator|-
-literal|1
+name|envmap
 operator|&&
 operator|!
 name|env_buffer
@@ -1933,21 +1934,21 @@ name|env_width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|envmap_id
+name|envmap
 argument_list|)
 expr_stmt|;
 name|env_height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|envmap_id
+name|envmap
 argument_list|)
 expr_stmt|;
 name|env_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|envmap_id
+name|envmap
 argument_list|)
 expr_stmt|;
 block|}

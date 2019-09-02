@@ -26,15 +26,17 @@ end_include
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|input_drawable_id
+name|GimpDrawable
+modifier|*
+name|input_drawable
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|output_drawable_id
+name|GimpDrawable
+modifier|*
+name|output_drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -56,8 +58,9 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|bump_drawable_id
+name|GimpDrawable
+modifier|*
+name|bump_drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -80,8 +83,9 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|env_drawable_id
+name|GimpDrawable
+modifier|*
+name|env_drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -369,8 +373,9 @@ begin_function_decl
 name|gint
 name|image_setup
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|interactive
@@ -382,8 +387,9 @@ begin_function_decl
 name|void
 name|bumpmap_setup
 parameter_list|(
-name|gint32
-name|bumpmap_id
+name|GimpDrawable
+modifier|*
+name|bumpmap
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -392,8 +398,9 @@ begin_function_decl
 name|void
 name|envmap_setup
 parameter_list|(
-name|gint32
-name|envmap_id
+name|GimpDrawable
+modifier|*
+name|envmap
 parameter_list|)
 function_decl|;
 end_function_decl

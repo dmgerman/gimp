@@ -95,17 +95,17 @@ decl_stmt|;
 name|GimpVector3
 name|p
 decl_stmt|;
-name|gint32
-name|new_image_id
+name|GimpImage
+modifier|*
+name|new_image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
-name|gint32
-name|new_layer_id
+name|GimpLayer
+modifier|*
+name|new_layer
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gint32
 name|index
@@ -143,14 +143,14 @@ operator|&&
 operator|!
 name|gimp_drawable_has_alpha
 argument_list|(
-name|input_drawable_id
+name|input_drawable
 argument_list|)
 operator|)
 condition|)
 block|{
 comment|/* Create a new image */
 comment|/* ================== */
-name|new_image_id
+name|new_image
 operator|=
 name|gimp_image_new
 argument_list|(
@@ -172,11 +172,11 @@ condition|)
 block|{
 comment|/* Add a layer with an alpha channel */
 comment|/* ================================= */
-name|new_layer_id
+name|new_layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
 literal|"Background"
 argument_list|,
@@ -190,7 +190,7 @@ literal|100.0
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -199,11 +199,11 @@ else|else
 block|{
 comment|/* Create a "normal" layer */
 comment|/* ======================= */
-name|new_layer_id
+name|new_layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
 literal|"Background"
 argument_list|,
@@ -217,26 +217,28 @@ literal|100.0
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 name|gimp_image_insert_layer
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|,
-name|new_layer_id
+name|new_layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|output_drawable_id
+name|output_drawable
 operator|=
-name|new_layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|new_layer
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -257,9 +259,15 @@ condition|)
 block|{
 name|bumpmap_setup
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
 name|mapvals
 operator|.
 name|bumpmap_id
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -294,9 +302,15 @@ else|else
 block|{
 name|envmap_setup
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_get_by_id
+argument_list|(
 name|mapvals
 operator|.
 name|envmap_id
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ray_func
@@ -308,14 +322,14 @@ name|dest_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|output_drawable_id
+name|output_drawable
 argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|output_drawable_id
+name|output_drawable
 argument_list|)
 expr_stmt|;
 comment|/* FIXME */
@@ -327,7 +341,7 @@ literal|4
 else|:
 literal|3
 expr_stmt|;
-comment|//gimp_drawable_bpp (output_drawable_id);
+comment|//gimp_drawable_bpp (output_drawable);
 name|row
 operator|=
 name|g_new
@@ -593,14 +607,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|output_drawable_id
+name|output_drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|output_drawable_id
+name|output_drawable
 argument_list|,
 literal|0
 argument_list|,
@@ -613,15 +627,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|new_image_id
-operator|!=
-operator|-
-literal|1
+name|new_image
 condition|)
 block|{
 name|gimp_display_new
 argument_list|(
-name|new_image_id
+name|new_image
 argument_list|)
 expr_stmt|;
 name|gimp_displays_flush
