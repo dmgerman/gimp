@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2966d6f00108
+DECL|struct|__anon27cea18c0108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2966d6f00208
+DECL|struct|__anon27cea18c0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -760,11 +760,11 @@ name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-literal|"dimension"
+literal|"dimension-2"
 argument_list|,
-literal|"Dimension"
+literal|"Dimension 2"
 argument_list|,
-literal|"Dimension of the brush pipe"
+literal|"Dimension of the brush pipe (same as dimension)"
 argument_list|,
 literal|1
 argument_list|,
