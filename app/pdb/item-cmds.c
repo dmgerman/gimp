@@ -1148,7 +1148,7 @@ decl_stmt|;
 name|vectors
 operator|=
 operator|(
-name|GIMP_IS_DRAWABLE
+name|GIMP_IS_VECTORS
 argument_list|(
 name|item
 argument_list|)
