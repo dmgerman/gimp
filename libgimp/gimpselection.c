@@ -84,6 +84,49 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_selection_get_by_id:  * @selection_id: The selection id.  *  * Returns a #GimpSelection representing @selection_id. This function  * calls gimp_item_get_by_id() and returns the item if it is selection  * or %NULL otherwise.  *  * Returns: (nullable) (transfer none): a #GimpSelection for  *          @selection_id or %NULL if @selection_id does not represent  *          a valid selection. The object belongs to libgimp and you  *          must not modify or unref it.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|GimpSelection
+modifier|*
+DECL|function|gimp_selection_get_by_id (gint32 selection_id)
+name|gimp_selection_get_by_id
+parameter_list|(
+name|gint32
+name|selection_id
+parameter_list|)
+block|{
+name|GimpItem
+modifier|*
+name|item
+init|=
+name|gimp_item_get_by_id
+argument_list|(
+name|selection_id
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|GIMP_IS_SELECTION
+argument_list|(
+name|item
+argument_list|)
+condition|)
+return|return
+operator|(
+name|GimpSelection
+operator|*
+operator|)
+name|item
+return|;
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_selection_float:  * @image:    ignored  * @drawable: The drawable from which to float selection.  * @offx:     x offset for translation.  * @offy:     y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: (transfer none): The floated layer.  */
 end_comment
 

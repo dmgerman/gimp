@@ -263,6 +263,17 @@ end_decl_stmt
 begin_function_decl
 name|GimpChannel
 modifier|*
+name|gimp_channel_get_by_id
+parameter_list|(
+name|gint32
+name|channel_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpChannel
+modifier|*
 name|gimp_channel_new
 parameter_list|(
 name|GimpImage

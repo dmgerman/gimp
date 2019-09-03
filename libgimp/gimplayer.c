@@ -94,6 +94,49 @@ comment|/* Public API. */
 end_comment
 
 begin_comment
+comment|/**  * gimp_layer_get_by_id:  * @layer_id: The layer id.  *  * Returns a #GimpLayer representing @layer_id. This function calls  * gimp_item_get_by_id() and returns the item if it is layer or %NULL  * otherwise.  *  * Returns: (nullable) (transfer none): a #GimpLayer for @layer_id or  *          %NULL if @layer_id does not represent a valid layer. The  *          object belongs to libgimp and you must not modify or unref  *          it.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|GimpLayer
+modifier|*
+DECL|function|gimp_layer_get_by_id (gint32 layer_id)
+name|gimp_layer_get_by_id
+parameter_list|(
+name|gint32
+name|layer_id
+parameter_list|)
+block|{
+name|GimpItem
+modifier|*
+name|item
+init|=
+name|gimp_item_get_by_id
+argument_list|(
+name|layer_id
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|GIMP_IS_LAYER
+argument_list|(
+name|item
+argument_list|)
+condition|)
+return|return
+operator|(
+name|GimpLayer
+operator|*
+operator|)
+name|item
+return|;
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_layer_new:  * @image:   The image to which to add the layer.  * @name:    The layer name.  * @width:   The layer width.  * @height:  The layer height.  * @type:    The layer type.  * @opacity: The layer opacity.  * @mode:    The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: (transfer none): The newly created layer.  *          The object belongs to libgimp and you should not free it.  *  * Since: 3.0  */
 end_comment
 

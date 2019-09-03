@@ -270,6 +270,17 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|GimpDrawable
+modifier|*
+name|gimp_drawable_get_by_id
+parameter_list|(
+name|gint32
+name|drawable_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_ifndef
 ifndef|#
 directive|ifndef

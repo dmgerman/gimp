@@ -83,5 +83,48 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_vectors_get_by_id:  * @vectors_id: The vectors id.  *  * Returns a #GimpVectors representing @vectors_id. This function  * calls gimp_item_get_by_id() and returns the item if it is vectors  * or %NULL otherwise.  *  * Returns: (nullable) (transfer none): a #GimpVectors for @vectors_id  *          or %NULL if @vectors_id does not represent a valid  *          vectors. The object belongs to libgimp and you must not  *          modify or unref it.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|GimpVectors
+modifier|*
+DECL|function|gimp_vectors_get_by_id (gint32 vectors_id)
+name|gimp_vectors_get_by_id
+parameter_list|(
+name|gint32
+name|vectors_id
+parameter_list|)
+block|{
+name|GimpItem
+modifier|*
+name|item
+init|=
+name|gimp_item_get_by_id
+argument_list|(
+name|vectors_id
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|GIMP_IS_VECTORS
+argument_list|(
+name|item
+argument_list|)
+condition|)
+return|return
+operator|(
+name|GimpVectors
+operator|*
+operator|)
+name|item
+return|;
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
 end_unit
 

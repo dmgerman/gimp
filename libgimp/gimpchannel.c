@@ -84,6 +84,49 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_channel_get_by_id:  * @channel_id: The channel id.  *  * Returns a #GimpChannel representing @channel_id. This function  * calls gimp_item_get_by_id() and returns the item if it is channel  * or %NULL otherwise.  *  * Returns: (nullable) (transfer none): a #GimpChannel for @channel_id  *          or %NULL if @channel_id does not represent a valid  *          channel. The object belongs to libgimp and you must not  *          modify or unref it.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|GimpChannel
+modifier|*
+DECL|function|gimp_channel_get_by_id (gint32 channel_id)
+name|gimp_channel_get_by_id
+parameter_list|(
+name|gint32
+name|channel_id
+parameter_list|)
+block|{
+name|GimpItem
+modifier|*
+name|item
+init|=
+name|gimp_item_get_by_id
+argument_list|(
+name|channel_id
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|item
+argument_list|)
+condition|)
+return|return
+operator|(
+name|GimpChannel
+operator|*
+operator|)
+name|item
+return|;
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_channel_new:  * @image:   The image to which to add the channel.  * @name:    The channel name.  * @width:   The channel width.  * @height:  The channel height.  * @opacity: The channel opacity.  * @color:   The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width and  * height. Name, opacity, and color are also supplied parameters. The  * new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with the gimp_image_insert_channel()  * command. Other attributes such as channel show masked, should be  * set with explicit procedure calls. The channel's contents are  * undefined initially.  *  * Returns: (transfer none): The newly created channel.  *          The object belongs to libgimp and you should not free it.  */
 end_comment
 

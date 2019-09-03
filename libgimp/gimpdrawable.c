@@ -100,6 +100,49 @@ comment|/* Public API. */
 end_comment
 
 begin_comment
+comment|/**  * gimp_drawable_get_by_id:  * @drawable_id: The drawable id.  *  * Returns a #GimpDrawable representing @drawable_id. This function  * calls gimp_item_get_by_id() and returns the item if it is drawable  * or %NULL otherwise.  *  * Returns: (nullable) (transfer none): a #GimpDrawable for  *          @drawable_id or %NULL if @drawable_id does not represent a  *          valid drawable. The object belongs to libgimp and you must  *          not modify or unref it.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|GimpDrawable
+modifier|*
+DECL|function|gimp_drawable_get_by_id (gint32 drawable_id)
+name|gimp_drawable_get_by_id
+parameter_list|(
+name|gint32
+name|drawable_id
+parameter_list|)
+block|{
+name|GimpItem
+modifier|*
+name|item
+init|=
+name|gimp_item_get_by_id
+argument_list|(
+name|drawable_id
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|item
+argument_list|)
+condition|)
+return|return
+operator|(
+name|GimpDrawable
+operator|*
+operator|)
+name|item
+return|;
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_drawable_get_thumbnail_data:  * @drawable: the drawable  * @width:    (inout): the requested thumbnail width  (<= 1024 pixels)  * @height:   (inout): the requested thumbnail height (<= 1024 pixels)  * @bpp:      (out):   the bytes per pixel of the returned thubmnail data  *  * Retrieves thumbnail data for the drawable identified by @drawable.  * The thumbnail will be not larger than the requested size.  *  * Returns: (transfer full) (nullable): thumbnail data or %NULL if  *          @drawable is invalid.  **/
 end_comment
 

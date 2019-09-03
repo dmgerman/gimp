@@ -255,6 +255,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+name|GimpSelection
+modifier|*
+name|gimp_selection_get_by_id
+parameter_list|(
+name|gint32
+name|selection_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpLayer
 modifier|*
 name|gimp_selection_float
