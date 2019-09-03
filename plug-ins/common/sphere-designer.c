@@ -222,7 +222,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af6fccd0103
+DECL|enum|__anon2a4611d30103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -247,7 +247,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af6fccd0203
+DECL|enum|__anon2a4611d30203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af6fccd0303
+DECL|enum|__anon2a4611d30303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -312,7 +312,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af6fccd0403
+DECL|enum|__anon2a4611d30403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -322,7 +322,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af6fccd0503
+DECL|enum|__anon2a4611d30503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -375,7 +375,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd0608
+DECL|struct|__anon2a4611d30608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd0708
+DECL|struct|__anon2a4611d30708
 block|{
 DECL|member|numcol
 name|gshort
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd0808
+DECL|struct|__anon2a4611d30808
 block|{
 DECL|member|majtype
 name|gint
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd0908
+DECL|struct|__anon2a4611d30908
 block|{
 DECL|member|type
 name|gshort
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd0a08
+DECL|struct|__anon2a4611d30a08
 block|{
 DECL|member|type
 name|gshort
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd0b08
+DECL|struct|__anon2a4611d30b08
 block|{
 DECL|member|com
 name|common
@@ -615,7 +615,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd0c08
+DECL|struct|__anon2a4611d30c08
 block|{
 DECL|member|com
 name|common
@@ -641,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd0d08
+DECL|struct|__anon2a4611d30d08
 block|{
 DECL|member|com
 name|common
@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd0e08
+DECL|struct|__anon2a4611d30e08
 block|{
 DECL|member|com
 name|common
@@ -689,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd0f08
+DECL|struct|__anon2a4611d30f08
 block|{
 DECL|member|com
 name|common
@@ -712,7 +712,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd1008
+DECL|struct|__anon2a4611d31008
 block|{
 DECL|member|com
 name|common
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6fccd1108
+DECL|struct|__anon2a4611d31108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -761,7 +761,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2af6fccd120a
+DECL|union|__anon2a4611d3120a
 block|{
 DECL|member|com
 name|common
@@ -1158,8 +1158,9 @@ specifier|static
 name|void
 name|realrender
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -17217,11 +17218,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|realrender (gint32 drawable_ID)
+DECL|function|realrender (GimpDrawable * drawable)
 name|realrender
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -17297,7 +17299,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -17317,21 +17319,21 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|dest_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -17339,7 +17341,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -17364,7 +17366,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -17761,14 +17763,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|x1
 argument_list|,
@@ -17849,7 +17851,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|GIMP_PLUGIN
+name|GIMP_PDB_PROC_TYPE_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -17876,11 +17878,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|sphere_main (gint32 drawable_ID)
+DECL|function|sphere_main (GimpDrawable * drawable)
 name|sphere_main
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|gimp_ui_init
@@ -18013,8 +18016,9 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -18081,8 +18085,10 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|drawable_ID
+name|drawable
 operator|=
+name|gimp_drawable_get_by_id
+argument_list|(
 name|param
 index|[
 literal|2
@@ -18091,13 +18097,14 @@ operator|.
 name|data
 operator|.
 name|d_drawable
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x
@@ -18152,7 +18159,7 @@ condition|(
 operator|!
 name|sphere_main
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 return|return;
@@ -18210,7 +18217,7 @@ argument_list|)
 expr_stmt|;
 name|realrender
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gimp_displays_flush
