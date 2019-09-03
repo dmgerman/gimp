@@ -100,14 +100,14 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7cf2e0108
+DECL|struct|__anon2affbdac0108
 block|{
 DECL|member|is_object
 name|gboolean
 name|is_object
 decl_stmt|;
 union|union
-DECL|union|__anon28d7cf2e020a
+DECL|union|__anon2affbdac020a
 block|{
 DECL|member|object
 name|gpointer
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7cf2e0308
+DECL|struct|__anon2affbdac0308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7cf2e0408
+DECL|struct|__anon2affbdac0408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7cf2e0508
+DECL|struct|__anon2affbdac0508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7cf2e0608
+DECL|struct|__anon2affbdac0608
 block|{
 DECL|member|width
 DECL|member|height
@@ -2142,12 +2142,9 @@ name|composevals
 operator|.
 name|source_layer
 operator|=
-name|GIMP_LAYER
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_layer_get_by_id
 argument_list|(
 name|source
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2216,7 +2213,7 @@ name|comp
 operator|.
 name|object
 operator|=
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|input
 index|[
@@ -6254,7 +6251,7 @@ name|comp
 operator|.
 name|object
 operator|=
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|id
 argument_list|)

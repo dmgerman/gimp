@@ -78,7 +78,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc897640103
+DECL|enum|__anon2919400a0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -98,7 +98,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc897640208
+DECL|struct|__anon2919400a0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -878,9 +878,7 @@ name|d_int32
 expr_stmt|;
 name|drawable
 operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|param
 index|[
@@ -890,7 +888,6 @@ operator|.
 name|data
 operator|.
 name|d_drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 operator|*
@@ -5332,14 +5329,11 @@ condition|)
 block|{
 name|vdraw
 operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|dvals
 operator|.
 name|vector_map_id
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* bytes per pixel in SOURCE drawable */
@@ -5398,14 +5392,11 @@ condition|)
 block|{
 name|gdraw
 operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|dvals
 operator|.
 name|grad_map_id
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gformat
@@ -5496,14 +5487,11 @@ condition|)
 block|{
 name|mdraw
 operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|dvals
 operator|.
 name|mag_map_id
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|mformat
@@ -6724,26 +6712,20 @@ name|warp_iter
 decl_stmt|;
 name|disp_map
 operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|dvals
 operator|.
 name|warp_map_id
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|mag_draw
 operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|dvals
 operator|.
 name|mag_map_id
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* calculate new X,Y Displacement image maps */

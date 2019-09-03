@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon276146330108
+DECL|struct|__anon277be1280108
 block|{
 DECL|member|randomize
 name|gint
@@ -1350,14 +1350,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 init|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|config
 operator|.
 name|cmap_drawable_id
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|GeglBuffer

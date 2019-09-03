@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aef829e0108
+DECL|struct|__anon2c8850e50108
 block|{
 DECL|member|new_width
 name|gint
@@ -545,9 +545,7 @@ operator|.
 name|d_image
 argument_list|)
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|param
 index|[
@@ -557,7 +555,6 @@ operator|.
 name|data
 operator|.
 name|d_drawable
-argument_list|)
 argument_list|)
 argument_list|)
 condition|)
@@ -697,9 +694,7 @@ operator|.
 name|d_image
 argument_list|)
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|param
 index|[
@@ -709,7 +704,6 @@ operator|.
 name|data
 operator|.
 name|d_drawable
-argument_list|)
 argument_list|)
 argument_list|,
 operator|&

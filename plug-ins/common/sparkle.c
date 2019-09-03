@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fb3600108
+DECL|struct|__anon2c278e7d0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -822,12 +822,9 @@ name|d_drawable
 expr_stmt|;
 name|drawable
 operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|drawable_ID
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

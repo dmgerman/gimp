@@ -504,12 +504,9 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
+name|gimp_drawable_get_by_id
 argument_list|(
 name|drawable_id
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
