@@ -45,7 +45,6 @@ end_define
 
 begin_function_decl
 name|G_BEGIN_DECLS
-comment|/* For information look into the C source or the html documentation */
 name|GimpDisplay
 modifier|*
 name|_gimp_procedure_get_display

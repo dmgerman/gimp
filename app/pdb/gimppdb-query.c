@@ -1878,10 +1878,6 @@ name|list
 decl_stmt|;
 name|GEnumClass
 modifier|*
-name|arg_class
-decl_stmt|;
-name|GEnumClass
-modifier|*
 name|proc_class
 decl_stmt|;
 name|GString
@@ -1931,13 +1927,6 @@ else|else
 name|list
 operator|=
 name|value
-expr_stmt|;
-name|arg_class
-operator|=
-name|g_type_class_ref
-argument_list|(
-name|GIMP_TYPE_PDB_ARG_TYPE
-argument_list|)
 expr_stmt|;
 name|proc_class
 operator|=
@@ -2584,11 +2573,6 @@ argument_list|(
 name|buf
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|g_type_class_unref
-argument_list|(
-name|arg_class
 argument_list|)
 expr_stmt|;
 name|g_type_class_unref

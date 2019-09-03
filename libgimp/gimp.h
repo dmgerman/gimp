@@ -164,12 +164,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimplegacy.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimppaletteselect.h>
 end_include
 
