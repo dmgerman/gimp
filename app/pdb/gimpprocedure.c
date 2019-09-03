@@ -1552,6 +1552,36 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
+DECL|function|gimp_procedure_get_help (GimpProcedure * procedure)
+name|gimp_procedure_get_help
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|procedure
+operator|->
+name|help
+return|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
 DECL|function|gimp_procedure_get_help_id (GimpProcedure * procedure)
 name|gimp_procedure_get_help_id
 parameter_list|(
