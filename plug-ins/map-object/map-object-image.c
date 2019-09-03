@@ -90,16 +90,26 @@ file|"map-object-image.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|input_drawable_id
-name|gint32
-name|input_drawable_id
+DECL|variable|image
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|output_drawable_id
-name|gint32
-name|output_drawable_id
+DECL|variable|input_drawable
+name|GimpDrawable
+modifier|*
+name|input_drawable
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|output_drawable
+name|GimpDrawable
+modifier|*
+name|output_drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -120,9 +130,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|box_drawable_ids
-name|gint32
-name|box_drawable_ids
+DECL|variable|box_drawables
+name|GimpDrawable
+modifier|*
+name|box_drawables
 index|[
 literal|6
 index|]
@@ -141,9 +152,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|cylinder_drawable_ids
-name|gint32
-name|cylinder_drawable_ids
+DECL|variable|cylinder_drawables
+name|GimpDrawable
+modifier|*
+name|cylinder_drawables
 index|[
 literal|2
 index|]
@@ -204,13 +216,10 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|width
 DECL|variable|height
-DECL|variable|image_id
 name|gint
 name|width
 decl_stmt|,
 name|height
-decl_stmt|,
-name|image_id
 decl_stmt|;
 end_decl_stmt
 
@@ -1585,30 +1594,31 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|image_setup (gint32 drawable_id,gint interactive)
+DECL|function|image_setup (GimpDrawable * drawable,gint interactive)
 name|image_setup
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|interactive
 parameter_list|)
 block|{
-name|input_drawable_id
+name|input_drawable
 operator|=
-name|drawable_id
+name|drawable
 expr_stmt|;
-name|output_drawable_id
+name|output_drawable
 operator|=
-name|drawable_id
+name|drawable
 expr_stmt|;
 if|if
 condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|border_x
@@ -1630,21 +1640,21 @@ name|width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|input_drawable_id
+name|input_drawable
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|input_drawable_id
+name|input_drawable
 argument_list|)
 expr_stmt|;
 name|source_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|input_drawable_id
+name|input_drawable
 argument_list|)
 expr_stmt|;
 name|maxcounter

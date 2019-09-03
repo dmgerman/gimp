@@ -22,15 +22,25 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|input_drawable_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|output_drawable_id
+name|GimpDrawable
+modifier|*
+name|input_drawable
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GimpDrawable
+modifier|*
+name|output_drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -52,8 +62,9 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|box_drawable_ids
+name|GimpDrawable
+modifier|*
+name|box_drawables
 index|[
 literal|6
 index|]
@@ -73,8 +84,9 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint32
-name|cylinder_drawable_ids
+name|GimpDrawable
+modifier|*
+name|cylinder_drawables
 index|[
 literal|2
 index|]
@@ -132,8 +144,6 @@ name|gint
 name|width
 decl_stmt|,
 name|height
-decl_stmt|,
-name|image_id
 decl_stmt|;
 end_decl_stmt
 
@@ -170,8 +180,9 @@ specifier|extern
 name|gint
 name|image_setup
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|interactive
