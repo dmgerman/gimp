@@ -476,14 +476,6 @@ name|gimp_drawable_get_shadow_buffer
 value|gimp_drawable_get_shadow_buffer_deprecated
 end_define
 
-begin_define
-DECL|macro|gimp_drawable_get_format
-define|#
-directive|define
-name|gimp_drawable_get_format
-value|gimp_drawable_get_format_deprecated
-end_define
-
 begin_endif
 endif|#
 directive|endif
@@ -508,18 +500,6 @@ begin_function_decl
 name|GeglBuffer
 modifier|*
 name|gimp_drawable_get_shadow_buffer_deprecated
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|const
-name|Babl
-modifier|*
-name|gimp_drawable_get_format_deprecated
 parameter_list|(
 name|gint32
 name|drawable_ID

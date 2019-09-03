@@ -39,7 +39,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b90e30103
+DECL|enum|__anon27cc09c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -947,38 +947,6 @@ return|return
 name|g_list_reverse
 argument_list|(
 name|children
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_item_get_children_deprecated: (skip)  * @item_id: The item.  * @num_children: (out): The item's number of children.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (array length=num_children) (element-type gint32) (transfer full):  *          The item's list of children.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
-end_comment
-
-begin_function
-name|gint
-modifier|*
-DECL|function|gimp_item_get_children_deprecated (gint32 item_id,gint * num_children)
-name|gimp_item_get_children_deprecated
-parameter_list|(
-name|gint32
-name|item_id
-parameter_list|,
-name|gint
-modifier|*
-name|num_children
-parameter_list|)
-block|{
-return|return
-name|_gimp_item_get_children
-argument_list|(
-name|gimp_item_get_by_id
-argument_list|(
-name|item_id
-argument_list|)
-argument_list|,
-name|num_children
 argument_list|)
 return|;
 block|}

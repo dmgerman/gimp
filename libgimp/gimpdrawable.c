@@ -1094,35 +1094,5 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_drawable_get_format_deprecated: (skip)  * @drawable_ID: the ID of the #GimpDrawable to get the format for.  *  * Returns the #Babl format of the drawable.  *  * Returns: The #Babl format.  *  * Since: 2.10  */
-end_comment
-
-begin_function
-specifier|const
-name|Babl
-modifier|*
-DECL|function|gimp_drawable_get_format_deprecated (gint32 drawable_ID)
-name|gimp_drawable_get_format_deprecated
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-return|return
-name|gimp_drawable_get_format
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_get_by_id
-argument_list|(
-name|drawable_ID
-argument_list|)
-argument_list|)
-argument_list|)
-return|;
-block|}
-end_function
-
 end_unit
 
