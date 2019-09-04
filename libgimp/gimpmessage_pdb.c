@@ -167,14 +167,11 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|handler
 operator|=
-name|g_value_get_enum
-argument_list|(
-name|gimp_value_array_index
+name|GIMP_VALUES_GET_ENUM
 argument_list|(
 name|return_vals
 argument_list|,
 literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref

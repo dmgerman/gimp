@@ -160,14 +160,11 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|elapsed
 operator|=
-name|g_value_get_double
-argument_list|(
-name|gimp_value_array_index
+name|GIMP_VALUES_GET_DOUBLE
 argument_list|(
 name|return_vals
 argument_list|,
 literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
