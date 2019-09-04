@@ -562,6 +562,33 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_canvas_item_untransform_viewport
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|item
+parameter_list|,
+name|gint
+modifier|*
+name|x
+parameter_list|,
+name|gint
+modifier|*
+name|y
+parameter_list|,
+name|gint
+modifier|*
+name|w
+parameter_list|,
+name|gint
+modifier|*
+name|h
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  protected  */
 end_comment
