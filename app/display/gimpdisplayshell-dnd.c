@@ -698,6 +698,11 @@ name|gimp_display_shell_untransform_viewport
 argument_list|(
 name|shell
 argument_list|,
+operator|!
+name|shell
+operator|->
+name|show_all
+argument_list|,
 operator|&
 name|x
 argument_list|,
@@ -1985,6 +1990,11 @@ name|gimp_display_shell_untransform_viewport
 argument_list|(
 name|shell
 argument_list|,
+operator|!
+name|shell
+operator|->
+name|show_all
+argument_list|,
 operator|&
 name|x
 argument_list|,
@@ -2283,6 +2293,11 @@ condition|)
 name|gimp_display_shell_untransform_viewport
 argument_list|(
 name|shell
+argument_list|,
+operator|!
+name|shell
+operator|->
+name|show_all
 argument_list|,
 operator|&
 name|x

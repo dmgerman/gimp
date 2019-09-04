@@ -253,7 +253,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc45b390103
+DECL|enum|__anon2990df8c0103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -2781,6 +2781,11 @@ comment|/* Find out at which x,y is the top left corner of the currently    * di
 name|gimp_display_shell_untransform_viewport
 argument_list|(
 name|shell
+argument_list|,
+operator|!
+name|shell
+operator|->
+name|show_all
 argument_list|,
 operator|&
 name|x

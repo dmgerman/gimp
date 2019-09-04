@@ -731,6 +731,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+name|gboolean
+name|clip
+parameter_list|,
 name|gint
 modifier|*
 name|x

@@ -3306,6 +3306,8 @@ name|gimp_display_shell_untransform_viewport
 argument_list|(
 name|shell
 argument_list|,
+name|TRUE
+argument_list|,
 operator|&
 name|x
 argument_list|,

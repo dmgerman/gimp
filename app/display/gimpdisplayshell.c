@@ -383,7 +383,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ae9710103
+DECL|enum|__anon2a1664360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -417,7 +417,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ae9710203
+DECL|enum|__anon2a1664360203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4276,6 +4276,11 @@ name|gimp_display_shell_untransform_viewport
 argument_list|(
 name|shell
 argument_list|,
+operator|!
+name|shell
+operator|->
+name|show_all
+argument_list|,
 operator|&
 name|x
 argument_list|,
@@ -7593,6 +7598,11 @@ argument_list|(
 name|shell
 operator|->
 name|display
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_set_priority_viewport
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_expose_full
