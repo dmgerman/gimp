@@ -139,6 +139,10 @@ DECL|member|show_layer_boundary
 name|gboolean
 name|show_layer_boundary
 decl_stmt|;
+DECL|member|show_canvas_boundary
+name|gboolean
+name|show_canvas_boundary
+decl_stmt|;
 DECL|member|show_guides
 name|gboolean
 name|show_guides

@@ -136,6 +136,27 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_canvas_set_canvas_style
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|canvas
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|gdouble
+name|offset_x
+parameter_list|,
+name|gdouble
+name|offset_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_canvas_set_selection_out_style
 parameter_list|(
 name|GtkWidget

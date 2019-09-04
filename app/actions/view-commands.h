@@ -594,6 +594,24 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|view_toggle_canvas_boundary_cmd_callback
+parameter_list|(
+name|GimpAction
+modifier|*
+name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|view_toggle_menubar_cmd_callback
 parameter_list|(
 name|GimpAction

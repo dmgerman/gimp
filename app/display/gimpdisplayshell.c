@@ -210,6 +210,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvascanvasboundary.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvaslayerboundary.h"
 end_include
 
@@ -389,7 +395,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a197f000103
+DECL|enum|__anon2771630f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -423,7 +429,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a197f000203
+DECL|enum|__anon2771630f0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7606,6 +7612,11 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_update_show_canvas
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_scroll_clamp_and_update
 argument_list|(
 name|shell
@@ -7854,6 +7865,23 @@ name|shell
 operator|->
 name|display
 argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_canvas_boundary_set_image
+argument_list|(
+name|GIMP_CANVAS_CANVAS_BOUNDARY
+argument_list|(
+name|shell
+operator|->
+name|canvas_boundary
+argument_list|)
+argument_list|,
+name|gimp_display_get_image
+argument_list|(
+name|shell
+operator|->
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;

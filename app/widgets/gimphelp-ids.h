@@ -654,6 +654,14 @@ value|"gimp-view-show-layer-boundary"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_SHOW_CANVAS_BOUNDARY
+define|#
+directive|define
+name|GIMP_HELP_VIEW_SHOW_CANVAS_BOUNDARY
+value|"gimp-view-show-canvas-boundary"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_SHOW_GUIDES
 define|#
 directive|define

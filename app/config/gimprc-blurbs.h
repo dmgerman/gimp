@@ -1052,6 +1052,15 @@ value|_("When enabled, the layer boundary is visible by default. This can also "
 end_define
 
 begin_define
+DECL|macro|SHOW_CANVAS_BOUNDARY_BLURB
+define|#
+directive|define
+name|SHOW_CANVAS_BOUNDARY_BLURB
+define|\
+value|_("When enabled, the canvas boundary is visible by default. This can also " \   "be toggled with the \"View->Show Canvas Boundary\" command.")
+end_define
+
+begin_define
 DECL|macro|SHOW_GUIDES_BLURB
 define|#
 directive|define

@@ -483,6 +483,12 @@ modifier|*
 name|sample_points
 decl_stmt|;
 comment|/*  item proxies of sample points      */
+DECL|member|canvas_boundary
+name|GimpCanvasItem
+modifier|*
+name|canvas_boundary
+decl_stmt|;
+comment|/*  item for the cabvas boundary       */
 DECL|member|layer_boundary
 name|GimpCanvasItem
 modifier|*
