@@ -931,6 +931,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpImageViewable
+typedef|typedef
+name|struct
+name|_GimpImageViewable
+name|GimpImageViewable
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpInterpreterDB
 typedef|typedef
 name|struct
