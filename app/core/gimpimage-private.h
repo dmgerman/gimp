@@ -140,6 +140,11 @@ name|GeglRectangle
 name|bounding_box
 decl_stmt|;
 comment|/*  image content bounding box   */
+DECL|member|pickable_buffer
+name|GeglBuffer
+modifier|*
+name|pickable_buffer
+decl_stmt|;
 DECL|member|colormap
 name|guchar
 modifier|*
