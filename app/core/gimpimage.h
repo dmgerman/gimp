@@ -1546,6 +1546,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_image_invalidate_all
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_image_guide_added
 parameter_list|(
 name|GimpImage
