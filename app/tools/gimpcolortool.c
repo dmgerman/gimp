@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fde65e0103
+DECL|enum|__anon2b5faae00103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1733,6 +1733,15 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1748,6 +1757,10 @@ argument_list|(
 name|image
 argument_list|,
 name|coords
+argument_list|,
+name|shell
+operator|->
+name|show_all
 argument_list|,
 name|color_tool
 operator|->
@@ -1794,6 +1807,15 @@ modifier|*
 name|color
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1835,6 +1857,10 @@ argument_list|,
 name|coords
 operator|->
 name|y
+argument_list|,
+name|shell
+operator|->
+name|show_all
 argument_list|,
 name|color_tool
 operator|->

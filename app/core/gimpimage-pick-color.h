@@ -35,6 +35,9 @@ name|gint
 name|y
 parameter_list|,
 name|gboolean
+name|show_all
+parameter_list|,
+name|gboolean
 name|sample_merged
 parameter_list|,
 name|gboolean

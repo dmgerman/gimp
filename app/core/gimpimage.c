@@ -396,7 +396,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2937f6140103
+DECL|enum|__anon2b57a03a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -496,7 +496,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2937f6140203
+DECL|enum|__anon2b57a03a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -19825,7 +19825,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_coords_in_active_pickable (GimpImage * image,const GimpCoords * coords,gboolean sample_merged,gboolean selected_only)
+DECL|function|gimp_image_coords_in_active_pickable (GimpImage * image,const GimpCoords * coords,gboolean show_all,gboolean sample_merged,gboolean selected_only)
 name|gimp_image_coords_in_active_pickable
 parameter_list|(
 name|GimpImage
@@ -19836,6 +19836,9 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|gboolean
+name|show_all
 parameter_list|,
 name|gboolean
 name|sample_merged
@@ -19889,6 +19892,9 @@ condition|)
 block|{
 if|if
 condition|(
+name|show_all
+operator|||
+operator|(
 name|x
 operator|>=
 literal|0
@@ -19910,11 +19916,14 @@ name|gimp_image_get_height
 argument_list|(
 name|image
 argument_list|)
+operator|)
 condition|)
+block|{
 name|in_pickable
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{

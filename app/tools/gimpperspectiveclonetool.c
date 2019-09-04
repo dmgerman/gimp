@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a33dd1b0103
+DECL|enum|__anon288e63510103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -2165,6 +2165,8 @@ argument_list|(
 name|image
 argument_list|,
 name|coords
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

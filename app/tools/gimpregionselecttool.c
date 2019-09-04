@@ -1140,6 +1140,8 @@ name|image
 argument_list|,
 name|coords
 argument_list|,
+name|FALSE
+argument_list|,
 name|options
 operator|->
 name|sample_merged

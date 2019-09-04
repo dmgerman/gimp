@@ -2367,6 +2367,8 @@ name|image
 argument_list|,
 name|coords
 argument_list|,
+name|FALSE
+argument_list|,
 name|sample_merged
 argument_list|,
 name|TRUE
@@ -2687,6 +2689,8 @@ argument_list|(
 name|image
 argument_list|,
 name|coords
+argument_list|,
+name|FALSE
 argument_list|,
 name|sample_merged
 argument_list|,
@@ -3406,6 +3410,8 @@ argument_list|(
 name|image
 argument_list|,
 name|coords
+argument_list|,
+name|FALSE
 argument_list|,
 name|sample_merged
 argument_list|,
