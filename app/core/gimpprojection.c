@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c061b480103
+DECL|enum|__anon279e24370103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c061b480203
+DECL|enum|__anon279e24370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2701,6 +2701,13 @@ if|if
 condition|(
 operator|!
 name|now
+operator|&&
+operator|!
+name|proj
+operator|->
+name|priv
+operator|->
+name|iter
 operator|&&
 name|proj
 operator|->
