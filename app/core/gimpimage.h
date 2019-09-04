@@ -1872,6 +1872,28 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_image_inc_show_all_count
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_dec_show_all_count
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  parasites  */
 end_comment

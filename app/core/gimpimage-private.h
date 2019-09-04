@@ -130,6 +130,16 @@ name|GimpLayerMode
 name|new_layer_mode
 decl_stmt|;
 comment|/*  default mode of new layers   */
+DECL|member|show_all
+name|gint
+name|show_all
+decl_stmt|;
+comment|/*  render full image content    */
+DECL|member|bounding_box
+name|GeglRectangle
+name|bounding_box
+decl_stmt|;
+comment|/*  image content bounding box   */
 DECL|member|colormap
 name|guchar
 modifier|*
@@ -354,6 +364,18 @@ modifier|*
 name|layer_stack
 decl_stmt|;
 comment|/*  the layers in MRU order      */
+DECL|member|layer_offset_x_handler
+name|GQuark
+name|layer_offset_x_handler
+decl_stmt|;
+DECL|member|layer_offset_y_handler
+name|GQuark
+name|layer_offset_y_handler
+decl_stmt|;
+DECL|member|layer_bounding_box_handler
+name|GQuark
+name|layer_bounding_box_handler
+decl_stmt|;
 DECL|member|layer_alpha_handler
 name|GQuark
 name|layer_alpha_handler
