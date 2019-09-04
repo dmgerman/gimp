@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279e24370103
+DECL|enum|__anon2bcadf400103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279e24370203
+DECL|enum|__anon2bcadf400203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2380,6 +2380,16 @@ operator|->
 name|priv
 operator|->
 name|validate_handler
+argument_list|)
+expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|proj
+argument_list|)
+argument_list|,
+literal|"buffer"
 argument_list|)
 expr_stmt|;
 block|}
