@@ -459,10 +459,12 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
-name|GdkScreen
-modifier|*
-name|screen
-decl_stmt|;
+if|#
+directive|if
+literal|0
+block|GdkScreen *screen;
+endif|#
+directive|endif
 name|return_if_no_widget
 argument_list|(
 name|widget

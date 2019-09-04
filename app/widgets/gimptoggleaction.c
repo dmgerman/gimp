@@ -216,7 +216,10 @@ name|value
 init|=
 name|gimp_toggle_action_get_active
 argument_list|(
+name|GIMP_TOGGLE_ACTION
+argument_list|(
 name|action
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gimp_action_emit_change_state
