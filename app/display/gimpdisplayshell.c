@@ -318,6 +318,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-scrollbars.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-selection.h"
 end_include
 
@@ -383,7 +389,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1664360103
+DECL|enum|__anon2a197f000103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -417,7 +423,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1664360203
+DECL|enum|__anon2a197f000203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7598,6 +7604,16 @@ argument_list|(
 name|shell
 operator|->
 name|display
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_scroll_clamp_and_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_scrollbars_update
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_priority_viewport

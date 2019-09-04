@@ -449,7 +449,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c77fc500108
+DECL|struct|__anon2968c1f10108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -732,6 +732,14 @@ name|shell
 operator|->
 name|disp_height
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|shell
+operator|->
+name|show_all
+condition|)
+block|{
 name|gimp_display_shell_scroll_center_image
 argument_list|(
 name|shell
@@ -741,6 +749,19 @@ argument_list|,
 name|center_vertically
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_display_shell_scroll_center_content
+argument_list|(
+name|shell
+argument_list|,
+name|center_horizontally
+argument_list|,
+name|center_vertically
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* This is basically the best we can do before we get an            * API for storing the image offset at the start of an            * image window resize using the mouse            */
 name|target_offset_x
 operator|=

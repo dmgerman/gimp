@@ -144,6 +144,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-scroll.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-scrollbars.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-transform.h"
 end_include
 
@@ -177,7 +189,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64ef120103
+DECL|enum|__anon2a16b0850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2549,6 +2561,16 @@ operator|->
 name|bounding_box
 operator|=
 name|bounding_box
+expr_stmt|;
+name|gimp_display_shell_scroll_clamp_and_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_scrollbars_update
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 block|}
 block|}

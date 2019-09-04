@@ -3471,6 +3471,14 @@ operator|+
 name|scaled_previous_origin_y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|shell
+operator|->
+name|show_all
+condition|)
+block|{
 name|gimp_display_shell_scroll_center_image
 argument_list|(
 name|shell
@@ -3480,6 +3488,7 @@ argument_list|,
 name|vertically
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* The above calls might not lead to a call to        * gimp_display_shell_scroll_clamp_and_update() and        * gimp_display_shell_expose_full() in all cases because when        * scaling the old and new scroll offset might be the same.        *        * We need them to be called in all cases, so simply call them        * explicitly here at the end        */
 name|gimp_display_shell_scroll_clamp_and_update
 argument_list|(
