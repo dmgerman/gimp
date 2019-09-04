@@ -3984,6 +3984,23 @@ name|checks_vbox
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"show-sample-points"
+argument_list|,
+name|_
+argument_list|(
+literal|"Show _sample points"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|checks_vbox
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|checks_vbox
 operator|=
 name|gtk_box_new
@@ -13134,7 +13151,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ad949200108
+DECL|struct|__anon2a1043fd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -14040,7 +14057,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad949200208
+DECL|struct|__anon2a1043fd0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14171,7 +14188,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad949200308
+DECL|struct|__anon2a1043fd0308
 block|{
 DECL|member|tree_label
 specifier|const
