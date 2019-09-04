@@ -693,7 +693,7 @@ argument_list|(
 name|gimp
 argument_list|)
 decl_stmt|;
-name|GObject
+name|GimpDisplay
 modifier|*
 name|display
 init|=
@@ -706,7 +706,10 @@ name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|display
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
 argument_list|,

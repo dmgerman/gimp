@@ -600,7 +600,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|gui_get_empty_display
 parameter_list|(
@@ -613,38 +613,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpObject
-modifier|*
-name|gui_display_get_by_id
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|gint
-name|ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
-name|gui_display_get_id
-parameter_list|(
-name|GimpObject
-modifier|*
-name|display
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|guint32
 name|gui_display_get_window_id
 parameter_list|(
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -653,7 +625,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|gui_display_create
 parameter_list|(
@@ -683,7 +655,7 @@ specifier|static
 name|void
 name|gui_display_delete
 parameter_list|(
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -741,7 +713,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -1060,22 +1032,6 @@ operator|.
 name|get_empty_display
 operator|=
 name|gui_get_empty_display
-expr_stmt|;
-name|gimp
-operator|->
-name|gui
-operator|.
-name|display_get_by_id
-operator|=
-name|gui_display_get_by_id
-expr_stmt|;
-name|gimp
-operator|->
-name|gui
-operator|.
-name|display_get_id
-operator|=
-name|gui_display_get_id
 expr_stmt|;
 name|gimp
 operator|->
@@ -1692,7 +1648,7 @@ end_function
 
 begin_function
 specifier|static
-name|GimpObject
+name|GimpDisplay
 modifier|*
 DECL|function|gui_get_empty_display (Gimp * gimp)
 name|gui_get_empty_display
@@ -1702,7 +1658,7 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 init|=
@@ -1722,6 +1678,10 @@ condition|)
 block|{
 name|display
 operator|=
+operator|(
+name|GimpDisplay
+operator|*
+operator|)
 name|gimp_container_get_first_child
 argument_list|(
 name|gimp
@@ -1733,10 +1693,7 @@ if|if
 condition|(
 name|gimp_display_get_image
 argument_list|(
-name|GIMP_DISPLAY
-argument_list|(
 name|display
-argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -1755,64 +1712,11 @@ end_function
 
 begin_function
 specifier|static
-name|GimpObject
-modifier|*
-DECL|function|gui_display_get_by_id (Gimp * gimp,gint id)
-name|gui_display_get_by_id
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|gint
-name|id
-parameter_list|)
-block|{
-return|return
-operator|(
-name|GimpObject
-operator|*
-operator|)
-name|gimp_display_get_by_id
-argument_list|(
-name|gimp
-argument_list|,
-name|id
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|gui_display_get_id (GimpObject * display)
-name|gui_display_get_id
-parameter_list|(
-name|GimpObject
-modifier|*
-name|display
-parameter_list|)
-block|{
-return|return
-name|gimp_display_get_id
-argument_list|(
-name|GIMP_DISPLAY
-argument_list|(
-name|display
-argument_list|)
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|guint32
-DECL|function|gui_display_get_window_id (GimpObject * display)
+DECL|function|gui_display_get_window_id (GimpDisplay * display)
 name|gui_display_get_window_id
 parameter_list|(
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -1877,7 +1781,7 @@ end_function
 
 begin_function
 specifier|static
-name|GimpObject
+name|GimpDisplay
 modifier|*
 DECL|function|gui_display_create (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GObject * monitor)
 name|gui_display_create
@@ -2032,10 +1936,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|GIMP_OBJECT
-argument_list|(
 name|display
-argument_list|)
 return|;
 block|}
 end_function
@@ -2043,20 +1944,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_display_delete (GimpObject * display)
+DECL|function|gui_display_delete (GimpDisplay * display)
 name|gui_display_delete
 parameter_list|(
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
 block|{
 name|gimp_display_close
 argument_list|(
-name|GIMP_DISPLAY
-argument_list|(
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2542,14 +2440,14 @@ begin_function
 specifier|static
 name|GimpProgress
 modifier|*
-DECL|function|gui_new_progress (Gimp * gimp,GimpObject * display)
+DECL|function|gui_new_progress (Gimp * gimp,GimpDisplay * display)
 name|gui_new_progress
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)

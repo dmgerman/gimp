@@ -1814,19 +1814,15 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-operator|!
-name|strcmp
-argument_list|(
-name|g_type_name
+name|g_type_is_a
 argument_list|(
 name|value_type
-argument_list|)
 argument_list|,
-literal|"GimpDisplay"
+name|GIMP_TYPE_DISPLAY
 argument_list|)
 condition|)
 block|{
-comment|/* strcmp() because GimpDisplay is not visible from app/plug-in */
+comment|/* g_type_is_a() because the core has a GimpDisplay subclasses */
 name|type_name
 operator|=
 literal|"GimpParamDisplay"
@@ -2068,7 +2064,7 @@ end_function
 
 begin_function
 specifier|static
-name|GObject
+name|GimpDisplay
 modifier|*
 DECL|function|get_display_by_id (gpointer gimp,gint id)
 name|get_display_by_id
@@ -2084,10 +2080,6 @@ ifdef|#
 directive|ifdef
 name|LIBGIMP_COMPILATION
 return|return
-operator|(
-name|GObject
-operator|*
-operator|)
 name|gimp_display_get_by_id
 argument_list|(
 name|id
@@ -2096,11 +2088,7 @@ return|;
 else|#
 directive|else
 return|return
-operator|(
-name|GObject
-operator|*
-operator|)
-name|gimp_get_display_by_id
+name|gimp_display_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -3965,7 +3953,7 @@ name|value
 argument_list|)
 condition|)
 block|{
-name|GObject
+name|GimpDisplay
 modifier|*
 name|display
 init|=
@@ -3974,39 +3962,11 @@ argument_list|(
 name|value
 argument_list|)
 decl_stmt|;
-name|gint
-name|id
-init|=
-operator|-
-literal|1
-decl_stmt|;
-if|#
-directive|if
-literal|0
-block|if (full_copy)         {           g_free (param->type_name);           param->type_name = "GObject";         }       else         param->type_name = (gchar *) "GObject";
-endif|#
-directive|endif
 name|param
 operator|->
 name|param_type
 operator|=
 name|GP_PARAM_TYPE_INT
-expr_stmt|;
-if|if
-condition|(
-name|display
-condition|)
-name|g_object_get
-argument_list|(
-name|display
-argument_list|,
-literal|"id"
-argument_list|,
-operator|&
-name|id
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 name|param
 operator|->
@@ -4014,7 +3974,15 @@ name|data
 operator|.
 name|d_int
 operator|=
-name|id
+name|display
+condition|?
+name|gimp_display_get_id
+argument_list|(
+name|display
+argument_list|)
+else|:
+operator|-
+literal|1
 expr_stmt|;
 block|}
 elseif|else

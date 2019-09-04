@@ -233,7 +233,7 @@ name|gimp
 parameter_list|)
 function_decl|;
 DECL|member|get_empty_display
-name|GimpObject
+name|GimpDisplay
 modifier|*
 function_decl|(
 modifier|*
@@ -245,34 +245,6 @@ modifier|*
 name|gimp
 parameter_list|)
 function_decl|;
-DECL|member|display_get_by_id
-name|GimpObject
-modifier|*
-function_decl|(
-modifier|*
-name|display_get_by_id
-function_decl|)
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|gint
-name|ID
-parameter_list|)
-function_decl|;
-DECL|member|display_get_id
-name|gint
-function_decl|(
-modifier|*
-name|display_get_id
-function_decl|)
-parameter_list|(
-name|GimpObject
-modifier|*
-name|display
-parameter_list|)
-function_decl|;
 DECL|member|display_get_window_id
 name|guint32
 function_decl|(
@@ -280,13 +252,13 @@ modifier|*
 name|display_get_window_id
 function_decl|)
 parameter_list|(
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
 function_decl|;
 DECL|member|display_create
-name|GimpObject
+name|GimpDisplay
 modifier|*
 function_decl|(
 modifier|*
@@ -319,7 +291,7 @@ modifier|*
 name|display_delete
 function_decl|)
 parameter_list|(
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -356,7 +328,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -595,7 +567,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|gimp_get_empty_display
 parameter_list|(
@@ -607,7 +579,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|gimp_get_display_by_id
 parameter_list|(
@@ -629,7 +601,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -644,7 +616,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -652,7 +624,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|gimp_create_display
 parameter_list|(
@@ -685,7 +657,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -837,7 +809,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)

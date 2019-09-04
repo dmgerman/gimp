@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -182,22 +188,6 @@ operator|->
 name|gui
 operator|.
 name|get_icon_theme_dir
-operator|=
-name|NULL
-expr_stmt|;
-name|gimp
-operator|->
-name|gui
-operator|.
-name|display_get_by_id
-operator|=
-name|NULL
-expr_stmt|;
-name|gimp
-operator|->
-name|gui
-operator|.
-name|display_get_id
 operator|=
 name|NULL
 expr_stmt|;
@@ -1234,7 +1224,7 @@ block|}
 end_function
 
 begin_function
-name|GimpObject
+name|GimpDisplay
 modifier|*
 DECL|function|gimp_get_empty_display (Gimp * gimp)
 name|gimp_get_empty_display
@@ -1279,126 +1269,15 @@ block|}
 end_function
 
 begin_function
-name|GimpObject
-modifier|*
-DECL|function|gimp_get_display_by_id (Gimp * gimp,gint id)
-name|gimp_get_display_by_id
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|gint
-name|id
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_GIMP
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp
-operator|->
-name|gui
-operator|.
-name|display_get_by_id
-condition|)
-return|return
-name|gimp
-operator|->
-name|gui
-operator|.
-name|display_get_by_id
-argument_list|(
-name|gimp
-argument_list|,
-name|id
-argument_list|)
-return|;
-return|return
-name|NULL
-return|;
-block|}
-end_function
-
-begin_function
-name|gint
-DECL|function|gimp_get_display_id (Gimp * gimp,GimpObject * display)
-name|gimp_get_display_id
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpObject
-modifier|*
-name|display
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_GIMP
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_OBJECT
-argument_list|(
-name|display
-argument_list|)
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp
-operator|->
-name|gui
-operator|.
-name|display_get_id
-condition|)
-return|return
-name|gimp
-operator|->
-name|gui
-operator|.
-name|display_get_id
-argument_list|(
-name|display
-argument_list|)
-return|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
-end_function
-
-begin_function
 name|guint32
-DECL|function|gimp_get_display_window_id (Gimp * gimp,GimpObject * display)
+DECL|function|gimp_get_display_window_id (Gimp * gimp,GimpDisplay * display)
 name|gimp_get_display_window_id
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -1416,7 +1295,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_OBJECT
+name|GIMP_IS_DISPLAY
 argument_list|(
 name|display
 argument_list|)
@@ -1451,7 +1330,7 @@ block|}
 end_function
 
 begin_function
-name|GimpObject
+name|GimpDisplay
 modifier|*
 DECL|function|gimp_create_display (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GObject * monitor)
 name|gimp_create_display
@@ -1547,14 +1426,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_delete_display (Gimp * gimp,GimpObject * display)
+DECL|function|gimp_delete_display (Gimp * gimp,GimpDisplay * display)
 name|gimp_delete_display
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -1569,7 +1448,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_OBJECT
+name|GIMP_IS_DISPLAY
 argument_list|(
 name|display
 argument_list|)
@@ -1664,14 +1543,14 @@ end_function
 begin_function
 name|GimpProgress
 modifier|*
-DECL|function|gimp_new_progress (Gimp * gimp,GimpObject * display)
+DECL|function|gimp_new_progress (Gimp * gimp,GimpDisplay * display)
 name|gimp_new_progress
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -1692,7 +1571,7 @@ name|display
 operator|==
 name|NULL
 operator|||
-name|GIMP_IS_OBJECT
+name|GIMP_IS_DISPLAY
 argument_list|(
 name|display
 argument_list|)

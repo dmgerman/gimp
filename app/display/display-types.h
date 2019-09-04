@@ -56,15 +56,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDisplay
-typedef|typedef
-name|struct
-name|_GimpDisplay
-name|GimpDisplay
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpDisplayShell
 typedef|typedef
 name|struct

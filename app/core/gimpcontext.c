@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdynamics.h"
 end_include
 
@@ -541,7 +547,8 @@ name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-name|gpointer
+name|GimpDisplay
+modifier|*
 name|display
 parameter_list|,
 name|GimpContext
@@ -560,7 +567,8 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
+name|GimpDisplay
+modifier|*
 name|display
 parameter_list|)
 function_decl|;
@@ -1616,7 +1624,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b095100103
+DECL|enum|__anon2a51e67e0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1630,7 +1638,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b095100203
+DECL|enum|__anon2a51e67e0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1994,7 +2002,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_OBJECT
+name|GIMP_TYPE_DISPLAY
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -2965,7 +2973,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_OBJECT
+name|GIMP_TYPE_DISPLAY
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -8401,7 +8409,8 @@ comment|/*  display  ***********************************************************
 end_comment
 
 begin_function
-name|gpointer
+name|GimpDisplay
+modifier|*
 DECL|function|gimp_context_get_display (GimpContext * context)
 name|gimp_context_get_display
 parameter_list|(
@@ -8430,14 +8439,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_context_set_display (GimpContext * context,gpointer display)
+DECL|function|gimp_context_set_display (GimpContext * context,GimpDisplay * display)
 name|gimp_context_set_display
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
+name|GimpDisplay
+modifier|*
 name|display
 parameter_list|)
 block|{
@@ -8455,7 +8465,7 @@ name|display
 operator|==
 name|NULL
 operator|||
-name|GIMP_IS_OBJECT
+name|GIMP_IS_DISPLAY
 argument_list|(
 name|display
 argument_list|)
@@ -8518,14 +8528,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_display_removed (GimpContainer * container,gpointer display,GimpContext * context)
+DECL|function|gimp_context_display_removed (GimpContainer * container,GimpDisplay * display,GimpContext * context)
 name|gimp_context_display_removed
 parameter_list|(
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-name|gpointer
+name|GimpDisplay
+modifier|*
 name|display
 parameter_list|,
 name|GimpContext
@@ -8554,18 +8565,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_real_set_display (GimpContext * context,gpointer display)
+DECL|function|gimp_context_real_set_display (GimpContext * context,GimpDisplay * display)
 name|gimp_context_real_set_display
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
+name|GimpDisplay
+modifier|*
 name|display
 parameter_list|)
 block|{
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|old_display
 decl_stmt|;

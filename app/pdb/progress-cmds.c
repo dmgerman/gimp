@@ -129,7 +129,7 @@ name|gchar
 modifier|*
 name|message
 decl_stmt|;
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|gdisplay
 decl_stmt|;

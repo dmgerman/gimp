@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpparamspecs.h"
 end_include
 
@@ -249,7 +255,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_progress_start (GimpPlugIn * plug_in,const gchar * message,GimpObject * display)
+DECL|function|gimp_plug_in_progress_start (GimpPlugIn * plug_in,const gchar * message,GimpDisplay * display)
 name|gimp_plug_in_progress_start
 parameter_list|(
 name|GimpPlugIn
@@ -261,7 +267,7 @@ name|gchar
 modifier|*
 name|message
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -284,7 +290,7 @@ name|display
 operator|==
 name|NULL
 operator|||
-name|GIMP_IS_OBJECT
+name|GIMP_IS_DISPLAY
 argument_list|(
 name|display
 argument_list|)

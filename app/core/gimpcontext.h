@@ -131,7 +131,8 @@ modifier|*
 name|image
 decl_stmt|;
 DECL|member|display
-name|gpointer
+name|GimpDisplay
+modifier|*
 name|display
 decl_stmt|;
 DECL|member|tool_info
@@ -320,7 +321,8 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
+name|GimpDisplay
+modifier|*
 name|display
 parameter_list|)
 function_decl|;
@@ -924,7 +926,8 @@ comment|/*  display  */
 end_comment
 
 begin_function_decl
-name|gpointer
+name|GimpDisplay
+modifier|*
 name|gimp_context_get_display
 parameter_list|(
 name|GimpContext
@@ -942,7 +945,8 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gpointer
+name|GimpDisplay
+modifier|*
 name|display
 parameter_list|)
 function_decl|;

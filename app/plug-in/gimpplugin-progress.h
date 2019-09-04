@@ -51,7 +51,7 @@ name|gchar
 modifier|*
 name|message
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)

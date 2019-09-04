@@ -2829,14 +2829,14 @@ parameter_list|)
 block|{
 name|GimpParamSpecDisplay
 modifier|*
-name|ispec
+name|dspec
 init|=
 name|GIMP_PARAM_SPEC_DISPLAY
 argument_list|(
 name|pspec
 argument_list|)
 decl_stmt|;
-name|ispec
+name|dspec
 operator|->
 name|none_ok
 operator|=
@@ -2975,9 +2975,9 @@ parameter_list|)
 block|{
 name|GimpParamSpecDisplay
 modifier|*
-name|ispec
+name|dspec
 decl_stmt|;
-name|ispec
+name|dspec
 operator|=
 name|g_param_spec_internal
 argument_list|(
@@ -2992,7 +2992,7 @@ argument_list|,
 name|flags
 argument_list|)
 expr_stmt|;
-name|ispec
+name|dspec
 operator|->
 name|none_ok
 operator|=
@@ -3005,7 +3005,7 @@ expr_stmt|;
 return|return
 name|G_PARAM_SPEC
 argument_list|(
-name|ispec
+name|dspec
 argument_list|)
 return|;
 block|}

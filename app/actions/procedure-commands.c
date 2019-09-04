@@ -1302,10 +1302,7 @@ name|progress
 argument_list|,
 name|args
 argument_list|,
-name|GIMP_OBJECT
-argument_list|(
 name|display
-argument_list|)
 argument_list|,
 operator|&
 name|error

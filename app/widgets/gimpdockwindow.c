@@ -233,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28927f4c0103
+DECL|enum|__anon2b1482f00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -597,7 +597,7 @@ name|GimpDockWindow
 modifier|*
 name|dock_window
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
@@ -716,7 +716,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
@@ -3535,7 +3535,7 @@ name|context
 argument_list|)
 condition|)
 block|{
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 init|=
@@ -3851,14 +3851,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dock_window_factory_display_changed (GimpContext * context,GimpObject * display,GimpDock * dock)
+DECL|function|gimp_dock_window_factory_display_changed (GimpContext * context,GimpDisplay * display,GimpDock * dock)
 name|gimp_dock_window_factory_display_changed
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
@@ -3956,14 +3956,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dock_window_display_changed (GimpDockWindow * dock_window,GimpObject * display,GimpContext * context)
+DECL|function|gimp_dock_window_display_changed (GimpDockWindow * dock_window,GimpDisplay * display,GimpContext * context)
 name|gimp_dock_window_display_changed
 parameter_list|(
 name|GimpDockWindow
 modifier|*
 name|dock_window
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
@@ -4145,7 +4145,7 @@ name|display_container
 argument_list|)
 condition|)
 block|{
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
@@ -4238,12 +4238,9 @@ control|)
 block|{
 name|display
 operator|=
-name|GIMP_OBJECT
-argument_list|(
 name|list
 operator|->
 name|data
-argument_list|)
 expr_stmt|;
 name|g_object_get
 argument_list|(

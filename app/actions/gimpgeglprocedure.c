@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable-operation.h"
 end_include
 
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay.h"
 end_include
 
 begin_include
@@ -316,7 +316,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -1116,7 +1116,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpObject * display)
+DECL|function|gimp_gegl_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpDisplay * display)
 name|gimp_gegl_procedure_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -1139,7 +1139,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -1624,10 +1624,7 @@ name|tool_manager_initialize_active
 argument_list|(
 name|gimp
 argument_list|,
-name|GIMP_DISPLAY
-argument_list|(
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

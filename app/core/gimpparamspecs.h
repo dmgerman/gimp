@@ -1119,7 +1119,7 @@ name|GIMP_VALUE_HOLDS_DISPLAY
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                            GIMP_TYPE_OBJECT))
+value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                            GIMP_TYPE_DISPLAY))
 end_define
 
 begin_define

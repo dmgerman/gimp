@@ -2587,7 +2587,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;

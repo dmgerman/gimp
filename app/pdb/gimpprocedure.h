@@ -369,7 +369,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -736,7 +736,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,

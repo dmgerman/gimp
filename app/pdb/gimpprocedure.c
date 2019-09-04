@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -276,7 +282,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -954,7 +960,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_procedure_real_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpObject * display)
+DECL|function|gimp_procedure_real_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpDisplay * display)
 name|gimp_procedure_real_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -977,7 +983,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -2091,7 +2097,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpObject * display,GError ** error)
+DECL|function|gimp_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpDisplay * display,GError ** error)
 name|gimp_procedure_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -2114,7 +2120,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
@@ -2173,7 +2179,7 @@ name|display
 operator|==
 name|NULL
 operator|||
-name|GIMP_IS_OBJECT
+name|GIMP_IS_DISPLAY
 argument_list|(
 name|display
 argument_list|)

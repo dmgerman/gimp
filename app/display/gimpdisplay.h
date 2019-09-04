@@ -6,124 +6,137 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DISPLAY_H__
+name|__GIMP_DISPLAY_IMPL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DISPLAY_H__
+DECL|macro|__GIMP_DISPLAY_IMPL_H__
 define|#
 directive|define
-name|__GIMP_DISPLAY_H__
+name|__GIMP_DISPLAY_IMPL_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"core/gimpobject.h"
+file|"core/gimpdisplay.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_DISPLAY
+DECL|macro|GIMP_TYPE_DISPLAY_IMPL
 define|#
 directive|define
-name|GIMP_TYPE_DISPLAY
-value|(gimp_display_get_type ())
+name|GIMP_TYPE_DISPLAY_IMPL
+value|(gimp_display_impl_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_DISPLAY (obj)
+DECL|macro|GIMP_DISPLAY_IMPL (obj)
 define|#
 directive|define
-name|GIMP_DISPLAY
+name|GIMP_DISPLAY_IMPL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DISPLAY, GimpDisplay))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DISPLAY_IMPL, GimpDisplayImpl))
 end_define
 
 begin_define
-DECL|macro|GIMP_DISPLAY_CLASS (klass)
+DECL|macro|GIMP_DISPLAY_IMPL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_DISPLAY_CLASS
+name|GIMP_DISPLAY_IMPL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DISPLAY, GimpDisplayClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DISPLAY_IMPL, GimpDisplayImplClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DISPLAY (obj)
+DECL|macro|GIMP_IS_DISPLAY_IMPL (obj)
 define|#
 directive|define
-name|GIMP_IS_DISPLAY
+name|GIMP_IS_DISPLAY_IMPL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DISPLAY))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DISPLAY_IMPL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DISPLAY_CLASS (klass)
+DECL|macro|GIMP_IS_DISPLAY_IMPL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_DISPLAY_CLASS
+name|GIMP_IS_DISPLAY_IMPL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DISPLAY))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DISPLAY_IMPL))
 end_define
 
 begin_define
-DECL|macro|GIMP_DISPLAY_GET_CLASS (obj)
+DECL|macro|GIMP_DISPLAY_IMPL_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_DISPLAY_GET_CLASS
+name|GIMP_DISPLAY_IMPL_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DISPLAY, GimpDisplayClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DISPLAY_IMPL, GimpDisplayImplClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDisplayClass
+DECL|typedef|GimpDisplayImpl
 typedef|typedef
 name|struct
-name|_GimpDisplayClass
-name|GimpDisplayClass
+name|_GimpDisplayImpl
+name|GimpDisplayImpl
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDisplayImplClass
+typedef|typedef
+name|struct
+name|_GimpDisplayImplClass
+name|GimpDisplayImplClass
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDisplayImplPrivate
+typedef|typedef
+name|struct
+name|_GimpDisplayImplPrivate
+name|GimpDisplayImplPrivate
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpDisplay
+DECL|struct|_GimpDisplayImpl
 struct|struct
-name|_GimpDisplay
+name|_GimpDisplayImpl
 block|{
 DECL|member|parent_instance
-name|GimpObject
+name|GimpDisplay
 name|parent_instance
 decl_stmt|;
-DECL|member|gimp
-name|Gimp
+DECL|member|priv
+name|GimpDisplayImplPrivate
 modifier|*
-name|gimp
-decl_stmt|;
-DECL|member|config
-name|GimpDisplayConfig
-modifier|*
-name|config
+name|priv
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpDisplayClass
+DECL|struct|_GimpDisplayImplClass
 struct|struct
-name|_GimpDisplayClass
+name|_GimpDisplayImplClass
 block|{
 DECL|member|parent_class
-name|GimpObjectClass
+name|GimpDisplayClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -132,7 +145,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_display_get_type
+name|gimp_display_impl_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -197,47 +210,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
-name|gimp_display_get_id
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpDisplay
-modifier|*
-name|gimp_display_get_by_id
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|gint
-name|id
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gchar
 modifier|*
 name|gimp_display_get_action_name
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|Gimp
-modifier|*
-name|gimp_display_get_gimp
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -382,7 +357,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DISPLAY_H__  */
+comment|/*  __GIMP_DISPLAY_IMPL_H__  */
 end_comment
 
 end_unit

@@ -341,6 +341,15 @@ name|GimpImage
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpDisplay
+typedef|typedef
+name|struct
+name|_GimpDisplay
+name|GimpDisplay
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  containers  */
 end_comment

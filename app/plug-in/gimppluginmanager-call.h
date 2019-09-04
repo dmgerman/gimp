@@ -111,7 +111,7 @@ parameter_list|,
 name|gboolean
 name|synchronous
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)

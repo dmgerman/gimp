@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -150,7 +156,7 @@ block|{
 name|valid
 operator|=
 operator|(
-name|gimp_get_display_by_id
+name|gimp_display_get_by_id
 argument_list|(
 name|gimp
 argument_list|,
@@ -246,7 +252,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 init|=
@@ -395,7 +401,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
@@ -485,7 +491,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;

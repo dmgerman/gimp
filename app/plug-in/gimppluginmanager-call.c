@@ -83,6 +83,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpprogress.h"
 end_include
 
@@ -485,7 +491,7 @@ end_function
 begin_function
 name|GimpValueArray
 modifier|*
-DECL|function|gimp_plug_in_manager_call_run (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure,GimpValueArray * args,gboolean synchronous,GimpObject * display)
+DECL|function|gimp_plug_in_manager_call_run (GimpPlugInManager * manager,GimpContext * context,GimpProgress * progress,GimpPlugInProcedure * procedure,GimpValueArray * args,gboolean synchronous,GimpDisplay * display)
 name|gimp_plug_in_manager_call_run
 parameter_list|(
 name|GimpPlugInManager
@@ -511,7 +517,7 @@ parameter_list|,
 name|gboolean
 name|synchronous
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -585,7 +591,7 @@ name|display
 operator|==
 name|NULL
 operator|||
-name|GIMP_IS_OBJECT
+name|GIMP_IS_DISPLAY
 argument_list|(
 name|display
 argument_list|)
@@ -740,12 +746,8 @@ name|display_id
 operator|=
 name|display
 condition|?
-name|gimp_get_display_id
+name|gimp_display_get_id
 argument_list|(
-name|manager
-operator|->
-name|gimp
-argument_list|,
 name|display
 argument_list|)
 else|:

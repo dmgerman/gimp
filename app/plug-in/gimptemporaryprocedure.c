@@ -141,7 +141,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -351,7 +351,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_temporary_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpObject * display)
+DECL|function|gimp_temporary_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpDisplay * display)
 name|gimp_temporary_procedure_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -374,7 +374,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)

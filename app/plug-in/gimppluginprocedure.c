@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f79c580103
+DECL|enum|__anon2c5316f50103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -314,7 +314,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -1831,7 +1831,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpObject * display)
+DECL|function|gimp_plug_in_procedure_execute_async (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpValueArray * args,GimpDisplay * display)
 name|gimp_plug_in_procedure_execute_async
 parameter_list|(
 name|GimpProcedure
@@ -1854,7 +1854,7 @@ name|GimpValueArray
 modifier|*
 name|args
 parameter_list|,
-name|GimpObject
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
