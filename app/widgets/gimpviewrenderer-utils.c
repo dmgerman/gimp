@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimageviewable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -194,6 +200,13 @@ argument_list|(
 name|viewable_type
 argument_list|,
 name|GIMP_TYPE_IMAGE
+argument_list|)
+operator|||
+name|g_type_is_a
+argument_list|(
+name|viewable_type
+argument_list|,
+name|GIMP_TYPE_IMAGE_VIEWABLE
 argument_list|)
 condition|)
 block|{
