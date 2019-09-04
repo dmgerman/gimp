@@ -2796,10 +2796,6 @@ name|array
 operator|->
 name|data
 operator|=
-operator|(
-name|guint8
-operator|*
-operator|)
 name|tmp
 expr_stmt|;
 block|}
@@ -2810,7 +2806,8 @@ operator|->
 name|data
 operator|=
 operator|(
-name|guint8
+name|gchar
+operator|*
 operator|*
 operator|)
 name|data
@@ -2908,11 +2905,6 @@ modifier|*
 modifier|*
 name|tmp
 init|=
-operator|(
-name|gchar
-operator|*
-operator|*
-operator|)
 name|array
 operator|->
 name|data
