@@ -245,6 +245,36 @@ parameter_list|,
 define|default, flags) \   gimp_procedure_add_return_value (procedure,\                                    g_param_spec_uint (name, nick, blurb,\                                    min, max, default,\                                    flags))
 end_define
 
+begin_define
+DECL|macro|GIMP_VALUES_GET_UINT (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_UINT
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|g_value_get_uint (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_SET_UINT (args,n,value)
+define|#
+directive|define
+name|GIMP_VALUES_SET_UINT
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|,
+name|value
+parameter_list|)
+define|\
+value|g_value_set_uint (gimp_value_array_index (args, n), value)
+end_define
+
 begin_comment
 comment|/* uchar  */
 end_comment
@@ -685,6 +715,218 @@ name|value
 parameter_list|)
 define|\
 value|gimp_value_set_rgb (gimp_value_array_index (args, n), value)
+end_define
+
+begin_comment
+comment|/*  parasite  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_PROC_ARG_PARASITE (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_ARG_PARASITE
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_parasite (name, nick, blurb,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_VAL_PARASITE (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_VAL_PARASITE
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_parasite (name, nick, blurb,\                                    flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_GET_PARASITE (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_PARASITE
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|g_value_get_boxed (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_DUP_PARASITE (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_DUP_PARASITE
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|g_value_dup_boxed (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_SET_PARASITE (args,n,value)
+define|#
+directive|define
+name|GIMP_VALUES_SET_PARASITE
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|,
+name|value
+parameter_list|)
+define|\
+value|g_value_set_boxed (gimp_value_array_index (args, n), value)
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_TAKE_PARASITE (args,n,value)
+define|#
+directive|define
+name|GIMP_VALUES_TAKE_PARASITE
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|,
+name|value
+parameter_list|)
+define|\
+value|g_value_take_boxed (gimp_value_array_index (args, n), value)
+end_define
+
+begin_comment
+comment|/*  param  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_PROC_ARG_PARAM (class,name,nick,blurb,param_type,flags)
+define|#
+directive|define
+name|GIMP_PROC_ARG_PARAM
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|param_type
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_argument (procedure,\                                g_param_spec_param (name, nick, blurb, param_type, \                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_VAL_PARAM (class,name,nick,blurb,param_type,flags)
+define|#
+directive|define
+name|GIMP_PROC_VAL_PARAM
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|param_type
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_param (name, nick, blurb, param_type, \                                    flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_GET_PARAM (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_PARAM
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|g_value_get_param (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_DUP_PARAM (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_DUP_PARAM
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|g_value_dup_param (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_SET_PARAM (args,n,value)
+define|#
+directive|define
+name|GIMP_VALUES_SET_PARAM
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|,
+name|value
+parameter_list|)
+define|\
+value|g_value_set_param (gimp_value_array_index (args, n), value)
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_TAKE_PARAM (args,n,value)
+define|#
+directive|define
+name|GIMP_VALUES_TAKE_PARAM
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|,
+name|value
+parameter_list|)
+define|\
+value|g_value_take_param (gimp_value_array_index (args, n), value)
 end_define
 
 begin_comment
@@ -1381,6 +1623,36 @@ name|flags
 parameter_list|)
 define|\
 value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_display (name, nick, blurb,\                                    none_ok, \                                    flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_GET_DISPLAY (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_DISPLAY
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|g_value_get_object (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_SET_DISPLAY (args,n,value)
+define|#
+directive|define
+name|GIMP_VALUES_SET_DISPLAY
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|,
+name|value
+parameter_list|)
+define|\
+value|g_value_set_object (gimp_value_array_index (args, n), value)
 end_define
 
 begin_comment
