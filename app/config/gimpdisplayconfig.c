@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c83147e0103
+DECL|enum|__anon2b31156b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,6 +131,9 @@ name|PROP_RESIZE_WINDOWS_ON_ZOOM
 block|,
 DECL|enumerator|PROP_RESIZE_WINDOWS_ON_RESIZE
 name|PROP_RESIZE_WINDOWS_ON_RESIZE
+block|,
+DECL|enumerator|PROP_DEFAULT_SHOW_ALL
+name|PROP_DEFAULT_SHOW_ALL
 block|,
 DECL|enumerator|PROP_DEFAULT_DOT_FOR_DOT
 name|PROP_DEFAULT_DOT_FOR_DOT
@@ -486,6 +489,23 @@ argument_list|,
 literal|"Resize windows on resize"
 argument_list|,
 name|RESIZE_WINDOWS_ON_RESIZE_BLURB
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_DEFAULT_SHOW_ALL
+argument_list|,
+literal|"default-show-all"
+argument_list|,
+literal|"Default show-all"
+argument_list|,
+name|DEFAULT_SHOW_ALL_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1197,6 +1217,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_DEFAULT_SHOW_ALL
+case|:
+name|display_config
+operator|->
+name|default_show_all
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_DEFAULT_DOT_FOR_DOT
 case|:
 name|display_config
@@ -1623,6 +1656,19 @@ argument_list|,
 name|display_config
 operator|->
 name|resize_windows_on_resize
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_DEFAULT_SHOW_ALL
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|display_config
+operator|->
+name|default_show_all
 argument_list|)
 expr_stmt|;
 break|break;

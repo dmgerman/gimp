@@ -305,6 +305,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_display_update_bounding_box
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_update_area
 parameter_list|(
 name|GimpDisplay

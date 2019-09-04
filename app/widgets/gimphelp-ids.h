@@ -478,6 +478,14 @@ value|"gimp-view-new"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_SHOW_ALL
+define|#
+directive|define
+name|GIMP_HELP_VIEW_SHOW_ALL
+value|"gimp-view-show-all"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_DOT_FOR_DOT
 define|#
 directive|define

@@ -180,6 +180,15 @@ value|"Specify a default tool preset.  The tool preset is searched for in the " 
 end_define
 
 begin_define
+DECL|macro|DEFAULT_SHOW_ALL_BLURB
+define|#
+directive|define
+name|DEFAULT_SHOW_ALL_BLURB
+define|\
+value|_("Show full image content by default.")
+end_define
+
+begin_define
 DECL|macro|DEFAULT_DOT_FOR_DOT_BLURB
 define|#
 directive|define

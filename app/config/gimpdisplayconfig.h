@@ -132,6 +132,10 @@ DECL|member|resize_windows_on_resize
 name|gboolean
 name|resize_windows_on_resize
 decl_stmt|;
+DECL|member|default_show_all
+name|gboolean
+name|default_show_all
+decl_stmt|;
 DECL|member|default_dot_for_dot
 name|gboolean
 name|default_dot_for_dot

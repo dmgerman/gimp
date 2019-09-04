@@ -719,6 +719,34 @@ index|[]
 init|=
 block|{
 block|{
+literal|"view-show-all"
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
+literal|"Show _All"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
+literal|"Show full image content"
+argument_list|)
+block|,
+name|view_show_all_cmd_callback
+block|,
+name|FALSE
+block|,
+name|GIMP_HELP_VIEW_SHOW_ALL
+block|}
+block|,
+block|{
 literal|"view-dot-for-dot"
 block|,
 name|NULL
@@ -1036,7 +1064,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Sn_ap to Guides"
+literal|"Snap to Gu_ides"
 argument_list|)
 block|,
 name|NULL
@@ -3640,6 +3668,24 @@ argument_list|(
 literal|"view-close"
 argument_list|,
 name|image
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"view-show-all"
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|SET_ACTIVE
+argument_list|(
+literal|"view-show-all"
+argument_list|,
+name|display
+operator|&&
+name|shell
+operator|->
+name|show_all
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

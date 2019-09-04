@@ -12670,6 +12670,23 @@ name|prefs_check_button_add
 argument_list|(
 name|object
 argument_list|,
+literal|"default-show-all"
+argument_list|,
+name|_
+argument_list|(
+literal|"Use \"Show _all\" by default"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
 literal|"default-dot-for-dot"
 argument_list|,
 name|_
@@ -12707,7 +12724,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Marching _ants speed:"
+literal|"Marching ants s_peed:"
 argument_list|)
 argument_list|,
 name|GTK_GRID
@@ -13151,7 +13168,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a1043fd0108
+DECL|struct|__anon2780d9030108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -14057,7 +14074,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1043fd0208
+DECL|struct|__anon2780d9030208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14188,7 +14205,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1043fd0308
+DECL|struct|__anon2780d9030308
 block|{
 DECL|member|tree_label
 specifier|const
