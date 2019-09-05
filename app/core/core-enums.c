@@ -3224,7 +3224,7 @@ name|NC_
 argument_list|(
 literal|"fill-style"
 argument_list|,
-literal|"Solid color"
+literal|"_Solid color"
 argument_list|)
 block|,
 name|NULL
@@ -3237,7 +3237,7 @@ name|NC_
 argument_list|(
 literal|"fill-style"
 argument_list|,
-literal|"Pattern"
+literal|"_Pattern"
 argument_list|)
 block|,
 name|NULL

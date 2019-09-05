@@ -281,11 +281,11 @@ argument_list|)
 argument_list|,
 name|view
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Properties"
+literal|"_Properties"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -311,11 +311,11 @@ argument_list|)
 argument_list|,
 name|view
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Color Profile"
+literal|"C_olor Profile"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -341,11 +341,11 @@ argument_list|)
 argument_list|,
 name|view
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Comment"
+literal|"Co_mment"
 argument_list|)
 argument_list|)
 argument_list|)

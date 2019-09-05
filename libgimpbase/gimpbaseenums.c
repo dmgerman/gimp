@@ -2243,7 +2243,7 @@ name|NC_
 argument_list|(
 literal|"convert-palette-type"
 argument_list|,
-literal|"Generate optimum palette"
+literal|"_Generate optimum palette"
 argument_list|)
 block|,
 name|NULL
@@ -2256,7 +2256,7 @@ name|NC_
 argument_list|(
 literal|"convert-palette-type"
 argument_list|,
-literal|"Use web-optimized palette"
+literal|"Use _web-optimized palette"
 argument_list|)
 block|,
 name|NULL
@@ -2269,7 +2269,7 @@ name|NC_
 argument_list|(
 literal|"convert-palette-type"
 argument_list|,
-literal|"Use black and white (1-bit) palette"
+literal|"Use _black and white (1-bit) palette"
 argument_list|)
 block|,
 name|NULL
@@ -2282,7 +2282,7 @@ name|NC_
 argument_list|(
 literal|"convert-palette-type"
 argument_list|,
-literal|"Use custom palette"
+literal|"Use c_ustom palette"
 argument_list|)
 block|,
 name|NULL
@@ -5747,7 +5747,7 @@ name|NC_
 argument_list|(
 literal|"merge-type"
 argument_list|,
-literal|"Expanded as necessary"
+literal|"_Expanded as necessary"
 argument_list|)
 block|,
 name|NULL
@@ -5760,7 +5760,7 @@ name|NC_
 argument_list|(
 literal|"merge-type"
 argument_list|,
-literal|"Clipped to image"
+literal|"Clipped to _image"
 argument_list|)
 block|,
 name|NULL
@@ -5773,7 +5773,7 @@ name|NC_
 argument_list|(
 literal|"merge-type"
 argument_list|,
-literal|"Clipped to bottom layer"
+literal|"Clipped to _bottom layer"
 argument_list|)
 block|,
 name|NULL
@@ -8786,7 +8786,7 @@ name|NC_
 argument_list|(
 literal|"stroke-method"
 argument_list|,
-literal|"Stroke line"
+literal|"S_troke line"
 argument_list|)
 block|,
 name|NULL
@@ -8799,7 +8799,7 @@ name|NC_
 argument_list|(
 literal|"stroke-method"
 argument_list|,
-literal|"Stroke with a paint tool"
+literal|"Stroke _with a paint tool"
 argument_list|)
 block|,
 name|NULL

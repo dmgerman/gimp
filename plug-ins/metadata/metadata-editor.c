@@ -2255,7 +2255,7 @@ name|GTK_RESPONSE_NO
 argument_list|,
 name|_
 argument_list|(
-literal|"Write Metadata"
+literal|"_Write Metadata"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_YES

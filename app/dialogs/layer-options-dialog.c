@@ -811,7 +811,7 @@ name|dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Blend space:"
+literal|"_Blend space:"
 argument_list|)
 argument_list|,
 name|combo
@@ -871,7 +871,7 @@ name|dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Composite space:"
+literal|"Compos_ite space:"
 argument_list|)
 argument_list|,
 name|combo
@@ -933,7 +933,7 @@ name|dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Composite mode:"
+literal|"Composite mo_de:"
 argument_list|)
 argument_list|,
 name|combo

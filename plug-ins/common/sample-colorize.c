@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29220b880108
+DECL|struct|__anon2b4f33610108
 block|{
 DECL|member|dst
 name|GimpDrawable
@@ -411,7 +411,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29220b880208
+DECL|struct|__anon2b4f33610208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -519,7 +519,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29220b880308
+DECL|struct|__anon2b4f33610308
 block|{
 DECL|member|color
 name|guchar
@@ -548,7 +548,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29220b880408
+DECL|struct|__anon2b4f33610408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -575,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29220b880508
+DECL|struct|__anon2b4f33610508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -6504,11 +6504,11 @@ expr_stmt|;
 comment|/* check button */
 name|check_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Show selection"
+literal|"Sho_w selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6565,11 +6565,11 @@ expr_stmt|;
 comment|/* check button */
 name|check_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Show color"
+literal|"Show co_lor"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6658,11 +6658,11 @@ expr_stmt|;
 comment|/* check button */
 name|check_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Show selection"
+literal|"Show selec_tion"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6719,11 +6719,11 @@ expr_stmt|;
 comment|/* check button */
 name|check_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Show color"
+literal|"Show c_olor"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8077,11 +8077,11 @@ expr_stmt|;
 comment|/* check button */
 name|check_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Hold intensity"
+literal|"Hold _intensity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8138,11 +8138,11 @@ expr_stmt|;
 comment|/* check button */
 name|check_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Original intensity"
+literal|"Original i_ntensity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8248,11 +8248,11 @@ expr_stmt|;
 comment|/* check button */
 name|check_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use subcolors"
+literal|"Us_e subcolors"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8309,11 +8309,11 @@ expr_stmt|;
 comment|/* check button */
 name|check_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Smooth samples"
+literal|"S_mooth samples"
 argument_list|)
 argument_list|)
 expr_stmt|;

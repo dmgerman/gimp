@@ -367,11 +367,11 @@ expr_stmt|;
 comment|/* Button */
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use default comment"
+literal|"Use _default comment"
 argument_list|)
 argument_list|)
 expr_stmt|;

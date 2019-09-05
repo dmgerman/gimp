@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d4f2100103
+DECL|enum|__anon2a1a29330103
 block|{
 DECL|enumerator|COLOR_MODEL_WHITE_ON_BLACK
 name|COLOR_MODEL_WHITE_ON_BLACK
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d4f2100203
+DECL|enum|__anon2a1a29330203
 block|{
 DECL|enumerator|PATTERN_LINE
 name|PATTERN_LINE
@@ -1013,11 +1013,11 @@ name|pattern_check
 operator|=
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Lock patterns"
+literal|"_Lock patterns"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1062,11 +1062,11 @@ name|period_check
 operator|=
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Lock periods"
+literal|"Loc_k periods"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1111,11 +1111,11 @@ name|angle_check
 operator|=
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Lock angles"
+literal|"Lock a_ngles"
 argument_list|)
 argument_list|)
 expr_stmt|;
