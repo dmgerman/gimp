@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc5aa10108
+DECL|struct|__anon2a2e4e800108
 block|{
 DECL|member|film_height
 name|gint
@@ -196,7 +196,7 @@ name|GList
 modifier|*
 name|images
 decl_stmt|;
-comment|/* list of image IDs */
+comment|/* list of images */
 DECL|typedef|FilmVals
 block|}
 name|FilmVals
@@ -210,7 +210,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc5aa10208
+DECL|struct|__anon2a2e4e800208
 block|{
 DECL|member|advanced_adj
 name|GtkAdjustment
@@ -1049,15 +1049,17 @@ argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
-name|GIMP_PROC_ARG_INT32_ARRAY
+name|GIMP_PROC_ARG_OBJECT_ARRAY
 argument_list|(
 name|procedure
 argument_list|,
-literal|"image-ids"
+literal|"images"
 argument_list|,
-literal|"Image IDs"
+literal|"Images"
 argument_list|,
-literal|"num-images image IDs to be used for film"
+literal|"num-images images to be used for film"
+argument_list|,
+name|GIMP_TYPE_IMAGE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -1126,10 +1128,10 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-specifier|const
-name|gint32
+name|GimpImage
 modifier|*
-name|ids
+modifier|*
+name|images
 decl_stmt|;
 name|gint
 name|i
@@ -1317,9 +1319,9 @@ argument_list|,
 literal|7
 argument_list|)
 expr_stmt|;
-name|ids
+name|images
 operator|=
-name|GIMP_VALUES_GET_INT32_ARRAY
+name|GIMP_VALUES_GET_OBJECT_ARRAY
 argument_list|(
 name|args
 argument_list|,
@@ -1357,13 +1359,10 @@ name|filmvals
 operator|.
 name|images
 argument_list|,
-name|gimp_image_get_by_id
-argument_list|(
-name|ids
+name|images
 index|[
 name|i
 index|]
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|filmvals
