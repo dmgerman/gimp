@@ -1622,7 +1622,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_string_array (name, nick, blurb,\                                                                  object_type, flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_object_array (name, nick, blurb,\                                                                  object_type, flags))
 end_define
 
 begin_define
@@ -1654,7 +1654,7 @@ value|(gpointer) gimp_value_dup_object_array (gimp_value_array_index (args, n))
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_SET_OBJECT_ARRAY (args,n,value,length)
+DECL|macro|GIMP_VALUES_SET_OBJECT_ARRAY (args,n,object_type,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_SET_OBJECT_ARRAY
@@ -1663,16 +1663,18 @@ name|args
 parameter_list|,
 name|n
 parameter_list|,
+name|object_type
+parameter_list|,
 name|value
 parameter_list|,
 name|length
 parameter_list|)
 define|\
-value|gimp_value_set_object_array (gimp_value_array_index (args, n),\                                (gpointer) value, length)
+value|gimp_value_set_object_array (gimp_value_array_index (args, n),\                                object_type, (gpointer) value, length)
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUES_TAKE_OBJECT_ARRAY (args,n,value,length)
+DECL|macro|GIMP_VALUES_TAKE_OBJECT_ARRAY (args,n,object_type,value,length)
 define|#
 directive|define
 name|GIMP_VALUES_TAKE_OBJECT_ARRAY
@@ -1681,12 +1683,14 @@ name|args
 parameter_list|,
 name|n
 parameter_list|,
+name|object_type
+parameter_list|,
 name|value
 parameter_list|,
 name|length
 parameter_list|)
 define|\
-value|gimp_value_take_object_array (gimp_value_array_index (args, n),\                                 (gpointer) value, length)
+value|gimp_value_take_object_array (gimp_value_array_index (args, n),\                                 object_type, (gpointer) value, length)
 end_define
 
 begin_comment
