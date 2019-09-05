@@ -867,6 +867,13 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_run
+operator|.
+name|params
+argument_list|)
+expr_stmt|;
 name|_gimp_plug_in_read_expect_msg
 argument_list|(
 name|pdb
