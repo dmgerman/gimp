@@ -1090,6 +1090,7 @@ operator|.
 name|icon_theme_dir
 argument_list|)
 expr_stmt|;
+comment|/* FIXME leaking object arrays */
 name|g_free
 argument_list|(
 name|proc_run
@@ -1139,6 +1140,7 @@ operator|.
 name|icon_theme_dir
 argument_list|)
 expr_stmt|;
+comment|/* FIXME leaking object arrays */
 name|g_free
 argument_list|(
 name|proc_run
@@ -1461,6 +1463,7 @@ argument_list|,
 name|name
 argument_list|)
 decl_stmt|;
+comment|/* FIXME leaking object arrays */
 name|g_free
 argument_list|(
 name|proc_run
@@ -1501,6 +1504,7 @@ argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
+comment|/* FIXME leaking object arrays */
 name|g_free
 argument_list|(
 name|proc_run

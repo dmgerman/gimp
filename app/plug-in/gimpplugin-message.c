@@ -2529,6 +2529,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME leaking object arrays */
 name|g_free
 argument_list|(
 name|proc_return

@@ -867,6 +867,7 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+comment|/* FIXME leaking object arrays */
 name|g_free
 argument_list|(
 name|proc_run
