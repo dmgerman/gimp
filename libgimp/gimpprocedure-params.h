@@ -1752,6 +1752,20 @@ value|g_value_get_object (gimp_value_array_index (args, n))
 end_define
 
 begin_define
+DECL|macro|GIMP_VALUES_GET_DISPLAY_ID (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_DISPLAY_ID
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|gimp_display_get_id (g_value_get_object (gimp_value_array_index (args, n)))
+end_define
+
+begin_define
 DECL|macro|GIMP_VALUES_SET_DISPLAY (args,n,value)
 define|#
 directive|define
@@ -1827,6 +1841,20 @@ name|n
 parameter_list|)
 define|\
 value|g_value_get_object (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_GET_IMAGE_ID (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_IMAGE_ID
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|gimp_image_get_id (g_value_get_object (gimp_value_array_index (args, n)))
 end_define
 
 begin_define
@@ -1908,6 +1936,20 @@ value|g_value_get_object (gimp_value_array_index (args, n))
 end_define
 
 begin_define
+DECL|macro|GIMP_VALUES_GET_ITEM_ID (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_ITEM_ID
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|gimp_item_get_id (g_value_get_object (gimp_value_array_index (args, n)))
+end_define
+
+begin_define
 DECL|macro|GIMP_VALUES_SET_ITEM (args,n,value)
 define|#
 directive|define
@@ -1983,6 +2025,20 @@ name|n
 parameter_list|)
 define|\
 value|g_value_get_object (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_GET_DRAWABLE_ID (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_DRAWABLE_ID
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|gimp_item_get_id (g_value_get_object (gimp_value_array_index (args, n)))
 end_define
 
 begin_define
@@ -2064,6 +2120,20 @@ value|g_value_get_object (gimp_value_array_index (args, n))
 end_define
 
 begin_define
+DECL|macro|GIMP_VALUES_GET_LAYER_ID (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_LAYER_ID
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|gimp_item_get_id (g_value_get_object (gimp_value_array_index (args, n)))
+end_define
+
+begin_define
 DECL|macro|GIMP_VALUES_SET_LAYER (args,n,value)
 define|#
 directive|define
@@ -2139,6 +2209,20 @@ name|n
 parameter_list|)
 define|\
 value|g_value_get_object (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_GET_CHANNEL_ID (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_CHANNEL_ID
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|gimp_item_get_id (g_value_get_object (gimp_value_array_index (args, n)))
 end_define
 
 begin_define
@@ -2220,6 +2304,20 @@ value|g_value_get_object (gimp_value_array_index (args, n))
 end_define
 
 begin_define
+DECL|macro|GIMP_VALUES_GET_LAYER_MASK_ID (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_LAYER_MASK_ID
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|gimp_item_get_id (g_value_get_object (gimp_value_array_index (args, n)))
+end_define
+
+begin_define
 DECL|macro|GIMP_VALUES_SET_LAYER_MASK (args,n,value)
 define|#
 directive|define
@@ -2298,6 +2396,20 @@ value|g_value_get_object (gimp_value_array_index (args, n))
 end_define
 
 begin_define
+DECL|macro|GIMP_VALUES_GET_SELECTION_ID (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_SELECTION_ID
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|gimp_item_get_id (g_value_get_object (gimp_value_array_index (args, n)))
+end_define
+
+begin_define
 DECL|macro|GIMP_VALUES_SET_SELECTION (args,n,value)
 define|#
 directive|define
@@ -2373,6 +2485,20 @@ name|n
 parameter_list|)
 define|\
 value|g_value_get_object (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_GET_VECTORS_ID (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_VECTORS_ID
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|gimp_item_get_id (g_value_get_object (gimp_value_array_index (args, n)))
 end_define
 
 begin_define
