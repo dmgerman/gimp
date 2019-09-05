@@ -111,14 +111,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_list:  * @num_images: (out): The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: (array length=num_images) (element-type gint32) (transfer full):  *          The list of images currently open.  *          The returned value must be freed with g_free().  **/
+comment|/**  * gimp_get_images:  * @num_images: (out): The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: (array length=num_images) (element-type GimpImage) (transfer container):  *          The list of images currently open.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
-name|gint
+name|GimpImage
 modifier|*
-DECL|function|_gimp_image_list (gint * num_images)
-name|_gimp_image_list
+modifier|*
+DECL|function|gimp_get_images (gint * num_images)
+name|gimp_get_images
 parameter_list|(
 name|gint
 modifier|*
@@ -133,9 +134,10 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint
+name|GimpImage
 modifier|*
-name|image_ids
+modifier|*
+name|images
 init|=
 name|NULL
 decl_stmt|;
@@ -155,7 +157,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-image-list"
+literal|"gimp-get-images"
 argument_list|,
 name|args
 argument_list|)
@@ -192,9 +194,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|image_ids
+name|images
 operator|=
-name|GIMP_VALUES_DUP_INT32_ARRAY
+name|GIMP_VALUES_DUP_OBJECT_ARRAY
 argument_list|(
 name|return_vals
 argument_list|,
@@ -208,7 +210,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ids
+name|images
 return|;
 block|}
 end_function
@@ -1036,14 +1038,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_layers:  * @image: The image.  * @num_layers: (out): The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (array length=num_layers) (element-type gint32) (transfer full):  *          The list of layers contained in the image.  *          The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_layers:  * @image: The image.  * @num_layers: (out): The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (array length=num_layers) (element-type GimpLayer) (transfer container):  *          The list of layers contained in the image.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
-name|gint
+name|GimpLayer
 modifier|*
-DECL|function|_gimp_image_get_layers (GimpImage * image,gint * num_layers)
-name|_gimp_image_get_layers
+modifier|*
+DECL|function|gimp_image_get_layers (GimpImage * image,gint * num_layers)
+name|gimp_image_get_layers
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1062,9 +1065,10 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint
+name|GimpLayer
 modifier|*
-name|layer_ids
+modifier|*
+name|layers
 init|=
 name|NULL
 decl_stmt|;
@@ -1125,9 +1129,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|layer_ids
+name|layers
 operator|=
-name|GIMP_VALUES_DUP_INT32_ARRAY
+name|GIMP_VALUES_DUP_OBJECT_ARRAY
 argument_list|(
 name|return_vals
 argument_list|,
@@ -1141,20 +1145,21 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|layer_ids
+name|layers
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_channels:  * @image: The image.  * @num_channels: (out): The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (array length=num_channels) (element-type gint32) (transfer full):  *          The list of channels contained in the image.  *          The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_channels:  * @image: The image.  * @num_channels: (out): The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (array length=num_channels) (element-type GimpChannel) (transfer container):  *          The list of channels contained in the image.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
-name|gint
+name|GimpChannel
 modifier|*
-DECL|function|_gimp_image_get_channels (GimpImage * image,gint * num_channels)
-name|_gimp_image_get_channels
+modifier|*
+DECL|function|gimp_image_get_channels (GimpImage * image,gint * num_channels)
+name|gimp_image_get_channels
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1173,9 +1178,10 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint
+name|GimpChannel
 modifier|*
-name|channel_ids
+modifier|*
+name|channels
 init|=
 name|NULL
 decl_stmt|;
@@ -1236,9 +1242,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|channel_ids
+name|channels
 operator|=
-name|GIMP_VALUES_DUP_INT32_ARRAY
+name|GIMP_VALUES_DUP_OBJECT_ARRAY
 argument_list|(
 name|return_vals
 argument_list|,
@@ -1252,20 +1258,21 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|channel_ids
+name|channels
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_vectors:  * @image: The image.  * @num_vectors: (out): The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (array length=num_vectors) (element-type gint32) (transfer full):  *          The list of vectors contained in the image.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
+comment|/**  * gimp_image_get_vectors:  * @image: The image.  * @num_vectors: (out): The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (array length=num_vectors) (element-type GimpVectors) (transfer container):  *          The list of vectors contained in the image.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
-name|gint
+name|GimpVectors
 modifier|*
-DECL|function|_gimp_image_get_vectors (GimpImage * image,gint * num_vectors)
-name|_gimp_image_get_vectors
+modifier|*
+DECL|function|gimp_image_get_vectors (GimpImage * image,gint * num_vectors)
+name|gimp_image_get_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1284,9 +1291,10 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint
+name|GimpVectors
 modifier|*
-name|vector_ids
+modifier|*
+name|vectors
 init|=
 name|NULL
 decl_stmt|;
@@ -1347,9 +1355,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|vector_ids
+name|vectors
 operator|=
-name|GIMP_VALUES_DUP_INT32_ARRAY
+name|GIMP_VALUES_DUP_OBJECT_ARRAY
 argument_list|(
 name|return_vals
 argument_list|,
@@ -1363,7 +1371,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|vector_ids
+name|vectors
 return|;
 block|}
 end_function

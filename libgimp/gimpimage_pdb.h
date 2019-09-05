@@ -60,10 +60,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|G_GNUC_INTERNAL
-name|gint
+name|GimpImage
 modifier|*
-name|_gimp_image_list
+modifier|*
+name|gimp_get_images
 parameter_list|(
 name|gint
 modifier|*
@@ -188,10 +188,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|G_GNUC_INTERNAL
-name|gint
+name|GimpLayer
 modifier|*
-name|_gimp_image_get_layers
+modifier|*
+name|gimp_image_get_layers
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -205,10 +205,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|G_GNUC_INTERNAL
-name|gint
+name|GimpChannel
 modifier|*
-name|_gimp_image_get_channels
+modifier|*
+name|gimp_image_get_channels
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -222,10 +222,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|G_GNUC_INTERNAL
-name|gint
+name|GimpVectors
 modifier|*
-name|_gimp_image_get_vectors
+modifier|*
+name|gimp_image_get_vectors
 parameter_list|(
 name|GimpImage
 modifier|*

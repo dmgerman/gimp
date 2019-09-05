@@ -1067,14 +1067,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_item_get_children:  * @item: The item.  * @num_children: (out): The item's number of children.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (array length=num_children) (element-type gint32) (transfer full):  *          The item's list of children.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_item_get_children:  * @item: The item.  * @num_children: (out): The item's number of children.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (array length=num_children) (element-type GimpItem) (transfer container):  *          The item's list of children.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
-name|gint
+name|GimpItem
 modifier|*
-DECL|function|_gimp_item_get_children (GimpItem * item,gint * num_children)
-name|_gimp_item_get_children
+modifier|*
+DECL|function|gimp_item_get_children (GimpItem * item,gint * num_children)
+name|gimp_item_get_children
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -1093,9 +1094,10 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint
+name|GimpItem
 modifier|*
-name|child_ids
+modifier|*
+name|children
 init|=
 name|NULL
 decl_stmt|;
@@ -1156,9 +1158,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|child_ids
+name|children
 operator|=
-name|GIMP_VALUES_DUP_INT32_ARRAY
+name|GIMP_VALUES_DUP_OBJECT_ARRAY
 argument_list|(
 name|return_vals
 argument_list|,
@@ -1172,7 +1174,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|child_ids
+name|children
 return|;
 block|}
 end_function

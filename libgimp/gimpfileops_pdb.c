@@ -237,11 +237,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_load_layers:  * @run_mode: The run mode.  * @image: Destination image.  * @filename: The name of the file to load.  * @num_layers: (out): The number of loaded layers.  *  * Loads an image file as layers for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as layers for an existing image. The returned layers  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: (array length=num_layers) (element-type gint32) (transfer full):  *          The list of loaded layers.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
+comment|/**  * gimp_file_load_layers:  * @run_mode: The run mode.  * @image: Destination image.  * @filename: The name of the file to load.  * @num_layers: (out): The number of loaded layers.  *  * Loads an image file as layers for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as layers for an existing image. The returned layers  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: (array length=num_layers) (element-type GimpLayer) (transfer container):  *          The list of loaded layers.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
-name|gint
+name|GimpLayer
+modifier|*
 modifier|*
 DECL|function|gimp_file_load_layers (GimpRunMode run_mode,GimpImage * image,const gchar * filename,gint * num_layers)
 name|gimp_file_load_layers
@@ -271,9 +272,10 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint
+name|GimpLayer
 modifier|*
-name|layer_ids
+modifier|*
+name|layers
 init|=
 name|NULL
 decl_stmt|;
@@ -342,9 +344,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|layer_ids
+name|layers
 operator|=
-name|GIMP_VALUES_DUP_INT32_ARRAY
+name|GIMP_VALUES_DUP_OBJECT_ARRAY
 argument_list|(
 name|return_vals
 argument_list|,
@@ -358,7 +360,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|layer_ids
+name|layers
 return|;
 block|}
 end_function

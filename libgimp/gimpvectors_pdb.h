@@ -522,10 +522,11 @@ name|gint
 modifier|*
 name|num_vectors
 parameter_list|,
-name|gint
+name|GimpVectors
 modifier|*
 modifier|*
-name|vectors_ids
+modifier|*
+name|vectors
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -556,10 +557,11 @@ name|gint
 modifier|*
 name|num_vectors
 parameter_list|,
-name|gint
+name|GimpVectors
 modifier|*
 modifier|*
-name|vectors_ids
+modifier|*
+name|vectors
 parameter_list|)
 function_decl|;
 end_function_decl

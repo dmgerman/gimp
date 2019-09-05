@@ -91,7 +91,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|GimpLayer
+modifier|*
 modifier|*
 name|gimp_file_load_layers
 parameter_list|(

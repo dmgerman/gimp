@@ -176,10 +176,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|G_GNUC_INTERNAL
-name|gint
+name|GimpItem
 modifier|*
-name|_gimp_item_get_children
+modifier|*
+name|gimp_item_get_children
 parameter_list|(
 name|GimpItem
 modifier|*

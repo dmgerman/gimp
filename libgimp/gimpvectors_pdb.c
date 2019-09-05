@@ -2382,12 +2382,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_import_from_file:  * @image: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out): The number of newly created vectors.  * @vectors_ids: (out) (array length=num_vectors) (element-type gint32) (transfer full): The list of newly created vectors.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_import_from_file:  * @image: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out): The number of newly created vectors.  * @vectors: (out) (array length=num_vectors) (element-type GimpVectors) (transfer container): The list of newly created vectors.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_import_from_file (GimpImage * image,const gchar * filename,gboolean merge,gboolean scale,gint * num_vectors,gint ** vectors_ids)
+DECL|function|gimp_vectors_import_from_file (GimpImage * image,const gchar * filename,gboolean merge,gboolean scale,gint * num_vectors,GimpVectors *** vectors)
 name|gimp_vectors_import_from_file
 parameter_list|(
 name|GimpImage
@@ -2409,10 +2409,11 @@ name|gint
 modifier|*
 name|num_vectors
 parameter_list|,
-name|gint
+name|GimpVectors
 modifier|*
 modifier|*
-name|vectors_ids
+modifier|*
+name|vectors
 parameter_list|)
 block|{
 name|GimpValueArray
@@ -2476,7 +2477,7 @@ operator|=
 literal|0
 expr_stmt|;
 operator|*
-name|vectors_ids
+name|vectors
 operator|=
 name|NULL
 expr_stmt|;
@@ -2507,9 +2508,9 @@ literal|1
 argument_list|)
 expr_stmt|;
 operator|*
-name|vectors_ids
+name|vectors
 operator|=
-name|GIMP_VALUES_DUP_INT32_ARRAY
+name|GIMP_VALUES_DUP_OBJECT_ARRAY
 argument_list|(
 name|return_vals
 argument_list|,
@@ -2529,12 +2530,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_import_from_string:  * @image: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out): The number of newly created vectors.  * @vectors_ids: (out) (array length=num_vectors) (element-type gint32) (transfer full): The list of newly created vectors.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_vectors_import_from_file() but takes  * a string rather than reading the SVG from a file. This allows you to  * write scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_import_from_string:  * @image: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out): The number of newly created vectors.  * @vectors: (out) (array length=num_vectors) (element-type GimpVectors) (transfer container): The list of newly created vectors.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_vectors_import_from_file() but takes  * a string rather than reading the SVG from a file. This allows you to  * write scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_import_from_string (GimpImage * image,const gchar * string,gint length,gboolean merge,gboolean scale,gint * num_vectors,gint ** vectors_ids)
+DECL|function|gimp_vectors_import_from_string (GimpImage * image,const gchar * string,gint length,gboolean merge,gboolean scale,gint * num_vectors,GimpVectors *** vectors)
 name|gimp_vectors_import_from_string
 parameter_list|(
 name|GimpImage
@@ -2559,10 +2560,11 @@ name|gint
 modifier|*
 name|num_vectors
 parameter_list|,
-name|gint
+name|GimpVectors
 modifier|*
 modifier|*
-name|vectors_ids
+modifier|*
+name|vectors
 parameter_list|)
 block|{
 name|GimpValueArray
@@ -2630,7 +2632,7 @@ operator|=
 literal|0
 expr_stmt|;
 operator|*
-name|vectors_ids
+name|vectors
 operator|=
 name|NULL
 expr_stmt|;
@@ -2661,9 +2663,9 @@ literal|1
 argument_list|)
 expr_stmt|;
 operator|*
-name|vectors_ids
+name|vectors
 operator|=
-name|GIMP_VALUES_DUP_INT32_ARRAY
+name|GIMP_VALUES_DUP_OBJECT_ARRAY
 argument_list|(
 name|return_vals
 argument_list|,
