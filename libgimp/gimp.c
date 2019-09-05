@@ -762,7 +762,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2a2ba9bb0103
+DECL|enum|__anon29300faa0103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2666,6 +2666,18 @@ argument_list|()
 expr_stmt|;
 name|_gimp_plug_in_quit
 argument_list|(
+name|PLUG_IN
+argument_list|)
+expr_stmt|;
+name|g_clear_object
+argument_list|(
+operator|&
+name|PDB
+argument_list|)
+expr_stmt|;
+name|g_clear_object
+argument_list|(
+operator|&
 name|PLUG_IN
 argument_list|)
 expr_stmt|;
