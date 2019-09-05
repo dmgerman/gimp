@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a29b7580103
+DECL|enum|__anon2993927e0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -3444,8 +3444,6 @@ name|pspec
 operator|=
 name|_gimp_gp_param_def_to_param_spec
 argument_list|(
-name|gimp
-argument_list|,
 operator|&
 name|param_def
 argument_list|)

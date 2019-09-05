@@ -10,12 +10,9 @@ end_comment
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|_gimp_gp_param_def_to_param_spec (gpointer gimp,const GPParamDef * param_def)
+DECL|function|_gimp_gp_param_def_to_param_spec (const GPParamDef * param_def)
 name|_gimp_gp_param_def_to_param_spec
 parameter_list|(
-name|gpointer
-name|gimp
-parameter_list|,
 specifier|const
 name|GPParamDef
 modifier|*
@@ -2177,9 +2174,10 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|_gimp_gp_param_to_value (gpointer gimp,const GPParam * param,GType type,GValue * value,gboolean full_copy)
-name|_gimp_gp_param_to_value
+DECL|function|gimp_gp_param_to_value (gpointer gimp,const GPParam * param,GType type,GValue * value,gboolean full_copy)
+name|gimp_gp_param_to_value
 parameter_list|(
 name|gpointer
 name|gimp
@@ -3173,8 +3171,6 @@ name|pspec
 init|=
 name|_gimp_gp_param_def_to_param_spec
 argument_list|(
-name|gimp
-argument_list|,
 operator|&
 name|param
 operator|->
@@ -3410,7 +3406,7 @@ block|}
 block|}
 block|}
 block|}
-name|_gimp_gp_param_to_value
+name|gimp_gp_param_to_value
 argument_list|(
 name|gimp
 argument_list|,
@@ -3450,9 +3446,10 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|_gimp_value_to_gp_param (const GValue * value,GPParam * param,gboolean full_copy)
-name|_gimp_value_to_gp_param
+DECL|function|gimp_value_to_gp_param (const GValue * value,GPParam * param,gboolean full_copy)
+name|gimp_value_to_gp_param
 parameter_list|(
 specifier|const
 name|GValue
@@ -4656,7 +4653,7 @@ argument_list|,
 name|i
 argument_list|)
 decl_stmt|;
-name|_gimp_value_to_gp_param
+name|gimp_value_to_gp_param
 argument_list|(
 name|value
 argument_list|,

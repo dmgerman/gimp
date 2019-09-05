@@ -3635,12 +3635,6 @@ name|pspec
 init|=
 name|_gimp_gp_param_def_to_param_spec
 argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
-argument_list|,
 operator|&
 name|proc_install
 operator|->
@@ -3778,12 +3772,6 @@ name|pspec
 init|=
 name|_gimp_gp_param_def_to_param_spec
 argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
-argument_list|,
 operator|&
 name|proc_install
 operator|->
