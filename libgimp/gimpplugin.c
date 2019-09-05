@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28adc8ee0103
+DECL|enum|__anon28b03ce20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -529,7 +529,7 @@ modifier|*
 name|hash_table
 parameter_list|,
 name|gboolean
-name|finalize
+name|destroy_all
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3921,11 +3921,46 @@ name|priv
 operator|->
 name|procedure_stack
 condition|)
+block|{
+name|gimp_plug_in_destroy_proxies
+argument_list|(
+name|plug_in
+operator|->
+name|priv
+operator|->
+name|displays
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_plug_in_destroy_proxies
+argument_list|(
+name|plug_in
+operator|->
+name|priv
+operator|->
+name|images
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_plug_in_destroy_proxies
+argument_list|(
+name|plug_in
+operator|->
+name|priv
+operator|->
+name|items
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_plug_in_destroy_hashes
 argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -4459,7 +4494,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_destroy_proxies (GHashTable * hash_table,gboolean finalize)
+DECL|function|gimp_plug_in_destroy_proxies (GHashTable * hash_table,gboolean destroy_all)
 name|gimp_plug_in_destroy_proxies
 parameter_list|(
 name|GHashTable
@@ -4467,7 +4502,7 @@ modifier|*
 name|hash_table
 parameter_list|,
 name|gboolean
-name|finalize
+name|destroy_all
 parameter_list|)
 block|{
 name|GHashTableIter
@@ -4586,7 +4621,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|finalize
+name|destroy_all
 condition|)
 block|{
 comment|/* this is debug code, a plug-in MUST NOT ref a proxy */
