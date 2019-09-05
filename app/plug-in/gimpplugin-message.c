@@ -2527,12 +2527,17 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* FIXME leaking object arrays */
-name|g_free
+name|_gimp_gp_params_free
 argument_list|(
 name|proc_return
 operator|.
 name|params
+argument_list|,
+name|proc_return
+operator|.
+name|nparams
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

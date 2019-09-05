@@ -867,12 +867,17 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-comment|/* FIXME leaking object arrays */
-name|g_free
+name|_gimp_gp_params_free
 argument_list|(
 name|proc_run
 operator|.
 name|params
+argument_list|,
+name|proc_run
+operator|.
+name|nparams
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|_gimp_plug_in_read_expect_msg

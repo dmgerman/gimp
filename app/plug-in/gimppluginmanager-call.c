@@ -1090,12 +1090,17 @@ operator|.
 name|icon_theme_dir
 argument_list|)
 expr_stmt|;
-comment|/* FIXME leaking object arrays */
-name|g_free
+name|_gimp_gp_params_free
 argument_list|(
 name|proc_run
 operator|.
 name|params
+argument_list|,
+name|proc_run
+operator|.
+name|nparams
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1140,12 +1145,17 @@ operator|.
 name|icon_theme_dir
 argument_list|)
 expr_stmt|;
-comment|/* FIXME leaking object arrays */
-name|g_free
+name|_gimp_gp_params_free
 argument_list|(
 name|proc_run
 operator|.
 name|params
+argument_list|,
+name|proc_run
+operator|.
+name|nparams
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* If this is an extension,        * wait for an installation-confirmation message        */
@@ -1463,12 +1473,17 @@ argument_list|,
 name|name
 argument_list|)
 decl_stmt|;
-comment|/* FIXME leaking object arrays */
-name|g_free
+name|_gimp_gp_params_free
 argument_list|(
 name|proc_run
 operator|.
 name|params
+argument_list|,
+name|proc_run
+operator|.
+name|nparams
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_proc_frame_pop
@@ -1504,12 +1519,17 @@ argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
-comment|/* FIXME leaking object arrays */
-name|g_free
+name|_gimp_gp_params_free
 argument_list|(
 name|proc_run
 operator|.
 name|params
+argument_list|,
+name|proc_run
+operator|.
+name|nparams
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_ref

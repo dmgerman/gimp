@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c72eef0103
+DECL|enum|__anon2ab48dea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3526,12 +3526,17 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-comment|/* FIXME leaking object arrays */
-name|g_free
+name|_gimp_gp_params_free
 argument_list|(
 name|proc_return
 operator|.
 name|params
+argument_list|,
+name|proc_return
+operator|.
+name|nparams
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3608,12 +3613,17 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-comment|/* FIXME leaking object arrays */
-name|g_free
+name|_gimp_gp_params_free
 argument_list|(
 name|proc_return
 operator|.
 name|params
+argument_list|,
+name|proc_return
+operator|.
+name|nparams
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
