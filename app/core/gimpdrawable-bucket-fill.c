@@ -245,6 +245,8 @@ name|fill_criterion
 argument_list|,
 name|threshold
 argument_list|,
+name|FALSE
+argument_list|,
 name|sample_merged
 argument_list|,
 name|diagonal_neighbors
@@ -371,13 +373,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_bucket_fill_buffer:  * @drawable: the #GimpDrawable to edit.  * @options:  * @fill_transparent:  * @fill_criterion:  * @threshold:  * @sample_merged:  * @diagonal_neighbors:  * @seed_x: X coordinate to start the fill.  * @seed_y: Y coordinate to start the fill.  * @mask_buffer: mask of the fill in-progress when in an interactive  *               filling process. Set to NULL if you need a one-time  *               fill.  * @mask_x: returned x bound of @mask_buffer.  * @mask_y: returned x bound of @mask_buffer.  * @mask_width: returned width bound of @mask_buffer.  * @mask_height: returned height bound of @mask_buffer.  *  * Creates the fill buffer for a bucket fill operation on @drawable,  * without actually applying it (if you want to apply it directly as a  * one-time operation, use gimp_drawable_bucket_fill() instead). If  * @mask_buffer is not NULL, the intermediate fill mask will also be  * returned. This fill mask can later be reused in successive calls to  * gimp_drawable_get_bucket_fill_buffer() for interactive filling.  *  * Returns: a fill buffer which can be directly applied to @drawable, or  *          used in a drawable filter as preview.  */
+comment|/**  * gimp_drawable_get_bucket_fill_buffer:  * @drawable: the #GimpDrawable to edit.  * @options:  * @fill_transparent:  * @fill_criterion:  * @threshold:  * @show_all:  * @sample_merged:  * @diagonal_neighbors:  * @seed_x: X coordinate to start the fill.  * @seed_y: Y coordinate to start the fill.  * @mask_buffer: mask of the fill in-progress when in an interactive  *               filling process. Set to NULL if you need a one-time  *               fill.  * @mask_x: returned x bound of @mask_buffer.  * @mask_y: returned x bound of @mask_buffer.  * @mask_width: returned width bound of @mask_buffer.  * @mask_height: returned height bound of @mask_buffer.  *  * Creates the fill buffer for a bucket fill operation on @drawable,  * without actually applying it (if you want to apply it directly as a  * one-time operation, use gimp_drawable_bucket_fill() instead). If  * @mask_buffer is not NULL, the intermediate fill mask will also be  * returned. This fill mask can later be reused in successive calls to  * gimp_drawable_get_bucket_fill_buffer() for interactive filling.  *  * Returns: a fill buffer which can be directly applied to @drawable, or  *          used in a drawable filter as preview.  */
 end_comment
 
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_get_bucket_fill_buffer (GimpDrawable * drawable,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gdouble seed_x,gdouble seed_y,GeglBuffer ** mask_buffer,gdouble * mask_x,gdouble * mask_y,gint * mask_width,gint * mask_height)
+DECL|function|gimp_drawable_get_bucket_fill_buffer (GimpDrawable * drawable,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean show_all,gboolean sample_merged,gboolean diagonal_neighbors,gdouble seed_x,gdouble seed_y,GeglBuffer ** mask_buffer,gdouble * mask_x,gdouble * mask_y,gint * mask_width,gint * mask_height)
 name|gimp_drawable_get_bucket_fill_buffer
 parameter_list|(
 name|GimpDrawable
@@ -396,6 +398,9 @@ name|fill_criterion
 parameter_list|,
 name|gdouble
 name|threshold
+parameter_list|,
+name|gboolean
+name|show_all
 parameter_list|,
 name|gboolean
 name|sample_merged
@@ -608,6 +613,12 @@ if|if
 condition|(
 name|sample_merged
 condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|show_all
+condition|)
 name|pickable
 operator|=
 name|GIMP_PICKABLE
@@ -620,9 +631,23 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
+name|gimp_image_get_projection
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|pickable
+operator|=
+name|GIMP_PICKABLE
+argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 name|antialias
 operator|=
 name|gimp_fill_options_get_antialias
