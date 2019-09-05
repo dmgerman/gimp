@@ -26,7 +26,7 @@ directive|define
 name|GIMP_PROTOCOL_VERSION
 value|0x0109
 name|enum
-DECL|enum|__anon2ba7b15c0103
+DECL|enum|__anon27dda69d0103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -72,7 +72,7 @@ begin_typedef
 unit|};
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba7b15c0203
+DECL|enum|__anon27dda69d0203
 block|{
 DECL|enumerator|GP_PARAM_DEF_TYPE_DEFAULT
 name|GP_PARAM_DEF_TYPE_DEFAULT
@@ -101,6 +101,9 @@ block|,
 DECL|enumerator|GP_PARAM_DEF_TYPE_ID
 name|GP_PARAM_DEF_TYPE_ID
 block|,
+DECL|enumerator|GP_PARAM_DEF_TYPE_ID_ARRAY
+name|GP_PARAM_DEF_TYPE_ID_ARRAY
+block|,
 DECL|enumerator|GP_PARAM_DEF_TYPE_PARAM_DEF
 name|GP_PARAM_DEF_TYPE_PARAM_DEF
 DECL|typedef|GPParamDefType
@@ -112,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba7b15c0303
+DECL|enum|__anon27dda69d0303
 block|{
 DECL|enumerator|GP_PARAM_TYPE_INT
 name|GP_PARAM_TYPE_INT
@@ -134,6 +137,9 @@ name|GP_PARAM_TYPE_ARRAY
 block|,
 DECL|enumerator|GP_PARAM_TYPE_STRING_ARRAY
 name|GP_PARAM_TYPE_STRING_ARRAY
+block|,
+DECL|enumerator|GP_PARAM_TYPE_ID_ARRAY
+name|GP_PARAM_TYPE_ID_ARRAY
 block|,
 DECL|enumerator|GP_PARAM_TYPE_PARAM_DEF
 name|GP_PARAM_TYPE_PARAM_DEF
@@ -261,6 +267,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GPParamDefIDArray
+typedef|typedef
+name|struct
+name|_GPParamDefIDArray
+name|GPParamDefIDArray
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GPParamDefParamDef
 typedef|typedef
 name|struct
@@ -293,6 +308,15 @@ typedef|typedef
 name|struct
 name|_GPParamStringArray
 name|GPParamStringArray
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GPParamIDArray
+typedef|typedef
+name|struct
+name|_GPParamIDArray
+name|GPParamIDArray
 typedef|;
 end_typedef
 
@@ -636,6 +660,20 @@ struct|;
 end_struct
 
 begin_struct
+DECL|struct|_GPParamDefIDArray
+struct|struct
+name|_GPParamDefIDArray
+block|{
+DECL|member|type_name
+name|gchar
+modifier|*
+name|type_name
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GPParamDefParamDef
 struct|struct
 name|_GPParamDefParamDef
@@ -683,7 +721,7 @@ name|guint
 name|flags
 decl_stmt|;
 union|union
-DECL|union|__anon2ba7b15c040a
+DECL|union|__anon27dda69d040a
 block|{
 DECL|member|m_int
 name|GPParamDefInt
@@ -716,6 +754,10 @@ decl_stmt|;
 DECL|member|m_id
 name|GPParamDefID
 name|m_id
+decl_stmt|;
+DECL|member|m_id_array
+name|GPParamDefIDArray
+name|m_id_array
 decl_stmt|;
 DECL|member|m_param_def
 name|GPParamDefParamDef
@@ -767,6 +809,29 @@ struct|;
 end_struct
 
 begin_struct
+DECL|struct|_GPParamIDArray
+struct|struct
+name|_GPParamIDArray
+block|{
+DECL|member|type_name
+name|gchar
+modifier|*
+name|type_name
+decl_stmt|;
+DECL|member|size
+name|guint32
+name|size
+decl_stmt|;
+DECL|member|data
+name|gint32
+modifier|*
+name|data
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GPParam
 struct|struct
 name|_GPParam
@@ -781,7 +846,7 @@ modifier|*
 name|type_name
 decl_stmt|;
 union|union
-DECL|union|__anon2ba7b15c050a
+DECL|union|__anon27dda69d050a
 block|{
 DECL|member|d_int
 name|gint32
@@ -811,6 +876,10 @@ decl_stmt|;
 DECL|member|d_string_array
 name|GPParamStringArray
 name|d_string_array
+decl_stmt|;
+DECL|member|d_id_array
+name|GPParamIDArray
+name|d_id_array
 decl_stmt|;
 DECL|member|d_param_def
 name|GPParamDef
