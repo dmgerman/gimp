@@ -1578,6 +1578,118 @@ value|gimp_value_take_rgb_array (gimp_value_array_index (args, n), value, length
 end_define
 
 begin_comment
+comment|/*  object array  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_PROC_ARG_OBJECT_ARRAY (class,name,nick,blurb,object_type,flags)
+define|#
+directive|define
+name|GIMP_PROC_ARG_OBJECT_ARRAY
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|object_type
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_object_array (name, nick, blurb,\                                                              object_type, flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_VAL_OBJECT_ARRAY (class,name,nick,blurb,object_type,flags)
+define|#
+directive|define
+name|GIMP_PROC_VAL_OBJECT_ARRAY
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|object_type
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_string_array (name, nick, blurb,\                                                                  object_type, flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_GET_OBJECT_ARRAY (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_OBJECT_ARRAY
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|(gpointer) gimp_value_get_object_array (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_DUP_OBJECT_ARRAY (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_DUP_OBJECT_ARRAY
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|(gpointer) gimp_value_dup_object_array (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_SET_OBJECT_ARRAY (args,n,value,length)
+define|#
+directive|define
+name|GIMP_VALUES_SET_OBJECT_ARRAY
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|,
+name|value
+parameter_list|,
+name|length
+parameter_list|)
+define|\
+value|gimp_value_set_object_array (gimp_value_array_index (args, n),\                                (gpointer) value, length)
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_TAKE_OBJECT_ARRAY (args,n,value,length)
+define|#
+directive|define
+name|GIMP_VALUES_TAKE_OBJECT_ARRAY
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|,
+name|value
+parameter_list|,
+name|length
+parameter_list|)
+define|\
+value|gimp_value_take_object_array (gimp_value_array_index (args, n),\                                 (gpointer) value, length)
+end_define
+
+begin_comment
 comment|/*  display  */
 end_comment
 
