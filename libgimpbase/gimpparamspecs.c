@@ -4241,7 +4241,7 @@ comment|/*  * GIMP_TYPE_OBJECT_ARRAY  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_object_array_new:  * @data:        (array length=length) (transfer none): an array of objects.  * @length:      the length of @data.  * @static_data: whether the objects in @data are static objects and don't  *               need to be copied.  *  * Creates a new #GimpObjectArray containing object pointers, of size @length.  *  * If @static_data is %TRUE, @data is used as-is.  *  * If @static_data is %FALSE, the object and array will be re-allocated,  * hence you are expected to free your input data after.  *  * Returns: (transfer full): a new #GimpObjectArray.  */
+comment|/**  * gimp_object_array_new:  * @data:        (array length=length) (transfer none): an array of objects.  * @object_type: the array will hold objects of this type  * @length:      the length of @data.  * @static_data: whether the objects in @data are static objects and don't  *               need to be copied.  *  * Creates a new #GimpObjectArray containing object pointers, of size @length.  *  * If @static_data is %TRUE, @data is used as-is.  *  * If @static_data is %FALSE, the object and array will be re-allocated,  * hence you are expected to free your input data after.  *  * Returns: (transfer full): a new #GimpObjectArray.  */
 end_comment
 
 begin_function
@@ -5044,7 +5044,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_object_array:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecObjectArray specifying a  * #GIMP_TYPE_OBJECT_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecObjectArray.  *  * Since: 3.0  **/
+comment|/**  * gimp_param_spec_object_array:  * @name:        Canonical name of the property specified.  * @nick:        Nick name of the property specified.  * @blurb:       Description of the property specified.  * @object_type: GType of the array's elements.  * @flags:       Flags for the property specified.  *  * Creates a new #GimpParamSpecObjectArray specifying a  * #GIMP_TYPE_OBJECT_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecObjectArray.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
