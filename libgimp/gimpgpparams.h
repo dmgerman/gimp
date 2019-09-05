@@ -71,9 +71,6 @@ name|n_params
 parameter_list|,
 name|gboolean
 name|return_values
-parameter_list|,
-name|gboolean
-name|full_copy
 parameter_list|)
 function_decl|;
 end_function_decl

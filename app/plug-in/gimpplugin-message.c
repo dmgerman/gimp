@@ -2357,8 +2357,6 @@ operator|->
 name|nparams
 argument_list|,
 name|FALSE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Execute the procedure even if gimp_pdb_lookup_procedure()    *  returned NULL, gimp_pdb_execute_procedure_by_name_args() will    *  return appropriate error return_vals.    */
@@ -2610,8 +2608,6 @@ operator|->
 name|nparams
 argument_list|,
 name|TRUE
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2737,8 +2733,6 @@ argument_list|,
 name|proc_return
 operator|->
 name|nparams
-argument_list|,
-name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)
