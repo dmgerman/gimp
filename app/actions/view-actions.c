@@ -4290,6 +4290,10 @@ argument_list|(
 literal|"view-show-canvas-boundary"
 argument_list|,
 name|image
+operator|&&
+name|shell
+operator|->
+name|show_all
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
