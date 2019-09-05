@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289153f50108
+DECL|struct|__anon29a05b250108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -991,7 +991,8 @@ operator|.
 name|import
 condition|)
 block|{
-name|gint32
+name|GimpVectors
+modifier|*
 modifier|*
 name|vectors
 decl_stmt|;
