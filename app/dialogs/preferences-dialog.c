@@ -4324,7 +4324,7 @@ literal|"snap-to-guides"
 argument_list|,
 name|_
 argument_list|(
-literal|"Snap to Guides"
+literal|"Snap to _Guides"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -4341,7 +4341,7 @@ literal|"snap-to-grid"
 argument_list|,
 name|_
 argument_list|(
-literal|"Snap to Grid"
+literal|"S_nap to Grid"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -4388,7 +4388,7 @@ literal|"snap-to-canvas"
 argument_list|,
 name|_
 argument_list|(
-literal|"Snap to Canvas Edges"
+literal|"Snap to Canvas _Edges"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -4405,7 +4405,7 @@ literal|"snap-to-path"
 argument_list|,
 name|_
 argument_list|(
-literal|"Snap to Active Path"
+literal|"Snap to _Active Path"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5024,7 +5024,7 @@ literal|"use-opencl"
 argument_list|,
 name|_
 argument_list|(
-literal|"Use OpenCL"
+literal|"Use O_penCL"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5163,7 +5163,7 @@ literal|"save-document-history"
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep record of used files in the Recent Documents list"
+literal|"_Keep record of used files in the Recent Documents list"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5448,7 +5448,7 @@ name|vbox
 argument_list|,
 name|_
 argument_list|(
-literal|"Reset Color Management"
+literal|"R_eset Color Management"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5977,7 +5977,7 @@ literal|"simulation-gamut-check"
 argument_list|,
 name|_
 argument_list|(
-literal|"Mark out of gamut colors"
+literal|"Mar_k out of gamut colors"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6229,7 +6229,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"File Open behaviour:"
+literal|"_File Open behaviour:"
 argument_list|)
 argument_list|,
 name|GTK_GRID
@@ -6270,7 +6270,7 @@ literal|"filter-tool-show-color-options"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show advanced color options"
+literal|"Show _advanced color options"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6417,7 +6417,7 @@ literal|"import-promote-dither"
 argument_list|,
 name|_
 argument_list|(
-literal|"Dither images when promoting to "
+literal|"_Dither images when promoting to "
 literal|"floating point"
 argument_list|)
 argument_list|,
@@ -6437,7 +6437,7 @@ literal|"import-add-alpha"
 argument_list|,
 name|_
 argument_list|(
-literal|"Add an alpha channel to imported images"
+literal|"_Add an alpha channel to imported images"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6470,7 +6470,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Color profile policy:"
+literal|"Color _profile policy:"
 argument_list|)
 argument_list|,
 name|GTK_GRID
@@ -6511,7 +6511,7 @@ literal|"export-color-profile"
 argument_list|,
 name|_
 argument_list|(
-literal|"Export the image's color profile by default"
+literal|"Export the i_mage's color profile by default"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6531,7 +6531,7 @@ argument_list|,
 comment|/* Translators: label for                                     * configuration option (checkbox).                                     * It determines how file export                                     * plug-ins handle Exif by default.                                     */
 name|_
 argument_list|(
-literal|"Export Exif metadata by default when available"
+literal|"Export _Exif metadata by default when available"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6551,7 +6551,7 @@ argument_list|,
 comment|/* Translators: label for                                     * configuration option (checkbox).                                     * It determines how file export                                     * plug-ins handle XMP by default.                                     */
 name|_
 argument_list|(
-literal|"Export XMP metadata by default when available"
+literal|"Export _XMP metadata by default when available"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6571,7 +6571,7 @@ argument_list|,
 comment|/* Translators: label for                                     * configuration option (checkbox).                                     * It determines how file export                                     * plug-ins handle IPTC by default.                                     */
 name|_
 argument_list|(
-literal|"Export IPTC metadata by default when available"
+literal|"Export _IPTC metadata by default when available"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6648,7 +6648,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Default export file type:"
+literal|"Default export file t_ype:"
 argument_list|)
 argument_list|,
 name|GTK_GRID
@@ -7302,7 +7302,7 @@ literal|"move-tool-changes-active"
 argument_list|,
 name|_
 argument_list|(
-literal|"Set layer or path as active"
+literal|"Set _layer or path as active"
 argument_list|)
 argument_list|,
 name|GIMP_ICON_TOOL_MOVE
@@ -9404,7 +9404,7 @@ name|vbox
 argument_list|,
 name|_
 argument_list|(
-literal|"Reset Dialog Defaults"
+literal|"Reset Dialog _Defaults"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11159,7 +11159,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"User manual:"
+literal|"U_ser manual:"
 argument_list|)
 argument_list|,
 name|GTK_GRID
@@ -11624,7 +11624,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Maximum History Size:"
+literal|"_Maximum History Size:"
 argument_list|)
 argument_list|,
 name|GTK_GRID
@@ -11645,7 +11645,7 @@ name|GIMP_ICON_SHRED
 argument_list|,
 name|_
 argument_list|(
-literal|"Clear Action History"
+literal|"C_lear Action History"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -13185,7 +13185,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a08693d0108
+DECL|struct|__anon2bc4228d0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -14069,7 +14069,7 @@ name|vbox
 argument_list|,
 name|_
 argument_list|(
-literal|"Reset Folders"
+literal|"Reset _Folders"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -14091,7 +14091,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a08693d0208
+DECL|struct|__anon2bc4228d0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14121,7 +14121,7 @@ literal|"temp-path"
 block|,
 name|N_
 argument_list|(
-literal|"Temporary folder:"
+literal|"_Temporary folder:"
 argument_list|)
 block|,
 name|N_
@@ -14135,7 +14135,7 @@ literal|"swap-path"
 block|,
 name|N_
 argument_list|(
-literal|"Swap folder:"
+literal|"_Swap folder:"
 argument_list|)
 block|,
 name|N_
@@ -14222,7 +14222,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a08693d0308
+DECL|struct|__anon2bc4228d0308
 block|{
 DECL|member|tree_label
 specifier|const
@@ -14294,7 +14294,7 @@ name|GIMP_HELP_PREFS_FOLDERS_BRUSHES
 block|,
 name|N_
 argument_list|(
-literal|"Reset Brush Folders"
+literal|"Reset Brush _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14324,7 +14324,7 @@ name|GIMP_HELP_PREFS_FOLDERS_DYNAMICS
 block|,
 name|N_
 argument_list|(
-literal|"Reset Dynamics Folders"
+literal|"Reset Dynamics _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14354,7 +14354,7 @@ name|GIMP_HELP_PREFS_FOLDERS_PATTERNS
 block|,
 name|N_
 argument_list|(
-literal|"Reset Pattern Folders"
+literal|"Reset Pattern _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14384,7 +14384,7 @@ name|GIMP_HELP_PREFS_FOLDERS_PALETTES
 block|,
 name|N_
 argument_list|(
-literal|"Reset Palette Folders"
+literal|"Reset Palette _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14414,7 +14414,7 @@ name|GIMP_HELP_PREFS_FOLDERS_GRADIENTS
 block|,
 name|N_
 argument_list|(
-literal|"Reset Gradient Folders"
+literal|"Reset Gradient _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14444,7 +14444,7 @@ name|GIMP_HELP_PREFS_FOLDERS_FONTS
 block|,
 name|N_
 argument_list|(
-literal|"Reset Font Folders"
+literal|"Reset Font _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14474,7 +14474,7 @@ name|GIMP_HELP_PREFS_FOLDERS_TOOL_PRESETS
 block|,
 name|N_
 argument_list|(
-literal|"Reset Tool Preset Folders"
+literal|"Reset Tool Preset _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14504,7 +14504,7 @@ name|GIMP_HELP_PREFS_FOLDERS_MYPAINT_BRUSHES
 block|,
 name|N_
 argument_list|(
-literal|"Reset MyPaint Brush Folders"
+literal|"Reset MyPaint Brush _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14534,7 +14534,7 @@ name|GIMP_HELP_PREFS_FOLDERS_PLUG_INS
 block|,
 name|N_
 argument_list|(
-literal|"Reset plug-in Folders"
+literal|"Reset plug-in _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14564,7 +14564,7 @@ name|GIMP_HELP_PREFS_FOLDERS_SCRIPTS
 block|,
 name|N_
 argument_list|(
-literal|"Reset Script-Fu Folders"
+literal|"Reset Script-Fu _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14594,7 +14594,7 @@ name|GIMP_HELP_PREFS_FOLDERS_MODULES
 block|,
 name|N_
 argument_list|(
-literal|"Reset Module Folders"
+literal|"Reset Module _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14624,7 +14624,7 @@ name|GIMP_HELP_PREFS_FOLDERS_INTERPRETERS
 block|,
 name|N_
 argument_list|(
-literal|"Reset Interpreter Folders"
+literal|"Reset Interpreter _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14654,7 +14654,7 @@ name|GIMP_HELP_PREFS_FOLDERS_ENVIRONMENT
 block|,
 name|N_
 argument_list|(
-literal|"Reset Environment Folders"
+literal|"Reset Environment _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14684,7 +14684,7 @@ name|GIMP_HELP_PREFS_FOLDERS_THEMES
 block|,
 name|N_
 argument_list|(
-literal|"Reset Theme Folders"
+literal|"Reset Theme _Folders"
 argument_list|)
 block|,
 name|N_
@@ -14714,7 +14714,7 @@ name|GIMP_HELP_PREFS_FOLDERS_ICON_THEMES
 block|,
 name|N_
 argument_list|(
-literal|"Reset Icon Theme Folders"
+literal|"Reset Icon Theme _Folders"
 argument_list|)
 block|,
 name|N_
