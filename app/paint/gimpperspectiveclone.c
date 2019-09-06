@@ -1601,9 +1601,15 @@ name|ymax
 operator|-
 name|ymin
 argument_list|,
-literal|0
+name|gegl_buffer_get_x
+argument_list|(
+name|src_buffer
+argument_list|)
 argument_list|,
-literal|0
+name|gegl_buffer_get_y
+argument_list|(
+name|src_buffer
+argument_list|)
 argument_list|,
 name|gegl_buffer_get_width
 argument_list|(
