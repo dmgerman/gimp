@@ -633,9 +633,12 @@ literal|"Close"
 block|,
 name|GIMP_ICON_CLOSE
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_Close"
+argument_list|)
 block|,
-name|NULL
+literal|"<primary>w"
 block|,
 name|NULL
 block|,
@@ -647,9 +650,12 @@ literal|"Quit"
 block|,
 name|GIMP_ICON_APPLICATION_EXIT
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_Quit"
+argument_list|)
 block|,
-name|NULL
+literal|"<primary>q"
 block|,
 name|NULL
 block|,
@@ -672,7 +678,10 @@ literal|"Undo"
 block|,
 name|GIMP_ICON_EDIT_UNDO
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_Undo"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -689,7 +698,10 @@ literal|"Redo"
 block|,
 name|GIMP_ICON_EDIT_REDO
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_Redo"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -706,9 +718,12 @@ literal|"Cut"
 block|,
 name|GIMP_ICON_EDIT_CUT
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Cu_t"
+argument_list|)
 block|,
-name|NULL
+literal|"<primary>x"
 block|,
 name|N_
 argument_list|(
@@ -723,9 +738,12 @@ literal|"Copy"
 block|,
 name|GIMP_ICON_EDIT_COPY
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_Copy"
+argument_list|)
 block|,
-name|NULL
+literal|"<primary>c"
 block|,
 name|N_
 argument_list|(
@@ -740,9 +758,12 @@ literal|"Paste"
 block|,
 name|GIMP_ICON_EDIT_PASTE
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_Paste"
+argument_list|)
 block|,
-name|NULL
+literal|"<primary>v"
 block|,
 name|N_
 argument_list|(
@@ -757,14 +778,17 @@ literal|"Clear"
 block|,
 name|GIMP_ICON_EDIT_DELETE
 block|,
+name|N_
+argument_list|(
+literal|"_Delete"
+argument_list|)
+block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
 literal|"Delete"
 argument_list|)
-block|,
-name|NULL
 block|,
 name|do_clear
 block|}
@@ -779,7 +803,7 @@ argument_list|(
 literal|"Select _All"
 argument_list|)
 block|,
-literal|"<control>A"
+literal|"<primary>A"
 block|,
 name|NULL
 block|,
@@ -796,7 +820,7 @@ argument_list|(
 literal|"D_eselect All"
 argument_list|)
 block|,
-literal|"<shift><control>A"
+literal|"<shift><primary>A"
 block|,
 name|NULL
 block|,
@@ -828,7 +852,10 @@ literal|"Preferences"
 block|,
 name|GIMP_ICON_PREFERENCES_SYSTEM
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_Preferences"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -992,7 +1019,10 @@ literal|"ZoomIn"
 block|,
 name|GIMP_ICON_ZOOM_IN
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom _In"
+argument_list|)
 block|,
 literal|"plus"
 block|,
@@ -1009,7 +1039,10 @@ literal|"ZoomOut"
 block|,
 name|GIMP_ICON_ZOOM_OUT
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom _Out"
+argument_list|)
 block|,
 literal|"minus"
 block|,
@@ -1158,7 +1191,10 @@ literal|"About"
 block|,
 name|GIMP_ICON_HELP_ABOUT
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_About"
+argument_list|)
 block|,
 name|NULL
 block|,
