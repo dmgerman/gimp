@@ -114,6 +114,11 @@ modifier|*
 name|undo_desc
 decl_stmt|;
 comment|/*  undo description                    */
+DECL|member|show_all
+name|gboolean
+name|show_all
+decl_stmt|;
+comment|/*  whether working in show-all mode    */
 DECL|member|start_coords
 name|GimpCoords
 name|start_coords
@@ -165,6 +170,12 @@ name|gboolean
 name|use_saved_proj
 decl_stmt|;
 comment|/*  keep the unmodified proj around     */
+DECL|member|image_pickable
+name|GimpPickable
+modifier|*
+name|image_pickable
+decl_stmt|;
+comment|/*  the image pickable                  */
 DECL|member|undo_buffer
 name|GeglBuffer
 modifier|*
@@ -578,6 +589,31 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_paint_core_set_show_all
+parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|core
+parameter_list|,
+name|gboolean
+name|show_all
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_paint_core_get_show_all
+parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|core
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_paint_core_set_current_coords
 parameter_list|(
 name|GimpPaintCore
@@ -709,6 +745,18 @@ parameter_list|,
 name|gint
 modifier|*
 name|paint_height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpPickable
+modifier|*
+name|gimp_paint_core_get_image_pickable
+parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|core
 parameter_list|)
 function_decl|;
 end_function_decl

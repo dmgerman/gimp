@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplayshell-utils.h"
 end_include
 
@@ -111,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fdfae70108
+DECL|struct|__anon29bf37e80108
 block|{
 DECL|member|paint_tool
 name|GimpPaintTool
@@ -123,7 +129,7 @@ name|GimpPaintToolPaintFunc
 name|func
 decl_stmt|;
 union|union
-DECL|union|__anon28fdfae7020a
+DECL|union|__anon29bf37e8020a
 block|{
 DECL|member|data
 name|gpointer
@@ -145,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fdfae70308
+DECL|struct|__anon29bf37e80308
 block|{
 DECL|member|coords
 name|GimpCoords
@@ -973,6 +979,15 @@ condition|)
 name|gimp_drawable_start_paint
 argument_list|(
 name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_paint_core_set_show_all
+argument_list|(
+name|core
+argument_list|,
+name|shell
+operator|->
+name|show_all
 argument_list|)
 expr_stmt|;
 comment|/*  Start the paint core  */
