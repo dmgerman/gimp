@@ -4672,6 +4672,7 @@ if|if
 condition|(
 name|full_copy
 condition|)
+block|{
 name|g_free
 argument_list|(
 name|params
@@ -4686,19 +4687,6 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|params
-index|[
-name|i
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
-name|data
-condition|)
 name|g_free
 argument_list|(
 name|params
@@ -4713,6 +4701,7 @@ operator|.
 name|data
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GP_PARAM_TYPE_PARAM_DEF
