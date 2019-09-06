@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0cf7bf0103
+DECL|enum|__anon27d577bd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1545,15 +1545,6 @@ operator|->
 name|sample_merged
 condition|)
 block|{
-name|GimpImage
-modifier|*
-name|src_image
-init|=
-name|gimp_pickable_get_image
-argument_list|(
-name|src_pickable
-argument_list|)
-decl_stmt|;
 name|gint
 name|off_x
 decl_stmt|,
@@ -1561,9 +1552,9 @@ name|off_y
 decl_stmt|;
 name|src_pickable
 operator|=
-name|GIMP_PICKABLE
+name|gimp_paint_core_get_image_pickable
 argument_list|(
-name|src_image
+name|paint_core
 argument_list|)
 expr_stmt|;
 name|gimp_item_get_offset
@@ -2235,9 +2226,15 @@ argument_list|(
 name|paint_buffer
 argument_list|)
 argument_list|,
-literal|0
+name|gegl_buffer_get_x
+argument_list|(
+name|src_buffer
+argument_list|)
 argument_list|,
-literal|0
+name|gegl_buffer_get_y
+argument_list|(
+name|src_buffer
+argument_list|)
 argument_list|,
 name|gegl_buffer_get_width
 argument_list|(
