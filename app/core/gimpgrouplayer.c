@@ -4947,6 +4947,15 @@ argument_list|(
 name|layer
 argument_list|)
 decl_stmt|;
+name|GimpGroupLayerPrivate
+modifier|*
+name|private
+init|=
+name|GET_PRIVATE
+argument_list|(
+name|layer
+argument_list|)
+decl_stmt|;
 name|g_warn_if_fail
 argument_list|(
 name|GET_PRIVATE
@@ -4964,7 +4973,19 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|gimp_group_layer_update_size
+comment|/* if we've already computed a bounding box, update it now, since the mask    * limits the bounding box to the group's size.  if we haven't computed a    * bounding box yet we can skip this, and, in fact, we have to, or else the    * mask will be improperly clipped when the group is duplicated, discarding    * its data.    */
+if|if
+condition|(
+operator|!
+name|gegl_rectangle_is_empty
+argument_list|(
+operator|&
+name|private
+operator|->
+name|bounding_box
+argument_list|)
+condition|)
+name|gimp_group_layer_update
 argument_list|(
 name|group
 argument_list|)
