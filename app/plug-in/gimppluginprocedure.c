@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b253aa0103
+DECL|enum|__anon2965b8850103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2834,7 +2834,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"ENUM GimpRunMode"
+literal|"GimpRunMode"
 expr_stmt|;
 goto|goto
 name|failure
@@ -2914,7 +2914,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"ENUM GimpRunMode, IMAGE, (LAYER | DRAWABLE)"
+literal|"GimpRunMode, GimpImage, (GimpLayer | GimpDrawable)"
 expr_stmt|;
 goto|goto
 name|failure
@@ -2994,7 +2994,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"ENUM GimpRunMode, IMAGE, (CHANNEL | DRAWABLE)"
+literal|"GimpRunMode, GimpImage, (GimpChannel | GimpDrawable)"
 expr_stmt|;
 goto|goto
 name|failure
@@ -3058,7 +3058,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"ENUM GimpRunMode, IMAGE, VECTORS"
+literal|"GimpRunMode, GimpImage, GimpVectors"
 expr_stmt|;
 goto|goto
 name|failure
@@ -3111,7 +3111,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"ENUM GimpRunMode, IMAGE"
+literal|"GimpRunMode, GimpImage"
 expr_stmt|;
 goto|goto
 name|failure
@@ -3175,7 +3175,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"ENUM GimpRunMode, STRING, STRING"
+literal|"GimpRunMode, String, String"
 expr_stmt|;
 goto|goto
 name|failure
@@ -3205,7 +3205,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"IMAGE"
+literal|"GimpImage"
 expr_stmt|;
 goto|goto
 name|failure
@@ -3291,7 +3291,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"ENUM GimpRunMode, IMAGE, DRAWABLE, STRING, STRING"
+literal|"GimpRunMode, GimpImage, GimpDrawable, String, String"
 expr_stmt|;
 goto|goto
 name|failure
@@ -3389,7 +3389,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"ENUM GimpRunMode"
+literal|"GimpRunMode"
 expr_stmt|;
 goto|goto
 name|failure
