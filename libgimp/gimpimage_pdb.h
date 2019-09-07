@@ -658,6 +658,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayer
+modifier|*
+name|gimp_image_merge_layer_group
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpLayer
+modifier|*
+name|layer_group
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|G_GNUC_INTERNAL
 name|guint8
 modifier|*
