@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1b2760108
+DECL|struct|__anon2c7229a30108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -596,6 +596,30 @@ if|if
 condition|(
 name|mask
 condition|)
+block|{
+comment|/* we can't apply the mask directly to a layer group, so merge it            * first            */
+if|if
+condition|(
+name|gimp_item_is_group
+argument_list|(
+name|iter
+operator|->
+name|data
+argument_list|)
+condition|)
+name|iter
+operator|->
+name|data
+operator|=
+name|gimp_image_merge_layer_group
+argument_list|(
+name|image
+argument_list|,
+name|iter
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
 name|gimp_layer_remove_mask
 argument_list|(
 name|iter
@@ -605,6 +629,7 @@ argument_list|,
 name|GIMP_MASK_APPLY
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_list_free
 argument_list|(
