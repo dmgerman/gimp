@@ -3970,7 +3970,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_merge_layer_group:  * @image: The image.  * @layer_group: The layer group to merge.  *  * Merge the passed layer group's layers into one normal layer.  *  * This procedure combines the layers of the passed layer group into a  * single normal layer, replacing the group.  *  * Returns: (transfer none): The resulting layer.  **/
+comment|/**  * gimp_image_merge_layer_group:  * @image: The image.  * @layer_group: The layer group to merge.  *  * Merge the passed layer group's layers into one normal layer.  *  * This procedure combines the layers of the passed layer group into a  * single normal layer, replacing the group.  *  * Returns: (transfer none): The resulting layer.  *  * Since: 2.10.14  **/
 end_comment
 
 begin_function
