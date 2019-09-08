@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e4e800108
+DECL|struct|__anon2bb7e75f0108
 block|{
 DECL|member|film_height
 name|gint
@@ -210,7 +210,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e4e800208
+DECL|struct|__anon2bb7e75f0208
 block|{
 DECL|member|advanced_adj
 name|GtkAdjustment
@@ -6357,6 +6357,7 @@ operator|<
 name|MAX_FILM_PICTURES
 operator|)
 condition|)
+block|{
 name|filmvals
 operator|.
 name|images
@@ -6373,13 +6374,13 @@ name|image_id
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 name|filmvals
 operator|.
 name|num_images
-operator|=
-name|num_images
+operator|++
 expr_stmt|;
+block|}
+block|}
 block|}
 name|gtk_widget_destroy
 argument_list|(
