@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ba1f8e0103
+DECL|enum|__anon2bfa757b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -872,6 +872,11 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|string
+condition|)
+block|{
 name|gimp_procedure_set_image_types
 argument_list|(
 name|procedure
@@ -884,6 +889,7 @@ argument_list|(
 name|string
 argument_list|)
 expr_stmt|;
+block|}
 name|string
 operator|=
 name|_gimp_pdb_get_proc_menu_label
@@ -891,6 +897,11 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|string
+condition|)
+block|{
 name|gimp_procedure_set_menu_label
 argument_list|(
 name|procedure
@@ -903,6 +914,7 @@ argument_list|(
 name|string
 argument_list|)
 expr_stmt|;
+block|}
 name|menu_paths
 operator|=
 name|_gimp_pdb_get_proc_menu_paths
