@@ -195,6 +195,8 @@ literal|"gimp-brush"
 argument_list|)
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_procedure_set_image_types
@@ -431,6 +433,8 @@ literal|"gimp-brush"
 argument_list|)
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|#
@@ -707,6 +711,8 @@ literal|"gimp-brush"
 argument_list|)
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_procedure_set_image_types
@@ -941,6 +947,8 @@ literal|"gimp-brush"
 argument_list|)
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|#
@@ -1241,6 +1249,8 @@ literal|"gimp-pattern"
 argument_list|)
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_procedure_set_image_types
@@ -1474,6 +1484,8 @@ literal|"gimp-pattern"
 argument_list|)
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|#
@@ -1728,6 +1740,8 @@ literal|"gimp-plugin"
 argument_list|)
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_procedure_set_file_proc

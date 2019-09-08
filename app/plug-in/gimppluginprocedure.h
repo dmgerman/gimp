@@ -443,7 +443,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_plug_in_procedure_set_icon
 parameter_list|(
 name|GimpPlugInProcedure
@@ -460,12 +460,17 @@ name|data
 parameter_list|,
 name|gint
 name|data_length
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_plug_in_procedure_take_icon
 parameter_list|(
 name|GimpPlugInProcedure
@@ -481,6 +486,11 @@ name|data
 parameter_list|,
 name|gint
 name|data_length
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bf85290103
+DECL|enum|__anon292feebb0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -2353,6 +2353,8 @@ argument_list|,
 name|icon_data
 argument_list|,
 name|icon_data_length
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

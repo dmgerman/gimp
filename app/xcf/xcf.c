@@ -380,6 +380,8 @@ literal|"gimp-wilber"
 argument_list|)
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_procedure_set_image_types
@@ -637,6 +639,8 @@ literal|"gimp-wilber"
 argument_list|)
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_procedure_set_image_types
