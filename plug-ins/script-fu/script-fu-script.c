@@ -716,6 +716,10 @@ operator|->
 name|image_types
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|menu_label
+condition|)
 name|gimp_procedure_set_menu_label
 argument_list|(
 name|procedure
