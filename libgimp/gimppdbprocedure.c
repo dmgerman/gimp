@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e624070103
+DECL|enum|__anon29ba1f8e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -655,7 +655,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|_gimp_pdb_proc_info
+name|_gimp_pdb_get_proc_info
 argument_list|(
 name|name
 argument_list|,
@@ -697,7 +697,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|_gimp_pdb_proc_documentation
+name|_gimp_pdb_get_proc_documentation
 argument_list|(
 name|name
 argument_list|,
@@ -737,7 +737,7 @@ argument_list|(
 name|help_id
 argument_list|)
 expr_stmt|;
-name|_gimp_pdb_proc_attribution
+name|_gimp_pdb_get_proc_attribution
 argument_list|(
 name|name
 argument_list|,
@@ -795,7 +795,7 @@ name|GParamSpec
 modifier|*
 name|pspec
 init|=
-name|_gimp_pdb_proc_argument
+name|_gimp_pdb_get_proc_argument
 argument_list|(
 name|name
 argument_list|,
@@ -828,7 +828,7 @@ name|GParamSpec
 modifier|*
 name|pspec
 init|=
-name|_gimp_pdb_proc_return_value
+name|_gimp_pdb_get_proc_return_value
 argument_list|(
 name|name
 argument_list|,
@@ -867,7 +867,7 @@ name|i
 decl_stmt|;
 name|string
 operator|=
-name|_gimp_pdb_proc_image_types
+name|_gimp_pdb_get_proc_image_types
 argument_list|(
 name|name
 argument_list|)
@@ -886,7 +886,7 @@ argument_list|)
 expr_stmt|;
 name|string
 operator|=
-name|_gimp_pdb_proc_menu_label
+name|_gimp_pdb_get_proc_menu_label
 argument_list|(
 name|name
 argument_list|)
@@ -905,7 +905,7 @@ argument_list|)
 expr_stmt|;
 name|menu_paths
 operator|=
-name|_gimp_pdb_proc_menu_paths
+name|_gimp_pdb_get_proc_menu_paths
 argument_list|(
 name|name
 argument_list|,

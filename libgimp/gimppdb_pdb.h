@@ -142,7 +142,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_pdb_proc_info
+name|_gimp_pdb_get_proc_info
 parameter_list|(
 specifier|const
 name|gchar
@@ -168,7 +168,7 @@ begin_function_decl
 name|G_GNUC_INTERNAL
 name|gchar
 modifier|*
-name|_gimp_pdb_proc_image_types
+name|_gimp_pdb_get_proc_image_types
 parameter_list|(
 specifier|const
 name|gchar
@@ -182,7 +182,7 @@ begin_function_decl
 name|G_GNUC_INTERNAL
 name|gchar
 modifier|*
-name|_gimp_pdb_proc_menu_label
+name|_gimp_pdb_get_proc_menu_label
 parameter_list|(
 specifier|const
 name|gchar
@@ -197,7 +197,7 @@ name|G_GNUC_INTERNAL
 name|gchar
 modifier|*
 modifier|*
-name|_gimp_pdb_proc_menu_paths
+name|_gimp_pdb_get_proc_menu_paths
 parameter_list|(
 specifier|const
 name|gchar
@@ -214,7 +214,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_pdb_proc_documentation
+name|_gimp_pdb_get_proc_documentation
 parameter_list|(
 specifier|const
 name|gchar
@@ -242,7 +242,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_pdb_proc_attribution
+name|_gimp_pdb_get_proc_attribution
 parameter_list|(
 specifier|const
 name|gchar
@@ -271,7 +271,7 @@ begin_function_decl
 name|G_GNUC_INTERNAL
 name|GParamSpec
 modifier|*
-name|_gimp_pdb_proc_argument
+name|_gimp_pdb_get_proc_argument
 parameter_list|(
 specifier|const
 name|gchar
@@ -288,7 +288,7 @@ begin_function_decl
 name|G_GNUC_INTERNAL
 name|GParamSpec
 modifier|*
-name|_gimp_pdb_proc_return_value
+name|_gimp_pdb_get_proc_return_value
 parameter_list|(
 specifier|const
 name|gchar

@@ -857,8 +857,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|pdb_proc_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|pdb_proc_info_invoker
+DECL|function|pdb_get_proc_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_get_proc_info_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1062,8 +1062,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|pdb_proc_image_types_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|pdb_proc_image_types_invoker
+DECL|function|pdb_get_proc_image_types_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_get_proc_image_types_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1229,8 +1229,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|pdb_proc_menu_label_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|pdb_proc_menu_label_invoker
+DECL|function|pdb_get_proc_menu_label_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_get_proc_menu_label_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1396,8 +1396,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|pdb_proc_menu_paths_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|pdb_proc_menu_paths_invoker
+DECL|function|pdb_get_proc_menu_paths_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_get_proc_menu_paths_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1656,8 +1656,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|pdb_proc_documentation_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|pdb_proc_documentation_invoker
+DECL|function|pdb_get_proc_documentation_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_get_proc_documentation_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1876,8 +1876,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|pdb_proc_attribution_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|pdb_proc_attribution_invoker
+DECL|function|pdb_get_proc_attribution_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_get_proc_attribution_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -2093,8 +2093,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|pdb_proc_argument_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|pdb_proc_argument_invoker
+DECL|function|pdb_get_proc_argument_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_get_proc_argument_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -2284,8 +2284,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|pdb_proc_return_value_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|pdb_proc_return_value_invoker
+DECL|function|pdb_get_proc_return_value_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_get_proc_return_value_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -3438,12 +3438,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-pdb-proc-info    */
+comment|/*    * gimp-pdb-get-proc-info    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|pdb_proc_info_invoker
+name|pdb_get_proc_info_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3453,7 +3453,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-pdb-proc-info"
+literal|"gimp-pdb-get-proc-info"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
@@ -3573,12 +3573,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-pdb-proc-image-types    */
+comment|/*    * gimp-pdb-get-proc-image-types    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|pdb_proc_image_types_invoker
+name|pdb_get_proc_image_types_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3588,7 +3588,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-pdb-proc-image-types"
+literal|"gimp-pdb-get-proc-image-types"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
@@ -3668,12 +3668,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-pdb-proc-menu-label    */
+comment|/*    * gimp-pdb-get-proc-menu-label    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|pdb_proc_menu_label_invoker
+name|pdb_get_proc_menu_label_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3683,7 +3683,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-pdb-proc-menu-label"
+literal|"gimp-pdb-get-proc-menu-label"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
@@ -3763,12 +3763,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-pdb-proc-menu-paths    */
+comment|/*    * gimp-pdb-get-proc-menu-paths    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|pdb_proc_menu_paths_invoker
+name|pdb_get_proc_menu_paths_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3778,7 +3778,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-pdb-proc-menu-paths"
+literal|"gimp-pdb-get-proc-menu-paths"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
@@ -3872,12 +3872,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-pdb-proc-documentation    */
+comment|/*    * gimp-pdb-get-proc-documentation    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|pdb_proc_documentation_invoker
+name|pdb_get_proc_documentation_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3887,7 +3887,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-pdb-proc-documentation"
+literal|"gimp-pdb-get-proc-documentation"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
@@ -4015,12 +4015,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-pdb-proc-attribution    */
+comment|/*    * gimp-pdb-get-proc-attribution    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|pdb_proc_attribution_invoker
+name|pdb_get_proc_attribution_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -4030,7 +4030,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-pdb-proc-attribution"
+literal|"gimp-pdb-get-proc-attribution"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
@@ -4158,12 +4158,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-pdb-proc-argument    */
+comment|/*    * gimp-pdb-get-proc-argument    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|pdb_proc_argument_invoker
+name|pdb_get_proc_argument_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -4173,7 +4173,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-pdb-proc-argument"
+literal|"gimp-pdb-get-proc-argument"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
@@ -4269,12 +4269,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-pdb-proc-return-value    */
+comment|/*    * gimp-pdb-get-proc-return-value    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|pdb_proc_return_value_invoker
+name|pdb_get_proc_return_value_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -4284,7 +4284,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-pdb-proc-return-value"
+literal|"gimp-pdb-get-proc-return-value"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings

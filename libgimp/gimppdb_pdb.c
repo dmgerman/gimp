@@ -459,13 +459,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_proc_info:  * @procedure_name: The procedure name.  * @proc_type: (out): The procedure type.  * @num_args: (out): The number of input arguments.  * @num_values: (out): The number of return values.  *  * Queries the procedural database for information on the specified  * procedure.  *  * This procedure returns information on the specified procedure. The  * procedure type, number of input, and number of return values are  * returned. For specific information on each input argument and return  * value, use the gimp_pdb_db_proc_argument() and  * gimp_pdb_db_proc_return_value() procedures.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_pdb_get_proc_info:  * @procedure_name: The procedure name.  * @proc_type: (out): The procedure type.  * @num_args: (out): The number of input arguments.  * @num_values: (out): The number of return values.  *  * Queries the procedural database for information on the specified  * procedure.  *  * This procedure returns information on the specified procedure. The  * procedure type, number of input, and number of return values are  * returned. For specific information on each input argument and return  * value, use the gimp_pdb_db_proc_argument() and  * gimp_pdb_db_proc_return_value() procedures.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_pdb_proc_info (const gchar * procedure_name,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
-name|_gimp_pdb_proc_info
+DECL|function|_gimp_pdb_get_proc_info (const gchar * procedure_name,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
+name|_gimp_pdb_get_proc_info
 parameter_list|(
 specifier|const
 name|gchar
@@ -518,7 +518,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-pdb-proc-info"
+literal|"gimp-pdb-get-proc-info"
 argument_list|,
 name|args
 argument_list|)
@@ -602,14 +602,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_proc_image_types:  * @procedure_name: The procedure name.  *  * Queries the procedural database for the image types supported by the  * specified procedure.  *  * This procedure returns the image types supported by the specified  * procedure.  *  * Returns: (transfer full): The image types.  *          The returned value must be freed with g_free().  *  * Since: 3.0  **/
+comment|/**  * _gimp_pdb_get_proc_image_types:  * @procedure_name: The procedure name.  *  * Queries the procedural database for the image types supported by the  * specified procedure.  *  * This procedure returns the image types supported by the specified  * procedure.  *  * Returns: (transfer full): The image types.  *          The returned value must be freed with g_free().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|_gimp_pdb_proc_image_types (const gchar * procedure_name)
-name|_gimp_pdb_proc_image_types
+DECL|function|_gimp_pdb_get_proc_image_types (const gchar * procedure_name)
+name|_gimp_pdb_get_proc_image_types
 parameter_list|(
 specifier|const
 name|gchar
@@ -651,7 +651,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-pdb-proc-image-types"
+literal|"gimp-pdb-get-proc-image-types"
 argument_list|,
 name|args
 argument_list|)
@@ -693,14 +693,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_proc_menu_label:  * @procedure_name: The procedure name.  *  * Queries the procedural database for the procedure's menu label.  *  * This procedure returns the menu label of the specified procedure.  *  * Returns: (transfer full): The menu_label.  *          The returned value must be freed with g_free().  *  * Since: 3.0  **/
+comment|/**  * _gimp_pdb_get_proc_menu_label:  * @procedure_name: The procedure name.  *  * Queries the procedural database for the procedure's menu label.  *  * This procedure returns the menu label of the specified procedure.  *  * Returns: (transfer full): The menu_label.  *          The returned value must be freed with g_free().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|_gimp_pdb_proc_menu_label (const gchar * procedure_name)
-name|_gimp_pdb_proc_menu_label
+DECL|function|_gimp_pdb_get_proc_menu_label (const gchar * procedure_name)
+name|_gimp_pdb_get_proc_menu_label
 parameter_list|(
 specifier|const
 name|gchar
@@ -742,7 +742,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-pdb-proc-menu-label"
+literal|"gimp-pdb-get-proc-menu-label"
 argument_list|,
 name|args
 argument_list|)
@@ -784,15 +784,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_proc_menu_paths:  * @procedure_name: The procedure name.  * @num_menu_paths: (out): The number of menu paths.  *  * Queries the procedural database for the procedure's menu paths.  *  * This procedure returns the menu paths of the specified procedure.  *  * Returns: (array length=num_menu_paths) (element-type gchar*) (transfer full):  *          The menu paths of the plug-in.  *          The returned value must be freed with g_strfreev().  *  * Since: 3.0  **/
+comment|/**  * _gimp_pdb_get_proc_menu_paths:  * @procedure_name: The procedure name.  * @num_menu_paths: (out): The number of menu paths.  *  * Queries the procedural database for the procedure's menu paths.  *  * This procedure returns the menu paths of the specified procedure.  *  * Returns: (array length=num_menu_paths) (element-type gchar*) (transfer full):  *          The menu paths of the plug-in.  *          The returned value must be freed with g_strfreev().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|_gimp_pdb_proc_menu_paths (const gchar * procedure_name,gint * num_menu_paths)
-name|_gimp_pdb_proc_menu_paths
+DECL|function|_gimp_pdb_get_proc_menu_paths (const gchar * procedure_name,gint * num_menu_paths)
+name|_gimp_pdb_get_proc_menu_paths
 parameter_list|(
 specifier|const
 name|gchar
@@ -839,7 +839,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-pdb-proc-menu-paths"
+literal|"gimp-pdb-get-proc-menu-paths"
 argument_list|,
 name|args
 argument_list|)
@@ -898,13 +898,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_proc_documentation:  * @procedure_name: The procedure name.  * @blurb: (out) (transfer full): A short blurb.  * @help: (out) (transfer full): Detailed procedure help.  * @help_id: (out) (transfer full): The procedure help_id.  *  * Queries the procedural database for documentation on the specified  * procedure.  *  * This procedure returns documentation on the specified procedure. A  * short blurb, detailed help and help_id.  *  * Returns: TRUE on success.  *  * Since: 3.0  **/
+comment|/**  * _gimp_pdb_get_proc_documentation:  * @procedure_name: The procedure name.  * @blurb: (out) (transfer full): A short blurb.  * @help: (out) (transfer full): Detailed procedure help.  * @help_id: (out) (transfer full): The procedure help_id.  *  * Queries the procedural database for documentation on the specified  * procedure.  *  * This procedure returns documentation on the specified procedure. A  * short blurb, detailed help and help_id.  *  * Returns: TRUE on success.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_pdb_proc_documentation (const gchar * procedure_name,gchar ** blurb,gchar ** help,gchar ** help_id)
-name|_gimp_pdb_proc_documentation
+DECL|function|_gimp_pdb_get_proc_documentation (const gchar * procedure_name,gchar ** blurb,gchar ** help,gchar ** help_id)
+name|_gimp_pdb_get_proc_documentation
 parameter_list|(
 specifier|const
 name|gchar
@@ -960,7 +960,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-pdb-proc-documentation"
+literal|"gimp-pdb-get-proc-documentation"
 argument_list|,
 name|args
 argument_list|)
@@ -1044,13 +1044,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_proc_attribution:  * @procedure_name: The procedure name.  * @authors: (out) (transfer full): Authors of the procedure.  * @copyright: (out) (transfer full): The copyright.  * @date: (out) (transfer full): Copyright date.  *  * Queries the procedural database for attribution information on the  * specified procedure.  *  * This procedure returns attribution information on the specified  * procedure. The authors, copyright information and date are returned.  *  * Returns: TRUE on success.  *  * Since: 3.0  **/
+comment|/**  * _gimp_pdb_get_proc_attribution:  * @procedure_name: The procedure name.  * @authors: (out) (transfer full): Authors of the procedure.  * @copyright: (out) (transfer full): The copyright.  * @date: (out) (transfer full): Copyright date.  *  * Queries the procedural database for attribution information on the  * specified procedure.  *  * This procedure returns attribution information on the specified  * procedure. The authors, copyright information and date are returned.  *  * Returns: TRUE on success.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_pdb_proc_attribution (const gchar * procedure_name,gchar ** authors,gchar ** copyright,gchar ** date)
-name|_gimp_pdb_proc_attribution
+DECL|function|_gimp_pdb_get_proc_attribution (const gchar * procedure_name,gchar ** authors,gchar ** copyright,gchar ** date)
+name|_gimp_pdb_get_proc_attribution
 parameter_list|(
 specifier|const
 name|gchar
@@ -1106,7 +1106,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-pdb-proc-attribution"
+literal|"gimp-pdb-get-proc-attribution"
 argument_list|,
 name|args
 argument_list|)
@@ -1190,14 +1190,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_proc_argument:  * @procedure_name: The procedure name.  * @arg_num: The argument number.  *  * Queries the procedural database for information on the specified  * procedure's argument.  *  * This procedure returns the #GParamSpec of procedure_name's argument.  *  * Returns: (transfer full): The GParamSpec of the argument.  *          The returned value must be freed with g_param_spec_unref().  *  * Since: 3.0  **/
+comment|/**  * _gimp_pdb_get_proc_argument:  * @procedure_name: The procedure name.  * @arg_num: The argument number.  *  * Queries the procedural database for information on the specified  * procedure's argument.  *  * This procedure returns the #GParamSpec of procedure_name's argument.  *  * Returns: (transfer full): The GParamSpec of the argument.  *          The returned value must be freed with g_param_spec_unref().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|_gimp_pdb_proc_argument (const gchar * procedure_name,gint arg_num)
-name|_gimp_pdb_proc_argument
+DECL|function|_gimp_pdb_get_proc_argument (const gchar * procedure_name,gint arg_num)
+name|_gimp_pdb_get_proc_argument
 parameter_list|(
 specifier|const
 name|gchar
@@ -1246,7 +1246,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-pdb-proc-argument"
+literal|"gimp-pdb-get-proc-argument"
 argument_list|,
 name|args
 argument_list|)
@@ -1288,14 +1288,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_proc_return_value:  * @procedure_name: The procedure name.  * @val_num: The return value number.  *  * Queries the procedural database for information on the specified  * procedure's return value.  *  * This procedure returns the #GParamSpec of procedure_name's return  * value.  *  * Returns: (transfer full): The GParamSpec of the return value.  *          The returned value must be freed with g_param_spec_unref().  *  * Since: 3.0  **/
+comment|/**  * _gimp_pdb_get_proc_return_value:  * @procedure_name: The procedure name.  * @val_num: The return value number.  *  * Queries the procedural database for information on the specified  * procedure's return value.  *  * This procedure returns the #GParamSpec of procedure_name's return  * value.  *  * Returns: (transfer full): The GParamSpec of the return value.  *          The returned value must be freed with g_param_spec_unref().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|_gimp_pdb_proc_return_value (const gchar * procedure_name,gint val_num)
-name|_gimp_pdb_proc_return_value
+DECL|function|_gimp_pdb_get_proc_return_value (const gchar * procedure_name,gint val_num)
+name|_gimp_pdb_get_proc_return_value
 parameter_list|(
 specifier|const
 name|gchar
@@ -1344,7 +1344,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-pdb-proc-return-value"
+literal|"gimp-pdb-get-proc-return-value"
 argument_list|,
 name|args
 argument_list|)
