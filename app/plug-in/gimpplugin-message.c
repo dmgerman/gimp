@@ -3595,15 +3595,6 @@ operator|->
 name|menu_label
 argument_list|)
 expr_stmt|;
-name|gimp_plug_in_procedure_set_image_types
-argument_list|(
-name|proc
-argument_list|,
-name|proc_install
-operator|->
-name|image_types
-argument_list|)
-expr_stmt|;
 name|gimp_plug_in_procedure_set_help_id
 argument_list|(
 name|proc
