@@ -136,11 +136,6 @@ name|gchar
 modifier|*
 name|label
 decl_stmt|;
-DECL|member|help_id
-name|gchar
-modifier|*
-name|help_id
-decl_stmt|;
 block|}
 struct|;
 end_struct
