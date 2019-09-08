@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa757b0103
+DECL|enum|__anon2a4fc19a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -130,6 +130,30 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_pdb_procedure_install
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_pdb_procedure_uninstall
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -238,6 +262,18 @@ operator|->
 name|get_property
 operator|=
 name|gimp_pdb_procedure_get_property
+expr_stmt|;
+name|procedure_class
+operator|->
+name|install
+operator|=
+name|gimp_pdb_procedure_install
+expr_stmt|;
+name|procedure_class
+operator|->
+name|uninstall
+operator|=
+name|gimp_pdb_procedure_uninstall
 expr_stmt|;
 name|procedure_class
 operator|->
@@ -522,6 +558,44 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_pdb_procedure_install (GimpProcedure * procedure)
+name|gimp_pdb_procedure_install
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Cannot install a GimpPDBProcedure"
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_pdb_procedure_uninstall (GimpProcedure * procedure)
+name|gimp_pdb_procedure_uninstall
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Cannot uninstall a GimpPDBProcedure"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
