@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2965b8850103
+DECL|enum|__anon2b2e7b6c0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2724,6 +2724,65 @@ argument_list|(
 name|proc
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|proc
+operator|->
+name|menu_label
+condition|)
+block|{
+name|basename
+operator|=
+name|g_path_get_basename
+argument_list|(
+name|gimp_file_get_utf8_name
+argument_list|(
+name|proc
+operator|->
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PLUG_IN_ERROR
+argument_list|,
+name|GIMP_PLUG_IN_FAILED
+argument_list|,
+literal|"Plug-in \"%s\"\n(%s)\n"
+literal|"attempted to register the procedure \"%s\" "
+literal|"in the menu \"%s\", but the procedure has no label. "
+literal|"This is not allowed."
+argument_list|,
+name|basename
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|proc
+operator|->
+name|file
+argument_list|)
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|proc
+argument_list|)
+argument_list|,
+name|menu_path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 name|p
 operator|=
 name|strchr

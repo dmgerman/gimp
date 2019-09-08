@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdb_pdb.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpplugin_pdb.h"
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdd48360103
+DECL|enum|__anon2c2614070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1696,7 +1702,7 @@ name|list
 argument_list|)
 control|)
 block|{
-name|_gimp_plugin_menu_register
+name|_gimp_pdb_add_proc_menu_path
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(
@@ -2319,7 +2325,7 @@ name|priv
 operator|->
 name|installed
 condition|)
-name|_gimp_plugin_menu_register
+name|_gimp_pdb_add_proc_menu_path
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(

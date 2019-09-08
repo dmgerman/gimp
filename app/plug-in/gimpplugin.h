@@ -378,7 +378,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_plug_in_menu_register
+name|gimp_plug_in_add_proc_menu_path
 parameter_list|(
 name|GimpPlugIn
 modifier|*

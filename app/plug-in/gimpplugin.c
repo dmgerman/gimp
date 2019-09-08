@@ -3609,13 +3609,13 @@ block|}
 end_function
 
 begin_comment
-comment|/*  called from the PDB (gimp_plugin_menu_register)  */
+comment|/*  called from the PDB (gimp_pdb_add_proc_menu_path)  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_menu_register (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * menu_path)
-name|gimp_plug_in_menu_register
+DECL|function|gimp_plug_in_add_proc_menu_path (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * menu_path)
+name|gimp_plug_in_add_proc_menu_path
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -3728,8 +3728,8 @@ argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register the menu item \"%s\" "
 literal|"for the procedure \"%s\".\n"
-literal|"It has however not installed that procedure.  This "
-literal|"is not allowed."
+literal|"It has however not installed that procedure. "
+literal|"This is not allowed."
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -3818,7 +3818,7 @@ name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register the procedure \"%s\" "
-literal|"in the menu \"%s\", but the procedure has no label.  "
+literal|"in the menu \"%s\", but the procedure has no label. "
 literal|"This is not allowed."
 argument_list|,
 name|gimp_object_get_name
