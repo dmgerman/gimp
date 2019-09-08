@@ -3570,6 +3570,8 @@ literal|"Generates a unique temporary PDB name."
 argument_list|,
 literal|"This procedure generates a temporary PDB entry name that is guaranteed to be unique."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -3641,6 +3643,8 @@ literal|"Dumps the current contents of the procedural database"
 argument_list|,
 literal|"This procedure dumps the contents of the procedural database to the specified file. The file will contain all of the information provided for each registered procedure."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Josh MacDonald"
 argument_list|,
 literal|"Spencer Kimball& Josh MacDonald& Peter Mattis"
@@ -3711,6 +3715,8 @@ argument_list|,
 literal|"Queries the procedural database for its contents using regular expression matching."
 argument_list|,
 literal|"This procedure queries the contents of the procedural database. It is supplied with seven arguments matching procedures on { name, blurb, help, authors, copyright, date, procedure type}. This is accomplished using regular expression matching. For instance, to find all procedures with \"jpeg\" listed in the blurb, all seven arguments can be supplied as \".*\", except for the second, which can be supplied as \".*jpeg.*\". There are two return arguments for this procedure. The first is the number of procedures matching the query. The second is a concatenated list of procedure names corresponding to those matching the query. If no matching entries are found, then the returned string is NULL and the number of entries is 0."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -3965,6 +3971,8 @@ literal|"Checks if the specified procedure exists in the procedural database"
 argument_list|,
 literal|"This procedure checks if the specified procedure is registered in the procedural database."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Sven Neumann"
@@ -4053,6 +4061,8 @@ argument_list|,
 literal|"Queries the procedural database for information on the specified procedure."
 argument_list|,
 literal|"This procedure returns information on the specified procedure. The procedure type, number of input, and number of return values are returned. For specific information on each input argument and return value, use the 'gimp-pdb-db-proc-argument' and 'gimp-pdb-db-proc-return-value' procedures."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4189,6 +4199,8 @@ literal|"Set the supported image types for a plug-in procedure."
 argument_list|,
 literal|"This procedure sets the supported images types for the given procedure."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -4283,6 +4295,8 @@ argument_list|,
 literal|"Queries the procedural database for the image types supported by the specified procedure."
 argument_list|,
 literal|"This procedure returns the image types supported by the specified procedure."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4379,6 +4393,8 @@ literal|"Set the menu label for a plug-in procedure."
 argument_list|,
 literal|"This procedure sets the menu label for the given procedure."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -4473,6 +4489,8 @@ argument_list|,
 literal|"Queries the procedural database for the procedure's menu label."
 argument_list|,
 literal|"This procedure returns the menu label of the specified procedure."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4569,6 +4587,8 @@ literal|"Register an additional menu path for a plug-in procedure."
 argument_list|,
 literal|"This procedure installs an additional menu entry for the given procedure."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -4663,6 +4683,8 @@ argument_list|,
 literal|"Queries the procedural database for the procedure's menu paths."
 argument_list|,
 literal|"This procedure returns the menu paths of the specified procedure."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4772,6 +4794,8 @@ argument_list|,
 literal|"Register an icon for a plug-in procedure."
 argument_list|,
 literal|"This procedure installs an icon for the given procedure."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4901,6 +4925,8 @@ argument_list|,
 literal|"Queries the procedural database for documentation on the specified procedure."
 argument_list|,
 literal|"This procedure returns documentation on the specified procedure. A short blurb, detailed help and help_id."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5045,6 +5071,8 @@ literal|"Queries the procedural database for attribution information on the spec
 argument_list|,
 literal|"This procedure returns attribution information on the specified procedure. The authors, copyright information and date are returned."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -5188,6 +5216,8 @@ literal|"Queries the procedural database for information on the specified proced
 argument_list|,
 literal|"This procedure returns the #GParamSpec of procedure_name's argument."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -5298,6 +5328,8 @@ argument_list|,
 literal|"Queries the procedural database for information on the specified procedure's return value."
 argument_list|,
 literal|"This procedure returns the #GParamSpec of procedure_name's return value."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5410,6 +5442,8 @@ literal|"Returns data associated with the specified identifier."
 argument_list|,
 literal|"This procedure returns any data which may have been associated with the specified identifier. The data is a variable length array of bytes. If no data has been associated with the identifier, an error is returned."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -5519,6 +5553,8 @@ literal|"Returns size of data associated with the specified identifier."
 argument_list|,
 literal|"This procedure returns the size of any data which may have been associated with the specified identifier. If no data has been associated with the identifier, an error is returned."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Nick Lamb"
 argument_list|,
 literal|"Nick Lamb"
@@ -5611,6 +5647,8 @@ argument_list|,
 literal|"Associates the specified identifier with the supplied data."
 argument_list|,
 literal|"This procedure associates the supplied data with the provided identifier. The data may be subsequently retrieved by a call to 'procedural-db-get-data'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

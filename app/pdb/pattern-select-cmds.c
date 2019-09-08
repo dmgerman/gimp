@@ -523,6 +523,8 @@ literal|"Invokes the Gimp pattern selection."
 argument_list|,
 literal|"This procedure opens the pattern selection dialog."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -642,6 +644,8 @@ literal|"Close the pattern selection dialog."
 argument_list|,
 literal|"This procedure closes an opened pattern selection dialog."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -712,6 +716,8 @@ argument_list|,
 literal|"Sets the current pattern in a pattern selection dialog."
 argument_list|,
 literal|"Sets the current pattern in a pattern selection dialog."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,

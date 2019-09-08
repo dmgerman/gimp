@@ -354,6 +354,8 @@ literal|"Refresh current brushes. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all brushes currently in the user's brush path and updates the brush dialogs accordingly."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Seth Burgess"
 argument_list|,
 literal|"Seth Burgess"
@@ -400,6 +402,8 @@ argument_list|,
 literal|"Retrieve a complete listing of the available brushes."
 argument_list|,
 literal|"This procedure returns a complete listing of available GIMP brushes. Each name returned can be used as input to the 'gimp-context-set-brush' procedure."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

@@ -649,6 +649,15 @@ name|gimp_string_get_memsize
 argument_list|(
 name|procedure
 operator|->
+name|help_id
+argument_list|)
+expr_stmt|;
+name|memsize
+operator|+=
+name|gimp_string_get_memsize
+argument_list|(
+name|procedure
+operator|->
 name|authors
 argument_list|)
 expr_stmt|;
@@ -855,8 +864,22 @@ modifier|*
 name|procedure
 parameter_list|)
 block|{
+if|if
+condition|(
+name|procedure
+operator|->
+name|help_id
+condition|)
 return|return
-name|NULL
+name|procedure
+operator|->
+name|help_id
+return|;
+return|return
+name|gimp_object_get_name
+argument_list|(
+name|procedure
+argument_list|)
 return|;
 block|}
 end_function
@@ -1118,7 +1141,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * deprecated)
+DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * blurb,const gchar * help,const gchar * help_id,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * deprecated)
 name|gimp_procedure_set_strings
 parameter_list|(
 name|GimpProcedure
@@ -1134,6 +1157,11 @@ specifier|const
 name|gchar
 modifier|*
 name|help
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -1185,6 +1213,15 @@ operator|=
 name|g_strdup
 argument_list|(
 name|help
+argument_list|)
+expr_stmt|;
+name|procedure
+operator|->
+name|help_id
+operator|=
+name|g_strdup
+argument_list|(
+name|help_id
 argument_list|)
 expr_stmt|;
 name|procedure
@@ -1234,7 +1271,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_static_strings (GimpProcedure * procedure,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * deprecated)
+DECL|function|gimp_procedure_set_static_strings (GimpProcedure * procedure,const gchar * blurb,const gchar * help,const gchar * help_id,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * deprecated)
 name|gimp_procedure_set_static_strings
 parameter_list|(
 name|GimpProcedure
@@ -1250,6 +1287,11 @@ specifier|const
 name|gchar
 modifier|*
 name|help
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -1304,6 +1346,16 @@ name|gchar
 operator|*
 operator|)
 name|help
+expr_stmt|;
+name|procedure
+operator|->
+name|help
+operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
+name|help_id
 expr_stmt|;
 name|procedure
 operator|->
@@ -1356,7 +1408,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_take_strings (GimpProcedure * procedure,gchar * blurb,gchar * help,gchar * authors,gchar * copyright,gchar * date,gchar * deprecated)
+DECL|function|gimp_procedure_take_strings (GimpProcedure * procedure,gchar * blurb,gchar * help,gchar * help_id,gchar * authors,gchar * copyright,gchar * date,gchar * deprecated)
 name|gimp_procedure_take_strings
 parameter_list|(
 name|GimpProcedure
@@ -1370,6 +1422,10 @@ parameter_list|,
 name|gchar
 modifier|*
 name|help
+parameter_list|,
+name|gchar
+modifier|*
+name|help_id
 parameter_list|,
 name|gchar
 modifier|*
@@ -1412,6 +1468,12 @@ operator|->
 name|help
 operator|=
 name|help
+expr_stmt|;
+name|procedure
+operator|->
+name|help
+operator|=
+name|help_id
 expr_stmt|;
 name|procedure
 operator|->
@@ -3058,6 +3120,13 @@ name|g_free
 argument_list|(
 name|procedure
 operator|->
+name|help_id
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|procedure
+operator|->
 name|authors
 argument_list|)
 expr_stmt|;
@@ -3092,6 +3161,12 @@ expr_stmt|;
 name|procedure
 operator|->
 name|help
+operator|=
+name|NULL
+expr_stmt|;
+name|procedure
+operator|->
+name|help_id
 operator|=
 name|NULL
 expr_stmt|;

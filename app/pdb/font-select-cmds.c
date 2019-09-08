@@ -539,6 +539,8 @@ literal|"Invokes the Gimp font selection."
 argument_list|,
 literal|"This procedure opens the font selection dialog."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Sven Neumann"
@@ -658,6 +660,8 @@ literal|"Close the font selection dialog."
 argument_list|,
 literal|"This procedure closes an opened font selection dialog."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Sven Neumann"
@@ -728,6 +732,8 @@ argument_list|,
 literal|"Sets the current font in a font selection dialog."
 argument_list|,
 literal|"Sets the current font in a font selection dialog."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,

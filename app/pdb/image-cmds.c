@@ -12286,6 +12286,8 @@ literal|"Returns TRUE if the image ID is valid."
 argument_list|,
 literal|"This procedure checks if the given image ID is valid and refers to an existing image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Sven Neumann"
@@ -12372,6 +12374,8 @@ argument_list|,
 literal|"Returns the list of images currently open."
 argument_list|,
 literal|"This procedure returns the list of images currently open in GIMP."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -12461,6 +12465,8 @@ argument_list|,
 literal|"Creates a new image, undisplayed, with the specified extents and type. A layer should be created and added before this image is displayed, or subsequent calls to 'gimp-display-new' with this image as an argument will fail. Layers can be created using the 'gimp-layer-new' commands. They can be added to an image using the 'gimp-image-insert-layer' command.\n"
 literal|"\n"
 literal|"If your image's type if INDEXED, a colormap must also be added with 'gimp-image-set-colormap'. An indexed image without a colormap will output unexpected colors."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -12590,6 +12596,8 @@ argument_list|,
 literal|"Creates a new image with the specified width, height, type and precision."
 argument_list|,
 literal|"Creates a new image, undisplayed with the specified extents, type and precision. Indexed images can only be created at GIMP_PRECISION_U8_NON_LINEAR precision. See 'gimp-image-new' for further details."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -12740,6 +12748,8 @@ literal|"Duplicate the specified image"
 argument_list|,
 literal|"This procedure duplicates the specified image, copying all layers, channels, and image information."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -12823,6 +12833,8 @@ literal|"Delete the specified image."
 argument_list|,
 literal|"If there are no displays associated with this image it will be deleted. This means that you can not delete an image through the PDB that was created by the user. If the associated display was however created through the PDB and you know the display ID, you may delete the display. Removal of the last associated display will then delete the image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -12887,6 +12899,8 @@ argument_list|,
 literal|"Get the base type of the image."
 argument_list|,
 literal|"This procedure returns the image's base type. Layers in the image must be of this subtype, but can have an optional alpha channel."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -12973,6 +12987,8 @@ literal|"Get the precision of the image."
 argument_list|,
 literal|"This procedure returns the image's precision."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -13058,6 +13074,8 @@ literal|"Get the default mode for newly created layers of this image."
 argument_list|,
 literal|"Returns the default mode for newly created layers of this image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -13142,6 +13160,8 @@ argument_list|,
 literal|"Return the width of the image"
 argument_list|,
 literal|"This procedure returns the image's width. This value is independent of any of the layers in this image. This is the \"canvas\" width."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -13230,6 +13250,8 @@ literal|"Return the height of the image"
 argument_list|,
 literal|"This procedure returns the image's height. This value is independent of any of the layers in this image. This is the \"canvas\" height."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -13316,6 +13338,8 @@ argument_list|,
 literal|"Returns the list of layers contained in the specified image."
 argument_list|,
 literal|"This procedure returns the list of layers contained in the specified image. The order of layers is from topmost to bottommost."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -13422,6 +13446,8 @@ literal|"Returns the list of channels contained in the specified image."
 argument_list|,
 literal|"This procedure returns the list of channels contained in the specified image. This does not include the selection mask, or layer masks. The order is from topmost to bottommost. Note that \"channels\" are custom channels and do not include the image's color components."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -13526,6 +13552,8 @@ argument_list|,
 literal|"Returns the list of vectors contained in the specified image."
 argument_list|,
 literal|"This procedure returns the list of vectors contained in the specified image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -13632,6 +13660,8 @@ literal|"Get the image's active drawable"
 argument_list|,
 literal|"This procedure returns the ID of the image's active drawable. This can be either a layer, a channel, or a layer mask. The active drawable is specified by the active image channel. If that is -1, then by the active image layer. If the active image layer has a layer mask and the layer mask is in edit mode, then the layer mask is the active drawable."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -13715,6 +13745,8 @@ literal|"Unsets the active channel in the specified image."
 argument_list|,
 literal|"If an active channel exists, it is unset. There then exists no active channel, and if desired, one can be set through a call to 'Set Active Channel'. No error is returned in the case of no existing active channel."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -13779,6 +13811,8 @@ argument_list|,
 literal|"Return the floating selection of the image."
 argument_list|,
 literal|"This procedure returns the image's floating selection, if it exists. If it doesn't exist, -1 is returned as the layer ID."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -13863,6 +13897,8 @@ literal|"Return the drawable the floating selection is attached to."
 argument_list|,
 literal|"This procedure returns the drawable the image's floating selection is attached to, if it exists. If it doesn't exist, -1 is returned as the drawable ID."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
 literal|"Wolfgang Hofer"
@@ -13945,6 +13981,8 @@ argument_list|,
 literal|"Determine the color at the given drawable coordinates"
 argument_list|,
 literal|"This tool determines the color at the specified coordinates. The returned color is an RGB triplet even for grayscale and indexed drawables. If the coordinates lie outside of the extents of the specified drawable, then an error is returned. If the drawable has an alpha channel, the algorithm examines the alpha value of the drawable at the coordinates. If the alpha value is completely transparent (0), then an error is returned. If the sample_merged parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of a merged sampling, the supplied drawable is ignored."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -14155,6 +14193,8 @@ literal|"Find the layer visible at the specified coordinates."
 argument_list|,
 literal|"This procedure finds the layer which is visible at the specified coordinates. Layers which do not qualify are those whose extents do not pass within the specified coordinates, or which are transparent at the specified coordinates. This procedure will return -1 if no layer is found."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -14282,6 +14322,8 @@ literal|"Add the specified layer to the image."
 argument_list|,
 literal|"This procedure adds the specified layer to the image at the given position. If the specified parent is a valid layer group (See 'gimp-item-is-group' and 'gimp-layer-group-new') then the layer is added inside the group. If the parent is 0, the layer is added inside the main stack, outside of any group. The position argument specifies the location of the layer inside the stack (or the group, if a valid parent was supplied), starting from the top (0) and increasing. If the position is specified as -1 and the parent is specified as 0, then the layer is inserted above the active layer, or inside the group if the active layer is a layer group. The layer type must be compatible with the image base type."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -14405,6 +14447,8 @@ literal|"Remove the specified layer from the image."
 argument_list|,
 literal|"This procedure removes the specified layer from the image. If the layer doesn't exist, an error is returned. If there are no layers left in the image, this call will fail. If this layer is the last layer remaining, the image will become empty and have no active layer."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -14490,6 +14534,8 @@ literal|"This procedure freezes the layer list of the image, suppressing any upd
 literal|"\n"
 literal|"Each call to 'gimp-image-freeze-layers' should be matched by a corresponding call to 'gimp-image-thaw-layers', undoing its effects."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -14557,6 +14603,8 @@ literal|"This procedure thaws the layer list of the image, re-enabling updates t
 literal|"\n"
 literal|"This procedure should match a corresponding call to 'gimp-image-freeze-layers'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -14621,6 +14669,8 @@ argument_list|,
 literal|"Add the specified channel to the image."
 argument_list|,
 literal|"This procedure adds the specified channel to the image at the given position. Since channel groups are not currently supported, the parent argument must always be 0. The position argument specifies the location of the channel inside the stack, starting from the top (0) and increasing. If the position is specified as -1, then the channel is inserted above the active channel."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -14745,6 +14795,8 @@ literal|"Remove the specified channel from the image."
 argument_list|,
 literal|"This procedure removes the specified channel from the image. If the channel doesn't exist, an error is returned."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -14830,6 +14882,8 @@ literal|"This procedure freezes the channel list of the image, suppressing any u
 literal|"\n"
 literal|"Each call to 'gimp-image-freeze-channels' should be matched by a corresponding call to 'gimp-image-thaw-channels', undoing its effects."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -14897,6 +14951,8 @@ literal|"This procedure thaws the channel list of the image, re-enabling updates
 literal|"\n"
 literal|"This procedure should match a corresponding call to 'gimp-image-freeze-channels'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -14961,6 +15017,8 @@ argument_list|,
 literal|"Add the specified vectors to the image."
 argument_list|,
 literal|"This procedure adds the specified vectors to the image at the given position. Since vectors groups are not currently supported, the parent argument must always be 0. The position argument specifies the location of the vectors inside the stack, starting from the top (0) and increasing. If the position is specified as -1, then the vectors is inserted above the active vectors."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -15085,6 +15143,8 @@ literal|"Remove the specified path from the image."
 argument_list|,
 literal|"This procedure removes the specified path from the image. If the path doesn't exist, an error is returned."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"Simon Budig"
@@ -15170,6 +15230,8 @@ literal|"This procedure freezes the vectors list of the image, suppressing any u
 literal|"\n"
 literal|"Each call to 'gimp-image-freeze-vectors' should be matched by a corresponding call to 'gimp-image-thaw-vectors', undoing its effects."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -15237,6 +15299,8 @@ literal|"This procedure thaws the vectors list of the image, re-enabling updates
 literal|"\n"
 literal|"This procedure should match a corresponding call to 'gimp-image-freeze-vectors'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -15301,6 +15365,8 @@ argument_list|,
 literal|"Returns the position of the item in its level of its item tree."
 argument_list|,
 literal|"This procedure determines the position of the specified item in its level in its item tree in the image. If the item doesn't exist in the image, or the item is not part of an item tree, an error is returned."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15407,6 +15473,8 @@ literal|"Raise the specified item in its level in its item tree"
 argument_list|,
 literal|"This procedure raises the specified item one step in the item tree. The procedure call will fail if there is no item above it."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -15489,6 +15557,8 @@ argument_list|,
 literal|"Lower the specified item in its level in its item tree"
 argument_list|,
 literal|"This procedure lowers the specified item one step in the item tree. The procedure call will fail if there is no item below it."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15573,6 +15643,8 @@ literal|"Raise the specified item to the top of its level in its item tree"
 argument_list|,
 literal|"This procedure raises the specified item to top of its level in the item tree. It will not move the item if there is no item above it."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -15656,6 +15728,8 @@ literal|"Lower the specified item to the bottom of its level in its item tree"
 argument_list|,
 literal|"This procedure lowers the specified item to bottom of its level in the item tree. It will not move the layer if there is no layer below it."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -15738,6 +15812,8 @@ argument_list|,
 literal|"Reorder the specified item within its item tree"
 argument_list|,
 literal|"This procedure reorders the specified item within its item tree."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15862,6 +15938,8 @@ literal|"Flatten all visible layers into a single layer. Discard all invisible l
 argument_list|,
 literal|"This procedure combines the visible layers in a manner analogous to merging with the CLIP_TO_IMAGE merge type. Non-visible layers are discarded, and the resulting image is stripped of its alpha channel."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -15944,6 +16022,8 @@ argument_list|,
 literal|"Merge the visible image layers into one."
 argument_list|,
 literal|"This procedure combines the visible layers into a single layer using the specified merge type. A merge type of EXPAND_AS_NECESSARY expands the final layer to encompass the areas of the visible layers. A merge type of CLIP_TO_IMAGE clips the final layer to the extents of the image. A merge type of CLIP_TO_BOTTOM_LAYER clips the final layer to the size of the bottommost layer."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -16062,6 +16142,8 @@ argument_list|,
 literal|"Merge the layer passed and the first visible layer below."
 argument_list|,
 literal|"This procedure combines the passed layer and the first visible layer below it using the specified merge type. A merge type of EXPAND_AS_NECESSARY expands the final layer to encompass the areas of the visible layers. A merge type of CLIP_TO_IMAGE clips the final layer to the extents of the image. A merge type of CLIP_TO_BOTTOM_LAYER clips the final layer to the size of the bottommost layer."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Larry Ewing"
 argument_list|,
@@ -16199,6 +16281,8 @@ literal|"Merge the passed layer group's layers into one normal layer."
 argument_list|,
 literal|"This procedure combines the layers of the passed layer group into a single normal layer, replacing the group."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -16299,6 +16383,8 @@ argument_list|,
 literal|"Returns the image's colormap"
 argument_list|,
 literal|"This procedure returns an actual pointer to the image's colormap, as well as the number of bytes contained in the colormap. The actual number of colors in the transmitted colormap will be 'num-bytes' / 3. If the image is not in Indexed color mode, no colormap is returned."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -16403,6 +16489,8 @@ literal|"Sets the entries in the image's colormap."
 argument_list|,
 literal|"This procedure sets the entries in the specified image's colormap. The number of entries is specified by the 'num-bytes' parameter and corresponds to the number of INT8 triples that must be contained in the 'colormap' array. The actual number of colors in the transmitted colormap is 'num-bytes' / 3."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -16506,6 +16594,8 @@ literal|"Returns the image's metadata."
 argument_list|,
 literal|"Returns exif/iptc/xmp metadata from the image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -16594,6 +16684,8 @@ argument_list|,
 literal|"Set the image's metadata."
 argument_list|,
 literal|"Sets exif/iptc/xmp metadata on the image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -16684,6 +16776,8 @@ literal|"Set the image dirty count to 0."
 argument_list|,
 literal|"This procedure sets the specified image's dirty count to 0, allowing operations to occur without having a 'dirtied' image. This is especially useful for creating and loading images which should not initially be considered dirty, even though layers must be created, filled, and installed in the image. Note that save plug-ins must NOT call this function themselves after saving the image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -16748,6 +16842,8 @@ argument_list|,
 literal|"Checks if the image has unsaved changes."
 argument_list|,
 literal|"This procedure checks the specified image's dirty count to see if it needs to be saved. Note that saving the image does not automatically set the dirty count to 0, you need to call 'gimp-image-clean-all' after calling a save procedure to make the image clean."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -16831,6 +16927,8 @@ argument_list|,
 literal|"Get a thumbnail of an image."
 argument_list|,
 literal|"This function gets data from which a thumbnail of an image preview can be created. Maximum x or y dimension is 1024 pixels. The pixels are returned in RGB[A] or GRAY[A] format. The bpp return value gives the number of bits per pixel in the image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -17045,6 +17143,8 @@ literal|"Returns the specified image's active layer."
 argument_list|,
 literal|"If there is an active layer, its ID will be returned, otherwise, -1. If a channel is currently active, then no layer will be. If a layer mask is active, then this will return the associated layer."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -17127,6 +17227,8 @@ argument_list|,
 literal|"Sets the specified image's active layer."
 argument_list|,
 literal|"If the layer exists, it is set as the active layer in the image. Any previous active layer or channel is set to inactive. An exception is a previously existing floating selection, in which case this procedure will return an execution error."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -17211,6 +17313,8 @@ literal|"Returns the specified image's active channel."
 argument_list|,
 literal|"If there is an active channel, this will return the channel ID, otherwise, -1."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -17293,6 +17397,8 @@ argument_list|,
 literal|"Sets the specified image's active channel."
 argument_list|,
 literal|"If the channel exists, it is set as the active channel in the image. Any previous active channel or layer is set to inactive. An exception is a previously existing floating selection, in which case this procedure will return an execution error."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -17377,6 +17483,8 @@ literal|"Returns the specified image's active vectors."
 argument_list|,
 literal|"If there is an active path, its ID will be returned, otherwise, -1."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -17459,6 +17567,8 @@ argument_list|,
 literal|"Sets the specified image's active vectors."
 argument_list|,
 literal|"If the path exists, it is set as the active path in the image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -17543,6 +17653,8 @@ literal|"Returns the specified image's selection."
 argument_list|,
 literal|"This will always return a valid ID for a selection -- which is represented as a channel internally."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -17625,6 +17737,8 @@ argument_list|,
 literal|"Returns if the specified image's image component is active."
 argument_list|,
 literal|"This procedure returns if the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is active or inactive -- whether or not it can be modified. If the specified component is not valid for the image type, an error is returned."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -17729,6 +17843,8 @@ literal|"Sets if the specified image's image component is active."
 argument_list|,
 literal|"This procedure sets if the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is active or inactive -- whether or not it can be modified. If the specified component is not valid for the image type, an error is returned."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -17831,6 +17947,8 @@ argument_list|,
 literal|"Returns if the specified image's image component is visible."
 argument_list|,
 literal|"This procedure returns if the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is visible or invisible -- whether or not it can be seen. If the specified component is not valid for the image type, an error is returned."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -17935,6 +18053,8 @@ literal|"Sets if the specified image's image component is visible."
 argument_list|,
 literal|"This procedure sets if the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is visible or invisible -- whether or not it can be seen. If the specified component is not valid for the image type, an error is returned."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -18038,6 +18158,8 @@ literal|"Returns the specified image's filename."
 argument_list|,
 literal|"This procedure returns the specified image's filename in the filesystem encoding. The image has a filename only if it was loaded or imported from a file or has since been saved or exported. Otherwise, this function returns %NULL. See also 'gimp-image-get-uri'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -18126,6 +18248,8 @@ argument_list|,
 literal|"Sets the specified image's filename."
 argument_list|,
 literal|"This procedure sets the specified image's filename. The filename should be in the filesystem encoding."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -18216,6 +18340,8 @@ literal|"Returns the URI for the specified image."
 argument_list|,
 literal|"This procedure returns the URI associated with the specified image. The image has an URI only if it was loaded or imported from a file or has since been saved or exported. Otherwise, this function returns %NULL. See also gimp-image-get-imported-uri to get the URI of the current file if it was imported from a non-GIMP file format and not yet saved, or gimp-image-get-exported-uri if the image has been exported to a non-GIMP file format."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Sven Neumann"
@@ -18304,6 +18430,8 @@ argument_list|,
 literal|"Returns the XCF URI for the specified image."
 argument_list|,
 literal|"This procedure returns the XCF URI associated with the image. If there is no such URI, this procedure returns %NULL."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Eric Grivel<gimp@lumenssolutions.com>"
 argument_list|,
@@ -18394,6 +18522,8 @@ literal|"Returns the imported URI for the specified image."
 argument_list|,
 literal|"This procedure returns the URI associated with the specified image if the image was imported from a non-native Gimp format. If the image was not imported, or has since been saved in the native Gimp format, this procedure returns %NULL."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Eric Grivel<gimp@lumenssolutions.com>"
 argument_list|,
 literal|"Eric Grivel"
@@ -18482,6 +18612,8 @@ argument_list|,
 literal|"Returns the exported URI for the specified image."
 argument_list|,
 literal|"This procedure returns the URI associated with the specified image if the image was exported a non-native GIMP format. If the image was not exported, this procedure returns %NULL."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Eric Grivel<gimp@lumenssolutions.com>"
 argument_list|,
@@ -18572,6 +18704,8 @@ literal|"Returns the specified image's name."
 argument_list|,
 literal|"This procedure returns the image's name. If the image has a filename or an URI, then the returned name contains the filename's or URI's base name (the last component of the path). Otherwise it is the translated string \"Untitled\". The returned name is formatted like the image name in the image window title, it may contain '[]', '(imported)' etc. and should only be used to label user interface elements. Never use it to construct filenames."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -18660,6 +18794,8 @@ argument_list|,
 literal|"Returns the specified image's resolution."
 argument_list|,
 literal|"This procedure returns the specified image's resolution in dots per inch. This value is independent of any of the layers in this image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Austin Donnelly"
 argument_list|,
@@ -18772,6 +18908,8 @@ literal|"Sets the specified image's resolution."
 argument_list|,
 literal|"This procedure sets the specified image's resolution in dots per inch. This value is independent of any of the layers in this image. No scaling or resizing is performed."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Austin Donnelly"
 argument_list|,
 literal|"Austin Donnelly"
@@ -18883,6 +19021,8 @@ literal|"Returns the specified image's unit."
 argument_list|,
 literal|"This procedure returns the specified image's unit. This value is independent of any of the layers in this image. See the gimp_unit_*() procedure definitions for the valid range of unit IDs and a description of the unit system."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -18969,6 +19109,8 @@ argument_list|,
 literal|"Sets the specified image's unit."
 argument_list|,
 literal|"This procedure sets the specified image's unit. No scaling or resizing is performed. This value is independent of any of the layers in this image. See the gimp_unit_*() procedure definitions for the valid range of unit IDs and a description of the unit system."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -19057,6 +19199,8 @@ literal|"Returns the tattoo state associated with the image."
 argument_list|,
 literal|"This procedure returns the tattoo state of the image. Use only by save/load plug-ins that wish to preserve an images tattoo state. Using this function at other times will produce unexpected results."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -19144,6 +19288,8 @@ literal|"Set the tattoo state associated with the image."
 argument_list|,
 literal|"This procedure sets the tattoo state of the image. Use only by save/load plug-ins that wish to preserve an images tattoo state. Using this function at other times will produce unexpected results. A full check of uniqueness of states in layers, channels and paths will be performed by this procedure and a execution failure will be returned if this fails. A failure will also be returned if the new tattoo state value is less than the maximum tattoo value from all of the tattoos from the paths, layers and channels. After the image data has been loaded and all the tattoos have been set then this is the last procedure that should be called. If effectively does a status check on the tattoo values that have been set to make sure that all is OK."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -19230,6 +19376,8 @@ argument_list|,
 literal|"Find a layer with a given tattoo in an image."
 argument_list|,
 literal|"This procedure returns the layer with the given tattoo in the specified image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -19336,6 +19484,8 @@ literal|"Find a channel with a given tattoo in an image."
 argument_list|,
 literal|"This procedure returns the channel with the given tattoo in the specified image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Jay Cox"
 argument_list|,
 literal|"Jay Cox"
@@ -19441,6 +19591,8 @@ literal|"Find a vectors with a given tattoo in an image."
 argument_list|,
 literal|"This procedure returns the vectors with the given tattoo in the specified image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"Simon Budig"
@@ -19545,6 +19697,8 @@ argument_list|,
 literal|"Find a layer with a given name in an image."
 argument_list|,
 literal|"This procedure returns the layer with the given name in the specified image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -19653,6 +19807,8 @@ literal|"Find a channel with a given name in an image."
 argument_list|,
 literal|"This procedure returns the channel with the given name in the specified image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -19759,6 +19915,8 @@ argument_list|,
 literal|"Find a vectors with a given name in an image."
 argument_list|,
 literal|"This procedure returns the vectors with the given name in the specified image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -19867,6 +20025,8 @@ literal|"Add a parasite to an image."
 argument_list|,
 literal|"This procedure attaches a parasite to an image. It has no return values."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Jay Cox"
 argument_list|,
 literal|"Jay Cox"
@@ -19947,6 +20107,8 @@ argument_list|,
 literal|"Removes a parasite from an image."
 argument_list|,
 literal|"This procedure detaches a parasite from an image. It has no return values."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -20036,6 +20198,8 @@ argument_list|,
 literal|"Look up a parasite in an image"
 argument_list|,
 literal|"Finds and returns the parasite that was previously attached to an image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -20141,6 +20305,8 @@ argument_list|,
 literal|"List all parasites."
 argument_list|,
 literal|"Returns a list of all currently attached parasites."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Marc Lehmann"
 argument_list|,

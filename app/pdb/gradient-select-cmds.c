@@ -562,6 +562,8 @@ literal|"Invokes the Gimp gradients selection."
 argument_list|,
 literal|"This procedure opens the gradient selection dialog."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -705,6 +707,8 @@ literal|"Close the gradient selection dialog."
 argument_list|,
 literal|"This procedure closes an opened gradient selection dialog."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -775,6 +779,8 @@ argument_list|,
 literal|"Sets the current gradient in a gradient selection dialog."
 argument_list|,
 literal|"Sets the current gradient in a gradient selection dialog."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,

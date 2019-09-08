@@ -1641,6 +1641,8 @@ literal|"This procedure clears the specified drawable. If the drawable has an al
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-background'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -1707,6 +1709,8 @@ argument_list|,
 literal|"This procedure fills the specified drawable according to fill mode. This procedure only affects regions within a selection if there is a selection active. If you want to fill the whole drawable, regardless of the selection, use 'gimp-drawable-fill'.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-opacity', 'gimp-context-set-paint-mode', 'gimp-context-set-foreground', 'gimp-context-set-background', 'gimp-context-set-pattern'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis& Raphael Quinet"
 argument_list|,
@@ -1795,6 +1799,8 @@ literal|"This procedure does a seed fill at the specified coordinates, using var
 literal|"In the case of merged sampling, the x and y coordinates are relative to the image's origin; otherwise, they are relative to the drawable's origin.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-opacity', 'gimp-context-set-paint-mode', 'gimp-context-set-foreground', 'gimp-context-set-background', 'gimp-context-set-pattern', 'gimp-context-set-sample-threshold', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-diagonal-neighbors', 'gimp-context-set-antialias'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1928,6 +1934,8 @@ argument_list|,
 literal|"This tool requires information on the gradient type. It creates the specified variety of gradient using the starting and ending coordinates as defined for each gradient type. For shapeburst gradient types, the context's distance metric is also relevant and can be updated with 'gimp-context-set-distance-metric'.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-opacity', 'gimp-context-set-paint-mode', 'gimp-context-set-foreground', 'gimp-context-set-background', 'gimp-context-set-gradient' and all gradient property settings, 'gimp-context-set-distance-metric'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2214,6 +2222,8 @@ literal|"This procedure strokes the current selection, painting along the select
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-opacity', 'gimp-context-set-paint-mode', 'gimp-context-set-paint-method', 'gimp-context-set-stroke-method', 'gimp-context-set-foreground', 'gimp-context-set-brush' and all brush property settings, 'gimp-context-set-gradient' and all gradient property settings, 'gimp-context-set-line-width' and all line property settings, 'gimp-context-set-antialias'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -2280,6 +2290,8 @@ argument_list|,
 literal|"This procedure strokes the specified item, painting along its outline (e.g. along a path, or along a channel's boundary), with the active paint method and brush, or using a plain line with configurable properties.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-opacity', 'gimp-context-set-paint-mode', 'gimp-context-set-paint-method', 'gimp-context-set-stroke-method', 'gimp-context-set-foreground', 'gimp-context-set-brush' and all brush property settings, 'gimp-context-set-gradient' and all gradient property settings, 'gimp-context-set-line-width' and all line property settings, 'gimp-context-set-antialias'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

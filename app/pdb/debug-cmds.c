@@ -319,6 +319,8 @@ literal|"If there is already an active timer, it is not affected by the call, ho
 literal|"\n"
 literal|"This is a debug utility procedure. It is subject to change at any point, and should not be used in production."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -368,6 +370,8 @@ literal|"This procedure stops the timer started by a previous 'gimp-debug-timer-
 literal|"If there was already an active timer at the time of corresponding call to 'gimp-debug-timer-start', a dummy value is returned.\n"
 literal|"\n"
 literal|"This is a debug utility procedure. It is subject to change at any point, and should not be used in production."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ell"
 argument_list|,

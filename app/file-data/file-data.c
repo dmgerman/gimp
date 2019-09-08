@@ -248,6 +248,8 @@ argument_list|,
 literal|"Loads GIMP brushes (1 or 4 bpp "
 literal|"and old .gpb format)"
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Tim Newsome, Jens Lautenbacher, "
 literal|"Sven Neumann, Michael Natterer"
 argument_list|,
@@ -461,6 +463,8 @@ argument_list|,
 literal|"Exports Gimp brush file (.GBR)"
 argument_list|,
 literal|"Exports Gimp brush file (.GBR)"
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Tim Newsome, Michael Natterer"
 argument_list|,
@@ -764,6 +768,8 @@ argument_list|,
 literal|"This procedure loads a GIMP brush "
 literal|"pipe as an image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Tor Lillqvist, Michael Natterer"
 argument_list|,
 literal|"Tor Lillqvist, Michael Natterer"
@@ -975,6 +981,8 @@ argument_list|,
 literal|"Exports Gimp animated brush file (.gih)"
 argument_list|,
 literal|"Exports Gimp animated brush file (.gih)"
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Tor Lillqvist, Michael Natterer"
 argument_list|,
@@ -1301,6 +1309,8 @@ literal|"Loads GIMP patterns"
 argument_list|,
 literal|"Loads GIMP patterns"
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Tim Newsome, Michael Natterer"
 argument_list|,
 literal|"Tim Newsome, Michael Natterer"
@@ -1512,6 +1522,8 @@ argument_list|,
 literal|"Exports Gimp pattern file (.PAT)"
 argument_list|,
 literal|"Exports Gimp pattern file (.PAT)"
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Tim Newsome, Michael Natterer"
 argument_list|,
@@ -1791,6 +1803,8 @@ argument_list|,
 literal|"Loads GIMP extension"
 argument_list|,
 literal|"Loads GIMP extension"
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Jehan"
 argument_list|,

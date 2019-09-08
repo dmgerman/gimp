@@ -1088,6 +1088,8 @@ literal|"Add a horizontal guide to an image."
 argument_list|,
 literal|"This procedure adds a horizontal guide to an image. It takes the input image and the y-position of the new guide as parameters. It returns the guide ID of the new guide."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
 literal|"Adam D. Moss"
@@ -1196,6 +1198,8 @@ argument_list|,
 literal|"Add a vertical guide to an image."
 argument_list|,
 literal|"This procedure adds a vertical guide to an image. It takes the input image and the x-position of the new guide as parameters. It returns the guide ID of the new guide."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
@@ -1306,6 +1310,8 @@ literal|"Deletes a guide from an image."
 argument_list|,
 literal|"This procedure takes an image and a guide ID as input and removes the specified guide from the specified image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
 literal|"Adam D. Moss"
@@ -1392,6 +1398,8 @@ argument_list|,
 literal|"Find next guide on an image."
 argument_list|,
 literal|"This procedure takes an image and a guide ID as input and finds the guide ID of the successor of the given guide ID in the image's guide list. If the supplied guide ID is 0, the procedure will return the first Guide. The procedure will return 0 if given the final guide ID as an argument or the image has no guides."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
@@ -1503,6 +1511,8 @@ argument_list|,
 literal|"Get orientation of a guide on an image."
 argument_list|,
 literal|"This procedure takes an image and a guide ID as input and returns the orientations of the guide."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
@@ -1625,6 +1635,8 @@ argument_list|,
 literal|"Get position of a guide on an image."
 argument_list|,
 literal|"This procedure takes an image and a guide ID as input and returns the position of the guide relative to the top or left of the image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Adam D. Moss"
 argument_list|,

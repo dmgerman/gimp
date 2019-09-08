@@ -924,6 +924,8 @@ literal|"Returns the host GIMP version."
 argument_list|,
 literal|"This procedure returns the version number of the currently running GIMP."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Manish Singh"
 argument_list|,
 literal|"Manish Singh"
@@ -995,6 +997,8 @@ literal|"Returns the PID of the host GIMP process."
 argument_list|,
 literal|"This procedure returns the process ID of the currently running GIMP."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -1064,6 +1068,8 @@ literal|"Causes GIMP to exit gracefully."
 argument_list|,
 literal|"If there are unsaved images in an interactive GIMP session, the user will be asked for confirmation. If force is TRUE, the application is quit without querying the user to save any dirty images."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -1129,6 +1135,8 @@ literal|"Add a global parasite."
 argument_list|,
 literal|"This procedure attaches a global parasite. It has no return values."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Jay Cox"
 argument_list|,
 literal|"Jay Cox"
@@ -1191,6 +1199,8 @@ argument_list|,
 literal|"Removes a global parasite."
 argument_list|,
 literal|"This procedure detaches a global parasite from. It has no return values."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -1262,6 +1272,8 @@ argument_list|,
 literal|"Look up a global parasite."
 argument_list|,
 literal|"Finds and returns the global parasite that was previously attached."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -1350,6 +1362,8 @@ literal|"List all parasites."
 argument_list|,
 literal|"Returns a list of all currently attached global parasites."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Marc Lehmann"
 argument_list|,
 literal|"Marc Lehmann"
@@ -1434,6 +1448,8 @@ argument_list|,
 literal|"Generates a unique filename."
 argument_list|,
 literal|"Generates a unique filename using the temp path supplied in the user's gimprc."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Josh MacDonald"
 argument_list|,

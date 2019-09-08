@@ -415,6 +415,8 @@ literal|"Displays a dialog box with a message."
 argument_list|,
 literal|"Displays a dialog box with a message. Useful for status or error reporting. The message must be in UTF-8 encoding."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Manish Singh"
 argument_list|,
 literal|"Manish Singh"
@@ -486,6 +488,8 @@ literal|"Returns the current state of where warning messages are displayed."
 argument_list|,
 literal|"This procedure returns the way g_message warnings are displayed. They can be shown in a dialog box or printed on the console where gimp was started."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Manish Singh"
 argument_list|,
 literal|"Manish Singh"
@@ -552,6 +556,8 @@ argument_list|,
 literal|"Controls where warning messages are displayed."
 argument_list|,
 literal|"This procedure controls how g_message warnings are displayed. They can be shown in a dialog box or printed on the console where gimp was started."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Manish Singh"
 argument_list|,

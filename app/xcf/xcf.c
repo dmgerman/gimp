@@ -436,6 +436,8 @@ literal|"tiled and layered images in GIMP. "
 literal|"This procedure will save the specified "
 literal|"image in the xcf file format."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -694,6 +696,8 @@ literal|"specifically for loading and saving "
 literal|"tiled and layered images in GIMP. "
 literal|"This procedure will load the specified "
 literal|"file."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

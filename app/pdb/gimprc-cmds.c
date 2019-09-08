@@ -872,6 +872,8 @@ literal|"Queries the gimprc file parser for information on a specified token."
 argument_list|,
 literal|"This procedure is used to locate additional information contained in the gimprc file considered extraneous to the operation of GIMP. Plug-ins that need configuration information can expect it will be stored in the user gimprc file and can use this procedure to retrieve it. This query procedure will return the value associated with the specified token. This corresponds _only_ to entries with the format: (<token><value>). The value must be a string. Entries not corresponding to this format will cause warnings to be issued on gimprc parsing and will not be queryable."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -966,6 +968,8 @@ argument_list|,
 literal|"Sets a gimprc token to a value and saves it in the gimprc."
 argument_list|,
 literal|"This procedure is used to add or change additional information in the gimprc file that is considered extraneous to the operation of GIMP. Plug-ins that need configuration information can use this function to store it, and 'gimp-gimprc-query' to retrieve it. This will accept _only_ string values in UTF-8 encoding."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Seth Burgess"
 argument_list|,
@@ -1062,6 +1066,8 @@ literal|"Get the default image comment as specified in the Preferences."
 argument_list|,
 literal|"Returns a copy of the default image comment."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -1133,6 +1139,8 @@ literal|"Get the default unit (taken from the user's locale)."
 argument_list|,
 literal|"Returns the default unit's integer ID."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -1201,6 +1209,8 @@ argument_list|,
 literal|"Get the monitor resolution as specified in the Preferences."
 argument_list|,
 literal|"Returns the resolution of the monitor in pixels/inch. This value is taken from the Preferences (or the windowing system if this is set in the Preferences) and there's no guarantee for the value to be reasonable."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -1295,6 +1305,8 @@ literal|"Get a serialized version of the color management configuration."
 argument_list|,
 literal|"Returns a string that can be deserialized into a GimpColorConfig object representing the current color management configuration."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Sven Neumann"
@@ -1365,6 +1377,8 @@ argument_list|,
 literal|"Get the list of modules which should not be loaded."
 argument_list|,
 literal|"Returns a copy of the list of modules which should not be loaded."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

@@ -269,6 +269,8 @@ literal|"Load a help page."
 argument_list|,
 literal|"This procedure loads the specified help page into the helpbrowser or what ever is configured as help viewer. The help page is identified by its domain and ID: if help_domain is NULL, we use the help_domain which was registered using the 'gimp-plugin-help-register' procedure. If help_domain is NULL and no help domain was registered, the help domain of the main GIMP installation is used."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"

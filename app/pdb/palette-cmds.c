@@ -2542,6 +2542,8 @@ literal|"Creates a new palette"
 argument_list|,
 literal|"This procedure creates a new, uninitialized palette"
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2637,6 +2639,8 @@ literal|"Duplicates a palette"
 argument_list|,
 literal|"This procedure creates an identical palette by a different name"
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2731,6 +2735,8 @@ argument_list|,
 literal|"Rename a palette"
 argument_list|,
 literal|"This procedure renames a palette"
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2851,6 +2857,8 @@ literal|"Deletes a palette"
 argument_list|,
 literal|"This procedure deletes a palette"
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2921,6 +2929,8 @@ argument_list|,
 literal|"Tests if palette can be edited"
 argument_list|,
 literal|"Returns TRUE if you have permission to change the palette"
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -3010,6 +3020,8 @@ argument_list|,
 literal|"Retrieve information about the specified palette."
 argument_list|,
 literal|"This procedure retrieves information about the specified palette. This includes the name, and the number of colors."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3103,6 +3115,8 @@ argument_list|,
 literal|"Gets all colors from the specified palette."
 argument_list|,
 literal|"This procedure retrieves all color entries of the specified palette."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -3213,6 +3227,8 @@ literal|"Retrieves the number of columns to use to display this palette"
 argument_list|,
 literal|"This procedures retrieves the preferred number of columns to use when the palette is being displayed."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Sven Neumann"
@@ -3306,6 +3322,8 @@ literal|"Sets the number of columns to use when displaying the palette"
 argument_list|,
 literal|"This procedures controls how many colors are shown per row when the palette is being displayed. This value can only be changed if the palette is writable. The maximum allowed value is 64."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Sven Neumann"
@@ -3398,6 +3416,8 @@ argument_list|,
 literal|"Adds a palette entry to the specified palette."
 argument_list|,
 literal|"This procedure adds an entry to the specified palette. It returns an error if the entry palette does not exist."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3536,6 +3556,8 @@ literal|"Deletes a palette entry from the specified palette."
 argument_list|,
 literal|"This procedure deletes an entry from the specified palette. It returns an error if the entry palette does not exist."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -3628,6 +3650,8 @@ argument_list|,
 literal|"Gets the specified palette entry from the specified palette."
 argument_list|,
 literal|"This procedure retrieves the color of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3742,6 +3766,8 @@ literal|"Sets the specified palette entry in the specified palette."
 argument_list|,
 literal|"This procedure sets the color of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -3854,6 +3880,8 @@ argument_list|,
 literal|"Gets the specified palette entry from the specified palette."
 argument_list|,
 literal|"This procedure retrieves the name of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3971,6 +3999,8 @@ argument_list|,
 literal|"Sets the specified palette entry in the specified palette."
 argument_list|,
 literal|"This procedure sets the name of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

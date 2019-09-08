@@ -645,6 +645,8 @@ literal|"Retrieve information about the specified pattern."
 argument_list|,
 literal|"This procedure retrieves information about the specified pattern. This includes the pattern extents (width and height)."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -781,6 +783,8 @@ argument_list|,
 literal|"Retrieve information about the specified pattern (including pixels)."
 argument_list|,
 literal|"This procedure retrieves information about the specified. This includes the pattern extents (width and height), its bpp and its pixel data."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

@@ -1610,6 +1610,8 @@ literal|"This procedure creates a new channel with the specified width, height, 
 literal|"The new channel still needs to be added to the image, as this is not automatic. Add the new channel with 'gimp-image-insert-channel'. Other attributes, such as channel visibility, should be set with explicit procedure calls.\n"
 literal|"The channel's contents are undefined initially."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -1804,6 +1806,8 @@ argument_list|,
 literal|"This procedure creates a new channel from a color component.\n"
 literal|"The new channel still needs to be added to the image, as this is not automatic. Add the new channel with 'gimp-image-insert-channel'. Other attributes, such as channel visibility, should be set with explicit procedure calls."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -1932,6 +1936,8 @@ argument_list|,
 literal|"This procedure copies the specified channel and returns the copy.\n"
 literal|"The new channel still needs to be added to the image, as this is not automatic. Add the new channel with 'gimp-image-insert-channel'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -2014,6 +2020,8 @@ argument_list|,
 literal|"Combine two channel masks."
 argument_list|,
 literal|"This procedure combines two channel masks. The result is stored in the first channel."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -2162,6 +2170,8 @@ literal|"Get the composite method of the specified channel."
 argument_list|,
 literal|"This procedure returns the specified channel's composite method. If it is TRUE, then the channel is composited with the image so that masked regions are shown. Otherwise, selected regions are shown."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -2245,6 +2255,8 @@ literal|"Set the composite method of the specified channel."
 argument_list|,
 literal|"This procedure sets the specified channel's composite method. If it is TRUE, then the channel is composited with the image so that masked regions are shown. Otherwise, selected regions are shown."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -2327,6 +2339,8 @@ argument_list|,
 literal|"Get the opacity of the specified channel."
 argument_list|,
 literal|"This procedure returns the specified channel's opacity."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -2415,6 +2429,8 @@ literal|"Set the opacity of the specified channel."
 argument_list|,
 literal|"This procedure sets the specified channel's opacity."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -2502,6 +2518,8 @@ literal|"Get the compositing color of the specified channel."
 argument_list|,
 literal|"This procedure returns the specified channel's compositing color."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -2586,6 +2604,8 @@ argument_list|,
 literal|"Set the compositing color of the specified channel."
 argument_list|,
 literal|"This procedure sets the specified channel's compositing color."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

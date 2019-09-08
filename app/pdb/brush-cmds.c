@@ -3881,6 +3881,8 @@ literal|"Creates a new brush."
 argument_list|,
 literal|"This procedure creates a new, uninitialized brush."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -3975,6 +3977,8 @@ argument_list|,
 literal|"Duplicates a brush."
 argument_list|,
 literal|"This procedure creates an identical brush by a different name."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4071,6 +4075,8 @@ literal|"Tests if brush is generated."
 argument_list|,
 literal|"Returns TRUE if this brush is parametric, FALSE for other types."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
 literal|"Bill Skaggs"
@@ -4159,6 +4165,8 @@ argument_list|,
 literal|"Renames a brush."
 argument_list|,
 literal|"This procedure renames a brush."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4279,6 +4287,8 @@ literal|"Deletes a brush."
 argument_list|,
 literal|"This procedure deletes a brush."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -4349,6 +4359,8 @@ argument_list|,
 literal|"Tests if brush can be edited."
 argument_list|,
 literal|"Returns TRUE if you have permission to change the brush."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -4438,6 +4450,8 @@ argument_list|,
 literal|"Retrieves information about the specified brush."
 argument_list|,
 literal|"This procedure retrieves information about the specified brush: brush extents (width and height), color depth and mask depth."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4597,6 +4611,8 @@ argument_list|,
 literal|"Retrieves information about the specified brush."
 argument_list|,
 literal|"This procedure retrieves information about the specified brush. This includes the brush extents (width and height) and its pixels data."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4833,6 +4849,8 @@ literal|"Gets the brush spacing."
 argument_list|,
 literal|"This procedure returns the spacing setting for the specified brush. The return value is an integer between 0 and 1000 which represents percentage of the maximum of the width and height of the mask."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -4925,6 +4943,8 @@ argument_list|,
 literal|"Sets the brush spacing."
 argument_list|,
 literal|"This procedure modifies the spacing setting for the specified brush. The value should be a integer between 0 and 1000."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -5019,6 +5039,8 @@ literal|"Gets the shape of a generated brush."
 argument_list|,
 literal|"This procedure gets the shape value for a generated brush. If called for any other type of brush, it does not succeed. The current possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square (GIMP_BRUSH_GENERATED_SQUARE), and Diamond (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added in the future."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
 literal|"Bill Skaggs"
@@ -5109,6 +5131,8 @@ argument_list|,
 literal|"Sets the shape of a generated brush."
 argument_list|,
 literal|"This procedure sets the shape value for a generated brush. If called for any other type of brush, it does not succeed. The current possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square (GIMP_BRUSH_GENERATED_SQUARE), and Diamond (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added in the future."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -5221,6 +5245,8 @@ literal|"Gets the radius of a generated brush."
 argument_list|,
 literal|"This procedure gets the radius value for a generated brush. If called for any other type of brush, it does not succeed."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
 literal|"Bill Skaggs"
@@ -5314,6 +5340,8 @@ argument_list|,
 literal|"Sets the radius of a generated brush."
 argument_list|,
 literal|"This procedure sets the radius for a generated brush. If called for any other type of brush, it does not succeed."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -5432,6 +5460,8 @@ literal|"Gets the number of spikes for a generated brush."
 argument_list|,
 literal|"This procedure gets the number of spikes for a generated brush. If called for any other type of brush, it does not succeed."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
 literal|"Bill Skaggs"
@@ -5524,6 +5554,8 @@ argument_list|,
 literal|"Sets the number of spikes for a generated brush."
 argument_list|,
 literal|"This procedure sets the number of spikes for a generated brush. If called for any other type of brush, it does not succeed."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -5640,6 +5672,8 @@ literal|"Gets the hardness of a generated brush."
 argument_list|,
 literal|"This procedure gets the hardness of a generated brush. The hardness of a brush is the amount its intensity fades at the outside edge, as a float between 0.0 and 1.0. If called for any other type of brush, the function does not succeed."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
 literal|"Bill Skaggs"
@@ -5733,6 +5767,8 @@ argument_list|,
 literal|"Sets the hardness of a generated brush."
 argument_list|,
 literal|"This procedure sets the hardness for a generated brush. If called for any other type of brush, it does not succeed. The value should be a float between 0.0 and 1.0."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -5851,6 +5887,8 @@ literal|"Gets the aspect ratio of a generated brush."
 argument_list|,
 literal|"This procedure gets the aspect ratio of a generated brush. If called for any other type of brush, it does not succeed. The return value is a float between 0.0 and 1000.0."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
 literal|"Bill Skaggs"
@@ -5944,6 +5982,8 @@ argument_list|,
 literal|"Sets the aspect ratio of a generated brush."
 argument_list|,
 literal|"This procedure sets the aspect ratio for a generated brush. If called for any other type of brush, it does not succeed. The value should be a float between 0.0 and 1000.0."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -6062,6 +6102,8 @@ literal|"Gets the rotation angle of a generated brush."
 argument_list|,
 literal|"This procedure gets the angle of rotation for a generated brush. If called for any other type of brush, it does not succeed."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
 literal|"Bill Skaggs"
@@ -6155,6 +6197,8 @@ argument_list|,
 literal|"Sets the rotation angle of a generated brush."
 argument_list|,
 literal|"This procedure sets the rotation angle for a generated brush. If called for any other type of brush, it does not succeed."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,

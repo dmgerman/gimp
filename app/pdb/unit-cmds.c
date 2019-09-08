@@ -1549,6 +1549,8 @@ literal|"Returns the number of units."
 argument_list|,
 literal|"This procedure returns the number of defined units."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -1618,6 +1620,8 @@ literal|"Returns the number of built-in units."
 argument_list|,
 literal|"This procedure returns the number of defined units built-in to GIMP."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -1686,6 +1690,8 @@ argument_list|,
 literal|"Creates a new unit and returns it's integer ID."
 argument_list|,
 literal|"This procedure creates a new unit and returns it's integer ID. Note that the new unit will have it's deletion flag set to TRUE, so you will have to set it to FALSE with 'gimp-unit-set-deletion-flag' to make it persistent."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1921,6 +1927,8 @@ literal|"Returns the deletion flag of the unit."
 argument_list|,
 literal|"This procedure returns the deletion flag of the unit. If this value is TRUE the unit's definition will not be saved in the user's unitrc file on gimp exit."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2008,6 +2016,8 @@ literal|"Sets the deletion flag of a unit."
 argument_list|,
 literal|"This procedure sets the unit's deletion flag. If the deletion flag of a unit is TRUE on gimp exit, this unit's definition will not be saved in the user's unitrc."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2094,6 +2104,8 @@ argument_list|,
 literal|"Returns the textual identifier of the unit."
 argument_list|,
 literal|"This procedure returns the textual identifier of the unit. For built-in units it will be the english singular form of the unit's name. For user-defined units this should equal to the singular form."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2188,6 +2200,8 @@ literal|"Returns the factor of the unit."
 argument_list|,
 literal|"This procedure returns the unit's factor which indicates how many units make up an inch. Note that asking for the factor of \"pixels\" will produce an error."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2280,6 +2294,8 @@ literal|"Returns the number of digits of the unit."
 argument_list|,
 literal|"This procedure returns the number of digits you should provide in input or output functions to get approximately the same accuracy as with two digits and inches. Note that asking for the digits of \"pixels\" will produce an error."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2370,6 +2386,8 @@ argument_list|,
 literal|"Returns the symbol of the unit."
 argument_list|,
 literal|"This procedure returns the symbol of the unit (\"''\" for inches)."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2464,6 +2482,8 @@ literal|"Returns the abbreviation of the unit."
 argument_list|,
 literal|"This procedure returns the abbreviation of the unit (\"in\" for inches)."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2557,6 +2577,8 @@ literal|"Returns the singular form of the unit."
 argument_list|,
 literal|"This procedure returns the singular form of the unit."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2649,6 +2671,8 @@ argument_list|,
 literal|"Returns the plural form of the unit."
 argument_list|,
 literal|"This procedure returns the plural form of the unit."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

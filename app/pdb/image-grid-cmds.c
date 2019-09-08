@@ -1538,6 +1538,8 @@ literal|"Gets the spacing of an image's grid."
 argument_list|,
 literal|"This procedure retrieves the horizontal and vertical spacing of an image's grid. It takes the image as parameter."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
 literal|"Sylvain Foret"
@@ -1648,6 +1650,8 @@ argument_list|,
 literal|"Sets the spacing of an image's grid."
 argument_list|,
 literal|"This procedure sets the horizontal and vertical spacing of an image's grid."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -1760,6 +1764,8 @@ literal|"Gets the offset of an image's grid."
 argument_list|,
 literal|"This procedure retrieves the horizontal and vertical offset of an image's grid. It takes the image as parameter."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
 literal|"Sylvain Foret"
@@ -1870,6 +1876,8 @@ argument_list|,
 literal|"Sets the offset of an image's grid."
 argument_list|,
 literal|"This procedure sets the horizontal and vertical offset of an image's grid."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -1982,6 +1990,8 @@ literal|"Sets the foreground color of an image's grid."
 argument_list|,
 literal|"This procedure gets the foreground color of an image's grid."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
 literal|"Sylvain Foret"
@@ -2066,6 +2076,8 @@ argument_list|,
 literal|"Gets the foreground color of an image's grid."
 argument_list|,
 literal|"This procedure sets the foreground color of an image's grid."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -2152,6 +2164,8 @@ literal|"Sets the background color of an image's grid."
 argument_list|,
 literal|"This procedure gets the background color of an image's grid."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
 literal|"Sylvain Foret"
@@ -2236,6 +2250,8 @@ argument_list|,
 literal|"Gets the background color of an image's grid."
 argument_list|,
 literal|"This procedure sets the background color of an image's grid."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -2322,6 +2338,8 @@ literal|"Gets the style of an image's grid."
 argument_list|,
 literal|"This procedure retrieves the style of an image's grid."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
 literal|"Sylvain Foret"
@@ -2406,6 +2424,8 @@ argument_list|,
 literal|"Sets the style unit of an image's grid."
 argument_list|,
 literal|"This procedure sets the style of an image's grid. It takes the image and the new style as parameters."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,

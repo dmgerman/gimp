@@ -348,6 +348,8 @@ literal|"Refreshes current palettes. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all palettes currently in the user's palette path and updates the palette dialogs accordingly."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Adrian Likins<adrian@gimp.org>"
 argument_list|,
 literal|"Adrian Likins"
@@ -394,6 +396,8 @@ argument_list|,
 literal|"Retrieves a list of all of the available palettes"
 argument_list|,
 literal|"This procedure returns a complete listing of available palettes. Each name returned can be used as input to the command 'gimp-context-set-palette'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Nathan Summers<rock@gimp.org>"
 argument_list|,

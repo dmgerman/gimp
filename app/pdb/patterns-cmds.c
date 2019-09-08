@@ -354,6 +354,8 @@ literal|"Refresh current patterns. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all patterns currently in the user's pattern path and updates all pattern dialogs accordingly."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -400,6 +402,8 @@ argument_list|,
 literal|"Retrieve a complete listing of the available patterns."
 argument_list|,
 literal|"This procedure returns a complete listing of available GIMP patterns. Each name returned can be used as input to the 'gimp-context-set-pattern'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

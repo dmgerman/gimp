@@ -348,6 +348,8 @@ literal|"Refresh current gradients. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all gradients currently in the user's gradient path and updates the gradient dialogs accordingly."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -394,6 +396,8 @@ argument_list|,
 literal|"Retrieve the list of loaded gradients."
 argument_list|,
 literal|"This procedure returns a list of the gradients that are currently loaded. You can later use the 'gimp-context-set-gradient' function to set the active gradient."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Federico Mena Quintero"
 argument_list|,

@@ -1143,6 +1143,8 @@ literal|"Retrieve a complete listing of the available buffers."
 argument_list|,
 literal|"This procedure returns a complete listing of available named buffers."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -1251,6 +1253,8 @@ argument_list|,
 literal|"Renames a named buffer."
 argument_list|,
 literal|"This procedure renames a named buffer."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1371,6 +1375,8 @@ literal|"Deletes a named buffer."
 argument_list|,
 literal|"This procedure deletes a named buffer."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"David Gowers<neota@softhome.net>"
 argument_list|,
 literal|"David Gowers<neota@softhome.net>"
@@ -1441,6 +1447,8 @@ argument_list|,
 literal|"Retrieves the specified buffer's width."
 argument_list|,
 literal|"This procedure retrieves the specified named buffer's width."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1535,6 +1543,8 @@ literal|"Retrieves the specified buffer's height."
 argument_list|,
 literal|"This procedure retrieves the specified named buffer's height."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -1628,6 +1638,8 @@ literal|"Retrieves the specified buffer's bytes."
 argument_list|,
 literal|"This procedure retrieves the specified named buffer's bytes."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -1720,6 +1732,8 @@ argument_list|,
 literal|"Retrieves the specified buffer's image type."
 argument_list|,
 literal|"This procedure retrieves the specified named buffer's image type."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

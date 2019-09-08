@@ -523,6 +523,8 @@ literal|"Invokes the Gimp palette selection."
 argument_list|,
 literal|"This procedure opens the palette selection dialog."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -642,6 +644,8 @@ literal|"Close the palette selection dialog."
 argument_list|,
 literal|"This procedure closes an opened palette selection dialog."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -712,6 +716,8 @@ argument_list|,
 literal|"Sets the current palette in a palette selection dialog."
 argument_list|,
 literal|"Sets the current palette in a palette selection dialog."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

@@ -6065,6 +6065,8 @@ literal|"Creates a new gradient"
 argument_list|,
 literal|"This procedure creates a new, uninitialized gradient"
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -6159,6 +6161,8 @@ argument_list|,
 literal|"Duplicates a gradient"
 argument_list|,
 literal|"This procedure creates an identical gradient by a different name"
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -6255,6 +6259,8 @@ literal|"Tests if gradient can be edited"
 argument_list|,
 literal|"Returns TRUE if you have permission to change the gradient"
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
 literal|"Bill Skaggs"
@@ -6343,6 +6349,8 @@ argument_list|,
 literal|"Rename a gradient"
 argument_list|,
 literal|"This procedure renames a gradient"
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -6463,6 +6471,8 @@ literal|"Deletes a gradient"
 argument_list|,
 literal|"This procedure deletes a gradient"
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -6533,6 +6543,8 @@ argument_list|,
 literal|"Returns the number of segments of the specified gradient"
 argument_list|,
 literal|"This procedure returns the number of segments of the specified gradient."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Lars-Peter Clausen<lars@metafoo.de>"
 argument_list|,
@@ -6626,6 +6638,8 @@ argument_list|,
 literal|"Sample the specified in uniform parts."
 argument_list|,
 literal|"This procedure samples the active gradient in the specified number of uniform parts. It returns a list of floating-point values which correspond to the RGBA values for each sample. The minimum number of samples to take is 2, in which case the returned colors will correspond to the { 0.0, 1.0 } positions in the gradient. For example, if the number of samples is 3, the procedure will return the colors at positions { 0.0, 0.5, 1.0 }."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Federico Mena Quintero"
 argument_list|,
@@ -6775,6 +6789,8 @@ argument_list|,
 literal|"Sample the specified gradient in custom positions."
 argument_list|,
 literal|"This procedure samples the active gradient in the specified number of points. The procedure will sample the gradient in the specified positions from the list. The left endpoint of the gradient corresponds to position 0.0, and the right endpoint corresponds to 1.0. The procedure returns a list of floating-point values which correspond to the RGBA values for each sample."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Federico Mena Quintero"
 argument_list|,
@@ -6941,6 +6957,8 @@ literal|"Retrieves the left endpoint color of the specified segment"
 argument_list|,
 literal|"This procedure retrieves the left endpoint color of the specified segment of the specified gradient."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -7077,6 +7095,8 @@ literal|"Sets the left endpoint color of the specified segment"
 argument_list|,
 literal|"This procedure sets the left endpoint color of the specified segment of the specified gradient."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -7211,6 +7231,8 @@ argument_list|,
 literal|"Retrieves the right endpoint color of the specified segment"
 argument_list|,
 literal|"This procedure retrieves the right endpoint color of the specified segment of the specified gradient."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -7348,6 +7370,8 @@ literal|"Sets the right endpoint color of the specified segment"
 argument_list|,
 literal|"This procedure sets the right endpoint color of the specified segment of the specified gradient."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -7483,6 +7507,8 @@ literal|"Retrieves the left endpoint position of the specified segment"
 argument_list|,
 literal|"This procedure retrieves the left endpoint position of the specified segment of the specified gradient."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -7599,6 +7625,8 @@ literal|"Sets the left endpoint position of the specified segment"
 argument_list|,
 literal|"This procedure sets the left endpoint position of the specified segment of the specified gradient. The final position will be between the position of the middle point to the left to the middle point of the current segment.\n"
 literal|"This procedure returns the final position."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -7738,6 +7766,8 @@ literal|"Retrieves the middle point position of the specified segment"
 argument_list|,
 literal|"This procedure retrieves the middle point position of the specified segment of the specified gradient."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -7854,6 +7884,8 @@ literal|"Sets the middle point position of the specified segment"
 argument_list|,
 literal|"This procedure sets the middle point position of the specified segment of the specified gradient. The final position will be between the two endpoints of the segment.\n"
 literal|"This procedure returns the final position."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -7993,6 +8025,8 @@ literal|"Retrieves the right endpoint position of the specified segment"
 argument_list|,
 literal|"This procedure retrieves the right endpoint position of the specified segment of the specified gradient."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -8109,6 +8143,8 @@ literal|"Sets the right endpoint position of the specified segment"
 argument_list|,
 literal|"This procedure sets the right endpoint position of the specified segment of the specified gradient. The final position will be between the position of the middle point of the current segment and the middle point of the segment to the right.\n"
 literal|"This procedure returns the final position."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -8248,6 +8284,8 @@ literal|"Retrieves the gradient segment's blending function"
 argument_list|,
 literal|"This procedure retrieves the blending function of the segment at the specified gradient name and segment index."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -8361,6 +8399,8 @@ literal|"Retrieves the gradient segment's coloring type"
 argument_list|,
 literal|"This procedure retrieves the coloring type of the segment at the specified gradient name and segment index."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -8473,6 +8513,8 @@ argument_list|,
 literal|"Change the blending function of a segments range"
 argument_list|,
 literal|"This function changes the blending function of a segment range to the specified blending function."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -8609,6 +8651,8 @@ literal|"Change the coloring type of a segments range"
 argument_list|,
 literal|"This function changes the coloring type of a segment range to the specified coloring type."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -8744,6 +8788,8 @@ literal|"Flip the segment range"
 argument_list|,
 literal|"This function flips a segment range."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -8858,6 +8904,8 @@ argument_list|,
 literal|"Replicate the segment range"
 argument_list|,
 literal|"This function replicates a segment range a given number of times. Instead of the original segment range, several smaller scaled copies of it will appear in equal widths."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -8996,6 +9044,8 @@ literal|"Splits each segment in the segment range at midpoint"
 argument_list|,
 literal|"This function splits each segment in the segment range at its midpoint."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -9110,6 +9160,8 @@ argument_list|,
 literal|"Splits each segment in the segment range uniformly"
 argument_list|,
 literal|"This function splits each segment in the segment range uniformly according to the number of times specified by the parameter."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -9248,6 +9300,8 @@ literal|"Delete the segment range"
 argument_list|,
 literal|"This function deletes a segment range."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -9362,6 +9416,8 @@ argument_list|,
 literal|"Uniformly redistribute the segment range's handles"
 argument_list|,
 literal|"This function redistributes the handles of the specified segment range of the specified gradient, so they'll be evenly spaced."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
@@ -9478,6 +9534,8 @@ literal|"Blend the colors of the segment range."
 argument_list|,
 literal|"This function blends the colors (but not the opacity) of the segments' range of the gradient. Using it, the colors' transition will be uniform across the range."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -9593,6 +9651,8 @@ literal|"Blend the opacity of the segment range."
 argument_list|,
 literal|"This function blends the opacity (but not the colors) of the segments' range of the gradient. Using it, the opacity's transition will be uniform across the range."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,
 literal|"Shlomi Fish"
@@ -9707,6 +9767,8 @@ argument_list|,
 literal|"Move the position of an entire segment range by a delta."
 argument_list|,
 literal|"This function moves the position of an entire segment range by a delta. The actual delta (which is returned) will be limited by the control points of the neighboring segments."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,

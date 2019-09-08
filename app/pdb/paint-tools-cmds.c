@@ -4313,6 +4313,8 @@ literal|"Paint in the current brush with varying pressure. Paint application is 
 argument_list|,
 literal|"This tool simulates the use of an airbrush. Paint pressure represents the relative intensity of the paint application. High pressure results in a thicker layer of paint while low pressure results in a thinner layer."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -4438,6 +4440,8 @@ literal|"Paint in the current brush with varying pressure. Paint application is 
 argument_list|,
 literal|"This tool simulates the use of an airbrush. It is similar to 'gimp-airbrush' except that the pressure is derived from the airbrush tools options box. It the option has not been set the default for the option will be used."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -4540,6 +4544,8 @@ argument_list|,
 literal|"Clone from the source to the dest drawable using the current brush"
 argument_list|,
 literal|"This tool clones (copies) from the source drawable starting at the specified source coordinates to the dest drawable. If the \"clone_type\" argument is set to PATTERN-CLONE, then the current pattern is used as the source and the \"src_drawable\" argument is ignored. Pattern cloning assumes a tileable pattern and mods the sum of the src coordinates and subsequent stroke offsets with the width and height of the pattern. For image cloning, if the sum of the src coordinates and subsequent stroke offsets exceeds the extents of the src drawable, then no paint is transferred. The clone tool is capable of transforming between any image types including RGB->Indexed--although converting from any type to indexed is significantly slower."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4728,6 +4734,8 @@ literal|"Clone from the source to the dest drawable using the current brush"
 argument_list|,
 literal|"This tool clones (copies) from the source drawable starting at the specified source coordinates to the dest drawable. This function performs exactly the same as the 'gimp-clone' function except that the tools arguments are obtained from the clones option dialog. It this dialog has not been activated then the dialogs default values will be used."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -4830,6 +4838,8 @@ argument_list|,
 literal|"Convolve (Blur, Sharpen) using the current brush."
 argument_list|,
 literal|"This tool convolves the specified drawable with either a sharpening or blurring kernel. The pressure parameter controls the magnitude of the operation. Like the paintbrush, this tool linearly interpolates between the specified stroke coordinates."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4976,6 +4986,8 @@ literal|"Convolve (Blur, Sharpen) using the current brush."
 argument_list|,
 literal|"This tool convolves the specified drawable with either a sharpening or blurring kernel. This function performs exactly the same as the 'gimp-convolve' function except that the tools arguments are obtained from the convolve option dialog. It this dialog has not been activated then the dialogs default values will be used."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -5078,6 +5090,8 @@ argument_list|,
 literal|"Dodgeburn image with varying exposure."
 argument_list|,
 literal|"Dodgeburn. More details here later."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -5244,6 +5258,8 @@ literal|"Dodgeburn image with varying exposure. This is the same as the gimp_dod
 argument_list|,
 literal|"Dodgeburn. More details here later."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -5346,6 +5362,8 @@ argument_list|,
 literal|"Erase using the current brush."
 argument_list|,
 literal|"This tool erases using the current brush mask. If the specified drawable contains an alpha channel, then the erased pixels will become transparent. Otherwise, the eraser tool replaces the contents of the drawable with the background color. Like paintbrush, this tool linearly interpolates between the specified stroke coordinates."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5490,6 +5508,8 @@ literal|"Erase using the current brush."
 argument_list|,
 literal|"This tool erases using the current brush mask. This function performs exactly the same as the 'gimp-eraser' function except that the tools arguments are obtained from the eraser option dialog. It this dialog has not been activated then the dialogs default values will be used."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -5592,6 +5612,8 @@ argument_list|,
 literal|"Heal from the source to the dest drawable using the current brush"
 argument_list|,
 literal|"This tool heals the source drawable starting at the specified source coordinates to the dest drawable. For image healing, if the sum of the src coordinates and subsequent stroke offsets exceeds the extents of the src drawable, then no paint is transferred. The healing tool is capable of transforming between any image types except RGB->Indexed."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Kevin Sookocheff"
 argument_list|,
@@ -5760,6 +5782,8 @@ literal|"Heal from the source to the dest drawable using the current brush"
 argument_list|,
 literal|"This tool heals from the source drawable starting at the specified source coordinates to the dest drawable. This function performs exactly the same as the 'gimp-heal' function except that the tools arguments are obtained from the healing option dialog. It this dialog has not been activated then the dialogs default values will be used."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Kevin Sookocheff"
 argument_list|,
 literal|"Kevin Sookocheff"
@@ -5862,6 +5886,8 @@ argument_list|,
 literal|"Paint in the current brush with optional fade out parameter and pull colors from a gradient."
 argument_list|,
 literal|"This tool is the standard paintbrush. It draws linearly interpolated lines through the specified stroke coordinates. It operates on the specified drawable in the foreground color with the active brush. The 'fade-out' parameter is measured in pixels and allows the brush stroke to linearly fall off. The pressure is set to the maximum at the beginning of the stroke. As the distance of the stroke nears the fade-out value, the pressure will approach zero. The gradient-length is the distance to spread the gradient over. It is measured in pixels. If the gradient-length is 0, no gradient is used."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -6030,6 +6056,8 @@ literal|"Paint in the current brush. The fade out parameter and pull colors from
 argument_list|,
 literal|"This tool is similar to the standard paintbrush. It draws linearly interpolated lines through the specified stroke coordinates. It operates on the specified drawable in the foreground color with the active brush. The 'fade-out' parameter is measured in pixels and allows the brush stroke to linearly fall off (value obtained from the option dialog). The pressure is set to the maximum at the beginning of the stroke. As the distance of the stroke nears the fade-out value, the pressure will approach zero. The gradient-length (value obtained from the option dialog) is the distance to spread the gradient over. It is measured in pixels. If the gradient-length is 0, no gradient is used."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -6133,6 +6161,8 @@ literal|"Paint in the current brush without sub-pixel sampling."
 argument_list|,
 literal|"This tool is the standard pencil. It draws linearly interpolated lines through the specified stroke coordinates. It operates on the specified drawable in the foreground color with the active brush. The brush mask is treated as though it contains only black and white values. Any value below half is treated as black; any above half, as white."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -6235,6 +6265,8 @@ argument_list|,
 literal|"Smudge image with varying pressure."
 argument_list|,
 literal|"This tool simulates a smudge using the current brush. High pressure results in a greater smudge of paint while low pressure results in a lesser smudge."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -6360,6 +6392,8 @@ argument_list|,
 literal|"Smudge image with varying pressure."
 argument_list|,
 literal|"This tool simulates a smudge using the current brush. It behaves exactly the same as 'gimp-smudge' except that the pressure value is taken from the smudge tool options or the options default if the tools option dialog has not been activated."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,

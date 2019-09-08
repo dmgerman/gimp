@@ -164,6 +164,12 @@ modifier|*
 name|help
 decl_stmt|;
 comment|/* Detailed help instructions     */
+DECL|member|help_id
+name|gchar
+modifier|*
+name|help_id
+decl_stmt|;
+comment|/* Help ID                        */
 DECL|member|authors
 name|gchar
 modifier|*
@@ -420,6 +426,11 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|help_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|authors
 parameter_list|,
 specifier|const
@@ -461,6 +472,11 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|help_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|authors
 parameter_list|,
 specifier|const
@@ -496,6 +512,10 @@ parameter_list|,
 name|gchar
 modifier|*
 name|help
+parameter_list|,
+name|gchar
+modifier|*
+name|help_id
 parameter_list|,
 name|gchar
 modifier|*

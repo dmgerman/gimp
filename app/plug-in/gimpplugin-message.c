@@ -3488,6 +3488,10 @@ name|help
 argument_list|,
 name|proc_install
 operator|->
+name|help_id
+argument_list|,
+name|proc_install
+operator|->
 name|authors
 argument_list|,
 name|proc_install
@@ -3499,15 +3503,6 @@ operator|->
 name|date
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plug_in_procedure_set_help_id
-argument_list|(
-name|proc
-argument_list|,
-name|proc_install
-operator|->
-name|help_id
 argument_list|)
 expr_stmt|;
 for|for

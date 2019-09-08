@@ -1605,6 +1605,8 @@ literal|"This procedure is affected by the following context setters: 'gimp-cont
 literal|"\n"
 literal|"In the case of a merged sampling, the supplied drawable is ignored."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"David Gowers"
 argument_list|,
 literal|"David Gowers"
@@ -1731,6 +1733,8 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-sample-threshold', 'gimp-context-set-sample-transparent', 'gimp-context-set-diagonal-neighbors'.\n"
 literal|"\n"
 literal|"In the case of a merged sampling, the supplied drawable is ignored. If the sample is merged, the specified coordinates are relative to the image origin; otherwise, they are relative to the drawable's origin."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -1882,6 +1886,8 @@ argument_list|,
 literal|"This tool creates a rectangular selection over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2059,6 +2065,8 @@ argument_list|,
 literal|"This tool creates a rectangular selection with round corners over the specified image. The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Martin Nordholts"
 argument_list|,
@@ -2281,6 +2289,8 @@ literal|"This tool creates an elliptical selection over the specified image. The
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2458,6 +2468,8 @@ literal|"This tool creates a polygonal selection over the specified image. The p
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -2582,6 +2594,8 @@ argument_list|,
 literal|"This procedure renders the item's outline into the current selection of the image the item belongs to. What exactly the item's outline is depends on the item type: for layers, it's the layer's alpha channel, for vectors the vector's shape.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

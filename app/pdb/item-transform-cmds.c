@@ -4670,6 +4670,8 @@ literal|"This procedure translates the item by the amounts specified in the off_
 literal|"\n"
 literal|"If the item is attached to an image and has its linked flag set to TRUE, all additional items contained in the image which have the linked flag set to TRUE will also be translated by the specified offsets."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -4804,6 +4806,8 @@ literal|"\n"
 literal|"If there is no selection or the item is not a drawable, the entire item will be flipped around its center if auto_center is set to TRUE, otherwise the coordinate of the axis needs to be specified. Additionally, if the item has its linked flag set to TRUE, all additional items contained in the image which have the linked flag set to TRUE will also be flipped around the same axis. The return value will be equal to the item ID supplied as input.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-transform-resize'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4969,6 +4973,8 @@ literal|"\n"
 literal|"If there is no selection or the item is not a drawable, the entire item will be flipped around the specified axis. Additionally, if the item has its linked flag set to TRUE, all additional items contained in the image which have the linked flag set to TRUE will also be flipped around the same axis. The return value will be equal to the item ID supplied as input.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5152,6 +5158,8 @@ literal|"\n"
 literal|"If there is no selection or the item is not a drawable, the entire item will be transformed according to the specified mapping. Additionally, if the item has its linked flag set to TRUE, all additional items contained in the image which have the linked flag set to TRUE will also be transformed the same way. The return value will be equal to the item ID supplied as input.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5426,6 +5434,8 @@ literal|"If there is no selection or the item is not a drawable, the entire item
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-transform-resize'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -5598,6 +5608,8 @@ literal|"\n"
 literal|"If there is no selection or the item is not a drawable, the entire item will be rotated around its center if auto_center is set to TRUE, otherwise the coordinate of the center point needs to be specified. Additionally, if the item has its linked flag set to TRUE, all additional items contained in the image which have the linked flag set to TRUE will also be rotated around the same center point. The return value will be equal to the item ID supplied as input.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5776,6 +5788,8 @@ literal|"\n"
 literal|"If there is no selection or the item is not a drawable, the entire item will be scaled according to the specified coordinates. Additionally, if the item has its linked flag set to TRUE, all additional items contained in the image which have the linked flag set to TRUE will also be scaled the same way. The return value will be equal to the item ID supplied as input.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5960,6 +5974,8 @@ literal|"If there is no selection or the item is not a drawable, the entire item
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -6108,6 +6124,8 @@ literal|"\n"
 literal|"If there is no selection or the item is not a drawable, the entire item will be transformed according to the specified parameters. Additionally, if the item has its linked flag set to TRUE, all additional items contained in the image which have the linked flag set to TRUE will also be transformed the same way. The return value will be equal to the item ID supplied as input.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -6360,6 +6378,8 @@ literal|"\n"
 literal|"If there is no selection or the item is not a drawable, the entire item will be transformed according to the specified matrix. Additionally, if the item has its linked flag set to TRUE, all additional items contained in the image which have the linked flag set to TRUE will also be transformed the same way. The return value will be equal to the item ID supplied as input.\n"
 literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

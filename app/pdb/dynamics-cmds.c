@@ -330,6 +330,8 @@ literal|"Refresh current paint dynamics. This function always succeeds."
 argument_list|,
 literal|"This procedure retrieves all paint dynamics currently in the user's paint dynamics path and updates the paint dynamics dialogs accordingly."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -376,6 +378,8 @@ argument_list|,
 literal|"Retrieve the list of loaded paint dynamics."
 argument_list|,
 literal|"This procedure returns a list of the paint dynamics that are currently available."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

@@ -4270,6 +4270,8 @@ literal|"Returns TRUE if the item ID is valid."
 argument_list|,
 literal|"This procedure checks if the given item ID is valid and refers to an existing item."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Sven Neumann"
@@ -4356,6 +4358,8 @@ argument_list|,
 literal|"Returns whether the item ID is a drawable."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item ID is a drawable."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4444,6 +4448,8 @@ literal|"Returns whether the item ID is a layer."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item ID is a layer."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -4530,6 +4536,8 @@ argument_list|,
 literal|"Returns whether the item ID is a text layer."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item ID is a text layer."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4618,6 +4626,8 @@ literal|"Returns whether the item ID is a channel."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item ID is a channel."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -4704,6 +4714,8 @@ argument_list|,
 literal|"Returns whether the item ID is a layer mask."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item ID is a layer mask."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4792,6 +4804,8 @@ literal|"Returns whether the item ID is a selection."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item ID is a selection."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -4878,6 +4892,8 @@ argument_list|,
 literal|"Returns whether the item ID is a vectors."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item ID is a vectors."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4966,6 +4982,8 @@ literal|"Returns the item's image."
 argument_list|,
 literal|"This procedure returns the item's image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -5049,6 +5067,8 @@ literal|"Delete a item."
 argument_list|,
 literal|"This procedure deletes the specified item. This must not be done if the image containing this item was already deleted or if the item was already removed from the image. The only case in which this procedure is useful is if you want to get rid of a item which has not yet been added to an image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -5113,6 +5133,8 @@ argument_list|,
 literal|"Returns whether the item is a group item."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item is a group item which can have children."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5197,6 +5219,8 @@ literal|"Returns the item's parent item."
 argument_list|,
 literal|"This procedure returns the item's parent item, if any."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -5279,6 +5303,8 @@ argument_list|,
 literal|"Returns the item's list of children."
 argument_list|,
 literal|"This procedure returns the list of items which are children of the specified item. The order is topmost to bottommost."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5385,6 +5411,8 @@ literal|"Returns whether the item is expanded."
 argument_list|,
 literal|"This procedure returns TRUE if the specified item is expanded."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -5468,6 +5496,8 @@ literal|"Sets the expanded state of the item."
 argument_list|,
 literal|"This procedure expands or collapses the item."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -5550,6 +5580,8 @@ argument_list|,
 literal|"Get the name of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's name."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5640,6 +5672,8 @@ literal|"Set the name of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's name."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -5729,6 +5763,8 @@ literal|"Get the visibility of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's visibility."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
@@ -5811,6 +5847,8 @@ argument_list|,
 literal|"Set the visibility of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's visibility."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5895,6 +5933,8 @@ literal|"Get the linked state of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's linked state."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
 literal|"Wolfgang Hofer"
@@ -5977,6 +6017,8 @@ argument_list|,
 literal|"Set the linked state of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's linked state."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -6061,6 +6103,8 @@ literal|"Get the 'lock content' state of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's lock content state."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -6143,6 +6187,8 @@ argument_list|,
 literal|"Set the 'lock content' state of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's lock content state."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -6227,6 +6273,8 @@ literal|"Get the 'lock position' state of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's lock position state."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -6310,6 +6358,8 @@ literal|"Set the 'lock position' state of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's lock position state."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -6392,6 +6442,8 @@ argument_list|,
 literal|"Get the color tag of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's color tag."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -6478,6 +6530,8 @@ literal|"Set the color tag of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's color tag."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -6562,6 +6616,8 @@ argument_list|,
 literal|"Get the tattoo of the specified item."
 argument_list|,
 literal|"This procedure returns the specified item's tattoo. A tattoo is a unique and permanent identifier attached to a item that can be used to uniquely identify a item within an image even between sessions."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -6650,6 +6706,8 @@ literal|"Set the tattoo of the specified item."
 argument_list|,
 literal|"This procedure sets the specified item's tattoo. A tattoo is a unique and permanent identifier attached to a item that can be used to uniquely identify a item within an image even between sessions."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Jay Cox"
 argument_list|,
 literal|"Jay Cox"
@@ -6737,6 +6795,8 @@ literal|"Add a parasite to an item."
 argument_list|,
 literal|"This procedure attaches a parasite to an item. It has no return values."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Jay Cox"
 argument_list|,
 literal|"Jay Cox"
@@ -6817,6 +6877,8 @@ argument_list|,
 literal|"Removes a parasite from an item."
 argument_list|,
 literal|"This procedure detaches a parasite from an item. It has no return values."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -6906,6 +6968,8 @@ argument_list|,
 literal|"Look up a parasite in an item"
 argument_list|,
 literal|"Finds and returns the parasite that is attached to an item."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -7011,6 +7075,8 @@ argument_list|,
 literal|"List all parasites."
 argument_list|,
 literal|"Returns a list of all parasites currently attached the an item."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Marc Lehmann"
 argument_list|,

@@ -11898,6 +11898,8 @@ literal|"Pushes a context to the top of the plug-in's context stack."
 argument_list|,
 literal|"This procedure creates a new context by copying the current context. This copy becomes the new current context for the calling plug-in until it is popped again using 'gimp-context-pop'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -11944,6 +11946,8 @@ argument_list|,
 literal|"Pops the topmost context from the plug-in's context stack."
 argument_list|,
 literal|"This procedure removes the topmost context from the plug-in's context stack. The context that was active before the corresponding call to 'gimp-context-push' becomes the new current context of the plug-in."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -11992,6 +11996,8 @@ literal|"Reset context settings to their default values."
 argument_list|,
 literal|"This procedure resets context settings used by various procedures to their default value. This procedure will usually be called after a context push so that a script which calls procedures affected by context settings will not be affected by changes in the global context."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Kevin Cozens<kcozens@svn.gnome.org>"
 argument_list|,
 literal|"Kevin Cozens"
@@ -12038,6 +12044,8 @@ argument_list|,
 literal|"Lists the available paint methods."
 argument_list|,
 literal|"This procedure lists the names of the available paint methods. Any of the results can be used for 'gimp-context-set-paint-method'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -12124,6 +12132,8 @@ literal|"Retrieve the currently active paint method."
 argument_list|,
 literal|"This procedure returns the name of the currently active paint method."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -12194,6 +12204,8 @@ argument_list|,
 literal|"Set the specified paint method as the active paint method."
 argument_list|,
 literal|"This procedure allows the active paint method to be set by specifying its name. The name is simply a string which corresponds to one of the names of the available paint methods. If there is no matching method found, this procedure will return an error. Otherwise, the specified method becomes active and will be used in all subsequent paint operations."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -12266,6 +12278,8 @@ literal|"Retrieve the currently active stroke method."
 argument_list|,
 literal|"This procedure returns the currently active stroke method."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -12332,6 +12346,8 @@ argument_list|,
 literal|"Set the specified stroke method as the active stroke method."
 argument_list|,
 literal|"This procedure set the specified stroke method as the active stroke method. The new method will be used in all subsequent stroke operations."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -12400,6 +12416,8 @@ literal|"Get the current GIMP foreground color."
 argument_list|,
 literal|"This procedure returns the current GIMP foreground color. The foreground color is used in a variety of tools such as paint tools, blending, and bucket fill."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -12466,6 +12484,8 @@ argument_list|,
 literal|"Set the current GIMP foreground color."
 argument_list|,
 literal|"This procedure sets the current GIMP foreground color. After this is set, operations which use foreground such as paint tools, blending, and bucket fill will use the new value."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12534,6 +12554,8 @@ literal|"Get the current GIMP background color."
 argument_list|,
 literal|"This procedure returns the current GIMP background color. The background color is used in a variety of tools such as blending, erasing (with non-alpha images), and image filling."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -12600,6 +12622,8 @@ argument_list|,
 literal|"Set the current GIMP background color."
 argument_list|,
 literal|"This procedure sets the current GIMP background color. After this is set, operations which use background such as blending, filling images, clearing, and erasing (in non-alpha images) will use the new value."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12668,6 +12692,8 @@ literal|"Set the current GIMP foreground and background colors to black and whit
 argument_list|,
 literal|"This procedure sets the current GIMP foreground and background colors to their initial default values, black and white."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -12715,6 +12741,8 @@ literal|"Swap the current GIMP foreground and background colors."
 argument_list|,
 literal|"This procedure swaps the current GIMP foreground and background colors, so that the new foreground color becomes the old background color and vice versa."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -12761,6 +12789,8 @@ argument_list|,
 literal|"Get the opacity."
 argument_list|,
 literal|"This procedure returns the opacity setting. The return value is a floating point number between 0 and 100."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12831,6 +12861,8 @@ literal|"Set the opacity."
 argument_list|,
 literal|"This procedure modifies the opacity setting. The value should be a floating point number between 0 and 100."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -12900,6 +12932,8 @@ literal|"Get the paint mode."
 argument_list|,
 literal|"This procedure returns the paint-mode setting. The return value is an integer which corresponds to the values listed in the argument description."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -12967,6 +13001,8 @@ literal|"Set the paint mode."
 argument_list|,
 literal|"This procedure modifies the paint_mode setting."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -13033,6 +13069,8 @@ argument_list|,
 literal|"Get the line width setting."
 argument_list|,
 literal|"This procedure returns the line width setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13105,6 +13143,8 @@ literal|"This procedure modifies the line width setting for stroking lines.\n"
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -13173,6 +13213,8 @@ argument_list|,
 literal|"Get the line width unit setting."
 argument_list|,
 literal|"This procedure returns the line width unit setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13245,6 +13287,8 @@ literal|"This procedure modifies the line width unit setting for stroking lines.
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -13313,6 +13357,8 @@ argument_list|,
 literal|"Get the line cap style setting."
 argument_list|,
 literal|"This procedure returns the line cap style setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13383,6 +13429,8 @@ literal|"This procedure modifies the line cap style setting for stroking lines.\
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -13449,6 +13497,8 @@ argument_list|,
 literal|"Get the line join style setting."
 argument_list|,
 literal|"This procedure returns the line join style setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13519,6 +13569,8 @@ literal|"This procedure modifies the line join style setting for stroking lines.
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -13585,6 +13637,8 @@ argument_list|,
 literal|"Get the line miter limit setting."
 argument_list|,
 literal|"This procedure returns the line miter limit setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13658,6 +13712,8 @@ literal|"A mitered join is converted to a bevelled join if the miter would exten
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -13726,6 +13782,8 @@ argument_list|,
 literal|"Get the line dash offset setting."
 argument_list|,
 literal|"This procedure returns the line dash offset setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13798,6 +13856,8 @@ literal|"This procedure modifies the line dash offset setting for stroking lines
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -13866,6 +13926,8 @@ argument_list|,
 literal|"Get the line dash pattern setting."
 argument_list|,
 literal|"This procedure returns the line dash pattern setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13956,6 +14018,8 @@ literal|"The unit of the dash pattern segments is the actual line width used for
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -14041,6 +14105,8 @@ literal|"Retrieve the currently active brush."
 argument_list|,
 literal|"This procedure returns the name of the currently active brush. All paint operations and stroke operations use this brush to control the application of paint to the image."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -14111,6 +14177,8 @@ argument_list|,
 literal|"Set the specified brush as the active brush."
 argument_list|,
 literal|"This procedure allows the active brush to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed brushes. If there is no matching brush found, this procedure will return an error. Otherwise, the specified brush becomes active and will be used in all subsequent paint operations."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -14183,6 +14251,8 @@ literal|"Get brush size in pixels."
 argument_list|,
 literal|"Get the brush size in pixels for brush based paint tools."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -14251,6 +14321,8 @@ argument_list|,
 literal|"Set brush size in pixels."
 argument_list|,
 literal|"Set the brush size in pixels for brush based paint tools."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -14321,6 +14393,8 @@ literal|"Set brush size to its default."
 argument_list|,
 literal|"Set the brush size to the default (max of width and height) for paintbrush, airbrush, or pencil tools."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -14367,6 +14441,8 @@ argument_list|,
 literal|"Get brush aspect ratio."
 argument_list|,
 literal|"Set the aspect ratio for brush based paint tools."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -14439,6 +14515,8 @@ literal|"Set brush aspect ratio."
 argument_list|,
 literal|"Set the aspect ratio for brush based paint tools."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -14509,6 +14587,8 @@ argument_list|,
 literal|"Get brush angle in degrees."
 argument_list|,
 literal|"Set the angle in degrees for brush based paint tools."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -14581,6 +14661,8 @@ literal|"Set brush angle in degrees."
 argument_list|,
 literal|"Set the angle in degrees for brush based paint tools."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -14652,6 +14734,8 @@ literal|"Get brush spacing as percent of size."
 argument_list|,
 literal|"Get the brush spacing as percent of size for brush based paint tools."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"Alexia Death"
@@ -14720,6 +14804,8 @@ argument_list|,
 literal|"Set brush spacing as percent of size."
 argument_list|,
 literal|"Set the brush spacing as percent of size for brush based paint tools."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -14790,6 +14876,8 @@ literal|"Set brush spacing to its default."
 argument_list|,
 literal|"Set the brush spacing to the default for paintbrush, airbrush, or pencil tools."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"Alexia Death"
@@ -14836,6 +14924,8 @@ argument_list|,
 literal|"Get brush hardness in paint options."
 argument_list|,
 literal|"Get the brush hardness for brush based paint tools."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -14906,6 +14996,8 @@ literal|"Set brush hardness."
 argument_list|,
 literal|"Set the brush hardness for brush based paint tools."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"Alexia Death"
@@ -14975,6 +15067,8 @@ literal|"Set brush spacing to its default."
 argument_list|,
 literal|"Set the brush spacing to the default for paintbrush, airbrush, or pencil tools."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"Alexia Death"
@@ -15021,6 +15115,8 @@ argument_list|,
 literal|"Get brush force in paint options."
 argument_list|,
 literal|"Get the brush application force for brush based paint tools."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -15091,6 +15187,8 @@ literal|"Set brush application force."
 argument_list|,
 literal|"Set the brush application force for brush based paint tools."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"Alexia Death"
@@ -15159,6 +15257,8 @@ argument_list|,
 literal|"Retrieve the currently active paint dynamics."
 argument_list|,
 literal|"This procedure returns the name of the currently active paint dynamics. All paint operations and stroke operations use this paint dynamics to control the application of paint to the image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15231,6 +15331,8 @@ literal|"Set the specified paint dynamics as the active paint dynamics."
 argument_list|,
 literal|"This procedure allows the active paint dynamics to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed paint dynamics. If there is no matching paint dynamics found, this procedure will return an error. Otherwise, the specified paint dynamics becomes active and will be used in all subsequent paint operations."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -15301,6 +15403,8 @@ argument_list|,
 literal|"Retrieve the currently active MyPaint brush."
 argument_list|,
 literal|"This procedure returns the name of the currently active MyPaint brush."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15373,6 +15477,8 @@ literal|"Set the specified MyPaint brush as the active MyPaint brush."
 argument_list|,
 literal|"This procedure allows the active MyPaint brush to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed MyPaint brushes. If there is no matching MyPaint brush found, this procedure will return an error. Otherwise, the specified MyPaint brush becomes active and will be used in all subsequent MyPaint paint operations."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -15443,6 +15549,8 @@ argument_list|,
 literal|"Retrieve the currently active pattern."
 argument_list|,
 literal|"This procedure returns name of the the currently active pattern. All clone and bucket-fill operations with patterns will use this pattern to control the application of paint to the image."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -15515,6 +15623,8 @@ literal|"Set the specified pattern as the active pattern."
 argument_list|,
 literal|"This procedure allows the active pattern to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed patterns. If there is no matching pattern found, this procedure will return an error. Otherwise, the specified pattern becomes active and will be used in all subsequent paint operations."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -15585,6 +15695,8 @@ argument_list|,
 literal|"Retrieve the currently active gradient."
 argument_list|,
 literal|"This procedure returns the name of the currently active gradient."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -15657,6 +15769,8 @@ literal|"Sets the specified gradient as the active gradient."
 argument_list|,
 literal|"This procedure lets you set the specified gradient as the active or \"current\" one. The name is simply a string which corresponds to one of the loaded gradients. If no matching gradient is found, this procedure will return an error. Otherwise, the specified gradient will become active and will be used for subsequent custom gradient operations."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -15728,6 +15842,8 @@ literal|"Sets the built-in FG-BG RGB gradient as the active gradient."
 argument_list|,
 literal|"This procedure sets the built-in FG-BG RGB gradient as the active gradient. The gradient will be used for subsequent gradient operations."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -15774,6 +15890,8 @@ argument_list|,
 literal|"Sets the built-in FG-BG HSV (cw) gradient as the active gradient."
 argument_list|,
 literal|"This procedure sets the built-in FG-BG HSV (cw) gradient as the active gradient. The gradient will be used for subsequent gradient operations."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15822,6 +15940,8 @@ literal|"Sets the built-in FG-BG HSV (ccw) gradient as the active gradient."
 argument_list|,
 literal|"This procedure sets the built-in FG-BG HSV (ccw) gradient as the active gradient. The gradient will be used for subsequent gradient operations."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -15869,6 +15989,8 @@ literal|"Sets the built-in FG-Transparent gradient as the active gradient."
 argument_list|,
 literal|"This procedure sets the built-in FG-Transparent gradient as the active gradient. The gradient will be used for subsequent gradient operations."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -15915,6 +16037,8 @@ argument_list|,
 literal|"Get the gradient blend color space."
 argument_list|,
 literal|"Get the gradient blend color space for paint tools and the gradient tool."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15983,6 +16107,8 @@ literal|"Set the gradient blend color space."
 argument_list|,
 literal|"Set the gradient blend color space for paint tools and the gradient tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -16049,6 +16175,8 @@ argument_list|,
 literal|"Get the gradient repeat mode."
 argument_list|,
 literal|"Get the gradient repeat mode for paint tools and the gradient tool."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16117,6 +16245,8 @@ literal|"Set the gradient repeat mode."
 argument_list|,
 literal|"Set the gradient repeat mode for paint tools and the gradient tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -16184,6 +16314,8 @@ literal|"Get the gradient reverse setting."
 argument_list|,
 literal|"Get the gradient reverse setting for paint tools and the gradient tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -16249,6 +16381,8 @@ literal|"Set the gradient reverse setting."
 argument_list|,
 literal|"Set the gradient reverse setting for paint tools and the gradient tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -16313,6 +16447,8 @@ argument_list|,
 literal|"Retrieve the currently active palette."
 argument_list|,
 literal|"This procedure returns the name of the the currently active palette."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -16385,6 +16521,8 @@ literal|"Set the specified palette as the active palette."
 argument_list|,
 literal|"This procedure allows the active palette to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed palettes. If no matching palette is found, this procedure will return an error. Otherwise, the specified palette becomes active and will be used in all subsequent palette operations."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -16455,6 +16593,8 @@ argument_list|,
 literal|"Retrieve the currently active font."
 argument_list|,
 literal|"This procedure returns the name of the currently active font."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -16527,6 +16667,8 @@ literal|"Set the specified font as the active font."
 argument_list|,
 literal|"This procedure allows the active font to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed fonts. If no matching font is found, this procedure will return an error. Otherwise, the specified font becomes active and will be used in all subsequent font operations."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"Michael Natterer& Sven Neumann"
@@ -16598,6 +16740,8 @@ literal|"Get the antialias setting."
 argument_list|,
 literal|"This procedure returns the antialias setting."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -16665,6 +16809,8 @@ literal|"This procedure modifies the antialias setting. If antialiasing is turne
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-image-select-round-rectangle', 'gimp-image-select-ellipse', 'gimp-image-select-polygon', 'gimp-image-select-item', 'gimp-drawable-edit-bucket-fill', 'gimp-drawable-edit-stroke-item', 'gimp-drawable-edit-stroke-selection'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -16729,6 +16875,8 @@ argument_list|,
 literal|"Get the feather setting."
 argument_list|,
 literal|"This procedure returns the feather setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16797,6 +16945,8 @@ literal|"This procedure modifies the feather setting. If the feather option is e
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-image-select-rectangle', 'gimp-image-select-round-rectangle', 'gimp-image-select-ellipse', 'gimp-image-select-polygon', 'gimp-image-select-item'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -16861,6 +17011,8 @@ argument_list|,
 literal|"Get the feather radius setting."
 argument_list|,
 literal|"This procedure returns the feather radius setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16955,6 +17107,8 @@ literal|"This procedure modifies the feather radius setting.\n"
 literal|"\n"
 literal|"This setting affects all procedures that are affected by 'gimp-context-set-feather'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -17046,6 +17200,8 @@ literal|"Get the sample merged setting."
 argument_list|,
 literal|"This procedure returns the sample merged setting."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -17113,6 +17269,8 @@ literal|"This procedure modifies the sample merged setting. If an operation depe
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -17177,6 +17335,8 @@ argument_list|,
 literal|"Get the sample criterion setting."
 argument_list|,
 literal|"This procedure returns the sample criterion setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17247,6 +17407,8 @@ literal|"This procedure modifies the sample criterion setting. If an operation d
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -17313,6 +17475,8 @@ argument_list|,
 literal|"Get the sample threshold setting."
 argument_list|,
 literal|"This procedure returns the sample threshold setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17385,6 +17549,8 @@ literal|"This procedure modifies the sample threshold setting. If an operation d
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -17453,6 +17619,8 @@ argument_list|,
 literal|"Get the sample threshold setting as an integer value."
 argument_list|,
 literal|"This procedure returns the sample threshold setting as an integer value. See 'gimp-context-get-sample-threshold'."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17523,6 +17691,8 @@ literal|"Set the sample threshold setting as an integer value."
 argument_list|,
 literal|"This procedure modifies the sample threshold setting as an integer value. See 'gimp-context-set-sample-threshold'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -17592,6 +17762,8 @@ literal|"Get the sample transparent setting."
 argument_list|,
 literal|"This procedure returns the sample transparent setting."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -17659,6 +17831,8 @@ literal|"This procedure modifies the sample transparent setting. If an operation
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -17723,6 +17897,8 @@ argument_list|,
 literal|"Get the diagonal neighbors setting."
 argument_list|,
 literal|"This procedure returns the diagonal neighbors setting."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ell"
 argument_list|,
@@ -17791,6 +17967,8 @@ literal|"This procedure modifies the diagonal neighbors setting. If the affected
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"Ell"
@@ -17855,6 +18033,8 @@ argument_list|,
 literal|"Get the distance metric used in some computations."
 argument_list|,
 literal|"This procedure returns the distance metric in the current context. See 'gimp-context-set-distance-metric' to know more about its usage."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Jehan"
 argument_list|,
@@ -17925,6 +18105,8 @@ literal|"This procedure modifies the distance metric used in some computations, 
 literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-gradient-fill'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Jehan"
 argument_list|,
 literal|"Jehan"
@@ -17991,6 +18173,8 @@ argument_list|,
 literal|"Get the interpolation type."
 argument_list|,
 literal|"This procedure returns the interpolation setting. The return value is an integer which corresponds to the values listed in the argument description. If the interpolation has not been set explicitly by 'gimp-context-set-interpolation', the default interpolation set in gimprc will be used."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -18061,6 +18245,8 @@ literal|"This procedure modifies the interpolation setting.\n"
 literal|"\n"
 literal|"This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix', 'gimp-image-scale', 'gimp-layer-scale'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -18127,6 +18313,8 @@ argument_list|,
 literal|"Get the transform direction."
 argument_list|,
 literal|"This procedure returns the transform direction. The return value is an integer which corresponds to the values listed in the argument description."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -18197,6 +18385,8 @@ literal|"This procedure modifies the transform direction setting.\n"
 literal|"\n"
 literal|"This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -18263,6 +18453,8 @@ argument_list|,
 literal|"Get the transform resize type."
 argument_list|,
 literal|"This procedure returns the transform resize setting. The return value is an integer which corresponds to the values listed in the argument description."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -18333,6 +18525,8 @@ literal|"This procedure modifies the transform resize setting. When transforming
 literal|"\n"
 literal|"This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-flip-simple', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-rotate-simple', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix'."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
 literal|"Michael Natterer"
@@ -18399,6 +18593,8 @@ argument_list|,
 literal|"Get ink blob size in pixels."
 argument_list|,
 literal|"Get the ink blob size in pixels for ink tool."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18469,6 +18665,8 @@ literal|"Set ink blob size in pixels."
 argument_list|,
 literal|"Set the ink blob size in pixels for ink tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -18537,6 +18735,8 @@ argument_list|,
 literal|"Get ink angle in degrees."
 argument_list|,
 literal|"Get the ink angle in degrees for ink tool."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18609,6 +18809,8 @@ literal|"Set ink angle in degrees."
 argument_list|,
 literal|"Set the ink angle in degrees for ink tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -18680,6 +18882,8 @@ literal|"Get ink size sensitivity."
 argument_list|,
 literal|"Get the ink size sensitivity for ink tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -18748,6 +18952,8 @@ argument_list|,
 literal|"Set ink size sensitivity."
 argument_list|,
 literal|"Set the ink size sensitivity for ink tool."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18818,6 +19024,8 @@ literal|"Get ink tilt sensitivity."
 argument_list|,
 literal|"Get the ink tilt sensitivity for ink tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -18886,6 +19094,8 @@ argument_list|,
 literal|"Set ink tilt sensitivity."
 argument_list|,
 literal|"Set the ink tilt sensitivity for ink tool."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18956,6 +19166,8 @@ literal|"Get ink speed sensitivity."
 argument_list|,
 literal|"Get the ink speed sensitivity for ink tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -19024,6 +19236,8 @@ argument_list|,
 literal|"Set ink speed sensitivity."
 argument_list|,
 literal|"Set the ink speed sensitivity for ink tool."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -19094,6 +19308,8 @@ literal|"Get ink blob type."
 argument_list|,
 literal|"Get the ink blob type for ink tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -19161,6 +19377,8 @@ literal|"Set ink blob type."
 argument_list|,
 literal|"Set the ink blob type for ink tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -19227,6 +19445,8 @@ argument_list|,
 literal|"Get ink blob aspect ratio."
 argument_list|,
 literal|"Get the ink blob aspect ratio for ink tool."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -19297,6 +19517,8 @@ literal|"Set ink blob aspect ratio."
 argument_list|,
 literal|"Set the ink blob aspect ratio for ink tool."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"Ed Swartz"
@@ -19365,6 +19587,8 @@ argument_list|,
 literal|"Get ink blob angle in degrees."
 argument_list|,
 literal|"Get the ink blob angle in degrees for ink tool."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -19436,6 +19660,8 @@ argument_list|,
 literal|"Set ink blob angle in degrees."
 argument_list|,
 literal|"Set the ink blob angle in degrees for ink tool."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,

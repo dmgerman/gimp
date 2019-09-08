@@ -661,6 +661,8 @@ literal|"Invokes the Gimp brush selection."
 argument_list|,
 literal|"This procedure opens the brush selection dialog."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -844,6 +846,8 @@ literal|"Close the brush selection dialog."
 argument_list|,
 literal|"This procedure closes an opened brush selection dialog."
 argument_list|,
+name|NULL
+argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"Andy Thomas"
@@ -914,6 +918,8 @@ argument_list|,
 literal|"Sets the current brush in a brush selection dialog."
 argument_list|,
 literal|"Sets the current brush in a brush selection dialog."
+argument_list|,
+name|NULL
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
