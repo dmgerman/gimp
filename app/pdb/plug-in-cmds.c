@@ -171,34 +171,49 @@ modifier|*
 name|search_string
 decl_stmt|;
 name|gint
-name|num_plugins
+name|num_procedures
 init|=
 literal|0
 decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
-name|plugin_procedure
+name|procedures
 init|=
 name|NULL
+decl_stmt|;
+name|gint
+name|num_accelerators
+init|=
+literal|0
 decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
-name|plugin_accelerator
+name|accelerators
 init|=
 name|NULL
+decl_stmt|;
+name|gint
+name|num_locations
+init|=
+literal|0
 decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
-name|plugin_location
+name|locations
 init|=
 name|NULL
+decl_stmt|;
+name|gint
+name|num_install_times
+init|=
+literal|0
 decl_stmt|;
 name|gint32
 modifier|*
-name|plugin_install_time
+name|install_times
 init|=
 name|NULL
 decl_stmt|;
@@ -214,7 +229,7 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|num_plugins
+name|num_procedures
 operator|=
 name|gimp_plug_in_manager_query
 argument_list|(
@@ -225,17 +240,29 @@ argument_list|,
 name|search_string
 argument_list|,
 operator|&
-name|plugin_procedure
+name|procedures
 argument_list|,
 operator|&
-name|plugin_accelerator
+name|accelerators
 argument_list|,
 operator|&
-name|plugin_location
+name|locations
 argument_list|,
 operator|&
-name|plugin_install_time
+name|install_times
 argument_list|)
+expr_stmt|;
+name|num_accelerators
+operator|=
+name|num_procedures
+expr_stmt|;
+name|num_locations
+operator|=
+name|num_procedures
+expr_stmt|;
+name|num_install_times
+operator|=
+name|num_procedures
 expr_stmt|;
 name|return_vals
 operator|=
@@ -257,7 +284,7 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|,
-name|num_plugins
+name|num_procedures
 argument_list|)
 expr_stmt|;
 name|gimp_value_take_string_array
@@ -269,9 +296,9 @@ argument_list|,
 literal|2
 argument_list|)
 argument_list|,
-name|plugin_procedure
+name|procedures
 argument_list|,
-name|num_plugins
+name|num_procedures
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -283,7 +310,7 @@ argument_list|,
 literal|3
 argument_list|)
 argument_list|,
-name|num_plugins
+name|num_accelerators
 argument_list|)
 expr_stmt|;
 name|gimp_value_take_string_array
@@ -295,9 +322,9 @@ argument_list|,
 literal|4
 argument_list|)
 argument_list|,
-name|plugin_accelerator
+name|accelerators
 argument_list|,
-name|num_plugins
+name|num_accelerators
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -309,7 +336,7 @@ argument_list|,
 literal|5
 argument_list|)
 argument_list|,
-name|num_plugins
+name|num_locations
 argument_list|)
 expr_stmt|;
 name|gimp_value_take_string_array
@@ -321,9 +348,9 @@ argument_list|,
 literal|6
 argument_list|)
 argument_list|,
-name|plugin_location
+name|locations
 argument_list|,
-name|num_plugins
+name|num_locations
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -335,7 +362,7 @@ argument_list|,
 literal|7
 argument_list|)
 argument_list|,
-name|num_plugins
+name|num_install_times
 argument_list|)
 expr_stmt|;
 name|gimp_value_take_int32_array
@@ -347,9 +374,9 @@ argument_list|,
 literal|8
 argument_list|)
 argument_list|,
-name|plugin_install_time
+name|install_times
 argument_list|,
-name|num_plugins
+name|num_install_times
 argument_list|)
 expr_stmt|;
 return|return
@@ -1067,11 +1094,11 @@ name|procedure
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"num-plugins"
+literal|"num-procedures"
 argument_list|,
-literal|"num plugins"
+literal|"num procedures"
 argument_list|,
-literal|"The number of plug-ins"
+literal|"The number of matching procedures"
 argument_list|,
 literal|0
 argument_list|,
@@ -1089,9 +1116,9 @@ name|procedure
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
-literal|"plugin-procedure"
+literal|"procedures"
 argument_list|,
-literal|"plugin procedure"
+literal|"procedures"
 argument_list|,
 literal|"The plug-in procedure name"
 argument_list|,
@@ -1105,11 +1132,11 @@ name|procedure
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"num-plugins"
+literal|"num-accelerators"
 argument_list|,
-literal|"num plugins"
+literal|"num accelerators"
 argument_list|,
-literal|"The number of plug-ins"
+literal|"The number of matching procedures"
 argument_list|,
 literal|0
 argument_list|,
@@ -1127,9 +1154,9 @@ name|procedure
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
-literal|"plugin-accelerator"
+literal|"accelerators"
 argument_list|,
-literal|"plugin accelerator"
+literal|"accelerators"
 argument_list|,
 literal|"String representing keyboard accelerator (could be empty string)"
 argument_list|,
@@ -1143,11 +1170,11 @@ name|procedure
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"num-plugins"
+literal|"num-locations"
 argument_list|,
-literal|"num plugins"
+literal|"num locations"
 argument_list|,
-literal|"The number of plug-ins"
+literal|"The number of matching procedures"
 argument_list|,
 literal|0
 argument_list|,
@@ -1165,9 +1192,9 @@ name|procedure
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
-literal|"plugin-location"
+literal|"locations"
 argument_list|,
-literal|"plugin location"
+literal|"locations"
 argument_list|,
 literal|"Location of the plug-in program"
 argument_list|,
@@ -1181,11 +1208,11 @@ name|procedure
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"num-plugins"
+literal|"num-install-times"
 argument_list|,
-literal|"num plugins"
+literal|"num install times"
 argument_list|,
-literal|"The number of plug-ins"
+literal|"The number of matching procedures"
 argument_list|,
 literal|0
 argument_list|,
@@ -1203,9 +1230,9 @@ name|procedure
 argument_list|,
 name|gimp_param_spec_int32_array
 argument_list|(
-literal|"plugin-install-time"
+literal|"install-times"
 argument_list|,
-literal|"plugin install time"
+literal|"install times"
 argument_list|,
 literal|"Time that the plug-in was installed"
 argument_list|,
