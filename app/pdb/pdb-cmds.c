@@ -76,7 +76,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/gimpplugin.h"
+file|"plug-in/gimpplugin-proc.h"
 end_include
 
 begin_include
