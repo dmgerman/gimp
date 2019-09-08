@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294ab4da0103
+DECL|enum|__anon279204d40103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -110,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294ab4da0203
+DECL|enum|__anon279204d40203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon294ab4da0303
+DECL|enum|__anon279204d40303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -1092,8 +1092,6 @@ argument_list|,
 name|gimp_proc_view_new
 argument_list|(
 name|proc_name
-argument_list|,
-name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -54,11 +54,6 @@ specifier|const
 name|gchar
 modifier|*
 name|procedure_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|menu_path
 parameter_list|)
 function_decl|;
 end_function_decl

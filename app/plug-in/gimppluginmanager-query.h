@@ -33,7 +33,7 @@ name|gchar
 modifier|*
 modifier|*
 modifier|*
-name|menu_strs
+name|procedure_strs
 parameter_list|,
 name|gchar
 modifier|*
@@ -46,18 +46,6 @@ modifier|*
 modifier|*
 modifier|*
 name|prog_strs
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-modifier|*
-name|types_strs
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-modifier|*
-name|realname_strs
 parameter_list|,
 name|gint32
 modifier|*

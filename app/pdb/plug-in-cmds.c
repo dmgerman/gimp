@@ -178,7 +178,7 @@ decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
-name|menu_path
+name|plugin_procedure
 init|=
 name|NULL
 decl_stmt|;
@@ -196,23 +196,9 @@ name|plugin_location
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|plugin_image_type
-init|=
-name|NULL
-decl_stmt|;
 name|gint32
 modifier|*
 name|plugin_install_time
-init|=
-name|NULL
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|plugin_real_name
 init|=
 name|NULL
 decl_stmt|;
@@ -239,19 +225,13 @@ argument_list|,
 name|search_string
 argument_list|,
 operator|&
-name|menu_path
+name|plugin_procedure
 argument_list|,
 operator|&
 name|plugin_accelerator
 argument_list|,
 operator|&
 name|plugin_location
-argument_list|,
-operator|&
-name|plugin_image_type
-argument_list|,
-operator|&
-name|plugin_real_name
 argument_list|,
 operator|&
 name|plugin_install_time
@@ -289,7 +269,7 @@ argument_list|,
 literal|2
 argument_list|)
 argument_list|,
-name|menu_path
+name|plugin_procedure
 argument_list|,
 name|num_plugins
 argument_list|)
@@ -358,7 +338,7 @@ argument_list|,
 name|num_plugins
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_string_array
+name|gimp_value_take_int32_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -367,59 +347,7 @@ argument_list|,
 literal|8
 argument_list|)
 argument_list|,
-name|plugin_image_type
-argument_list|,
-name|num_plugins
-argument_list|)
-expr_stmt|;
-name|g_value_set_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|return_vals
-argument_list|,
-literal|9
-argument_list|)
-argument_list|,
-name|num_plugins
-argument_list|)
-expr_stmt|;
-name|gimp_value_take_int32_array
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|return_vals
-argument_list|,
-literal|10
-argument_list|)
-argument_list|,
 name|plugin_install_time
-argument_list|,
-name|num_plugins
-argument_list|)
-expr_stmt|;
-name|g_value_set_int
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|return_vals
-argument_list|,
-literal|11
-argument_list|)
-argument_list|,
-name|num_plugins
-argument_list|)
-expr_stmt|;
-name|gimp_value_take_string_array
-argument_list|(
-name|gimp_value_array_index
-argument_list|(
-name|return_vals
-argument_list|,
-literal|12
-argument_list|)
-argument_list|,
-name|plugin_real_name
 argument_list|,
 name|num_plugins
 argument_list|)
@@ -1490,11 +1418,11 @@ name|procedure
 argument_list|,
 name|gimp_param_spec_string_array
 argument_list|(
-literal|"menu-path"
+literal|"plugin-procedure"
 argument_list|,
-literal|"menu path"
+literal|"plugin procedure"
 argument_list|,
-literal|"The menu path of the plug-in"
+literal|"The plug-in procedure name"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1602,44 +1530,6 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string_array
-argument_list|(
-literal|"plugin-image-type"
-argument_list|,
-literal|"plugin image type"
-argument_list|,
-literal|"Type of image that this plug-in will work on"
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_return_value
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_int
-argument_list|(
-literal|"num-plugins"
-argument_list|,
-literal|"num plugins"
-argument_list|,
-literal|"The number of plug-ins"
-argument_list|,
-literal|0
-argument_list|,
-name|G_MAXINT32
-argument_list|,
-literal|0
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_return_value
-argument_list|(
-name|procedure
-argument_list|,
 name|gimp_param_spec_int32_array
 argument_list|(
 literal|"plugin-install-time"
@@ -1647,44 +1537,6 @@ argument_list|,
 literal|"plugin install time"
 argument_list|,
 literal|"Time that the plug-in was installed"
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_return_value
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_int
-argument_list|(
-literal|"num-plugins"
-argument_list|,
-literal|"num plugins"
-argument_list|,
-literal|"The number of plug-ins"
-argument_list|,
-literal|0
-argument_list|,
-name|G_MAXINT32
-argument_list|,
-literal|0
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_return_value
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string_array
-argument_list|(
-literal|"plugin-real-name"
-argument_list|,
-literal|"plugin real name"
-argument_list|,
-literal|"The internal name of the plug-in"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
