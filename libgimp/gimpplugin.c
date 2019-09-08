@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab48dea0103
+DECL|enum|__anon2c437a140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3534,7 +3534,7 @@ name|params
 argument_list|,
 name|proc_return
 operator|.
-name|nparams
+name|n_params
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3621,7 +3621,7 @@ name|params
 argument_list|,
 name|proc_return
 operator|.
-name|nparams
+name|n_params
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3685,7 +3685,7 @@ name|params
 argument_list|,
 name|proc_run
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3714,7 +3714,7 @@ name|name
 expr_stmt|;
 name|proc_return
 operator|->
-name|nparams
+name|n_params
 operator|=
 name|gimp_value_array_length
 argument_list|(

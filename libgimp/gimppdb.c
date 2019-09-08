@@ -822,7 +822,7 @@ name|procedure_name
 expr_stmt|;
 name|proc_run
 operator|.
-name|nparams
+name|n_params
 operator|=
 name|gimp_value_array_length
 argument_list|(
@@ -875,7 +875,7 @@ name|params
 argument_list|,
 name|proc_run
 operator|.
-name|nparams
+name|n_params
 argument_list|,
 name|FALSE
 argument_list|)
@@ -916,7 +916,7 @@ name|params
 argument_list|,
 name|proc_return
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 name|TRUE
 argument_list|)

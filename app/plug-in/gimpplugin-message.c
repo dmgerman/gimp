@@ -2354,7 +2354,7 @@ name|params
 argument_list|,
 name|proc_run
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2468,7 +2468,7 @@ name|name
 expr_stmt|;
 name|proc_return
 operator|.
-name|nparams
+name|n_params
 operator|=
 name|gimp_value_array_length
 argument_list|(
@@ -2535,7 +2535,7 @@ name|params
 argument_list|,
 name|proc_return
 operator|.
-name|nparams
+name|n_params
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2610,7 +2610,7 @@ name|params
 argument_list|,
 name|proc_return
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2737,7 +2737,7 @@ name|params
 argument_list|,
 name|proc_return
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2908,7 +2908,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nparams
+name|n_params
 condition|;
 name|i
 operator|++
@@ -3072,7 +3072,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nparams
+name|n_params
 operator|&&
 name|valid_utf8
 operator|&&
@@ -3160,7 +3160,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nreturn_vals
+name|n_return_vals
 operator|&&
 name|valid_utf8
 operator|&&
@@ -3412,7 +3412,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nparams
+name|n_params
 condition|;
 name|i
 operator|++
@@ -3455,7 +3455,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nreturn_vals
+name|n_return_vals
 condition|;
 name|i
 operator|++

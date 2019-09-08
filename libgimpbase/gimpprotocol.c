@@ -661,7 +661,7 @@ name|params
 parameter_list|,
 name|guint
 modifier|*
-name|nparams
+name|n_params
 parameter_list|,
 name|gpointer
 name|user_data
@@ -683,7 +683,7 @@ modifier|*
 name|params
 parameter_list|,
 name|gint
-name|nparams
+name|n_params
 parameter_list|,
 name|gpointer
 name|user_data
@@ -701,7 +701,7 @@ modifier|*
 name|params
 parameter_list|,
 name|gint
-name|nparams
+name|n_params
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3862,7 +3862,7 @@ operator|)
 operator|&
 name|proc_run
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 name|user_data
 argument_list|)
@@ -3946,7 +3946,7 @@ name|params
 argument_list|,
 name|proc_run
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 name|user_data
 argument_list|)
@@ -3986,7 +3986,7 @@ name|params
 argument_list|,
 name|proc_run
 operator|->
-name|nparams
+name|n_params
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4074,7 +4074,7 @@ operator|)
 operator|&
 name|proc_return
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 name|user_data
 argument_list|)
@@ -4158,7 +4158,7 @@ name|params
 argument_list|,
 name|proc_return
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 name|user_data
 argument_list|)
@@ -4198,7 +4198,7 @@ name|params
 argument_list|,
 name|proc_return
 operator|->
-name|nparams
+name|n_params
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -5221,7 +5221,7 @@ argument_list|,
 operator|&
 name|proc_install
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 literal|1
 argument_list|,
@@ -5236,7 +5236,7 @@ argument_list|,
 operator|&
 name|proc_install
 operator|->
-name|nreturn_vals
+name|n_return_vals
 argument_list|,
 literal|1
 argument_list|,
@@ -5256,7 +5256,7 @@ name|GPParamDef
 argument_list|,
 name|proc_install
 operator|->
-name|nparams
+name|n_params
 argument_list|)
 expr_stmt|;
 for|for
@@ -5269,7 +5269,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nparams
+name|n_params
 condition|;
 name|i
 operator|++
@@ -5307,7 +5307,7 @@ name|GPParamDef
 argument_list|,
 name|proc_install
 operator|->
-name|nreturn_vals
+name|n_return_vals
 argument_list|)
 expr_stmt|;
 for|for
@@ -5320,7 +5320,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nreturn_vals
+name|n_return_vals
 condition|;
 name|i
 operator|++
@@ -5381,7 +5381,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nparams
+name|n_params
 condition|;
 name|i
 operator|++
@@ -5437,7 +5437,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nreturn_vals
+name|n_return_vals
 condition|;
 name|i
 operator|++
@@ -6189,7 +6189,7 @@ argument_list|,
 operator|&
 name|proc_install
 operator|->
-name|nparams
+name|n_params
 argument_list|,
 literal|1
 argument_list|,
@@ -6204,7 +6204,7 @@ argument_list|,
 operator|&
 name|proc_install
 operator|->
-name|nreturn_vals
+name|n_return_vals
 argument_list|,
 literal|1
 argument_list|,
@@ -6222,7 +6222,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nparams
+name|n_params
 condition|;
 name|i
 operator|++
@@ -6258,7 +6258,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nreturn_vals
+name|n_return_vals
 condition|;
 name|i
 operator|++
@@ -6331,7 +6331,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nparams
+name|n_params
 condition|;
 name|i
 operator|++
@@ -6359,7 +6359,7 @@ name|i
 operator|<
 name|proc_install
 operator|->
-name|nreturn_vals
+name|n_return_vals
 condition|;
 name|i
 operator|++
@@ -6625,7 +6625,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_params_read (GIOChannel * channel,GPParam ** params,guint * nparams,gpointer user_data)
+DECL|function|_gp_params_read (GIOChannel * channel,GPParam ** params,guint * n_params,gpointer user_data)
 name|_gp_params_read
 parameter_list|(
 name|GIOChannel
@@ -6639,7 +6639,7 @@ name|params
 parameter_list|,
 name|guint
 modifier|*
-name|nparams
+name|n_params
 parameter_list|,
 name|gpointer
 name|user_data
@@ -6659,7 +6659,7 @@ operator|(
 name|guint32
 operator|*
 operator|)
-name|nparams
+name|n_params
 argument_list|,
 literal|1
 argument_list|,
@@ -6670,7 +6670,7 @@ return|return;
 if|if
 condition|(
 operator|*
-name|nparams
+name|n_params
 operator|==
 literal|0
 condition|)
@@ -6690,7 +6690,7 @@ argument_list|(
 name|GPParam
 argument_list|,
 operator|*
-name|nparams
+name|n_params
 argument_list|)
 expr_stmt|;
 comment|/* We may read crap on the wire (and as a consequence try to allocate    * far too much), which would be a plug-in error.    */
@@ -6710,11 +6710,11 @@ argument_list|,
 name|G_STRFUNC
 argument_list|,
 operator|*
-name|nparams
+name|n_params
 argument_list|)
 expr_stmt|;
 operator|*
-name|nparams
+name|n_params
 operator|=
 literal|0
 expr_stmt|;
@@ -6729,7 +6729,7 @@ init|;
 name|i
 operator|<
 operator|*
-name|nparams
+name|n_params
 condition|;
 name|i
 operator|++
@@ -7746,7 +7746,7 @@ return|return;
 name|cleanup
 label|:
 operator|*
-name|nparams
+name|n_params
 operator|=
 literal|0
 expr_stmt|;
@@ -7767,7 +7767,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_params_write (GIOChannel * channel,GPParam * params,gint nparams,gpointer user_data)
+DECL|function|_gp_params_write (GIOChannel * channel,GPParam * params,gint n_params,gpointer user_data)
 name|_gp_params_write
 parameter_list|(
 name|GIOChannel
@@ -7779,7 +7779,7 @@ modifier|*
 name|params
 parameter_list|,
 name|gint
-name|nparams
+name|n_params
 parameter_list|,
 name|gpointer
 name|user_data
@@ -7801,7 +7801,7 @@ name|guint32
 operator|*
 operator|)
 operator|&
-name|nparams
+name|n_params
 argument_list|,
 literal|1
 argument_list|,
@@ -7817,7 +7817,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|nparams
+name|n_params
 condition|;
 name|i
 operator|++
@@ -8379,7 +8379,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_params_destroy (GPParam * params,gint nparams)
+DECL|function|_gp_params_destroy (GPParam * params,gint n_params)
 name|_gp_params_destroy
 parameter_list|(
 name|GPParam
@@ -8387,7 +8387,7 @@ modifier|*
 name|params
 parameter_list|,
 name|gint
-name|nparams
+name|n_params
 parameter_list|)
 block|{
 name|gint
@@ -8401,7 +8401,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|nparams
+name|n_params
 condition|;
 name|i
 operator|++

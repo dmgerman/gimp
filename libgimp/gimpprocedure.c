@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84a4030103
+DECL|enum|__anon288c9ba80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1459,13 +1459,13 @@ argument_list|)
 expr_stmt|;
 name|proc_install
 operator|.
-name|nparams
+name|n_params
 operator|=
 name|n_args
 expr_stmt|;
 name|proc_install
 operator|.
-name|nreturn_vals
+name|n_return_vals
 operator|=
 name|n_return_vals
 expr_stmt|;
