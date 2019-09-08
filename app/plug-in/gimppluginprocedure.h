@@ -127,11 +127,6 @@ name|GList
 modifier|*
 name|menu_paths
 decl_stmt|;
-DECL|member|label
-name|gchar
-modifier|*
-name|label
-decl_stmt|;
 DECL|member|help_id_with_domain
 name|gchar
 modifier|*

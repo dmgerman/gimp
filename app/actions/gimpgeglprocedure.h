@@ -131,11 +131,6 @@ name|gchar
 modifier|*
 name|menu_label
 decl_stmt|;
-DECL|member|label
-name|gchar
-modifier|*
-name|label
-decl_stmt|;
 block|}
 struct|;
 end_struct

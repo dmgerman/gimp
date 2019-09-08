@@ -198,6 +198,12 @@ modifier|*
 name|deprecated
 decl_stmt|;
 comment|/* Replacement if deprecated      */
+DECL|member|label
+name|gchar
+modifier|*
+name|label
+decl_stmt|;
+comment|/* Cached label string            */
 DECL|member|num_args
 name|gint32
 name|num_args
