@@ -39,6 +39,27 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_plug_in_set_proc_menu_label
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|proc_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_label
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_plug_in_add_proc_menu_path
 parameter_list|(
 name|GimpPlugIn

@@ -423,6 +423,27 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_plug_in_procedure_set_menu_label
+parameter_list|(
+name|GimpPlugInProcedure
+modifier|*
+name|proc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_label
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_plug_in_procedure_add_menu_path
 parameter_list|(
 name|GimpPlugInProcedure

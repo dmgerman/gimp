@@ -719,6 +719,11 @@ expr_stmt|;
 if|if
 condition|(
 name|menu_label
+operator|&&
+name|strlen
+argument_list|(
+name|menu_label
+argument_list|)
 condition|)
 name|gimp_procedure_set_menu_label
 argument_list|(
