@@ -1858,8 +1858,6 @@ argument_list|,
 literal|"copyright"
 argument_list|,
 literal|"date"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

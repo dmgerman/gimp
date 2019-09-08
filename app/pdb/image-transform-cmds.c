@@ -1008,8 +1008,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1163,8 +1161,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1230,8 +1226,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1341,8 +1335,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1496,8 +1488,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1598,8 +1588,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

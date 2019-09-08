@@ -11905,8 +11905,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -11954,8 +11952,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -12003,8 +11999,6 @@ argument_list|,
 literal|"Kevin Cozens"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -12052,8 +12046,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2007"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -12139,8 +12131,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -12212,8 +12202,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -12285,8 +12273,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -12354,8 +12340,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -12423,8 +12407,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -12492,8 +12474,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -12561,8 +12541,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -12630,8 +12608,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -12699,8 +12675,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -12748,8 +12722,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -12797,8 +12769,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -12868,8 +12838,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -12939,8 +12907,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -13008,8 +12974,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -13077,8 +13041,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -13150,8 +13112,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -13221,8 +13181,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -13294,8 +13252,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -13365,8 +13321,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -13436,8 +13390,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -13505,8 +13457,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -13576,8 +13526,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -13645,8 +13593,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -13719,8 +13665,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -13790,8 +13734,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -13863,8 +13805,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -13934,8 +13874,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -14025,8 +13963,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -14112,8 +14048,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -14185,8 +14119,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -14258,8 +14190,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -14329,8 +14259,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -14400,8 +14328,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -14449,8 +14375,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -14522,8 +14446,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -14595,8 +14517,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -14668,8 +14588,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -14741,8 +14659,6 @@ argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -14812,8 +14728,6 @@ argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -14883,8 +14797,6 @@ argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -14932,8 +14844,6 @@ argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -15003,8 +14913,6 @@ argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -15074,8 +14982,6 @@ argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -15123,8 +15029,6 @@ argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -15194,8 +15098,6 @@ argument_list|,
 literal|"Alexia Death"
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -15265,8 +15167,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -15338,8 +15238,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -15411,8 +15309,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2016"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -15484,8 +15380,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2016"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -15557,8 +15451,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -15630,8 +15522,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -15703,8 +15593,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -15776,8 +15664,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -15849,8 +15735,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -15898,8 +15782,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -15947,8 +15829,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -15996,8 +15876,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -16045,8 +15923,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -16114,8 +15990,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -16183,8 +16057,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -16252,8 +16124,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -16321,8 +16191,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -16388,8 +16256,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -16455,8 +16321,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -16528,8 +16392,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -16601,8 +16463,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -16674,8 +16534,6 @@ argument_list|,
 literal|"Michael Natterer& Sven Neumann"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -16747,8 +16605,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -16816,8 +16672,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -16883,8 +16737,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -16952,8 +16804,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -17019,8 +16869,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -17114,8 +16962,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -17207,8 +17053,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -17276,8 +17120,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -17343,8 +17185,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -17414,8 +17254,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -17483,8 +17321,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -17556,8 +17392,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -17627,8 +17461,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -17698,8 +17530,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -17769,8 +17599,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -17838,8 +17666,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -17905,8 +17731,6 @@ argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"2016"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -17974,8 +17798,6 @@ argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"2016"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -18041,8 +17863,6 @@ argument_list|,
 literal|"Jehan"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -18112,8 +17932,6 @@ argument_list|,
 literal|"Jehan"
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -18181,8 +17999,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -18252,8 +18068,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -18321,8 +18135,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -18392,8 +18204,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -18461,8 +18271,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -18532,8 +18340,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -18601,8 +18407,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -18672,8 +18476,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -18743,8 +18545,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -18816,8 +18616,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -18889,8 +18687,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -18960,8 +18756,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -19031,8 +18825,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -19102,8 +18894,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -19173,8 +18963,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -19244,8 +19032,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -19315,8 +19101,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -19384,8 +19168,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -19453,8 +19235,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -19524,8 +19304,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -19595,8 +19373,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -19668,8 +19444,6 @@ argument_list|,
 literal|"Ed Swartz"
 argument_list|,
 literal|"2012"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

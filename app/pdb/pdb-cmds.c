@@ -3577,8 +3577,6 @@ argument_list|,
 literal|"Andy Thomas"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -3650,8 +3648,6 @@ argument_list|,
 literal|"Spencer Kimball& Josh MacDonald& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3723,8 +3719,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3978,8 +3972,6 @@ argument_list|,
 literal|"Sven Neumann"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4069,8 +4061,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4206,8 +4196,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4303,8 +4291,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4400,8 +4386,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4497,8 +4481,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4594,8 +4576,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4691,8 +4671,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4802,8 +4780,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4933,8 +4909,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5078,8 +5052,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5223,8 +5195,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5336,8 +5306,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5449,8 +5417,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5560,8 +5526,6 @@ argument_list|,
 literal|"Nick Lamb"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5655,8 +5619,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

@@ -3501,8 +3501,6 @@ argument_list|,
 name|proc_install
 operator|->
 name|date
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 for|for

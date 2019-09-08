@@ -5132,8 +5132,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5347,8 +5345,6 @@ argument_list|,
 literal|"Sven Neumann"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5474,8 +5470,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5578,8 +5572,6 @@ argument_list|,
 literal|"Barak Itkin"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5663,8 +5655,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5766,8 +5756,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5833,8 +5821,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2007"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5900,8 +5886,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6029,8 +6013,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6184,8 +6166,6 @@ argument_list|,
 literal|"Manish Singh"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6251,8 +6231,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6373,8 +6351,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6478,8 +6454,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6563,8 +6537,6 @@ argument_list|,
 literal|"Geert Jordaens"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6648,8 +6620,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6733,8 +6703,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6820,8 +6788,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6905,8 +6871,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6990,8 +6954,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7075,8 +7037,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7160,8 +7120,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7245,8 +7203,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7330,8 +7286,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7415,8 +7369,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7500,8 +7452,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7585,8 +7535,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7674,8 +7622,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7763,8 +7709,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7850,8 +7794,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7937,8 +7879,6 @@ argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"2017"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8024,8 +7964,6 @@ argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"2017"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8111,8 +8049,6 @@ argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"2017"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8198,8 +8134,6 @@ argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"2017"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8285,8 +8219,6 @@ argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"2017"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8372,8 +8304,6 @@ argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"2017"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

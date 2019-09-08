@@ -1150,8 +1150,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1261,8 +1259,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1382,8 +1378,6 @@ argument_list|,
 literal|"David Gowers<neota@softhome.net>"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1455,8 +1449,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1550,8 +1542,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1645,8 +1635,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1740,8 +1728,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

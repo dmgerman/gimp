@@ -486,6 +486,16 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
+name|g_clear_pointer
+argument_list|(
+operator|&
+name|procedure
+operator|->
+name|deprecated
+argument_list|,
+name|g_free
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|procedure
@@ -679,6 +689,7 @@ operator|->
 name|date
 argument_list|)
 expr_stmt|;
+block|}
 name|memsize
 operator|+=
 name|gimp_string_get_memsize
@@ -688,7 +699,6 @@ operator|->
 name|deprecated
 argument_list|)
 expr_stmt|;
-block|}
 name|memsize
 operator|+=
 name|procedure
@@ -1141,7 +1151,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * blurb,const gchar * help,const gchar * help_id,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * deprecated)
+DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * blurb,const gchar * help,const gchar * help_id,const gchar * authors,const gchar * copyright,const gchar * date)
 name|gimp_procedure_set_strings
 parameter_list|(
 name|GimpProcedure
@@ -1177,11 +1187,6 @@ specifier|const
 name|gchar
 modifier|*
 name|date
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|deprecated
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1253,15 +1258,6 @@ argument_list|)
 expr_stmt|;
 name|procedure
 operator|->
-name|deprecated
-operator|=
-name|g_strdup
-argument_list|(
-name|deprecated
-argument_list|)
-expr_stmt|;
-name|procedure
-operator|->
 name|static_strings
 operator|=
 name|FALSE
@@ -1271,7 +1267,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_static_strings (GimpProcedure * procedure,const gchar * blurb,const gchar * help,const gchar * help_id,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * deprecated)
+DECL|function|gimp_procedure_set_static_strings (GimpProcedure * procedure,const gchar * blurb,const gchar * help,const gchar * help_id,const gchar * authors,const gchar * copyright,const gchar * date)
 name|gimp_procedure_set_static_strings
 parameter_list|(
 name|GimpProcedure
@@ -1307,11 +1303,6 @@ specifier|const
 name|gchar
 modifier|*
 name|date
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|deprecated
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1389,16 +1380,6 @@ name|date
 expr_stmt|;
 name|procedure
 operator|->
-name|deprecated
-operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
-name|deprecated
-expr_stmt|;
-name|procedure
-operator|->
 name|static_strings
 operator|=
 name|TRUE
@@ -1408,7 +1389,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_take_strings (GimpProcedure * procedure,gchar * blurb,gchar * help,gchar * help_id,gchar * authors,gchar * copyright,gchar * date,gchar * deprecated)
+DECL|function|gimp_procedure_take_strings (GimpProcedure * procedure,gchar * blurb,gchar * help,gchar * help_id,gchar * authors,gchar * copyright,gchar * date)
 name|gimp_procedure_take_strings
 parameter_list|(
 name|GimpProcedure
@@ -1438,10 +1419,6 @@ parameter_list|,
 name|gchar
 modifier|*
 name|date
-parameter_list|,
-name|gchar
-modifier|*
-name|deprecated
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1495,15 +1472,51 @@ name|date
 expr_stmt|;
 name|procedure
 operator|->
-name|deprecated
-operator|=
-name|deprecated
-expr_stmt|;
-name|procedure
-operator|->
 name|static_strings
 operator|=
 name|FALSE
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_procedure_set_deprecated (GimpProcedure * procedure,const gchar * deprecated)
+name|gimp_procedure_set_deprecated
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|deprecated
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|procedure
+operator|->
+name|deprecated
+argument_list|)
+expr_stmt|;
+name|procedure
+operator|->
+name|deprecated
+operator|=
+name|g_strdup
+argument_list|(
+name|deprecated
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -3144,13 +3157,6 @@ operator|->
 name|date
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|procedure
-operator|->
-name|deprecated
-argument_list|)
-expr_stmt|;
 block|}
 name|procedure
 operator|->
@@ -3185,12 +3191,6 @@ expr_stmt|;
 name|procedure
 operator|->
 name|date
-operator|=
-name|NULL
-expr_stmt|;
-name|procedure
-operator|->
-name|deprecated
 operator|=
 name|NULL
 expr_stmt|;

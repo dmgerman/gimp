@@ -5882,8 +5882,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5991,8 +5989,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6094,8 +6090,6 @@ argument_list|,
 literal|"Barak Itkin"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6179,8 +6173,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6284,8 +6276,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6419,8 +6409,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6641,8 +6629,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6730,8 +6716,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6819,8 +6803,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6952,8 +6934,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7087,8 +7067,6 @@ argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2006"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7245,8 +7223,6 @@ argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2006"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7392,8 +7368,6 @@ argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2006"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7573,8 +7547,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2006"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7738,8 +7710,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2006"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7903,8 +7873,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8071,8 +8039,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8206,8 +8172,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8341,8 +8305,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8522,8 +8484,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8749,8 +8709,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2005"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8953,8 +8911,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2006"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9120,8 +9076,6 @@ argument_list|,
 literal|"Simon Budig"
 argument_list|,
 literal|"2006"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9309,8 +9263,6 @@ argument_list|,
 literal|"Bill Skaggs"
 argument_list|,
 literal|"2007"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9420,8 +9372,6 @@ argument_list|,
 literal|"Bill Skaggs"
 argument_list|,
 literal|"2007"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

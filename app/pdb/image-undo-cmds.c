@@ -1005,8 +1005,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1072,8 +1070,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1139,8 +1135,6 @@ argument_list|,
 literal|"Rapha\xc3\xabl Quinet"
 argument_list|,
 literal|"1999"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1224,8 +1218,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1309,8 +1301,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1394,8 +1384,6 @@ argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
 literal|"1999"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1479,8 +1467,6 @@ argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
 literal|"1999"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

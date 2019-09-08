@@ -21614,8 +21614,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:alien-map' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -21939,8 +21937,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:antialias' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -22044,8 +22040,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:texturize-canvas' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -22193,8 +22187,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:apply-lens' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -22374,8 +22366,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -22479,8 +22469,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -22584,8 +22572,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:stretch-contrast-hsv' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -22689,8 +22675,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:bump-map' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -23024,8 +23008,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:bump-map' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -23359,8 +23341,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:stretch-contrast' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -23465,8 +23445,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:cartoon' for credits."
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -23614,8 +23592,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:channel-mixer' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -23957,8 +23933,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1999"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -24082,8 +24056,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:convolution-matrix' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -24349,8 +24321,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:cubism' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -24520,8 +24490,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:deinterlace' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -24647,8 +24615,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:diffraction-patterns' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -25018,8 +24984,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:displace' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -25265,8 +25229,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:displace' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -25512,8 +25474,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:difference-of-gaussians' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -25697,8 +25657,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -25868,8 +25826,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:emboss' for credits."
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -26057,8 +26013,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:engrave' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -26202,8 +26156,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:color-exchange' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -26505,8 +26457,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:lens-flare' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -26654,8 +26604,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:fractal-trace' for credits."
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -26899,8 +26847,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -27070,8 +27016,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -27233,8 +27177,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -27382,8 +27324,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -27545,8 +27485,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -27694,8 +27632,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:tile-glass' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -27843,8 +27779,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-hsv' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -28036,8 +27970,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:illusion' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -28185,8 +28117,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge-laplace' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -28290,8 +28220,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:lens-distortion' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -28539,8 +28467,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:tile-seamless' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -28644,8 +28570,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:maze' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -28903,8 +28827,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:motion-blur-linear, -zoom, -cirular' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -29121,8 +29043,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:motion-blur-linear, -zoom, -cirular' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -29339,8 +29259,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:mosaic' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -29708,8 +29626,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge-neon' for credits."
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -29857,8 +29773,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:newsprint' for credits."
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -30226,8 +30140,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:stretch-contrast' for credits."
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -30331,8 +30243,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:supernova' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -30566,8 +30476,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:oilify' for credits."
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -30715,8 +30623,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:oilify' for credits."
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -30922,8 +30828,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:tile-paper' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -31195,8 +31099,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:photocopy' for credits."
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -31388,8 +31290,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -31515,8 +31415,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -31664,8 +31562,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:plasma' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -31815,8 +31711,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -32018,8 +31912,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:red-eye-removal' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -32145,8 +32037,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-hurl' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -32334,8 +32224,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-pick' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -32523,8 +32411,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-slur' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -32712,8 +32598,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-rgb' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -32941,8 +32825,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:ripple' for credits."
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -33192,8 +33074,6 @@ argument_list|,
 literal|"Sven Neumann"
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -33337,8 +33217,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-rgb' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -33548,8 +33426,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur-selective' for credits."
 argument_list|,
 literal|"2099"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -33697,8 +33573,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -33802,8 +33676,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:shift' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -33951,8 +33823,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:sinus' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -34331,8 +34201,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge-sobel' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -34490,8 +34358,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:softglow' for credits."
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -34661,8 +34527,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-solid' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -34892,8 +34756,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-spread' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -35041,8 +34903,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -35168,8 +35028,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:unsharp-mask' for credits."
 argument_list|,
 literal|"2018"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -35339,8 +35197,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:video-degradation' for credits."
 argument_list|,
 literal|"2014"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -35502,8 +35358,6 @@ argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -35607,8 +35461,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:value-propagate' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -35844,8 +35696,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:value-propagate' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -36081,8 +35931,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:value-propagate' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -36318,8 +36166,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:waves' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -36527,8 +36373,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:whirl-pinch' for credits."
 argument_list|,
 literal|"2013"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -36702,8 +36546,6 @@ argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:wind' for credits."
 argument_list|,
 literal|"2015"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

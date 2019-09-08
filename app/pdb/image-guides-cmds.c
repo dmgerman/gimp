@@ -1095,8 +1095,6 @@ argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1206,8 +1204,6 @@ argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1317,8 +1313,6 @@ argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1406,8 +1400,6 @@ argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1519,8 +1511,6 @@ argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1643,8 +1633,6 @@ argument_list|,
 literal|"Adam D. Moss"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

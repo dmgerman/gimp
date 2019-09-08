@@ -326,8 +326,6 @@ argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"2017"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -378,8 +376,6 @@ argument_list|,
 literal|"Ell"
 argument_list|,
 literal|"2017"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value

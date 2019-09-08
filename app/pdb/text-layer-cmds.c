@@ -4470,8 +4470,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4647,8 +4645,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4738,8 +4734,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4829,8 +4823,6 @@ argument_list|,
 literal|"Barak Itkin"
 argument_list|,
 literal|"2010"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4920,8 +4912,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5011,8 +5001,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5102,8 +5090,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5214,8 +5200,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5325,8 +5309,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5410,8 +5392,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5495,8 +5475,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5582,8 +5560,6 @@ argument_list|,
 literal|"Sven Neumann"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5669,8 +5645,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5754,8 +5728,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5839,8 +5811,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5930,8 +5900,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6021,8 +5989,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6108,8 +6074,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6195,8 +6159,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6282,8 +6244,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6369,8 +6329,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6456,8 +6414,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6543,8 +6499,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6633,8 +6587,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6724,8 +6676,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6814,8 +6764,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6905,8 +6853,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6995,8 +6941,6 @@ argument_list|,
 literal|"Marcus Heese"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7086,8 +7030,6 @@ argument_list|,
 literal|"Barak Itkin"
 argument_list|,
 literal|"2009"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

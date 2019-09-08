@@ -337,8 +337,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_pdb_register_procedure
@@ -386,8 +384,6 @@ argument_list|,
 literal|"Michael Natterer"
 argument_list|,
 literal|"2011"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

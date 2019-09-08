@@ -6072,8 +6072,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6169,8 +6167,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6266,8 +6262,6 @@ argument_list|,
 literal|"Bill Skaggs"
 argument_list|,
 literal|"2004"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6357,8 +6351,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6478,8 +6470,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6551,8 +6541,6 @@ argument_list|,
 literal|"Lars-Peter Clausen"
 argument_list|,
 literal|"2008"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6646,8 +6634,6 @@ argument_list|,
 literal|"Federico Mena Quintero"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6797,8 +6783,6 @@ argument_list|,
 literal|"Federico Mena Quintero"
 argument_list|,
 literal|"1997"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6964,8 +6948,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7102,8 +7084,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7239,8 +7219,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7377,8 +7355,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7514,8 +7490,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7633,8 +7607,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7773,8 +7745,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7892,8 +7862,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8032,8 +8000,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8151,8 +8117,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8291,8 +8255,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8406,8 +8368,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8521,8 +8481,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8658,8 +8616,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8795,8 +8751,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8912,8 +8866,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9051,8 +9003,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9168,8 +9118,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9307,8 +9255,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9424,8 +9370,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9541,8 +9485,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9658,8 +9600,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9775,8 +9715,6 @@ argument_list|,
 literal|"Shlomi Fish"
 argument_list|,
 literal|"2003"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

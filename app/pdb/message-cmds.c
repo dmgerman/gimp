@@ -422,8 +422,6 @@ argument_list|,
 literal|"Manish Singh"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -495,8 +493,6 @@ argument_list|,
 literal|"Manish Singh"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_return_value
@@ -564,8 +560,6 @@ argument_list|,
 literal|"Manish Singh"
 argument_list|,
 literal|"1998"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

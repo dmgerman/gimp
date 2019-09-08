@@ -257,8 +257,6 @@ literal|"Tim Newsome, Jens Lautenbacher, "
 literal|"Sven Neumann, Michael Natterer"
 argument_list|,
 literal|"1995-2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -471,8 +469,6 @@ argument_list|,
 literal|"Tim Newsome, Michael Natterer"
 argument_list|,
 literal|"1995-2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -775,8 +771,6 @@ argument_list|,
 literal|"Tor Lillqvist, Michael Natterer"
 argument_list|,
 literal|"1999-2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -989,8 +983,6 @@ argument_list|,
 literal|"Tor Lillqvist, Michael Natterer"
 argument_list|,
 literal|"1999-2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1316,8 +1308,6 @@ argument_list|,
 literal|"Tim Newsome, Michael Natterer"
 argument_list|,
 literal|"1997-2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1530,8 +1520,6 @@ argument_list|,
 literal|"Tim Newsome, Michael Natterer"
 argument_list|,
 literal|"1995-2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1811,8 +1799,6 @@ argument_list|,
 literal|"Jehan"
 argument_list|,
 literal|"2019"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
