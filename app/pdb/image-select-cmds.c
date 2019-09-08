@@ -1593,7 +1593,7 @@ argument_list|,
 literal|"gimp-image-select-color"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1606,6 +1606,11 @@ literal|"\n"
 literal|"In the case of a merged sampling, the supplied drawable is ignored."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -1720,7 +1725,7 @@ argument_list|,
 literal|"gimp-image-select-contiguous-color"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1733,6 +1738,11 @@ literal|"\n"
 literal|"In the case of a merged sampling, the supplied drawable is ignored. If the sample is merged, the specified coordinates are relative to the image origin; otherwise, they are relative to the drawable's origin."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -1873,7 +1883,7 @@ argument_list|,
 literal|"gimp-image-select-rectangle"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1884,6 +1894,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2050,7 +2065,7 @@ argument_list|,
 literal|"gimp-image-select-round-rectangle"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2061,6 +2076,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Martin Nordholts"
 argument_list|,
@@ -2271,7 +2291,7 @@ argument_list|,
 literal|"gimp-image-select-ellipse"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2282,6 +2302,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2448,7 +2473,7 @@ argument_list|,
 literal|"gimp-image-select-polygon"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2459,6 +2484,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2573,7 +2603,7 @@ argument_list|,
 literal|"gimp-image-select-item"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2584,6 +2614,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-antialias', 'gimp-context-set-feather', 'gimp-context-set-feather-radius'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

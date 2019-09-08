@@ -1530,7 +1530,7 @@ argument_list|,
 literal|"gimp-image-grid-get-spacing"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1539,6 +1539,11 @@ argument_list|,
 literal|"This procedure retrieves the horizontal and vertical spacing of an image's grid. It takes the image as parameter."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -1641,7 +1646,7 @@ argument_list|,
 literal|"gimp-image-grid-set-spacing"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1650,6 +1655,11 @@ argument_list|,
 literal|"This procedure sets the horizontal and vertical spacing of an image's grid."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -1752,7 +1762,7 @@ argument_list|,
 literal|"gimp-image-grid-get-offset"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1761,6 +1771,11 @@ argument_list|,
 literal|"This procedure retrieves the horizontal and vertical offset of an image's grid. It takes the image as parameter."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -1863,7 +1878,7 @@ argument_list|,
 literal|"gimp-image-grid-set-offset"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1872,6 +1887,11 @@ argument_list|,
 literal|"This procedure sets the horizontal and vertical offset of an image's grid."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -1974,7 +1994,7 @@ argument_list|,
 literal|"gimp-image-grid-get-foreground-color"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1983,6 +2003,11 @@ argument_list|,
 literal|"This procedure gets the foreground color of an image's grid."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -2059,7 +2084,7 @@ argument_list|,
 literal|"gimp-image-grid-set-foreground-color"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2068,6 +2093,11 @@ argument_list|,
 literal|"This procedure sets the foreground color of an image's grid."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -2144,7 +2174,7 @@ argument_list|,
 literal|"gimp-image-grid-get-background-color"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2153,6 +2183,11 @@ argument_list|,
 literal|"This procedure gets the background color of an image's grid."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -2229,7 +2264,7 @@ argument_list|,
 literal|"gimp-image-grid-set-background-color"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2238,6 +2273,11 @@ argument_list|,
 literal|"This procedure sets the background color of an image's grid."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -2314,7 +2354,7 @@ argument_list|,
 literal|"gimp-image-grid-get-style"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2323,6 +2363,11 @@ argument_list|,
 literal|"This procedure retrieves the style of an image's grid."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,
@@ -2399,7 +2444,7 @@ argument_list|,
 literal|"gimp-image-grid-set-style"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2408,6 +2453,11 @@ argument_list|,
 literal|"This procedure sets the style of an image's grid. It takes the image and the new style as parameters."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sylvain Foret"
 argument_list|,

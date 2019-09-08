@@ -3562,7 +3562,7 @@ argument_list|,
 literal|"gimp-pdb-temp-name"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3571,6 +3571,11 @@ argument_list|,
 literal|"This procedure generates a temporary PDB entry name that is guaranteed to be unique."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -3633,7 +3638,7 @@ argument_list|,
 literal|"gimp-pdb-dump"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3642,6 +3647,11 @@ argument_list|,
 literal|"This procedure dumps the contents of the procedural database to the specified file. The file will contain all of the information provided for each registered procedure."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Josh MacDonald"
 argument_list|,
@@ -3704,7 +3714,7 @@ argument_list|,
 literal|"gimp-pdb-query"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3713,6 +3723,11 @@ argument_list|,
 literal|"This procedure queries the contents of the procedural database. It is supplied with seven arguments matching procedures on { name, blurb, help, authors, copyright, date, procedure type}. This is accomplished using regular expression matching. For instance, to find all procedures with \"jpeg\" listed in the blurb, all seven arguments can be supplied as \".*\", except for the second, which can be supplied as \".*jpeg.*\". There are two return arguments for this procedure. The first is the number of procedures matching the query. The second is a concatenated list of procedure names corresponding to those matching the query. If no matching entries are found, then the returned string is NULL and the number of entries is 0."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -3957,7 +3972,7 @@ argument_list|,
 literal|"gimp-pdb-proc-exists"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3966,6 +3981,11 @@ argument_list|,
 literal|"This procedure checks if the specified procedure is registered in the procedural database."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -4046,7 +4066,7 @@ argument_list|,
 literal|"gimp-pdb-get-proc-info"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4055,6 +4075,11 @@ argument_list|,
 literal|"This procedure returns information on the specified procedure. The procedure type, number of input, and number of return values are returned. For specific information on each input argument and return value, use the 'gimp-pdb-db-proc-argument' and 'gimp-pdb-db-proc-return-value' procedures."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4181,7 +4206,7 @@ argument_list|,
 literal|"gimp-pdb-set-proc-image-types"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4190,6 +4215,11 @@ argument_list|,
 literal|"This procedure sets the supported images types for the given procedure."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4276,7 +4306,7 @@ argument_list|,
 literal|"gimp-pdb-get-proc-image-types"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4285,6 +4315,11 @@ argument_list|,
 literal|"This procedure returns the image types supported by the specified procedure."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4371,7 +4406,7 @@ argument_list|,
 literal|"gimp-pdb-set-proc-menu-label"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4380,6 +4415,11 @@ argument_list|,
 literal|"This procedure sets the menu label for the given procedure."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4466,7 +4506,7 @@ argument_list|,
 literal|"gimp-pdb-get-proc-menu-label"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4475,6 +4515,11 @@ argument_list|,
 literal|"This procedure returns the menu label of the specified procedure."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4561,7 +4606,7 @@ argument_list|,
 literal|"gimp-pdb-add-proc-menu-path"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4570,6 +4615,11 @@ argument_list|,
 literal|"This procedure installs an additional menu entry for the given procedure."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4656,7 +4706,7 @@ argument_list|,
 literal|"gimp-pdb-get-proc-menu-paths"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4665,6 +4715,11 @@ argument_list|,
 literal|"This procedure returns the menu paths of the specified procedure."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4765,7 +4820,7 @@ argument_list|,
 literal|"gimp-pdb-set-proc-icon"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4774,6 +4829,11 @@ argument_list|,
 literal|"This procedure installs an icon for the given procedure."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4894,7 +4954,7 @@ argument_list|,
 literal|"gimp-pdb-get-proc-documentation"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4903,6 +4963,11 @@ argument_list|,
 literal|"This procedure returns documentation on the specified procedure. A short blurb, detailed help and help_id."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5037,7 +5102,7 @@ argument_list|,
 literal|"gimp-pdb-get-proc-attribution"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5046,6 +5111,11 @@ argument_list|,
 literal|"This procedure returns attribution information on the specified procedure. The authors, copyright information and date are returned."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5180,7 +5250,7 @@ argument_list|,
 literal|"gimp-pdb-get-proc-argument"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5189,6 +5259,11 @@ argument_list|,
 literal|"This procedure returns the #GParamSpec of procedure_name's argument."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5291,7 +5366,7 @@ argument_list|,
 literal|"gimp-pdb-get-proc-return-value"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5300,6 +5375,11 @@ argument_list|,
 literal|"This procedure returns the #GParamSpec of procedure_name's return value."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5402,7 +5482,7 @@ argument_list|,
 literal|"gimp-pdb-get-data"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5411,6 +5491,11 @@ argument_list|,
 literal|"This procedure returns any data which may have been associated with the specified identifier. The data is a variable length array of bytes. If no data has been associated with the identifier, an error is returned."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5511,7 +5596,7 @@ argument_list|,
 literal|"gimp-pdb-get-data-size"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5520,6 +5605,11 @@ argument_list|,
 literal|"This procedure returns the size of any data which may have been associated with the specified identifier. If no data has been associated with the identifier, an error is returned."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Nick Lamb"
 argument_list|,
@@ -5604,7 +5694,7 @@ argument_list|,
 literal|"gimp-pdb-set-data"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5613,6 +5703,11 @@ argument_list|,
 literal|"This procedure associates the supplied data with the provided identifier. The data may be subsequently retrieved by a call to 'procedural-db-get-data'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

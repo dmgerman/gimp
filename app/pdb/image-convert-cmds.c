@@ -1065,7 +1065,7 @@ argument_list|,
 literal|"gimp-image-convert-rgb"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1074,6 +1074,11 @@ argument_list|,
 literal|"This procedure converts the specified image to RGB color. This process requires an image in Grayscale or Indexed color mode. No image content is lost in this process aside from the colormap for an indexed image."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -1130,7 +1135,7 @@ argument_list|,
 literal|"gimp-image-convert-grayscale"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1139,6 +1144,11 @@ argument_list|,
 literal|"This procedure converts the specified image to grayscale. This process requires an image in RGB or Indexed color mode."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -1195,7 +1205,7 @@ argument_list|,
 literal|"gimp-image-convert-indexed"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1204,6 +1214,11 @@ argument_list|,
 literal|"This procedure converts the specified image to 'indexed' color. This process requires an image in RGB or Grayscale mode. The 'palette_type' specifies what kind of palette to use, A type of '0' means to use an optimal palette of 'num_cols' generated from the colors in the image. A type of '1' means to re-use the previous palette (not currently implemented). A type of '2' means to use the so-called WWW-optimized palette. Type '3' means to use only black and white colors. A type of '4' means to use a palette from the gimp palettes directories. The 'dither type' specifies what kind of dithering to use. '0' means no dithering, '1' means standard Floyd-Steinberg error diffusion, '2' means Floyd-Steinberg error diffusion with reduced bleeding, '3' means dithering based on pixel location ('Fixed' dithering)."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -1382,7 +1397,7 @@ argument_list|,
 literal|"gimp-image-convert-set-dither-matrix"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1391,6 +1406,11 @@ argument_list|,
 literal|"This procedure sets the dither matrix used when converting images to INDEXED mode with positional dithering."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -1511,7 +1531,7 @@ argument_list|,
 literal|"gimp-image-convert-precision"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1520,6 +1540,11 @@ argument_list|,
 literal|"This procedure converts the image to the specified precision. Note that indexed images cannot be converted and are always in GIMP_PRECISION_U8."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

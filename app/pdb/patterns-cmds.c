@@ -346,7 +346,7 @@ argument_list|,
 literal|"gimp-patterns-refresh"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -355,6 +355,11 @@ argument_list|,
 literal|"This procedure retrieves all patterns currently in the user's pattern path and updates all pattern dialogs accordingly."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -393,7 +398,7 @@ argument_list|,
 literal|"gimp-patterns-get-list"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -402,6 +407,11 @@ argument_list|,
 literal|"This procedure returns a complete listing of available GIMP patterns. Each name returned can be used as input to the 'gimp-context-set-pattern'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

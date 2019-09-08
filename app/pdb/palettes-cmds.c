@@ -340,7 +340,7 @@ argument_list|,
 literal|"gimp-palettes-refresh"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -349,6 +349,11 @@ argument_list|,
 literal|"This procedure retrieves all palettes currently in the user's palette path and updates the palette dialogs accordingly."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Adrian Likins<adrian@gimp.org>"
 argument_list|,
@@ -387,7 +392,7 @@ argument_list|,
 literal|"gimp-palettes-get-list"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -396,6 +401,11 @@ argument_list|,
 literal|"This procedure returns a complete listing of available palettes. Each name returned can be used as input to the command 'gimp-context-set-palette'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Nathan Summers<rock@gimp.org>"
 argument_list|,

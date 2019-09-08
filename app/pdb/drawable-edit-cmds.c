@@ -1631,7 +1631,7 @@ argument_list|,
 literal|"gimp-drawable-edit-clear"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1642,6 +1642,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-background'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -1698,7 +1703,7 @@ argument_list|,
 literal|"gimp-drawable-edit-fill"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1709,6 +1714,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-opacity', 'gimp-context-set-paint-mode', 'gimp-context-set-foreground', 'gimp-context-set-background', 'gimp-context-set-pattern'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis& Raphael Quinet"
 argument_list|,
@@ -1785,7 +1795,7 @@ argument_list|,
 literal|"gimp-drawable-edit-bucket-fill"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1797,6 +1807,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-opacity', 'gimp-context-set-paint-mode', 'gimp-context-set-foreground', 'gimp-context-set-background', 'gimp-context-set-pattern', 'gimp-context-set-sample-threshold', 'gimp-context-set-sample-merged', 'gimp-context-set-sample-criterion', 'gimp-context-set-diagonal-neighbors', 'gimp-context-set-antialias'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1919,7 +1934,7 @@ argument_list|,
 literal|"gimp-drawable-edit-gradient-fill"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1930,6 +1945,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-opacity', 'gimp-context-set-paint-mode', 'gimp-context-set-foreground', 'gimp-context-set-background', 'gimp-context-set-gradient' and all gradient property settings, 'gimp-context-set-distance-metric'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2204,7 +2224,7 @@ argument_list|,
 literal|"gimp-drawable-edit-stroke-selection"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2215,6 +2235,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-opacity', 'gimp-context-set-paint-mode', 'gimp-context-set-paint-method', 'gimp-context-set-stroke-method', 'gimp-context-set-foreground', 'gimp-context-set-brush' and all brush property settings, 'gimp-context-set-gradient' and all gradient property settings, 'gimp-context-set-line-width' and all line property settings, 'gimp-context-set-antialias'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -2271,7 +2296,7 @@ argument_list|,
 literal|"gimp-drawable-edit-stroke-item"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2282,6 +2307,11 @@ literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-opacity', 'gimp-context-set-paint-mode', 'gimp-context-set-paint-method', 'gimp-context-set-stroke-method', 'gimp-context-set-foreground', 'gimp-context-set-brush' and all brush property settings, 'gimp-context-set-gradient' and all gradient property settings, 'gimp-context-set-line-width' and all line property settings, 'gimp-context-set-antialias'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

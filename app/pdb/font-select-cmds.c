@@ -531,7 +531,7 @@ argument_list|,
 literal|"gimp-fonts-popup"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -540,6 +540,11 @@ argument_list|,
 literal|"This procedure opens the font selection dialog."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -650,7 +655,7 @@ argument_list|,
 literal|"gimp-fonts-close-popup"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -659,6 +664,11 @@ argument_list|,
 literal|"This procedure closes an opened font selection dialog."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -721,7 +731,7 @@ argument_list|,
 literal|"gimp-fonts-set-popup"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -730,6 +740,11 @@ argument_list|,
 literal|"Sets the current font in a font selection dialog."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,

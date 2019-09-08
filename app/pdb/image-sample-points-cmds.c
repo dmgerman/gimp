@@ -799,7 +799,7 @@ argument_list|,
 literal|"gimp-image-add-sample-point"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -808,6 +808,11 @@ argument_list|,
 literal|"This procedure adds a sample point to an image. It takes the input image and the position of the new sample points as parameters. It returns the sample point ID of the new sample point."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -930,7 +935,7 @@ argument_list|,
 literal|"gimp-image-delete-sample-point"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -939,6 +944,11 @@ argument_list|,
 literal|"This procedure takes an image and a sample point ID as input and removes the specified sample point from the specified image."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1017,7 +1027,7 @@ argument_list|,
 literal|"gimp-image-find-next-sample-point"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1026,6 +1036,11 @@ argument_list|,
 literal|"This procedure takes an image and a sample point ID as input and finds the sample point ID of the successor of the given sample point ID in the image's sample point list. If the supplied sample point ID is 0, the procedure will return the first sample point. The procedure will return 0 if given the final sample point ID as an argument or the image has no sample points."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1128,7 +1143,7 @@ argument_list|,
 literal|"gimp-image-get-sample-point-position"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1137,6 +1152,11 @@ argument_list|,
 literal|"This procedure takes an image and a sample point ID as input and returns the position of the sample point relative to the top and left of the image."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

@@ -3474,7 +3474,7 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_strings
+name|gimp_procedure_set_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3489,6 +3489,11 @@ argument_list|,
 name|proc_install
 operator|->
 name|help_id
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_attribution
+argument_list|(
+name|procedure
 argument_list|,
 name|proc_install
 operator|->

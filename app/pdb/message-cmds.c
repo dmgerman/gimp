@@ -407,7 +407,7 @@ argument_list|,
 literal|"gimp-message"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -416,6 +416,11 @@ argument_list|,
 literal|"Displays a dialog box with a message. Useful for status or error reporting. The message must be in UTF-8 encoding."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Manish Singh"
 argument_list|,
@@ -478,7 +483,7 @@ argument_list|,
 literal|"gimp-message-get-handler"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -487,6 +492,11 @@ argument_list|,
 literal|"This procedure returns the way g_message warnings are displayed. They can be shown in a dialog box or printed on the console where gimp was started."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Manish Singh"
 argument_list|,
@@ -545,7 +555,7 @@ argument_list|,
 literal|"gimp-message-set-handler"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -554,6 +564,11 @@ argument_list|,
 literal|"This procedure controls how g_message warnings are displayed. They can be shown in a dialog box or printed on the console where gimp was started."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Manish Singh"
 argument_list|,

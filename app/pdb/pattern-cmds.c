@@ -637,7 +637,7 @@ argument_list|,
 literal|"gimp-pattern-get-info"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -646,6 +646,11 @@ argument_list|,
 literal|"This procedure retrieves information about the specified pattern. This includes the pattern extents (width and height)."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -774,7 +779,7 @@ argument_list|,
 literal|"gimp-pattern-get-pixels"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -783,6 +788,11 @@ argument_list|,
 literal|"This procedure retrieves information about the specified. This includes the pattern extents (width and height), its bpp and its pixel data."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

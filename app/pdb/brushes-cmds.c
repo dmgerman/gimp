@@ -346,7 +346,7 @@ argument_list|,
 literal|"gimp-brushes-refresh"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -355,6 +355,11 @@ argument_list|,
 literal|"This procedure retrieves all brushes currently in the user's brush path and updates the brush dialogs accordingly."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Seth Burgess"
 argument_list|,
@@ -393,7 +398,7 @@ argument_list|,
 literal|"gimp-brushes-get-list"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -402,6 +407,11 @@ argument_list|,
 literal|"This procedure returns a complete listing of available GIMP brushes. Each name returned can be used as input to the 'gimp-context-set-brush' procedure."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

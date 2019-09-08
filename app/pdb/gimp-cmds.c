@@ -916,7 +916,7 @@ argument_list|,
 literal|"gimp-version"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -925,6 +925,11 @@ argument_list|,
 literal|"This procedure returns the version number of the currently running GIMP."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Manish Singh"
 argument_list|,
@@ -987,7 +992,7 @@ argument_list|,
 literal|"gimp-getpid"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -996,6 +1001,11 @@ argument_list|,
 literal|"This procedure returns the process ID of the currently running GIMP."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1056,7 +1066,7 @@ argument_list|,
 literal|"gimp-quit"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1065,6 +1075,11 @@ argument_list|,
 literal|"If there are unsaved images in an interactive GIMP session, the user will be asked for confirmation. If force is TRUE, the application is quit without querying the user to save any dirty images."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -1121,7 +1136,7 @@ argument_list|,
 literal|"gimp-attach-parasite"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1130,6 +1145,11 @@ argument_list|,
 literal|"This procedure attaches a global parasite. It has no return values."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -1184,7 +1204,7 @@ argument_list|,
 literal|"gimp-detach-parasite"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1193,6 +1213,11 @@ argument_list|,
 literal|"This procedure detaches a global parasite from. It has no return values."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -1255,7 +1280,7 @@ argument_list|,
 literal|"gimp-get-parasite"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1264,6 +1289,11 @@ argument_list|,
 literal|"Finds and returns the global parasite that was previously attached."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -1342,7 +1372,7 @@ argument_list|,
 literal|"gimp-get-parasite-list"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1351,6 +1381,11 @@ argument_list|,
 literal|"Returns a list of all currently attached global parasites."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marc Lehmann"
 argument_list|,
@@ -1427,7 +1462,7 @@ argument_list|,
 literal|"gimp-temp-name"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1436,6 +1471,11 @@ argument_list|,
 literal|"Generates a unique filename using the temp path supplied in the user's gimprc."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Josh MacDonald"
 argument_list|,

@@ -21599,7 +21599,7 @@ argument_list|,
 literal|"plug-in-alienmap2"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -21608,6 +21608,11 @@ argument_list|,
 literal|"No help yet. Just try it and you'll see!"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:alien-map' for credits."
 argument_list|,
@@ -21922,7 +21927,7 @@ argument_list|,
 literal|"plug-in-antialias"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -21931,6 +21936,11 @@ argument_list|,
 literal|"No more help."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:antialias' for credits."
 argument_list|,
@@ -22025,7 +22035,7 @@ argument_list|,
 literal|"plug-in-apply-canvas"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -22034,6 +22044,11 @@ argument_list|,
 literal|"This function applies a canvas texture map to the drawable."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:texturize-canvas' for credits."
 argument_list|,
@@ -22172,7 +22187,7 @@ argument_list|,
 literal|"plug-in-applylens"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -22181,6 +22196,11 @@ argument_list|,
 literal|"This plug-in uses Snell's law to draw an ellipsoid lens over the image."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:apply-lens' for credits."
 argument_list|,
@@ -22351,7 +22371,7 @@ argument_list|,
 literal|"plug-in-autocrop"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -22360,6 +22380,11 @@ argument_list|,
 literal|"Remove empty borders from the image."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -22454,7 +22479,7 @@ argument_list|,
 literal|"plug-in-autocrop-layer"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -22463,6 +22488,11 @@ argument_list|,
 literal|"Crop the active layer of the input \"image\" based on empty borders of the input \"drawable\". \n\nThe input drawable serves as a base for detecting cropping extents (transparency or background color), and is not necessarily the cropped layer (the current active layer)."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -22557,7 +22587,7 @@ argument_list|,
 literal|"plug-in-autostretch-hsv"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -22566,6 +22596,11 @@ argument_list|,
 literal|"This simple plug-in does an automatic contrast stretch. For each channel in the image, it finds the minimum and maximum values... it uses those values to stretch the individual histograms to the full contrast range. For some images it may do just what you want; for others it may be total crap :). This version differs from Contrast Autostretch in that it works in HSV space, and preserves hue."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:stretch-contrast-hsv' for credits."
 argument_list|,
@@ -22660,7 +22695,7 @@ argument_list|,
 literal|"plug-in-bump-map"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -22669,6 +22704,11 @@ argument_list|,
 literal|"This plug-in uses the algorithm described by John Schlag, \"Fast Embossing Effects on Raster Image Data\" in Graphics GEMS IV (ISBN 0-12-336155-9). It takes a drawable to be applied as a bump map to another image and produces a nice embossing effect."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:bump-map' for credits."
 argument_list|,
@@ -22993,7 +23033,7 @@ argument_list|,
 literal|"plug-in-bump-map-tiled"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -23002,6 +23042,11 @@ argument_list|,
 literal|"This plug-in uses the algorithm described by John Schlag, \"Fast Embossing Effects on Raster Image Data\" in Graphics GEMS IV (ISBN 0-12-336155-9). It takes a drawable to be tiled and applied as a bump map to another image and produces a nice embossing effect."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:bump-map' for credits."
 argument_list|,
@@ -23326,7 +23371,7 @@ argument_list|,
 literal|"plug-in-c-astretch"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -23335,6 +23380,11 @@ argument_list|,
 literal|"This simple plug-in does an automatic contrast stretch. For each channel in the image, it finds the minimum and maximum values... it uses those values to stretch the individual histograms to the full contrast range. For some images it may do just what you want; for others it may not work that well."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:stretch-contrast' for credits."
 argument_list|,
@@ -23429,7 +23479,7 @@ argument_list|,
 literal|"plug-in-cartoon"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -23439,6 +23489,11 @@ literal|"Propagates dark values in an image based on each pixel's relative darkn
 literal|"blend from the color regions to the black border lines smoother and the lines themselves thinner and less noticeable; larger values achieve the opposite effect."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:cartoon' for credits."
 argument_list|,
@@ -23577,7 +23632,7 @@ argument_list|,
 literal|"plug-in-colors-channel-mixer"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -23586,6 +23641,11 @@ argument_list|,
 literal|"This plug-in mixes the RGB channels."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:channel-mixer' for credits."
 argument_list|,
@@ -23918,7 +23978,7 @@ argument_list|,
 literal|"plug-in-colortoalpha"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -23927,6 +23987,11 @@ argument_list|,
 literal|"This replaces as much of a given color as possible in each pixel with a corresponding amount of alpha, then readjusts the color accordingly."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -24041,7 +24106,7 @@ argument_list|,
 literal|"plug-in-convmatrix"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -24050,6 +24115,11 @@ argument_list|,
 literal|"Apply a generic 5x5 convolution matrix."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:convolution-matrix' for credits."
 argument_list|,
@@ -24306,7 +24376,7 @@ argument_list|,
 literal|"plug-in-cubism"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -24315,6 +24385,11 @@ argument_list|,
 literal|"Convert the image into randomly rotated square blobs."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:cubism' for credits."
 argument_list|,
@@ -24475,7 +24550,7 @@ argument_list|,
 literal|"plug-in-deinterlace"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -24484,6 +24559,11 @@ argument_list|,
 literal|"Deinterlace is useful for processing images from video capture cards. When only the odd or even fields get captured, deinterlace can be used to interpolate between the existing fields to correct this."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:deinterlace' for credits."
 argument_list|,
@@ -24600,7 +24680,7 @@ argument_list|,
 literal|"plug-in-diffraction"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -24609,6 +24689,11 @@ argument_list|,
 literal|"Help? What help?"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:diffraction-patterns' for credits."
 argument_list|,
@@ -24969,7 +25054,7 @@ argument_list|,
 literal|"plug-in-displace"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -24978,6 +25063,11 @@ argument_list|,
 literal|"Displaces the contents of the specified drawable by the amounts specified by 'amount-x' and 'amount-y' multiplied by the luminance of corresponding pixels in the 'displace-map' drawables."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:displace' for credits."
 argument_list|,
@@ -25214,7 +25304,7 @@ argument_list|,
 literal|"plug-in-displace-polar"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -25223,6 +25313,11 @@ argument_list|,
 literal|"Just like plug-in-displace but working in polar coordinates. The drawable is whirled and pinched according to the map."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:displace' for credits."
 argument_list|,
@@ -25459,7 +25554,7 @@ argument_list|,
 literal|"plug-in-dog"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -25468,6 +25563,11 @@ argument_list|,
 literal|"Applies two Gaussian blurs to the drawable, and subtracts the results. This is robust and widely used method for detecting edges."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:difference-of-gaussians' for credits."
 argument_list|,
@@ -25642,7 +25742,7 @@ argument_list|,
 literal|"plug-in-edge"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -25651,6 +25751,11 @@ argument_list|,
 literal|"Perform edge detection on the contents of the specified drawable. AMOUNT is an arbitrary constant, WRAPMODE is like displace plug-in (useful for tileable image). EDGEMODE sets the kind of matrix transform applied to the pixels, SOBEL was the method used in older versions."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge' for credits."
 argument_list|,
@@ -25811,7 +25916,7 @@ argument_list|,
 literal|"plug-in-emboss"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -25820,6 +25925,11 @@ argument_list|,
 literal|"Emboss or Bumpmap the given drawable, specifying the angle and elevation for the light source."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:emboss' for credits."
 argument_list|,
@@ -25998,7 +26108,7 @@ argument_list|,
 literal|"plug-in-engrave"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -26007,6 +26117,11 @@ argument_list|,
 literal|"Creates a black-and-white 'engraved' version of an image as seen in old illustrations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:engrave' for credits."
 argument_list|,
@@ -26141,7 +26256,7 @@ argument_list|,
 literal|"plug-in-exchange"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -26150,6 +26265,11 @@ argument_list|,
 literal|"Exchange one color with another, optionally setting a threshold to convert from one shade to another."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:color-exchange' for credits."
 argument_list|,
@@ -26442,7 +26562,7 @@ argument_list|,
 literal|"plug-in-flarefx"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -26451,6 +26571,11 @@ argument_list|,
 literal|"Adds a lens flare effects. Makes your image look like it was snapped with a cheap camera with a lot of lens :)"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:lens-flare' for credits."
 argument_list|,
@@ -26589,7 +26714,7 @@ argument_list|,
 literal|"plug-in-fractal-trace"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -26598,6 +26723,11 @@ argument_list|,
 literal|"Transform image with the Mandelbrot Fractal"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:fractal-trace' for credits."
 argument_list|,
@@ -26832,7 +26962,7 @@ argument_list|,
 literal|"plug-in-gauss"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -26841,6 +26971,11 @@ argument_list|,
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect. The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius. Horizontal and vertical blurring can be independently invoked by specifying only one to run. The 'method' parameter is ignored."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur' for credits."
 argument_list|,
@@ -27001,7 +27136,7 @@ argument_list|,
 literal|"plug-in-gauss-iir"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -27010,6 +27145,11 @@ argument_list|,
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect. The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius. Horizontal and vertical blurring can be independently invoked by specifying only one to run."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur' for credits."
 argument_list|,
@@ -27162,7 +27302,7 @@ argument_list|,
 literal|"plug-in-gauss-iir2"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -27171,6 +27311,11 @@ argument_list|,
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect. The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius. Horizontal and vertical blurring can be independently invoked by specifying only one to run."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur' for credits."
 argument_list|,
@@ -27309,7 +27454,7 @@ argument_list|,
 literal|"plug-in-gauss-rle"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -27318,6 +27463,11 @@ argument_list|,
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect. The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius. Horizontal and vertical blurring can be independently invoked by specifying only one to run."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur' for credits."
 argument_list|,
@@ -27470,7 +27620,7 @@ argument_list|,
 literal|"plug-in-gauss-rle2"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -27479,6 +27629,11 @@ argument_list|,
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect. The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius. Horizontal and vertical blurring can be independently invoked by specifying only one to run."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur' for credits."
 argument_list|,
@@ -27617,7 +27772,7 @@ argument_list|,
 literal|"plug-in-glasstile"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -27626,6 +27781,11 @@ argument_list|,
 literal|"Divide the image into square glassblocks in which the image is refracted."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:tile-glass' for credits."
 argument_list|,
@@ -27764,7 +27924,7 @@ argument_list|,
 literal|"plug-in-hsv-noise"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -27773,6 +27933,11 @@ argument_list|,
 literal|"Scattering pixel values in HSV space"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-hsv' for credits."
 argument_list|,
@@ -27955,7 +28120,7 @@ argument_list|,
 literal|"plug-in-illusion"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -27964,6 +28129,11 @@ argument_list|,
 literal|"Produce illusion."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:illusion' for credits."
 argument_list|,
@@ -28102,7 +28272,7 @@ argument_list|,
 literal|"plug-in-laplace"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -28111,6 +28281,11 @@ argument_list|,
 literal|"This plug-in creates one-pixel wide edges from the image, with the value proportional to the gradient. It uses the Laplace operator (a 3x3 kernel with -8 in the middle). The image has to be laplacered to get useful results, a gauss_iir with 1.5 - 5.0 depending on the noise in the image is best."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge-laplace' for credits."
 argument_list|,
@@ -28205,7 +28380,7 @@ argument_list|,
 literal|"plug-in-lens-distortion"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -28214,6 +28389,11 @@ argument_list|,
 literal|"Corrects barrel or pincushion lens distortion."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:lens-distortion' for credits."
 argument_list|,
@@ -28452,7 +28632,7 @@ argument_list|,
 literal|"plug-in-make-seamless"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -28461,6 +28641,11 @@ argument_list|,
 literal|"This plug-in creates a seamless tileable from the input drawable."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:tile-seamless' for credits."
 argument_list|,
@@ -28555,7 +28740,7 @@ argument_list|,
 literal|"plug-in-maze"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -28564,6 +28749,11 @@ argument_list|,
 literal|"Generates a maze using either the depth-first search method or Prim's algorithm. Can make tileable mazes too."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:maze' for credits."
 argument_list|,
@@ -28812,7 +29002,7 @@ argument_list|,
 literal|"plug-in-mblur"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -28821,6 +29011,11 @@ argument_list|,
 literal|"This plug-in simulates the effect seen when photographing a moving object at a slow shutter speed. Done by adding multiple displaced copies."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:motion-blur-linear, -zoom, -cirular' for credits."
 argument_list|,
@@ -29028,7 +29223,7 @@ argument_list|,
 literal|"plug-in-mblur-inward"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -29037,6 +29232,11 @@ argument_list|,
 literal|"This procedure is equivalent to plug-in-mblur but performs the zoom blur inward instead of outward."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:motion-blur-linear, -zoom, -cirular' for credits."
 argument_list|,
@@ -29244,7 +29444,7 @@ argument_list|,
 literal|"plug-in-mosaic"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -29253,6 +29453,11 @@ argument_list|,
 literal|"Mosaic is a filter which transforms an image into what appears to be a mosaic, composed of small primitives, each of constant color and of an approximate size."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:mosaic' for credits."
 argument_list|,
@@ -29611,7 +29816,7 @@ argument_list|,
 literal|"plug-in-neon"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -29620,6 +29825,11 @@ argument_list|,
 literal|"This filter works in a manner similar to the edge plug-in, but uses the first derivative of the gaussian operator to achieve resolution independence. The IIR method of calculating the effect is utilized to keep the processing time constant between large and small standard deviations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge-neon' for credits."
 argument_list|,
@@ -29758,7 +29968,7 @@ argument_list|,
 literal|"plug-in-newsprint"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -29767,6 +29977,11 @@ argument_list|,
 literal|"Halftone the image to give newspaper-like effect"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:newsprint' for credits."
 argument_list|,
@@ -30125,7 +30340,7 @@ argument_list|,
 literal|"plug-in-normalize"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -30134,6 +30349,11 @@ argument_list|,
 literal|"This plug-in performs almost the same operation as the 'contrast autostretch' plug-in, except that it won't allow the color channels to normalize independently. This is actually what most people probably want instead of contrast-autostretch; use c-a only if you wish to remove an undesirable color-tint from a source image which is supposed to contain pure-white and pure-black."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:stretch-contrast' for credits."
 argument_list|,
@@ -30228,7 +30448,7 @@ argument_list|,
 literal|"plug-in-nova"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -30237,6 +30457,11 @@ argument_list|,
 literal|"This plug-in produces an effect like a supernova burst. The amount of the light effect is approximately in proportion to 1/r, where r is the distance from the center of the star."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:supernova' for credits."
 argument_list|,
@@ -30461,7 +30686,7 @@ argument_list|,
 literal|"plug-in-oilify"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -30470,6 +30695,11 @@ argument_list|,
 literal|"This function performs the well-known oil-paint effect on the specified drawable."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:oilify' for credits."
 argument_list|,
@@ -30608,7 +30838,7 @@ argument_list|,
 literal|"plug-in-oilify-enhanced"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -30617,6 +30847,11 @@ argument_list|,
 literal|"This function performs the well-known oil-paint effect on the specified drawable."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:oilify' for credits."
 argument_list|,
@@ -30813,7 +31048,7 @@ argument_list|,
 literal|"plug-in-papertile"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -30822,6 +31057,11 @@ argument_list|,
 literal|"This plug-in cuts an image into paper tiles and slides each paper tile."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:tile-paper' for credits."
 argument_list|,
@@ -31083,7 +31323,7 @@ argument_list|,
 literal|"plug-in-photocopy"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -31093,6 +31333,11 @@ literal|"Propagates dark values in an image based on each pixel's relative darkn
 literal|"less toner overall and more detail everywhere. Small values for the pct_black make the blend from the white regions to the black border lines smoother and the toner regions themselves thinner and less noticeable; larger values achieve the opposite effect."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:photocopy' for credits."
 argument_list|,
@@ -31275,7 +31520,7 @@ argument_list|,
 literal|"plug-in-pixelize"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -31284,6 +31529,11 @@ argument_list|,
 literal|"Pixelize the contents of the specified drawable with specified pixelizing width."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -31400,7 +31650,7 @@ argument_list|,
 literal|"plug-in-pixelize2"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -31409,6 +31659,11 @@ argument_list|,
 literal|"Pixelize the contents of the specified drawable with specified pixelizing width and height."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -31547,7 +31802,7 @@ argument_list|,
 literal|"plug-in-plasma"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -31556,6 +31811,11 @@ argument_list|,
 literal|"This plug-in produces plasma fractal images."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:plasma' for credits."
 argument_list|,
@@ -31696,7 +31956,7 @@ argument_list|,
 literal|"plug-in-polar-coords"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -31705,6 +31965,11 @@ argument_list|,
 literal|"Remaps and image from rectangular coordinates to polar coordinates or vice versa."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -31897,7 +32162,7 @@ argument_list|,
 literal|"plug-in-red-eye-removal"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -31906,6 +32171,11 @@ argument_list|,
 literal|"This procedure removes the red eye effect caused by camera flashes by using a percentage based red color threshold. Make a selection containing the eyes, and apply the filter while adjusting the threshold to accurately remove the red eyes."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:red-eye-removal' for credits."
 argument_list|,
@@ -32022,7 +32292,7 @@ argument_list|,
 literal|"plug-in-randomize-hurl"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -32031,6 +32301,11 @@ argument_list|,
 literal|"This plug-in \"hurls\" randomly-valued pixels onto the selection or image. You may select the percentage of pixels to modify and the number of times to repeat the process."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-hurl' for credits."
 argument_list|,
@@ -32209,7 +32484,7 @@ argument_list|,
 literal|"plug-in-randomize-pick"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -32218,6 +32493,11 @@ argument_list|,
 literal|"This plug-in replaces a pixel with a random adjacent pixel. You may select the percentage of pixels to modify and the number of times to repeat the process."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-pick' for credits."
 argument_list|,
@@ -32396,7 +32676,7 @@ argument_list|,
 literal|"plug-in-randomize-slur"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -32405,6 +32685,11 @@ argument_list|,
 literal|"This plug-in \"slurs\" (melts like a bunch of icicles) an image. You may select the percentage of pixels to modify and the number of times to repeat the process."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-slur' for credits."
 argument_list|,
@@ -32583,7 +32868,7 @@ argument_list|,
 literal|"plug-in-rgb-noise"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -32592,6 +32877,11 @@ argument_list|,
 literal|"Add normally distributed (zero mean) random values to image channels. Noise may be additive (uncorrelated) or multiplicative (correlated - also known as speckle noise). For color images color channels may be treated together or independently."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-rgb' for credits."
 argument_list|,
@@ -32810,7 +33100,7 @@ argument_list|,
 literal|"plug-in-ripple"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -32819,6 +33109,11 @@ argument_list|,
 literal|"Ripples the pixels of the specified drawable. Each row or column will be displaced a certain number of pixels coinciding with the given wave form."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:ripple' for credits."
 argument_list|,
@@ -33059,7 +33354,7 @@ argument_list|,
 literal|"plug-in-rotate"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -33068,6 +33363,11 @@ argument_list|,
 literal|"This plug-in does rotate the active layer or the whole image clockwise by multiples of 90 degrees. When the whole image is chosen, the image is resized if necessary."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -33202,7 +33502,7 @@ argument_list|,
 literal|"plug-in-noisify"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -33211,6 +33511,11 @@ argument_list|,
 literal|"Add normally distributed random values to image channels. For color images each color channel may be treated together or independently."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-rgb' for credits."
 argument_list|,
@@ -33411,7 +33716,7 @@ argument_list|,
 literal|"plug-in-sel-gauss"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -33420,6 +33725,11 @@ argument_list|,
 literal|"This filter functions similar to the regular gaussian blur filter except that neighbouring pixels that differ more than the given maxdelta parameter will not be blended with. This way with the correct parameters, an image can be smoothed out without losing details. However, this filter can be rather slow."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:gaussian-blur-selective' for credits."
 argument_list|,
@@ -33558,7 +33868,7 @@ argument_list|,
 literal|"plug-in-semiflatten"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -33567,6 +33877,11 @@ argument_list|,
 literal|"This plug-in flattens pixels in an RGBA image that aren't completely transparent against the current GIMP background color."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -33661,7 +33976,7 @@ argument_list|,
 literal|"plug-in-shift"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -33670,6 +33985,11 @@ argument_list|,
 literal|"Shifts the pixels of the specified drawable. Each row or column will be displaced a random value of pixels."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:shift' for credits."
 argument_list|,
@@ -33808,7 +34128,7 @@ argument_list|,
 literal|"plug-in-sinus"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -33817,6 +34137,11 @@ argument_list|,
 literal|"FIXME: sinus help"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:sinus' for credits."
 argument_list|,
@@ -34186,7 +34511,7 @@ argument_list|,
 literal|"plug-in-sobel"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -34195,6 +34520,11 @@ argument_list|,
 literal|"This plug-in calculates the gradient with a sobel operator. The user can specify which direction to use. When both directions are used, the result is the RMS of the two gradients; if only one direction is used, the result either the absolute value of the gradient, or 127 + gradient (if the 'keep sign' switch is on). This way, information about the direction of the gradient is preserved. Resulting images are not autoscaled.\""
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge-sobel' for credits."
 argument_list|,
@@ -34343,7 +34673,7 @@ argument_list|,
 literal|"plug-in-softglow"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -34352,6 +34682,11 @@ argument_list|,
 literal|"Gives an image a softglow effect by intensifying the highlights in the image. This is done by screening a modified version of the drawable with itself. The modified version is desaturated and then a sigmoidal transfer function is applied to force the distribution of intensities into very small and very large only. This desaturated version is then blurred to give it a fuzzy 'vaseline-on-the-lens' effect. The glow radius parameter controls the sharpness of the glow effect. The brightness parameter controls the degree of intensification applied to image highlights. The sharpness parameter controls how defined or alternatively, diffuse, the glow effect should be."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:softglow' for credits."
 argument_list|,
@@ -34512,7 +34847,7 @@ argument_list|,
 literal|"plug-in-solid-noise"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -34521,6 +34856,11 @@ argument_list|,
 literal|"Generates 2D textures using Perlin's classic solid noise function."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-solid' for credits."
 argument_list|,
@@ -34741,7 +35081,7 @@ argument_list|,
 literal|"plug-in-spread"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -34750,6 +35090,11 @@ argument_list|,
 literal|"Spreads the pixels of the specified drawable. Pixels are randomly moved to another location whose distance varies from the original by the horizontal and vertical spread amounts."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:noise-spread' for credits."
 argument_list|,
@@ -34888,7 +35233,7 @@ argument_list|,
 literal|"plug-in-threshold-alpha"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -34897,6 +35242,11 @@ argument_list|,
 literal|"Make transparency all-or-nothing."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -35013,7 +35363,7 @@ argument_list|,
 literal|"plug-in-unsharp-mask"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -35022,6 +35372,11 @@ argument_list|,
 literal|"The unsharp mask is a sharpening filter that works by comparing using the difference of the image and a blurred version of the image. It is commonly used on photographic images, and is provides a much more pleasing result than the standard sharpen filter."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:unsharp-mask' for credits."
 argument_list|,
@@ -35182,7 +35537,7 @@ argument_list|,
 literal|"plug-in-video"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -35191,6 +35546,11 @@ argument_list|,
 literal|"This function simulates the degradation of being on an old low-dotpitch RGB video monitor to the specified drawable."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:video-degradation' for credits."
 argument_list|,
@@ -35343,7 +35703,7 @@ argument_list|,
 literal|"plug-in-vinvert"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -35352,6 +35712,11 @@ argument_list|,
 literal|"This function takes an indexed/RGB image and inverts its 'value' in HSV space. The upshot of this is that the color and saturation at any given point remains the same, but its brightness is effectively inverted. Quite strange. Sometimes produces unpleasant color artifacts on images from lossy sources (ie. JPEG)."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -35446,7 +35811,7 @@ argument_list|,
 literal|"plug-in-vpropagate"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -35455,6 +35820,11 @@ argument_list|,
 literal|"Propagate values of the layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:value-propagate' for credits."
 argument_list|,
@@ -35681,7 +36051,7 @@ argument_list|,
 literal|"plug-in-dilate"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -35690,6 +36060,11 @@ argument_list|,
 literal|"Dilate image."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:value-propagate' for credits."
 argument_list|,
@@ -35916,7 +36291,7 @@ argument_list|,
 literal|"plug-in-erode"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -35925,6 +36300,11 @@ argument_list|,
 literal|"Erode image."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:value-propagate' for credits."
 argument_list|,
@@ -36151,7 +36531,7 @@ argument_list|,
 literal|"plug-in-waves"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -36160,6 +36540,11 @@ argument_list|,
 literal|"Distort the image with waves."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:waves' for credits."
 argument_list|,
@@ -36358,7 +36743,7 @@ argument_list|,
 literal|"plug-in-whirl-pinch"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -36367,6 +36752,11 @@ argument_list|,
 literal|"Distorts the image by whirling and pinching, which are two common center-based, circular distortions. Whirling is like projecting the image onto the surface of water in a toilet and flushing. Pinching is similar to projecting the image onto an elastic surface and pressing or pulling on the center of the surface."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:whirl-pinch' for credits."
 argument_list|,
@@ -36531,7 +36921,7 @@ argument_list|,
 literal|"plug-in-wind"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -36540,6 +36930,11 @@ argument_list|,
 literal|"Renders a wind effect."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:wind' for credits."
 argument_list|,

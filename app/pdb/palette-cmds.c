@@ -2534,7 +2534,7 @@ argument_list|,
 literal|"gimp-palette-new"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2543,6 +2543,11 @@ argument_list|,
 literal|"This procedure creates a new, uninitialized palette"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2629,7 +2634,7 @@ argument_list|,
 literal|"gimp-palette-duplicate"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2638,6 +2643,11 @@ argument_list|,
 literal|"This procedure creates an identical palette by a different name"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2724,7 +2734,7 @@ argument_list|,
 literal|"gimp-palette-rename"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2733,6 +2743,11 @@ argument_list|,
 literal|"This procedure renames a palette"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2843,7 +2858,7 @@ argument_list|,
 literal|"gimp-palette-delete"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2852,6 +2867,11 @@ argument_list|,
 literal|"This procedure deletes a palette"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -2914,7 +2934,7 @@ argument_list|,
 literal|"gimp-palette-is-editable"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -2923,6 +2943,11 @@ argument_list|,
 literal|"Returns TRUE if you have permission to change the palette"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -3003,7 +3028,7 @@ argument_list|,
 literal|"gimp-palette-get-info"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3012,6 +3037,11 @@ argument_list|,
 literal|"This procedure retrieves information about the specified palette. This includes the name, and the number of colors."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3096,7 +3126,7 @@ argument_list|,
 literal|"gimp-palette-get-colors"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3105,6 +3135,11 @@ argument_list|,
 literal|"This procedure retrieves all color entries of the specified palette."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -3205,7 +3240,7 @@ argument_list|,
 literal|"gimp-palette-get-columns"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3214,6 +3249,11 @@ argument_list|,
 literal|"This procedures retrieves the preferred number of columns to use when the palette is being displayed."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -3298,7 +3338,7 @@ argument_list|,
 literal|"gimp-palette-set-columns"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3307,6 +3347,11 @@ argument_list|,
 literal|"This procedures controls how many colors are shown per row when the palette is being displayed. This value can only be changed if the palette is writable. The maximum allowed value is 64."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -3391,7 +3436,7 @@ argument_list|,
 literal|"gimp-palette-add-entry"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3400,6 +3445,11 @@ argument_list|,
 literal|"This procedure adds an entry to the specified palette. It returns an error if the entry palette does not exist."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3528,7 +3578,7 @@ argument_list|,
 literal|"gimp-palette-delete-entry"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3537,6 +3587,11 @@ argument_list|,
 literal|"This procedure deletes an entry from the specified palette. It returns an error if the entry palette does not exist."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3621,7 +3676,7 @@ argument_list|,
 literal|"gimp-palette-entry-get-color"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3630,6 +3685,11 @@ argument_list|,
 literal|"This procedure retrieves the color of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3734,7 +3794,7 @@ argument_list|,
 literal|"gimp-palette-entry-set-color"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3743,6 +3803,11 @@ argument_list|,
 literal|"This procedure sets the color of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3847,7 +3912,7 @@ argument_list|,
 literal|"gimp-palette-entry-get-name"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3856,6 +3921,11 @@ argument_list|,
 literal|"This procedure retrieves the name of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -3964,7 +4034,7 @@ argument_list|,
 literal|"gimp-palette-entry-set-name"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -3973,6 +4043,11 @@ argument_list|,
 literal|"This procedure sets the name of the zero-based entry specified for the specified palette. It returns an error if the entry does not exist."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

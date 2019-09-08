@@ -308,7 +308,7 @@ argument_list|,
 literal|"gimp-debug-timer-start"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -320,6 +320,11 @@ literal|"\n"
 literal|"This is a debug utility procedure. It is subject to change at any point, and should not be used in production."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ell"
 argument_list|,
@@ -358,7 +363,7 @@ argument_list|,
 literal|"gimp-debug-timer-end"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -370,6 +375,11 @@ literal|"\n"
 literal|"This is a debug utility procedure. It is subject to change at any point, and should not be used in production."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ell"
 argument_list|,

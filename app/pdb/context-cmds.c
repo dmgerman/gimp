@@ -11890,7 +11890,7 @@ argument_list|,
 literal|"gimp-context-push"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -11899,6 +11899,11 @@ argument_list|,
 literal|"This procedure creates a new context by copying the current context. This copy becomes the new current context for the calling plug-in until it is popped again using 'gimp-context-pop'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -11937,7 +11942,7 @@ argument_list|,
 literal|"gimp-context-pop"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -11946,6 +11951,11 @@ argument_list|,
 literal|"This procedure removes the topmost context from the plug-in's context stack. The context that was active before the corresponding call to 'gimp-context-push' becomes the new current context of the plug-in."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -11984,7 +11994,7 @@ argument_list|,
 literal|"gimp-context-set-defaults"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -11993,6 +12003,11 @@ argument_list|,
 literal|"This procedure resets context settings used by various procedures to their default value. This procedure will usually be called after a context push so that a script which calls procedures affected by context settings will not be affected by changes in the global context."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Kevin Cozens<kcozens@svn.gnome.org>"
 argument_list|,
@@ -12031,7 +12046,7 @@ argument_list|,
 literal|"gimp-context-list-paint-methods"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12040,6 +12055,11 @@ argument_list|,
 literal|"This procedure lists the names of the available paint methods. Any of the results can be used for 'gimp-context-set-paint-method'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -12116,7 +12136,7 @@ argument_list|,
 literal|"gimp-context-get-paint-method"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12125,6 +12145,11 @@ argument_list|,
 literal|"This procedure returns the name of the currently active paint method."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -12187,7 +12212,7 @@ argument_list|,
 literal|"gimp-context-set-paint-method"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12196,6 +12221,11 @@ argument_list|,
 literal|"This procedure allows the active paint method to be set by specifying its name. The name is simply a string which corresponds to one of the names of the available paint methods. If there is no matching method found, this procedure will return an error. Otherwise, the specified method becomes active and will be used in all subsequent paint operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -12258,7 +12288,7 @@ argument_list|,
 literal|"gimp-context-get-stroke-method"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12267,6 +12297,11 @@ argument_list|,
 literal|"This procedure returns the currently active stroke method."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -12325,7 +12360,7 @@ argument_list|,
 literal|"gimp-context-set-stroke-method"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12334,6 +12369,11 @@ argument_list|,
 literal|"This procedure set the specified stroke method as the active stroke method. The new method will be used in all subsequent stroke operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -12392,7 +12432,7 @@ argument_list|,
 literal|"gimp-context-get-foreground"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12401,6 +12441,11 @@ argument_list|,
 literal|"This procedure returns the current GIMP foreground color. The foreground color is used in a variety of tools such as paint tools, blending, and bucket fill."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12459,7 +12504,7 @@ argument_list|,
 literal|"gimp-context-set-foreground"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12468,6 +12513,11 @@ argument_list|,
 literal|"This procedure sets the current GIMP foreground color. After this is set, operations which use foreground such as paint tools, blending, and bucket fill will use the new value."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12526,7 +12576,7 @@ argument_list|,
 literal|"gimp-context-get-background"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12535,6 +12585,11 @@ argument_list|,
 literal|"This procedure returns the current GIMP background color. The background color is used in a variety of tools such as blending, erasing (with non-alpha images), and image filling."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12593,7 +12648,7 @@ argument_list|,
 literal|"gimp-context-set-background"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12602,6 +12657,11 @@ argument_list|,
 literal|"This procedure sets the current GIMP background color. After this is set, operations which use background such as blending, filling images, clearing, and erasing (in non-alpha images) will use the new value."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12660,7 +12720,7 @@ argument_list|,
 literal|"gimp-context-set-default-colors"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12669,6 +12729,11 @@ argument_list|,
 literal|"This procedure sets the current GIMP foreground and background colors to their initial default values, black and white."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12707,7 +12772,7 @@ argument_list|,
 literal|"gimp-context-swap-colors"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12716,6 +12781,11 @@ argument_list|,
 literal|"This procedure swaps the current GIMP foreground and background colors, so that the new foreground color becomes the old background color and vice versa."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12754,7 +12824,7 @@ argument_list|,
 literal|"gimp-context-get-opacity"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12763,6 +12833,11 @@ argument_list|,
 literal|"This procedure returns the opacity setting. The return value is a floating point number between 0 and 100."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12823,7 +12898,7 @@ argument_list|,
 literal|"gimp-context-set-opacity"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12832,6 +12907,11 @@ argument_list|,
 literal|"This procedure modifies the opacity setting. The value should be a floating point number between 0 and 100."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12892,7 +12972,7 @@ argument_list|,
 literal|"gimp-context-get-paint-mode"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12901,6 +12981,11 @@ argument_list|,
 literal|"This procedure returns the paint-mode setting. The return value is an integer which corresponds to the values listed in the argument description."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12959,7 +13044,7 @@ argument_list|,
 literal|"gimp-context-set-paint-mode"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -12968,6 +13053,11 @@ argument_list|,
 literal|"This procedure modifies the paint_mode setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -13026,7 +13116,7 @@ argument_list|,
 literal|"gimp-context-get-line-width"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13035,6 +13125,11 @@ argument_list|,
 literal|"This procedure returns the line width setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13095,7 +13190,7 @@ argument_list|,
 literal|"gimp-context-set-line-width"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13106,6 +13201,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13166,7 +13266,7 @@ argument_list|,
 literal|"gimp-context-get-line-width-unit"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13175,6 +13275,11 @@ argument_list|,
 literal|"This procedure returns the line width unit setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13235,7 +13340,7 @@ argument_list|,
 literal|"gimp-context-set-line-width-unit"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13246,6 +13351,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13306,7 +13416,7 @@ argument_list|,
 literal|"gimp-context-get-line-cap-style"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13315,6 +13425,11 @@ argument_list|,
 literal|"This procedure returns the line cap style setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13373,7 +13488,7 @@ argument_list|,
 literal|"gimp-context-set-line-cap-style"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13384,6 +13499,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13442,7 +13562,7 @@ argument_list|,
 literal|"gimp-context-get-line-join-style"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13451,6 +13571,11 @@ argument_list|,
 literal|"This procedure returns the line join style setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13509,7 +13634,7 @@ argument_list|,
 literal|"gimp-context-set-line-join-style"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13520,6 +13645,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13578,7 +13708,7 @@ argument_list|,
 literal|"gimp-context-get-line-miter-limit"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13587,6 +13717,11 @@ argument_list|,
 literal|"This procedure returns the line miter limit setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13647,7 +13782,7 @@ argument_list|,
 literal|"gimp-context-set-line-miter-limit"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13659,6 +13794,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13719,7 +13859,7 @@ argument_list|,
 literal|"gimp-context-get-line-dash-offset"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13728,6 +13868,11 @@ argument_list|,
 literal|"This procedure returns the line dash offset setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13788,7 +13933,7 @@ argument_list|,
 literal|"gimp-context-set-line-dash-offset"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13799,6 +13944,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13859,7 +14009,7 @@ argument_list|,
 literal|"gimp-context-get-line-dash-pattern"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13868,6 +14018,11 @@ argument_list|,
 literal|"This procedure returns the line dash pattern setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -13944,7 +14099,7 @@ argument_list|,
 literal|"gimp-context-set-line-dash-pattern"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -13957,6 +14112,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -14033,7 +14193,7 @@ argument_list|,
 literal|"gimp-context-get-brush"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14042,6 +14202,11 @@ argument_list|,
 literal|"This procedure returns the name of the currently active brush. All paint operations and stroke operations use this brush to control the application of paint to the image."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -14104,7 +14269,7 @@ argument_list|,
 literal|"gimp-context-set-brush"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14113,6 +14278,11 @@ argument_list|,
 literal|"This procedure allows the active brush to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed brushes. If there is no matching brush found, this procedure will return an error. Otherwise, the specified brush becomes active and will be used in all subsequent paint operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -14175,7 +14345,7 @@ argument_list|,
 literal|"gimp-context-get-brush-size"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14184,6 +14354,11 @@ argument_list|,
 literal|"Get the brush size in pixels for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -14244,7 +14419,7 @@ argument_list|,
 literal|"gimp-context-set-brush-size"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14253,6 +14428,11 @@ argument_list|,
 literal|"Set the brush size in pixels for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -14313,7 +14493,7 @@ argument_list|,
 literal|"gimp-context-set-brush-default-size"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14322,6 +14502,11 @@ argument_list|,
 literal|"Set the brush size to the default (max of width and height) for paintbrush, airbrush, or pencil tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -14360,7 +14545,7 @@ argument_list|,
 literal|"gimp-context-get-brush-aspect-ratio"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14369,6 +14554,11 @@ argument_list|,
 literal|"Set the aspect ratio for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -14431,7 +14621,7 @@ argument_list|,
 literal|"gimp-context-set-brush-aspect-ratio"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14440,6 +14630,11 @@ argument_list|,
 literal|"Set the aspect ratio for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -14502,7 +14697,7 @@ argument_list|,
 literal|"gimp-context-get-brush-angle"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14511,6 +14706,11 @@ argument_list|,
 literal|"Set the angle in degrees for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -14573,7 +14773,7 @@ argument_list|,
 literal|"gimp-context-set-brush-angle"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14582,6 +14782,11 @@ argument_list|,
 literal|"Set the angle in degrees for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -14644,7 +14849,7 @@ argument_list|,
 literal|"gimp-context-get-brush-spacing"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14653,6 +14858,11 @@ argument_list|,
 literal|"Get the brush spacing as percent of size for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -14713,7 +14923,7 @@ argument_list|,
 literal|"gimp-context-set-brush-spacing"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14722,6 +14932,11 @@ argument_list|,
 literal|"Set the brush spacing as percent of size for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -14782,7 +14997,7 @@ argument_list|,
 literal|"gimp-context-set-brush-default-spacing"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14791,6 +15006,11 @@ argument_list|,
 literal|"Set the brush spacing to the default for paintbrush, airbrush, or pencil tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -14829,7 +15049,7 @@ argument_list|,
 literal|"gimp-context-get-brush-hardness"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14838,6 +15058,11 @@ argument_list|,
 literal|"Get the brush hardness for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -14898,7 +15123,7 @@ argument_list|,
 literal|"gimp-context-set-brush-hardness"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14907,6 +15132,11 @@ argument_list|,
 literal|"Set the brush hardness for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -14967,7 +15197,7 @@ argument_list|,
 literal|"gimp-context-set-brush-default-hardness"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -14976,6 +15206,11 @@ argument_list|,
 literal|"Set the brush spacing to the default for paintbrush, airbrush, or pencil tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -15014,7 +15249,7 @@ argument_list|,
 literal|"gimp-context-get-brush-force"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15023,6 +15258,11 @@ argument_list|,
 literal|"Get the brush application force for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -15083,7 +15323,7 @@ argument_list|,
 literal|"gimp-context-set-brush-force"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15092,6 +15332,11 @@ argument_list|,
 literal|"Set the brush application force for brush based paint tools."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Alexia Death"
 argument_list|,
@@ -15152,7 +15397,7 @@ argument_list|,
 literal|"gimp-context-get-dynamics"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15161,6 +15406,11 @@ argument_list|,
 literal|"This procedure returns the name of the currently active paint dynamics. All paint operations and stroke operations use this paint dynamics to control the application of paint to the image."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15223,7 +15473,7 @@ argument_list|,
 literal|"gimp-context-set-dynamics"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15232,6 +15482,11 @@ argument_list|,
 literal|"This procedure allows the active paint dynamics to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed paint dynamics. If there is no matching paint dynamics found, this procedure will return an error. Otherwise, the specified paint dynamics becomes active and will be used in all subsequent paint operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15294,7 +15549,7 @@ argument_list|,
 literal|"gimp-context-get-mypaint-brush"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15303,6 +15558,11 @@ argument_list|,
 literal|"This procedure returns the name of the currently active MyPaint brush."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15365,7 +15625,7 @@ argument_list|,
 literal|"gimp-context-set-mypaint-brush"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15374,6 +15634,11 @@ argument_list|,
 literal|"This procedure allows the active MyPaint brush to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed MyPaint brushes. If there is no matching MyPaint brush found, this procedure will return an error. Otherwise, the specified MyPaint brush becomes active and will be used in all subsequent MyPaint paint operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15436,7 +15701,7 @@ argument_list|,
 literal|"gimp-context-get-pattern"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15445,6 +15710,11 @@ argument_list|,
 literal|"This procedure returns name of the the currently active pattern. All clone and bucket-fill operations with patterns will use this pattern to control the application of paint to the image."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -15507,7 +15777,7 @@ argument_list|,
 literal|"gimp-context-set-pattern"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15516,6 +15786,11 @@ argument_list|,
 literal|"This procedure allows the active pattern to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed patterns. If there is no matching pattern found, this procedure will return an error. Otherwise, the specified pattern becomes active and will be used in all subsequent paint operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -15578,7 +15853,7 @@ argument_list|,
 literal|"gimp-context-get-gradient"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15587,6 +15862,11 @@ argument_list|,
 literal|"This procedure returns the name of the currently active gradient."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -15649,7 +15929,7 @@ argument_list|,
 literal|"gimp-context-set-gradient"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15658,6 +15938,11 @@ argument_list|,
 literal|"This procedure lets you set the specified gradient as the active or \"current\" one. The name is simply a string which corresponds to one of the loaded gradients. If no matching gradient is found, this procedure will return an error. Otherwise, the specified gradient will become active and will be used for subsequent custom gradient operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -15720,7 +16005,7 @@ argument_list|,
 literal|"gimp-context-set-gradient-fg-bg-rgb"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15729,6 +16014,11 @@ argument_list|,
 literal|"This procedure sets the built-in FG-BG RGB gradient as the active gradient. The gradient will be used for subsequent gradient operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15767,7 +16057,7 @@ argument_list|,
 literal|"gimp-context-set-gradient-fg-bg-hsv-cw"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15776,6 +16066,11 @@ argument_list|,
 literal|"This procedure sets the built-in FG-BG HSV (cw) gradient as the active gradient. The gradient will be used for subsequent gradient operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15814,7 +16109,7 @@ argument_list|,
 literal|"gimp-context-set-gradient-fg-bg-hsv-ccw"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15823,6 +16118,11 @@ argument_list|,
 literal|"This procedure sets the built-in FG-BG HSV (ccw) gradient as the active gradient. The gradient will be used for subsequent gradient operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15861,7 +16161,7 @@ argument_list|,
 literal|"gimp-context-set-gradient-fg-transparent"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15870,6 +16170,11 @@ argument_list|,
 literal|"This procedure sets the built-in FG-Transparent gradient as the active gradient. The gradient will be used for subsequent gradient operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15908,7 +16213,7 @@ argument_list|,
 literal|"gimp-context-get-gradient-blend-color-space"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15917,6 +16222,11 @@ argument_list|,
 literal|"Get the gradient blend color space for paint tools and the gradient tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15975,7 +16285,7 @@ argument_list|,
 literal|"gimp-context-set-gradient-blend-color-space"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -15984,6 +16294,11 @@ argument_list|,
 literal|"Set the gradient blend color space for paint tools and the gradient tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16042,7 +16357,7 @@ argument_list|,
 literal|"gimp-context-get-gradient-repeat-mode"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16051,6 +16366,11 @@ argument_list|,
 literal|"Get the gradient repeat mode for paint tools and the gradient tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16109,7 +16429,7 @@ argument_list|,
 literal|"gimp-context-set-gradient-repeat-mode"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16118,6 +16438,11 @@ argument_list|,
 literal|"Set the gradient repeat mode for paint tools and the gradient tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16176,7 +16501,7 @@ argument_list|,
 literal|"gimp-context-get-gradient-reverse"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16185,6 +16510,11 @@ argument_list|,
 literal|"Get the gradient reverse setting for paint tools and the gradient tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16241,7 +16571,7 @@ argument_list|,
 literal|"gimp-context-set-gradient-reverse"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16250,6 +16580,11 @@ argument_list|,
 literal|"Set the gradient reverse setting for paint tools and the gradient tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16306,7 +16641,7 @@ argument_list|,
 literal|"gimp-context-get-palette"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16315,6 +16650,11 @@ argument_list|,
 literal|"This procedure returns the name of the the currently active palette."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -16377,7 +16717,7 @@ argument_list|,
 literal|"gimp-context-set-palette"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16386,6 +16726,11 @@ argument_list|,
 literal|"This procedure allows the active palette to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed palettes. If no matching palette is found, this procedure will return an error. Otherwise, the specified palette becomes active and will be used in all subsequent palette operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -16448,7 +16793,7 @@ argument_list|,
 literal|"gimp-context-get-font"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16457,6 +16802,11 @@ argument_list|,
 literal|"This procedure returns the name of the currently active font."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -16519,7 +16869,7 @@ argument_list|,
 literal|"gimp-context-set-font"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16528,6 +16878,11 @@ argument_list|,
 literal|"This procedure allows the active font to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed fonts. If no matching font is found, this procedure will return an error. Otherwise, the specified font becomes active and will be used in all subsequent font operations."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>& Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -16590,7 +16945,7 @@ argument_list|,
 literal|"gimp-context-get-antialias"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16599,6 +16954,11 @@ argument_list|,
 literal|"This procedure returns the antialias setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16655,7 +17015,7 @@ argument_list|,
 literal|"gimp-context-set-antialias"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16666,6 +17026,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-image-select-round-rectangle', 'gimp-image-select-ellipse', 'gimp-image-select-polygon', 'gimp-image-select-item', 'gimp-drawable-edit-bucket-fill', 'gimp-drawable-edit-stroke-item', 'gimp-drawable-edit-stroke-selection'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16722,7 +17087,7 @@ argument_list|,
 literal|"gimp-context-get-feather"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16731,6 +17096,11 @@ argument_list|,
 literal|"This procedure returns the feather setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16787,7 +17157,7 @@ argument_list|,
 literal|"gimp-context-set-feather"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16798,6 +17168,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-image-select-rectangle', 'gimp-image-select-round-rectangle', 'gimp-image-select-ellipse', 'gimp-image-select-polygon', 'gimp-image-select-item'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16854,7 +17229,7 @@ argument_list|,
 literal|"gimp-context-get-feather-radius"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16863,6 +17238,11 @@ argument_list|,
 literal|"This procedure returns the feather radius setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -16945,7 +17325,7 @@ argument_list|,
 literal|"gimp-context-set-feather-radius"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -16956,6 +17336,11 @@ literal|"\n"
 literal|"This setting affects all procedures that are affected by 'gimp-context-set-feather'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17038,7 +17423,7 @@ argument_list|,
 literal|"gimp-context-get-sample-merged"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17047,6 +17432,11 @@ argument_list|,
 literal|"This procedure returns the sample merged setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17103,7 +17493,7 @@ argument_list|,
 literal|"gimp-context-set-sample-merged"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17114,6 +17504,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17170,7 +17565,7 @@ argument_list|,
 literal|"gimp-context-get-sample-criterion"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17179,6 +17574,11 @@ argument_list|,
 literal|"This procedure returns the sample criterion setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17237,7 +17637,7 @@ argument_list|,
 literal|"gimp-context-set-sample-criterion"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17248,6 +17648,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17306,7 +17711,7 @@ argument_list|,
 literal|"gimp-context-get-sample-threshold"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17315,6 +17720,11 @@ argument_list|,
 literal|"This procedure returns the sample threshold setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17375,7 +17785,7 @@ argument_list|,
 literal|"gimp-context-set-sample-threshold"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17386,6 +17796,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17446,7 +17861,7 @@ argument_list|,
 literal|"gimp-context-get-sample-threshold-int"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17455,6 +17870,11 @@ argument_list|,
 literal|"This procedure returns the sample threshold setting as an integer value. See 'gimp-context-get-sample-threshold'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17515,7 +17935,7 @@ argument_list|,
 literal|"gimp-context-set-sample-threshold-int"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17524,6 +17944,11 @@ argument_list|,
 literal|"This procedure modifies the sample threshold setting as an integer value. See 'gimp-context-set-sample-threshold'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17584,7 +18009,7 @@ argument_list|,
 literal|"gimp-context-get-sample-transparent"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17593,6 +18018,11 @@ argument_list|,
 literal|"This procedure returns the sample transparent setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17649,7 +18079,7 @@ argument_list|,
 literal|"gimp-context-set-sample-transparent"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17660,6 +18090,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17716,7 +18151,7 @@ argument_list|,
 literal|"gimp-context-get-diagonal-neighbors"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17725,6 +18160,11 @@ argument_list|,
 literal|"This procedure returns the diagonal neighbors setting."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ell"
 argument_list|,
@@ -17781,7 +18221,7 @@ argument_list|,
 literal|"gimp-context-set-diagonal-neighbors"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17792,6 +18232,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ell"
 argument_list|,
@@ -17848,7 +18293,7 @@ argument_list|,
 literal|"gimp-context-get-distance-metric"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17857,6 +18302,11 @@ argument_list|,
 literal|"This procedure returns the distance metric in the current context. See 'gimp-context-set-distance-metric' to know more about its usage."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Jehan"
 argument_list|,
@@ -17915,7 +18365,7 @@ argument_list|,
 literal|"gimp-context-set-distance-metric"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17926,6 +18376,11 @@ literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-gradient-fill'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Jehan"
 argument_list|,
@@ -17984,7 +18439,7 @@ argument_list|,
 literal|"gimp-context-get-interpolation"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -17993,6 +18448,11 @@ argument_list|,
 literal|"This procedure returns the interpolation setting. The return value is an integer which corresponds to the values listed in the argument description. If the interpolation has not been set explicitly by 'gimp-context-set-interpolation', the default interpolation set in gimprc will be used."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -18051,7 +18511,7 @@ argument_list|,
 literal|"gimp-context-set-interpolation"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18062,6 +18522,11 @@ literal|"\n"
 literal|"This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix', 'gimp-image-scale', 'gimp-layer-scale'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -18120,7 +18585,7 @@ argument_list|,
 literal|"gimp-context-get-transform-direction"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18129,6 +18594,11 @@ argument_list|,
 literal|"This procedure returns the transform direction. The return value is an integer which corresponds to the values listed in the argument description."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -18187,7 +18657,7 @@ argument_list|,
 literal|"gimp-context-set-transform-direction"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18198,6 +18668,11 @@ literal|"\n"
 literal|"This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -18256,7 +18731,7 @@ argument_list|,
 literal|"gimp-context-get-transform-resize"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18265,6 +18740,11 @@ argument_list|,
 literal|"This procedure returns the transform resize setting. The return value is an integer which corresponds to the values listed in the argument description."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -18323,7 +18803,7 @@ argument_list|,
 literal|"gimp-context-set-transform-resize"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18334,6 +18814,11 @@ literal|"\n"
 literal|"This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-flip-simple', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-rotate-simple', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -18392,7 +18877,7 @@ argument_list|,
 literal|"gimp-context-get-ink-size"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18401,6 +18886,11 @@ argument_list|,
 literal|"Get the ink blob size in pixels for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18461,7 +18951,7 @@ argument_list|,
 literal|"gimp-context-set-ink-size"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18470,6 +18960,11 @@ argument_list|,
 literal|"Set the ink blob size in pixels for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18530,7 +19025,7 @@ argument_list|,
 literal|"gimp-context-get-ink-angle"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18539,6 +19034,11 @@ argument_list|,
 literal|"Get the ink angle in degrees for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18601,7 +19101,7 @@ argument_list|,
 literal|"gimp-context-set-ink-angle"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18610,6 +19110,11 @@ argument_list|,
 literal|"Set the ink angle in degrees for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18672,7 +19177,7 @@ argument_list|,
 literal|"gimp-context-get-ink-size-sensitivity"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18681,6 +19186,11 @@ argument_list|,
 literal|"Get the ink size sensitivity for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18741,7 +19251,7 @@ argument_list|,
 literal|"gimp-context-set-ink-size-sensitivity"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18750,6 +19260,11 @@ argument_list|,
 literal|"Set the ink size sensitivity for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18810,7 +19325,7 @@ argument_list|,
 literal|"gimp-context-get-ink-tilt-sensitivity"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18819,6 +19334,11 @@ argument_list|,
 literal|"Get the ink tilt sensitivity for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18879,7 +19399,7 @@ argument_list|,
 literal|"gimp-context-set-ink-tilt-sensitivity"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18888,6 +19408,11 @@ argument_list|,
 literal|"Set the ink tilt sensitivity for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -18948,7 +19473,7 @@ argument_list|,
 literal|"gimp-context-get-ink-speed-sensitivity"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -18957,6 +19482,11 @@ argument_list|,
 literal|"Get the ink speed sensitivity for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -19017,7 +19547,7 @@ argument_list|,
 literal|"gimp-context-set-ink-speed-sensitivity"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -19026,6 +19556,11 @@ argument_list|,
 literal|"Set the ink speed sensitivity for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -19086,7 +19621,7 @@ argument_list|,
 literal|"gimp-context-get-ink-blob-type"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -19095,6 +19630,11 @@ argument_list|,
 literal|"Get the ink blob type for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -19153,7 +19693,7 @@ argument_list|,
 literal|"gimp-context-set-ink-blob-type"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -19162,6 +19702,11 @@ argument_list|,
 literal|"Set the ink blob type for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -19220,7 +19765,7 @@ argument_list|,
 literal|"gimp-context-get-ink-blob-aspect-ratio"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -19229,6 +19774,11 @@ argument_list|,
 literal|"Get the ink blob aspect ratio for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -19289,7 +19839,7 @@ argument_list|,
 literal|"gimp-context-set-ink-blob-aspect-ratio"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -19298,6 +19848,11 @@ argument_list|,
 literal|"Set the ink blob aspect ratio for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -19358,7 +19913,7 @@ argument_list|,
 literal|"gimp-context-get-ink-blob-angle"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -19367,6 +19922,11 @@ argument_list|,
 literal|"Get the ink blob angle in degrees for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,
@@ -19429,7 +19989,7 @@ argument_list|,
 literal|"gimp-context-set-ink-blob-angle"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -19438,6 +19998,11 @@ argument_list|,
 literal|"Set the ink blob angle in degrees for ink tool."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ed Swartz"
 argument_list|,

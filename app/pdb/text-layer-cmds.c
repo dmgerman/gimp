@@ -4455,7 +4455,7 @@ argument_list|,
 literal|"gimp-text-layer-new"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4464,6 +4464,11 @@ argument_list|,
 literal|"This procedure creates a new text layer. The arguments are kept as simple as necessary for the normal case. All text attributes, however, can be modified with the appropriate gimp_text_layer_set_*() procedures. The new layer still needs to be added to the image, as this is not automatic. Add the new layer using 'gimp-image-insert-layer'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -4630,7 +4635,7 @@ argument_list|,
 literal|"gimp-text-layer-get-text"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4639,6 +4644,11 @@ argument_list|,
 literal|"This procedure returns the text from a text layer as a string."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -4719,7 +4729,7 @@ argument_list|,
 literal|"gimp-text-layer-set-text"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4728,6 +4738,11 @@ argument_list|,
 literal|"This procedure changes the text of a text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -4808,7 +4823,7 @@ argument_list|,
 literal|"gimp-text-layer-get-markup"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4817,6 +4832,11 @@ argument_list|,
 literal|"This procedure returns the markup of the styles from a text layer. The markup will be in the form of Pango's markup - See https://www.pango.org/ for more information about Pango and its markup. Note: Setting the markup of a text layer using Pango's markup is not supported for now."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Barak Itkin<lightningismyname@gmail.com>"
 argument_list|,
@@ -4897,7 +4917,7 @@ argument_list|,
 literal|"gimp-text-layer-get-font"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4906,6 +4926,11 @@ argument_list|,
 literal|"This procedure returns the name of the font from a text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -4986,7 +5011,7 @@ argument_list|,
 literal|"gimp-text-layer-set-font"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -4995,6 +5020,11 @@ argument_list|,
 literal|"This procedure modifies the font used in the specified text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -5075,7 +5105,7 @@ argument_list|,
 literal|"gimp-text-layer-get-font-size"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5084,6 +5114,11 @@ argument_list|,
 literal|"This procedure returns the size of the font which is used in a text layer. You will receive the size as a float 'font-size' in 'unit' units."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -5185,7 +5220,7 @@ argument_list|,
 literal|"gimp-text-layer-set-font-size"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5194,6 +5229,11 @@ argument_list|,
 literal|"This procedure changes the font size of a text layer. The size of your font will be a double 'font-size' of 'unit' units."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -5294,7 +5334,7 @@ argument_list|,
 literal|"gimp-text-layer-get-antialias"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5303,6 +5343,11 @@ argument_list|,
 literal|"This procedure checks if antialiasing is enabled in the specified text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -5377,7 +5422,7 @@ argument_list|,
 literal|"gimp-text-layer-set-antialias"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5386,6 +5431,11 @@ argument_list|,
 literal|"This procedure enables or disables anti-aliasing of the text in a text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -5460,7 +5510,7 @@ argument_list|,
 literal|"gimp-text-layer-get-hint-style"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5469,6 +5519,11 @@ argument_list|,
 literal|"This procedure provides information about the hinting that is being used in a text layer. Hinting can be optimized for fidelity or contrast or it can be turned entirely off."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -5545,7 +5600,7 @@ argument_list|,
 literal|"gimp-text-layer-set-hint-style"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5554,6 +5609,11 @@ argument_list|,
 literal|"This procedure sets the hint style for font outlines in a text layer. This controls whether to fit font outlines to the pixel grid, and if so, whether to optimize for fidelity or contrast."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -5630,7 +5690,7 @@ argument_list|,
 literal|"gimp-text-layer-get-kerning"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5639,6 +5699,11 @@ argument_list|,
 literal|"This procedure checks if kerning is enabled in the specified text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -5713,7 +5778,7 @@ argument_list|,
 literal|"gimp-text-layer-set-kerning"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5722,6 +5787,11 @@ argument_list|,
 literal|"This procedure enables or disables kerning in a text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -5796,7 +5866,7 @@ argument_list|,
 literal|"gimp-text-layer-get-language"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5805,6 +5875,11 @@ argument_list|,
 literal|"This procedure returns the language string which is set for the text in the text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -5885,7 +5960,7 @@ argument_list|,
 literal|"gimp-text-layer-set-language"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5894,6 +5969,11 @@ argument_list|,
 literal|"This procedure sets the language of the text in text layer. For some scripts the language has an influence of how the text is rendered."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -5974,7 +6054,7 @@ argument_list|,
 literal|"gimp-text-layer-get-base-direction"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5983,6 +6063,11 @@ argument_list|,
 literal|"This procedure returns the base direction used for rendering the text in the text layer"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6059,7 +6144,7 @@ argument_list|,
 literal|"gimp-text-layer-set-base-direction"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6068,6 +6153,11 @@ argument_list|,
 literal|"This procedure sets the base direction used in applying the Unicode bidirectional algorithm when rendering the text."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6144,7 +6234,7 @@ argument_list|,
 literal|"gimp-text-layer-get-justification"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6153,6 +6243,11 @@ argument_list|,
 literal|"This procedure returns the alignment of the lines in the text layer relative to each other."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6229,7 +6324,7 @@ argument_list|,
 literal|"gimp-text-layer-set-justification"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6238,6 +6333,11 @@ argument_list|,
 literal|"This procedure sets the alignment of the lines in the text layer relative to each other."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6314,7 +6414,7 @@ argument_list|,
 literal|"gimp-text-layer-get-color"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6323,6 +6423,11 @@ argument_list|,
 literal|"This procedure returns the color of the text in a text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6399,7 +6504,7 @@ argument_list|,
 literal|"gimp-text-layer-set-color"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6408,6 +6513,11 @@ argument_list|,
 literal|"This procedure sets the text color in the text layer 'layer'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6484,7 +6594,7 @@ argument_list|,
 literal|"gimp-text-layer-get-indent"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6493,6 +6603,11 @@ argument_list|,
 literal|"This procedure returns the indentation of the first line in a text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6572,7 +6687,7 @@ argument_list|,
 literal|"gimp-text-layer-set-indent"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6581,6 +6696,11 @@ argument_list|,
 literal|"This procedure sets the indentation of the first line in the text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6661,7 +6781,7 @@ argument_list|,
 literal|"gimp-text-layer-get-line-spacing"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6670,6 +6790,11 @@ argument_list|,
 literal|"This procedure returns the line-spacing between lines of text in a text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6749,7 +6874,7 @@ argument_list|,
 literal|"gimp-text-layer-set-line-spacing"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6758,6 +6883,11 @@ argument_list|,
 literal|"This procedure sets the additional spacing used between lines a text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6838,7 +6968,7 @@ argument_list|,
 literal|"gimp-text-layer-get-letter-spacing"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6847,6 +6977,11 @@ argument_list|,
 literal|"This procedure returns the additional spacing between the single glyphs in a text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6926,7 +7061,7 @@ argument_list|,
 literal|"gimp-text-layer-set-letter-spacing"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6935,6 +7070,11 @@ argument_list|,
 literal|"This procedure sets the additional spacing between the single glyphs in a text layer."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -7015,7 +7155,7 @@ argument_list|,
 literal|"gimp-text-layer-resize"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -7024,6 +7164,11 @@ argument_list|,
 literal|"This procedure changes the width and height of a text layer while keeping it as a text layer and not converting it to a bitmap like 'gimp-layer-resize' would do."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Barak Itkin<lightningismyname@gmail.com>"
 argument_list|,

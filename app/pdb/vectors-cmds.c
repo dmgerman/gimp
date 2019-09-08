@@ -5867,7 +5867,7 @@ argument_list|,
 literal|"gimp-vectors-new"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5876,6 +5876,11 @@ argument_list|,
 literal|"Creates a new empty vectors object. The vectors object needs to be added to the image using 'gimp-image-insert-vectors'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -5974,7 +5979,7 @@ argument_list|,
 literal|"gimp-vectors-new-from-text-layer"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -5983,6 +5988,11 @@ argument_list|,
 literal|"Creates a new vectors object from a text layer. The vectors object needs to be added to the image using 'gimp-image-insert-vectors'."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
@@ -6075,7 +6085,7 @@ argument_list|,
 literal|"gimp-vectors-copy"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6084,6 +6094,11 @@ argument_list|,
 literal|"This procedure copies the specified vectors object and returns the copy."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Barak Itkin<lightningismyname@gmail.com>"
 argument_list|,
@@ -6158,7 +6173,7 @@ argument_list|,
 literal|"gimp-vectors-get-strokes"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6167,6 +6182,11 @@ argument_list|,
 literal|"Returns an Array with the stroke-IDs associated with the passed path."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -6261,7 +6281,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-get-length"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6270,6 +6290,11 @@ argument_list|,
 literal|"Measure the length of the given stroke."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -6394,7 +6419,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-get-point-at-dist"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6403,6 +6428,11 @@ argument_list|,
 literal|"This will return the x,y position of a point at a given distance along the stroke. The distance will be obtained by first digitizing the curve internally and then walking along the curve. For a closed stroke the start of the path is the first point on the path that was created. This might not be obvious. If the stroke is not long enough, a \"valid\" flag will be FALSE."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -6614,7 +6644,7 @@ argument_list|,
 literal|"gimp-vectors-remove-stroke"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6623,6 +6653,11 @@ argument_list|,
 literal|"Remove the stroke from a vectors object."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -6701,7 +6736,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-close"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6710,6 +6745,11 @@ argument_list|,
 literal|"Closes the specified stroke."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -6788,7 +6828,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-translate"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6797,6 +6837,11 @@ argument_list|,
 literal|"Translate the given stroke."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -6919,7 +6964,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-scale"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -6928,6 +6973,11 @@ argument_list|,
 literal|"Scale the given stroke."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -7052,7 +7102,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-rotate"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -7061,6 +7111,11 @@ argument_list|,
 literal|"Rotates the given stroke around given center by angle (in degrees)."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -7208,7 +7263,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-flip"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -7217,6 +7272,11 @@ argument_list|,
 literal|"Rotates the given stroke around given center by angle (in degrees)."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -7353,7 +7413,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-flip-free"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -7362,6 +7422,11 @@ argument_list|,
 literal|"Flips the given stroke about an arbitrary axis. Axis is defined by two coordinates in the image (in pixels), through which the flipping axis passes."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -7532,7 +7597,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-get-points"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -7541,6 +7606,11 @@ argument_list|,
 literal|"returns the control points of a stroke. The interpretation of the coordinates returned depends on the type of the stroke. For Gimp 2.4 this is always a bezier stroke, where the coordinates are the control points."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -7695,7 +7765,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-new-from-points"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -7704,6 +7774,11 @@ argument_list|,
 literal|"Adds a stroke of a given type to the vectors object. The coordinates of the control points can be specified. For now only strokes of the type GIMP_VECTORS_STROKE_TYPE_BEZIER are supported. The control points are specified as a pair of float values for the x- and y-coordinate. The Bezier stroke type needs a multiple of three control points. Each Bezier segment endpoint (anchor, A) has two additional control points (C) associated. They are specified in the order CACCACCAC..."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -7858,7 +7933,7 @@ argument_list|,
 literal|"gimp-vectors-stroke-interpolate"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -7867,6 +7942,11 @@ argument_list|,
 literal|"returns polygonal approximation of the stroke."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8024,7 +8104,7 @@ argument_list|,
 literal|"gimp-vectors-bezier-stroke-new-moveto"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -8033,6 +8113,11 @@ argument_list|,
 literal|"Adds a bezier stroke with a single moveto to the vectors object."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8157,7 +8242,7 @@ argument_list|,
 literal|"gimp-vectors-bezier-stroke-lineto"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -8166,6 +8251,11 @@ argument_list|,
 literal|"Extends a bezier stroke with a lineto."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8290,7 +8380,7 @@ argument_list|,
 literal|"gimp-vectors-bezier-stroke-conicto"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -8299,6 +8389,11 @@ argument_list|,
 literal|"Extends a bezier stroke with a conic bezier spline. Actually a cubic bezier spline gets added that realizes the shape of a conic bezier spline."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8469,7 +8564,7 @@ argument_list|,
 literal|"gimp-vectors-bezier-stroke-cubicto"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -8478,6 +8573,11 @@ argument_list|,
 literal|"Extends a bezier stroke with a cubic bezier spline."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8694,7 +8794,7 @@ argument_list|,
 literal|"gimp-vectors-bezier-stroke-new-ellipse"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -8703,6 +8803,11 @@ argument_list|,
 literal|"Adds a bezier stroke describing an ellipse the vectors object."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8896,7 +9001,7 @@ argument_list|,
 literal|"gimp-vectors-import-from-file"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -8905,6 +9010,11 @@ argument_list|,
 literal|"This procedure imports paths from an SVG file. SVG elements other than paths and basic shapes are ignored."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -9061,7 +9171,7 @@ argument_list|,
 literal|"gimp-vectors-import-from-string"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -9070,6 +9180,11 @@ argument_list|,
 literal|"This procedure works like 'gimp-vectors-import-from-file' but takes a string rather than reading the SVG from a file. This allows you to write scripts that generate SVG and feed it to GIMP."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -9248,7 +9363,7 @@ argument_list|,
 literal|"gimp-vectors-export-to-file"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -9257,6 +9372,11 @@ argument_list|,
 literal|"This procedure creates an SVG file to save a Vectors object, that is, a path. The resulting file can be edited using a vector graphics application, or later reloaded into GIMP. If you pass 0 as the 'vectors' argument, then all paths in the image will be exported."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -9357,7 +9477,7 @@ argument_list|,
 literal|"gimp-vectors-export-to-string"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -9366,6 +9486,11 @@ argument_list|,
 literal|"This procedure works like 'gimp-vectors-export-to-file' but creates a string rather than a file. The contents are a NUL-terminated string that holds a complete XML document. If you pass 0 as the 'vectors' argument, then all paths in the image will be exported."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,

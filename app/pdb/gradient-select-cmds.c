@@ -554,7 +554,7 @@ argument_list|,
 literal|"gimp-gradients-popup"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -563,6 +563,11 @@ argument_list|,
 literal|"This procedure opens the gradient selection dialog."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -697,7 +702,7 @@ argument_list|,
 literal|"gimp-gradients-close-popup"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -706,6 +711,11 @@ argument_list|,
 literal|"This procedure closes an opened gradient selection dialog."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -768,7 +778,7 @@ argument_list|,
 literal|"gimp-gradients-set-popup"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_static_strings
+name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -777,6 +787,11 @@ argument_list|,
 literal|"Sets the current gradient in a gradient selection dialog."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,

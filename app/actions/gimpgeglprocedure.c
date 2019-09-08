@@ -1843,7 +1843,7 @@ argument_list|,
 name|icon_name
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_strings
+name|gimp_procedure_set_help
 argument_list|(
 name|procedure
 argument_list|,
@@ -1852,6 +1852,11 @@ argument_list|,
 name|tooltip
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"author"
 argument_list|,
