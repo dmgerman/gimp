@@ -1070,7 +1070,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Description:"
+literal|"_Description:"
 argument_list|)
 argument_list|,
 literal|1.0

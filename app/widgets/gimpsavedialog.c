@@ -1125,11 +1125,11 @@ decl_stmt|;
 comment|/* Compression toggle. */
 name|compression_toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save this XCF file with better but slower compression"
+literal|"Save this _XCF file with better but slower compression"
 argument_list|)
 argument_list|)
 expr_stmt|;

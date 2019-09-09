@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0d6540108
+DECL|struct|__anon2c0837ff0108
 block|{
 DECL|member|replace
 name|gint
@@ -4979,7 +4979,7 @@ name|replace
 argument_list|,
 name|_
 argument_list|(
-literal|"Black"
+literal|"_Black"
 argument_list|)
 argument_list|,
 literal|0
@@ -4988,7 +4988,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"White"
+literal|"_White"
 argument_list|)
 argument_list|,
 literal|255
@@ -5046,7 +5046,7 @@ name|use_datamin
 argument_list|,
 name|_
 argument_list|(
-literal|"Automatic"
+literal|"_Automatic"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -5055,7 +5055,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"By DATAMIN/DATAMAX"
+literal|"By _DATAMIN/DATAMAX"
 argument_list|)
 argument_list|,
 name|TRUE
@@ -5115,14 +5115,14 @@ name|C_
 argument_list|(
 literal|"composing"
 argument_list|,
-literal|"None"
+literal|"_None"
 argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
-literal|"NAXIS=3, NAXIS3=2,...,4"
+literal|"NA_XIS=3, NAXIS3=2,...,4"
 argument_list|,
 name|TRUE
 argument_list|,

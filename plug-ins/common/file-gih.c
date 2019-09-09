@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cea18c0108
+DECL|struct|__anon2c4297d40108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cea18c0208
+DECL|struct|__anon2c4297d40208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2484,7 +2484,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Description:"
+literal|"_Description:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2566,7 +2566,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Spacing (percent):"
+literal|"_Spacing (percent):"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2930,7 +2930,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Cell size:"
+literal|"Ce_ll size:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -3001,7 +3001,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of cells:"
+literal|"_Number of cells:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -3410,7 +3410,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Dimension:"
+literal|"Di_mension:"
 argument_list|)
 argument_list|,
 literal|0.0

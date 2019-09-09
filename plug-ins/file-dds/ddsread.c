@@ -100,7 +100,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f1abd0108
+DECL|struct|__anon2c17953c0108
 block|{
 DECL|member|rshift
 DECL|member|gshift
@@ -7559,14 +7559,14 @@ name|LOAD_PROC
 argument_list|,
 name|_
 argument_list|(
-literal|"Cancel"
+literal|"_Cancel"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|_
 argument_list|(
-literal|"OK"
+literal|"_OK"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -7650,11 +7650,11 @@ argument_list|)
 expr_stmt|;
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Load mipmaps"
+literal|"_Load mipmaps"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7710,11 +7710,11 @@ argument_list|)
 expr_stmt|;
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Automatically decode YCoCg/AExp images when detected"
+literal|"_Automatically decode YCoCg/AExp images when detected"
 argument_list|)
 argument_list|)
 expr_stmt|;

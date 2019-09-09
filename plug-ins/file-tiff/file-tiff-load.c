@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c757b770108
+DECL|struct|__anon27e4c3390108
 block|{
 DECL|member|compression
 name|gint
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c757b770208
+DECL|struct|__anon27e4c3390208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c757b770303
+DECL|enum|__anon27e4c3390303
 block|{
 DECL|enumerator|GIMP_TIFF_LOAD_ASSOCALPHA
 name|GIMP_TIFF_LOAD_ASSOCALPHA
@@ -7109,11 +7109,11 @@ expr_stmt|;
 comment|/* Option to shrink the loaded image to its bounding box          or keep as much empty space as possible.          Note that there seems to be no way to keep the empty          space on the right and bottom. */
 name|crop_option
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Keep empty space around imported layers"
+literal|"_Keep empty space around imported layers"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7215,7 +7215,7 @@ name|GIMP_TIFF_LOAD_UNASSALPHA
 argument_list|,
 name|_
 argument_list|(
-literal|"Non-premultiplied alpha"
+literal|"_Non-premultiplied alpha"
 argument_list|)
 argument_list|,
 name|GIMP_TIFF_LOAD_UNASSALPHA
@@ -7224,7 +7224,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Premultiplied alpha"
+literal|"Pre_multiplied alpha"
 argument_list|)
 argument_list|,
 name|GIMP_TIFF_LOAD_ASSOCALPHA
@@ -7233,7 +7233,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Channel"
+literal|"Channe_l"
 argument_list|)
 argument_list|,
 name|GIMP_TIFF_LOAD_CHANNEL

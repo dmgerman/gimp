@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295621bf0103
+DECL|enum|__anon29b77b650103
 block|{
 DECL|enumerator|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
 name|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
@@ -180,7 +180,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295621bf0203
+DECL|enum|__anon29b77b650203
 block|{
 DECL|enumerator|SA_VECTORIZE
 name|SA_VECTORIZE
@@ -205,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295621bf0303
+DECL|enum|__anon29b77b650303
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -236,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295621bf0408
+DECL|struct|__anon29b77b650408
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -267,7 +267,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295621bf0508
+DECL|struct|__anon29b77b650508
 block|{
 DECL|member|images
 name|GimpImage
@@ -297,7 +297,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295621bf0608
+DECL|struct|__anon29b77b650608
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -316,7 +316,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon295621bf0703
+DECL|enum|__anon29b77b650703
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -336,7 +336,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295621bf0808
+DECL|struct|__anon29b77b650808
 block|{
 DECL|member|thumb
 name|GdkPixbuf
@@ -2872,11 +2872,11 @@ argument_list|)
 expr_stmt|;
 name|ignore_hidden_c
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Omit hidden layers and layers with zero opacity"
+literal|"_Omit hidden layers and layers with zero opacity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2910,11 +2910,11 @@ argument_list|)
 expr_stmt|;
 name|vectorize_c
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Convert bitmaps to vector graphics where possible"
+literal|"Convert _bitmaps to vector graphics where possible"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2948,11 +2948,11 @@ argument_list|)
 expr_stmt|;
 name|apply_c
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Apply layer masks before saving"
+literal|"_Apply layer masks before saving"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3026,7 +3026,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Layers as pages (%s)"
+literal|"_Layers as pages (%s)"
 argument_list|)
 argument_list|,
 name|optimize
@@ -3046,7 +3046,7 @@ argument_list|)
 expr_stmt|;
 name|layers_as_pages_c
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|text
 argument_list|)
@@ -3096,11 +3096,11 @@ argument_list|)
 expr_stmt|;
 name|reverse_order_c
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Reverse the pages order"
+literal|"_Reverse the pages order"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3823,11 +3823,11 @@ argument_list|)
 expr_stmt|;
 name|ignore_hidden_c
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Omit hidden layers and layers with zero opacity"
+literal|"_Omit hidden layers and layers with zero opacity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3861,11 +3861,11 @@ argument_list|)
 expr_stmt|;
 name|vectorize_c
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Convert bitmaps to vector graphics where possible"
+literal|"Convert _bitmaps to vector graphics where possible"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3899,11 +3899,11 @@ argument_list|)
 expr_stmt|;
 name|apply_c
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Apply layer masks before saving"
+literal|"_Apply layer masks before saving"
 argument_list|)
 argument_list|)
 expr_stmt|;

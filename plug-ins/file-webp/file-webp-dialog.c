@@ -442,11 +442,11 @@ expr_stmt|;
 comment|/* Create the lossless checkbox */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Lossless"
+literal|"_Lossless"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -522,7 +522,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Image quality:"
+literal|"Image _quality:"
 argument_list|)
 argument_list|,
 literal|125
@@ -601,7 +601,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Alpha quality:"
+literal|"Alpha q_uality:"
 argument_list|)
 argument_list|,
 literal|125
@@ -740,7 +740,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Source type:"
+literal|"Source _type:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1057,11 +1057,11 @@ expr_stmt|;
 comment|/* loop animation checkbox */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Loop forever"
+literal|"Loop _forever"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1364,11 +1364,11 @@ expr_stmt|;
 comment|/* minimize-size checkbox */
 name|toggle_minsize
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Minimize output size (slower)"
+literal|"_Minimize output size (slower)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1624,11 +1624,11 @@ expr_stmt|;
 comment|/* Create the force-delay checkbox */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use delay entered above for all frames"
+literal|"Use _delay entered above for all frames"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1690,7 +1690,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save _Exif data"
+literal|"_Save Exif data"
 argument_list|)
 argument_list|)
 expr_stmt|;

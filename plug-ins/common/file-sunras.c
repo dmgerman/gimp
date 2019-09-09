@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c0995d0108
+DECL|struct|__anon2b7f1ae90108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c0995d0208
+DECL|struct|__anon2b7f1ae90208
 block|{
 DECL|member|val
 name|gint
@@ -249,7 +249,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c0995d0308
+DECL|struct|__anon2b7f1ae90308
 block|{
 DECL|member|rle
 name|gboolean
@@ -8037,7 +8037,7 @@ name|rle
 argument_list|,
 name|_
 argument_list|(
-literal|"RunLength Encoded"
+literal|"_RunLength Encoded"
 argument_list|)
 argument_list|,
 name|TRUE
@@ -8046,7 +8046,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Standard"
+literal|"_Standard"
 argument_list|)
 argument_list|,
 name|FALSE

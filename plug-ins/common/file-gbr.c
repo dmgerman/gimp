@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7fc3a0108
+DECL|struct|__anon2c23b77b0108
 block|{
 DECL|member|description
 name|gchar
@@ -1192,7 +1192,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Description:"
+literal|"_Description:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1283,7 +1283,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Spacing:"
+literal|"_Spacing:"
 argument_list|)
 argument_list|,
 literal|1.0

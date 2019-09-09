@@ -2572,7 +2572,7 @@ name|compression
 argument_list|,
 name|_
 argument_list|(
-literal|"No compression"
+literal|"_No compression"
 argument_list|)
 argument_list|,
 name|SGI_COMP_NONE
@@ -2581,7 +2581,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"RLE compression"
+literal|"_RLE compression"
 argument_list|)
 argument_list|,
 name|SGI_COMP_RLE
@@ -2590,7 +2590,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Aggressive RLE\n(not supported by SGI)"
+literal|"_Aggressive RLE\n(not supported by SGI)"
 argument_list|)
 argument_list|,
 name|SGI_COMP_ARLE

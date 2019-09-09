@@ -88,7 +88,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eb80440103
+DECL|enum|__anon2c658c370103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -173,7 +173,7 @@ end_function_decl
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28eb80440208
+DECL|struct|__anon2c658c370208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -4668,11 +4668,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
-literal|"R5 G6 B5"
+literal|"_R5 G6 B5"
 argument_list|)
 expr_stmt|;
 name|group
@@ -4725,11 +4725,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
-literal|"A1 R5 G5 B5"
+literal|"_A1 R5 G5 B5"
 argument_list|)
 expr_stmt|;
 name|group
@@ -4795,11 +4795,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
-literal|"X1 R5 G5 B5"
+literal|"_X1 R5 G5 B5"
 argument_list|)
 expr_stmt|;
 name|group
@@ -4883,11 +4883,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
-literal|"R8 G8 B8"
+literal|"R_8 G8 B8"
 argument_list|)
 expr_stmt|;
 name|group
@@ -5013,11 +5013,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
-literal|"A8 R8 G8 B8"
+literal|"A8 R8 G8 _B8"
 argument_list|)
 expr_stmt|;
 name|group
@@ -5104,11 +5104,11 @@ expr_stmt|;
 block|}
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
-literal|"X8 R8 G8 B8"
+literal|"X8 R8 G8 _B8"
 argument_list|)
 expr_stmt|;
 name|group

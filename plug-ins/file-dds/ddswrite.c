@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2932de510103
+DECL|enum|__anon277aaad10103
 block|{
 DECL|enumerator|COMBO_VALUE
 name|COMBO_VALUE
@@ -818,7 +818,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2932de510208
+DECL|struct|__anon277aaad10208
 block|{
 DECL|member|format
 name|int
@@ -10009,11 +10009,11 @@ name|opt
 expr_stmt|;
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use perceptual error metric"
+literal|"Use _perceptual error metric"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10755,11 +10755,11 @@ name|opt
 expr_stmt|;
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Apply gamma correction"
+literal|"Appl_y gamma correction"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10822,11 +10822,11 @@ name|check
 expr_stmt|;
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use sRGB colorspace"
+literal|"Use s_RGB colorspace"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10971,11 +10971,11 @@ name|spin
 expr_stmt|;
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Preserve alpha test coverage"
+literal|"Preserve alpha _test coverage"
 argument_list|)
 argument_list|)
 expr_stmt|;

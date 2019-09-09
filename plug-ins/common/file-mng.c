@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae23570103
+DECL|enum|__anon2771c1de0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae23570203
+DECL|enum|__anon2771c1de0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -5953,11 +5953,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Interlace"
+literal|"_Interlace"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6013,11 +6013,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save background color"
+literal|"Save _background color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6080,11 +6080,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save gamma"
+literal|"Save _gamma"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6207,11 +6207,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save creation time"
+literal|"Save creation _time"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6509,7 +6509,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Default frame disposal:"
+literal|"Default _frame disposal:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -6592,7 +6592,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"PNG compression level:"
+literal|"_PNG compression level:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -6905,11 +6905,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Loop"
+literal|"_Loop"
 argument_list|)
 argument_list|)
 expr_stmt|;
