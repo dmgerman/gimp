@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1688920103
+DECL|enum|__anon2ae1dd520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -64,7 +64,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1688920203
+DECL|enum|__anon2ae1dd520203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -178,6 +178,26 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_chain_button_compute_expand
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gboolean
+modifier|*
+name|hexpand_p
+parameter_list|,
+name|gboolean
+modifier|*
+name|vexpand_p
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -300,6 +320,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GtkWidgetClass
+modifier|*
+name|widget_class
+init|=
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|object_class
 operator|->
 name|constructed
@@ -317,6 +346,12 @@ operator|->
 name|get_property
 operator|=
 name|gimp_chain_button_get_property
+expr_stmt|;
+name|widget_class
+operator|->
+name|compute_expand
+operator|=
+name|gimp_chain_button_compute_expand
 expr_stmt|;
 name|gimp_chain_button_signals
 index|[
@@ -1021,6 +1056,39 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_chain_button_compute_expand (GtkWidget * widget,gboolean * hexpand_p,gboolean * vexpand_p)
+name|gimp_chain_button_compute_expand
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gboolean
+modifier|*
+name|hexpand_p
+parameter_list|,
+name|gboolean
+modifier|*
+name|vexpand_p
+parameter_list|)
+block|{
+comment|/* don't inherit [hv]expand from the chain lines.  see issue #3876. */
+operator|*
+name|hexpand_p
+operator|=
+name|FALSE
+expr_stmt|;
+operator|*
+name|vexpand_p
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
