@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"pdb/gimppdberror.h"
 end_include
 
 begin_include
@@ -103,7 +103,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_set_proc_image_types (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * image_types)
+DECL|function|gimp_plug_in_set_proc_image_types (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * image_types,GError ** error)
 name|gimp_plug_in_set_proc_image_types
 parameter_list|(
 name|GimpPlugIn
@@ -119,6 +119,11 @@ specifier|const
 name|gchar
 modifier|*
 name|image_types
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPlugInProcedure
@@ -159,17 +164,13 @@ operator|!
 name|proc
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
+name|error
 argument_list|,
-name|NULL
+name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_MESSAGE_ERROR
+name|GIMP_PDB_ERROR_PROCEDURE_NOT_FOUND
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register images types "
@@ -211,7 +212,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_set_proc_menu_label (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * menu_label)
+DECL|function|gimp_plug_in_set_proc_menu_label (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * menu_label,GError ** error)
 name|gimp_plug_in_set_proc_menu_label
 parameter_list|(
 name|GimpPlugIn
@@ -227,17 +228,16 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_label
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPlugInProcedure
 modifier|*
 name|proc
-decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -287,17 +287,13 @@ operator|!
 name|proc
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
+name|error
 argument_list|,
-name|NULL
+name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_MESSAGE_ERROR
+name|GIMP_PDB_ERROR_PROCEDURE_NOT_FOUND
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register the menu label \"%s\" "
@@ -326,56 +322,22 @@ return|return
 name|FALSE
 return|;
 block|}
-if|if
-condition|(
-operator|!
+return|return
 name|gimp_plug_in_procedure_set_menu_label
 argument_list|(
 name|proc
 argument_list|,
 name|menu_label
 argument_list|,
-operator|&
 name|error
 argument_list|)
-condition|)
-block|{
-name|gimp_message_literal
-argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_MESSAGE_ERROR
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-return|return
-name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_add_proc_menu_path (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * menu_path)
+DECL|function|gimp_plug_in_add_proc_menu_path (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * menu_path,GError ** error)
 name|gimp_plug_in_add_proc_menu_path
 parameter_list|(
 name|GimpPlugIn
@@ -391,17 +353,16 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_path
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPlugInProcedure
 modifier|*
 name|proc
-decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -446,17 +407,13 @@ operator|!
 name|proc
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
+name|error
 argument_list|,
-name|NULL
+name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_MESSAGE_ERROR
+name|GIMP_PDB_ERROR_PROCEDURE_NOT_FOUND
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register the menu item \"%s\" "
@@ -485,56 +442,22 @@ return|return
 name|FALSE
 return|;
 block|}
-if|if
-condition|(
-operator|!
+return|return
 name|gimp_plug_in_procedure_add_menu_path
 argument_list|(
 name|proc
 argument_list|,
 name|menu_path
 argument_list|,
-operator|&
 name|error
 argument_list|)
-condition|)
-block|{
-name|gimp_message_literal
-argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_MESSAGE_ERROR
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-return|return
-name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_set_proc_icon (GimpPlugIn * plug_in,const gchar * proc_name,GimpIconType type,const guint8 * data,gint data_length)
+DECL|function|gimp_plug_in_set_proc_icon (GimpPlugIn * plug_in,const gchar * proc_name,GimpIconType type,const guint8 * data,gint data_length,GError ** error)
 name|gimp_plug_in_set_proc_icon
 parameter_list|(
 name|GimpPlugIn
@@ -556,17 +479,16 @@ name|data
 parameter_list|,
 name|gint
 name|data_length
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPlugInProcedure
 modifier|*
 name|proc
-decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -602,17 +524,13 @@ operator|!
 name|proc
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
+name|error
 argument_list|,
-name|NULL
+name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_MESSAGE_ERROR
+name|GIMP_PDB_ERROR_PROCEDURE_NOT_FOUND
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to set the icon "
@@ -639,9 +557,7 @@ return|return
 name|FALSE
 return|;
 block|}
-if|if
-condition|(
-operator|!
+return|return
 name|gimp_plug_in_procedure_set_icon
 argument_list|(
 name|proc
@@ -652,47 +568,15 @@ name|data
 argument_list|,
 name|data_length
 argument_list|,
-operator|&
 name|error
 argument_list|)
-condition|)
-block|{
-name|gimp_message_literal
-argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_MESSAGE_ERROR
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-return|return
-name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_set_proc_help (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * blurb,const gchar * help,const gchar * help_id)
+DECL|function|gimp_plug_in_set_proc_help (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * blurb,const gchar * help,const gchar * help_id,GError ** error)
 name|gimp_plug_in_set_proc_help
 parameter_list|(
 name|GimpPlugIn
@@ -718,6 +602,11 @@ specifier|const
 name|gchar
 modifier|*
 name|help_id
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPlugInProcedure
@@ -758,17 +647,13 @@ operator|!
 name|proc
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
+name|error
 argument_list|,
-name|NULL
+name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_MESSAGE_ERROR
+name|GIMP_PDB_ERROR_PROCEDURE_NOT_FOUND
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register help "
@@ -817,7 +702,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_set_proc_attribution (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * authors,const gchar * copyright,const gchar * date)
+DECL|function|gimp_plug_in_set_proc_attribution (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * authors,const gchar * copyright,const gchar * date,GError ** error)
 name|gimp_plug_in_set_proc_attribution
 parameter_list|(
 name|GimpPlugIn
@@ -843,6 +728,11 @@ specifier|const
 name|gchar
 modifier|*
 name|date
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPlugInProcedure
@@ -883,17 +773,13 @@ operator|!
 name|proc
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|plug_in
-operator|->
-name|manager
-operator|->
-name|gimp
+name|error
 argument_list|,
-name|NULL
+name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_MESSAGE_ERROR
+name|GIMP_PDB_ERROR_PROCEDURE_NOT_FOUND
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register the attribution "

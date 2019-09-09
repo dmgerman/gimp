@@ -1179,6 +1179,8 @@ argument_list|,
 name|procedure_name
 argument_list|,
 name|image_types
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -1482,6 +1484,8 @@ argument_list|,
 name|procedure_name
 argument_list|,
 name|menu_label
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -1785,6 +1789,8 @@ argument_list|,
 name|procedure_name
 argument_list|,
 name|menu_path
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -2215,6 +2221,8 @@ argument_list|,
 name|icon_data
 argument_list|,
 name|icon_data_length
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -2389,6 +2397,8 @@ argument_list|,
 name|help
 argument_list|,
 name|help_id
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -2783,6 +2793,8 @@ argument_list|,
 name|copyright
 argument_list|,
 name|date
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
