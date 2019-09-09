@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a87550103
+DECL|enum|__anon288153ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1211,7 +1211,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_plug_in_set_translation_domain:  * @plug_in:     A #GimpPlugIn.  * @domain_name: The name of the textdomain (must be unique).  * @domain_path: (nullable): A #GFile pointing to the compiled message catalog  *               (may be %NULL).  *  * Sets a textdomain for localisation for the @plug_in.  *  * This function adds a textdomain to the list of domains Gimp  * searches for strings when translating its menu entries. There is no  * need to call this function for plug-ins that have their strings  * included in the 'gimp-std-plugins' domain as that is used by  * default. If the compiled message catalog is not in the standard  * location, you may specify an absolute path to another  * location. This function can only be called in the  * GimpPlugIn::query() function of a plug-in and it has to be called  * before any procedure is installed.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_set_translation_domain:  * @plug_in:     A #GimpPlugIn.  * @domain_name: The name of the textdomain (must be unique).  * @domain_path: (nullable): A #GFile pointing to the compiled message catalog  *               (may be %NULL).  *  * Sets a textdomain for localisation for the @plug_in.  *  * This function adds a textdomain to the list of domains Gimp  * searches for strings when translating its menu entries. There is no  * need to call this function for plug-ins that have their strings  * included in the 'gimp-std-plugins' domain as that is used by  * default. If the compiled message catalog is not in the standard  * location, you may specify an absolute path to another  * location.  *  * This function can only be called in the #GimpPlugInClass.query()  * function of a plug-in and it has to be called before any procedure  * is installed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1296,7 +1296,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_set_help_domain:  * @plug_in:     A #GimpPlugIn.  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_uri:  The root URI of the plug-in's help pages.  *  * Set a help domain and path for the @plug_in.  *  * This function registers user documentation for the calling plug-in  * with the GIMP help system. The domain_uri parameter points to the  * root directory where the plug-in help is installed. For each  * supported language there should be a file called 'gimp-help.xml'  * that maps the help IDs to the actual help files.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_set_help_domain:  * @plug_in:     A #GimpPlugIn.  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_uri:  The root URI of the plug-in's help pages.  *  * Set a help domain and path for the @plug_in.  *  * This function registers user documentation for the calling plug-in  * with the GIMP help system. The domain_uri parameter points to the  * root directory where the plug-in help is installed. For each  * supported language there should be a file called 'gimp-help.xml'  * that maps the help IDs to the actual help files.  *  * This function can only be called in the #GimpPlugInClass.query()  * function of a plug-in.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1472,7 +1472,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_create_procedure:  * @plug_in:        A #GimpPlugIn  * @procedure_name: A procedure name.  *  * This functiond creates a new procedure and is called when a plug-in  * instance is started by GIMP when one of the %GIMP_PDB_PROC_TYPE_PLUGIN or  * %GIMP_PDB_PROC_TYPE_EXTENSION procedures it implements is invoked.  *  * This function will only ever be called with names returned by  * implementations of GimpPlugInClass::init_procedures() or  * GimpPlugInClass::query_procedures().  *  * Returns: (transfer full): The newly created #GimpProcedure.  **/
+comment|/**  * gimp_plug_in_create_procedure:  * @plug_in:        A #GimpPlugIn  * @procedure_name: A procedure name.  *  * This functiond creates a new procedure and is called when a plug-in  * instance is started by GIMP when one of the %GIMP_PDB_PROC_TYPE_PLUGIN or  * %GIMP_PDB_PROC_TYPE_EXTENSION procedures it implements is invoked.  *  * This function will only ever be called with names returned by  * implementations of #GimpPlugInClass.init_procedures() or  * #GimpPlugInClass.query_procedures().  *  * Returns: (transfer full): The newly created #GimpProcedure.  **/
 end_comment
 
 begin_function
@@ -1540,7 +1540,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_add_temp_procedure:  * @plug_in:   A #GimpPlugIn  * @procedure: A #GimpProcedure of type %GIMP_PDB_PROC_TYPE_TEMPORARY.  *  * This function adds a temporary procedure to @plug_in. It is usually  * called from a %GIMP_PDB_PROC_TYPE_EXTENSION procedure's  * GimpProcedure::run().  *  * A temporary procedure is a procedure which is only available while  * one of your plug-in's "real" procedures is running.  *  * The procedure's type<emphasis>must</emphasis> be  * %GIMP_PDB_PROC_TYPE_TEMPORARY or the function will fail.  *  * NOTE: Normally, plug-in communication is triggered by the plug-in  * and the GIMP core only responds to the plug-in's requests. You must  * explicitly enable receiving of temporary procedure run requests  * using either gimp_plug_in_extension_enable() or  * gimp_plug_in_extension_process(). See this functions' documentation  * for details.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_add_temp_procedure:  * @plug_in:   A #GimpPlugIn  * @procedure: A #GimpProcedure of type %GIMP_PDB_PROC_TYPE_TEMPORARY.  *  * This function adds a temporary procedure to @plug_in. It is usually  * called from a %GIMP_PDB_PROC_TYPE_EXTENSION procedure's  * #GimpProcedureClass.run().  *  * A temporary procedure is a procedure which is only available while  * one of your plug-in's "real" procedures is running.  *  * The procedure's type<emphasis>must</emphasis> be  * %GIMP_PDB_PROC_TYPE_TEMPORARY or the function will fail.  *  * NOTE: Normally, plug-in communication is triggered by the plug-in  * and the GIMP core only responds to the plug-in's requests. You must  * explicitly enable receiving of temporary procedure run requests  * using either gimp_plug_in_extension_enable() or  * gimp_plug_in_extension_process(). See this functions' documentation  * for details.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
