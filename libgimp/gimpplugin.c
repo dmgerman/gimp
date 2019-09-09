@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c437a140103
+DECL|enum|__anon2b1a87550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -222,6 +222,18 @@ begin_function_decl
 specifier|static
 name|void
 name|gimp_plug_in_constructed
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_plug_in_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -596,6 +608,12 @@ name|gimp_plug_in_constructed
 expr_stmt|;
 name|object_class
 operator|->
+name|dispose
+operator|=
+name|gimp_plug_in_dispose
+expr_stmt|;
+name|object_class
+operator|->
 name|finalize
 operator|=
 name|gimp_plug_in_finalize
@@ -758,8 +776,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_finalize (GObject * object)
-name|gimp_plug_in_finalize
+DECL|function|gimp_plug_in_dispose (GObject * object)
+name|gimp_plug_in_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -774,10 +792,6 @@ name|GIMP_PLUG_IN
 argument_list|(
 name|object
 argument_list|)
-decl_stmt|;
-name|GList
-modifier|*
-name|list
 decl_stmt|;
 if|if
 condition|(
@@ -835,6 +849,43 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|dispose
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_plug_in_finalize (GObject * object)
+name|gimp_plug_in_finalize
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|GimpPlugIn
+modifier|*
+name|plug_in
+init|=
+name|GIMP_PLUG_IN
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
+name|GList
+modifier|*
+name|list
+decl_stmt|;
 name|g_clear_pointer
 argument_list|(
 operator|&

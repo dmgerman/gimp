@@ -741,7 +741,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_main:  * @plug_in_type: the type of the #GimpPlugIn subclass of the plug-in  * @argc:         the number of arguments  * @argv:         (array length=argc): the arguments  *  * The main procedure that must be called with the plug-in's  * #GimpPlugIn subclass type and the 'argc' and 'argv' that are passed  * to "main".  *  * Returns: an exit status as defined by the C library,  *          on success EXIT_SUCCESS.  **/
+comment|/**  * gimp_main:  * @plug_in_type: the type of the #GimpPlugIn subclass of the plug-in  * @argc:         the number of arguments  * @argv:         (array length=argc): the arguments  *  * The main procedure that must be called with the plug-in's  * #GimpPlugIn subclass type and the 'argc' and 'argv' that are passed  * to "main".  *  * See also: GIMP_MAIN().  *  * Returns: an exit status as defined by the C library,  *          on success EXIT_SUCCESS.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -762,7 +762,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon29300faa0103
+DECL|enum|__anon288e92330103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2251,7 +2251,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_plug_in:  *  * This function returns the plug-in's #GimpPlugIn instance, which can  * exist exactly once per running plug-in program.  *  * Returns: (transfer none) (nullable): The plug-in's #GimpPlugIn singleton, or %NULL.  *  * Since: 3.0  **/
+comment|/**  * gimp_get_plug_in:  *  * This function returns the plug-in's #GimpPlugIn instance, which can  * exist exactly once per running plug-in program.  *  * Returns: (transfer none) (nullable): The plug-in's #GimpPlugIn singleton.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2270,7 +2270,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_pdb:  *  * This function returns the plug-in's #GimpPDB instance, which can  * exist exactly once per running plug-in program.  *  * Returns: (transfer none) (nullable): The plug-in's #GimpPDB singleton, or %NULL.  *  * Since: 3.0  **/
+comment|/**  * gimp_get_pdb:  *  * This function returns the plug-in's #GimpPDB instance, which can  * exist exactly once per running plug-in program.  *  * Returns: (transfer none) (nullable): The plug-in's #GimpPDB singleton.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2669,10 +2669,30 @@ argument_list|(
 name|PLUG_IN
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|PDB
+condition|)
+name|g_object_run_dispose
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|PDB
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_clear_object
 argument_list|(
 operator|&
 name|PDB
+argument_list|)
+expr_stmt|;
+name|g_object_run_dispose
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|PLUG_IN
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_clear_object

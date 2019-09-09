@@ -277,7 +277,7 @@ define|#
 directive|define
 name|gimp_set_data
 value|gimp_pdb_set_data
-comment|/**  * GIMP_MAIN:  * @plug_in_type: The #GType of the plug-in's #GimpPlugIn subclass  *  * A macro that expands to the appropriate main() function for the  * platform being compiled for.  *  * To use this macro, simply place a line that contains just the code  *  * GIMP_MAIN (MY_TYPE_PLUG_IN)  *  * at the toplevel of your file. No semicolon should be used.  **/
+comment|/**  * GIMP_MAIN:  * @plug_in_type: The #GType of the plug-in's #GimpPlugIn subclass  *  * A macro that expands to the appropriate main() function for the  * platform being compiled for.  *  * To use this macro, simply place a line that contains just the code  *  * GIMP_MAIN (MY_TYPE_PLUG_IN)  *  * at the toplevel of your file. No semicolon should be used.  *  * Since: 3.0  **/
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
