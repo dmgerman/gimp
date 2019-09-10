@@ -667,8 +667,6 @@ argument_list|(
 name|run_mode
 argument_list|,
 name|value
-argument_list|,
-name|value
 argument_list|)
 expr_stmt|;
 name|out

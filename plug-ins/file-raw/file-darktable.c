@@ -1667,8 +1667,6 @@ argument_list|(
 name|run_mode
 argument_list|,
 name|filename_out
-argument_list|,
-name|filename_out
 argument_list|)
 expr_stmt|;
 if|if
@@ -2029,8 +2027,6 @@ operator|=
 name|gimp_file_load
 argument_list|(
 name|GIMP_RUN_NONINTERACTIVE
-argument_list|,
-name|filename_out
 argument_list|,
 name|filename_out
 argument_list|)

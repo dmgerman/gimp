@@ -24,13 +24,13 @@ comment|/**  * SECTION: gimpfile  * @title: gimpfile  * @short_description: Imag
 end_comment
 
 begin_comment
-comment|/**  * gimp_file_load:  * @run_mode: The run mode.  * @filename: The name of the file to load.  * @raw_filename: The name as entered by the user.  *  * Loads an image file by invoking the right load handler.  *  * This procedure invokes the correct file load handler using magic if  * possible, and falling back on the file's extension and/or prefix if  * not. The name of the file to load is typically a full pathname, and  * the name entered is what the user actually typed before prepending a  * directory path. The reason for this is that if the user types  * https://www.gimp.org/foo.png he wants to fetch a URL, and the full  * pathname will not look like a URL.  *  * Returns: (transfer none): The output image.  **/
+comment|/**  * gimp_file_load:  * @run_mode: The run mode.  * @filename: The name of the file to load.  *  * Loads an image file by invoking the right load handler.  *  * This procedure invokes the correct file load handler using magic if  * possible, and falling back on the file's extension and/or prefix if  * not. The name of the file to load is typically a full pathname, and  * the name entered is what the user actually typed before prepending a  * directory path. The reason for this is that if the user types  * https://www.gimp.org/foo.png he wants to fetch a URL, and the full  * pathname will not look like a URL.  *  * Returns: (transfer none): The output image.  **/
 end_comment
 
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_file_load (GimpRunMode run_mode,const gchar * filename,const gchar * raw_filename)
+DECL|function|gimp_file_load (GimpRunMode run_mode,const gchar * filename)
 name|gimp_file_load
 parameter_list|(
 name|GimpRunMode
@@ -40,11 +40,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|raw_filename
 parameter_list|)
 block|{
 name|GimpValueArray
@@ -74,10 +69,6 @@ argument_list|,
 name|G_TYPE_STRING
 argument_list|,
 name|filename
-argument_list|,
-name|G_TYPE_STRING
-argument_list|,
-name|raw_filename
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -396,12 +387,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_save:  * @run_mode: The run mode.  * @image: Input image.  * @drawable: Drawable to save.  * @filename: The name of the file to save the image in.  * @raw_filename: The name as entered by the user.  *  * Saves a file by extension.  *  * This procedure invokes the correct file save handler according to  * the file's extension and/or prefix. The name of the file to save is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types https://www.gimp.org/foo.png she  * wants to fetch a URL, and the full pathname will not look like a  * URL.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_file_save:  * @run_mode: The run mode.  * @image: Input image.  * @drawable: Drawable to save.  * @filename: The name of the file to save the image in.  *  * Saves a file by extension.  *  * This procedure invokes the correct file save handler according to  * the file's extension and/or prefix. The name of the file to save is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types https://www.gimp.org/foo.png she  * wants to fetch a URL, and the full pathname will not look like a  * URL.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_file_save (GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,const gchar * filename,const gchar * raw_filename)
+DECL|function|gimp_file_save (GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,const gchar * filename)
 name|gimp_file_save
 parameter_list|(
 name|GimpRunMode
@@ -419,11 +410,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|raw_filename
 parameter_list|)
 block|{
 name|GimpValueArray
@@ -460,10 +446,6 @@ argument_list|,
 name|G_TYPE_STRING
 argument_list|,
 name|filename
-argument_list|,
-name|G_TYPE_STRING
-argument_list|,
-name|raw_filename
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

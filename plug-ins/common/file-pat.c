@@ -784,10 +784,6 @@ name|uri
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
-name|uri
-argument_list|,
-name|G_TYPE_STRING
-argument_list|,
 name|description
 argument_list|,
 name|G_TYPE_NONE

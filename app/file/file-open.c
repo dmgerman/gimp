@@ -222,7 +222,7 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_image (Gimp * gimp,GimpContext * context,GimpProgress * progress,GFile * file,GFile * entered_file,gboolean as_new,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,const gchar ** mime_type,GError ** error)
+DECL|function|file_open_image (Gimp * gimp,GimpContext * context,GimpProgress * progress,GFile * file,gboolean as_new,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,const gchar ** mime_type,GError ** error)
 name|file_open_image
 parameter_list|(
 name|Gimp
@@ -240,10 +240,6 @@ parameter_list|,
 name|GFile
 modifier|*
 name|file
-parameter_list|,
-name|GFile
-modifier|*
-name|entered_file
 parameter_list|,
 name|gboolean
 name|as_new
@@ -290,12 +286,6 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|uri
-init|=
-name|NULL
-decl_stmt|;
-name|gchar
-modifier|*
-name|entered_uri
 init|=
 name|NULL
 decl_stmt|;
@@ -349,16 +339,6 @@ argument_list|(
 name|G_IS_FILE
 argument_list|(
 name|file
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|G_IS_FILE
-argument_list|(
-name|entered_file
 argument_list|)
 argument_list|,
 name|NULL
@@ -756,25 +736,6 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-name|entered_uri
-operator|=
-name|g_file_get_uri
-argument_list|(
-name|entered_file
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|entered_uri
-condition|)
-name|entered_uri
-operator|=
-name|g_strdup
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|progress
@@ -820,10 +781,6 @@ name|G_TYPE_STRING
 argument_list|,
 name|uri
 argument_list|,
-name|G_TYPE_STRING
-argument_list|,
-name|entered_uri
-argument_list|,
 name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
@@ -848,11 +805,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|uri
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|entered_uri
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1846,8 +1798,6 @@ name|progress
 argument_list|,
 name|file
 argument_list|,
-name|file
-argument_list|,
 name|as_new
 argument_list|,
 name|NULL
@@ -1865,7 +1815,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,GFile * file,GFile * entered_file,gboolean as_new,GimpPlugInProcedure * file_proc,GObject * monitor,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,GFile * file,gboolean as_new,GimpPlugInProcedure * file_proc,GObject * monitor,GimpPDBStatusType * status,GError ** error)
 name|file_open_with_proc_and_display
 parameter_list|(
 name|Gimp
@@ -1883,10 +1833,6 @@ parameter_list|,
 name|GFile
 modifier|*
 name|file
-parameter_list|,
-name|GFile
-modifier|*
-name|entered_file
 parameter_list|,
 name|gboolean
 name|as_new
@@ -1966,16 +1912,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_FILE
-argument_list|(
-name|entered_file
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|monitor
 operator|==
 name|NULL
@@ -2008,8 +1944,6 @@ argument_list|,
 name|progress
 argument_list|,
 name|file
-argument_list|,
-name|entered_file
 argument_list|,
 name|as_new
 argument_list|,
@@ -2382,8 +2316,6 @@ argument_list|,
 name|context
 argument_list|,
 name|progress
-argument_list|,
-name|file
 argument_list|,
 name|file
 argument_list|,

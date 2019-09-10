@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1fac6c0103
+DECL|enum|__anon2a3216760103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -1996,16 +1996,6 @@ literal|1
 index|]
 argument_list|)
 operator|&&
-name|G_IS_PARAM_SPEC_STRING
-argument_list|(
-name|procedure
-operator|->
-name|args
-index|[
-literal|2
-index|]
-argument_list|)
-operator|&&
 name|GIMP_IS_PARAM_SPEC_IMAGE
 argument_list|(
 name|procedure
@@ -2075,16 +2065,6 @@ operator|->
 name|args
 index|[
 literal|3
-index|]
-argument_list|)
-operator|&&
-name|G_IS_PARAM_SPEC_STRING
-argument_list|(
-name|procedure
-operator|->
-name|args
-index|[
-literal|4
 index|]
 argument_list|)
 condition|)

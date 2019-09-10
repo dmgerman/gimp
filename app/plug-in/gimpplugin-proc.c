@@ -992,7 +992,7 @@ name|procedure
 operator|->
 name|num_args
 operator|<
-literal|3
+literal|2
 operator|)
 operator|||
 operator|(
@@ -1025,17 +1025,6 @@ literal|1
 index|]
 argument_list|)
 operator|||
-operator|!
-name|G_IS_PARAM_SPEC_STRING
-argument_list|(
-name|procedure
-operator|->
-name|args
-index|[
-literal|2
-index|]
-argument_list|)
-operator|||
 operator|(
 operator|!
 name|proc
@@ -1064,8 +1053,23 @@ name|GIMP_PDB_ERROR
 argument_list|,
 name|GIMP_PDB_ERROR_FAILED
 argument_list|,
-literal|"load handler \"%s\" does not take the standard "
-literal|"load handler args"
+literal|"Plug-in \"%s\"\n(%s)\n"
+literal|"attempted to register procedure \"%s\" "
+literal|"as load handler which does not take the standard "
+literal|"load procedure arguments: "
+literal|"(GimpRunMode, String) -> (GimpImage)"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|plug_in
+operator|->
+name|file
+argument_list|)
 argument_list|,
 name|proc_name
 argument_list|)
@@ -1219,7 +1223,7 @@ name|procedure
 operator|->
 name|num_args
 operator|<
-literal|5
+literal|4
 operator|)
 operator|||
 operator|!
@@ -1265,17 +1269,6 @@ index|[
 literal|3
 index|]
 argument_list|)
-operator|||
-operator|!
-name|G_IS_PARAM_SPEC_STRING
-argument_list|(
-name|procedure
-operator|->
-name|args
-index|[
-literal|4
-index|]
-argument_list|)
 condition|)
 block|{
 name|g_set_error
@@ -1286,8 +1279,23 @@ name|GIMP_PDB_ERROR
 argument_list|,
 name|GIMP_PDB_ERROR_FAILED
 argument_list|,
-literal|"save handler \"%s\" does not take the standard "
-literal|"save handler args"
+literal|"Plug-in \"%s\"\n(%s)\n"
+literal|"attempted to register procedure \"%s\" "
+literal|"as save handler which does not take the standard "
+literal|"save procedure arguments: "
+literal|"(GimpRunMode, GimpImage, GimpDrawable, String)"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|plug_in
+operator|->
+name|file
+argument_list|)
 argument_list|,
 name|proc_name
 argument_list|)

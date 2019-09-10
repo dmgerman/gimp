@@ -61,11 +61,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|raw_filename
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -134,11 +129,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|raw_filename
 parameter_list|)
 function_decl|;
 end_function_decl

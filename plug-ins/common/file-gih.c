@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4297d40108
+DECL|struct|__anon2a30ac6f0108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4297d40208
+DECL|struct|__anon2a30ac6f0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -1504,10 +1504,6 @@ argument_list|,
 name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|drawable
-argument_list|,
-name|G_TYPE_STRING
-argument_list|,
-name|uri
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

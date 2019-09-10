@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274b4f090103
+DECL|enum|__anon2c2756880103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1895,10 +1895,6 @@ argument_list|,
 name|context
 argument_list|,
 name|progress
-argument_list|,
-name|private
-operator|->
-name|file
 argument_list|,
 name|private
 operator|->

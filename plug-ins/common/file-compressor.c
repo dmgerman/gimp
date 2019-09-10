@@ -1558,8 +1558,6 @@ argument_list|,
 name|drawable
 argument_list|,
 name|tmpname
-argument_list|,
-name|tmpname
 argument_list|)
 operator|&&
 name|valid_file
@@ -1795,8 +1793,6 @@ operator|=
 name|gimp_file_load
 argument_list|(
 name|run_mode
-argument_list|,
-name|tmpname
 argument_list|,
 name|tmpname
 argument_list|)

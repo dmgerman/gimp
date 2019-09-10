@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23b77b0108
+DECL|struct|__anon29f959910108
 block|{
 DECL|member|description
 name|gchar
@@ -864,10 +864,6 @@ argument_list|,
 name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|drawable
-argument_list|,
-name|G_TYPE_STRING
-argument_list|,
-name|uri
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

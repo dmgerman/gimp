@@ -533,31 +533,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"raw-filename"
-argument_list|,
-literal|"Raw filename"
-argument_list|,
-literal|"The basename of the "
-literal|"file, in UTF-8"
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_plug_in_manager_add_procedure
 argument_list|(
 name|gimp
@@ -750,31 +725,6 @@ literal|"on-disk character "
 literal|"set and encoding"
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"raw-filename"
-argument_list|,
-literal|"Raw filename"
-argument_list|,
-literal|"The basename of the "
-literal|"file, in UTF-8"
-argument_list|,
-name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

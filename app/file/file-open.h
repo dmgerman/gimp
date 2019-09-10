@@ -37,10 +37,6 @@ name|GFile
 modifier|*
 name|file
 parameter_list|,
-name|GFile
-modifier|*
-name|entered_file
-parameter_list|,
 name|gboolean
 name|as_new
 parameter_list|,
@@ -185,10 +181,6 @@ parameter_list|,
 name|GFile
 modifier|*
 name|file
-parameter_list|,
-name|GFile
-modifier|*
-name|entered_file
 parameter_list|,
 name|gboolean
 name|as_new

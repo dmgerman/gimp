@@ -704,8 +704,6 @@ argument_list|)
 argument_list|,
 name|file
 argument_list|,
-name|file
-argument_list|,
 name|FALSE
 argument_list|,
 name|load_proc

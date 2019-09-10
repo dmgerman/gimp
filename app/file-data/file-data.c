@@ -309,31 +309,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"raw-uri"
-argument_list|,
-literal|"Raw URI"
-argument_list|,
-literal|"The URI of the file "
-literal|"to load"
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
@@ -547,31 +522,6 @@ argument_list|(
 literal|"uri"
 argument_list|,
 literal|"URI"
-argument_list|,
-literal|"The URI of the file "
-literal|"to export"
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"raw-uri"
-argument_list|,
-literal|"Raw URI"
 argument_list|,
 literal|"The URI of the file "
 literal|"to export"
@@ -833,31 +783,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"raw-uri"
-argument_list|,
-literal|"Raw URI"
-argument_list|,
-literal|"The URI of the file "
-literal|"to load"
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
@@ -1071,31 +996,6 @@ argument_list|(
 literal|"uri"
 argument_list|,
 literal|"URI"
-argument_list|,
-literal|"The URI of the file "
-literal|"to export"
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"raw-uri"
-argument_list|,
-literal|"Raw URI"
 argument_list|,
 literal|"The URI of the file "
 literal|"to export"
@@ -1380,31 +1280,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"raw-uri"
-argument_list|,
-literal|"Raw URI"
-argument_list|,
-literal|"The URI of the file "
-literal|"to load"
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
@@ -1640,31 +1515,6 @@ name|procedure
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
-literal|"raw-uri"
-argument_list|,
-literal|"Raw URI"
-argument_list|,
-literal|"The URI of the file "
-literal|"to export"
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
 literal|"name"
 argument_list|,
 literal|"name"
@@ -1865,31 +1715,6 @@ argument_list|(
 literal|"uri"
 argument_list|,
 literal|"URI"
-argument_list|,
-literal|"The URI of the file "
-literal|"to load"
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_string
-argument_list|(
-literal|"raw-uri"
-argument_list|,
-literal|"Raw URI"
 argument_list|,
 literal|"The URI of the file "
 literal|"to load"

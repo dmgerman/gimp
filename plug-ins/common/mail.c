@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2118be0108
+DECL|struct|__anon2a3ae98b0108
 block|{
 DECL|member|filename
 name|gchar
@@ -1271,8 +1271,6 @@ argument_list|,
 name|image
 argument_list|,
 name|drawable
-argument_list|,
-name|tmpname
 argument_list|,
 name|tmpname
 argument_list|)

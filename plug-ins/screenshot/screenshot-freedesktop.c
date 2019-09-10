@@ -267,8 +267,6 @@ argument_list|(
 name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 name|path
-argument_list|,
-name|path
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
