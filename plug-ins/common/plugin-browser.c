@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b729e80103
+DECL|enum|__anon2b3b9b520103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b729e80203
+DECL|enum|__anon2b3b9b520203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b729e80308
+DECL|struct|__anon2b3b9b520308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b729e80408
+DECL|struct|__anon2b3b9b520408
 block|{
 DECL|member|menu
 name|gchar
@@ -1184,22 +1184,14 @@ modifier|*
 name|pinfo
 parameter_list|)
 block|{
-name|gchar
+name|GtkTreeStore
 modifier|*
-name|str_ptr
-decl_stmt|;
-name|gchar
-modifier|*
-name|tmp_ptr
+name|tree_store
 decl_stmt|;
 name|GtkTreeIter
 name|parent
 decl_stmt|,
 name|iter
-decl_stmt|;
-name|GtkTreeStore
-modifier|*
-name|tree_store
 decl_stmt|;
 name|get_parent
 argument_list|(
