@@ -814,6 +814,11 @@ decl_stmt|;
 if|if
 condition|(
 name|display
+operator|&&
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
 condition|)
 name|shell
 operator|=
@@ -899,6 +904,21 @@ argument_list|(
 name|context
 argument_list|,
 literal|"display-changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_navigation_editor_display_changed
+argument_list|)
+argument_list|,
+name|editor
+argument_list|)
+expr_stmt|;
+comment|/* make sure to also run gimp_navigation_editor_display_changed() when\        * the last image is closed, but its display doesn't, so that the editor        * is properly cleared.        */
+name|g_signal_connect
+argument_list|(
+name|context
+argument_list|,
+literal|"image-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
