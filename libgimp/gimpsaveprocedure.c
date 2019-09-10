@@ -21,6 +21,12 @@ directive|include
 file|"gimpsaveprocedure.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppdb_pdb.h"
+end_include
+
 begin_struct
 DECL|struct|_GimpSaveProcedurePrivate
 struct|struct
@@ -379,7 +385,7 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-name|_gimp_register_save_handler
+name|_gimp_pdb_set_file_proc_save_handler
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(
@@ -404,7 +410,7 @@ argument_list|(
 name|file_proc
 argument_list|)
 condition|)
-name|_gimp_register_file_handler_remote
+name|_gimp_pdb_set_file_proc_handles_remote
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(
@@ -423,7 +429,7 @@ if|if
 condition|(
 name|mime_types
 condition|)
-name|_gimp_register_file_handler_mime
+name|_gimp_pdb_set_file_proc_mime_types
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(
@@ -446,7 +452,7 @@ name|priority
 operator|!=
 literal|0
 condition|)
-name|_gimp_register_file_handler_priority
+name|_gimp_pdb_set_file_proc_priority
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(
