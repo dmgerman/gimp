@@ -134,7 +134,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpfileops_pdb.h>
+file|<libgimp/gimpfile_pdb.h>
 end_include
 
 begin_include

@@ -180,7 +180,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|register_fileops_procs
+name|register_file_procs
 parameter_list|(
 name|GimpPDB
 modifier|*

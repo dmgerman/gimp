@@ -124,7 +124,7 @@ argument_list|(
 name|pdb
 argument_list|)
 expr_stmt|;
-name|register_fileops_procs
+name|register_file_procs
 argument_list|(
 name|pdb
 argument_list|)
