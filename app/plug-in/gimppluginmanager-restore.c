@@ -3246,7 +3246,7 @@ argument_list|,
 operator|&
 name|error
 argument_list|,
-literal|"gimp-register-magic-load-handler"
+literal|"gimp-register-load-handler"
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
