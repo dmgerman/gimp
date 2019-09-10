@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be1bbb0108
+DECL|struct|__anon2bc260f00108
 block|{
 DECL|member|crop
 name|gboolean
@@ -987,7 +987,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29be1bbb0208
+DECL|struct|__anon2bc260f00208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1118,7 +1118,7 @@ name|list
 argument_list|,
 name|g_strdup
 argument_list|(
-name|LOAD_PROC
+name|LOAD_THUMB_PROC
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1130,7 +1130,7 @@ name|list
 argument_list|,
 name|g_strdup
 argument_list|(
-name|LOAD_THUMB_PROC
+name|LOAD_PROC
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9228,7 +9228,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon29be1bbb0308
+DECL|struct|__anon2bc260f00308
 block|{
 DECL|member|size
 name|guint32

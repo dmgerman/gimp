@@ -423,7 +423,7 @@ name|list
 argument_list|,
 name|g_strdup
 argument_list|(
-name|LOAD_PROC
+name|LOAD_THUMB_PROC
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -435,7 +435,7 @@ name|list
 argument_list|,
 name|g_strdup
 argument_list|(
-name|LOAD_THUMB_PROC
+name|LOAD_PROC
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1065,7 +1065,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27f2d26b0108
+DECL|struct|__anon29d8a5260108
 block|{
 DECL|member|Width
 name|guint
@@ -1109,7 +1109,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27f2d26b0208
+DECL|struct|__anon29d8a5260208
 block|{
 DECL|member|transparent
 name|gint

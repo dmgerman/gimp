@@ -439,7 +439,7 @@ name|list
 argument_list|,
 name|g_strdup
 argument_list|(
-name|LOAD_PROC
+name|LOAD_THUMB_PROC
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -451,7 +451,7 @@ name|list
 argument_list|,
 name|g_strdup
 argument_list|(
-name|LOAD_THUMB_PROC
+name|LOAD_PROC
 argument_list|)
 argument_list|)
 expr_stmt|;
