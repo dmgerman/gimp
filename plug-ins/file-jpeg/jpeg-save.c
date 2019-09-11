@@ -177,10 +177,10 @@ comment|/* See bugs #63610 and #61088 for a discussion about the quality setting
 end_comment
 
 begin_define
-DECL|macro|DEFAULT_QUALITY
+DECL|macro|DEFAULT_IJG_QUALITY
 define|#
 directive|define
-name|DEFAULT_QUALITY
+name|DEFAULT_IJG_QUALITY
 value|90.0
 end_define
 
@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d62c3f0108
+DECL|struct|__anon2b512f600108
 block|{
 DECL|member|cinfo
 name|struct
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d62c3f0208
+DECL|struct|__anon2b512f600208
 block|{
 DECL|member|run
 name|gboolean
@@ -5741,7 +5741,7 @@ name|jsvals
 operator|.
 name|quality
 operator|=
-name|DEFAULT_QUALITY
+name|DEFAULT_IJG_QUALITY
 expr_stmt|;
 name|jsvals
 operator|.
