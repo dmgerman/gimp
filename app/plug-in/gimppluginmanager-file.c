@@ -99,10 +99,27 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<stdlib.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bad1a130103
+DECL|enum|__anon2c6e3e7c0103
 block|{
 comment|/*  positive values indicate the length of a matching magic  */
 DECL|enumerator|FILE_MATCH_NONE
