@@ -755,8 +755,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|temp_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|temp_name_invoker
+DECL|function|temp_file_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|temp_file_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -799,9 +799,9 @@ name|gchar
 modifier|*
 name|extension
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|name
+name|file
 init|=
 name|NULL
 decl_stmt|;
@@ -822,27 +822,13 @@ condition|(
 name|success
 condition|)
 block|{
-name|GFile
-modifier|*
 name|file
-init|=
+operator|=
 name|gimp_get_temp_file
 argument_list|(
 name|gimp
 argument_list|,
 name|extension
-argument_list|)
-decl_stmt|;
-name|name
-operator|=
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
 argument_list|)
 expr_stmt|;
 block|}
@@ -866,7 +852,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|g_value_take_string
+name|g_value_set_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -875,7 +861,7 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|,
-name|name
+name|file
 argument_list|)
 expr_stmt|;
 return|return
@@ -1444,12 +1430,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-temp-name    */
+comment|/*    * gimp-temp-file    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|temp_name_invoker
+name|temp_file_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -1459,16 +1445,16 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-temp-name"
+literal|"gimp-temp-file"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_help
 argument_list|(
 name|procedure
 argument_list|,
-literal|"Generates a unique filename."
+literal|"Generates a unique temporary file."
 argument_list|,
-literal|"Generates a unique filename using the temp path supplied in the user's gimprc."
+literal|"Generates a unique file using the temp path supplied in the user's gimprc."
 argument_list|,
 name|NULL
 argument_list|)
@@ -1512,21 +1498,15 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"name"
+literal|"file"
 argument_list|,
-literal|"name"
+literal|"file"
 argument_list|,
-literal|"The new temp filename"
+literal|"The new temp file"
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

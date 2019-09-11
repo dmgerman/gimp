@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2771c1de0103
+DECL|enum|__anon2ab1f5e70103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2771c1de0203
+DECL|enum|__anon2ab1f5e70203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -3755,6 +3755,10 @@ decl_stmt|;
 name|int
 name|frame_delay
 decl_stmt|;
+name|GFile
+modifier|*
+name|temp_file
+decl_stmt|;
 name|gchar
 modifier|*
 name|temp_file_name
@@ -4329,9 +4333,9 @@ block|}
 if|if
 condition|(
 operator|(
-name|temp_file_name
+name|temp_file
 operator|=
-name|gimp_temp_name
+name|gimp_temp_file
 argument_list|(
 literal|"mng"
 argument_list|)
@@ -4342,13 +4346,20 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"gimp_temp_name() failed in mng_save_image()"
+literal|"gimp_temp_file() failed in mng_save_image()"
 argument_list|)
 expr_stmt|;
 goto|goto
 name|err3
 goto|;
 block|}
+name|temp_file_name
+operator|=
+name|g_file_get_path
+argument_list|(
+name|temp_file
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -4381,9 +4392,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|temp_file_name
+name|temp_file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -4392,9 +4403,13 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|g_file_delete
 argument_list|(
-name|temp_file_name
+name|temp_file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -4431,9 +4446,13 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|g_file_delete
 argument_list|(
-name|temp_file_name
+name|temp_file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -4472,9 +4491,13 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|g_file_delete
 argument_list|(
-name|temp_file_name
+name|temp_file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -4513,9 +4536,13 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|g_file_delete
 argument_list|(
-name|temp_file_name
+name|temp_file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -4656,9 +4683,13 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|g_file_delete
 argument_list|(
-name|temp_file_name
+name|temp_file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -5134,8 +5165,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|NULL
-operator|==
+operator|!
 name|infile
 condition|)
 block|{
@@ -5155,9 +5185,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|temp_file_name
+name|temp_file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -5166,9 +5196,13 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|g_file_delete
 argument_list|(
-name|temp_file_name
+name|temp_file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -5703,9 +5737,13 @@ argument_list|(
 name|infile
 argument_list|)
 expr_stmt|;
-name|g_unlink
+name|g_file_delete
 argument_list|(
-name|temp_file_name
+name|temp_file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

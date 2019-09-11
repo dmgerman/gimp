@@ -546,14 +546,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_temp_name:  * @extension: The extension the file will have.  *  * Generates a unique filename.  *  * Generates a unique filename using the temp path supplied in the  * user's gimprc.  *  * Returns: (transfer full): The new temp filename.  *          The returned value must be freed with g_free().  **/
+comment|/**  * gimp_temp_file:  * @extension: The extension the file will have.  *  * Generates a unique temporary file.  *  * Generates a unique file using the temp path supplied in the user's  * gimprc.  *  * Returns: (transfer full): The new temp file.  **/
 end_comment
 
 begin_function
-name|gchar
+name|GFile
 modifier|*
-DECL|function|gimp_temp_name (const gchar * extension)
-name|gimp_temp_name
+DECL|function|gimp_temp_file (const gchar * extension)
+name|gimp_temp_file
 parameter_list|(
 specifier|const
 name|gchar
@@ -569,9 +569,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|name
+name|file
 init|=
 name|NULL
 decl_stmt|;
@@ -595,7 +595,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-temp-name"
+literal|"gimp-temp-file"
 argument_list|,
 name|args
 argument_list|)
@@ -616,9 +616,9 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|name
+name|file
 operator|=
-name|GIMP_VALUES_DUP_STRING
+name|GIMP_VALUES_DUP_FILE
 argument_list|(
 name|return_vals
 argument_list|,
@@ -631,7 +631,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|name
+name|file
 return|;
 block|}
 end_function

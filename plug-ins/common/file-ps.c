@@ -199,7 +199,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a391340108
+DECL|struct|__anon2b0796e40108
 block|{
 DECL|member|resolution
 name|guint
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a391340208
+DECL|struct|__anon2b0796e40208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1055,7 +1055,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a391340308
+DECL|struct|__anon2b0796e40308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -3885,7 +3885,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a391340408
+DECL|struct|__anon2b0796e40408
 block|{
 DECL|member|eol
 name|goffset
@@ -6712,11 +6712,11 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|pnmfile
+DECL|variable|pnmfilename
 specifier|static
 name|gchar
 modifier|*
-name|pnmfile
+name|pnmfilename
 decl_stmt|;
 end_decl_stmt
 
@@ -7384,11 +7384,14 @@ expr_stmt|;
 break|break;
 block|}
 comment|/* For instance, the Win32 port of ghostscript doesn't work correctly when    * using standard output as output file.    * Thus, use a real output file.    */
-name|pnmfile
+name|pnmfilename
 operator|=
-name|gimp_temp_name
+name|g_file_get_path
+argument_list|(
+name|gimp_temp_file
 argument_list|(
 literal|"pnm"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Build command array */
@@ -7591,7 +7594,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"-sOutputFile=%s"
 argument_list|,
-name|pnmfile
+name|pnmfilename
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7841,7 +7844,7 @@ name|fd_popen
 operator|=
 name|g_fopen
 argument_list|(
-name|pnmfile
+name|pnmfilename
 argument_list|,
 literal|"rb"
 argument_list|)
@@ -7887,7 +7890,7 @@ argument_list|)
 expr_stmt|;
 name|g_unlink
 argument_list|(
-name|pnmfile
+name|pnmfilename
 argument_list|)
 expr_stmt|;
 block|}
