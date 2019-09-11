@@ -670,10 +670,9 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 decl_stmt|;
 name|image
 operator|=
@@ -687,9 +686,9 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|uri
+name|file
 operator|=
-name|g_value_get_string
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -706,18 +705,9 @@ condition|)
 block|{
 if|if
 condition|(
-name|uri
+name|file
 condition|)
 block|{
-name|GFile
-modifier|*
-name|file
-init|=
-name|g_file_new_for_uri
-argument_list|(
-name|uri
-argument_list|)
-decl_stmt|;
 name|GimpColorProfile
 modifier|*
 name|profile
@@ -759,11 +749,6 @@ else|else
 name|success
 operator|=
 name|FALSE
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -1044,10 +1029,9 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 decl_stmt|;
 name|gint
 name|intent
@@ -1067,9 +1051,9 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|uri
+name|file
 operator|=
-name|g_value_get_string
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1110,18 +1094,9 @@ condition|)
 block|{
 if|if
 condition|(
-name|uri
+name|file
 condition|)
 block|{
-name|GFile
-modifier|*
-name|file
-init|=
-name|g_file_new_for_uri
-argument_list|(
-name|uri
-argument_list|)
-decl_stmt|;
 name|GimpColorProfile
 modifier|*
 name|profile
@@ -1167,11 +1142,6 @@ else|else
 name|success
 operator|=
 name|FALSE
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -1598,21 +1568,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"The URI of the file containing the new color profile"
+literal|"The file containing the new color profile"
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1800,7 +1764,7 @@ name|procedure
 argument_list|,
 literal|"Convert the image's layers to a color profile"
 argument_list|,
-literal|"This procedure converts from the image's color profile (or the default RGB or grayscale profile if none is set) to an ICC profile specified by 'uri'. Only RGB and grayscale color profiles are accepted, according to the image's type."
+literal|"This procedure converts from the image's color profile (or the default RGB or grayscale profile if none is set) to an ICC profile specified by 'file'. Only RGB and grayscale color profiles are accepted, according to the image's type."
 argument_list|,
 name|NULL
 argument_list|)
@@ -1838,21 +1802,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"The URI of the file containing the new color profile"
+literal|"The file containing the new color profile"
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

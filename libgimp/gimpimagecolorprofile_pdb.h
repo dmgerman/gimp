@@ -111,10 +111,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -153,10 +152,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent

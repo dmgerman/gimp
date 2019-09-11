@@ -355,22 +355,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_color_profile_from_file:  * @image: The image.  * @uri: The URI of the file containing the new color profile.  *  * Sets the image's color profile from an ICC file  *  * This procedure sets the image's color profile from a file containing  * an ICC profile, or unsets it if NULL is passed as 'uri'. This  * procedure does no color conversion. However, it will change the  * pixel format of all layers to contain the babl space matching the  * profile. You must call this procedure before adding layers to the  * image.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_set_color_profile_from_file:  * @image: The image.  * @file: The file containing the new color profile.  *  * Sets the image's color profile from an ICC file  *  * This procedure sets the image's color profile from a file containing  * an ICC profile, or unsets it if NULL is passed as 'uri'. This  * procedure does no color conversion. However, it will change the  * pixel format of all layers to contain the babl space matching the  * profile. You must call this procedure before adding layers to the  * image.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_color_profile_from_file (GimpImage * image,const gchar * uri)
+DECL|function|gimp_image_set_color_profile_from_file (GimpImage * image,GFile * file)
 name|gimp_image_set_color_profile_from_file
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|)
 block|{
 name|GimpValueArray
@@ -396,9 +395,9 @@ name|GIMP_TYPE_IMAGE
 argument_list|,
 name|image
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -566,22 +565,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_convert_color_profile_from_file:  * @image: The image.  * @uri: The URI of the file containing the new color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to an ICC profile  * specified by 'uri'. Only RGB and grayscale color profiles are  * accepted, according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_convert_color_profile_from_file:  * @image: The image.  * @file: The file containing the new color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to an ICC profile  * specified by 'file'. Only RGB and grayscale color profiles are  * accepted, according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_convert_color_profile_from_file (GimpImage * image,const gchar * uri,GimpColorRenderingIntent intent,gboolean bpc)
+DECL|function|gimp_image_convert_color_profile_from_file (GimpImage * image,GFile * file,GimpColorRenderingIntent intent,gboolean bpc)
 name|gimp_image_convert_color_profile_from_file
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent
@@ -613,9 +611,9 @@ name|GIMP_TYPE_IMAGE
 argument_list|,
 name|image
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|GIMP_TYPE_COLOR_RENDERING_INTENT
 argument_list|,
