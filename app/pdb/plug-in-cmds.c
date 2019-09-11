@@ -429,10 +429,9 @@ name|gchar
 modifier|*
 name|domain_name
 decl_stmt|;
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|domain_path
+name|domain_file
 decl_stmt|;
 name|domain_name
 operator|=
@@ -446,9 +445,9 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|domain_path
+name|domain_file
 operator|=
-name|g_value_get_string
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -484,6 +483,19 @@ operator|==
 name|GIMP_PLUG_IN_CALL_QUERY
 condition|)
 block|{
+name|gchar
+modifier|*
+name|domain_path
+init|=
+name|domain_file
+condition|?
+name|g_file_get_path
+argument_list|(
+name|domain_file
+argument_list|)
+else|:
+name|NULL
+decl_stmt|;
 name|gimp_plug_in_def_set_locale_domain
 argument_list|(
 name|plug_in
@@ -492,6 +504,11 @@ name|plug_in_def
 argument_list|,
 name|domain_name
 argument_list|,
+name|domain_path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|domain_path
 argument_list|)
 expr_stmt|;
@@ -564,10 +581,9 @@ name|gchar
 modifier|*
 name|domain_name
 decl_stmt|;
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|domain_uri
+name|domain_file
 decl_stmt|;
 name|domain_name
 operator|=
@@ -581,9 +597,9 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|domain_uri
+name|domain_file
 operator|=
-name|g_value_get_string
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -619,6 +635,19 @@ operator|==
 name|GIMP_PLUG_IN_CALL_QUERY
 condition|)
 block|{
+name|gchar
+modifier|*
+name|domain_uri
+init|=
+name|domain_file
+condition|?
+name|g_file_get_uri
+argument_list|(
+name|domain_file
+argument_list|)
+else|:
+name|NULL
+decl_stmt|;
 name|gimp_plug_in_def_set_help_domain
 argument_list|(
 name|plug_in
@@ -627,6 +656,11 @@ name|plug_in_def
 argument_list|,
 name|domain_name
 argument_list|,
+name|domain_uri
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|domain_uri
 argument_list|)
 expr_stmt|;
@@ -1320,25 +1354,17 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"domain-path"
+literal|"domain-file"
 argument_list|,
-literal|"domain path"
+literal|"domain file"
 argument_list|,
-literal|"The absolute path to the compiled message catalog (may be NULL)"
+literal|"The path to the locally installed compiled message catalog (may be NULL)"
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
-operator||
-name|GIMP_PARAM_NO_VALIDATE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1422,21 +1448,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"domain-uri"
+literal|"domain-file"
 argument_list|,
-literal|"domain uri"
+literal|"domain file"
 argument_list|,
 literal|"The root URI of the plug-in's help pages"
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

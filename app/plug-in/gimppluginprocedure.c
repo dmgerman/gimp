@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b58543e0103
+DECL|enum|__anon2c0359240103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -1961,34 +1961,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpProcedure
-modifier|*
-name|procedure
-init|=
-name|GIMP_PROCEDURE
-argument_list|(
-name|proc
-argument_list|)
-decl_stmt|;
-name|GValue
-modifier|*
-name|uri_value
-init|=
-name|NULL
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|proc
-operator|->
-name|file_proc
-condition|)
-return|return
-name|TRUE
-return|;
 if|#
 directive|if
 literal|0
+block|GimpProcedure *procedure = GIMP_PROCEDURE (proc);   GValue        *uri_value = NULL;    if (! proc->file_proc)     return TRUE;
 comment|/*  make sure that the passed strings are actually URIs, not just a    *  file path (bug 758685)    */
 block|if ((procedure->num_args>= 3)&&       (procedure->num_values>= 1)&&       GIMP_IS_PARAM_SPEC_RUN_MODE (procedure->args[0])&&       GIMP_IS_PARAM_SPEC_FILE     (procedure->args[1])&&       GIMP_IS_PARAM_SPEC_IMAGE    (procedure->values[0]))     {       uri_value = gimp_value_array_index (args, 1);     }   else if ((procedure->num_args>= 5)&&            GIMP_IS_PARAM_SPEC_RUN_MODE (procedure->args[0])&&            GIMP_IS_PARAM_SPEC_IMAGE    (procedure->args[1])&&            GIMP_IS_PARAM_SPEC_DRAWABLE (procedure->args[2])&&            GIMP_IS_PARAM_SPEC_FILE     (procedure->args[3]))     {       uri_value = gimp_value_array_index (args, 3);     }    if (uri_value)     {       GFile *file;        file = file_utils_filename_to_file (gimp,                                           g_value_get_string (uri_value),                                           error);        if (! file)         return FALSE;        g_value_take_string (uri_value, g_file_get_uri (file));       g_object_unref (file);     }
 endif|#

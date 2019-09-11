@@ -26,12 +26,12 @@ file|"gimpplugin_pdb.h"
 end_include
 
 begin_comment
-comment|/**  * _gimp_plugin_domain_register:  * @domain_name: The name of the textdomain (must be unique).  * @domain_path: The absolute path to the compiled message catalog (may be NULL).  *  * Registers a textdomain for localisation.  *  * This procedure adds a textdomain to the list of domains Gimp  * searches for strings when translating its menu entries. There is no  * need to call this function for plug-ins that have their strings  * included in the 'gimp-std-plugins' domain as that is used by  * default. If the compiled message catalog is not in the standard  * location, you may specify an absolute path to another location. This  * procedure can only be called in the query function of a plug-in and  * it has to be called before any procedure is installed.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_plugin_domain_register:  * @domain_name: The name of the textdomain (must be unique).  * @domain_file: The path to the locally installed compiled message catalog (may be NULL).  *  * Registers a textdomain for localisation.  *  * This procedure adds a textdomain to the list of domains Gimp  * searches for strings when translating its menu entries. There is no  * need to call this function for plug-ins that have their strings  * included in the 'gimp-std-plugins' domain as that is used by  * default. If the compiled message catalog is not in the standard  * location, you may specify an absolute path to another location. This  * procedure can only be called in the query function of a plug-in and  * it has to be called before any procedure is installed.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_plugin_domain_register (const gchar * domain_name,const gchar * domain_path)
+DECL|function|_gimp_plugin_domain_register (const gchar * domain_name,GFile * domain_file)
 name|_gimp_plugin_domain_register
 parameter_list|(
 specifier|const
@@ -39,10 +39,9 @@ name|gchar
 modifier|*
 name|domain_name
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|domain_path
+name|domain_file
 parameter_list|)
 block|{
 name|GimpValueArray
@@ -68,9 +67,9 @@ name|G_TYPE_STRING
 argument_list|,
 name|domain_name
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|,
-name|domain_path
+name|domain_file
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -115,12 +114,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_plugin_help_register:  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_uri: The root URI of the plug-in's help pages.  *  * Register a help path for a plug-in.  *  * This procedure registers user documentation for the calling plug-in  * with the GIMP help system. The domain_uri parameter points to the  * root directory where the plug-in help is installed. For each  * supported language there should be a file called 'gimp-help.xml'  * that maps the help IDs to the actual help files.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_plugin_help_register:  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_file: The root URI of the plug-in's help pages.  *  * Register a help path for a plug-in.  *  * This procedure registers user documentation for the calling plug-in  * with the GIMP help system. The domain_uri parameter points to the  * root directory where the plug-in help is installed. For each  * supported language there should be a file called 'gimp-help.xml'  * that maps the help IDs to the actual help files.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_plugin_help_register (const gchar * domain_name,const gchar * domain_uri)
+DECL|function|_gimp_plugin_help_register (const gchar * domain_name,GFile * domain_file)
 name|_gimp_plugin_help_register
 parameter_list|(
 specifier|const
@@ -128,10 +127,9 @@ name|gchar
 modifier|*
 name|domain_name
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|domain_uri
+name|domain_file
 parameter_list|)
 block|{
 name|GimpValueArray
@@ -157,9 +155,9 @@ name|G_TYPE_STRING
 argument_list|,
 name|domain_name
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|,
-name|domain_uri
+name|domain_file
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

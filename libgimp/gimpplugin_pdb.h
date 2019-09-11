@@ -59,10 +59,9 @@ name|gchar
 modifier|*
 name|domain_name
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|domain_path
+name|domain_file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -77,10 +76,9 @@ name|gchar
 modifier|*
 name|domain_name
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|domain_uri
+name|domain_file
 parameter_list|)
 function_decl|;
 end_function_decl
