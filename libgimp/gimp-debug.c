@@ -150,7 +150,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<process.h>
+file|<processthreadsapi.h>
 end_include
 
 begin_undef
@@ -473,10 +473,10 @@ block|{
 literal|0
 block|}
 decl_stmt|;
-name|pid_t
+name|DWORD
 name|opid
 init|=
-name|getpid
+name|GetCurrentProcessId
 argument_list|()
 decl_stmt|;
 name|g_log
