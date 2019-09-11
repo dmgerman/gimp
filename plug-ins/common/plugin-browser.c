@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b9b520103
+DECL|enum|__anon28d3618f0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b9b520203
+DECL|enum|__anon28d3618f0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b9b520308
+DECL|struct|__anon28d3618f0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b9b520408
+DECL|struct|__anon28d3618f0408
 block|{
 DECL|member|menu
 name|gchar
@@ -1330,7 +1330,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-plugins-query"
+literal|"gimp-plug-ins-query"
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

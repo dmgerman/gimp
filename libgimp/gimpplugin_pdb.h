@@ -52,7 +52,7 @@ name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_plugin_domain_register
+name|_gimp_plug_in_domain_register
 parameter_list|(
 specifier|const
 name|gchar
@@ -69,7 +69,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_plugin_help_register
+name|_gimp_plug_in_help_register
 parameter_list|(
 specifier|const
 name|gchar
@@ -86,7 +86,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_plugin_menu_branch_register
+name|_gimp_plug_in_menu_branch_register
 parameter_list|(
 specifier|const
 name|gchar
@@ -104,7 +104,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_plugin_set_pdb_error_handler
+name|_gimp_plug_in_set_pdb_error_handler
 parameter_list|(
 name|GimpPDBErrorHandler
 name|handler
@@ -115,7 +115,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|GimpPDBErrorHandler
-name|_gimp_plugin_get_pdb_error_handler
+name|_gimp_plug_in_get_pdb_error_handler
 parameter_list|(
 name|void
 parameter_list|)

@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1b14780103
+DECL|enum|__anon27d938bf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2082,7 +2082,7 @@ name|plug_in
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_gimp_plugin_set_pdb_error_handler
+name|_gimp_plug_in_set_pdb_error_handler
 argument_list|(
 name|handler
 argument_list|)
@@ -2115,7 +2115,7 @@ name|GIMP_PDB_ERROR_HANDLER_INTERNAL
 argument_list|)
 expr_stmt|;
 return|return
-name|_gimp_plugin_get_pdb_error_handler
+name|_gimp_plug_in_get_pdb_error_handler
 argument_list|()
 return|;
 block|}
@@ -2686,7 +2686,7 @@ operator|->
 name|translation_domain_name
 condition|)
 block|{
-name|_gimp_plugin_domain_register
+name|_gimp_plug_in_domain_register
 argument_list|(
 name|plug_in
 operator|->
@@ -2711,7 +2711,7 @@ operator|->
 name|help_domain_name
 condition|)
 block|{
-name|_gimp_plugin_help_register
+name|_gimp_plug_in_help_register
 argument_list|(
 name|plug_in
 operator|->
@@ -2755,7 +2755,7 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|_gimp_plugin_menu_branch_register
+name|_gimp_plug_in_menu_branch_register
 argument_list|(
 name|branch
 operator|->

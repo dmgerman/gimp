@@ -131,8 +131,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|plugins_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|plugins_query_invoker
+DECL|function|plug_ins_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|plug_ins_query_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -389,8 +389,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|plugin_domain_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|plugin_domain_register_invoker
+DECL|function|plug_in_domain_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|plug_in_domain_register_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -541,8 +541,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|plugin_help_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|plugin_help_register_invoker
+DECL|function|plug_in_help_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|plug_in_help_register_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -693,8 +693,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|plugin_menu_branch_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|plugin_menu_branch_register_invoker
+DECL|function|plug_in_menu_branch_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|plug_in_menu_branch_register_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -826,8 +826,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|plugin_set_pdb_error_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|plugin_set_pdb_error_handler_invoker
+DECL|function|plug_in_set_pdb_error_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|plug_in_set_pdb_error_handler_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -932,8 +932,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|plugin_get_pdb_error_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|plugin_get_pdb_error_handler_invoker
+DECL|function|plug_in_get_pdb_error_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|plug_in_get_pdb_error_handler_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1056,12 +1056,12 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
-comment|/*    * gimp-plugins-query    */
+comment|/*    * gimp-plug-ins-query    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|plugins_query_invoker
+name|plug_ins_query_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -1071,7 +1071,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-plugins-query"
+literal|"gimp-plug-ins-query"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_help
@@ -1286,12 +1286,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-plugin-domain-register    */
+comment|/*    * gimp-plug-in-domain-register    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|plugin_domain_register_invoker
+name|plug_in_domain_register_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -1301,7 +1301,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-plugin-domain-register"
+literal|"gimp-plug-in-domain-register"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_help
@@ -1380,12 +1380,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-plugin-help-register    */
+comment|/*    * gimp-plug-in-help-register    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|plugin_help_register_invoker
+name|plug_in_help_register_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -1395,7 +1395,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-plugin-help-register"
+literal|"gimp-plug-in-help-register"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_help
@@ -1474,12 +1474,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-plugin-menu-branch-register    */
+comment|/*    * gimp-plug-in-menu-branch-register    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|plugin_menu_branch_register_invoker
+name|plug_in_menu_branch_register_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -1489,7 +1489,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-plugin-menu-branch-register"
+literal|"gimp-plug-in-menu-branch-register"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_help
@@ -1574,12 +1574,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-plugin-set-pdb-error-handler    */
+comment|/*    * gimp-plug-in-set-pdb-error-handler    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|plugin_set_pdb_error_handler_invoker
+name|plug_in_set_pdb_error_handler_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -1589,7 +1589,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-plugin-set-pdb-error-handler"
+literal|"gimp-plug-in-set-pdb-error-handler"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_help
@@ -1646,12 +1646,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-plugin-get-pdb-error-handler    */
+comment|/*    * gimp-plug-in-get-pdb-error-handler    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|plugin_get_pdb_error_handler_invoker
+name|plug_in_get_pdb_error_handler_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -1661,7 +1661,7 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-plugin-get-pdb-error-handler"
+literal|"gimp-plug-in-get-pdb-error-handler"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_help
