@@ -365,6 +365,22 @@ name|allocation
 operator|.
 name|height
 expr_stmt|;
+name|gimp_display_shell_render_set_scale
+argument_list|(
+name|shell
+argument_list|,
+name|gdk_window_get_scale_factor
+argument_list|(
+name|gtk_widget_get_window
+argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
+name|canvas
+argument_list|)
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  set up the scrollbar observers  */
 name|g_signal_connect
 argument_list|(
@@ -449,7 +465,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2968c1f10108
+DECL|struct|__anon2b64e4a90108
 block|{
 DECL|member|shell
 name|GimpDisplayShell

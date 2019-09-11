@@ -686,6 +686,10 @@ name|gint
 name|filter_stride
 decl_stmt|;
 comment|/*  filter_buffer's stride             */
+DECL|member|render_scale
+name|gint
+name|render_scale
+decl_stmt|;
 DECL|member|render_cache
 name|cairo_surface_t
 modifier|*

@@ -401,7 +401,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2880feb40103
+DECL|enum|__anon2b38f4230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -435,7 +435,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2880feb40203
+DECL|enum|__anon2b38f4230203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1476,6 +1476,12 @@ name|GIMP_RGB
 argument_list|,
 name|GIMP_TRC_NON_LINEAR
 argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|render_scale
+operator|=
+literal|1
 expr_stmt|;
 name|shell
 operator|->

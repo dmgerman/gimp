@@ -16,21 +16,19 @@ directive|define
 name|__GIMP_DISPLAY_SHELL_RENDER_H__
 end_define
 
-begin_define
-DECL|macro|GIMP_DISPLAY_RENDER_ENABLE_SCALING
-define|#
-directive|define
-name|GIMP_DISPLAY_RENDER_ENABLE_SCALING
-value|1
-end_define
-
-begin_define
-DECL|macro|GIMP_DISPLAY_RENDER_MAX_SCALE
-define|#
-directive|define
-name|GIMP_DISPLAY_RENDER_MAX_SCALE
-value|4.0
-end_define
+begin_function_decl
+name|void
+name|gimp_display_shell_render_set_scale
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gint
+name|scale
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
