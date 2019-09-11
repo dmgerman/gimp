@@ -65,10 +65,9 @@ name|G_GNUC_INTERNAL
 name|gboolean
 name|_gimp_pdb_dump
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl

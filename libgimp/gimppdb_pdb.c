@@ -110,18 +110,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_dump:  * @filename: The dump filename.  *  * Dumps the current contents of the procedural database  *  * This procedure dumps the contents of the procedural database to the  * specified file. The file will contain all of the information  * provided for each registered procedure.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_pdb_dump:  * @file: The dump filename.  *  * Dumps the current contents of the procedural database  *  * This procedure dumps the contents of the procedural database to the  * specified file. The file will contain all of the information  * provided for each registered procedure.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_pdb_dump (const gchar * filename)
+DECL|function|_gimp_pdb_dump (GFile * file)
 name|_gimp_pdb_dump
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 block|{
 name|GimpValueArray
@@ -143,9 +142,9 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|NULL
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
