@@ -204,10 +204,9 @@ name|PSDimage
 modifier|*
 name|img_a
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -468,13 +467,12 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,gboolean merged_image_only,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** load_error)
+DECL|function|load_image (GFile * file,gboolean merged_image_only,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** load_error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|merged_image_only
@@ -493,6 +491,10 @@ modifier|*
 name|load_error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|f
@@ -521,6 +523,13 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 comment|/* ----- Open PSD file ----- */
 if|if
 condition|(
@@ -535,9 +544,16 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
+block|}
 name|gimp_progress_init_printf
 argument_list|(
 name|_
@@ -545,9 +561,9 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -559,9 +575,9 @@ name|g_debug
 argument_list|(
 literal|"Open file %s"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -574,11 +590,15 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+operator|!
 name|f
-operator|==
-name|NULL
 condition|)
 block|{
 name|g_set_error
@@ -597,9 +617,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -815,7 +835,7 @@ argument_list|(
 operator|&
 name|img_a
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 if|if
@@ -5924,17 +5944,16 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|create_gimp_image (PSDimage * img_a,const gchar * filename)
+DECL|function|create_gimp_image (PSDimage * img_a,GFile * file)
 name|create_gimp_image
 parameter_list|(
 name|PSDimage
 modifier|*
 name|img_a
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 block|{
 name|GimpImage
@@ -6079,11 +6098,11 @@ argument_list|,
 name|precision
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable

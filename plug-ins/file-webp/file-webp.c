@@ -830,10 +830,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1385,10 +1382,7 @@ condition|(
 operator|!
 name|save_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|image
 argument_list|,

@@ -239,17 +239,15 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|GIMP_PROC_ARG_STRING
+name|GIMP_PROC_ARG_FILE
 argument_list|(
 name|procedure
 argument_list|,
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"URI"
+literal|"File"
 argument_list|,
-literal|"The URI of the file to load"
-argument_list|,
-name|NULL
+literal|"The file to load"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -545,11 +543,6 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
 name|GFile
 modifier|*
 name|file
@@ -566,20 +559,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|uri
+name|file
 operator|=
-name|GIMP_VALUES_GET_STRING
+name|GIMP_VALUES_GET_FILE
 argument_list|(
 name|args
 argument_list|,
 literal|1
-argument_list|)
-expr_stmt|;
-name|file
-operator|=
-name|g_file_new_for_uri
-argument_list|(
-name|uri
 argument_list|)
 expr_stmt|;
 name|remaining
@@ -658,11 +644,6 @@ argument_list|(
 name|remaining
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 return|return
 name|return_values
 return|;
@@ -674,7 +655,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_load_procedure_new:  * @plug_in:          a #GimpPlugIn.  * @name:             the new procedure's name.  * @proc_type:        the new procedure's #GimpPDBProcType.  * @run_func:         the run function for the new procedure.  * @run_data:         user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new load procedure named @name which will call @run_func  * when invoked.  *  * See gimp_procedure_new() for information about @proc_type.  *  * #GimpLoadProcedure is a #GimpProcedure subclass that makes it easier  * to write file load procedures.  *  * It automatically adds the standard  *  * (run-mode, uri)  *  * arguments and the standard  *  * (image-id)  *  * return value of a load procedure. It is possible to add additional  * arguments.  *  * When invoked via gimp_procedure_run(), it unpacks these standard  * arguments and calls @run_func which is a #GimpRunLoadFunc. The  * "args" #GimpValueArray of #GimpRunLoadFunc only contains  * additionally added arguments.  *  * Returns: a new #GimpProcedure.  *  * Since: 3.0  **/
+comment|/**  * gimp_load_procedure_new:  * @plug_in:          a #GimpPlugIn.  * @name:             the new procedure's name.  * @proc_type:        the new procedure's #GimpPDBProcType.  * @run_func:         the run function for the new procedure.  * @run_data:         user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new load procedure named @name which will call @run_func  * when invoked.  *  * See gimp_procedure_new() for information about @proc_type.  *  * #GimpLoadProcedure is a #GimpProcedure subclass that makes it easier  * to write file load procedures.  *  * It automatically adds the standard  *  * (GimpRunMode, GFile)  *  * arguments and the standard  *  * (GimpImage)  *  * return value of a load procedure. It is possible to add additional  * arguments.  *  * When invoked via gimp_procedure_run(), it unpacks these standard  * arguments and calls @run_func which is a #GimpRunLoadFunc. The  * "args" #GimpValueArray of #GimpRunLoadFunc only contains  * additionally added arguments.  *  * Returns: a new #GimpProcedure.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

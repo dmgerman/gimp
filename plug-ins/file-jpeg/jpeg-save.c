@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b512f600108
+DECL|struct|__anon28efbf3d0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -373,11 +373,10 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-DECL|member|file_name
-specifier|const
-name|gchar
+DECL|member|file
+name|GFile
 modifier|*
-name|file_name
+name|file
 decl_stmt|;
 DECL|member|abort_me
 name|gboolean
@@ -400,7 +399,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b512f600208
+DECL|struct|__anon28efbf3d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -860,17 +859,6 @@ operator|->
 name|abort_me
 condition|)
 block|{
-name|GFile
-modifier|*
-name|file
-init|=
-name|g_file_new_for_path
-argument_list|(
-name|pp
-operator|->
-name|file_name
-argument_list|)
-decl_stmt|;
 name|GFileInfo
 modifier|*
 name|info
@@ -889,6 +877,8 @@ name|info
 operator|=
 name|g_file_query_info
 argument_list|(
+name|pp
+operator|->
 name|file
 argument_list|,
 name|G_FILE_ATTRIBUTE_STANDARD_SIZE
@@ -986,17 +976,12 @@ argument_list|(
 name|text
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 comment|/* and load the preview */
 name|load_image
 argument_list|(
 name|pp
 operator|->
-name|file_name
+name|file
 argument_list|,
 name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
@@ -1009,11 +994,15 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* we cleanup here (load_image doesn't run in the background) */
-name|g_unlink
+name|g_file_delete
 argument_list|(
 name|pp
 operator|->
-name|file_name
+name|file
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1178,13 +1167,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GimpImage * orig_image,gboolean preview,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GimpImage * orig_image,gboolean preview,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1241,6 +1229,10 @@ name|space
 decl_stmt|;
 name|JpegSubsampling
 name|subsampling
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 name|FILE
 modifier|*
@@ -1307,9 +1299,9 @@ argument_list|(
 literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1389,9 +1381,13 @@ expr_stmt|;
 comment|/* Step 2: specify data destination (eg, a file) */
 comment|/* Note: steps 2 and 3 can be done in either order. */
 comment|/* Here we use the library-supplied code to send compressed data to a    * stdio stream.  You can also write your own code to do something else.    * VERY IMPORTANT: use "b" option to fopen() if you are on a machine that    * requires it in order to write binary files.    */
-if|if
-condition|(
-operator|(
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|outfile
 operator|=
 name|g_fopen
@@ -1400,9 +1396,16 @@ name|filename
 argument_list|,
 literal|"wb"
 argument_list|)
-operator|)
-operator|==
-name|NULL
+expr_stmt|;
+name|g_free
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|outfile
 condition|)
 block|{
 name|g_set_error
@@ -1421,9 +1424,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -2615,9 +2618,9 @@ name|NULL
 expr_stmt|;
 name|pp
 operator|->
-name|file_name
+name|file
 operator|=
-name|filename
+name|file
 expr_stmt|;
 name|pp
 operator|->
@@ -2898,6 +2901,20 @@ argument_list|(
 literal|"jpeg"
 argument_list|)
 decl_stmt|;
+name|GFile
+modifier|*
+name|file
+init|=
+name|g_file_new_for_path
+argument_list|(
+name|tn
+argument_list|)
+decl_stmt|;
+name|g_free
+argument_list|(
+name|tn
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2917,7 +2934,7 @@ expr_stmt|;
 block|}
 name|save_image
 argument_list|(
-name|tn
+name|file
 argument_list|,
 name|preview_image
 argument_list|,
@@ -2928,6 +2945,11 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 if|if

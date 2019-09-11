@@ -287,10 +287,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 name|from_frame
@@ -311,10 +310,9 @@ specifier|static
 name|gboolean
 name|load_dialog
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -324,10 +322,9 @@ specifier|static
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -364,10 +361,9 @@ specifier|static
 name|gboolean
 name|get_info
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 modifier|*
@@ -1026,10 +1022,7 @@ condition|(
 operator|!
 name|load_dialog
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|)
 condition|)
 return|return
@@ -1062,10 +1055,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|from_frame
 argument_list|,
@@ -1295,10 +1285,7 @@ condition|(
 operator|!
 name|save_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|image
 argument_list|,
@@ -1401,10 +1388,7 @@ condition|(
 operator|!
 name|get_info
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -1482,13 +1466,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|get_info (const gchar * filename,gint32 * width,gint32 * height,gint32 * frames,GError ** error)
+DECL|function|get_info (GFile * file,gint32 * width,gint32 * height,gint32 * frames,GError ** error)
 name|get_info
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 modifier|*
@@ -1508,9 +1491,13 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
-name|file
+name|fp
 decl_stmt|;
 name|s_fli_header
 name|fli_header
@@ -1530,7 +1517,14 @@ name|frames
 operator|=
 literal|0
 expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
 name|file
+argument_list|)
+expr_stmt|;
+name|fp
 operator|=
 name|g_fopen
 argument_list|(
@@ -1539,10 +1533,15 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
-name|file
+name|fp
 condition|)
 block|{
 name|g_set_error
@@ -1561,9 +1560,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -1578,7 +1577,7 @@ return|;
 block|}
 name|fli_read_header
 argument_list|(
-name|file
+name|fp
 argument_list|,
 operator|&
 name|fli_header
@@ -1586,7 +1585,7 @@ argument_list|)
 expr_stmt|;
 name|fclose
 argument_list|(
-name|file
+name|fp
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1624,13 +1623,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,gint32 from_frame,gint32 to_frame,GError ** error)
+DECL|function|load_image (GFile * file,gint32 from_frame,gint32 to_frame,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 name|from_frame
@@ -1644,9 +1642,13 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
-name|file
+name|fp
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -1694,13 +1696,20 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
 name|file
+argument_list|)
+expr_stmt|;
+name|fp
 operator|=
 name|g_fopen
 argument_list|(
@@ -1709,10 +1718,15 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
-name|file
+name|fp
 condition|)
 block|{
 name|g_set_error
@@ -1731,9 +1745,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -1748,7 +1762,7 @@ return|;
 block|}
 name|fli_read_header
 argument_list|(
-name|file
+name|fp
 argument_list|,
 operator|&
 name|fli_header
@@ -1765,7 +1779,7 @@ condition|)
 block|{
 name|fclose
 argument_list|(
-name|file
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -1776,7 +1790,7 @@ else|else
 block|{
 name|fseek
 argument_list|(
-name|file
+name|fp
 argument_list|,
 literal|128
 argument_list|,
@@ -1850,7 +1864,7 @@ block|{
 comment|/* nothing to do ... */
 name|fclose
 argument_list|(
-name|file
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -1869,7 +1883,7 @@ block|{
 comment|/* nothing to do ... */
 name|fclose
 argument_list|(
-name|file
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -1907,11 +1921,11 @@ argument_list|,
 name|GIMP_INDEXED
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|fb
@@ -1957,7 +1971,7 @@ control|)
 block|{
 name|fli_read_frame
 argument_list|(
-name|file
+name|fp
 argument_list|,
 operator|&
 name|fli_header
@@ -2065,7 +2079,7 @@ argument_list|)
 expr_stmt|;
 name|fli_read_frame
 argument_list|(
-name|file
+name|fp
 argument_list|,
 operator|&
 name|fli_header
@@ -2194,7 +2208,7 @@ argument_list|)
 expr_stmt|;
 name|fclose
 argument_list|(
-name|file
+name|fp
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2238,13 +2252,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,GimpImage * image,gint32 from_frame,gint32 to_frame,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,gint32 from_frame,gint32 to_frame,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -2262,9 +2275,13 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
-name|file
+name|fp
 decl_stmt|;
 name|GList
 modifier|*
@@ -2784,9 +2801,9 @@ argument_list|(
 literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2918,7 +2935,14 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/* will be fixed during the write */
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
 name|file
+argument_list|)
+expr_stmt|;
+name|fp
 operator|=
 name|g_fopen
 argument_list|(
@@ -2927,10 +2951,15 @@ argument_list|,
 literal|"wb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
-name|file
+name|fp
 condition|)
 block|{
 name|g_set_error
@@ -2949,9 +2978,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -2966,7 +2995,7 @@ return|;
 block|}
 name|fseek
 argument_list|(
-name|file
+name|fp
 argument_list|,
 literal|128
 argument_list|,
@@ -3294,7 +3323,7 @@ block|{
 comment|/* save frame, allow all codecs */
 name|fli_write_frame
 argument_list|(
-name|file
+name|fp
 argument_list|,
 operator|&
 name|fli_header
@@ -3316,7 +3345,7 @@ block|{
 comment|/* save first frame, no delta information, allow all codecs */
 name|fli_write_frame
 argument_list|(
-name|file
+name|fp
 argument_list|,
 operator|&
 name|fli_header
@@ -3377,7 +3406,7 @@ block|}
 comment|/*    * finish fli    */
 name|fli_write_header
 argument_list|(
-name|file
+name|fp
 argument_list|,
 operator|&
 name|fli_header
@@ -3385,7 +3414,7 @@ argument_list|)
 expr_stmt|;
 name|fclose
 argument_list|(
-name|file
+name|fp
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3421,13 +3450,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|load_dialog (const gchar * filename)
+DECL|function|load_dialog (GFile * file)
 name|load_dialog
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 block|{
 name|GtkWidget
@@ -3458,7 +3486,7 @@ name|run
 decl_stmt|;
 name|get_info
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|width

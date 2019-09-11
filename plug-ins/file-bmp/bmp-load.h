@@ -21,10 +21,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*

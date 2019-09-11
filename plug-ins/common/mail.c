@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ae98b0108
+DECL|struct|__anon297e73fe0108
 block|{
 DECL|member|filename
 name|gchar
@@ -919,9 +919,12 @@ name|gchar
 modifier|*
 name|filename
 init|=
-name|gimp_image_get_filename
+name|g_file_get_path
+argument_list|(
+name|gimp_image_get_file
 argument_list|(
 name|image
+argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
@@ -1272,7 +1275,10 @@ name|image
 argument_list|,
 name|drawable
 argument_list|,
+name|g_file_new_for_path
+argument_list|(
 name|tmpname
+argument_list|)
 argument_list|)
 operator|&&
 name|valid_file

@@ -43,10 +43,9 @@ name|GdkPixbuf
 modifier|*
 name|file_utils_load_thumbnail
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -59,10 +58,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl

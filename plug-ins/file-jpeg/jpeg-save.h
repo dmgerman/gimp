@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c88a9090108
+DECL|struct|__anon2c117dab0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -118,10 +118,9 @@ begin_function_decl
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*

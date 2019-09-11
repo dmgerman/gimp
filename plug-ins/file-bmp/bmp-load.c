@@ -129,10 +129,9 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint
 name|width
@@ -1004,13 +1003,12 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -1018,6 +1016,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|fd
@@ -1080,10 +1082,17 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|fd
@@ -1093,6 +1102,11 @@ argument_list|(
 name|filename
 argument_list|,
 literal|"rb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -1117,9 +1131,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -1222,9 +1236,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1271,9 +1285,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1307,9 +1321,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1344,9 +1358,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1433,9 +1447,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1493,9 +1507,9 @@ argument_list|(
 literal|"Error reading BMP file header from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1683,9 +1697,9 @@ argument_list|(
 literal|"Error reading BMP file header from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1935,9 +1949,9 @@ argument_list|(
 literal|"Error reading BMP file header from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2077,9 +2091,9 @@ name|bitmap_head
 operator|.
 name|biCompr
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2142,9 +2156,9 @@ argument_list|(
 literal|"Error reading BMP file header from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2427,9 +2441,9 @@ argument_list|(
 literal|"Error reading BMP file header from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2716,9 +2730,9 @@ argument_list|(
 literal|"Error reading BMP file header from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2771,9 +2785,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2869,9 +2883,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2908,9 +2922,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2940,9 +2954,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2978,9 +2992,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3043,9 +3057,9 @@ argument_list|(
 literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3172,7 +3186,7 @@ name|ReadImage
 argument_list|(
 name|fd
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|bitmap_head
 operator|.
@@ -3301,17 +3315,16 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|ReadImage (FILE * fd,const gchar * filename,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gboolean gray,const BitmapChannel * masks,GError ** error)
+DECL|function|ReadImage (FILE * fd,GFile * file,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gboolean gray,const BitmapChannel * masks,GError ** error)
 name|ReadImage
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint
 name|width
@@ -3696,11 +3709,11 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer

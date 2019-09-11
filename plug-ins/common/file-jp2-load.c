@@ -281,10 +281,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|OPJ_CODEC_FORMAT
 name|format
@@ -312,10 +311,9 @@ specifier|static
 name|OPJ_COLOR_SPACE
 name|open_dialog
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|OPJ_CODEC_FORMAT
 name|format
@@ -860,10 +858,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|OPJ_CODEC_JP2
 argument_list|,
@@ -885,10 +880,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|OPJ_CODEC_J2K
 argument_list|,
@@ -4918,13 +4910,12 @@ end_function
 begin_function
 specifier|static
 name|OPJ_COLOR_SPACE
-DECL|function|open_dialog (const gchar * filename,OPJ_CODEC_FORMAT format,gint num_components,GError ** error)
+DECL|function|open_dialog (GFile * file,OPJ_CODEC_FORMAT format,gint num_components,GError ** error)
 name|open_dialog
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|OPJ_CODEC_FORMAT
 name|format
@@ -5239,9 +5230,9 @@ literal|" codestream"
 else|:
 literal|""
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|num_components
@@ -5353,13 +5344,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,OPJ_CODEC_FORMAT format,OPJ_COLOR_SPACE color_space,gboolean interactive,gboolean * profile_loaded,GError ** error)
+DECL|function|load_image (GFile * file,OPJ_CODEC_FORMAT format,OPJ_COLOR_SPACE color_space,gboolean interactive,gboolean * profile_loaded,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|OPJ_CODEC_FORMAT
 name|format
@@ -5380,6 +5370,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|opj_stream_t
 modifier|*
 name|stream
@@ -5487,10 +5481,17 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|stream
@@ -5500,6 +5501,11 @@ argument_list|(
 name|filename
 argument_list|,
 name|OPJ_TRUE
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -5521,9 +5527,9 @@ argument_list|(
 literal|"Could not open '%s' for reading"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5570,9 +5576,9 @@ argument_list|(
 literal|"Couldn't set parameters on decoder for '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5608,9 +5614,9 @@ argument_list|(
 literal|"Couldn't read JP2 header from '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5645,9 +5651,9 @@ argument_list|(
 literal|"Couldn't decode JP2 image in '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5680,9 +5686,9 @@ argument_list|(
 literal|"Couldn't decompress JP2 image in '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5805,9 +5811,9 @@ argument_list|(
 literal|"Couldn't decode CIELAB JP2 image in '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5929,7 +5935,7 @@ name|color_space
 operator|=
 name|open_dialog
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|format
 argument_list|,
@@ -5967,9 +5973,9 @@ argument_list|(
 literal|"Unknown color space in JP2 codestream '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6009,9 +6015,9 @@ argument_list|(
 literal|"Couldn't convert YCbCr JP2 image '%s' to RGB."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6054,9 +6060,9 @@ argument_list|(
 literal|"Couldn't convert CMYK JP2 image in '%s' to RGB."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6097,9 +6103,9 @@ argument_list|(
 literal|"Couldn't convert xvYCC JP2 image in '%s' to RGB."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6182,9 +6188,9 @@ argument_list|(
 literal|"Unsupported color space in JP2 image '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6265,11 +6271,11 @@ argument_list|,
 name|image_precision
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|gimp_image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 if|if

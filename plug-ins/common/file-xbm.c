@@ -379,10 +379,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -1077,10 +1076,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -1131,15 +1127,18 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|init_prefix (const gchar * filename)
+DECL|function|init_prefix (GFile * file)
 name|init_prefix
 parameter_list|(
-specifier|const
+name|GFile
+modifier|*
+name|file
+parameter_list|)
+block|{
 name|gchar
 modifier|*
 name|filename
-parameter_list|)
-block|{
+decl_stmt|;
 name|gchar
 modifier|*
 name|p
@@ -1150,9 +1149,21 @@ decl_stmt|;
 name|gint
 name|len
 decl_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|prefix
 operator|=
 name|g_path_get_basename
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|filename
 argument_list|)
@@ -1385,10 +1396,7 @@ name|g_strdup
 argument_list|(
 name|init_prefix
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1467,10 +1475,7 @@ name|g_strdup
 argument_list|(
 name|init_prefix
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2622,13 +2627,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -2636,6 +2640,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|fp
@@ -2725,10 +2733,17 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|fp
@@ -2738,6 +2753,11 @@ argument_list|(
 name|filename
 argument_list|,
 literal|"rb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -2762,9 +2782,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -3057,9 +3077,9 @@ argument_list|(
 literal|"'%s':\nCould not read header (ftell == %ld)"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|ftell
@@ -3091,9 +3111,9 @@ argument_list|(
 literal|"'%s':\nNo image width specified"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3120,9 +3140,9 @@ argument_list|(
 literal|"'%s':\nImage width is larger than GIMP can handle"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3149,9 +3169,9 @@ argument_list|(
 literal|"'%s':\nNo image height specified"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3178,9 +3198,9 @@ argument_list|(
 literal|"'%s':\nImage height is larger than GIMP can handle"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3207,9 +3227,9 @@ argument_list|(
 literal|"'%s':\nNo image data type specified"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3233,11 +3253,11 @@ argument_list|,
 name|GIMP_INDEXED
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 if|if

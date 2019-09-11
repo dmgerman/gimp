@@ -2382,22 +2382,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_import_from_file:  * @image: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out): The number of newly created vectors.  * @vectors: (out) (array length=num_vectors) (element-type GimpVectors) (transfer container): The list of newly created vectors.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_import_from_file:  * @image: The image.  * @file: The SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out): The number of newly created vectors.  * @vectors: (out) (array length=num_vectors) (element-type GimpVectors) (transfer container): The list of newly created vectors.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_import_from_file (GimpImage * image,const gchar * filename,gboolean merge,gboolean scale,gint * num_vectors,GimpVectors *** vectors)
+DECL|function|gimp_vectors_import_from_file (GimpImage * image,GFile * file,gboolean merge,gboolean scale,gint * num_vectors,GimpVectors *** vectors)
 name|gimp_vectors_import_from_file
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|merge
@@ -2439,9 +2438,9 @@ name|GIMP_TYPE_IMAGE
 argument_list|,
 name|image
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
@@ -2745,22 +2744,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_export_to_file:  * @image: The image.  * @filename: The name of the SVG file to create.  * @vectors: The vectors object to be saved, or 0 for all in the image.  *  * save a path as an SVG file.  *  * This procedure creates an SVG file to save a Vectors object, that  * is, a path. The resulting file can be edited using a vector graphics  * application, or later reloaded into GIMP. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
+comment|/**  * gimp_vectors_export_to_file:  * @image: The image.  * @file: The SVG file to create.  * @vectors: The vectors object to be saved, or 0 for all in the image.  *  * save a path as an SVG file.  *  * This procedure creates an SVG file to save a Vectors object, that  * is, a path. The resulting file can be edited using a vector graphics  * application, or later reloaded into GIMP. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_export_to_file (GimpImage * image,const gchar * filename,GimpVectors * vectors)
+DECL|function|gimp_vectors_export_to_file (GimpImage * image,GFile * file,GimpVectors * vectors)
 name|gimp_vectors_export_to_file
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -2790,9 +2788,9 @@ name|GIMP_TYPE_IMAGE
 argument_list|,
 name|image
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|GIMP_TYPE_VECTORS
 argument_list|,

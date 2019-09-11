@@ -100,14 +100,14 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2affbdac0108
+DECL|struct|__anon275f70810108
 block|{
 DECL|member|is_object
 name|gboolean
 name|is_object
 decl_stmt|;
 union|union
-DECL|union|__anon2affbdac020a
+DECL|union|__anon275f7081020a
 block|{
 DECL|member|object
 name|gpointer
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2affbdac0308
+DECL|struct|__anon275f70810308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2affbdac0408
+DECL|struct|__anon275f70810408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2affbdac0508
+DECL|struct|__anon275f70810508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2affbdac0608
+DECL|struct|__anon275f70810608
 block|{
 DECL|member|width
 DECL|member|height
@@ -586,10 +586,9 @@ name|GimpImage
 modifier|*
 name|create_new_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|guint
 name|width
@@ -4288,12 +4287,15 @@ name|image_dst
 operator|=
 name|create_new_image
 argument_list|(
+name|g_file_new_for_path
+argument_list|(
 name|compose_dsc
 index|[
 name|compose_idx
 index|]
 operator|.
 name|filename
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -4466,13 +4468,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|create_new_image (const gchar * filename,guint width,guint height,GimpImageType gdtype,GimpPrecision precision,GimpLayer ** layer,GeglBuffer ** buffer)
+DECL|function|create_new_image (GFile * file,guint width,guint height,GimpImageType gdtype,GimpPrecision precision,GimpLayer ** layer,GeglBuffer ** buffer)
 name|create_new_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|guint
 name|width
@@ -4564,11 +4565,11 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 operator|*

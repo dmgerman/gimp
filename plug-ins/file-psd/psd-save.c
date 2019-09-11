@@ -2472,9 +2472,12 @@ decl_stmt|;
 comment|/* Get the image title from its filename */
 name|fileName
 operator|=
-name|gimp_image_get_filename
+name|g_file_get_path
+argument_list|(
+name|gimp_image_get_file
 argument_list|(
 name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|IFDBG
@@ -6933,13 +6936,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_image (const gchar * filename,GimpImage * image,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -6951,6 +6953,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|fd
@@ -7001,9 +7007,9 @@ literal|"support images that are more than 30,000 pixels wide "
 literal|"or tall."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7018,9 +7024,9 @@ argument_list|(
 literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7108,9 +7114,9 @@ literal|"support images with layers that are more than 30,000 "
 literal|"pixels wide or tall."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7128,6 +7134,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|fd
 operator|=
 name|g_fopen
@@ -7137,11 +7150,15 @@ argument_list|,
 literal|"wb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+operator|!
 name|fd
-operator|==
-name|NULL
 condition|)
 block|{
 name|g_set_error
@@ -7160,9 +7177,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -7183,9 +7200,9 @@ name|g_print
 argument_list|(
 literal|"\tFile '%s' has been opened\n"
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 decl_stmt|;

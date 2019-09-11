@@ -1278,10 +1278,7 @@ name|status
 operator|=
 name|read_dds
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|image
@@ -1677,10 +1674,7 @@ name|status
 operator|=
 name|write_dds
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|image
 argument_list|,

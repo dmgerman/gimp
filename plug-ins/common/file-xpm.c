@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43ddbe0108
+DECL|struct|__anon2b2c47dd0108
 block|{
 DECL|member|threshold
 name|gint
@@ -165,7 +165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43ddbe0208
+DECL|struct|__anon2b2c47dd0208
 block|{
 DECL|member|r
 name|guchar
@@ -356,10 +356,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -407,10 +406,9 @@ specifier|static
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -901,10 +899,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -1146,10 +1141,7 @@ if|if
 condition|(
 name|save_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|image
 argument_list|,
@@ -1210,13 +1202,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -1224,6 +1215,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|XpmImage
 name|xpm_image
 decl_stmt|;
@@ -1242,10 +1237,17 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 comment|/* read the raw file */
@@ -1253,10 +1255,6 @@ switch|switch
 condition|(
 name|XpmReadFileToXpmImage
 argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
 name|filename
 argument_list|,
 operator|&
@@ -1286,10 +1284,15 @@ argument_list|(
 literal|"Error opening file '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|filename
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1314,14 +1317,29 @@ literal|"XPM file invalid"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
 default|default:
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 name|cmap
 operator|=
 name|parse_colors
@@ -1345,11 +1363,11 @@ argument_list|,
 name|GIMP_RGB
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 comment|/* fill it */
@@ -2350,13 +2368,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -2405,6 +2422,10 @@ decl_stmt|;
 name|XpmColor
 modifier|*
 name|colormap
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 name|XpmImage
 modifier|*
@@ -2616,9 +2637,9 @@ argument_list|(
 literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3240,15 +3261,18 @@ name|data
 operator|=
 name|ibuff
 expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 comment|/* do the save */
 switch|switch
 condition|(
 name|XpmWriteFileFromXpmImage
 argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
 name|filename
 argument_list|,
 name|xpm_image
@@ -3281,9 +3305,9 @@ argument_list|(
 literal|"Error opening file '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3311,6 +3335,11 @@ break|break;
 default|default:
 break|break;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|buffer

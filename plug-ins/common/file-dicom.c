@@ -320,10 +320,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -338,10 +337,9 @@ specifier|static
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -872,10 +870,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -1050,10 +1045,7 @@ condition|(
 operator|!
 name|save_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|image
 argument_list|,
@@ -1142,13 +1134,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -1169,6 +1160,10 @@ decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|buffer
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 name|GSList
 modifier|*
@@ -1244,10 +1239,17 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|dicom
@@ -1257,6 +1259,11 @@ argument_list|(
 name|filename
 argument_list|,
 literal|"rb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -1281,9 +1288,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -1339,9 +1346,9 @@ argument_list|(
 literal|"'%s' is a PAPYRUS DICOM file.\n"
 literal|"This plug-in does not support this type yet."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1398,9 +1405,9 @@ argument_list|(
 literal|"'%s' is not a DICOM file."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1844,9 +1851,9 @@ name|g_message
 argument_list|(
 literal|"'%s' seems to have an incorrect value field length."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2176,9 +2183,9 @@ name|g_message
 argument_list|(
 literal|"'%s' has a bpp of %d which GIMP cannot handle."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|bpp
@@ -2207,9 +2214,9 @@ name|g_message
 argument_list|(
 literal|"'%s' has a larger image size (%d x %d) than GIMP can handle."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|width
@@ -2232,9 +2239,9 @@ name|g_message
 argument_list|(
 literal|"'%s' has samples per pixel of %d which GIMP cannot handle."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|samples_per_pixel
@@ -2320,11 +2327,11 @@ name|GIMP_GRAY
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|layer
@@ -3144,7 +3151,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be8b2ff0108
+DECL|struct|__anon2b3ecbe80108
 block|{
 DECL|member|group_word
 name|guint16
@@ -4950,13 +4957,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -4972,6 +4978,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|dicom
@@ -5179,6 +5189,13 @@ name|date
 argument_list|)
 expr_stmt|;
 comment|/* Open the output file. */
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|dicom
 operator|=
 name|g_fopen
@@ -5186,6 +5203,11 @@ argument_list|(
 name|filename
 argument_list|,
 literal|"wb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -5210,9 +5232,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -5683,7 +5705,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2be8b2ff0208
+DECL|struct|__anon2b3ecbe80208
 struct|struct
 block|{
 DECL|member|dicom
@@ -5811,7 +5833,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2be8b2ff0308
+DECL|struct|__anon2b3ecbe80308
 struct|struct
 block|{
 DECL|member|dicom

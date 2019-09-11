@@ -4650,13 +4650,12 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|ico_save_image (const gchar * filename,GimpImage * image,gint32 run_mode,GError ** error)
+DECL|function|ico_save_image (GFile * file,GimpImage * image,gint32 run_mode,GError ** error)
 name|ico_save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -4671,6 +4670,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|fp
@@ -4706,7 +4709,10 @@ argument_list|(
 operator|(
 literal|"*** Exporting Microsoft icon file %s\n"
 operator|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4748,16 +4754,19 @@ argument_list|(
 literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
@@ -4766,7 +4775,16 @@ name|filename
 argument_list|,
 literal|"wb"
 argument_list|)
-operator|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|fp
 condition|)
 block|{
 name|g_set_error
@@ -4785,9 +4803,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror

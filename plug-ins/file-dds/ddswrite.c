@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277aaad10103
+DECL|enum|__anon2a10d38b0103
 block|{
 DECL|enumerator|COMBO_VALUE
 name|COMBO_VALUE
@@ -818,7 +818,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon277aaad10208
+DECL|struct|__anon2a10d38b0208
 block|{
 DECL|member|format
 name|int
@@ -2742,12 +2742,12 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|write_dds (gchar * filename,GimpImage * image,GimpDrawable * drawable,gboolean interactive_dds)
+DECL|function|write_dds (GFile * file,GimpImage * image,GimpDrawable * drawable,gboolean interactive_dds)
 name|write_dds
 parameter_list|(
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -2761,13 +2761,13 @@ name|gboolean
 name|interactive_dds
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|fp
-decl_stmt|;
-name|gchar
-modifier|*
-name|tmp
 decl_stmt|;
 name|int
 name|rc
@@ -2932,6 +2932,13 @@ name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 block|}
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
@@ -2941,11 +2948,15 @@ argument_list|,
 literal|"wb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+operator|!
 name|fp
-operator|==
-literal|0
 condition|)
 block|{
 name|g_message
@@ -2959,49 +2970,14 @@ return|return
 name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
-if|if
-condition|(
-name|strrchr
-argument_list|(
-name|filename
-argument_list|,
-literal|'/'
-argument_list|)
-condition|)
-name|tmp
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init_printf
 argument_list|(
 literal|"Saving %s:"
 argument_list|,
-name|strrchr
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
-argument_list|,
-literal|'/'
+name|file
 argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-else|else
-name|tmp
-operator|=
-name|g_strdup_printf
-argument_list|(
-literal|"Saving %s:"
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|tmp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|tmp
 argument_list|)
 expr_stmt|;
 name|rc

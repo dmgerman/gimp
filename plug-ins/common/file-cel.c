@@ -247,8 +247,7 @@ specifier|static
 name|gint
 name|load_palette
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|file
 parameter_list|,
@@ -274,8 +273,7 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|file
 parameter_list|,
@@ -330,8 +328,7 @@ specifier|static
 name|gboolean
 name|need_palette
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|file
 parameter_list|,
@@ -878,10 +875,7 @@ name|needs_palette
 operator|=
 name|need_palette
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -926,10 +920,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -1164,11 +1155,10 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|need_palette (const gchar * file,GError ** error)
+DECL|function|need_palette (GFile * file,GError ** error)
 name|need_palette
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|file
 parameter_list|,
@@ -1178,6 +1168,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|fp
@@ -1191,20 +1185,31 @@ decl_stmt|;
 name|size_t
 name|n_read
 decl_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
 argument_list|(
-name|file
+name|filename
 argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+operator|!
 name|fp
-operator|==
-name|NULL
 condition|)
 block|{
 name|g_set_error
@@ -1223,7 +1228,7 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)
@@ -1302,11 +1307,10 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * file,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|file
 parameter_list|,
@@ -1316,6 +1320,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|fp
@@ -1392,20 +1400,32 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Open the file for reading */
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
 argument_list|(
-name|file
+name|filename
 argument_list|,
 literal|"r"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -1431,7 +1451,7 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)
@@ -1893,7 +1913,7 @@ return|return
 name|NULL
 return|;
 block|}
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
@@ -2632,7 +2652,10 @@ name|colors
 operator|=
 name|load_palette
 argument_list|(
+name|g_file_new_for_path
+argument_list|(
 name|palette_file
+argument_list|)
 argument_list|,
 name|fp
 argument_list|,
@@ -2742,11 +2765,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_palette (const gchar * file,FILE * fp,guchar palette[],GError ** error)
+DECL|function|load_palette (GFile * file,FILE * fp,guchar palette[],GError ** error)
 name|load_palette
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|file
 parameter_list|,
@@ -2825,7 +2847,7 @@ argument_list|(
 literal|"'%s': EOF or error while reading palette header"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)
@@ -2889,7 +2911,7 @@ argument_list|(
 literal|"'%s': EOF or error while reading palette header"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)
@@ -2927,7 +2949,7 @@ argument_list|(
 literal|"'%s': is not a KCF palette file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)
@@ -2969,7 +2991,7 @@ argument_list|(
 literal|"'%s': illegal bpp value in palette: %hhu"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)
@@ -3020,7 +3042,7 @@ argument_list|(
 literal|"'%s': illegal number of colors: %u"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)
@@ -3089,7 +3111,7 @@ literal|"'%s': EOF or error while reading "
 literal|"palette data"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)
@@ -3192,7 +3214,7 @@ argument_list|(
 literal|"'%s': EOF or error while reading palette data"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)
@@ -3272,7 +3294,7 @@ argument_list|(
 literal|"'%s': EOF or error while reading palette data"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
 name|file
 argument_list|)

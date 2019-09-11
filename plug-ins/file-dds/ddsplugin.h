@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6980bb0108
+DECL|struct|__anon29b27cc70108
 block|{
 DECL|member|compression
 name|int
@@ -119,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6980bb0208
+DECL|struct|__anon29b27cc70208
 block|{
 DECL|member|mipmaps
 name|int
@@ -154,9 +154,9 @@ specifier|extern
 name|GimpPDBStatusType
 name|read_dds
 parameter_list|(
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -174,9 +174,9 @@ specifier|extern
 name|GimpPDBStatusType
 name|write_dds
 parameter_list|(
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*

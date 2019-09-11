@@ -206,13 +206,12 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,gboolean interactive,GError ** error)
+DECL|function|load_image (GFile * file,gboolean interactive,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|interactive
@@ -223,6 +222,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|uint8_t
 modifier|*
 name|indata
@@ -278,6 +281,13 @@ name|xmp
 init|=
 name|FALSE
 decl_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 comment|/* Attempt to read the file contents from disk */
 if|if
 condition|(
@@ -301,10 +311,20 @@ name|error
 argument_list|)
 condition|)
 block|{
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 comment|/* Validate WebP data */
 if|if
 condition|(
@@ -336,9 +356,9 @@ argument_list|(
 literal|"Invalid WebP file '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -660,9 +680,9 @@ argument_list|(
 literal|"Failed to decode animated WebP file '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -695,9 +715,9 @@ argument_list|(
 literal|"Failed to decode animated WebP information from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -780,9 +800,9 @@ argument_list|(
 literal|"Failed to decode animated WebP frame from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -981,11 +1001,11 @@ argument_list|(
 name|mux
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 if|if

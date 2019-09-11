@@ -2521,6 +2521,112 @@ define|\
 value|g_value_set_object (gimp_value_array_index (args, n), value)
 end_define
 
+begin_comment
+comment|/*  file  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_PROC_ARG_FILE (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_ARG_FILE
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                                     G_TYPE_FILE,\                                                     flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_VAL_FILE (class,name,nick,blurb,none_ok,flags)
+define|#
+directive|define
+name|GIMP_PROC_VAL_FILE
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|none_ok
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_return_value (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                                         G_TYPE_FILE,\                                                         flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_GET_FILE (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_GET_FILE
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|g_value_get_object (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_DUP_FILE (args,n)
+define|#
+directive|define
+name|GIMP_VALUES_DUP_FILE
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|)
+define|\
+value|g_value_dup_object (gimp_value_array_index (args, n))
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_SET_FILE (args,n,value)
+define|#
+directive|define
+name|GIMP_VALUES_SET_FILE
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|,
+name|value
+parameter_list|)
+define|\
+value|g_value_set_object (gimp_value_array_index (args, n), value)
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUES_TAKE_FILE (args,n,value)
+define|#
+directive|define
+name|GIMP_VALUES_TAKE_FILE
+parameter_list|(
+name|args
+parameter_list|,
+name|n
+parameter_list|,
+name|value
+parameter_list|)
+define|\
+value|g_value_take_object (gimp_value_array_index (args, n), value)
+end_define
+
 begin_endif
 unit|G_END_DECLS
 endif|#

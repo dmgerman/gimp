@@ -957,9 +957,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|GFile
 modifier|*
-name|gimp_image_get_filename
+name|gimp_image_get_file
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -970,24 +970,23 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_set_filename
+name|gimp_image_set_file
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|GFile
 modifier|*
-name|gimp_image_get_uri
+name|gimp_image_get_xcf_file
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -997,9 +996,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|GFile
 modifier|*
-name|gimp_image_get_xcf_uri
+name|gimp_image_get_imported_file
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1009,21 +1008,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|GFile
 modifier|*
-name|gimp_image_get_imported_uri
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gchar
-modifier|*
-name|gimp_image_get_exported_uri
+name|gimp_image_get_exported_file
 parameter_list|(
 name|GimpImage
 modifier|*

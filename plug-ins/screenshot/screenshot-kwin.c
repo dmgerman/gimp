@@ -436,15 +436,21 @@ name|gimp_file_load
 argument_list|(
 name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
+name|g_file_new_for_path
+argument_list|(
 name|filename
 argument_list|)
+argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 operator|*
 name|image
 argument_list|,
+name|g_file_new_for_path
+argument_list|(
 literal|"screenshot.png"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* This is very wrong in multi-display setups since we have no        * idea which profile is to be used. Let's keep it anyway and        * assume always the monitor 0, which will still work in common        * cases.        */

@@ -868,6 +868,35 @@ block|}
 end_function
 
 begin_function
+specifier|static
+specifier|inline
+name|gboolean
+DECL|function|GIMP_IS_PARAM_SPEC_FILE (GParamSpec * pspec)
+name|GIMP_IS_PARAM_SPEC_FILE
+parameter_list|(
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+block|{
+return|return
+operator|(
+name|G_IS_PARAM_SPEC_OBJECT
+argument_list|(
+name|pspec
+argument_list|)
+operator|&&
+name|pspec
+operator|->
+name|value_type
+operator|==
+name|G_TYPE_FILE
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
 name|gboolean
 DECL|function|gimp_plug_in_set_file_proc_load_handler (GimpPlugIn * plug_in,const gchar * proc_name,const gchar * extensions,const gchar * prefixes,const gchar * magics,GError ** error)
 name|gimp_plug_in_set_file_proc_load_handler
@@ -1015,7 +1044,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|G_IS_PARAM_SPEC_STRING
+name|GIMP_IS_PARAM_SPEC_FILE
 argument_list|(
 name|procedure
 operator|->
@@ -1057,7 +1086,7 @@ literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register procedure \"%s\" "
 literal|"as load handler which does not take the standard "
 literal|"load procedure arguments: "
-literal|"(GimpRunMode, String) -> (GimpImage)"
+literal|"(GimpRunMode, GFile) -> (GimpImage)"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -1260,7 +1289,7 @@ index|]
 argument_list|)
 operator|||
 operator|!
-name|G_IS_PARAM_SPEC_STRING
+name|GIMP_IS_PARAM_SPEC_FILE
 argument_list|(
 name|procedure
 operator|->
@@ -1283,7 +1312,7 @@ literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to register procedure \"%s\" "
 literal|"as save handler which does not take the standard "
 literal|"save procedure arguments: "
-literal|"(GimpRunMode, GimpImage, GimpDrawable, String)"
+literal|"(GimpRunMode, GimpImage, GimpDrawable, GFile)"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(

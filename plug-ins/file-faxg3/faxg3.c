@@ -271,10 +271,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -304,10 +303,9 @@ parameter_list|,
 name|gint
 name|bperrow
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -580,10 +578,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -825,13 +820,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -852,6 +846,10 @@ name|p
 decl_stmt|;
 name|int
 name|nr_pels
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 name|int
 name|fd
@@ -911,9 +909,9 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -957,6 +955,13 @@ argument_list|,
 name|byte_tab
 argument_list|)
 expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|fd
 operator|=
 name|g_open
@@ -968,6 +973,11 @@ operator||
 name|_O_BINARY
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -993,9 +1003,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -2067,7 +2077,7 @@ name|bitmap
 argument_list|,
 name|bperrow
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2089,7 +2099,7 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|emitgimp (gint hcol,gint row,const gchar * bitmap,gint bperrow,const gchar * filename)
+DECL|function|emitgimp (gint hcol,gint row,const gchar * bitmap,gint bperrow,GFile * file)
 name|emitgimp
 parameter_list|(
 name|gint
@@ -2106,10 +2116,9 @@ parameter_list|,
 name|gint
 name|bperrow
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -2174,11 +2183,11 @@ argument_list|,
 name|GIMP_GRAY
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|layer

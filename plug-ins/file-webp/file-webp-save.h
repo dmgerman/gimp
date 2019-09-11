@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ce4af0108
+DECL|struct|__anon27b8e9690108
 block|{
 DECL|member|preset
 name|WebPPreset
@@ -87,10 +87,9 @@ begin_function_decl
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*

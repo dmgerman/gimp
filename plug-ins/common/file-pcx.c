@@ -252,10 +252,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -420,10 +419,9 @@ specifier|static
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -921,10 +919,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -1094,10 +1089,7 @@ condition|(
 operator|!
 name|save_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|image
 argument_list|,
@@ -1140,7 +1132,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29d2c1cc0108
+DECL|struct|__anon279e242e0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1217,7 +1209,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon29d2c1cc0208
+DECL|struct|__anon279e242e0208
 specifier|static
 struct|struct
 block|{
@@ -1537,13 +1529,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -1558,6 +1549,10 @@ decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|buffer
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 name|guint16
 name|offset_x
@@ -1606,10 +1601,17 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|fd
@@ -1619,6 +1621,11 @@ argument_list|(
 name|filename
 argument_list|,
 literal|"rb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -1643,9 +1650,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -1687,9 +1694,9 @@ argument_list|(
 literal|"Could not read header from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1729,9 +1736,9 @@ argument_list|(
 literal|"'%s' is not a PCX file"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2087,11 +2094,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_resolution
@@ -3613,13 +3620,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -3642,6 +3648,10 @@ decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|buffer
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 specifier|const
 name|Babl
@@ -3738,9 +3748,9 @@ argument_list|(
 literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4229,9 +4239,13 @@ return|return
 name|FALSE
 return|;
 block|}
-if|if
-condition|(
-operator|(
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
@@ -4240,9 +4254,16 @@ name|filename
 argument_list|,
 literal|"wb"
 argument_list|)
-operator|)
-operator|==
-name|NULL
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|fp
 condition|)
 block|{
 name|g_set_error
@@ -4261,9 +4282,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -4635,9 +4656,9 @@ argument_list|(
 literal|"Writing to file '%s' failed: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror

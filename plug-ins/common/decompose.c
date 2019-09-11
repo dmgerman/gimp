@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b986b490108
+DECL|struct|__anon2bf8723b0108
 block|{
 DECL|member|babl_name
 specifier|const
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b986b490208
+DECL|struct|__anon2bf8723b0208
 block|{
 DECL|member|type
 specifier|const
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b986b490308
+DECL|struct|__anon2bf8723b0308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -375,10 +375,9 @@ name|GimpImage
 modifier|*
 name|create_new_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -2605,7 +2604,10 @@ index|]
 operator|=
 name|create_new_image
 argument_list|(
+name|g_file_new_for_path
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|layername
 argument_list|,
@@ -2660,7 +2662,10 @@ index|]
 operator|=
 name|create_new_image
 argument_list|(
+name|g_file_new_for_path
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2791,13 +2796,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|create_new_image (const gchar * filename,const gchar * layername,guint width,guint height,GimpImageBaseType type,GimpPrecision precision,gdouble xres,gdouble yres,GimpLayer ** layer)
+DECL|function|create_new_image (GFile * file,const gchar * layername,guint width,guint height,GimpImageBaseType type,GimpPrecision precision,gdouble xres,gdouble yres,GimpLayer ** layer)
 name|create_new_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 specifier|const
 name|gchar
@@ -2850,11 +2854,11 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_resolution
@@ -4536,9 +4540,12 @@ name|extension
 decl_stmt|;
 name|fname
 operator|=
-name|gimp_image_get_filename
+name|g_file_get_path
+argument_list|(
+name|gimp_image_get_file
 argument_list|(
 name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

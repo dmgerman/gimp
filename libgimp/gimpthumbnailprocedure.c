@@ -206,17 +206,15 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|GIMP_PROC_ARG_STRING
+name|GIMP_PROC_ARG_FILE
 argument_list|(
 name|procedure
 argument_list|,
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"URI"
+literal|"File"
 argument_list|,
-literal|"URI of the file to load the thumbnail from"
-argument_list|,
-name|NULL
+literal|"The file to load the thumbnail from"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -420,11 +418,6 @@ name|GimpValueArray
 modifier|*
 name|return_values
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
 name|GFile
 modifier|*
 name|file
@@ -435,9 +428,9 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|uri
+name|file
 operator|=
-name|GIMP_VALUES_GET_STRING
+name|GIMP_VALUES_GET_FILE
 argument_list|(
 name|args
 argument_list|,
@@ -451,13 +444,6 @@ argument_list|(
 name|args
 argument_list|,
 literal|1
-argument_list|)
-expr_stmt|;
-name|file
-operator|=
-name|g_file_new_for_uri
-argument_list|(
-name|uri
 argument_list|)
 expr_stmt|;
 name|remaining
@@ -534,11 +520,6 @@ expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
 name|remaining
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
 argument_list|)
 expr_stmt|;
 return|return

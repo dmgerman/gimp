@@ -192,10 +192,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|interactive
@@ -489,10 +488,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|run_mode
 operator|==
@@ -547,13 +543,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,gboolean interactive,GError ** error)
+DECL|function|load_image (GFile * file,gboolean interactive,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|interactive
@@ -564,6 +559,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|EXRLoader
 modifier|*
 name|loader
@@ -660,15 +659,27 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|loader
 operator|=
 name|exr_loader_new
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|filename
 argument_list|)
@@ -692,9 +703,9 @@ argument_list|(
 literal|"Error opening file '%s' for reading"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -744,9 +755,9 @@ argument_list|(
 literal|"Error querying image dimensions from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -811,9 +822,9 @@ argument_list|(
 literal|"Error querying image precision from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -875,9 +886,9 @@ argument_list|(
 literal|"Error querying image type from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -917,9 +928,9 @@ argument_list|(
 literal|"Could not create new image for '%s': %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|gimp_pdb_get_last_error
@@ -933,11 +944,11 @@ goto|goto
 name|out
 goto|;
 block|}
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 comment|/* try to load an icc profile, it will be generated on the fly if    * chromaticities are given    */
@@ -1149,9 +1160,9 @@ argument_list|(
 literal|"Error reading pixel data from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;

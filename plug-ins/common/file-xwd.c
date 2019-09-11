@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3194220108
+DECL|struct|__anon2a5a29130108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3194220208
+DECL|struct|__anon2a5a29130208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3194220308
+DECL|struct|__anon2a5a29130308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3194220408
+DECL|struct|__anon2a5a29130408
 block|{
 DECL|member|npixel
 name|gint
@@ -557,10 +557,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -601,10 +600,9 @@ name|GimpImage
 modifier|*
 name|create_new_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|guint
 name|width
@@ -715,10 +713,9 @@ name|GimpImage
 modifier|*
 name|load_xwd_f2_d1_b1
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -741,10 +738,9 @@ name|GimpImage
 modifier|*
 name|load_xwd_f2_d8_b8
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -767,10 +763,9 @@ name|GimpImage
 modifier|*
 name|load_xwd_f2_d16_b16
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -793,10 +788,9 @@ name|GimpImage
 modifier|*
 name|load_xwd_f2_d24_b32
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -824,10 +818,9 @@ name|GimpImage
 modifier|*
 name|load_xwd_f2_d32_b32
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -850,10 +843,9 @@ name|GimpImage
 modifier|*
 name|load_xwd_f1_d24_b1
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -1492,10 +1484,6 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -1512,26 +1500,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|filename
-operator|=
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 name|image
 operator|=
 name|load_image
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|error
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -1742,13 +1718,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -1756,11 +1731,13 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|ifp
-init|=
-name|NULL
 decl_stmt|;
 name|gint
 name|depth
@@ -1789,10 +1766,17 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|ifp
@@ -1802,6 +1786,11 @@ argument_list|(
 name|filename
 argument_list|,
 literal|"rb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -1826,9 +1815,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -1871,9 +1860,9 @@ argument_list|(
 literal|"Could not read XWD header from '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1933,9 +1922,9 @@ argument_list|(
 literal|"'%s':\nIllegal number of colormap entries: %ld"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 operator|(
@@ -1977,9 +1966,9 @@ argument_list|(
 literal|"'%s':\nNumber of colormap entries< number of colors"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2019,7 +2008,10 @@ name|g_printf
 argument_list|(
 literal|"File %s\n"
 argument_list|,
-name|filename
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -2133,9 +2125,9 @@ argument_list|(
 literal|"'%s':\nNo image width specified"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2167,9 +2159,9 @@ argument_list|(
 literal|"'%s':\nImage width is larger than GIMP can handle"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2193,9 +2185,9 @@ argument_list|(
 literal|"'%s':\nNo image height specified"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2219,9 +2211,9 @@ argument_list|(
 literal|"'%s':\nImage height is larger than GIMP can handle"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2276,7 +2268,7 @@ name|image
 operator|=
 name|load_xwd_f2_d1_b1
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|ifp
 argument_list|,
@@ -2311,7 +2303,7 @@ name|image
 operator|=
 name|load_xwd_f1_d24_b1
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|ifp
 argument_list|,
@@ -2348,7 +2340,7 @@ name|image
 operator|=
 name|load_xwd_f2_d1_b1
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|ifp
 argument_list|,
@@ -2379,7 +2371,7 @@ name|image
 operator|=
 name|load_xwd_f2_d8_b8
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|ifp
 argument_list|,
@@ -2410,7 +2402,7 @@ name|image
 operator|=
 name|load_xwd_f2_d16_b16
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|ifp
 argument_list|,
@@ -2449,7 +2441,7 @@ name|image
 operator|=
 name|load_xwd_f2_d24_b32
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|ifp
 argument_list|,
@@ -2482,7 +2474,7 @@ name|image
 operator|=
 name|load_xwd_f2_d32_b32
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|ifp
 argument_list|,
@@ -2527,9 +2519,9 @@ literal|"XWD-file %s has format %d, depth %d and bits per pixel %d. "
 literal|"Currently this is not supported."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 operator|(
@@ -6037,13 +6029,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|create_new_image (const gchar * filename,guint width,guint height,GimpImageBaseType type,GimpImageType gdtype,GimpLayer ** layer,GeglBuffer ** buffer)
+DECL|function|create_new_image (GFile * file,guint width,guint height,GimpImageBaseType type,GimpImageType gdtype,GimpLayer ** layer,GeglBuffer ** buffer)
 name|create_new_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|guint
 name|width
@@ -6083,11 +6074,11 @@ argument_list|,
 name|type
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 operator|*
@@ -6151,13 +6142,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_xwd_f2_d1_b1 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
+DECL|function|load_xwd_f2_d1_b1 (GFile * file,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 name|load_xwd_f2_d1_b1
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -6273,7 +6263,7 @@ name|image
 operator|=
 name|create_new_image
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|width
 argument_list|,
@@ -6891,13 +6881,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_xwd_f2_d8_b8 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
+DECL|function|load_xwd_f2_d8_b8 (GFile * file,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 name|load_xwd_f2_d8_b8
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -7092,7 +7081,7 @@ name|image
 operator|=
 name|create_new_image
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|width
 argument_list|,
@@ -7392,13 +7381,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_xwd_f2_d16_b16 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
+DECL|function|load_xwd_f2_d16_b16 (GFile * file,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 name|load_xwd_f2_d16_b16
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -7534,7 +7522,7 @@ name|image
 operator|=
 name|create_new_image
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|width
 argument_list|,
@@ -8288,13 +8276,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_xwd_f2_d24_b32 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap,GError ** error)
+DECL|function|load_xwd_f2_d24_b32 (GFile * file,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap,GError ** error)
 name|load_xwd_f2_d24_b32
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -8670,9 +8657,9 @@ argument_list|(
 literal|"XWD-file %s is corrupt."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8684,7 +8671,7 @@ name|image
 operator|=
 name|create_new_image
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|width
 argument_list|,
@@ -9526,13 +9513,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_xwd_f2_d32_b32 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
+DECL|function|load_xwd_f2_d32_b32 (GFile * file,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 name|load_xwd_f2_d32_b32
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -9692,7 +9678,7 @@ name|image
 operator|=
 name|create_new_image
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|width
 argument_list|,
@@ -10533,13 +10519,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_xwd_f1_d24_b1 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap,GError ** error)
+DECL|function|load_xwd_f1_d24_b1 (GFile * file,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap,GError ** error)
 name|load_xwd_f1_d24_b1
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|FILE
 modifier|*
@@ -11069,9 +11054,9 @@ argument_list|(
 literal|"XWD-file %s is corrupt."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11163,7 +11148,7 @@ name|image
 operator|=
 name|create_new_image
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|width
 argument_list|,

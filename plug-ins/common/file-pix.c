@@ -1194,7 +1194,10 @@ name|PIX_DEBUG_PRINT
 argument_list|(
 literal|"Opening file: %s\n"
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init_printf
@@ -1372,14 +1375,11 @@ argument_list|,
 name|imgtype
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|g_file_get_uri
-argument_list|(
 name|file
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|layer

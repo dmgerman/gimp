@@ -288,22 +288,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"URI"
+literal|"File"
 argument_list|,
-literal|"The URI of the file "
-literal|"to load"
+literal|"The file to load"
 argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -517,22 +510,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"URI"
+literal|"File"
 argument_list|,
-literal|"The URI of the file "
-literal|"to export"
+literal|"The file to export"
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -762,22 +748,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"URI"
+literal|"File"
 argument_list|,
-literal|"The URI of the file "
-literal|"to load"
+literal|"The file to load"
 argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -991,22 +970,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"URI"
+literal|"File"
 argument_list|,
-literal|"The URI of the file "
-literal|"to export"
+literal|"The file to export"
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1259,22 +1231,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"URI"
+literal|"File"
 argument_list|,
-literal|"The URI of the file "
-literal|"to load"
+literal|"The file to load"
 argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1488,22 +1453,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"URI"
+literal|"File"
 argument_list|,
-literal|"The URI of the file "
-literal|"to export"
+literal|"The file to export"
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1710,22 +1668,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"URI"
+literal|"File"
 argument_list|,
-literal|"The URI of the file "
-literal|"to load"
+literal|"The file to load"
 argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

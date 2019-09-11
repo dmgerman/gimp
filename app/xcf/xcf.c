@@ -510,24 +510,16 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"filename"
+literal|"file"
 argument_list|,
-literal|"Filename"
+literal|"File"
 argument_list|,
-literal|"The name of the file "
-literal|"to save the image in, "
-literal|"in URI format and "
-literal|"UTF-8 encoding"
+literal|"The file "
+literal|"to save the image in"
 argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -713,24 +705,15 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_string
+name|g_param_spec_object
 argument_list|(
-literal|"filename"
+literal|"file"
 argument_list|,
-literal|"Filename"
+literal|"File"
 argument_list|,
-literal|"The name of the file "
-literal|"to load, in the "
-literal|"on-disk character "
-literal|"set and encoding"
+literal|"The file to load"
 argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1619,11 +1602,6 @@ name|image
 init|=
 name|NULL
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
 name|GFile
 modifier|*
 name|file
@@ -1643,9 +1621,9 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|uri
+name|file
 operator|=
-name|g_value_get_string
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1653,13 +1631,6 @@ name|args
 argument_list|,
 literal|1
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|file
-operator|=
-name|g_file_new_for_uri
-argument_list|(
-name|uri
 argument_list|)
 expr_stmt|;
 name|input
@@ -1723,11 +1694,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
@@ -1815,11 +1781,6 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
 name|GFile
 modifier|*
 name|file
@@ -1856,9 +1817,9 @@ literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|uri
+name|file
 operator|=
-name|g_value_get_string
+name|g_value_get_object
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1866,13 +1827,6 @@ name|args
 argument_list|,
 literal|3
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|file
-operator|=
-name|g_file_new_for_uri
-argument_list|(
-name|uri
 argument_list|)
 expr_stmt|;
 name|output
@@ -1944,11 +1898,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values

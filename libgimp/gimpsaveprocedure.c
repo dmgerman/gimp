@@ -260,17 +260,15 @@ argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
-name|GIMP_PROC_ARG_STRING
+name|GIMP_PROC_ARG_FILE
 argument_list|(
 name|procedure
 argument_list|,
-literal|"uri"
+literal|"file"
 argument_list|,
-literal|"URI"
+literal|"File"
 argument_list|,
-literal|"The URI of the file to save to"
-argument_list|,
-name|NULL
+literal|"The file to save to"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -495,11 +493,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|uri
-decl_stmt|;
 name|GFile
 modifier|*
 name|file
@@ -534,20 +527,13 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|uri
+name|file
 operator|=
-name|GIMP_VALUES_GET_STRING
+name|GIMP_VALUES_GET_FILE
 argument_list|(
 name|args
 argument_list|,
 literal|3
-argument_list|)
-expr_stmt|;
-name|file
-operator|=
-name|g_file_new_for_uri
-argument_list|(
-name|uri
 argument_list|)
 expr_stmt|;
 name|remaining
@@ -630,11 +616,6 @@ argument_list|(
 name|remaining
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 return|return
 name|return_values
 return|;
@@ -646,7 +627,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_save_procedure_new:  * @plug_in:          a #GimpPlugIn.  * @name:             the new procedure's name.  * @proc_type:        the new procedure's #GimpPDBProcType.  * @run_func:         the run function for the new procedure.  * @run_data:         user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new save procedure named @name which will call @run_func  * when invoked.  *  * See gimp_procedure_new() for information about @proc_type.  *  * #GimpSaveProcedure is a #GimpProcedure subclass that makes it easier  * to write file save procedures.  *  * It automatically adds the standard  *  * (run-mode, image-id, drawable-id, uri)  *  * arguments of a save procedure. It is possible to add additional  * arguments.  *  * When invoked via gimp_procedure_run(), it unpacks these standard  * arguments and calls @run_func which is a #GimpRunSaveFunc. The  * "args" #GimpValueArray of #GimpRunSaveFunc only contains  * additionally added arguments.  *  * Returns: a new #GimpProcedure.  *  * Since: 3.0  **/
+comment|/**  * gimp_save_procedure_new:  * @plug_in:          a #GimpPlugIn.  * @name:             the new procedure's name.  * @proc_type:        the new procedure's #GimpPDBProcType.  * @run_func:         the run function for the new procedure.  * @run_data:         user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new save procedure named @name which will call @run_func  * when invoked.  *  * See gimp_procedure_new() for information about @proc_type.  *  * #GimpSaveProcedure is a #GimpProcedure subclass that makes it easier  * to write file save procedures.  *  * It automatically adds the standard  *  * (GimpRunMode, GimpImage, GimpImage, GFile)  *  * arguments of a save procedure. It is possible to add additional  * arguments.  *  * When invoked via gimp_procedure_run(), it unpacks these standard  * arguments and calls @run_func which is a #GimpRunSaveFunc. The  * "args" #GimpValueArray of #GimpRunSaveFunc only contains  * additionally added arguments.  *  * Returns: a new #GimpProcedure.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

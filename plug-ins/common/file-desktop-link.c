@@ -666,7 +666,10 @@ name|gimp_file_load
 argument_list|(
 name|run_mode
 argument_list|,
+name|g_file_new_for_uri
+argument_list|(
 name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|out

@@ -1938,14 +1938,11 @@ argument_list|,
 name|GIMP_RGB
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|g_file_get_uri
-argument_list|(
 name|file
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

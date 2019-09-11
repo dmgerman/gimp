@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd36d550108
+DECL|struct|__anon27d844cb0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd36d550208
+DECL|struct|__anon27d844cb0208
 block|{
 DECL|member|run
 name|gboolean
@@ -335,7 +335,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd36d550308
+DECL|struct|__anon27d844cb0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -538,10 +538,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|interactive
@@ -567,10 +566,9 @@ specifier|static
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1359,10 +1357,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|interactive
 argument_list|,
@@ -1885,10 +1880,7 @@ if|if
 condition|(
 name|save_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|image
 argument_list|,
@@ -2464,13 +2456,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,gboolean interactive,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
+DECL|function|load_image (GFile * file,gboolean interactive,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|interactive
@@ -2552,6 +2543,10 @@ init|=
 name|NULL
 decl_stmt|;
 comment|/* Color profile */
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|gchar
 modifier|*
 name|profile_name
@@ -2663,9 +2658,9 @@ argument_list|(
 literal|"Error creating PNG read struct while loading '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2699,9 +2694,9 @@ argument_list|(
 literal|"Error while reading '%s'. Could not create PNG header info structure."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2733,9 +2728,9 @@ argument_list|(
 literal|"Error while reading '%s'. File corrupted?"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2778,10 +2773,17 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|fp
@@ -2791,6 +2793,11 @@ argument_list|(
 name|filename
 argument_list|,
 literal|"rb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -2816,9 +2823,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -3207,9 +3214,9 @@ argument_list|(
 literal|"Unknown color model in PNG file '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3267,9 +3274,9 @@ argument_list|(
 literal|"Could not create new image for '%s': %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|gimp_pdb_get_last_error
@@ -3774,7 +3781,7 @@ break|break;
 block|}
 block|}
 block|}
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 operator|(
 name|GimpImage
@@ -3782,7 +3789,7 @@ operator|*
 operator|)
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 comment|/*    * Load the colormap as necessary...    */
@@ -4803,13 +4810,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GimpImage * orig_image,gboolean * profile_saved,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GimpImage * orig_image,gboolean * profile_saved,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -4902,6 +4908,10 @@ modifier|*
 name|buffer
 decl_stmt|;
 comment|/* GEGL buffer for layer */
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -5271,9 +5281,9 @@ argument_list|(
 literal|"Error creating PNG write struct while exporting '%s'."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5307,9 +5317,9 @@ argument_list|(
 literal|"Error while exporting '%s'. Could not create PNG header info structure."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5341,9 +5351,9 @@ argument_list|(
 literal|"Error while exporting '%s'. Could not export image."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5382,10 +5392,17 @@ argument_list|(
 literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|fp
@@ -5397,11 +5414,15 @@ argument_list|,
 literal|"wb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+operator|!
 name|fp
-operator|==
-name|NULL
 condition|)
 block|{
 name|g_set_error
@@ -5420,9 +5441,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror

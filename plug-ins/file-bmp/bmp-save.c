@@ -88,7 +88,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c658c370103
+DECL|enum|__anon2c748d740103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -173,7 +173,7 @@ end_function_decl
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c658c370208
+DECL|struct|__anon2c748d740208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -400,13 +400,12 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GimpRunMode run_mode,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GimpRunMode run_mode,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -425,6 +424,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|outfile
@@ -1065,13 +1068,20 @@ argument_list|(
 literal|"Exporting '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Let's take some file */
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|outfile
 operator|=
 name|g_fopen
@@ -1079,6 +1089,11 @@ argument_list|(
 name|filename
 argument_list|,
 literal|"wb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -1103,9 +1118,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror

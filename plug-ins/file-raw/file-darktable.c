@@ -218,10 +218,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -240,10 +239,9 @@ name|GimpImage
 modifier|*
 name|load_thumbnail_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint
 name|thumb_size
@@ -1121,10 +1119,6 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1138,28 +1132,16 @@ decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-name|filename
-operator|=
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 name|image
 operator|=
 name|load_image
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|run_mode
 argument_list|,
 operator|&
 name|error
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -1267,10 +1249,7 @@ name|image
 operator|=
 name|load_thumbnail_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -1372,13 +1351,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GimpRunMode run_mode,GError ** error)
+DECL|function|load_image (GFile * file,GimpRunMode run_mode,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -1446,6 +1424,15 @@ argument_list|(
 literal|"dofile(%s)"
 argument_list|,
 name|lua_quoted
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
+init|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 decl_stmt|;
 name|gchar
@@ -1577,9 +1564,9 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1666,18 +1653,21 @@ name|gimp_file_load
 argument_list|(
 name|run_mode
 argument_list|,
+name|g_file_new_for_path
+argument_list|(
 name|filename_out
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|image
 condition|)
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 block|}
@@ -1765,13 +1755,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_thumbnail_image (const gchar * filename,gint thumb_size,gint * width,gint * height,GError ** error)
+DECL|function|load_thumbnail_image (GFile * file,gint thumb_size,gint * width,gint * height,GError ** error)
 name|load_thumbnail_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint
 name|thumb_size
@@ -1795,6 +1784,15 @@ modifier|*
 name|image
 init|=
 name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
+init|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1968,9 +1966,9 @@ argument_list|(
 literal|"Opening thumbnail for '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2028,7 +2026,10 @@ name|gimp_file_load
 argument_list|(
 name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
+name|g_file_new_for_path
+argument_list|(
 name|filename_out
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2067,11 +2068,11 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/* is this needed for thumbnails? */
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 block|}

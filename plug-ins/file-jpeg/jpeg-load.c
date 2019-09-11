@@ -187,13 +187,12 @@ end_decl_stmt
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gboolean preview,gboolean * resolution_loaded,GError ** error)
+DECL|function|load_image (GFile * file,GimpRunMode runmode,gboolean preview,gboolean * resolution_loaded,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpRunMode
 name|runmode
@@ -230,6 +229,10 @@ name|jerr
 decl_stmt|;
 name|jpeg_saved_marker_ptr
 name|marker
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 name|FILE
 modifier|*
@@ -321,16 +324,20 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-operator|(
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|infile
 operator|=
 name|g_fopen
@@ -339,9 +346,16 @@ name|filename
 argument_list|,
 literal|"rb"
 argument_list|)
-operator|)
-operator|==
-name|NULL
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|infile
 condition|)
 block|{
 name|g_set_error
@@ -360,9 +374,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -730,11 +744,11 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 comment|/* Step 5.0: save the original JPEG settings in a parasite */

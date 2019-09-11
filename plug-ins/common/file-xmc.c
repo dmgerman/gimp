@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc260f00108
+DECL|struct|__anon275e37470108
 block|{
 DECL|member|crop
 name|gboolean
@@ -531,10 +531,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -550,10 +549,9 @@ name|GimpImage
 modifier|*
 name|load_thumbnail
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 name|thumb_size
@@ -600,10 +598,9 @@ specifier|static
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -987,7 +984,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bc260f00208
+DECL|struct|__anon275e37470208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1631,10 +1628,6 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1655,26 +1648,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|filename
-operator|=
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 name|image
 operator|=
 name|load_image
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|error
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -1749,10 +1730,6 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -1782,18 +1759,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|filename
-operator|=
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 name|image
 operator|=
 name|load_thumbnail
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|size
 argument_list|,
@@ -1808,11 +1778,6 @@ name|num_layers
 argument_list|,
 operator|&
 name|error
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -1932,10 +1897,6 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|orig_image
@@ -1973,13 +1934,6 @@ expr_stmt|;
 name|orig_image
 operator|=
 name|image
-expr_stmt|;
-name|filename
-operator|=
-name|g_file_get_path
-argument_list|(
-name|file
-argument_list|)
 expr_stmt|;
 name|hotspotRange
 operator|=
@@ -2348,10 +2302,7 @@ if|if
 condition|(
 name|save_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|image
 argument_list|,
@@ -2435,11 +2386,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 return|return
 name|gimp_procedure_new_return_values
 argument_list|(
@@ -2461,13 +2407,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -2475,6 +2420,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|fp
@@ -2533,13 +2482,20 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Open the file and check it is a valid X cursor */
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
@@ -2547,6 +2503,11 @@ argument_list|(
 name|filename
 argument_list|,
 literal|"rb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -2572,9 +2533,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -2615,9 +2576,9 @@ argument_list|(
 literal|"'%s' is not a valid X cursor."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2678,9 +2639,9 @@ name|i
 operator|+
 literal|1
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2724,9 +2685,9 @@ name|i
 operator|+
 literal|1
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2789,11 +2750,11 @@ argument_list|,
 name|GIMP_RGB
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 if|if
@@ -3265,13 +3226,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_thumbnail (const gchar * filename,gint32 thumb_size,gint32 * thumb_width,gint32 * thumb_height,gint32 * thumb_num_layers,GError ** error)
+DECL|function|load_thumbnail (GFile * file,gint32 thumb_size,gint32 * thumb_width,gint32 * thumb_height,gint32 * thumb_num_layers,GError ** error)
 name|load_thumbnail
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 name|thumb_size
@@ -3330,6 +3290,10 @@ name|guint32
 name|type
 decl_stmt|;
 comment|/* chunk type */
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|fp
@@ -3413,6 +3377,13 @@ name|thumb_num_layers
 operator|=
 literal|0
 expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
@@ -3422,11 +3393,15 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+operator|!
 name|fp
-operator|==
-name|NULL
 condition|)
 block|{
 name|g_set_error
@@ -3445,9 +3420,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -3505,9 +3480,9 @@ literal|0
 argument_list|,
 literal|"'%s' seems to have an incorrect toc size."
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3656,9 +3631,9 @@ argument_list|(
 literal|"there is no image chunk in \"%s\"."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3852,9 +3827,9 @@ argument_list|(
 literal|"'%s' is too wide for an X cursor."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3888,9 +3863,9 @@ argument_list|(
 literal|"'%s' is too high for an X cursor."
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6169,13 +6144,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GimpImage * orig_image,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GimpImage * orig_image,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -6195,6 +6169,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|fp
@@ -6298,9 +6276,9 @@ argument_list|(
 literal|"Saving '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6308,6 +6286,13 @@ comment|/*    * Open the file pointer.    */
 name|DM_XMC
 argument_list|(
 literal|"Open the file pointer.\n"
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|fp
@@ -6319,11 +6304,15 @@ argument_list|,
 literal|"wb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+operator|!
 name|fp
-operator|==
-name|NULL
 condition|)
 block|{
 name|g_set_error
@@ -6342,9 +6331,9 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -9228,7 +9217,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2bc260f00308
+DECL|struct|__anon275e37470308
 block|{
 DECL|member|size
 name|guint32

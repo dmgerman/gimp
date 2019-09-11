@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8c7b80108
+DECL|struct|__anon291350ed0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -307,10 +307,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -326,10 +325,9 @@ name|GdkPixbuf
 modifier|*
 name|load_rsvg_pixbuf
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|SvgLoadVals
 modifier|*
@@ -348,10 +346,9 @@ specifier|static
 name|gboolean
 name|load_rsvg_size
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|SvgLoadVals
 modifier|*
@@ -370,10 +367,9 @@ specifier|static
 name|gboolean
 name|load_dialog
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -814,10 +810,6 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -836,13 +828,6 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|filename
-operator|=
-name|g_file_get_path
-argument_list|(
-name|file
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -929,7 +914,7 @@ condition|(
 operator|!
 name|load_dialog
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|error
@@ -963,7 +948,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|error
@@ -1003,7 +988,7 @@ name|gimp_vectors_import_from_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|load_vals
 operator|.
@@ -1047,11 +1032,6 @@ sizeof|sizeof
 argument_list|(
 name|load_vals
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
 argument_list|)
 expr_stmt|;
 name|return_vals
@@ -1145,10 +1125,7 @@ if|if
 condition|(
 name|load_rsvg_size
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|load_vals
@@ -1194,10 +1171,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -1273,13 +1247,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** load_error)
+DECL|function|load_image (GFile * file,GError ** load_error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -1315,7 +1288,7 @@ name|pixbuf
 operator|=
 name|load_rsvg_pixbuf
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|load_vals
@@ -1356,9 +1329,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|error
@@ -1421,11 +1394,11 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_resolution
@@ -1727,13 +1700,12 @@ begin_function
 specifier|static
 name|GdkPixbuf
 modifier|*
-DECL|function|load_rsvg_pixbuf (const gchar * filename,SvgLoadVals * vals,GError ** error)
+DECL|function|load_rsvg_pixbuf (GFile * file,SvgLoadVals * vals,GError ** error)
 name|load_rsvg_pixbuf
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|SvgLoadVals
 modifier|*
@@ -1755,17 +1727,6 @@ name|RsvgHandle
 modifier|*
 name|handle
 decl_stmt|;
-name|GFile
-modifier|*
-name|file
-decl_stmt|;
-name|file
-operator|=
-name|g_file_new_for_path
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 name|handle
 operator|=
 name|rsvg_handle_new_from_gfile_sync
@@ -1779,21 +1740,14 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|handle
 condition|)
-block|{
 return|return
 name|NULL
 return|;
-block|}
 name|rsvg_handle_set_dpi
 argument_list|(
 name|handle
@@ -1850,13 +1804,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|load_rsvg_size (const gchar * filename,SvgLoadVals * vals,GError ** error)
+DECL|function|load_rsvg_size (GFile * file,SvgLoadVals * vals,GError ** error)
 name|load_rsvg_size
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|SvgLoadVals
 modifier|*
@@ -1872,23 +1825,12 @@ name|RsvgHandle
 modifier|*
 name|handle
 decl_stmt|;
-name|GFile
-modifier|*
-name|file
-decl_stmt|;
 name|RsvgDimensionData
 name|dim
 decl_stmt|;
 name|gboolean
 name|has_size
 decl_stmt|;
-name|file
-operator|=
-name|g_file_new_for_path
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 name|handle
 operator|=
 name|rsvg_handle_new_from_gfile_sync
@@ -1902,21 +1844,14 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|handle
 condition|)
-block|{
 return|return
 name|FALSE
 return|;
-block|}
 name|rsvg_handle_set_dpi
 argument_list|(
 name|handle
@@ -2353,17 +2288,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_dialog_resolution_callback (GimpSizeEntry * res,const gchar * filename)
+DECL|function|load_dialog_resolution_callback (GimpSizeEntry * res,GFile * file)
 name|load_dialog_resolution_callback
 parameter_list|(
 name|GimpSizeEntry
 modifier|*
 name|res
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 block|{
 name|SvgLoadVals
@@ -2397,7 +2331,7 @@ condition|(
 operator|!
 name|load_rsvg_size
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|vals
@@ -2626,13 +2560,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|load_dialog (const gchar * filename,GError ** load_error)
+DECL|function|load_dialog (GFile * file,GError ** load_error)
 name|load_dialog
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -2722,7 +2655,7 @@ name|preview
 operator|=
 name|load_rsvg_pixbuf
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|vals
@@ -2763,9 +2696,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|error
@@ -3053,7 +2986,7 @@ name|resolution
 expr_stmt|;
 name|load_rsvg_size
 argument_list|(
-name|filename
+name|file
 argument_list|,
 operator|&
 name|vals
@@ -4048,10 +3981,7 @@ argument_list|(
 name|load_dialog_resolution_callback
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 comment|/*  Path Import  */

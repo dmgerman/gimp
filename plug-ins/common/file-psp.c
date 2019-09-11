@@ -129,7 +129,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90103
+DECL|enum|__anon2af7fe100103
 typedef|typedef
 enum|enum
 block|{
@@ -258,7 +258,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90203
+DECL|enum|__anon2af7fe100203
 typedef|typedef
 enum|enum
 block|{
@@ -327,7 +327,7 @@ comment|/* Type of image in the composite image bank block. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90303
+DECL|enum|__anon2af7fe100303
 typedef|typedef
 enum|enum
 block|{
@@ -352,7 +352,7 @@ comment|/* Graphic contents flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90403
+DECL|enum|__anon2af7fe100403
 typedef|typedef
 enum|enum
 block|{
@@ -435,7 +435,7 @@ comment|/* Character style flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90503
+DECL|enum|__anon2af7fe100503
 typedef|typedef
 enum|enum
 block|{
@@ -480,7 +480,7 @@ comment|/* Table type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90603
+DECL|enum|__anon2af7fe100603
 typedef|typedef
 enum|enum
 block|{
@@ -512,7 +512,7 @@ comment|/* Layer flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90703
+DECL|enum|__anon2af7fe100703
 typedef|typedef
 enum|enum
 block|{
@@ -539,7 +539,7 @@ comment|/* Shape property flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90803
+DECL|enum|__anon2af7fe100803
 typedef|typedef
 enum|enum
 block|{
@@ -572,7 +572,7 @@ comment|/* Polyline node type flags. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90903
+DECL|enum|__anon2af7fe100903
 typedef|typedef
 enum|enum
 block|{
@@ -666,7 +666,7 @@ comment|/* Blend modes. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90a03
+DECL|enum|__anon2af7fe100a03
 typedef|typedef
 enum|enum
 block|{
@@ -752,7 +752,7 @@ comment|/* Adjustment layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90b03
+DECL|enum|__anon2af7fe100b03
 typedef|typedef
 enum|enum
 block|{
@@ -808,7 +808,7 @@ comment|/* Vector shape types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90c03
+DECL|enum|__anon2af7fe100c03
 typedef|typedef
 enum|enum
 block|{
@@ -849,7 +849,7 @@ comment|/* Text element types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90d03
+DECL|enum|__anon2af7fe100d03
 typedef|typedef
 enum|enum
 block|{
@@ -881,7 +881,7 @@ comment|/* Text alignment types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90e03
+DECL|enum|__anon2af7fe100e03
 typedef|typedef
 enum|enum
 block|{
@@ -909,7 +909,7 @@ comment|/* Paint style types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f90f03
+DECL|enum|__anon2af7fe100f03
 typedef|typedef
 enum|enum
 block|{
@@ -960,7 +960,7 @@ comment|/* Gradient type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91003
+DECL|enum|__anon2af7fe101003
 typedef|typedef
 enum|enum
 block|{
@@ -992,7 +992,7 @@ comment|/* Paint Style Cap Type (Start& End). (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91103
+DECL|enum|__anon2af7fe101103
 typedef|typedef
 enum|enum
 block|{
@@ -1064,7 +1064,7 @@ comment|/* Paint Style Join Type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91203
+DECL|enum|__anon2af7fe101203
 typedef|typedef
 enum|enum
 block|{
@@ -1089,7 +1089,7 @@ comment|/* Organic pen type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91303
+DECL|enum|__anon2af7fe101303
 typedef|typedef
 enum|enum
 block|{
@@ -1137,7 +1137,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91403
+DECL|enum|__anon2af7fe101403
 typedef|typedef
 enum|enum
 block|{
@@ -1169,7 +1169,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91503
+DECL|enum|__anon2af7fe101503
 typedef|typedef
 enum|enum
 block|{
@@ -1197,7 +1197,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91603
+DECL|enum|__anon2af7fe101603
 typedef|typedef
 enum|enum
 block|{
@@ -1229,7 +1229,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91703
+DECL|enum|__anon2af7fe101703
 typedef|typedef
 enum|enum
 block|{
@@ -1251,7 +1251,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91803
+DECL|enum|__anon2af7fe101803
 typedef|typedef
 enum|enum
 block|{
@@ -1287,7 +1287,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91903
+DECL|enum|__anon2af7fe101903
 typedef|typedef
 enum|enum
 block|{
@@ -1320,7 +1320,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91a03
+DECL|enum|__anon2af7fe101a03
 typedef|typedef
 enum|enum
 block|{
@@ -1368,7 +1368,7 @@ comment|/* Grid units type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91b03
+DECL|enum|__anon2af7fe101b03
 typedef|typedef
 enum|enum
 block|{
@@ -1396,7 +1396,7 @@ comment|/* Guide orientation type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91c03
+DECL|enum|__anon2af7fe101c03
 typedef|typedef
 enum|enum
 block|{
@@ -1418,7 +1418,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91d03
+DECL|enum|__anon2af7fe101d03
 typedef|typedef
 enum|enum
 block|{
@@ -1442,7 +1442,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91e03
+DECL|enum|__anon2af7fe101e03
 typedef|typedef
 enum|enum
 block|{
@@ -1466,7 +1466,7 @@ comment|/* Layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f44f91f03
+DECL|enum|__anon2af7fe101f03
 typedef|typedef
 enum|enum
 block|{
@@ -1545,7 +1545,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f44f92008
+DECL|struct|__anon2af7fe102008
 block|{
 DECL|member|width
 DECL|member|height
@@ -1591,7 +1591,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f44f92108
+DECL|struct|__anon2af7fe102108
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -1774,10 +1774,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -1792,10 +1791,9 @@ specifier|static
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -2251,10 +2249,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -2491,10 +2486,7 @@ if|if
 condition|(
 name|save_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|image
 argument_list|,
@@ -7930,13 +7922,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -7944,6 +7935,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|FILE
 modifier|*
 name|f
@@ -7984,6 +7979,13 @@ name|image
 init|=
 name|NULL
 decl_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|g_stat
@@ -7997,9 +7999,16 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
+block|}
 name|f
 operator|=
 name|g_fopen
@@ -8009,11 +8018,15 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+operator|!
 name|f
-operator|==
-name|NULL
 condition|)
 block|{
 name|g_set_error
@@ -8032,9 +8045,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -8282,9 +8295,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|_
@@ -8413,11 +8426,11 @@ goto|goto
 name|error
 goto|;
 block|}
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_resolution
@@ -8699,13 +8712,12 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*

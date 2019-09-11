@@ -164,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7ba7d60103
+DECL|enum|__anon2742e0e40103
 block|{
 DECL|enumerator|GIMP_PLUGIN_HGT_LOAD_ARGUMENT_ERROR
 name|GIMP_PLUGIN_HGT_LOAD_ARGUMENT_ERROR
@@ -195,7 +195,7 @@ end_function
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7ba7d60203
+DECL|enum|__anon2742e0e40203
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7ba7d60303
+DECL|enum|__anon2742e0e40303
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7ba7d60408
+DECL|struct|__anon2742e0e40408
 block|{
 DECL|member|image_type
 name|RawType
@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7ba7d60508
+DECL|struct|__anon2742e0e40508
 block|{
 DECL|member|run
 name|gboolean
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7ba7d60608
+DECL|struct|__anon2742e0e40608
 block|{
 DECL|member|file_offset
 name|gint32
@@ -380,7 +380,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7ba7d60708
+DECL|struct|__anon2742e0e40708
 block|{
 DECL|member|fp
 name|FILE
@@ -652,10 +652,9 @@ name|RawGimpData
 modifier|*
 name|data
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|palette_filename
+name|palette_file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -669,10 +668,9 @@ specifier|static
 name|goffset
 name|get_file_info
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -750,10 +748,9 @@ name|GimpImage
 modifier|*
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -768,10 +765,9 @@ specifier|static
 name|gboolean
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -834,10 +830,9 @@ specifier|static
 name|gboolean
 name|load_dialog
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|is_hgt
@@ -954,7 +949,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|palfile
 specifier|static
-name|gchar
+name|GFile
 modifier|*
 name|palfile
 init|=
@@ -1803,10 +1798,7 @@ condition|(
 operator|!
 name|load_dialog
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|is_hgt
 argument_list|)
@@ -1987,10 +1979,7 @@ name|image
 operator|=
 name|load_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 operator|&
 name|error
@@ -2297,10 +2286,7 @@ if|if
 condition|(
 name|save_image
 argument_list|(
-name|g_file_get_path
-argument_list|(
 name|file
-argument_list|)
 argument_list|,
 name|image
 argument_list|,
@@ -2358,30 +2344,20 @@ block|}
 end_function
 
 begin_comment
-comment|/* get file size from a filename */
+comment|/* get file size from a filen */
 end_comment
 
 begin_function
 specifier|static
 name|goffset
-DECL|function|get_file_info (const gchar * filename)
+DECL|function|get_file_info (GFile * file)
 name|get_file_info
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-block|{
 name|GFile
 modifier|*
 name|file
-init|=
-name|g_file_new_for_path
-argument_list|(
-name|filename
-argument_list|)
-decl_stmt|;
+parameter_list|)
+block|{
 name|GFileInfo
 modifier|*
 name|info
@@ -2424,11 +2400,6 @@ name|info
 argument_list|)
 expr_stmt|;
 block|}
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 return|return
 name|size
 return|;
@@ -4089,15 +4060,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|raw_load_palette (RawGimpData * data,const gchar * palette_file)
+DECL|function|raw_load_palette (RawGimpData * data,GFile * palette_file)
 name|raw_load_palette
 parameter_list|(
 name|RawGimpData
 modifier|*
 name|data
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|palette_file
 parameter_list|)
@@ -4120,15 +4090,31 @@ condition|(
 name|palette_file
 condition|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|palette_file
+argument_list|)
+expr_stmt|;
 name|fd
 operator|=
 name|g_open
 argument_list|(
-name|palette_file
+name|filename
 argument_list|,
 name|O_RDONLY
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -4341,13 +4327,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -4366,6 +4351,10 @@ block|{
 name|GeglBuffer
 modifier|*
 name|buffer
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 specifier|const
 name|Babl
@@ -4591,6 +4580,13 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|g_fopen
@@ -4622,15 +4618,20 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -4742,6 +4743,11 @@ name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -5043,6 +5049,11 @@ break|break;
 default|default:
 break|break;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 name|ret
 return|;
@@ -5053,13 +5064,12 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (GFile * file,GError ** error)
 name|load_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -5076,6 +5086,10 @@ modifier|*
 name|layer
 init|=
 name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 name|GimpImageType
 name|ltype
@@ -5116,10 +5130,17 @@ argument_list|(
 literal|"Opening '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 name|data
@@ -5131,6 +5152,11 @@ argument_list|(
 name|filename
 argument_list|,
 literal|"rb"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -5157,9 +5183,9 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -5176,7 +5202,7 @@ name|size
 operator|=
 name|get_file_info
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -5471,13 +5497,13 @@ argument_list|,
 name|itype
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_image_set_file
 argument_list|(
 name|data
 operator|->
 name|image
 argument_list|,
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|layer
@@ -6760,18 +6786,34 @@ condition|(
 name|palfile
 condition|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|gint
 name|fd
 decl_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|palfile
+argument_list|)
+expr_stmt|;
 name|fd
 operator|=
 name|g_open
 argument_list|(
-name|palfile
+name|filename
 argument_list|,
 name|O_RDONLY
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|lseek
@@ -7571,13 +7613,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|load_dialog (const gchar * filename,gboolean is_hgt)
+DECL|function|load_dialog (GFile * file,gboolean is_hgt)
 name|load_dialog
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gboolean
 name|is_hgt
@@ -7633,7 +7674,7 @@ name|file_size
 operator|=
 name|get_file_info
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 name|gimp_ui_init
@@ -8858,7 +8899,7 @@ if|if
 condition|(
 name|palfile
 condition|)
-name|gtk_file_chooser_set_filename
+name|gtk_file_chooser_set_file
 argument_list|(
 name|GTK_FILE_CHOOSER
 argument_list|(
@@ -8866,6 +8907,8 @@ name|button
 argument_list|)
 argument_list|,
 name|palfile
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_grid_attach_aligned
@@ -9440,14 +9483,14 @@ if|if
 condition|(
 name|palfile
 condition|)
-name|g_free
+name|g_object_unref
 argument_list|(
 name|palfile
 argument_list|)
 expr_stmt|;
 name|palfile
 operator|=
-name|gtk_file_chooser_get_filename
+name|gtk_file_chooser_get_file
 argument_list|(
 name|button
 argument_list|)

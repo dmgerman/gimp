@@ -157,10 +157,9 @@ begin_function_decl
 name|gboolean
 name|save_layer
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 name|nLayers
@@ -189,10 +188,9 @@ begin_function_decl
 name|gboolean
 name|save_animation
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 name|nLayers
@@ -508,13 +506,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_layer (const gchar * filename,gint32 nLayers,GimpImage * image,GimpDrawable * drawable,WebPSaveParams * params,GError ** error)
+DECL|function|save_layer (GFile * file,gint32 nLayers,GimpImage * image,GimpDrawable * drawable,WebPSaveParams * params,GError ** error)
 name|save_layer
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 name|nLayers
@@ -710,6 +707,10 @@ expr_stmt|;
 comment|/* The do...while() loop is a neat little trick that makes it easier    * to jump to error handling code while still ensuring proper    * cleanup    */
 do|do
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 comment|/* Begin displaying export progress */
 name|gimp_progress_init_printf
 argument_list|(
@@ -718,16 +719,20 @@ argument_list|(
 literal|"Saving '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Attempt to open the output file */
-if|if
-condition|(
-operator|(
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|outfile
 operator|=
 name|g_fopen
@@ -736,9 +741,16 @@ name|filename
 argument_list|,
 literal|"w+b"
 argument_list|)
-operator|)
-operator|==
-name|NULL
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|outfile
 condition|)
 block|{
 name|g_set_error
@@ -757,9 +769,9 @@ argument_list|(
 literal|"Unable to open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -1869,13 +1881,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_animation (const gchar * filename,gint32 nLayers,GList * layers,GimpImage * image,GimpDrawable * drawable,WebPSaveParams * params,GError ** error)
+DECL|function|save_animation (GFile * file,gint32 nLayers,GList * layers,GimpImage * image,GimpDrawable * drawable,WebPSaveParams * params,GError ** error)
 name|save_animation
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|gint32
 name|nLayers
@@ -2079,6 +2090,10 @@ argument_list|)
 expr_stmt|;
 do|do
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -2108,16 +2123,20 @@ argument_list|(
 literal|"Saving '%s'"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Attempt to open the output file */
-if|if
-condition|(
-operator|(
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|outfile
 operator|=
 name|g_fopen
@@ -2126,9 +2145,16 @@ name|filename
 argument_list|,
 literal|"wb"
 argument_list|)
-operator|)
-operator|==
-name|NULL
+expr_stmt|;
+name|g_free
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|outfile
 condition|)
 block|{
 name|g_set_error
@@ -2147,9 +2173,9 @@ argument_list|(
 literal|"Unable to open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
+name|gimp_file_get_utf8_name
 argument_list|(
-name|filename
+name|file
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -3065,13 +3091,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_image (const gchar * filename,GimpImage * image,GimpDrawable * drawable,GimpMetadata * metadata,GimpMetadataSaveFlags metadata_flags,WebPSaveParams * params,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GimpMetadata * metadata,GimpMetadataSaveFlags metadata_flags,WebPSaveParams * params,GError ** error)
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -3098,10 +3123,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GFile
-modifier|*
-name|file
-decl_stmt|;
 name|gboolean
 name|status
 init|=
@@ -3137,7 +3158,10 @@ name|g_printerr
 argument_list|(
 literal|"Saving WebP file %s\n"
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3151,7 +3175,7 @@ name|status
 operator|=
 name|save_animation
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|g_list_length
 argument_list|(
@@ -3176,7 +3200,7 @@ name|status
 operator|=
 name|save_layer
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|g_list_length
 argument_list|(
@@ -3272,13 +3296,6 @@ operator|&=
 operator|~
 name|GIMP_METADATA_SAVE_COLOR_PROFILE
 expr_stmt|;
-name|file
-operator|=
-name|g_file_new_for_path
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 name|gimp_image_metadata_save_finish
 argument_list|(
 name|image
@@ -3292,11 +3309,6 @@ argument_list|,
 name|file
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
 argument_list|)
 expr_stmt|;
 block|}

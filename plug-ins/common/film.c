@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb7e75f0108
+DECL|struct|__anon2b57bb1c0108
 block|{
 DECL|member|film_height
 name|gint
@@ -210,7 +210,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb7e75f0208
+DECL|struct|__anon2b57bb1c0208
 block|{
 DECL|member|advanced_adj
 name|GtkAdjustment
@@ -375,11 +375,6 @@ name|GimpImage
 modifier|*
 name|create_new_image
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
 name|guint
 name|width
 parameter_list|,
@@ -1968,11 +1963,6 @@ name|image_dst
 operator|=
 name|create_new_image
 argument_list|(
-name|_
-argument_list|(
-literal|"Untitled"
-argument_list|)
-argument_list|,
 operator|(
 name|guint
 operator|)
@@ -3189,14 +3179,9 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|create_new_image (const gchar * filename,guint width,guint height,GimpImageType gdtype,GimpLayer ** layer)
+DECL|function|create_new_image (guint width,guint height,GimpImageType gdtype,GimpLayer ** layer)
 name|create_new_image
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
 name|guint
 name|width
 parameter_list|,
@@ -3270,13 +3255,6 @@ argument_list|,
 name|height
 argument_list|,
 name|gitype
-argument_list|)
-expr_stmt|;
-name|gimp_image_set_filename
-argument_list|(
-name|image
-argument_list|,
-name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable

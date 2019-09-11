@@ -20,10 +20,9 @@ begin_function_decl
 name|GimpPDBStatusType
 name|save_image
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpImage
 modifier|*

@@ -5825,14 +5825,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_filename:  * @image: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * or imported from a file or has since been saved or exported.  * Otherwise, this function returns %NULL. See also  * gimp_image_get_uri().  *  * Returns: (transfer full): The filename.  *          The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_file:  * @image: The image.  *  * Returns the file for the specified image.  *  * This procedure returns the file associated with the specified image.  * The image has a file only if it was loaded or imported from a file  * or has since been saved or exported. Otherwise, this function  * returns %NULL. See also gimp-image-get-imported-file to get the  * current file if it was imported from a non-GIMP file format and not  * yet saved, or gimp-image-get-exported-file if the image has been  * exported to a non-GIMP file format.  *  * Returns: (transfer full): The file.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
-name|gchar
+name|GFile
 modifier|*
-DECL|function|gimp_image_get_filename (GimpImage * image)
-name|gimp_image_get_filename
+DECL|function|gimp_image_get_file (GimpImage * image)
+name|gimp_image_get_file
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -5847,9 +5847,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 init|=
 name|NULL
 decl_stmt|;
@@ -5873,7 +5873,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-image-get-filename"
+literal|"gimp-image-get-file"
 argument_list|,
 name|args
 argument_list|)
@@ -5894,9 +5894,9 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|filename
+name|file
 operator|=
-name|GIMP_VALUES_DUP_STRING
+name|GIMP_VALUES_DUP_FILE
 argument_list|(
 name|return_vals
 argument_list|,
@@ -5909,28 +5909,27 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|filename
+name|file
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_filename:  * @image: The image.  * @filename: The new image filename.  *  * Sets the specified image's filename.  *  * This procedure sets the specified image's filename. The filename  * should be in the filesystem encoding.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_file:  * @image: The image.  * @file: The new image file.  *  * Sets the specified image's file.  *  * This procedure sets the specified image's file.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_filename (GimpImage * image,const gchar * filename)
-name|gimp_image_set_filename
+DECL|function|gimp_image_set_file (GimpImage * image,GFile * file)
+name|gimp_image_set_file
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|)
 block|{
 name|GimpValueArray
@@ -5956,9 +5955,9 @@ name|GIMP_TYPE_IMAGE
 argument_list|,
 name|image
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -5970,7 +5969,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-image-set-filename"
+literal|"gimp-image-set-file"
 argument_list|,
 name|args
 argument_list|)
@@ -6003,14 +6002,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_uri:  * @image: The image.  *  * Returns the URI for the specified image.  *  * This procedure returns the URI associated with the specified image.  * The image has an URI only if it was loaded or imported from a file  * or has since been saved or exported. Otherwise, this function  * returns %NULL. See also gimp-image-get-imported-uri to get the URI  * of the current file if it was imported from a non-GIMP file format  * and not yet saved, or gimp-image-get-exported-uri if the image has  * been exported to a non-GIMP file format.  *  * Returns: (transfer full): The URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_xcf_file:  * @image: The image.  *  * Returns the XCF file for the specified image.  *  * This procedure returns the XCF file associated with the image. If  * there is no such file, this procedure returns %NULL.  *  * Returns: (transfer full): The imported XCF file.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
-name|gchar
+name|GFile
 modifier|*
-DECL|function|gimp_image_get_uri (GimpImage * image)
-name|gimp_image_get_uri
+DECL|function|gimp_image_get_xcf_file (GimpImage * image)
+name|gimp_image_get_xcf_file
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -6025,9 +6024,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 init|=
 name|NULL
 decl_stmt|;
@@ -6051,7 +6050,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-image-get-uri"
+literal|"gimp-image-get-xcf-file"
 argument_list|,
 name|args
 argument_list|)
@@ -6072,9 +6071,9 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|uri
+name|file
 operator|=
-name|GIMP_VALUES_DUP_STRING
+name|GIMP_VALUES_DUP_FILE
 argument_list|(
 name|return_vals
 argument_list|,
@@ -6087,20 +6086,20 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|uri
+name|file
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_xcf_uri:  * @image: The image.  *  * Returns the XCF URI for the specified image.  *  * This procedure returns the XCF URI associated with the image. If  * there is no such URI, this procedure returns %NULL.  *  * Returns: (transfer full): The imported URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_imported_file:  * @image: The image.  *  * Returns the imported file for the specified image.  *  * This procedure returns the file associated with the specified image  * if the image was imported from a non-native Gimp format. If the  * image was not imported, or has since been saved in the native Gimp  * format, this procedure returns %NULL.  *  * Returns: (transfer full): The imported file.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
-name|gchar
+name|GFile
 modifier|*
-DECL|function|gimp_image_get_xcf_uri (GimpImage * image)
-name|gimp_image_get_xcf_uri
+DECL|function|gimp_image_get_imported_file (GimpImage * image)
+name|gimp_image_get_imported_file
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -6115,9 +6114,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 init|=
 name|NULL
 decl_stmt|;
@@ -6141,7 +6140,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-image-get-xcf-uri"
+literal|"gimp-image-get-imported-file"
 argument_list|,
 name|args
 argument_list|)
@@ -6162,9 +6161,9 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|uri
+name|file
 operator|=
-name|GIMP_VALUES_DUP_STRING
+name|GIMP_VALUES_DUP_FILE
 argument_list|(
 name|return_vals
 argument_list|,
@@ -6177,20 +6176,20 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|uri
+name|file
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_imported_uri:  * @image: The image.  *  * Returns the imported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was imported from a non-native Gimp format. If the  * image was not imported, or has since been saved in the native Gimp  * format, this procedure returns %NULL.  *  * Returns: (transfer full): The imported URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_exported_file:  * @image: The image.  *  * Returns the exported file for the specified image.  *  * This procedure returns the file associated with the specified image  * if the image was exported a non-native GIMP format. If the image was  * not exported, this procedure returns %NULL.  *  * Returns: (transfer full): The exported file.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
-name|gchar
+name|GFile
 modifier|*
-DECL|function|gimp_image_get_imported_uri (GimpImage * image)
-name|gimp_image_get_imported_uri
+DECL|function|gimp_image_get_exported_file (GimpImage * image)
+name|gimp_image_get_exported_file
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -6205,9 +6204,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|uri
+name|file
 init|=
 name|NULL
 decl_stmt|;
@@ -6231,7 +6230,7 @@ argument_list|(
 name|gimp_get_pdb
 argument_list|()
 argument_list|,
-literal|"gimp-image-get-imported-uri"
+literal|"gimp-image-get-exported-file"
 argument_list|,
 name|args
 argument_list|)
@@ -6252,9 +6251,9 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|uri
+name|file
 operator|=
-name|GIMP_VALUES_DUP_STRING
+name|GIMP_VALUES_DUP_FILE
 argument_list|(
 name|return_vals
 argument_list|,
@@ -6267,97 +6266,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|uri
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_image_get_exported_uri:  * @image: The image.  *  * Returns the exported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was exported a non-native GIMP format. If the image was  * not exported, this procedure returns %NULL.  *  * Returns: (transfer full): The exported URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
-end_comment
-
-begin_function
-name|gchar
-modifier|*
-DECL|function|gimp_image_get_exported_uri (GimpImage * image)
-name|gimp_image_get_exported_uri
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|)
-block|{
-name|GimpValueArray
-modifier|*
-name|args
-decl_stmt|;
-name|GimpValueArray
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gchar
-modifier|*
-name|uri
-init|=
-name|NULL
-decl_stmt|;
-name|args
-operator|=
-name|gimp_value_array_new_from_types
-argument_list|(
-name|NULL
-argument_list|,
-name|GIMP_TYPE_IMAGE
-argument_list|,
-name|image
-argument_list|,
-name|G_TYPE_NONE
-argument_list|)
-expr_stmt|;
-name|return_vals
-operator|=
-name|gimp_pdb_run_procedure_array
-argument_list|(
-name|gimp_get_pdb
-argument_list|()
-argument_list|,
-literal|"gimp-image-get-exported-uri"
-argument_list|,
-name|args
-argument_list|)
-expr_stmt|;
-name|gimp_value_array_unref
-argument_list|(
-name|args
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|GIMP_VALUES_GET_ENUM
-argument_list|(
-name|return_vals
-argument_list|,
-literal|0
-argument_list|)
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|uri
-operator|=
-name|GIMP_VALUES_DUP_STRING
-argument_list|(
-name|return_vals
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gimp_value_array_unref
-argument_list|(
-name|return_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|uri
+name|file
 return|;
 block|}
 end_function
