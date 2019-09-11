@@ -962,8 +962,6 @@ comment|/*progress*/
 argument_list|,
 name|file
 argument_list|,
-name|file
-argument_list|,
 name|FALSE
 comment|/*as_new*/
 argument_list|,
