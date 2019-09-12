@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05617f0108
+DECL|struct|__anon2ae8b1670108
 block|{
 DECL|member|cinfo
 name|struct
@@ -399,7 +399,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05617f0208
+DECL|struct|__anon2ae8b1670208
 block|{
 DECL|member|run
 name|gboolean
@@ -1399,7 +1399,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|file
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
