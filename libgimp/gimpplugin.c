@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d938bf0103
+DECL|enum|__anon2b5fd1130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4686,19 +4686,20 @@ argument_list|,
 name|id
 argument_list|)
 expr_stmt|;
-while|while
-condition|(
-name|object
-operator|->
-name|ref_count
-operator|>
-literal|1
-condition|)
+if|#
+directive|if
+literal|0
+comment|/* the code used to do this, but it appears that some bindings            * keep references around until later, let's keep this for            * reference and as a reminder to figure if we can do anything            * generic about it that works for all bindings.            */
+block|while (object->ref_count> 1)             g_object_unref (object);
+else|#
+directive|else
 name|g_object_unref
 argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|g_hash_table_iter_remove
 argument_list|(
 operator|&
