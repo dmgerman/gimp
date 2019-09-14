@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpparamspecs-duplicate.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpviewable.h"
 end_include
 
@@ -704,7 +698,7 @@ name|GParamSpec
 modifier|*
 name|copy
 init|=
-name|gimp_param_spec_duplicate
+name|gimp_config_param_spec_duplicate
 argument_list|(
 name|pspec
 argument_list|)

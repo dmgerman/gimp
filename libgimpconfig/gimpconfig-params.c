@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpparamspecs-duplicate.c  * Copyright (C) 2008-2014 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-2003 Peter Mattis and Spencer Kimball  *  * gimpconfig-params.c  * Copyright (C) 2008-2019 Michael Natterer<mitch@gimp.org>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -25,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|<gegl-paramspecs.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_include
@@ -48,36 +48,72 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core-types.h"
+file|"gimpconfig.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpparamspecs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpparamspecs-duplicate.h"
-end_include
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_gegl_param_spec_has_key (GParamSpec * pspec,const gchar * key,const gchar * value)
+name|gimp_gegl_param_spec_has_key
+parameter_list|(
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|key
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|value
+parameter_list|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|v
+init|=
+name|gegl_param_spec_get_property_key
+argument_list|(
+name|pspec
+argument_list|,
+name|key
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|v
+operator|&&
+operator|!
+name|strcmp
+argument_list|(
+name|v
+argument_list|,
+name|value
+argument_list|)
+condition|)
+return|return
+name|TRUE
+return|;
+return|return
+name|FALSE
+return|;
+block|}
+end_function
 
 begin_comment
-comment|/* FIXME: this code is not yet general as it should be (gegl tool only atm) */
+comment|/**  * gimp_config_param_spec_duplicate:  * @pspec: the #GParamSpec to duplicate  *  * Creates an exact copy of @pspec, with all its properties, returns  * %NULL if @pspec is of an unknown type that can't be duplicated.  *  * Return: (transfer full): The new #GParamSpec, or %NULL.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_duplicate (GParamSpec * pspec)
-name|gimp_param_spec_duplicate
+DECL|function|gimp_config_param_spec_duplicate (GParamSpec * pspec)
+name|gimp_config_param_spec_duplicate
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -108,6 +144,7 @@ name|pspec
 operator|->
 name|flags
 expr_stmt|;
+comment|/*  this special case exists for the GEGL tool, we don't want this    *  property serialized    */
 if|if
 condition|(
 operator|!
@@ -640,11 +677,7 @@ argument_list|(
 name|pspec
 argument_list|)
 argument_list|,
-name|pspec
-operator|->
 name|flags
-operator||
-name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 expr_stmt|;
 name|G_PARAM_SPEC_UINT
