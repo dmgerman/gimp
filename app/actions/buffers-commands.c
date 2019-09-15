@@ -262,9 +262,10 @@ argument_list|(
 name|shell
 argument_list|,
 operator|!
+name|gimp_display_shell_get_infinite_canvas
+argument_list|(
 name|shell
-operator|->
-name|show_all
+argument_list|)
 argument_list|,
 operator|&
 name|x
