@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299893340103
+DECL|enum|__anon2767a7400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -490,9 +490,10 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp_display_shell_get_infinite_canvas
+argument_list|(
 name|shell
-operator|->
-name|show_all
+argument_list|)
 condition|)
 block|{
 name|x
@@ -596,9 +597,10 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp_display_shell_get_infinite_canvas
+argument_list|(
 name|shell
-operator|->
-name|show_all
+argument_list|)
 condition|)
 block|{
 name|cairo_region_t
