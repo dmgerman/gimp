@@ -465,7 +465,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b842d140108
+DECL|struct|__anon2b2b43440108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -751,9 +751,10 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp_display_shell_get_infinite_canvas
+argument_list|(
 name|shell
-operator|->
-name|show_all
+argument_list|)
 condition|)
 block|{
 name|gimp_display_shell_scroll_center_image

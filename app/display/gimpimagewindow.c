@@ -428,7 +428,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c04757f0103
+DECL|enum|__anon2907dc080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -558,7 +558,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c04757f0208
+DECL|struct|__anon2907dc080208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -6143,6 +6143,29 @@ operator|&
 name|rect
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_display_shell_get_infinite_canvas
+argument_list|(
+name|active_shell
+argument_list|)
+condition|)
+block|{
+name|gimp_display_shell_scale_get_image_size
+argument_list|(
+name|active_shell
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|gimp_display_shell_scale_get_image_bounding_box
 argument_list|(
 name|active_shell
@@ -6158,6 +6181,7 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
+block|}
 name|disp_width
 operator|=
 name|active_shell

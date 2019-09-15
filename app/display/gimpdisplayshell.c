@@ -401,7 +401,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b38f4230103
+DECL|enum|__anon2c4ec6e30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -435,7 +435,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b38f4230203
+DECL|enum|__anon2c4ec6e30203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7781,6 +7781,40 @@ block|}
 block|}
 return|return
 name|bounding_box
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_display_shell_get_infinite_canvas (GimpDisplayShell * shell)
+name|gimp_display_shell_get_infinite_canvas
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|shell
+operator|->
+name|show_all
+operator|&&
+operator|!
+name|gimp_display_shell_get_padding_in_show_all
+argument_list|(
+name|shell
+argument_list|)
 return|;
 block|}
 end_function

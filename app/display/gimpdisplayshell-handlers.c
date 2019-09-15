@@ -3655,9 +3655,10 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp_display_shell_get_infinite_canvas
+argument_list|(
 name|shell
-operator|->
-name|show_all
+argument_list|)
 condition|)
 block|{
 name|gimp_display_shell_scroll_center_image
