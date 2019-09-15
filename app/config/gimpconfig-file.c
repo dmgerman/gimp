@@ -123,8 +123,7 @@ name|FILE
 modifier|*
 name|dfile
 decl_stmt|;
-name|struct
-name|stat
+name|GStatBuf
 name|stat_buf
 decl_stmt|;
 name|gint
