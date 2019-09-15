@@ -183,6 +183,10 @@ DECL|member|padding_mode_set
 name|gboolean
 name|padding_mode_set
 decl_stmt|;
+DECL|member|padding_in_show_all
+name|gboolean
+name|padding_in_show_all
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -4206,6 +4206,23 @@ argument_list|,
 name|combo
 argument_list|)
 expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"padding-in-show-all"
+argument_list|,
+name|_
+argument_list|(
+literal|"_Keep canvas padding in \"Show All\" mode"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -13185,7 +13202,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bc4228d0108
+DECL|struct|__anon2c266dfd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -14091,7 +14108,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bc4228d0208
+DECL|struct|__anon2c266dfd0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14222,7 +14239,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bc4228d0308
+DECL|struct|__anon2c266dfd0308
 block|{
 DECL|member|tree_label
 specifier|const

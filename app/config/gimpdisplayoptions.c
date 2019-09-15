@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b78ddec0103
+DECL|enum|__anon29bd3e7c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -129,6 +129,9 @@ name|PROP_PADDING_MODE
 block|,
 DECL|enumerator|PROP_PADDING_COLOR
 name|PROP_PADDING_COLOR
+block|,
+DECL|enumerator|PROP_PADDING_IN_SHOW_ALL
+name|PROP_PADDING_IN_SHOW_ALL
 block|}
 enum|;
 end_enum
@@ -597,6 +600,23 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_PADDING_IN_SHOW_ALL
+argument_list|,
+literal|"padding-in-show-all"
+argument_list|,
+literal|"Keep padding in \"Show All\" mode"
+argument_list|,
+name|CANVAS_PADDING_IN_SHOW_ALL_BLURB
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -922,6 +942,23 @@ name|FALSE
 argument_list|,
 operator|&
 name|black
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_PADDING_IN_SHOW_ALL
+argument_list|,
+literal|"padding-in-show-all"
+argument_list|,
+literal|"Keep padding in \"Show All\" mode"
+argument_list|,
+name|CANVAS_PADDING_IN_SHOW_ALL_BLURB
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1438,6 +1475,19 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_PADDING_IN_SHOW_ALL
+case|:
+name|options
+operator|->
+name|padding_in_show_all
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -1695,6 +1745,19 @@ operator|&
 name|options
 operator|->
 name|padding_color
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_PADDING_IN_SHOW_ALL
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|options
+operator|->
+name|padding_in_show_all
 argument_list|)
 expr_stmt|;
 break|break;

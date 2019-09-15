@@ -90,6 +90,15 @@ value|_("Sets the canvas padding color used if the padding mode is set to " \   
 end_define
 
 begin_define
+DECL|macro|CANVAS_PADDING_IN_SHOW_ALL_BLURB
+define|#
+directive|define
+name|CANVAS_PADDING_IN_SHOW_ALL_BLURB
+define|\
+value|_("Specifies whether to keep the canvas padding when \"View -> Show All\" " \   "is enabled.")
+end_define
+
+begin_define
 DECL|macro|CANVAS_PADDING_MODE_BLURB
 define|#
 directive|define

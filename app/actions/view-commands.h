@@ -828,6 +828,24 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|view_padding_color_in_show_all_cmd_callback
+parameter_list|(
+name|GimpAction
+modifier|*
+name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|view_shrink_wrap_cmd_callback
 parameter_list|(
 name|GimpAction
