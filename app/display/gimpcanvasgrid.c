@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc2f6040103
+DECL|enum|__anon2c09eee10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -854,15 +854,16 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp_display_shell_get_infinite_canvas
+argument_list|(
 name|shell
-operator|->
-name|show_all
+argument_list|)
 condition|)
 block|{
 name|GeglRectangle
 name|bounds
 decl_stmt|;
-name|gimp_display_shell_scale_get_image_unrotated_bounding_box
+name|gimp_display_shell_scale_get_image_unrotated_bounds
 argument_list|(
 name|shell
 argument_list|,
@@ -1429,9 +1430,10 @@ return|;
 if|if
 condition|(
 operator|!
+name|gimp_display_shell_get_infinite_canvas
+argument_list|(
 name|shell
-operator|->
-name|show_all
+argument_list|)
 condition|)
 block|{
 name|gdouble
