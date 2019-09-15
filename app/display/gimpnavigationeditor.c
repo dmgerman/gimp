@@ -348,7 +348,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_navigation_editor_shell_show_all_notify
+name|gimp_navigation_editor_shell_infinite_canvas_notify
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -2131,7 +2131,7 @@ name|editor
 operator|->
 name|shell
 argument_list|,
-name|gimp_navigation_editor_shell_show_all_notify
+name|gimp_navigation_editor_shell_infinite_canvas_notify
 argument_list|,
 name|editor
 argument_list|)
@@ -2310,11 +2310,11 @@ name|editor
 operator|->
 name|shell
 argument_list|,
-literal|"notify::show-all"
+literal|"notify::infinite-canvas"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_navigation_editor_shell_show_all_notify
+name|gimp_navigation_editor_shell_infinite_canvas_notify
 argument_list|)
 argument_list|,
 name|editor
@@ -2901,8 +2901,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_editor_shell_show_all_notify (GimpDisplayShell * shell,const GParamSpec * pspec,GimpNavigationEditor * editor)
-name|gimp_navigation_editor_shell_show_all_notify
+DECL|function|gimp_navigation_editor_shell_infinite_canvas_notify (GimpDisplayShell * shell,const GParamSpec * pspec,GimpNavigationEditor * editor)
+name|gimp_navigation_editor_shell_infinite_canvas_notify
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -3511,9 +3511,10 @@ operator|->
 name|viewable
 argument_list|)
 argument_list|,
+name|gimp_display_shell_get_infinite_canvas
+argument_list|(
 name|shell
-operator|->
-name|show_all
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|bounding_box
@@ -3609,9 +3610,10 @@ name|gimp_navigation_view_set_canvas
 argument_list|(
 name|view
 argument_list|,
+name|gimp_display_shell_get_infinite_canvas
+argument_list|(
 name|shell
-operator|->
-name|show_all
+argument_list|)
 operator|&&
 name|gimp_display_shell_get_show_canvas
 argument_list|(

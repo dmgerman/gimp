@@ -2044,6 +2044,16 @@ argument_list|,
 name|keep
 argument_list|)
 expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+literal|"infinite-canvas"
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
