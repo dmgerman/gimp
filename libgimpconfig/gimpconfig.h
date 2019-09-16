@@ -32,13 +32,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpconfig/gimpconfigwriter.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpconfig/gimpconfig-iface.h>
+file|<libgimpconfig/gimpconfig-deserialize.h>
 end_include
 
 begin_include
@@ -50,19 +44,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpconfig/gimpconfig-serialize.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpconfig/gimpconfig-deserialize.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpconfig/gimpconfig-utils.h>
+file|<libgimpconfig/gimpconfig-iface.h>
 end_include
 
 begin_include
@@ -75,6 +57,30 @@ begin_include
 include|#
 directive|include
 file|<libgimpconfig/gimpconfig-path.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpconfig/gimpconfig-register.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpconfig/gimpconfig-serialize.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpconfig/gimpconfig-utils.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpconfig/gimpconfigwriter.h>
 end_include
 
 begin_include
