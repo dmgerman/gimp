@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296537410103
+DECL|enum|__anon27789b0a0103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -940,7 +940,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_get_file:  * @module: A #GimpModule  *  * Returns #GFile of the @module,  *  * Returns: The @module's #GFile.  *  * Since: 3.0  **/
+comment|/**  * gimp_module_get_file:  * @module: A #GimpModule  *  * Returns #GFile of the @module,  *  * Returns: (transfer none): The @module's #GFile.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
