@@ -52,11 +52,7 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_comment
-comment|/**  * SECTION: gimpconfig-params  * @title: GimpConfig-params  * @short_description: Macros and defines to install config properties.  *  * Macros and defines to install config properties.  **/
-end_comment
-
-begin_comment
-comment|/*  * GIMP_CONFIG_PARAM_SERIALIZE - A property that can and should be  *                               serialized and deserialized.  * GIMP_CONFIG_PARAM_AGGREGATE - The object property is to be treated as  *                               part of the parent object.  * GIMP_CONFIG_PARAM_RESTART   - Changes to this property take effect only  *                               after a restart.  * GIMP_CONFIG_PARAM_CONFIRM   - Changes to this property should be  *                               confirmed by the user before being applied.  * GIMP_CONFIG_PARAM_DEFAULTS  - Don't serialize this property if it has the  *                               default value.  * GIMP_CONFIG_PARAM_IGNORE    - This property exists for obscure reasons  *                               or is needed for backward compatibility.  *                               Ignore the value read and don't serialize it.  */
+comment|/**  * GIMP_CONFIG_PARAM_SERIALIZE:  *  * A property that can and should be serialized and deserialized.  **/
 end_comment
 
 begin_define
@@ -67,6 +63,10 @@ name|GIMP_CONFIG_PARAM_SERIALIZE
 value|(1<< (0 + G_PARAM_USER_SHIFT))
 end_define
 
+begin_comment
+comment|/**  * GIMP_CONFIG_PARAM_AGGREGATE:  *  * The object property is to be treated as part of the parent object.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_CONFIG_PARAM_AGGREGATE
 define|#
@@ -74,6 +74,10 @@ directive|define
 name|GIMP_CONFIG_PARAM_AGGREGATE
 value|(1<< (1 + G_PARAM_USER_SHIFT))
 end_define
+
+begin_comment
+comment|/**  * GIMP_CONFIG_PARAM_RESTART:  *  * Changes to this property take effect only after a restart.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_CONFIG_PARAM_RESTART
@@ -83,6 +87,10 @@ name|GIMP_CONFIG_PARAM_RESTART
 value|(1<< (2 + G_PARAM_USER_SHIFT))
 end_define
 
+begin_comment
+comment|/**  * GIMP_CONFIG_PARAM_CONFIRM:  *  * Changes to this property should be confirmed by the user before  * being applied.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_CONFIG_PARAM_CONFIRM
 define|#
@@ -90,6 +98,10 @@ directive|define
 name|GIMP_CONFIG_PARAM_CONFIRM
 value|(1<< (3 + G_PARAM_USER_SHIFT))
 end_define
+
+begin_comment
+comment|/**  * GIMP_CONFIG_PARAM_DEFAULTS:  *  * Don't serialize this property if it has the default value.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_CONFIG_PARAM_DEFAULTS
@@ -99,6 +111,10 @@ name|GIMP_CONFIG_PARAM_DEFAULTS
 value|(1<< (4 + G_PARAM_USER_SHIFT))
 end_define
 
+begin_comment
+comment|/**  * GIMP_CONFIG_PARAM_IGNORE:  *  * This property exists for obscure reasons or is needed for backward  * compatibility. Ignore the value read and don't serialize it.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_CONFIG_PARAM_IGNORE
 define|#
@@ -107,12 +123,16 @@ name|GIMP_CONFIG_PARAM_IGNORE
 value|(1<< (5 + G_PARAM_USER_SHIFT))
 end_define
 
+begin_comment
+comment|/**  * GIMP_CONFIG_PARAM_FLAGS:  *  * The default flags that should be used for serializable #GimpConfig  * properties.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_CONFIG_PARAM_FLAGS
 define|#
 directive|define
 name|GIMP_CONFIG_PARAM_FLAGS
-value|(G_PARAM_READWRITE | \                                  G_PARAM_CONSTRUCT | \                                  G_PARAM_STATIC_STRINGS | \                                  GIMP_CONFIG_PARAM_SERIALIZE)
+value|(G_PARAM_READWRITE |             \                                         G_PARAM_CONSTRUCT |             \                                         G_PARAM_STATIC_STRINGS |        \                                         GIMP_CONFIG_PARAM_SERIALIZE)
 end_define
 
 begin_comment

@@ -57,6 +57,10 @@ directive|include
 file|"gimpconfig.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpconfig-params  * @title: GimpConfig-params  * @short_description: Macros and defines to install config properties.  *  * Macros and defines to install config properties.  **/
+end_comment
+
 begin_function
 specifier|static
 name|gboolean
