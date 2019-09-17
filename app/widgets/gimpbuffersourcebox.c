@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2dcc660103
+DECL|enum|__anon27ebac940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1167,8 +1173,20 @@ operator|->
 name|enabled
 condition|)
 block|{
+name|gimp_pickable_flush
+argument_list|(
+name|box
+operator|->
+name|priv
+operator|->
+name|pickable
+argument_list|)
+expr_stmt|;
+comment|/* dup the buffer, since the original may be modified while applying            * the operation.  see issue #1283.            */
 name|buffer
 operator|=
+name|gimp_gegl_buffer_dup
+argument_list|(
 name|gimp_pickable_get_buffer
 argument_list|(
 name|box
@@ -1176,6 +1194,7 @@ operator|->
 name|priv
 operator|->
 name|pickable
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1248,6 +1267,12 @@ argument_list|,
 name|buffer
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_clear_object
+argument_list|(
+operator|&
+name|buffer
 argument_list|)
 expr_stmt|;
 block|}
