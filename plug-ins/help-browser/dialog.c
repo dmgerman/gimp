@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f6d36e0108
+DECL|struct|__anon2c6770f70108
 block|{
 DECL|member|width
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f6d36e0203
+DECL|enum|__anon2c6770f70203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -4660,6 +4660,13 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|WEBKIT_LOAD_REDIRECTED
+case|:
+case|case
+name|WEBKIT_LOAD_COMMITTED
+case|:
 break|break;
 block|}
 block|}
