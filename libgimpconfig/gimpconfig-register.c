@@ -242,15 +242,6 @@ argument_list|,
 name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|n_pspecs
-operator|>
-literal|0
-argument_list|,
-name|G_TYPE_NONE
-argument_list|)
-expr_stmt|;
 name|terminated_pspecs
 operator|=
 name|g_new0
