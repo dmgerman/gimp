@@ -2881,14 +2881,11 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_rectangle_select_tool_update_option_defaults
+name|gimp_rectangle_select_tool_update
 argument_list|(
 name|rect_tool
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 else|else
 block|{
