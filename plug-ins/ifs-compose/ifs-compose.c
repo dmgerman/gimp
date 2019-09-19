@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27943c950103
+DECL|enum|__anon2c8427570103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27943c950203
+DECL|enum|__anon2c8427570203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27943c950308
+DECL|struct|__anon2c8427570308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -200,7 +200,7 @@ name|guint
 name|timeout_id
 decl_stmt|;
 union|union
-DECL|union|__anon27943c95040a
+DECL|union|__anon2c842757040a
 block|{
 DECL|member|d
 name|gdouble
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27943c950508
+DECL|struct|__anon2c8427570508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27943c950608
+DECL|struct|__anon2c8427570608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27943c950708
+DECL|struct|__anon2c8427570708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27943c950808
+DECL|struct|__anon2c8427570808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -388,7 +388,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27943c950908
+DECL|struct|__anon2c8427570908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -537,7 +537,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27943c950a08
+DECL|struct|__anon2c8427570a08
 block|{
 DECL|member|run
 name|gboolean
@@ -7449,15 +7449,6 @@ modifier|*
 name|cr
 parameter_list|)
 block|{
-name|GtkStyleContext
-modifier|*
-name|style
-init|=
-name|gtk_widget_get_style_context
-argument_list|(
-name|widget
-argument_list|)
-decl_stmt|;
 name|cairo_t
 modifier|*
 name|design_cr
