@@ -1289,6 +1289,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpPickable
+modifier|*
+name|gimp_display_shell_get_canvas_pickable
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GeglRectangle
 name|gimp_display_shell_get_bounding_box
 parameter_list|(
