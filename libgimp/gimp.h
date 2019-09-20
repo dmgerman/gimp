@@ -194,6 +194,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpprocedureconfig.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpprocedure-params.h>
 end_include
 

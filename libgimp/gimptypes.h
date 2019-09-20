@@ -58,6 +58,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpProcedureConfig
+typedef|typedef
+name|struct
+name|_GimpProcedureConfig
+name|GimpProcedureConfig
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImage
 typedef|typedef
 name|struct
@@ -149,7 +158,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bccb6800103
+DECL|enum|__anon29d934ee0103
 block|{
 DECL|enumerator|GIMP_PIXBUF_KEEP_ALPHA
 name|GIMP_PIXBUF_KEEP_ALPHA
