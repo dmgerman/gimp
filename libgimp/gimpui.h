@@ -116,6 +116,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpproceduredialog.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpprocview.h>
 end_include
 
