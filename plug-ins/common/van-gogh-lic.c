@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b1908a0103
+DECL|enum|__anon293f73d60103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -334,7 +334,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1908a0208
+DECL|struct|__anon293f73d60208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3037,8 +3037,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dialog

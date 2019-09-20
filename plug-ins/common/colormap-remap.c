@@ -1860,7 +1860,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e275bd0103
+DECL|enum|__anon28dd3bbf0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
@@ -2557,8 +2557,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialog

@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b846e10108
+DECL|struct|__anon279288470108
 block|{
 DECL|member|elems
 specifier|const
@@ -144,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b846e10208
+DECL|struct|__anon279288470208
 block|{
 DECL|member|elems
 name|gint
@@ -1464,8 +1464,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dialog

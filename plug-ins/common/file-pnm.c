@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b637ae20108
+DECL|struct|__anon2933efc00108
 block|{
 DECL|member|raw
 name|gint
@@ -986,7 +986,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b637ae20208
+DECL|struct|__anon2933efc00208
 block|{
 DECL|member|name
 name|gchar
@@ -2180,8 +2180,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -4920,7 +4918,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon2b637ae2030a
+DECL|union|__anon2933efc0030a
 DECL|member|f
 DECL|member|i
 union|union

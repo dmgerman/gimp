@@ -992,8 +992,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|export
@@ -3151,7 +3149,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3ecbe80108
+DECL|struct|__anon2c66047f0108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5705,7 +5703,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2b3ecbe80208
+DECL|struct|__anon2c66047f0208
 struct|struct
 block|{
 DECL|member|dicom
@@ -5833,7 +5831,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2b3ecbe80308
+DECL|struct|__anon2c66047f0308
 struct|struct
 block|{
 DECL|member|dicom

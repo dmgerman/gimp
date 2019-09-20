@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab1f5e70103
+DECL|enum|__anon27df9bcc0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab1f5e70203
+DECL|enum|__anon27df9bcc0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -1326,8 +1326,6 @@ expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|export

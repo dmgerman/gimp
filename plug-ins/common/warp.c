@@ -78,7 +78,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297612c10103
+DECL|enum|__anon2b4520d20103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -98,7 +98,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297612c10208
+DECL|struct|__anon2b4520d20208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1554,8 +1554,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

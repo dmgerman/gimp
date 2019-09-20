@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975b1990108
+DECL|struct|__anon2c5c94f30108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -1735,8 +1735,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dialog

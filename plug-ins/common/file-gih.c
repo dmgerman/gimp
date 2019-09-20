@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a30ac6f0108
+DECL|struct|__anon2b6758040108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a30ac6f0208
+DECL|struct|__anon2b6758040208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -878,8 +878,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|export

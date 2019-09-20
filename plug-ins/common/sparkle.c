@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c832a1a0108
+DECL|struct|__anon2ac0186e0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -1432,8 +1432,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialog

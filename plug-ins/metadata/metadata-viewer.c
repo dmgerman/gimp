@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2893928c0103
+DECL|enum|__anon2bcacc300103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2893928c0203
+DECL|enum|__anon2bcacc300203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -155,7 +155,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2893928c0303
+DECL|enum|__anon2bcacc300303
 block|{
 DECL|enumerator|C_IPTC_TAG
 name|C_IPTC_TAG
@@ -643,8 +643,6 @@ expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|image

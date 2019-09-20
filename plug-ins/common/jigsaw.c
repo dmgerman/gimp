@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6e533e0103
+DECL|enum|__anon27e6929a0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6e533e0203
+DECL|enum|__anon27e6929a0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -14199,8 +14199,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dialog

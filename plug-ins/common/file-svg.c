@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291350ed0108
+DECL|struct|__anon2c2bc94f0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -2726,8 +2726,6 @@ block|}
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Scalable Vector Graphics is SVG, should perhaps not be translated */

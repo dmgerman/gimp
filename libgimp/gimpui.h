@@ -159,9 +159,6 @@ specifier|const
 name|gchar
 modifier|*
 name|prog_name
-parameter_list|,
-name|gboolean
-name|preview
 parameter_list|)
 function_decl|;
 end_function_decl

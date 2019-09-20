@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5a29130108
+DECL|struct|__anon2c9d2a830108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5a29130208
+DECL|struct|__anon2c9d2a830208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5a29130308
+DECL|struct|__anon2c9d2a830308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5a29130408
+DECL|struct|__anon2c9d2a830408
 block|{
 DECL|member|npixel
 name|gint
@@ -1626,8 +1626,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|export

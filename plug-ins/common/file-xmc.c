@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e37470108
+DECL|struct|__anon2acffb120108
 block|{
 DECL|member|crop
 name|gboolean
@@ -984,7 +984,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon275e37470208
+DECL|struct|__anon2acffb120208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1990,8 +1990,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|export
@@ -9217,7 +9215,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon275e37470308
+DECL|struct|__anon2acffb120308
 block|{
 DECL|member|size
 name|guint32

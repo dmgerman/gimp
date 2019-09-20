@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbe4fd0108
+DECL|struct|__anon2969838b0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -147,7 +147,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fbe4fd0203
+DECL|enum|__anon2969838b0203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -364,8 +364,6 @@ expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"script-fu"
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|console

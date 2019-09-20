@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e66c50103
+DECL|enum|__anon28d73c930103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e66c50208
+DECL|struct|__anon28d73c930208
 block|{
 DECL|member|title
 specifier|const
@@ -1867,8 +1867,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|list_store

@@ -95,7 +95,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8cf26e0103
+DECL|enum|__anon27783ee20103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -108,7 +108,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8cf26e0203
+DECL|enum|__anon27783ee20203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cf26e0308
+DECL|struct|__anon27783ee20308
 block|{
 DECL|member|interlace
 name|gint
@@ -893,8 +893,6 @@ condition|)
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|status

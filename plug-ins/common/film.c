@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2943b9ac0108
+DECL|struct|__anon2a29520a0108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2943b9ac0208
+DECL|struct|__anon2a29520a0208
 block|{
 DECL|member|advanced_adj
 name|GtkAdjustment
@@ -6172,8 +6172,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dlg

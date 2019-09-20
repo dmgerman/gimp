@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f617440108
+DECL|struct|__anon2964b8ea0108
 block|{
 DECL|member|scale
 name|gint
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f617440203
+DECL|enum|__anon2964b8ea0203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -185,7 +185,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f617440308
+DECL|struct|__anon2964b8ea0308
 block|{
 DECL|member|N
 name|gint
@@ -1118,8 +1118,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialog

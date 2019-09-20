@@ -980,8 +980,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 literal|"dds"
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_get_data
@@ -1177,8 +1175,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 literal|"dds"
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|export

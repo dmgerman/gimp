@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c62a330108
+DECL|struct|__anon2766f97b0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -1896,8 +1896,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialog

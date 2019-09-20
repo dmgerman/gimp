@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277171f60108
+DECL|struct|__anon2c242dfd0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -579,7 +579,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277171f60203
+DECL|enum|__anon2c242dfd0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -598,7 +598,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277171f60308
+DECL|struct|__anon2c242dfd0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -669,7 +669,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277171f60408
+DECL|struct|__anon2c242dfd0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1505,8 +1505,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|cache_preview

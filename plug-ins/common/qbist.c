@@ -119,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b52c34d0103
+DECL|enum|__anon2c3a07e20103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -164,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52c34d0208
+DECL|struct|__anon2c3a07e20208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52c34d0308
+DECL|struct|__anon2c3a07e20308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -4302,8 +4302,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dialog

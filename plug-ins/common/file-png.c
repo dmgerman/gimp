@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d844cb0108
+DECL|struct|__anon2b5c07b90108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d844cb0208
+DECL|struct|__anon2b5c07b90208
 block|{
 DECL|member|run
 name|gboolean
@@ -335,7 +335,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d844cb0308
+DECL|struct|__anon2b5c07b90308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -1337,8 +1337,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|interactive
@@ -1565,8 +1563,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|export
@@ -4543,8 +4539,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialog

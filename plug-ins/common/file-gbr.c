@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f959910108
+DECL|struct|__anon29eb91f60108
 block|{
 DECL|member|description
 name|gchar
@@ -596,8 +596,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|export

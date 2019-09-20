@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d3618f0103
+DECL|enum|__anon2accee060103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d3618f0203
+DECL|enum|__anon2accee060203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3618f0308
+DECL|struct|__anon2accee060308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3618f0408
+DECL|struct|__anon2accee060408
 block|{
 DECL|member|menu
 name|gchar
@@ -2112,8 +2112,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|browser

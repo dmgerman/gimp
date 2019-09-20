@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cdefc40108
+DECL|struct|__anon2b9df0200108
 block|{
 DECL|member|read_channel
 name|GIOChannel
@@ -812,8 +812,6 @@ expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* the main window */

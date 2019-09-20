@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2c47dd0108
+DECL|struct|__anon2c1b64fc0108
 block|{
 DECL|member|threshold
 name|gint
@@ -165,7 +165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2c47dd0208
+DECL|struct|__anon2c1b64fc0208
 block|{
 DECL|member|r
 name|guchar
@@ -1021,8 +1021,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|export

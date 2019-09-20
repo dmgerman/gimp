@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c157aa40108
+DECL|struct|__anon27fbdca00108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -981,8 +981,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|img_width

@@ -241,7 +241,7 @@ end_macro
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b8caf120108
+DECL|struct|__anon2b84790a0108
 block|{
 DECL|member|width
 name|gint
@@ -2120,8 +2120,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

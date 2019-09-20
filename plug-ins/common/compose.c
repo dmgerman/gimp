@@ -100,14 +100,14 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f70810108
+DECL|struct|__anon2937a4190108
 block|{
 DECL|member|is_object
 name|gboolean
 name|is_object
 decl_stmt|;
 union|union
-DECL|union|__anon275f7081020a
+DECL|union|__anon2937a419020a
 block|{
 DECL|member|object
 name|gpointer
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f70810308
+DECL|struct|__anon2937a4190308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f70810408
+DECL|struct|__anon2937a4190408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f70810508
+DECL|struct|__anon2937a4190508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f70810608
+DECL|struct|__anon2937a4190608
 block|{
 DECL|member|width
 DECL|member|height
@@ -4766,8 +4766,6 @@ expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|layer_list

@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b77b650103
+DECL|enum|__anon29367f7d0103
 block|{
 DECL|enumerator|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
 name|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
@@ -180,7 +180,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b77b650203
+DECL|enum|__anon29367f7d0203
 block|{
 DECL|enumerator|SA_VECTORIZE
 name|SA_VECTORIZE
@@ -205,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b77b650303
+DECL|enum|__anon29367f7d0303
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -236,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b77b650408
+DECL|struct|__anon29367f7d0408
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -267,7 +267,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b77b650508
+DECL|struct|__anon29367f7d0508
 block|{
 DECL|member|images
 name|GimpImage
@@ -297,7 +297,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b77b650608
+DECL|struct|__anon29367f7d0608
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -316,7 +316,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b77b650703
+DECL|enum|__anon29367f7d0703
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -336,7 +336,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b77b650808
+DECL|struct|__anon29367f7d0808
 block|{
 DECL|member|thumb
 name|GdkPixbuf
@@ -2817,8 +2817,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|window
@@ -3357,8 +3355,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|window

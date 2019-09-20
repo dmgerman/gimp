@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bef76080103
+DECL|enum|__anon2882489d0103
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bef76080203
+DECL|enum|__anon2882489d0203
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bef76080308
+DECL|struct|__anon2882489d0308
 block|{
 DECL|member|mode
 name|hotModes
@@ -159,7 +159,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bef76080408
+DECL|struct|__anon2882489d0408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2462,8 +2462,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

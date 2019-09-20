@@ -434,7 +434,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon290b42690103
+DECL|enum|__anon29bd7a520103
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -673,7 +673,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290b42690208
+DECL|struct|__anon29bd7a520208
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -720,7 +720,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290b42690308
+DECL|struct|__anon29bd7a520308
 block|{
 DECL|member|n_pages
 name|gint
@@ -1479,8 +1479,6 @@ expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|doc
@@ -3497,7 +3495,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290b42690408
+DECL|struct|__anon29bd7a520408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3522,7 +3520,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290b42690508
+DECL|struct|__anon29bd7a520508
 block|{
 DECL|member|selector
 name|GimpPageSelector

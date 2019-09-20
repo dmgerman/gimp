@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c911c00103
+DECL|enum|__anon27943c950103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c911c00203
+DECL|enum|__anon27943c950203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c911c00308
+DECL|struct|__anon27943c950308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -200,7 +200,7 @@ name|guint
 name|timeout_id
 decl_stmt|;
 union|union
-DECL|union|__anon29c911c0040a
+DECL|union|__anon27943c95040a
 block|{
 DECL|member|d
 name|gdouble
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c911c00508
+DECL|struct|__anon27943c950508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c911c00608
+DECL|struct|__anon27943c950608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c911c00708
+DECL|struct|__anon27943c950708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c911c00808
+DECL|struct|__anon27943c950808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -388,7 +388,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c911c00908
+DECL|struct|__anon27943c950908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -537,7 +537,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c911c00a08
+DECL|struct|__anon27943c950a08
 block|{
 DECL|member|run
 name|gboolean
@@ -3805,8 +3805,6 @@ expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dialog

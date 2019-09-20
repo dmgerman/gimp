@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29673c6b0108
+DECL|struct|__anon29fdf1c00108
 block|{
 DECL|member|scales
 name|gint
@@ -1408,8 +1408,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dialog

@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288ed41b0108
+DECL|struct|__anon2783cfd00108
 block|{
 DECL|member|new_width
 name|gint
@@ -1575,8 +1575,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|width

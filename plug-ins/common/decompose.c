@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8723b0108
+DECL|struct|__anon276ec8380108
 block|{
 DECL|member|babl_name
 specifier|const
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8723b0208
+DECL|struct|__anon276ec8380208
 block|{
 DECL|member|type
 specifier|const
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8723b0308
+DECL|struct|__anon276ec8380308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -3907,8 +3907,6 @@ block|}
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialog

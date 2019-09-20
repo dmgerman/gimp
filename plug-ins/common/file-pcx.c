@@ -1041,8 +1041,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|export
@@ -1132,7 +1130,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon279e242e0108
+DECL|struct|__anon2c131c810108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1209,7 +1207,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon279e242e0208
+DECL|struct|__anon2c131c810208
 specifier|static
 struct|struct
 block|{

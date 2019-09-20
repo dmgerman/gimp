@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon277be1280108
+DECL|struct|__anon292b66a30108
 block|{
 DECL|member|randomize
 name|gint
@@ -4662,8 +4662,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dialog

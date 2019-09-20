@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f33610108
+DECL|struct|__anon2c7185bb0108
 block|{
 DECL|member|dst
 name|GimpDrawable
@@ -411,7 +411,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f33610208
+DECL|struct|__anon2c7185bb0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -519,7 +519,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f33610308
+DECL|struct|__anon2c7185bb0308
 block|{
 DECL|member|color
 name|guchar
@@ -548,7 +548,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f33610408
+DECL|struct|__anon2c7185bb0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -575,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f33610508
+DECL|struct|__anon2c7185bb0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -6048,8 +6048,6 @@ comment|/* Init GTK  */
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Main Dialog */

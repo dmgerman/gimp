@@ -737,7 +737,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2968d7f80108
+DECL|struct|__anon276c35b60108
 block|{
 DECL|member|fg
 name|guchar
@@ -1835,8 +1835,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialog

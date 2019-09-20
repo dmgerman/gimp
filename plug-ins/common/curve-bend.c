@@ -659,7 +659,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bef0ec60108
+DECL|struct|__anon2c265a400108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -727,7 +727,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bef0ec60208
+DECL|struct|__anon2c265a400208
 block|{
 DECL|member|y
 name|gint32
@@ -4572,8 +4572,6 @@ comment|/* Init GTK  */
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  The curve_bend dialog  */

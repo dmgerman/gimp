@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4a658a0103
+DECL|enum|__anon2c0af5000103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -83,7 +83,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4a658a0203
+DECL|enum|__anon2c0af5000203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4a658a0303
+DECL|enum|__anon2c0af5000303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -121,7 +121,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4a658a0403
+DECL|enum|__anon2c0af5000403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -138,7 +138,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4a658a0508
+DECL|struct|__anon2c0af5000508
 block|{
 DECL|member|step_x
 name|gint
@@ -486,7 +486,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4a658a0608
+DECL|struct|__anon2c0af5000608
 block|{
 DECL|member|h_style
 name|gint
@@ -2398,8 +2398,6 @@ decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialog

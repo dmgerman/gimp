@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f5cd9f0103
+DECL|enum|__anon29f3e9b70103
 block|{
 DECL|enumerator|ORIGIN_TOP_LEFT
 name|ORIGIN_TOP_LEFT
@@ -1129,8 +1129,6 @@ case|:
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|export

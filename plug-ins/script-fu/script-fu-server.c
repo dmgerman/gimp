@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad2794e0108
+DECL|struct|__anon2c2fb67e0108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad2794e0208
+DECL|struct|__anon2c2fb67e0208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2ad2794e030a
+DECL|union|__anon2c2fb67e030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -3177,8 +3177,6 @@ expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"script-fu"
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg
