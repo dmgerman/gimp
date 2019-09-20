@@ -21,7 +21,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292253cd0103
+DECL|enum|__anon27e7d6970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -529,6 +529,41 @@ end_function
 begin_comment
 comment|/*  public functions  */
 end_comment
+
+begin_comment
+comment|/**  * gimp_procedure_config_get_procedure:  * @config: a #GimpProcedureConfig  *  * This function returns the #GimpProcedure which created @config, see  * gimp_procedure_create_config().  *  * Returns: The #GimpProcedure which created @config.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|GimpProcedure
+modifier|*
+DECL|function|gimp_procedure_config_get_procedure (GimpProcedureConfig * config)
+name|gimp_procedure_config_get_procedure
+parameter_list|(
+name|GimpProcedureConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PROCEDURE_CONFIG
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|config
+operator|->
+name|priv
+operator|->
+name|procedure
+return|;
+block|}
+end_function
 
 begin_comment
 comment|/**  * gimp_procedure_config_set_values:  * @config: a #GimpProcedureConfig  * @values: a #GimpValueArray  *  * Sets the values from @values on @config's properties.  *  * The number, order and types of values in @values must match the  * number, order and types of @config's properties.  *  * This function is meant to be used on @values which are passed as  * arguments to the run() function of the #GimpProcedure which created  * this @config. See gimp_procedure_create_config().  *  * Since: 3.0  **/

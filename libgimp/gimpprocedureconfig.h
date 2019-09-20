@@ -255,6 +255,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+name|GimpProcedure
+modifier|*
+name|gimp_procedure_config_get_procedure
+parameter_list|(
+name|GimpProcedureConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_procedure_config_set_values
 parameter_list|(

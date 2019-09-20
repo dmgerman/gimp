@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cc2f7c0103
+DECL|enum|__anon27610ade0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -563,6 +563,18 @@ name|GIMP_IS_PROCEDURE_CONFIG
 argument_list|(
 name|config
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimp_procedure_config_get_procedure
+argument_list|(
+name|config
+argument_list|)
+operator|==
+name|procedure
 argument_list|,
 name|NULL
 argument_list|)
