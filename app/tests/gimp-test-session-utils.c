@@ -102,12 +102,12 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb9dd80108
+DECL|struct|__anon2bcf9f380108
 block|{
-DECL|member|filename
-name|gchar
+DECL|member|file
+name|GFile
 modifier|*
-name|filename
+name|file
 decl_stmt|;
 DECL|member|md5
 name|gchar
@@ -127,13 +127,12 @@ end_typedef
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_test_get_file_state_verbose (const gchar * filename,GimpTestFileState * filestate)
+DECL|function|gimp_test_get_file_state_verbose (GFile * file,GimpTestFileState * filestate)
 name|gimp_test_get_file_state_verbose
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpTestFileState
 modifier|*
@@ -147,11 +146,11 @@ name|TRUE
 decl_stmt|;
 name|filestate
 operator|->
-name|filename
+name|file
 operator|=
-name|g_strdup
+name|g_object_ref
 argument_list|(
-name|filename
+name|file
 argument_list|)
 expr_stmt|;
 comment|/* Get checksum */
@@ -160,6 +159,10 @@ condition|(
 name|success
 condition|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|gchar
 modifier|*
 name|contents
@@ -171,6 +174,13 @@ name|length
 init|=
 literal|0
 decl_stmt|;
+name|filename
+operator|=
+name|g_file_get_path
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|success
 operator|=
 name|g_file_get_contents
@@ -184,6 +194,11 @@ operator|&
 name|length
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if
@@ -217,15 +232,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|GFile
-modifier|*
-name|file
-init|=
-name|g_file_new_for_path
-argument_list|(
-name|filename
-argument_list|)
-decl_stmt|;
 name|GFileInfo
 modifier|*
 name|info
@@ -275,11 +281,6 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -290,7 +291,10 @@ name|g_printerr
 argument_list|(
 literal|"Failed to get initial file info for '%s'\n"
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -302,13 +306,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_test_file_state_changes (const gchar * filename,GimpTestFileState * state1,GimpTestFileState * state2)
+DECL|function|gimp_test_file_state_changes (GFile * file,GimpTestFileState * state1,GimpTestFileState * state2)
 name|gimp_test_file_state_changes
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GimpTestFileState
 modifier|*
@@ -350,7 +353,10 @@ name|g_printerr
 argument_list|(
 literal|"A new '%s' was not created\n"
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -385,13 +391,19 @@ literal|"diff"
 block|,
 literal|"-u"
 block|,
+name|g_file_get_path
+argument_list|(
 name|state1
 operator|->
-name|filename
+name|file
+argument_list|)
 block|,
+name|g_file_get_path
+argument_list|(
 name|state2
 operator|->
-name|filename
+name|file
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -401,7 +413,10 @@ argument_list|(
 literal|"'%s' was changed but should not have been. Reason, using "
 literal|"`diff -u $expected $actual`\n"
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_spawn_sync
@@ -433,6 +448,22 @@ comment|/*exist_status*/
 argument_list|,
 name|NULL
 comment|/*error*/
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|diff_argv
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|diff_argv
+index|[
+literal|3
+index|]
 argument_list|)
 expr_stmt|;
 return|return
@@ -542,15 +573,15 @@ literal|0
 block|}
 block|}
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|sessionrc_filename
+name|sessionrc_file
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
-name|dockrc_filename
+name|dockrc_file
 init|=
 name|NULL
 decl_stmt|;
@@ -566,18 +597,22 @@ name|gimp_test_utils_setup_menus_path
 argument_list|()
 expr_stmt|;
 comment|/* Note that we expect the resulting sessionrc to be different from    * the read file, which is why we check the MD5 of the -expected    * variant    */
-name|sessionrc_filename
+name|sessionrc_file
 operator|=
-name|gimp_personal_rc_file
+name|gimp_directory_file
 argument_list|(
 name|expected_sessionrc
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|dockrc_filename
+name|dockrc_file
 operator|=
-name|gimp_personal_rc_file
+name|gimp_directory_file
 argument_list|(
 name|expected_dockrc
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Remember the modtimes and MD5s */
@@ -585,7 +620,7 @@ name|g_assert
 argument_list|(
 name|gimp_test_get_file_state_verbose
 argument_list|(
-name|sessionrc_filename
+name|sessionrc_file
 argument_list|,
 operator|&
 name|initial_sessionrc_state
@@ -596,7 +631,7 @@ name|g_assert
 argument_list|(
 name|gimp_test_get_file_state_verbose
 argument_list|(
-name|dockrc_filename
+name|dockrc_file
 argument_list|,
 operator|&
 name|initial_dockrc_state
@@ -656,28 +691,32 @@ argument_list|(
 literal|"GIMP_TESTING_DOCKRC_NAME"
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
-name|sessionrc_filename
+name|sessionrc_file
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
-name|dockrc_filename
+name|dockrc_file
 argument_list|)
 expr_stmt|;
-name|sessionrc_filename
+name|sessionrc_file
 operator|=
-name|gimp_personal_rc_file
+name|gimp_directory_file
 argument_list|(
 literal|"sessionrc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|dockrc_filename
+name|dockrc_file
 operator|=
-name|gimp_personal_rc_file
+name|gimp_directory_file
 argument_list|(
 literal|"dockrc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Exit. This includes writing sessionrc and dockrc*/
@@ -693,7 +732,7 @@ name|g_assert
 argument_list|(
 name|gimp_test_get_file_state_verbose
 argument_list|(
-name|sessionrc_filename
+name|sessionrc_file
 argument_list|,
 operator|&
 name|final_sessionrc_state
@@ -704,7 +743,7 @@ name|g_assert
 argument_list|(
 name|gimp_test_get_file_state_verbose
 argument_list|(
-name|dockrc_filename
+name|dockrc_file
 argument_list|,
 operator|&
 name|final_dockrc_state
@@ -716,7 +755,10 @@ name|g_assert
 argument_list|(
 name|gimp_test_file_state_changes
 argument_list|(
+name|g_file_new_for_path
+argument_list|(
 literal|"sessionrc"
+argument_list|)
 argument_list|,
 operator|&
 name|initial_sessionrc_state
@@ -730,7 +772,10 @@ name|g_assert
 argument_list|(
 name|gimp_test_file_state_changes
 argument_list|(
+name|g_file_new_for_path
+argument_list|(
 literal|"dockrc"
+argument_list|)
 argument_list|,
 operator|&
 name|initial_dockrc_state

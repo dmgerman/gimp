@@ -294,20 +294,6 @@ name|G_GNUC_MALLOC
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-name|gchar
-modifier|*
-name|gimp_personal_rc_file
-argument_list|(
-specifier|const
-name|gchar
-operator|*
-name|basename
-argument_list|)
-name|G_GNUC_MALLOC
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|GList
 modifier|*

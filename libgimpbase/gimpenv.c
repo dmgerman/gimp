@@ -1789,7 +1789,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_directory_file:  * @first_element: the first element of a path to a file in the  *                 user's GIMP directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the user's GIMP directory, or the data  * directory itself if @first_element is %NULL.  *  * See also: gimp_directory().  *  * Since: 2.10  *  * Returns: (transfer full):  *          a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_directory_file:  * @first_element: the first element of a path to a file in the  *                 user's GIMP directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the user's GIMP directory, or the GIMP  * directory itself if @first_element is %NULL.  *  * See also: gimp_directory().  *  * Since: 2.10  *  * Returns: (transfer full):  *          a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -2114,36 +2114,6 @@ argument_list|)
 expr_stmt|;
 return|return
 name|file
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_personal_rc_file:  * @basename: The basename of a rc_file.  *  * Returns the name of a file in the user-specific GIMP settings directory.  *  * The returned string is newly allocated and should be freed with  * g_free() after use. The returned string is in the encoding used for  * filenames by GLib, which isn't necessarily UTF-8. (On Windows it  * always is UTF-8.)  *  * Returns: The name of a file in the user-specific GIMP settings directory.  **/
-end_comment
-
-begin_function
-name|gchar
-modifier|*
-DECL|function|gimp_personal_rc_file (const gchar * basename)
-name|gimp_personal_rc_file
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|basename
-parameter_list|)
-block|{
-return|return
-name|g_build_filename
-argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
-name|basename
-argument_list|,
-name|NULL
-argument_list|)
 return|;
 block|}
 end_function
