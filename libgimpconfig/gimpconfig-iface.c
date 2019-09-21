@@ -1437,7 +1437,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_to_parasite:  * @config:          a #GObject that implements the #GimpConfigInterface.  * @parasite_name:   the new parasite's name  * @pparasite_flags: the new parasite's flags  * @data:            user data passed to the serialize implementation.  *  * Serializes the object properties of @config to a #GimpParasite.  *  * Returns: (transfer full): the newly allocated #GimpParasite.  *  * Since: 3.0  **/
+comment|/**  * gimp_config_serialize_to_parasite:  * @config:         a #GObject that implements the #GimpConfigInterface.  * @parasite_name:  the new parasite's name  * @parasite_flags: the new parasite's flags  * @data:           user data passed to the serialize implementation.  *  * Serializes the object properties of @config to a #GimpParasite.  *  * Returns: (transfer full): the newly allocated #GimpParasite.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
