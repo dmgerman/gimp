@@ -1024,7 +1024,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_dump_to_file:  * @pdb:  A #GimpPDB.  * @file: The dump filename.  *  * Dumps the current contents of the procedural database  *  * This procedure dumps the contents of the procedural database to the  * specified @file. The file will contain all of the information  * provided for each registered procedure.  *  * Returns: TRUE on success.  *  * Since: 3.0  **/
+comment|/**  * gimp_pdb_dump_to_file:  * @pdb:  A #GimpPDB.  * @file: The dump file.  *  * Dumps the current contents of the procedural database  *  * This procedure dumps the contents of the procedural database to the  * specified @file. The file will contain all of the information  * provided for each registered procedure.  *  * Returns: TRUE on success.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
