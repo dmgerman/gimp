@@ -2149,54 +2149,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gtkrc:  *  * Returns the name of GIMP's application-specific gtkrc file.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The name of GIMP's application-specific gtkrc file.  **/
-end_comment
-
-begin_function
-specifier|const
-name|gchar
-modifier|*
-DECL|function|gimp_gtkrc (void)
-name|gimp_gtkrc
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|gchar
-modifier|*
-name|gimp_gtkrc_filename
-init|=
-name|NULL
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_gtkrc_filename
-condition|)
-name|gimp_gtkrc_filename
-operator|=
-name|g_build_filename
-argument_list|(
-name|gimp_data_directory
-argument_list|()
-argument_list|,
-literal|"themes"
-argument_list|,
-literal|"System"
-argument_list|,
-literal|"gtkrc"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|gimp_gtkrc_filename
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_path_runtime_fix:  * @path: A pointer to a string (allocated with g_malloc) that is  *        (or could be) a pathname.  *  * On Windows, this function checks if the string pointed to by @path  * starts with the compile-time prefix, and in that case, replaces the  * prefix with the run-time one.  @path should be a pointer to a  * dynamically allocated (with g_malloc, g_strconcat, etc) string. If  * the replacement takes place, the original string is deallocated,  * and *@path is replaced with a pointer to a new string with the  * run-time prefix spliced in.  *  * On Linux, it does the same thing, but only if BinReloc support is enabled.  * On other Unices, it does nothing because those platforms don't have a  * way to find out where our binary is.  */
 end_comment
 
