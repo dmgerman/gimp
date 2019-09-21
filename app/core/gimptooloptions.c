@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27843eef0103
+DECL|enum|__anon2978b7710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1081,7 +1081,7 @@ argument_list|)
 expr_stmt|;
 name|retval
 operator|=
-name|gimp_config_serialize_to_gfile
+name|gimp_config_serialize_to_file
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -1199,7 +1199,7 @@ argument_list|)
 expr_stmt|;
 name|retval
 operator|=
-name|gimp_config_deserialize_gfile
+name|gimp_config_deserialize_file
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(

@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be185570103
+DECL|enum|__anon2b07df9c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ struct|struct
 name|_GimpColorProfileStorePrivate
 block|{
 DECL|member|history
-name|gchar
+name|GFile
 modifier|*
 name|history
 decl_stmt|;
@@ -246,10 +246,9 @@ name|GimpColorProfileStore
 modifier|*
 name|store
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -268,10 +267,9 @@ name|GimpColorProfileStore
 modifier|*
 name|store
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -350,22 +348,22 @@ name|get_property
 operator|=
 name|gimp_color_profile_store_get_property
 expr_stmt|;
-comment|/**    * GimpColorProfileStore:history:    *    * Filename of the color history used to populate the profile store.    *    * Since: 2.4    */
+comment|/**    * GimpColorProfileStore:history:    *    * #GFile of the color history used to populate the profile store.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_HISTORY
 argument_list|,
-name|g_param_spec_string
+name|g_param_spec_object
 argument_list|(
 literal|"history"
 argument_list|,
 literal|"History"
 argument_list|,
-literal|"Filename of the color history used to populate the profile store"
+literal|"Filen of the color history used to populate the profile store"
 argument_list|,
-name|NULL
+name|G_TYPE_FILE
 argument_list|,
 name|G_PARAM_CONSTRUCT_ONLY
 operator||
@@ -609,14 +607,12 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|g_clear_pointer
+name|g_clear_object
 argument_list|(
 operator|&
 name|private
 operator|->
 name|history
-argument_list|,
-name|g_free
 argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
@@ -685,7 +681,7 @@ name|private
 operator|->
 name|history
 operator|=
-name|g_value_dup_string
+name|g_value_dup_object
 argument_list|(
 name|value
 argument_list|)
@@ -745,7 +741,7 @@ block|{
 case|case
 name|PROP_HISTORY
 case|:
-name|g_value_set_string
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
@@ -771,21 +767,34 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_store_new:  * @history: filename of the profilerc (or %NULL for no history)  *  * Creates a new #GimpColorProfileStore object and populates it with  * last used profiles read from the file @history. The updated history  * is written back to disk when the store is disposed.  *  * The filename passed as @history is typically created using the  * following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * Returns: a new #GimpColorProfileStore  *  * Since: 2.4  **/
+comment|/**  * gimp_color_profile_store_new:  * @history: #GFile of the profilerc (or %NULL for no history)  *  * Creates a new #GimpColorProfileStore object and populates it with  * last used profiles read from the file @history. The updated history  * is written back to disk when the store is disposed.  *  * The #GFile passed as @history is typically created using the  * following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * Returns: a new #GimpColorProfileStore  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|GtkListStore
 modifier|*
-DECL|function|gimp_color_profile_store_new (const gchar * history)
+DECL|function|gimp_color_profile_store_new (GFile * history)
 name|gimp_color_profile_store_new
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|history
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|history
+operator|==
+name|NULL
+operator|||
+name|G_IS_FILE
+argument_list|(
+name|history
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
@@ -802,7 +811,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_store_add_file:  * @store: a #GimpColorProfileStore  * @file:  file of the profile to add (or %NULL)  * @label: label to use for the profile  *         (may only be %NULL if @filename is %NULL)  *  * Adds a color profile item to the #GimpColorProfileStore. Items  * added with this function will be kept at the top, separated from  * the history of last used color profiles.  *  * This function is often used to add a selectable item for the %NULL  * file. If you pass %NULL for both @file and @label, the @label will  * be set to the string "None" for you (and translated for the user).  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_store_add_file:  * @store: a #GimpColorProfileStore  * @file:  #GFile of the profile to add (or %NULL)  * @label: label to use for the profile  *         (may only be %NULL if @file is %NULL)  *  * Adds a color profile item to the #GimpColorProfileStore. Items  * added with this function will be kept at the top, separated from  * the history of last used color profiles.  *  * This function is often used to add a selectable item for the %NULL  * file. If you pass %NULL for both @file and @label, the @label will  * be set to the string "None" for you (and translated for the user).  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2103,17 +2112,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_color_profile_store_load (GimpColorProfileStore * store,const gchar * filename,GError ** error)
+DECL|function|gimp_color_profile_store_load (GimpColorProfileStore * store,GFile * file,GError ** error)
 name|gimp_color_profile_store_load
 parameter_list|(
 name|GimpColorProfileStore
 modifier|*
 name|store
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -2137,7 +2145,7 @@ name|scanner
 operator|=
 name|gimp_scanner_new_file
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|error
 argument_list|)
@@ -2271,17 +2279,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_color_profile_store_save (GimpColorProfileStore * store,const gchar * filename,GError ** error)
+DECL|function|gimp_color_profile_store_save (GimpColorProfileStore * store,GFile * file,GError ** error)
 name|gimp_color_profile_store_save
 parameter_list|(
 name|GimpColorProfileStore
 modifier|*
 name|store
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 parameter_list|,
 name|GError
 modifier|*
@@ -2332,7 +2339,7 @@ name|writer
 operator|=
 name|gimp_config_writer_new_from_file
 argument_list|(
-name|filename
+name|file
 argument_list|,
 name|TRUE
 argument_list|,

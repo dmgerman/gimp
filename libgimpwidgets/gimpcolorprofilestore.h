@@ -254,8 +254,7 @@ name|GtkListStore
 modifier|*
 name|gimp_color_profile_store_new
 parameter_list|(
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|history
 parameter_list|)

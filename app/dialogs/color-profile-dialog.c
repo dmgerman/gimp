@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292a47ce0108
+DECL|struct|__anon27a1c21d0108
 block|{
 DECL|member|dialog_type
 name|ColorProfileDialogType
@@ -1387,15 +1387,17 @@ name|GtkWidget
 modifier|*
 name|chooser
 decl_stmt|;
-name|gchar
+name|GFile
 modifier|*
 name|history
 decl_stmt|;
 name|history
 operator|=
-name|gimp_personal_rc_file
+name|gimp_directory_file
 argument_list|(
 literal|"profilerc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|store
@@ -1405,7 +1407,7 @@ argument_list|(
 name|history
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_object_unref
 argument_list|(
 name|history
 argument_list|)

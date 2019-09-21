@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0cdb9a0103
+DECL|enum|__anon2b9cca980103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -410,7 +410,7 @@ argument_list|)
 expr_stmt|;
 name|scanner
 operator|=
-name|gimp_scanner_new_gfile
+name|gimp_scanner_new_file
 argument_list|(
 name|file
 argument_list|,
@@ -4412,7 +4412,7 @@ name|list
 decl_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_from_gfile
+name|gimp_config_writer_new_from_file
 argument_list|(
 name|file
 argument_list|,

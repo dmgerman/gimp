@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7463c0103
+DECL|enum|__anon2acc666c0103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -118,7 +118,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7463c0208
+DECL|struct|__anon2acc666c0208
 block|{
 DECL|member|action_name
 name|gchar
@@ -142,7 +142,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27b7463c0308
+DECL|struct|__anon2acc666c0308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -328,7 +328,7 @@ argument_list|)
 expr_stmt|;
 name|scanner
 operator|=
-name|gimp_scanner_new_gfile
+name|gimp_scanner_new_file
 argument_list|(
 name|file
 argument_list|,
@@ -665,7 +665,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_from_gfile
+name|gimp_config_writer_new_from_file
 argument_list|(
 name|file
 argument_list|,

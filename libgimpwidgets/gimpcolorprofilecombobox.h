@@ -259,8 +259,7 @@ name|GtkWidget
 modifier|*
 name|dialog
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|history
 parameter_list|)

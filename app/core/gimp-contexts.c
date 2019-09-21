@@ -262,7 +262,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|gimp_config_deserialize_gfile
+name|gimp_config_deserialize_file
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -401,7 +401,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|gimp_config_serialize_to_gfile
+name|gimp_config_serialize_to_file
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(

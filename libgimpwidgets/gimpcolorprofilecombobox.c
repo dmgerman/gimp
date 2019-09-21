@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c322f80103
+DECL|enum|__anon2a36b6f30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -900,21 +900,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_combo_box_new:  * @dialog:  a #GtkDialog to present when the user selects the  *           "Select color profile from disk..." item  * @history: filename of the profilerc (or %NULL for no history)  *  * Create a combo-box widget for selecting color profiles. The combo-box  * is populated from the file specified as @history. This filename is  * typically created using the following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * The recommended @dialog type to use is a #GimpColorProfileChooserDialog.  * If a #GimpColorProfileChooserDialog is passed, #GimpColorProfileComboBox  * will take complete control over the dialog, which means connecting  * a GtkDialog::response() callback by itself, and take care of destroying  * the dialog when the combo box is destroyed.  *  * If another type of @dialog is passed, this has to be implemented  * separately.  *  * See also gimp_color_profile_combo_box_new_with_model().  *  * Returns: a new #GimpColorProfileComboBox.  *  * Since: 2.4  **/
+comment|/**  * gimp_color_profile_combo_box_new:  * @dialog:  a #GtkDialog to present when the user selects the  *           "Select color profile from disk..." item  * @history: #GFile of the profilerc (or %NULL for no history)  *  * Create a combo-box widget for selecting color profiles. The combo-box  * is populated from the file specified as @history. This filename is  * typically created using the following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * The recommended @dialog type to use is a #GimpColorProfileChooserDialog.  * If a #GimpColorProfileChooserDialog is passed, #GimpColorProfileComboBox  * will take complete control over the dialog, which means connecting  * a GtkDialog::response() callback by itself, and take care of destroying  * the dialog when the combo box is destroyed.  *  * If another type of @dialog is passed, this has to be implemented  * separately.  *  * See also gimp_color_profile_combo_box_new_with_model().  *  * Returns: a new #GimpColorProfileComboBox.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_color_profile_combo_box_new (GtkWidget * dialog,const gchar * history)
+DECL|function|gimp_color_profile_combo_box_new (GtkWidget * dialog,GFile * history)
 name|gimp_color_profile_combo_box_new
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|dialog
 parameter_list|,
-specifier|const
-name|gchar
+name|GFile
 modifier|*
 name|history
 parameter_list|)
@@ -932,6 +931,20 @@ argument_list|(
 name|GTK_IS_DIALOG
 argument_list|(
 name|dialog
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|history
+operator|==
+name|NULL
+operator|||
+name|G_IS_FILE
+argument_list|(
+name|history
 argument_list|)
 argument_list|,
 name|NULL

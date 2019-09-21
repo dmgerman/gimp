@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28952aa10103
+DECL|enum|__anon2a3f816f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -144,7 +144,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28952aa10203
+DECL|enum|__anon2a3f816f0203
 block|{
 DECL|enumerator|EXTENSION_INSTALLED
 name|EXTENSION_INSTALLED
@@ -2298,7 +2298,7 @@ name|processed_ids
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_config_deserialize_gfile
+name|gimp_config_deserialize_file
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -2619,7 +2619,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_serialize_to_gfile
+name|gimp_config_serialize_to_file
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(

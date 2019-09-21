@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279bc2eb0103
+DECL|enum|__anon2a4798cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -347,7 +347,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_deserialize_gfile
+name|gimp_config_deserialize_file
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -410,7 +410,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_deserialize_gfile
+name|gimp_config_deserialize_file
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(

@@ -21,7 +21,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e7d6970103
+DECL|enum|__anon2baa0da90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1088,7 +1088,7 @@ name|success
 decl_stmt|;
 name|success
 operator|=
-name|gimp_config_deserialize_gfile
+name|gimp_config_deserialize_file
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -1170,7 +1170,7 @@ name|success
 decl_stmt|;
 name|success
 operator|=
-name|gimp_config_serialize_to_gfile
+name|gimp_config_serialize_to_file
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(

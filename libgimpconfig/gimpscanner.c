@@ -82,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28809d3e0108
+DECL|struct|__anon27c104e10108
 block|{
 DECL|member|ref_count
 name|gint
@@ -183,93 +183,14 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_scanner_new_file:  * @filename:  * @error:  *  * Returns: (transfer full): The new #GimpScanner.  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_new_file:  * @file: a #GFile  * @error: return location for #GError, or %NULL  *  * Returns: (transfer full): The new #GimpScanner.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpScanner
 modifier|*
-DECL|function|gimp_scanner_new_file (const gchar * filename,GError ** error)
+DECL|function|gimp_scanner_new_file (GFile * file,GError ** error)
 name|gimp_scanner_new_file
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
-parameter_list|)
-block|{
-name|GimpScanner
-modifier|*
-name|scanner
-decl_stmt|;
-name|GFile
-modifier|*
-name|file
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|filename
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|error
-operator|==
-name|NULL
-operator|||
-operator|*
-name|error
-operator|==
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|file
-operator|=
-name|g_file_new_for_path
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
-name|scanner
-operator|=
-name|gimp_scanner_new_gfile
-argument_list|(
-name|file
-argument_list|,
-name|error
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
-return|return
-name|scanner
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_scanner_new_gfile:  * @file: a #GFile  * @error: return location for #GError, or %NULL  *  * Returns: (transfer full): The new #GimpScanner.  *  * Since: 2.10  **/
-end_comment
-
-begin_function
-name|GimpScanner
-modifier|*
-DECL|function|gimp_scanner_new_gfile (GFile * file,GError ** error)
-name|gimp_scanner_new_gfile
 parameter_list|(
 name|GFile
 modifier|*
@@ -1961,7 +1882,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon28809d3e0203
+DECL|enum|__anon27c104e10203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
