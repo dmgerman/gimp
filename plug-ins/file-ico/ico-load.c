@@ -928,6 +928,11 @@ argument_list|(
 literal|"Could not read '%lu' bytes"
 argument_list|)
 argument_list|,
+operator|(
+name|long
+name|unsigned
+name|int
+operator|)
 sizeof|sizeof
 argument_list|(
 name|IcoFileEntry
