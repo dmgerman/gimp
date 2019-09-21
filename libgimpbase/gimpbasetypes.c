@@ -242,7 +242,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_get_value_descriptions:  * @enum_type: a #GType  *  * Retreives the array of human readable and translatable descriptions  * and help texts for enum values.  *  * Returns: a %NULL terminated constant array of #GimpEnumDesc  *  * Since: 2.2  **/
+comment|/**  * gimp_enum_get_value_descriptions:  * @enum_type: a #GType  *  * Retrieves the array of human readable and translatable descriptions  * and help texts for enum values.  *  * Returns: a %NULL terminated constant array of #GimpEnumDesc  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -337,7 +337,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_flags_get_value_descriptions:  * @flags_type: a #GType  *  * Retreives the array of human readable and translatable descriptions  * and help texts for flags values.  *  * Returns: a %NULL terminated constant array of #GimpFlagsDesc  *  * Since: 2.2  **/
+comment|/**  * gimp_flags_get_value_descriptions:  * @flags_type: a #GType  *  * Retrieves the array of human readable and translatable descriptions  * and help texts for flags values.  *  * Returns: a %NULL terminated constant array of #GimpFlagsDesc  *  * Since: 2.2  **/
 end_comment
 
 begin_function

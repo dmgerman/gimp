@@ -339,7 +339,7 @@ argument_list|(
 name|toolbox
 argument_list|)
 expr_stmt|;
-comment|/* Before caling any dnd helper functions, setup the drag    * destination manually since we want to handle all drag events    * manually, otherwise we would not be able to give the drag handler    * a chance to handle drag events    */
+comment|/* Before calling any dnd helper functions, setup the drag    * destination manually since we want to handle all drag events    * manually, otherwise we would not be able to give the drag handler    * a chance to handle drag events    */
 name|gtk_drag_dest_set
 argument_list|(
 name|vbox

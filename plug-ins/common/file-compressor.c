@@ -20,7 +20,7 @@ comment|/* based on gz.c which in turn is        */
 end_comment
 
 begin_comment
-comment|/* loosley based on url.c by             */
+comment|/* loosely based on url.c by             */
 end_comment
 
 begin_comment

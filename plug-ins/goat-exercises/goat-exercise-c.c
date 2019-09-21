@@ -469,7 +469,7 @@ decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-comment|/* In interactive mode, display a dialog to advertize the exercise. */
+comment|/* In interactive mode, display a dialog to advertise the exercise. */
 if|if
 condition|(
 name|run_mode

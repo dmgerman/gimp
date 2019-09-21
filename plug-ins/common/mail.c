@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbc40c90108
+DECL|struct|__anon2c05dbab0108
 block|{
 DECL|member|filename
 name|gchar
@@ -3124,7 +3124,7 @@ block|{
 comment|/* create all the mail header stuff. Feel free to add your own */
 comment|/* It is advisable to leave the X-Mailer header though, as     */
 comment|/* there is a possibility of a Gimp mail scanner/reader in the  */
-comment|/* future. It will probabaly need that header.                 */
+comment|/* future. It will probably need that header.                 */
 name|fprintf
 argument_list|(
 name|mailpipe

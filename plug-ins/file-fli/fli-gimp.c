@@ -593,7 +593,7 @@ name|procedure
 argument_list|,
 literal|"Load FLI-movies"
 argument_list|,
-literal|"This is an experimantal plug-in to "
+literal|"This is an experimental plug-in to "
 literal|"handle FLI movies"
 argument_list|,
 name|name
@@ -725,7 +725,7 @@ name|procedure
 argument_list|,
 literal|"Export FLI-movies"
 argument_list|,
-literal|"This is an experimantal plug-in to "
+literal|"This is an experimental plug-in to "
 literal|"handle FLI movies"
 argument_list|,
 name|name
@@ -840,7 +840,7 @@ name|procedure
 argument_list|,
 literal|"Get information about a Fli movie"
 argument_list|,
-literal|"This is an experimantal plug-in to "
+literal|"This is an experimental plug-in to "
 literal|"handle FLI movies"
 argument_list|,
 name|name

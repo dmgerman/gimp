@@ -675,7 +675,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Ensure that the graph is construced before the filter is used.    * Otherwise, we rely on the projection to cause the graph to be    * constructed, which fails for images that aren't displayed.    */
+comment|/* Ensure that the graph is constructed before the filter is used.    * Otherwise, we rely on the projection to cause the graph to be    * constructed, which fails for images that aren't displayed.    */
 name|gimp_filter_get_node
 argument_list|(
 name|GIMP_FILTER

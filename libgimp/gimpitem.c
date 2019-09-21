@@ -39,7 +39,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2632280103
+DECL|enum|__anon2b3e74f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -665,7 +665,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_list_children:  * @item: The item.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (element-type GimpItem) (transfer container):  *          The item's list of children.  *          The returned ist must be freed with g_list_free(). Item  *          elements belong to libgimp and must not be unrefed.  *  * Since: 3.0  **/
+comment|/**  * gimp_item_list_children:  * @item: The item.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (element-type GimpItem) (transfer container):  *          The item's list of children.  *          The returned list must be freed with g_list_free(). Item  *          elements belong to libgimp and must not be unrefed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

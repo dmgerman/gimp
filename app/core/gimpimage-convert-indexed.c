@@ -12,7 +12,7 @@ comment|/* TODO for Convert:    *    * . Tweak, tweak, tweak.  Old RGB code was 
 end_comment
 
 begin_comment
-comment|/* CODE READABILITY BUGS:    *    * . Most uses of variants of the R,G,B variable naming convention    *   are referring to L*a*b* co-ordinates, not RGB co-ordinates!    *    * . Each said variable is usually one of the following, but it is    *   rarely clear which one:    *     - (assumed sRGB) raw non-linear 8-bit RGB co-ordinates    *     - 'full'-precision (unshifted) 8-bit L*a*b* co-ordinates    *     - box-space (reduced-precision shifted L*a*b*) co-ordinates    */
+comment|/* CODE READABILITY BUGS:    *    * . Most uses of variants of the R,G,B variable naming convention    *   are referring to L*a*b* coordinates, not RGB coordinates!    *    * . Each said variable is usually one of the following, but it is    *   rarely clear which one:    *     - (assumed sRGB) raw non-linear 8-bit RGB coordinates    *     - 'full'-precision (unshifted) 8-bit L*a*b* coordinates    *     - box-space (reduced-precision shifted L*a*b*) coordinates    */
 end_comment
 
 begin_include
@@ -430,7 +430,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bd6ed1e0103
+DECL|enum|__anon2bf43b1c0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -460,7 +460,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*   We provide two different histogram access interfaces.  HIST_LIN()   accesses the histogram in histogram-native space, taking absolute   histogram co-ordinates.  HIST_RGB() accesses the histogram in RGB   space.  This latter takes unsigned 8-bit co-ordinates, internally   converts those co-ordinates to histogram-native space and returns   the access pointer to the corresponding histogram cell.    Using these two interfaces we can import RGB data into a more   interesting space and efficiently work in the latter space until   it is time to output the quantized values in RGB again.  For   this final conversion we implement the function lin_to_rgb().    We effectively pull our three-dimensional space into five dimensions   such that the most-entropic bits lay in the lowest bits of the resulting   array index.  This gives significantly better locality of reference   and hence a small speedup despite the extra work involved in calculating   the index.    Why not six dimensions?  The expansion of dimensionality is good for random   access such as histogram population and the query pattern typical of   dithering but we have some code which iterates in a scanning manner, for   which the expansion is suboptimal.  The compromise is to leave the B   dimension unmolested in the lower-order bits of the index, since this is   the dimension most commonly iterated through in the inner loop of the   scans.    --adam    RhGhRlGlB */
+comment|/*   We provide two different histogram access interfaces.  HIST_LIN()   accesses the histogram in histogram-native space, taking absolute   histogram coordinates.  HIST_RGB() accesses the histogram in RGB   space.  This latter takes unsigned 8-bit coordinates, internally   converts those coordinates to histogram-native space and returns   the access pointer to the corresponding histogram cell.    Using these two interfaces we can import RGB data into a more   interesting space and efficiently work in the latter space until   it is time to output the quantized values in RGB again.  For   this final conversion we implement the function lin_to_rgb().    We effectively pull our three-dimensional space into five dimensions   such that the most-entropic bits lay in the lowest bits of the resulting   array index.  This gives significantly better locality of reference   and hence a small speedup despite the extra work involved in calculating   the index.    Why not six dimensions?  The expansion of dimensionality is good for random   access such as histogram population and the query pattern typical of   dithering but we have some code which iterates in a scanning manner, for   which the expansion is suboptimal.  The compromise is to leave the B   dimension unmolested in the lower-order bits of the index, since this is   the dimension most commonly iterated through in the inner loop of the   scans.    --adam    RhGhRlGlB */
 end_comment
 
 begin_define
@@ -1518,7 +1518,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd6ed1e0208
+DECL|struct|__anon2bf43b1c0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1748,7 +1748,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd6ed1e0308
+DECL|struct|__anon2bf43b1c0308
 block|{
 DECL|member|used_count
 name|glong
@@ -13933,7 +13933,7 @@ block|}
 block|}
 name|g_error
 argument_list|(
-literal|"Non-existant color was expected to "
+literal|"Non-existent color was expected to "
 literal|"be in non-destructive colormap."
 argument_list|)
 expr_stmt|;

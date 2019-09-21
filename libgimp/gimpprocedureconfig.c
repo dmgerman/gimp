@@ -16,12 +16,12 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpprocedureconfig  * @title: GimpProcedureConfig  * @short_description: Config object for procedure arguments  *  * #GimpProcedureConfig base class for #GimpProcedure-specific config  * objects and the main interface to manage aspects of  * #GimpProcedure's arguments such as persistency of the last used  * argments across GIMP sessions.  *  * A #GimpProcedureConfig is created by a #GimpProcedure using  * gimp_procedure_create_config() and its properties match the  * procedure's arguments in number, order and type.  *  * It implements the #GimpConfig interface and therefore has all its  * serialization and deserialization features.  *  * Since: 3.0  **/
+comment|/**  * SECTION: gimpprocedureconfig  * @title: GimpProcedureConfig  * @short_description: Config object for procedure arguments  *  * #GimpProcedureConfig base class for #GimpProcedure-specific config  * objects and the main interface to manage aspects of  * #GimpProcedure's arguments such as persistency of the last used  * arguments across GIMP sessions.  *  * A #GimpProcedureConfig is created by a #GimpProcedure using  * gimp_procedure_create_config() and its properties match the  * procedure's arguments in number, order and type.  *  * It implements the #GimpConfig interface and therefore has all its  * serialization and deserialization features.  *  * Since: 3.0  **/
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baa0da90103
+DECL|enum|__anon29c8cd620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7185bb0108
+DECL|struct|__anon29e452230108
 block|{
 DECL|member|dst
 name|GimpDrawable
@@ -411,7 +411,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7185bb0208
+DECL|struct|__anon29e452230208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -519,7 +519,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7185bb0308
+DECL|struct|__anon29e452230308
 block|{
 DECL|member|color
 name|guchar
@@ -548,7 +548,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7185bb0408
+DECL|struct|__anon29e452230408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -575,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7185bb0508
+DECL|struct|__anon29e452230508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1387,7 +1387,7 @@ literal|" The intensity index is used to pick the corresponding color"
 literal|" in the sample colortable. If hold_inten is FALSE the picked color"
 literal|" is used 1:1 as resulting remap_color."
 literal|" If hold_inten is TRUE The brightness of the picked color is adjusted"
-literal|" back to the origial intensity value (only hue and saturation are"
+literal|" back to the original intensity value (only hue and saturation are"
 literal|" taken from the picked sample color)"
 literal|" (or to the input level, if orig_inten is set FALSE)"
 literal|" Works on both Grayscale and RGB image with/without alpha channel."
@@ -4451,7 +4451,7 @@ name|g_Sdebug
 condition|)
 name|g_printf
 argument_list|(
-literal|"levels_update: update reques %x\n"
+literal|"levels_update: update request %x\n"
 argument_list|,
 name|update
 argument_list|)

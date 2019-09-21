@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9bc66b0108
+DECL|struct|__anon2b5352b40108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c9bc66b0203
+DECL|enum|__anon2b5352b40203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -4698,7 +4698,7 @@ name|sy0
 decl_stmt|,
 name|sy1
 decl_stmt|;
-comment|/* compute square co-ordinates */
+comment|/* compute square coordinates */
 name|sx0
 operator|=
 name|sx
@@ -4723,7 +4723,7 @@ name|sy
 operator|+
 literal|0.5
 expr_stmt|;
-comment|/* compute hexagon co-ordinates */
+comment|/* compute hexagon coordinates */
 name|hx0
 operator|=
 name|hx

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0a675c0103
+DECL|enum|__anon2c095d410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -164,7 +164,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0a675c0208
+DECL|struct|__anon2c095d410208
 block|{
 DECL|member|text
 name|GString
@@ -1819,7 +1819,7 @@ name|GIMP_EXTENSION_NO_VERSION
 argument_list|,
 name|_
 argument_list|(
-literal|"Extension AppData must advertize a version in a<release> tag."
+literal|"Extension AppData must advertise a version in a<release> tag."
 argument_list|)
 argument_list|)
 expr_stmt|;

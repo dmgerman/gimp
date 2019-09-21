@@ -816,7 +816,7 @@ argument_list|(
 literal|"A float"
 argument_list|)
 expr_stmt|;
-comment|/*  extract the aplha into the temp mask  */
+comment|/*  extract the alpha into the temp mask  */
 name|gegl_buffer_set_format
 argument_list|(
 name|temp_buffer

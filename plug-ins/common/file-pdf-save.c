@@ -8,11 +8,11 @@ comment|/* The PDF export plugin has 3 main procedures:  * 1. file-pdf-save  *  
 end_comment
 
 begin_comment
-comment|/* Known Issues (except for the coding style issues):  * 1. Grayscale layers are inverted (although layer masks which are not grayscale,  * are not inverted)  * 2. Exporting some fonts doesn't work since gimp_text_layer_get_font Returns a  * font which is sometimes incompatiable with pango_font_description_from_string  * (gimp_text_layer_get_font sometimes returns suffixes such as "semi-expanded" to  * the font's name although the GIMP's font selection dialog shows the don'ts name  * normally - This should be checked again in GIMP 2.7)  * 3. Indexed layers can't be optimized yet (Since gimp_histogram won't work on  * indexed layers)  * 4. Rendering the pango layout requires multiplying the size in PANGO_SCALE. This  * means I'll need to do some hacking on the markup returned from GIMP.  * 5. When accessing the contents of layer groups is supported, we should do use it  * (since this plugin should preserve layers).  *  * Also, there are 2 things which we should warn the user about:  * 1. Cairo does not support bitmap masks for text.  * 2. Currently layer modes are ignored. We do support layers, including  * transparency and opacity, but layer modes are not supported.  */
+comment|/* Known Issues (except for the coding style issues):  * 1. Grayscale layers are inverted (although layer masks which are not grayscale,  * are not inverted)  * 2. Exporting some fonts doesn't work since gimp_text_layer_get_font Returns a  * font which is sometimes incompatible with pango_font_description_from_string  * (gimp_text_layer_get_font sometimes returns suffixes such as "semi-expanded" to  * the font's name although the GIMP's font selection dialog shows the don'ts name  * normally - This should be checked again in GIMP 2.7)  * 3. Indexed layers can't be optimized yet (Since gimp_histogram won't work on  * indexed layers)  * 4. Rendering the pango layout requires multiplying the size in PANGO_SCALE. This  * means I'll need to do some hacking on the markup returned from GIMP.  * 5. When accessing the contents of layer groups is supported, we should do use it  * (since this plugin should preserve layers).  *  * Also, there are 2 things which we should warn the user about:  * 1. Cairo does not support bitmap masks for text.  * 2. Currently layer modes are ignored. We do support layers, including  * transparency and opacity, but layer modes are not supported.  */
 end_comment
 
 begin_comment
-comment|/* Changelog  *  * April 29, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   First version of the plugin. This is only a proof of concept and not a full  *   working plugin.  *  * May 6, 2009 Barak | Itkin<lightningismyname@gmail.com>  *   Added new features and several bugfixes:  *   - Added handling for image resolutions  *   - fixed the behaviour of getting font sizes  *   - Added various optimizations (solid rectangles instead of bitmaps, ignoring  *     invisible layers, etc.) as a macro flag.  *   - Added handling for layer masks, use CAIRO_FORMAT_A8 for grayscale drawables.  *   - Indexed layers are now supported  *  * August 17, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   Most of the plugin was rewritten from scratch and it now has several new  *   features:  *   - Got rid of the optimization macros in the code. The gui now supports  *     selecting which optimizations to apply.  *   - Added a procedure to allow the creation of multiple paged PDF's  *   - Registered the plugin on "<Image>/File/Create/PDF"  *  * August 21, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   Fixed a typo that prevented the plugin from compiling...  *   A migration to the new GIMP 2.8 api, which includes:  *   - Now using gimp_export_dialog_new  *   - Using gimp_text_layer_get_hint_style (2.8) instead of the depreceated  *     gimp_text_layer_get_hinting (2.6).  *  * August 24, 2010 | Barak Itkin<lightningismyname@gmail.com>  *   More migrations to the new GIMP 2.8 api:  *   - Now using the GimpItem api  *   - Using gimp_text_layer_get_markup where possible  *   - Fixed some compiler warnings  *   Also merged the header and c file into one file, Updated some of the comments  *   and documentation, and moved this into the main source repository.  */
+comment|/* Changelog  *  * April 29, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   First version of the plugin. This is only a proof of concept and not a full  *   working plugin.  *  * May 6, 2009 Barak | Itkin<lightningismyname@gmail.com>  *   Added new features and several bugfixes:  *   - Added handling for image resolutions  *   - fixed the behaviour of getting font sizes  *   - Added various optimizations (solid rectangles instead of bitmaps, ignoring  *     invisible layers, etc.) as a macro flag.  *   - Added handling for layer masks, use CAIRO_FORMAT_A8 for grayscale drawables.  *   - Indexed layers are now supported  *  * August 17, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   Most of the plugin was rewritten from scratch and it now has several new  *   features:  *   - Got rid of the optimization macros in the code. The gui now supports  *     selecting which optimizations to apply.  *   - Added a procedure to allow the creation of multiple paged PDF's  *   - Registered the plugin on "<Image>/File/Create/PDF"  *  * August 21, 2009 | Barak Itkin<lightningismyname@gmail.com>  *   Fixed a typo that prevented the plugin from compiling...  *   A migration to the new GIMP 2.8 api, which includes:  *   - Now using gimp_export_dialog_new  *   - Using gimp_text_layer_get_hint_style (2.8) instead of the deprecated  *     gimp_text_layer_get_hinting (2.6).  *  * August 24, 2010 | Barak Itkin<lightningismyname@gmail.com>  *   More migrations to the new GIMP 2.8 api:  *   - Now using the GimpItem api  *   - Using gimp_text_layer_get_markup where possible  *   - Fixed some compiler warnings  *   Also merged the header and c file into one file, Updated some of the comments  *   and documentation, and moved this into the main source repository.  */
 end_comment
 
 begin_include
@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29367f7d0103
+DECL|enum|__anon27b1b2c80103
 block|{
 DECL|enumerator|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
 name|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
@@ -180,7 +180,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29367f7d0203
+DECL|enum|__anon27b1b2c80203
 block|{
 DECL|enumerator|SA_VECTORIZE
 name|SA_VECTORIZE
@@ -205,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29367f7d0303
+DECL|enum|__anon27b1b2c80303
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -236,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29367f7d0408
+DECL|struct|__anon27b1b2c80408
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -267,7 +267,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29367f7d0508
+DECL|struct|__anon27b1b2c80508
 block|{
 DECL|member|images
 name|GimpImage
@@ -297,7 +297,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29367f7d0608
+DECL|struct|__anon27b1b2c80608
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -316,7 +316,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29367f7d0703
+DECL|enum|__anon27b1b2c80703
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -336,7 +336,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29367f7d0808
+DECL|struct|__anon27b1b2c80808
 block|{
 DECL|member|thumb
 name|GdkPixbuf
