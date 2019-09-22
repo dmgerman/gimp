@@ -762,7 +762,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2b3815690103
+DECL|enum|__anon28ddd07b0103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -3410,6 +3410,12 @@ argument_list|,
 literal|"swap"
 argument_list|,
 name|path
+argument_list|,
+literal|"swap-compression"
+argument_list|,
+name|config
+operator|->
+name|swap_compression
 argument_list|,
 literal|"threads"
 argument_list|,

@@ -970,6 +970,14 @@ name|swap_path
 expr_stmt|;
 name|config
 operator|.
+name|swap_compression
+operator|=
+name|gegl_config
+operator|->
+name|swap_compression
+expr_stmt|;
+name|config
+operator|.
 name|num_processors
 operator|=
 name|gegl_config
