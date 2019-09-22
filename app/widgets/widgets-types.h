@@ -1011,6 +1011,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpCompressionComboBox
+typedef|typedef
+name|struct
+name|_GimpCompressionComboBox
+name|GimpCompressionComboBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpControllerEditor
 typedef|typedef
 name|struct

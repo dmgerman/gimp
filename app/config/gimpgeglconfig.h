@@ -96,6 +96,11 @@ name|gchar
 modifier|*
 name|swap_path
 decl_stmt|;
+DECL|member|swap_compression
+name|gchar
+modifier|*
+name|swap_compression
+decl_stmt|;
 DECL|member|num_processors
 name|gint
 name|num_processors

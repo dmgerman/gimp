@@ -1187,6 +1187,15 @@ value|_("What to do when the space bar is pressed in the image window.")
 end_define
 
 begin_define
+DECL|macro|SWAP_COMPRESSION_BLURB
+define|#
+directive|define
+name|SWAP_COMPRESSION_BLURB
+define|\
+value|_("The compression method used for tile data stored in the swap file.")
+end_define
+
+begin_define
 DECL|macro|SWAP_PATH_BLURB
 define|#
 directive|define
