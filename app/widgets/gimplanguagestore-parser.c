@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ea613d0103
+DECL|enum|__anon28e82e860103
 block|{
 DECL|enumerator|ISO_CODES_START
 name|ISO_CODES_START
@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ea613d0208
+DECL|struct|__anon28e82e860208
 block|{
 DECL|member|state
 name|IsoCodesParserState
@@ -1149,8 +1149,8 @@ operator|&
 name|parser
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
+ifdef|#
+directive|ifdef
 name|ENABLE_RELOCATABLE_RESOURCES
 name|file
 operator|=
