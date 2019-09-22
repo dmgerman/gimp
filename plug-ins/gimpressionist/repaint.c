@@ -1192,11 +1192,10 @@ name|g_list_append
 argument_list|(
 name|brlist
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|i
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1241,9 +1240,7 @@ argument_list|)
 expr_stmt|;
 name|best
 operator|=
-call|(
-name|long
-call|)
+name|GPOINTER_TO_INT
 argument_list|(
 operator|(
 name|g_list_nth
