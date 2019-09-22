@@ -925,7 +925,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|(
-name|gint
+name|intptr_t
 operator|)
 name|hinst
 operator|<=
@@ -940,7 +940,7 @@ decl_stmt|;
 switch|switch
 condition|(
 operator|(
-name|gint
+name|intptr_t
 operator|)
 name|hinst
 condition|)
