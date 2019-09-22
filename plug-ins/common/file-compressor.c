@@ -1883,8 +1883,7 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|struct
-name|stat
+name|GStatBuf
 name|buf
 decl_stmt|;
 name|gboolean

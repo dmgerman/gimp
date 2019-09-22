@@ -499,8 +499,7 @@ name|FILE
 modifier|*
 name|f
 decl_stmt|;
-name|struct
-name|stat
+name|GStatBuf
 name|st
 decl_stmt|;
 name|PSDimage

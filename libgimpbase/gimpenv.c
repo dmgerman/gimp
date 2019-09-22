@@ -2805,8 +2805,7 @@ decl_stmt|;
 name|gid_t
 name|egid
 decl_stmt|;
-name|struct
-name|stat
+name|GStatBuf
 name|filestat
 decl_stmt|;
 name|gint

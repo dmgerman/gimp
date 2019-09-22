@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c05dbab0108
+DECL|struct|__anon278d0db40108
 block|{
 DECL|member|filename
 name|gchar
@@ -2692,8 +2692,7 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|struct
-name|stat
+name|GStatBuf
 name|buf
 decl_stmt|;
 name|gboolean
