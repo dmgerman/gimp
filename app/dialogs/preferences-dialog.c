@@ -5513,6 +5513,8 @@ operator|=
 name|gimp_directory_file
 argument_list|(
 literal|"profilerc"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|store
@@ -13202,7 +13204,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c3dc6af0108
+DECL|struct|__anon27d3cb7a0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -14108,7 +14110,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c3dc6af0208
+DECL|struct|__anon27d3cb7a0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14239,7 +14241,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c3dc6af0308
+DECL|struct|__anon27d3cb7a0308
 block|{
 DECL|member|tree_label
 specifier|const
