@@ -193,6 +193,10 @@ DECL|member|lower_arrow_state
 name|GtkStateType
 name|lower_arrow_state
 decl_stmt|;
+DECL|member|smooth_scrolling
+name|gboolean
+name|smooth_scrolling
+decl_stmt|;
 block|}
 struct|;
 end_struct
