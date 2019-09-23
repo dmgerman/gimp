@@ -160,6 +160,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdint.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -5080,8 +5086,7 @@ if|if
 condition|(
 operator|(
 operator|(
-name|unsigned
-name|long
+name|uintptr_t
 operator|)
 name|cp
 operator|)
@@ -5102,8 +5107,7 @@ name|adj
 operator|*
 operator|(
 operator|(
-name|unsigned
-name|long
+name|uintptr_t
 operator|)
 name|cp
 operator|/
@@ -12313,7 +12317,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon29e9aff10103
+DECL|enum|__anon27aced8b0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -30721,7 +30725,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon29e9aff10208
+DECL|struct|__anon27aced8b0208
 specifier|static
 struct|struct
 block|{
@@ -30956,7 +30960,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon29e9aff10308
+DECL|struct|__anon27aced8b0308
 typedef|typedef
 struct|struct
 block|{
