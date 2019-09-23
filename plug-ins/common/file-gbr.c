@@ -47,14 +47,6 @@ name|PLUG_IN_BINARY
 value|"file-gbr"
 end_define
 
-begin_define
-DECL|macro|PLUG_IN_ROLE
-define|#
-directive|define
-name|PLUG_IN_ROLE
-value|"gimp-file-gbr"
-end_define
-
 begin_typedef
 DECL|typedef|Gbr
 typedef|typedef
@@ -595,6 +587,7 @@ argument_list|,
 name|NULL
 argument_list|)
 return|;
+break|break;
 default|default:
 break|break;
 block|}
