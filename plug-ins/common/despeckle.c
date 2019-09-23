@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279288470108
+DECL|struct|__anon2bdfb0c00108
 block|{
 DECL|member|elems
 specifier|const
@@ -144,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279288470208
+DECL|struct|__anon2bdfb0c00208
 block|{
 DECL|member|elems
 name|gint
@@ -887,6 +887,8 @@ name|gimp_procedure_config_begin_run
 argument_list|(
 name|config
 argument_list|,
+name|NULL
+argument_list|,
 name|run_mode
 argument_list|,
 name|args
@@ -940,6 +942,8 @@ expr_stmt|;
 name|gimp_procedure_config_end_run
 argument_list|(
 name|config
+argument_list|,
+name|NULL
 argument_list|,
 name|run_mode
 argument_list|)

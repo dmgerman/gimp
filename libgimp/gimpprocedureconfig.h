@@ -305,6 +305,10 @@ name|GimpProcedureConfig
 modifier|*
 name|config
 parameter_list|,
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
@@ -323,6 +327,10 @@ parameter_list|(
 name|GimpProcedureConfig
 modifier|*
 name|config
+parameter_list|,
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpRunMode
 name|run_mode
