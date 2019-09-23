@@ -524,8 +524,12 @@ name|symmetry
 decl_stmt|;
 name|store
 operator|=
-name|gimp_int_store_new
-argument_list|()
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_INT_STORE
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 comment|/* The menu of available symmetries. */
 name|syms
