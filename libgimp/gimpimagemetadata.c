@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4d7b10108
+DECL|struct|__anon2b49a3e60108
 block|{
 DECL|member|tag
 name|gchar
@@ -994,7 +994,7 @@ comment|/* IPTC */
 if|if
 condition|(
 operator|!
-name|gimp_export_xmp
+name|gimp_export_iptc
 argument_list|()
 operator|||
 operator|!
