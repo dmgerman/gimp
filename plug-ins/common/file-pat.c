@@ -690,15 +690,10 @@ name|config
 argument_list|)
 argument_list|)
 condition|)
-block|{
 name|status
 operator|=
 name|GIMP_PDB_CANCEL
 expr_stmt|;
-goto|goto
-name|out
-goto|;
-block|}
 block|}
 if|if
 condition|(
@@ -809,8 +804,6 @@ name|save_retvals
 argument_list|)
 expr_stmt|;
 block|}
-name|out
-label|:
 name|g_object_unref
 argument_list|(
 name|config
@@ -887,7 +880,6 @@ literal|"Export Image as Pattern"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* The main grid */
 name|grid
 operator|=
 name|gtk_grid_new
