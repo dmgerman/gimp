@@ -77,6 +77,23 @@ define|default, flags) \   gimp_procedure_add_argument (procedure,\             
 end_define
 
 begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_BOOLEAN (class,name,nick,blurb,default,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_BOOLEAN
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+define|default, flags) \   gimp_procedure_add_aux_argument (procedure,\                                    g_param_spec_boolean (name, nick, blurb,\                                    default,\                                    flags))
+end_define
+
+begin_define
 DECL|macro|GIMP_PROC_VAL_BOOLEAN (class,name,nick,blurb,default,flags)
 define|#
 directive|define
@@ -146,6 +163,27 @@ parameter_list|,
 name|max
 parameter_list|,
 define|default, flags) \   gimp_procedure_add_argument (procedure,\                                g_param_spec_int (name, nick, blurb,\                                min, max, default,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_INT (class,name,nick,blurb,min,max,default,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_INT
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|min
+parameter_list|,
+name|max
+parameter_list|,
+define|default, flags) \   gimp_procedure_add_aux_argument (procedure,\                                    g_param_spec_int (name, nick, blurb,\                                    min, max, default,\                                    flags))
 end_define
 
 begin_define
@@ -225,6 +263,27 @@ define|default, flags) \   gimp_procedure_add_argument (procedure,\             
 end_define
 
 begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_UINT (class,name,nick,blurb,min,max,default,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_UINT
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|min
+parameter_list|,
+name|max
+parameter_list|,
+define|default, flags) \   gimp_procedure_add_aux_argument (procedure,\                                    g_param_spec_uint (name, nick, blurb,\                                    min, max, default,\                                    flags))
+end_define
+
+begin_define
 DECL|macro|GIMP_PROC_VAL_UINT (class,name,nick,blurb,min,max,default,flags)
 define|#
 directive|define
@@ -298,6 +357,27 @@ parameter_list|,
 name|max
 parameter_list|,
 define|default, flags) \   gimp_procedure_add_argument (procedure,\                                g_param_spec_uchar (name, nick, blurb,\                                min, max, default,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_UCHAR (class,name,nick,blurb,min,max,default,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_UCHAR
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|min
+parameter_list|,
+name|max
+parameter_list|,
+define|default, flags) \   gimp_procedure_add_aux_argument (procedure,\                                    g_param_spec_uchar (name, nick, blurb,\                                    min, max, default,\                                    flags))
 end_define
 
 begin_define
@@ -377,6 +457,27 @@ define|default, flags) \   gimp_procedure_add_argument (procedure,\             
 end_define
 
 begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_UNIT (class,name,nick,blurb,pixels,percent,default,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_UNIT
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|pixels
+parameter_list|,
+name|percent
+parameter_list|,
+define|default, flags) \   gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_unit (name, nick, blurb,\                                    pixels, percent, default,\                                    flags))
+end_define
+
+begin_define
 DECL|macro|GIMP_PROC_VAL_UNIT (class,name,nick,blurb,pixels,percent,default,flags)
 define|#
 directive|define
@@ -420,6 +521,27 @@ parameter_list|,
 name|max
 parameter_list|,
 define|default, flags) \   gimp_procedure_add_argument (procedure,\                                g_param_spec_double (name, nick, blurb,\                                min, max, default,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_DOUBLE (class,name,nick,blurb,min,max,default,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_DOUBLE
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|min
+parameter_list|,
+name|max
+parameter_list|,
+define|default, flags) \   gimp_procedure_add_aux_argument (procedure,\                                    g_param_spec_double (name, nick, blurb,\                                    min, max, default,\                                    flags))
 end_define
 
 begin_define
@@ -497,6 +619,25 @@ define|default, flags) \   gimp_procedure_add_argument (procedure,\             
 end_define
 
 begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_ENUM (class,name,nick,blurb,enum_type,default,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_ENUM
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|enum_type
+parameter_list|,
+define|default, flags) \   gimp_procedure_add_aux_argument (procedure,\                                    g_param_spec_enum (name, nick, blurb,\                                    enum_type, default,\                                    flags))
+end_define
+
+begin_define
 DECL|macro|GIMP_PROC_VAL_ENUM (class,name,nick,blurb,enum_type,default,flags)
 define|#
 directive|define
@@ -564,6 +705,23 @@ parameter_list|,
 name|blurb
 parameter_list|,
 define|default, flags) \   gimp_procedure_add_argument (procedure,\                                g_param_spec_string (name, nick, blurb,\                                default,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_STRING (class,name,nick,blurb,default,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_STRING
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+define|default, flags) \   gimp_procedure_add_aux_argument (procedure,\                                    g_param_spec_string (name, nick, blurb,\                                    default,\                                    flags))
 end_define
 
 begin_define
@@ -667,6 +825,25 @@ define|default, flags) \   gimp_procedure_add_argument (procedure,\             
 end_define
 
 begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_RGB (class,name,nick,blurb,has_alpha,default,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_RGB
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|has_alpha
+parameter_list|,
+define|default, flags) \   gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_rgb (name, nick, blurb,\                                    has_alpha, default, \                                    flags))
+end_define
+
+begin_define
 DECL|macro|GIMP_PROC_VAL_RGB (class,name,nick,blurb,has_alpha,default,flags)
 define|#
 directive|define
@@ -739,6 +916,26 @@ name|flags
 parameter_list|)
 define|\
 value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_parasite (name, nick, blurb,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_PARASITE (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_PARASITE
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_parasite (name, nick, blurb,\                                    flags))
 end_define
 
 begin_define
@@ -848,6 +1045,28 @@ value|gimp_procedure_add_argument (procedure,\                                g_
 end_define
 
 begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_PARAM (class,name,nick,blurb,param_type,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_PARAM
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|param_type
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    g_param_spec_param (name, nick, blurb, param_type, \                                    flags))
+end_define
+
+begin_define
 DECL|macro|GIMP_PROC_VAL_PARAM (class,name,nick,blurb,param_type,flags)
 define|#
 directive|define
@@ -951,6 +1170,26 @@ name|flags
 parameter_list|)
 define|\
 value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_uint8_array (name, nick, blurb,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_UINT8_ARRAY (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_UINT8_ARRAY
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_uint8_array (name, nick, blurb,\                                    flags))
 end_define
 
 begin_define
@@ -1062,6 +1301,26 @@ value|gimp_procedure_add_argument (procedure,\                                gi
 end_define
 
 begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_INT16_ARRAY (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_INT16_ARRAY
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_int16_array (name, nick, blurb,\                                    flags))
+end_define
+
+begin_define
 DECL|macro|GIMP_PROC_VAL_INT16_ARRAY (class,name,nick,blurb,flags)
 define|#
 directive|define
@@ -1167,6 +1426,26 @@ name|flags
 parameter_list|)
 define|\
 value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_int32_array (name, nick, blurb,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_INT32_ARRAY (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_INT32_ARRAY
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_int32_array (name, nick, blurb,\                                    flags))
 end_define
 
 begin_define
@@ -1278,6 +1557,26 @@ value|gimp_procedure_add_argument (procedure,\                                gi
 end_define
 
 begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_FLOAT_ARRAY (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_FLOAT_ARRAY
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_float_array (name, nick, blurb,\                                    flags))
+end_define
+
+begin_define
 DECL|macro|GIMP_PROC_VAL_FLOAT_ARRAY (class,name,nick,blurb,flags)
 define|#
 directive|define
@@ -1383,6 +1682,26 @@ name|flags
 parameter_list|)
 define|\
 value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_string_array (name, nick, blurb,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_STRING_ARRAY (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_STRING_ARRAY
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_string_array (name, nick, blurb,\                                    flags))
 end_define
 
 begin_define
@@ -1494,6 +1813,26 @@ value|gimp_procedure_add_argument (procedure,\                                gi
 end_define
 
 begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_RGB_ARRAY (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_RGB_ARRAY
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_rgb_array (name, nick, blurb,\                                    flags))
+end_define
+
+begin_define
 DECL|macro|GIMP_PROC_VAL_RGB_ARRAY (class,name,nick,blurb,flags)
 define|#
 directive|define
@@ -1601,6 +1940,28 @@ name|flags
 parameter_list|)
 define|\
 value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_object_array (name, nick, blurb,\                                                              object_type, flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_OBJECT_ARRAY (class,name,nick,blurb,object_type,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_OBJECT_ARRAY
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|object_type
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_object_array (name, nick, blurb,\                                                                  object_type, flags))
 end_define
 
 begin_define
@@ -1716,7 +2077,29 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_display (name, nick, blurb,\                                none_ok, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_display (name, nick, blurb,\                                none_ok,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_DISPLAY (class,name,nick,blurb,none_ok,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_DISPLAY
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|none_ok
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_display (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -1738,7 +2121,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_display (name, nick, blurb,\                                    none_ok, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_display (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -1808,7 +2191,29 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_image (name, nick, blurb,\                                none_ok, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_image (name, nick, blurb,\                                none_ok,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_IMAGE (class,name,nick,blurb,none_ok,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_IMAGE
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|none_ok
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                gimp_param_spec_image (name, nick, blurb,\                                none_ok,\                                flags))
 end_define
 
 begin_define
@@ -1830,7 +2235,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_image (name, nick, blurb,\                                    none_ok, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_image (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -1900,7 +2305,29 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_item (name, nick, blurb,\                                none_ok, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_item (name, nick, blurb,\                                none_ok,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_ITEM (class,name,nick,blurb,none_ok,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_ITEM
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|none_ok
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_item (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -1922,7 +2349,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_item (name, nick, blurb,\                                    none_ok, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_item (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -1992,7 +2419,29 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_drawable (name, nick, blurb,\                                none_ok, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_drawable (name, nick, blurb,\                                none_ok,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_DRAWABLE (class,name,nick,blurb,none_ok,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_DRAWABLE
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|none_ok
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_drawable (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2014,7 +2463,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_drawable (name, nick, blurb,\                                    none_ok, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_drawable (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2084,7 +2533,29 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_layer (name, nick, blurb,\                                none_ok, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_layer (name, nick, blurb,\                                none_ok,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_LAYER (class,name,nick,blurb,none_ok,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_LAYER
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|none_ok
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_layer (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2106,7 +2577,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_layer (name, nick, blurb,\                                    none_ok, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_layer (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2176,7 +2647,29 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_channel (name, nick, blurb,\                                none_ok, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_channel (name, nick, blurb,\                                none_ok,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_CHANNEL (class,name,nick,blurb,none_ok,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_CHANNEL
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|none_ok
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_channel (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2198,7 +2691,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_channe (name, nick, blurb,\                                    none_ok, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_channe (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2268,7 +2761,29 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_layer_mask (name, nick, blurb,\                                none_ok, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_layer_mask (name, nick, blurb,\                                none_ok,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_LAYER_MASK (class,name,nick,blurb,none_ok,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_LAYER_MASK
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|none_ok
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_layer_mask (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2290,7 +2805,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_layer_mask (name, nick, blurb,\                                    none_ok, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_layer_mask (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2360,7 +2875,29 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_selection (name, nick, blurb,\                                none_ok, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_selection (name, nick, blurb,\                                none_ok,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_SELECTION (class,name,nick,blurb,none_ok,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_SELECTION
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|none_ok
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_selection (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2382,7 +2919,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_selection (name, nick, blurb,\                                    none_ok, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_selection (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2452,7 +2989,29 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_vectors (name, nick, blurb,\                                none_ok, \                                flags))
+value|gimp_procedure_add_argument (procedure,\                                gimp_param_spec_vectors (name, nick, blurb,\                                none_ok,\                                flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_VECTORS (class,name,nick,blurb,none_ok,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_VECTORS
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|none_ok
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    gimp_param_spec_vectors (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2474,7 +3033,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_vectors (name, nick, blurb,\                                    none_ok, \                                    flags))
+value|gimp_procedure_add_return_value (procedure,\                                    gimp_param_spec_vectors (name, nick, blurb,\                                    none_ok,\                                    flags))
 end_define
 
 begin_define
@@ -2543,6 +3102,26 @@ name|flags
 parameter_list|)
 define|\
 value|gimp_procedure_add_argument (procedure,\                                g_param_spec_object (name, nick, blurb,\                                                     G_TYPE_FILE,\                                                     flags))
+end_define
+
+begin_define
+DECL|macro|GIMP_PROC_AUX_ARG_FILE (class,name,nick,blurb,flags)
+define|#
+directive|define
+name|GIMP_PROC_AUX_ARG_FILE
+parameter_list|(
+name|class
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|gimp_procedure_add_aux_argument (procedure,\                                    g_param_spec_object (name, nick, blurb,\                                                         G_TYPE_FILE,\                                                         flags))
 end_define
 
 begin_define
