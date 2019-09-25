@@ -1018,7 +1018,7 @@ name|GIMP_PROC_AUX_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-literal|"save-profile"
+literal|"save-color-profile"
 argument_list|,
 literal|"Save profile"
 argument_list|,
@@ -4461,7 +4461,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27599b050108
+DECL|struct|__anon29c760720108
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4821,7 +4821,7 @@ argument_list|,
 operator|&
 name|save_thumbnail
 argument_list|,
-literal|"save-profile"
+literal|"save-color-profile"
 argument_list|,
 operator|&
 name|save_profile
@@ -8793,7 +8793,7 @@ name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"save-profile"
+literal|"save-color-profile"
 argument_list|,
 name|_
 argument_list|(

@@ -704,9 +704,9 @@ name|GIMP_PROC_AUX_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-literal|"save-profile"
+literal|"save-color-profile"
 argument_list|,
-literal|"Save profile"
+literal|"Save color profile"
 argument_list|,
 literal|"Save the image's color profile"
 argument_list|,
@@ -2550,7 +2550,7 @@ argument_list|,
 operator|&
 name|quality
 argument_list|,
-literal|"save-profile"
+literal|"save-color-profile"
 argument_list|,
 operator|&
 name|save_profile
@@ -4747,7 +4747,7 @@ name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"save-profile"
+literal|"save-color-profile"
 argument_list|,
 name|_
 argument_list|(
