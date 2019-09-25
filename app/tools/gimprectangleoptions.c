@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a07598e0103
+DECL|enum|__anon27b368f20103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2614,11 +2614,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menu
-argument_list|)
-expr_stmt|;
 comment|/*  content  */
 name|hbox
 operator|=
@@ -2906,11 +2901,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 comment|/* Rectangle fixed-rules (e.g. aspect or width). */
 block|{
 name|GtkWidget
@@ -3024,11 +3014,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|button
@@ -3094,11 +3079,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3258,11 +3238,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|entry
-argument_list|)
-expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|entry
@@ -3345,13 +3320,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|private
-operator|->
-name|aspect_button_box
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer
@@ -3446,7 +3414,13 @@ operator|->
 name|fixed_width_entry
 argument_list|)
 expr_stmt|;
-comment|/* don't show */
+name|gtk_widget_hide
+argument_list|(
+name|private
+operator|->
+name|fixed_width_entry
+argument_list|)
+expr_stmt|;
 name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
@@ -3514,7 +3488,13 @@ operator|->
 name|fixed_height_entry
 argument_list|)
 expr_stmt|;
-comment|/* don't show */
+name|gtk_widget_hide
+argument_list|(
+name|private
+operator|->
+name|fixed_height_entry
+argument_list|)
+expr_stmt|;
 name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
@@ -3572,7 +3552,13 @@ operator|->
 name|fixed_size_hbox
 argument_list|)
 expr_stmt|;
-comment|/* don't show */
+name|gtk_widget_hide
+argument_list|(
+name|private
+operator|->
+name|fixed_size_hbox
+argument_list|)
+expr_stmt|;
 name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
@@ -3639,11 +3625,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|entry
-argument_list|)
-expr_stmt|;
 name|gimp_rectangle_options_setup_ratio_completion
 argument_list|(
 name|GIMP_RECTANGLE_OPTIONS
@@ -3698,13 +3679,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|private
-operator|->
-name|size_button_box
 argument_list|)
 expr_stmt|;
 comment|/* hide "square" */
@@ -3906,11 +3880,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 block|}
 comment|/*  Guide  */
 name|combo
@@ -3940,11 +3909,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
 argument_list|)
 expr_stmt|;
 comment|/*  Auto Shrink  */
@@ -4037,11 +4001,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 comment|/* Setup initial fixed rule widgets */

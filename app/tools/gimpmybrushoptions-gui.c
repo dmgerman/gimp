@@ -170,11 +170,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 comment|/* erase mode */
 name|scale
 operator|=
@@ -203,11 +198,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/* no erasing */
 name|scale
 operator|=
@@ -234,11 +224,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 comment|/* radius */
@@ -275,11 +260,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/* opaque */
 name|scale
 operator|=
@@ -314,11 +294,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/* hardness */
 name|scale
 operator|=
@@ -351,11 +326,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 return|return

@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afbdf310103
+DECL|enum|__anon2ba5e5240103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -994,11 +994,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 name|hbox
 operator|=
 name|gtk_box_new
@@ -1083,11 +1078,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 name|button
@@ -1206,11 +1196,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 comment|/*  mask color */
 name|button
 operator|=
@@ -1256,11 +1241,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 comment|/* engine */
@@ -1352,11 +1332,6 @@ argument_list|(
 name|combo
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
 argument_list|)
 expr_stmt|;
 name|inner_vbox

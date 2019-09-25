@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2e6b1d0103
+DECL|enum|__anon2bf08e0b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -533,11 +533,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 name|button
 operator|=
 name|g_object_get_data
@@ -625,11 +620,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 name|str

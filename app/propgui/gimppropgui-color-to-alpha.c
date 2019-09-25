@@ -334,11 +334,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|hbox
 operator|=
 name|gtk_box_new
@@ -405,11 +400,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 if|if
@@ -531,11 +521,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 if|if

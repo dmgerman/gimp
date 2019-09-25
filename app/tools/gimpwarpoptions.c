@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdaac870103
+DECL|enum|__anon2b535c000103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1106,11 +1106,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
-argument_list|)
-expr_stmt|;
 name|options
 operator|->
 name|behavior_combo
@@ -1162,11 +1157,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 name|scale
 operator|=
 name|gimp_prop_spin_scale_new
@@ -1210,11 +1200,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 name|scale
@@ -1262,11 +1247,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 name|scale
 operator|=
 name|gimp_prop_spin_scale_new
@@ -1310,11 +1290,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 name|combo
@@ -1370,11 +1345,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
-argument_list|)
-expr_stmt|;
 name|combo
 operator|=
 name|gimp_prop_enum_combo_box_new
@@ -1428,11 +1398,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
-argument_list|)
-expr_stmt|;
 name|button
 operator|=
 name|gimp_prop_check_button_new
@@ -1460,11 +1425,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|button
 operator|=
 name|gimp_prop_check_button_new
@@ -1490,11 +1450,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 comment|/*  the stroke frame  */
@@ -1586,11 +1541,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|scale
 operator|=
 name|gimp_prop_spin_scale_new
@@ -1649,11 +1599,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
 argument_list|)
 expr_stmt|;
 comment|/*  the animation frame  */
@@ -1755,11 +1700,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 name|options

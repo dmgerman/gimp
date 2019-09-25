@@ -231,11 +231,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/* angle adjust slider */
 name|scale
 operator|=
@@ -268,11 +263,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 comment|/* sens sliders */
@@ -365,11 +355,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/* tilt sens slider */
 name|scale
 operator|=
@@ -404,11 +389,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/* velocity sens slider */
 name|scale
 operator|=
@@ -441,11 +421,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 comment|/* Blob shape widgets */
@@ -551,11 +526,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|blob_box
 argument_list|)
 expr_stmt|;
 name|gtk_size_group_add_widget

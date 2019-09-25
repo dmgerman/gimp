@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aba19d50103
+DECL|enum|__anon29bdc7730103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -454,11 +454,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|mode
-argument_list|)
-expr_stmt|;
 name|button
 operator|=
 name|gimp_prop_check_button_new
@@ -484,11 +479,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 return|return

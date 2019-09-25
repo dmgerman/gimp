@@ -1027,13 +1027,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|t_tool
-operator|->
-name|channel_menu
-argument_list|)
-expr_stmt|;
 name|gtk_label_set_mnemonic_widget
 argument_list|(
 name|GTK_LABEL
@@ -1078,11 +1071,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox2
 argument_list|)
 expr_stmt|;
 name|frame_vbox

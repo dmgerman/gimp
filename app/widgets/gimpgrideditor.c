@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab125740103
+DECL|enum|__anon2768eb1d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -917,11 +917,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|sizeentry
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
@@ -1129,11 +1124,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|sizeentry
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

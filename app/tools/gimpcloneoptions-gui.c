@@ -244,11 +244,6 @@ argument_list|,
 name|combo
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
-argument_list|)
-expr_stmt|;
 name|source_vbox
 operator|=
 name|gtk_box_new
@@ -435,11 +430,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
 argument_list|)
 expr_stmt|;
 return|return

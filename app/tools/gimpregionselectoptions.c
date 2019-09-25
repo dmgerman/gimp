@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949cb250103
+DECL|enum|__anon2c1b7ece0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -856,11 +856,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 comment|/*  the sample merged toggle  */
 name|button
 operator|=
@@ -887,11 +882,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 comment|/*  the diagonal neighbors toggle  */
@@ -929,11 +919,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 block|}
 comment|/*  the threshold scale  */
 name|scale
@@ -967,11 +952,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 comment|/*  the select criterion combo  */
@@ -1017,11 +997,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
-argument_list|)
-expr_stmt|;
 comment|/*  the show mask toggle  */
 name|button
 operator|=
@@ -1048,11 +1023,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 return|return

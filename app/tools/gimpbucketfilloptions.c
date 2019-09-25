@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b189e050103
+DECL|enum|__anon2c50cf9f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1490,11 +1490,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|str
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -1511,9 +1506,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
+name|g_free
 argument_list|(
-name|frame
+name|str
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -1581,11 +1576,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|str
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -1602,9 +1592,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
+name|g_free
 argument_list|(
-name|frame
+name|str
 argument_list|)
 expr_stmt|;
 comment|/* Similar color frame */
@@ -1699,11 +1689,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 comment|/*  the sample merged toggle  */
 name|widget
 operator|=
@@ -1730,11 +1715,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
 argument_list|)
 expr_stmt|;
 comment|/*  the diagonal neighbors toggle  */
@@ -1773,11 +1753,6 @@ name|diagonal_neighbors_checkbox
 operator|=
 name|widget
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 comment|/*  the antialias toggle  */
 name|widget
 operator|=
@@ -1804,11 +1779,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
 argument_list|)
 expr_stmt|;
 comment|/*  the threshold scale  */
@@ -1853,11 +1823,6 @@ name|threshold_scale
 operator|=
 name|scale
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/*  the fill criterion combo  */
 name|combo
 operator|=
@@ -1899,11 +1864,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
 argument_list|)
 expr_stmt|;
 comment|/* Line art frame */
@@ -2126,11 +2086,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
-argument_list|)
-expr_stmt|;
 comment|/*  the fill transparent areas toggle  */
 name|widget
 operator|=
@@ -2157,11 +2112,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
 argument_list|)
 expr_stmt|;
 comment|/*  Line Art: feather radius scale  */
@@ -2213,11 +2163,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 comment|/*  Line Art: max growing size */
 name|scale
 operator|=
@@ -2250,11 +2195,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 comment|/*  Line Art: stroke threshold */
@@ -2291,11 +2231,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/*  Line Art: max gap length */
 name|scale
 operator|=
@@ -2328,11 +2263,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 name|gimp_bucket_fill_options_update_area

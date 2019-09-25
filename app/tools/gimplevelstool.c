@@ -1734,11 +1734,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox2
-argument_list|)
-expr_stmt|;
 comment|/*  The linear/perceptual radio buttons  */
 name|hbox2
 operator|=
@@ -1774,11 +1769,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox2
 argument_list|)
 expr_stmt|;
 name|frame_vbox
@@ -2338,11 +2328,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spinbutton
-argument_list|)
-expr_stmt|;
 name|tool
 operator|->
 name|low_input
@@ -2432,11 +2417,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 comment|/*  input gamma spin  */
 name|spinbutton
 operator|=
@@ -2481,11 +2461,6 @@ literal|"Gamma"
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spinbutton
 argument_list|)
 expr_stmt|;
 name|tool
@@ -2648,11 +2623,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spinbutton
 argument_list|)
 expr_stmt|;
 name|tool
@@ -2984,11 +2954,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spinbutton
-argument_list|)
-expr_stmt|;
 name|adjustment
 operator|=
 name|gtk_spin_button_get_adjustment
@@ -3044,11 +3009,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 comment|/*  high output spin  */
 name|tool
 operator|->
@@ -3085,11 +3045,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spinbutton
 argument_list|)
 expr_stmt|;
 name|adjustment

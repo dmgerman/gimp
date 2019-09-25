@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e6f460103
+DECL|enum|__anon2bf474a50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1210,13 +1210,6 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|button
-operator|->
-name|view
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
 name|button
 operator|->
 name|view

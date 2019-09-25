@@ -474,11 +474,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menu
-argument_list|)
-expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -583,11 +578,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/*  temp debug foo, disabled in stable  */
 if|if
 condition|(
@@ -634,11 +624,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -713,11 +698,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 name|link_group
@@ -1141,11 +1121,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|frame
 operator|=
 name|dynamics_options_gui
@@ -1295,11 +1270,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 block|}
 comment|/*  the "incremental" toggle  */
 if|if
@@ -1354,11 +1324,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -1423,11 +1388,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -1696,11 +1656,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 name|menu
 operator|=
 name|gimp_prop_unit_combo_box_new
@@ -1724,11 +1679,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menu
 argument_list|)
 expr_stmt|;
 if|#
@@ -1792,11 +1742,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
-argument_list|)
-expr_stmt|;
 name|checkbox
 operator|=
 name|gimp_prop_check_button_new
@@ -1822,11 +1767,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|checkbox
 argument_list|)
 expr_stmt|;
 comment|/* Color UI */
@@ -1949,11 +1889,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|box
-argument_list|)
-expr_stmt|;
 comment|/*  the blend color space  */
 name|combo
 operator|=
@@ -2006,11 +1941,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
 argument_list|)
 expr_stmt|;
 block|}
@@ -2195,11 +2125,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 name|scale
 operator|=
 name|gimp_prop_spin_scale_new
@@ -2231,11 +2156,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 return|return

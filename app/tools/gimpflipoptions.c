@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8551950103
+DECL|enum|__anon27c2463e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -462,11 +462,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|str
@@ -566,11 +561,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
 argument_list|)
 expr_stmt|;
 name|g_object_unref

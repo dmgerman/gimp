@@ -1784,11 +1784,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
-argument_list|)
-expr_stmt|;
 name|toggle
 operator|=
 name|gimp_prop_check_button_new
@@ -1819,11 +1814,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
 argument_list|)
 expr_stmt|;
 name|g_object_bind_property
@@ -1883,11 +1873,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|filter_tool
 operator|->
 name|widget
 condition|)
-name|gtk_widget_show
+name|gtk_widget_hide
 argument_list|(
 name|filter_tool
 operator|->
@@ -2033,11 +2024,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
-argument_list|)
-expr_stmt|;
 comment|/*  The area combo  */
 name|filter_tool
 operator|->
@@ -2075,6 +2061,13 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_hide
+argument_list|(
+name|filter_tool
+operator|->
+name|region_combo
 argument_list|)
 expr_stmt|;
 comment|/*  The clipping combo  */
@@ -2129,6 +2122,13 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_hide
+argument_list|(
+name|filter_tool
+operator|->
+name|clip_combo
 argument_list|)
 expr_stmt|;
 comment|/*  Fill in subclass widgets  */

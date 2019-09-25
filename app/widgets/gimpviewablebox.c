@@ -3057,6 +3057,11 @@ argument_list|,
 literal|"popup-view-size"
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|box
+argument_list|)
+expr_stmt|;
 return|return
 name|box
 return|;

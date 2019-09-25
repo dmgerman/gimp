@@ -1450,11 +1450,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1708,11 +1703,6 @@ argument_list|,
 literal|1
 argument_list|,
 literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 return|return

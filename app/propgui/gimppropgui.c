@@ -1882,6 +1882,11 @@ name|widget
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_show
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 return|return
 name|widget
 return|;
@@ -1934,7 +1939,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296cc34d0108
+DECL|struct|__anon27a2cf740108
 block|{
 DECL|member|config_type
 specifier|const
@@ -2297,6 +2302,11 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_show
+argument_list|(
+name|gui
+argument_list|)
+expr_stmt|;
 return|return
 name|gui
 return|;

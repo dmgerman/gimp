@@ -1127,6 +1127,11 @@ operator|)
 name|g_list_free
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|main_vbox
+argument_list|)
+expr_stmt|;
 return|return
 name|main_vbox
 return|;

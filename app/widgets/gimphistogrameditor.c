@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7db17a0103
+DECL|enum|__anon2be5844a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -700,11 +700,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menu
-argument_list|)
-expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|editor
@@ -753,11 +748,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menu
-argument_list|)
-expr_stmt|;
 name|menu
 operator|=
 name|gimp_prop_enum_icon_box_new
@@ -792,11 +782,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menu
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

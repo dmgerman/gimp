@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ba52d0103
+DECL|enum|__anon278af5290103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1478,11 +1478,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 comment|/*  the guides frame  */
 name|frame
 operator|=
@@ -1557,11 +1552,6 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|combo
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
 name|combo
 argument_list|)
 expr_stmt|;
@@ -1685,11 +1675,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|button
@@ -1770,11 +1755,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|button
@@ -1832,11 +1812,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
@@ -1919,11 +1894,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|button
@@ -1983,11 +1953,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|button
@@ -2019,7 +1984,7 @@ name|GIMP_TYPE_UNIFIED_TRANSFORM_TOOL
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2c2ba52d0208
+DECL|struct|__anon278af5290208
 block|{
 DECL|member|mod
 name|GdkModifierType
@@ -2365,11 +2330,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 name|g_free

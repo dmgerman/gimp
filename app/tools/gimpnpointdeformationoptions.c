@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c19c8940103
+DECL|enum|__anon27b1ba310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -714,11 +714,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 name|widget
 operator|=
 name|gimp_prop_spin_scale_new
@@ -777,11 +772,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 name|widget
 operator|=
 name|gimp_prop_spin_scale_new
@@ -834,11 +824,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 name|widget
 operator|=
 name|gimp_prop_boolean_radio_frame_new
@@ -883,11 +868,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 name|widget
 operator|=
 name|gimp_prop_check_button_new
@@ -920,11 +900,6 @@ argument_list|(
 name|widget
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
 argument_list|)
 expr_stmt|;
 name|widget
@@ -977,11 +952,6 @@ argument_list|(
 name|widget
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|widget
 argument_list|)
 expr_stmt|;
 name|g_object_bind_property

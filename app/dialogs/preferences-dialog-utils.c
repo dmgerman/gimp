@@ -492,7 +492,6 @@ if|if
 condition|(
 name|button
 condition|)
-block|{
 name|gtk_box_pack_start
 argument_list|(
 name|vbox
@@ -506,12 +505,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|button
 return|;
@@ -677,11 +670,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -1419,7 +1407,6 @@ if|if
 condition|(
 name|combo
 condition|)
-block|{
 name|gtk_box_pack_start
 argument_list|(
 name|vbox
@@ -1433,12 +1420,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|combo
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|combo
 return|;

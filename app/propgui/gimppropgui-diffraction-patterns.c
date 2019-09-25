@@ -201,11 +201,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|_gimp_prop_gui_new_generic
@@ -255,11 +250,6 @@ argument_list|(
 literal|"Contours"
 argument_list|)
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -313,11 +303,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|_gimp_prop_gui_new_generic
@@ -367,11 +352,6 @@ argument_list|(
 literal|"Other Options"
 argument_list|)
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
 argument_list|)
 expr_stmt|;
 return|return

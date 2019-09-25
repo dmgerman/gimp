@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5ea7d50103
+DECL|enum|__anon298d1d6f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1855,11 +1855,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
 argument_list|)
 expr_stmt|;
 block|}

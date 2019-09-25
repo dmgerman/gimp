@@ -416,7 +416,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon292bb9860108
+DECL|struct|__anon2ad3399f0108
 block|{
 DECL|member|label
 specifier|const
@@ -1090,11 +1090,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 name|frame
 operator|=
 name|gimp_frame_new
@@ -1204,11 +1199,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/*  Create the lightness scale widget  */
 name|scale
 operator|=
@@ -1259,11 +1249,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 comment|/*  Create the saturation scale widget  */
 name|scale
 operator|=
@@ -1312,11 +1297,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 name|hbox

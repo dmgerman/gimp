@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c48f5b70103
+DECL|enum|__anon2b00dbe10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -757,11 +757,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|box
-argument_list|)
-expr_stmt|;
 name|children
 operator|=
 name|gtk_container_get_children
@@ -937,11 +932,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|options
 operator|->
 name|antialias_toggle
@@ -1005,11 +995,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
 argument_list|)
 expr_stmt|;
 block|}

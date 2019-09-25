@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3c109d0103
+DECL|enum|__anon28e8d5c30103
 block|{
 DECL|enumerator|PROP_ROUND_CORNERS
 name|PROP_ROUND_CORNERS
@@ -604,11 +604,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
 argument_list|)
 expr_stmt|;
 name|toggle

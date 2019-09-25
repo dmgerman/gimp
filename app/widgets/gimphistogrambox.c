@@ -856,11 +856,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spinbutton
-argument_list|)
-expr_stmt|;
 name|spinbutton
 operator|=
 name|gimp_prop_spin_button_new
@@ -895,11 +890,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spinbutton
 argument_list|)
 expr_stmt|;
 endif|#

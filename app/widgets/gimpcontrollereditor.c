@@ -132,7 +132,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6ede7a0103
+DECL|enum|__anon29bcd45e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6ede7a0203
+DECL|enum|__anon29bcd45e0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -803,11 +803,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|entry
-argument_list|)
-expr_stmt|;
 name|button
 operator|=
 name|gimp_prop_check_button_new
@@ -841,11 +836,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|button
 operator|=
 name|gimp_prop_check_button_new
@@ -877,11 +867,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 name|frame

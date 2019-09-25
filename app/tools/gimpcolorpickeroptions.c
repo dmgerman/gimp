@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0ab9220103
+DECL|enum|__anon2c261acc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -627,11 +627,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 comment|/*  the pick FG/BG frame  */
 name|str
 operator|=
@@ -665,11 +660,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|str
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -686,9 +676,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
+name|g_free
 argument_list|(
-name|frame
+name|str
 argument_list|)
 expr_stmt|;
 comment|/*  the use_info_window toggle button  */
@@ -718,11 +708,6 @@ argument_list|,
 name|str
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|str
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -739,9 +724,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
+name|g_free
 argument_list|(
-name|button
+name|str
 argument_list|)
 expr_stmt|;
 return|return

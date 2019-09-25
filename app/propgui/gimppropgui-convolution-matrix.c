@@ -757,18 +757,13 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spin
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 comment|/* rotate / flip buttons */
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1e2f820108
+DECL|struct|__anon2ac311c20108
 block|{
 DECL|member|tooltip
 specifier|const
@@ -1207,11 +1202,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
 name|scale
 operator|=
 name|gimp_prop_widget_new
@@ -1248,11 +1238,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
 argument_list|)
 expr_stmt|;
 comment|/* rest of the properties */
@@ -1335,11 +1320,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox2
-argument_list|)
-expr_stmt|;
 name|vbox2
 operator|=
 name|_gimp_prop_gui_new_generic
@@ -1379,11 +1359,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox2
 argument_list|)
 expr_stmt|;
 return|return

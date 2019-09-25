@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e8a63d0103
+DECL|enum|__anon2af6a84b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3176,11 +3176,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|checkbox
 argument_list|)
 expr_stmt|;
 block|}

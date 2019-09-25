@@ -2370,11 +2370,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox2
-argument_list|)
-expr_stmt|;
 comment|/*  The linear/perceptual radio buttons  */
 name|hbox2
 operator|=
@@ -2410,11 +2405,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox2
 argument_list|)
 expr_stmt|;
 name|frame_vbox

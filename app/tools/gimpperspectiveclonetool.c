@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon288e63510103
+DECL|enum|__anon27610aa30103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -3941,11 +3941,6 @@ argument_list|,
 name|mode
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|mode
 argument_list|)
 expr_stmt|;
 return|return

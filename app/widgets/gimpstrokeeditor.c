@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277d32ef0103
+DECL|enum|__anon2bb1f3cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -546,11 +546,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|size
 argument_list|)
 expr_stmt|;
 name|expander

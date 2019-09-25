@@ -180,7 +180,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9402530103
+DECL|enum|__anon29f600340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1538,13 +1538,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|entry
-operator|->
-name|tool
 argument_list|)
 expr_stmt|;
 comment|/*  the foreground color  */

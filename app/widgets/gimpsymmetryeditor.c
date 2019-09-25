@@ -744,15 +744,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|editor
-operator|->
-name|p
-operator|->
-name|menu
-argument_list|)
-expr_stmt|;
 comment|/* Connect to symmetry change. */
 name|g_signal_connect
 argument_list|(
@@ -1046,11 +1037,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|gui
 argument_list|)
 expr_stmt|;
 block|}
