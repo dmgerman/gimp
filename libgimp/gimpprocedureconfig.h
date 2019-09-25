@@ -334,6 +334,9 @@ name|image
 parameter_list|,
 name|GimpRunMode
 name|run_mode
+parameter_list|,
+name|GimpPDBStatusType
+name|status
 parameter_list|)
 function_decl|;
 end_function_decl

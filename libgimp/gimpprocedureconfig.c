@@ -21,7 +21,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a426be0103
+DECL|enum|__anon276fc80c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1082,12 +1082,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_config_end_run:  * @config:   a #GimpProcedureConfig  * @image:    a #GimpImage or %NULL  * @run_mode: the #GimpRunMode passed to a #GimpProcedure's run()  *  * This function is the counterpart of  * gimp_procedure_conig_begin_run() and should be used upon successful  * completion of a procedure's run(), before returning  * %GIMP_PDB_SUCCESS return values.  *  * If @run_mode is %GIMP_RUN_INTERACTIVE, @config is saved as last  * used values to be used when the procedure runs again. Additionally,  * if @image is not %NULL, @config is attached to @image as last used  * values for this image using a #GimpParasite and  * gimp_image_attach_parasite().  *  * If @run_mode is not %GIMP_RUN_NONINTERACTIVE, this function also  * conveniently calls gimp_display_flush(), which is what most  * procedures want and doesn't do any harm if called redundantly.  *  * See gimp_procedure_config_begin_run().  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_config_end_run:  * @config:   a #GimpProcedureConfig  * @image:    a #GimpImage or %NULL  * @run_mode: the #GimpRunMode passed to a #GimpProcedure's run()  * @status:   the return status of the #GimpProcedure's run()  *  * This function is the counterpart of  * gimp_procedure_conig_begin_run() and must always be called in pairs  * in a procedure's run(), before returning return values.  *  * If @run_mode is %GIMP_RUN_INTERACTIVE, @config is saved as last  * used values to be used when the procedure runs again. Additionally,  * if @image is not %NULL, @config is attached to @image as last used  * values for this image using a #GimpParasite and  * gimp_image_attach_parasite().  *  * If @run_mode is not %GIMP_RUN_NONINTERACTIVE, this function also  * conveniently calls gimp_display_flush(), which is what most  * procedures want and doesn't do any harm if called redundantly.  *  * See gimp_procedure_config_begin_run().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_procedure_config_end_run (GimpProcedureConfig * config,GimpImage * image,GimpRunMode run_mode)
+DECL|function|gimp_procedure_config_end_run (GimpProcedureConfig * config,GimpImage * image,GimpRunMode run_mode,GimpPDBStatusType status)
 name|gimp_procedure_config_end_run
 parameter_list|(
 name|GimpProcedureConfig
@@ -1100,6 +1100,9 @@ name|image
 parameter_list|,
 name|GimpRunMode
 name|run_mode
+parameter_list|,
+name|GimpPDBStatusType
+name|status
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1133,6 +1136,10 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
+operator|&&
 name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
