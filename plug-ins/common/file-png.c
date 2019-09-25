@@ -1324,6 +1324,31 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|config
+operator|=
+name|gimp_procedure_create_config
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_config_begin_run
+argument_list|(
+name|config
+argument_list|,
+name|image
+argument_list|,
+name|run_mode
+argument_list|,
+name|args
+argument_list|)
+expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* Override the defaults with preferences. */
+block|metadata = gimp_image_metadata_save_prepare (image,                                                "image/png",&metadata_flags);   pngvals.save_exif      = (metadata_flags& GIMP_METADATA_SAVE_EXIF) != 0;   pngvals.save_xmp       = (metadata_flags& GIMP_METADATA_SAVE_XMP) != 0;   pngvals.save_iptc      = (metadata_flags& GIMP_METADATA_SAVE_IPTC) != 0;   pngvals.save_thumbnail = (metadata_flags& GIMP_METADATA_SAVE_THUMBNAIL) != 0;   pngvals.save_profile   = (metadata_flags& GIMP_METADATA_SAVE_COLOR_PROFILE) != 0;
+endif|#
+directive|endif
 name|orig_image
 operator|=
 name|image
@@ -1385,31 +1410,6 @@ break|break;
 default|default:
 break|break;
 block|}
-name|config
-operator|=
-name|gimp_procedure_create_config
-argument_list|(
-name|procedure
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_config_begin_run
-argument_list|(
-name|config
-argument_list|,
-name|orig_image
-argument_list|,
-name|run_mode
-argument_list|,
-name|args
-argument_list|)
-expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/* Override the defaults with preferences. */
-block|metadata = gimp_image_metadata_save_prepare (orig_image,                                                "image/png",&metadata_flags);   pngvals.save_exif      = (metadata_flags& GIMP_METADATA_SAVE_EXIF) != 0;   pngvals.save_xmp       = (metadata_flags& GIMP_METADATA_SAVE_XMP) != 0;   pngvals.save_iptc      = (metadata_flags& GIMP_METADATA_SAVE_IPTC) != 0;   pngvals.save_thumbnail = (metadata_flags& GIMP_METADATA_SAVE_THUMBNAIL) != 0;   pngvals.save_profile   = (metadata_flags& GIMP_METADATA_SAVE_COLOR_PROFILE) != 0;
-endif|#
-directive|endif
 name|alpha
 operator|=
 name|gimp_drawable_has_alpha
@@ -1643,7 +1643,7 @@ name|GIMP_METADATA_SAVE_COLOR_PROFILE
 expr_stmt|;
 name|gimp_image_metadata_save_finish
 argument_list|(
-name|orig_image
+name|image
 argument_list|,
 literal|"image/png"
 argument_list|,
@@ -1674,10 +1674,6 @@ block|}
 name|gimp_procedure_config_end_run
 argument_list|(
 name|config
-argument_list|,
-name|orig_image
-argument_list|,
-name|run_mode
 argument_list|,
 name|status
 argument_list|)
@@ -4461,7 +4457,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec36c60108
+DECL|struct|__anon29b2f0390108
 block|{
 DECL|member|has_trns
 name|gboolean

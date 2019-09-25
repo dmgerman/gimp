@@ -21,7 +21,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276fc80c0103
+DECL|enum|__anon2a226f210103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -44,6 +44,15 @@ DECL|member|procedure
 name|GimpProcedure
 modifier|*
 name|procedure
+decl_stmt|;
+DECL|member|image
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
+DECL|member|run_mode
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 block|}
 struct|;
@@ -356,6 +365,15 @@ name|gimp_procedure_config_get_instance_private
 argument_list|(
 name|config
 argument_list|)
+expr_stmt|;
+name|config
+operator|->
+name|priv
+operator|->
+name|run_mode
+operator|=
+operator|-
+literal|1
 expr_stmt|;
 block|}
 end_function
@@ -981,6 +999,22 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|config
+operator|->
+name|priv
+operator|->
+name|image
+operator|=
+name|image
+expr_stmt|;
+name|config
+operator|->
+name|priv
+operator|->
+name|run_mode
+operator|=
+name|run_mode
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -1082,24 +1116,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_config_end_run:  * @config:   a #GimpProcedureConfig  * @image:    a #GimpImage or %NULL  * @run_mode: the #GimpRunMode passed to a #GimpProcedure's run()  * @status:   the return status of the #GimpProcedure's run()  *  * This function is the counterpart of  * gimp_procedure_conig_begin_run() and must always be called in pairs  * in a procedure's run(), before returning return values.  *  * If @run_mode is %GIMP_RUN_INTERACTIVE, @config is saved as last  * used values to be used when the procedure runs again. Additionally,  * if @image is not %NULL, @config is attached to @image as last used  * values for this image using a #GimpParasite and  * gimp_image_attach_parasite().  *  * If @run_mode is not %GIMP_RUN_NONINTERACTIVE, this function also  * conveniently calls gimp_display_flush(), which is what most  * procedures want and doesn't do any harm if called redundantly.  *  * See gimp_procedure_config_begin_run().  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_config_end_run:  * @config: a #GimpProcedureConfig  * @status: the return status of the #GimpProcedure's run()  *  * This function is the counterpart of  * gimp_procedure_conig_begin_run() and must always be called in pairs  * in a procedure's run(), before returning return values.  *  * If the @run_mode passed to gimp_procedure_config_end_run() was  * %GIMP_RUN_INTERACTIVE, @config is saved as last used values to be  * used when the procedure runs again. Additionally, the @image passed  * gimp_procedure_config_begin_run() was not %NULL, @config is  * attached to @image as last used values for this image using a  * #GimpParasite and gimp_image_attach_parasite().  *  * If @run_mode was not %GIMP_RUN_NONINTERACTIVE, this function also  * conveniently calls gimp_display_flush(), which is what most  * procedures want and doesn't do any harm if called redundantly.  *  * See gimp_procedure_config_begin_run().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_procedure_config_end_run (GimpProcedureConfig * config,GimpImage * image,GimpRunMode run_mode,GimpPDBStatusType status)
+DECL|function|gimp_procedure_config_end_run (GimpProcedureConfig * config,GimpPDBStatusType status)
 name|gimp_procedure_config_end_run
 parameter_list|(
 name|GimpProcedureConfig
 modifier|*
 name|config
-parameter_list|,
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-name|GimpRunMode
-name|run_mode
 parameter_list|,
 name|GimpPDBStatusType
 name|status
@@ -1113,20 +1140,12 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|image
-operator|==
-name|NULL
-operator|||
-name|GIMP_IS_IMAGE
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
+name|config
+operator|->
+name|priv
+operator|->
 name|run_mode
 operator|!=
 name|GIMP_RUN_NONINTERACTIVE
@@ -1140,6 +1159,10 @@ name|status
 operator|==
 name|GIMP_PDB_SUCCESS
 operator|&&
+name|config
+operator|->
+name|priv
+operator|->
 name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
@@ -1153,12 +1176,20 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
+name|config
+operator|->
+name|priv
+operator|->
 name|image
 condition|)
 name|gimp_procedure_config_save_parasite
 argument_list|(
 name|config
 argument_list|,
+name|config
+operator|->
+name|priv
+operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -1191,6 +1222,23 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|config
+operator|->
+name|priv
+operator|->
+name|image
+operator|=
+name|NULL
+expr_stmt|;
+name|config
+operator|->
+name|priv
+operator|->
+name|run_mode
+operator|=
+operator|-
+literal|1
+expr_stmt|;
 block|}
 end_function
 
