@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6758040108
+DECL|struct|__anon2c8516770108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6758040208
+DECL|struct|__anon2c8516770208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -1456,15 +1456,6 @@ modifier|*
 name|save_retvals
 decl_stmt|;
 name|gchar
-modifier|*
-name|uri
-init|=
-name|g_file_get_uri
-argument_list|(
-name|file
-argument_list|)
-decl_stmt|;
-name|gchar
 name|spacing
 index|[
 literal|8
@@ -1503,9 +1494,9 @@ name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|drawable
 argument_list|,
-name|G_TYPE_STRING
+name|G_TYPE_FILE
 argument_list|,
-name|uri
+name|file
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -1524,11 +1515,6 @@ argument_list|,
 name|paramstring
 argument_list|,
 name|G_TYPE_NONE
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|uri
 argument_list|)
 expr_stmt|;
 if|if
