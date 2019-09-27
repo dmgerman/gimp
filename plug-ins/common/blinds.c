@@ -515,9 +515,9 @@ name|GIMP_PROC_ARG_INT
 argument_list|(
 name|procedure
 argument_list|,
-literal|"angle-dsp"
+literal|"angle-displacement"
 argument_list|,
-literal|"Angle dps"
+literal|"Angle displacement"
 argument_list|,
 literal|"Angle of Displacement"
 argument_list|,
