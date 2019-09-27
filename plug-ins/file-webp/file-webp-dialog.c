@@ -1703,7 +1703,7 @@ argument_list|)
 argument_list|,
 name|params
 operator|->
-name|exif
+name|save_exif
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1741,7 +1741,7 @@ argument_list|,
 operator|&
 name|params
 operator|->
-name|exif
+name|save_exif
 argument_list|)
 expr_stmt|;
 comment|/* XMP metadata */
@@ -1764,7 +1764,7 @@ argument_list|)
 argument_list|,
 name|params
 operator|->
-name|xmp
+name|save_xmp
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1802,7 +1802,7 @@ argument_list|,
 operator|&
 name|params
 operator|->
-name|xmp
+name|save_xmp
 argument_list|)
 expr_stmt|;
 comment|/* Color profile */
@@ -1825,7 +1825,7 @@ argument_list|)
 argument_list|,
 name|params
 operator|->
-name|profile
+name|save_profile
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1863,7 +1863,7 @@ argument_list|,
 operator|&
 name|params
 operator|->
-name|profile
+name|save_profile
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
