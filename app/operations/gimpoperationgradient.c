@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e86d90103
+DECL|enum|__anon292131910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e86d90208
+DECL|struct|__anon292131910208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e86d90308
+DECL|struct|__anon292131910308
 block|{
 DECL|member|data
 name|gfloat
@@ -2780,6 +2780,12 @@ decl_stmt|;
 name|double
 name|r
 decl_stmt|;
+name|offset
+operator|=
+name|offset
+operator|/
+literal|100.0
+expr_stmt|;
 name|ang0
 operator|=
 name|atan2
