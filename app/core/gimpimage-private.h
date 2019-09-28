@@ -140,6 +140,14 @@ name|GeglRectangle
 name|bounding_box
 decl_stmt|;
 comment|/*  image content bounding box   */
+DECL|member|bounding_box_freeze_count
+name|gint
+name|bounding_box_freeze_count
+decl_stmt|;
+DECL|member|bounding_box_update_pending
+name|gboolean
+name|bounding_box_update_pending
+decl_stmt|;
 DECL|member|pickable_buffer
 name|GeglBuffer
 modifier|*
