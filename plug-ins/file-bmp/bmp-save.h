@@ -35,6 +35,14 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+name|GObject
+modifier|*
+name|config
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
