@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|gboolean
-name|_gimp_procedure_config_load_default
+name|gimp_procedure_config_load_default
 parameter_list|(
 name|GimpProcedureConfig
 modifier|*
@@ -34,7 +34,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|_gimp_procedure_config_save_default
+name|gimp_procedure_config_save_default
 parameter_list|(
 name|GimpProcedureConfig
 modifier|*
@@ -50,7 +50,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|_gimp_procedure_config_load_last
+name|gimp_procedure_config_load_last
 parameter_list|(
 name|GimpProcedureConfig
 modifier|*
@@ -66,7 +66,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|_gimp_procedure_config_save_last
+name|gimp_procedure_config_save_last
 parameter_list|(
 name|GimpProcedureConfig
 modifier|*
@@ -82,7 +82,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|_gimp_procedure_config_load_parasite
+name|gimp_procedure_config_load_parasite
 parameter_list|(
 name|GimpProcedureConfig
 modifier|*
@@ -102,7 +102,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|_gimp_procedure_config_save_parasite
+name|gimp_procedure_config_save_parasite
 parameter_list|(
 name|GimpProcedureConfig
 modifier|*
@@ -111,6 +111,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

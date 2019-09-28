@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19769f0103
+DECL|enum|__anon2af343dc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1419,7 +1419,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|_gimp_procedure_config_load_default
+name|gimp_procedure_config_load_default
 argument_list|(
 name|dialog
 operator|->
@@ -1489,7 +1489,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|_gimp_procedure_config_save_default
+name|gimp_procedure_config_save_default
 argument_list|(
 name|dialog
 operator|->

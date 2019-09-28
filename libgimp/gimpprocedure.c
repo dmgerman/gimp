@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6ed50c0103
+DECL|enum|__anon2895cd300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5103,7 +5103,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_gimp_procedure_config_load_default
+name|gimp_procedure_config_load_default
 argument_list|(
 name|config
 argument_list|,
