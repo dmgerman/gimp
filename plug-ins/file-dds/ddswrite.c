@@ -369,10 +369,10 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ac732080108
+DECL|struct|__anon2b3963880108
 block|{
 DECL|member|format
-name|int
+name|gint
 name|format
 decl_stmt|;
 DECL|member|dxgi_format
@@ -380,31 +380,27 @@ name|DXGI_FORMAT
 name|dxgi_format
 decl_stmt|;
 DECL|member|bpp
-name|int
+name|gint
 name|bpp
 decl_stmt|;
 DECL|member|alpha
-name|int
+name|gint
 name|alpha
 decl_stmt|;
 DECL|member|rmask
-name|unsigned
-name|int
+name|guint
 name|rmask
 decl_stmt|;
 DECL|member|gmask
-name|unsigned
-name|int
+name|guint
 name|gmask
 decl_stmt|;
 DECL|member|bmask
-name|unsigned
-name|int
+name|guint
 name|bmask
 decl_stmt|;
 DECL|member|amask
-name|unsigned
-name|int
+name|guint
 name|amask
 decl_stmt|;
 DECL|variable|format_info
@@ -2299,7 +2295,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|write_dds (GFile * file,GimpImage * image,GimpDrawable * drawable,gboolean interactive_dds)
+DECL|function|write_dds (GFile * file,GimpImage * image,GimpDrawable * drawable,gboolean interactive)
 name|write_dds
 parameter_list|(
 name|GFile
@@ -2315,7 +2311,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|gboolean
-name|interactive_dds
+name|interactive
 parameter_list|)
 block|{
 name|gchar
@@ -2365,7 +2361,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|interactive_dds
+name|interactive
 condition|)
 block|{
 if|if

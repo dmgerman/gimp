@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a241a150108
+DECL|struct|__anon2b08cd380108
 block|{
 DECL|member|compression
 name|gint
@@ -115,14 +115,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a241a150208
+DECL|struct|__anon2b08cd380208
 block|{
 DECL|member|mipmaps
-name|int
+name|gboolean
 name|mipmaps
 decl_stmt|;
 DECL|member|decode_images
-name|int
+name|gboolean
 name|decode_images
 decl_stmt|;
 DECL|typedef|DDSReadVals
@@ -160,7 +160,7 @@ modifier|*
 name|image
 parameter_list|,
 name|gboolean
-name|interactive_dds
+name|interactive
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -183,7 +183,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|gboolean
-name|interactive_dds
+name|interactive
 parameter_list|)
 function_decl|;
 end_function_decl

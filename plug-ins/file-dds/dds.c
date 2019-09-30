@@ -305,9 +305,9 @@ name|DDSReadVals
 name|dds_read_vals
 init|=
 block|{
-literal|1
+name|TRUE
 block|,
-literal|1
+name|TRUE
 block|}
 decl_stmt|;
 end_decl_stmt
