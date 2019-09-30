@@ -100,7 +100,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d02170108
+DECL|struct|__anon2bf622d90108
 block|{
 DECL|member|rshift
 DECL|member|gshift
@@ -165,7 +165,7 @@ end_typedef
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|read_header
 parameter_list|(
 name|dds_header_t
@@ -181,7 +181,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|read_header_dx10
 parameter_list|(
 name|dds_header_dx10_t
@@ -197,7 +197,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|validate_header
 parameter_list|(
 name|dds_header_t
@@ -209,7 +209,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|setup_dxgi_format
 parameter_list|(
 name|dds_header_t
@@ -225,7 +225,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|load_layer
 parameter_list|(
 name|FILE
@@ -268,7 +268,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|load_mipmaps
 parameter_list|(
 name|FILE
@@ -308,7 +308,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|load_face
 parameter_list|(
 name|FILE
@@ -2493,7 +2493,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|read_header (dds_header_t * hdr,FILE * fp)
 name|read_header
 parameter_list|(
@@ -2540,7 +2540,7 @@ operator|!=
 name|DDS_HEADERSIZE
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 name|hdr
 operator|->
@@ -2903,14 +2903,14 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|read_header_dx10 (dds_header_dx10_t * hdr,FILE * fp)
 name|read_header_dx10
 parameter_list|(
@@ -2957,7 +2957,7 @@ operator|!=
 name|DDS_HEADERSIZE_DX10
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 name|hdr
 operator|->
@@ -3013,14 +3013,14 @@ literal|16
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|validate_header (dds_header_t * hdr)
 name|validate_header
 parameter_list|(
@@ -3056,7 +3056,7 @@ literal|"Invalid DDS file.\n"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 if|if
@@ -3348,7 +3348,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 if|if
@@ -3411,7 +3411,7 @@ literal|"Invalid BPP.\n"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 block|}
@@ -3456,7 +3456,7 @@ literal|"Invalid BPP.\n"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 name|hdr
@@ -3765,14 +3765,14 @@ literal|"Invalid pixel format."
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 break|break;
 block|}
 block|}
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -3783,7 +3783,7 @@ end_comment
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|setup_dxgi_format (dds_header_t * hdr,dds_header_dx10_t * dx10hdr)
 name|setup_dxgi_format
 parameter_list|(
@@ -3878,7 +3878,7 @@ name|D3D10_RESOURCE_DIMENSION_TEXTURE3D
 operator|)
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 comment|// check for a compressed DXGI format
 if|if
@@ -4635,12 +4635,12 @@ name|dxgiFormat
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 block|}
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -4697,7 +4697,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|load_layer (FILE * fp,dds_header_t * hdr,dds_load_info_t * d,GimpImage * image,guint level,char * prefix,guint * l,guchar * pixels,guchar * buf)
 name|load_layer
 parameter_list|(
@@ -5465,7 +5465,7 @@ literal|"Unexpected EOF.\n"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 if|if
@@ -5604,7 +5604,7 @@ literal|"Unexpected EOF.\n"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 if|if
@@ -6658,7 +6658,7 @@ literal|"Image marked as compressed, but DDSD_LINEARSIZE is not set.\n"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 name|dst
@@ -7056,14 +7056,14 @@ break|break;
 block|}
 block|}
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|load_mipmaps (FILE * fp,dds_header_t * hdr,dds_load_info_t * d,GimpImage * image,char * prefix,unsigned int * l,guchar * pixels,unsigned char * buf)
 name|load_mipmaps
 parameter_list|(
@@ -7175,19 +7175,19 @@ name|buf
 argument_list|)
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 block|}
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|load_face (FILE * fp,dds_header_t * hdr,dds_load_info_t * d,GimpImage * image,gchar * prefix,guint * l,guchar * pixels,guchar * buf)
 name|load_face
 parameter_list|(
@@ -7249,7 +7249,7 @@ name|buf
 argument_list|)
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 return|return
 name|load_mipmaps
