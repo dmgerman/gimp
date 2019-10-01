@@ -369,7 +369,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b3963880108
+DECL|struct|__anon2abd10570108
 block|{
 DECL|member|format
 name|gint
