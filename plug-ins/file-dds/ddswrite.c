@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"ddsplugin.h"
+file|"ddswrite.h"
 end_include
 
 begin_include
@@ -390,7 +390,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29186c080108
+DECL|struct|__anon2c51f6330108
 block|{
 DECL|member|format
 name|gint
@@ -9009,9 +9009,6 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-name|GimpImageBaseType
-name|basetype
-decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
@@ -9032,13 +9029,6 @@ argument_list|,
 name|DDS_SAVE_SELECTED_LAYER
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|basetype
-operator|=
-name|gimp_image_base_type
-argument_list|(
-name|image
 argument_list|)
 expr_stmt|;
 name|dialog

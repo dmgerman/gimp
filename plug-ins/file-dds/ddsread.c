@@ -64,7 +64,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"ddsplugin.h"
+file|"ddsread.h"
 end_include
 
 begin_include
@@ -100,7 +100,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2473b90108
+DECL|struct|__anon2a0be6af0108
 block|{
 DECL|member|rshift
 DECL|member|gshift

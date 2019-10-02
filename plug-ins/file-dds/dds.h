@@ -17,6 +17,39 @@ name|__DDS_H__
 end_define
 
 begin_define
+DECL|macro|DDS_PLUGIN_VERSION_MAJOR
+define|#
+directive|define
+name|DDS_PLUGIN_VERSION_MAJOR
+value|3
+end_define
+
+begin_define
+DECL|macro|DDS_PLUGIN_VERSION_MINOR
+define|#
+directive|define
+name|DDS_PLUGIN_VERSION_MINOR
+value|9
+end_define
+
+begin_define
+DECL|macro|DDS_PLUGIN_VERSION_REVISION
+define|#
+directive|define
+name|DDS_PLUGIN_VERSION_REVISION
+value|90
+end_define
+
+begin_define
+DECL|macro|DDS_PLUGIN_VERSION
+define|#
+directive|define
+name|DDS_PLUGIN_VERSION
+define|\
+value|((guint) (DDS_PLUGIN_VERSION_MAJOR<< 16) | \     (guint) (DDS_PLUGIN_VERSION_MINOR<<  8) | \     (guint) (DDS_PLUGIN_VERSION_REVISION))
+end_define
+
+begin_define
 DECL|macro|FOURCC (a,b,c,d)
 define|#
 directive|define
@@ -31,13 +64,13 @@ parameter_list|,
 name|d
 parameter_list|)
 define|\
-value|((unsigned int)((unsigned int)(a)      ) | \                         ((unsigned int)(b)<<  8) | \                         ((unsigned int)(c)<< 16) | \                         ((unsigned int)(d)<< 24))
+value|((guint) ((guint)(a)      ) | \                   ((guint)(b)<<  8) | \                   ((guint)(c)<< 16) | \                   ((guint)(d)<< 24))
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad67e780103
+DECL|enum|__anon274c6dfa0103
 block|{
 DECL|enumerator|DDS_COMPRESS_NONE
 name|DDS_COMPRESS_NONE
@@ -95,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad67e780203
+DECL|enum|__anon274c6dfa0203
 block|{
 DECL|enumerator|DDS_SAVE_SELECTED_LAYER
 name|DDS_SAVE_SELECTED_LAYER
@@ -122,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad67e780303
+DECL|enum|__anon274c6dfa0303
 block|{
 DECL|enumerator|DDS_FORMAT_DEFAULT
 name|DDS_FORMAT_DEFAULT
@@ -182,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad67e780403
+DECL|enum|__anon274c6dfa0403
 block|{
 DECL|enumerator|DDS_MIPMAP_NONE
 name|DDS_MIPMAP_NONE
@@ -206,7 +239,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad67e780503
+DECL|enum|__anon274c6dfa0503
 block|{
 DECL|enumerator|DDS_MIPMAP_FILTER_DEFAULT
 name|DDS_MIPMAP_FILTER_DEFAULT
@@ -248,7 +281,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad67e780603
+DECL|enum|__anon274c6dfa0603
 block|{
 DECL|enumerator|DDS_MIPMAP_WRAP_DEFAULT
 name|DDS_MIPMAP_WRAP_DEFAULT
@@ -553,7 +586,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad67e780708
+DECL|struct|__anon274c6dfa0708
 block|{
 DECL|member|size
 name|unsigned
@@ -606,7 +639,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad67e780808
+DECL|struct|__anon274c6dfa0808
 block|{
 DECL|member|caps1
 name|unsigned
@@ -635,7 +668,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad67e780908
+DECL|struct|__anon274c6dfa0908
 block|{
 DECL|member|magic
 name|unsigned
@@ -678,10 +711,10 @@ name|int
 name|num_mipmaps
 decl_stmt|;
 union|union
-DECL|union|__anon2ad67e780a0a
+DECL|union|__anon274c6dfa0a0a
 block|{
 struct|struct
-DECL|struct|__anon2ad67e780b08
+DECL|struct|__anon274c6dfa0b08
 block|{
 DECL|member|magic1
 name|unsigned
@@ -745,7 +778,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad67e780c03
+DECL|enum|__anon274c6dfa0c03
 block|{
 DECL|enumerator|DXGI_FORMAT_UNKNOWN
 name|DXGI_FORMAT_UNKNOWN
@@ -1340,7 +1373,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad67e780d08
+DECL|struct|__anon274c6dfa0d08
 block|{
 DECL|member|dxgiFormat
 name|DXGI_FORMAT
