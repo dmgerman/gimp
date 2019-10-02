@@ -2258,6 +2258,14 @@ argument_list|,
 name|active_item
 argument_list|)
 expr_stmt|;
+name|gimp_viewable_preview_freeze
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|active_item
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_item_start_transform
 argument_list|(
 name|active_item
