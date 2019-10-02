@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf37e80108
+DECL|struct|__anon27a6c8a60108
 block|{
 DECL|member|paint_tool
 name|GimpPaintTool
@@ -129,7 +129,7 @@ name|GimpPaintToolPaintFunc
 name|func
 decl_stmt|;
 union|union
-DECL|union|__anon29bf37e8020a
+DECL|union|__anon27a6c8a6020a
 block|{
 DECL|member|data
 name|gpointer
@@ -151,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf37e80308
+DECL|struct|__anon27a6c8a60308
 block|{
 DECL|member|coords
 name|GimpCoords
@@ -981,13 +981,26 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimp_paint_core_set_show_all
+comment|/*  Prepare to start the paint core  */
+if|if
+condition|(
+name|GIMP_PAINT_TOOL_GET_CLASS
 argument_list|(
-name|core
-argument_list|,
-name|shell
+name|paint_tool
+argument_list|)
 operator|->
-name|show_all
+name|paint_prepare
+condition|)
+name|GIMP_PAINT_TOOL_GET_CLASS
+argument_list|(
+name|paint_tool
+argument_list|)
+operator|->
+name|paint_prepare
+argument_list|(
+name|paint_tool
+argument_list|,
+name|display
 argument_list|)
 expr_stmt|;
 comment|/*  Start the paint core  */
