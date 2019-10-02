@@ -27,7 +27,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb7e460103
+DECL|enum|__anon2c87844e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1285,6 +1285,8 @@ if|if
 condition|(
 operator|!
 name|success
+operator|&&
+name|error
 operator|&&
 operator|(
 operator|*
