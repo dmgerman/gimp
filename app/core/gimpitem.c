@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a53b0d90103
+DECL|enum|__anon2b87da2d0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a53b0d90203
+DECL|enum|__anon2b87da2d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2917,6 +2917,17 @@ name|GimpTransformResize
 name|clip_result
 parameter_list|)
 block|{
+if|if
+condition|(
+name|gimp_item_get_lock_position
+argument_list|(
+name|item
+argument_list|)
+condition|)
+return|return
+name|GIMP_TRANSFORM_RESIZE_CLIP
+return|;
+else|else
 return|return
 name|clip_result
 return|;
