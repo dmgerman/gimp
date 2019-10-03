@@ -1403,6 +1403,12 @@ name|GIMP_TRANSFORM_RESIZE_ADJUST
 argument_list|)
 operator|==
 name|GIMP_TRANSFORM_RESIZE_CLIP
+operator|||
+operator|!
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
 condition|)
 block|{
 name|gegl_node_set
