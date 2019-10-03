@@ -1279,6 +1279,11 @@ name|fs_crop_node
 operator|=
 name|NULL
 expr_stmt|;
+name|gimp_drawable_update_bounding_box
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
