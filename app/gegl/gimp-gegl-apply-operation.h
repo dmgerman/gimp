@@ -77,6 +77,9 @@ name|GeglNode
 modifier|*
 name|operation
 parameter_list|,
+name|gboolean
+name|connect_src_buffer
+parameter_list|,
 name|GeglBuffer
 modifier|*
 name|dest_buffer
@@ -366,7 +369,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c4f72c0103
+DECL|enum|__anon296b7d320103
 block|{
 DECL|enumerator|GAUSSIAN_BLUR_ABYSS_NONE
 name|GAUSSIAN_BLUR_ABYSS_NONE

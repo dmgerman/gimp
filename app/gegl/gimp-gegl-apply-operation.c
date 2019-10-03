@@ -160,6 +160,8 @@ name|undo_desc
 argument_list|,
 name|operation
 argument_list|,
+name|TRUE
+argument_list|,
 name|dest_buffer
 argument_list|,
 name|dest_rect
@@ -203,7 +205,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_gegl_apply_cached_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gboolean crop_input,GeglBuffer * cache,const GeglRectangle * valid_rects,gint n_valid_rects,gboolean cancelable)
+DECL|function|gimp_gegl_apply_cached_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,gboolean connect_src_buffer,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gboolean crop_input,GeglBuffer * cache,const GeglRectangle * valid_rects,gint n_valid_rects,gboolean cancelable)
 name|gimp_gegl_apply_cached_operation
 parameter_list|(
 name|GeglBuffer
@@ -222,6 +224,9 @@ parameter_list|,
 name|GeglNode
 modifier|*
 name|operation
+parameter_list|,
+name|gboolean
+name|connect_src_buffer
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -721,13 +726,35 @@ name|operation
 expr_stmt|;
 if|if
 condition|(
-name|src_buffer
+name|connect_src_buffer
+operator|||
+name|crop_input
 condition|)
 block|{
 name|GeglNode
 modifier|*
 name|src_node
 decl_stmt|;
+name|operation_src_node
+operator|=
+name|gegl_node_get_producer
+argument_list|(
+name|operation
+argument_list|,
+literal|"input"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|src_node
+operator|=
+name|operation_src_node
+expr_stmt|;
+if|if
+condition|(
+name|connect_src_buffer
+condition|)
+block|{
 name|src_node
 operator|=
 name|gegl_node_new_child
@@ -745,6 +772,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|crop_input
@@ -819,17 +847,6 @@ operator|=
 name|crop_node
 expr_stmt|;
 block|}
-name|operation_src_node
-operator|=
-name|gegl_node_get_producer
-argument_list|(
-name|operation
-argument_list|,
-literal|"input"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
