@@ -129,7 +129,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960103
+DECL|enum|__anon27c317960103
 typedef|typedef
 enum|enum
 block|{
@@ -258,7 +258,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960203
+DECL|enum|__anon27c317960203
 typedef|typedef
 enum|enum
 block|{
@@ -327,7 +327,7 @@ comment|/* Type of image in the composite image bank block. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960303
+DECL|enum|__anon27c317960303
 typedef|typedef
 enum|enum
 block|{
@@ -352,7 +352,7 @@ comment|/* Graphic contents flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960403
+DECL|enum|__anon27c317960403
 typedef|typedef
 enum|enum
 block|{
@@ -435,7 +435,7 @@ comment|/* Character style flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960503
+DECL|enum|__anon27c317960503
 typedef|typedef
 enum|enum
 block|{
@@ -480,7 +480,7 @@ comment|/* Table type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960603
+DECL|enum|__anon27c317960603
 typedef|typedef
 enum|enum
 block|{
@@ -512,7 +512,7 @@ comment|/* Layer flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960703
+DECL|enum|__anon27c317960703
 typedef|typedef
 enum|enum
 block|{
@@ -539,7 +539,7 @@ comment|/* Shape property flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960803
+DECL|enum|__anon27c317960803
 typedef|typedef
 enum|enum
 block|{
@@ -572,7 +572,7 @@ comment|/* Polyline node type flags. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960903
+DECL|enum|__anon27c317960903
 typedef|typedef
 enum|enum
 block|{
@@ -666,7 +666,7 @@ comment|/* Blend modes. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960a03
+DECL|enum|__anon27c317960a03
 typedef|typedef
 enum|enum
 block|{
@@ -752,7 +752,7 @@ comment|/* Adjustment layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960b03
+DECL|enum|__anon27c317960b03
 typedef|typedef
 enum|enum
 block|{
@@ -808,7 +808,7 @@ comment|/* Vector shape types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960c03
+DECL|enum|__anon27c317960c03
 typedef|typedef
 enum|enum
 block|{
@@ -849,7 +849,7 @@ comment|/* Text element types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960d03
+DECL|enum|__anon27c317960d03
 typedef|typedef
 enum|enum
 block|{
@@ -881,7 +881,7 @@ comment|/* Text alignment types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960e03
+DECL|enum|__anon27c317960e03
 typedef|typedef
 enum|enum
 block|{
@@ -909,7 +909,7 @@ comment|/* Paint style types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82960f03
+DECL|enum|__anon27c317960f03
 typedef|typedef
 enum|enum
 block|{
@@ -960,7 +960,7 @@ comment|/* Gradient type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961003
+DECL|enum|__anon27c317961003
 typedef|typedef
 enum|enum
 block|{
@@ -992,7 +992,7 @@ comment|/* Paint Style Cap Type (Start& End). (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961103
+DECL|enum|__anon27c317961103
 typedef|typedef
 enum|enum
 block|{
@@ -1064,7 +1064,7 @@ comment|/* Paint Style Join Type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961203
+DECL|enum|__anon27c317961203
 typedef|typedef
 enum|enum
 block|{
@@ -1089,7 +1089,7 @@ comment|/* Organic pen type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961303
+DECL|enum|__anon27c317961303
 typedef|typedef
 enum|enum
 block|{
@@ -1137,7 +1137,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961403
+DECL|enum|__anon27c317961403
 typedef|typedef
 enum|enum
 block|{
@@ -1169,7 +1169,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961503
+DECL|enum|__anon27c317961503
 typedef|typedef
 enum|enum
 block|{
@@ -1197,7 +1197,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961603
+DECL|enum|__anon27c317961603
 typedef|typedef
 enum|enum
 block|{
@@ -1229,7 +1229,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961703
+DECL|enum|__anon27c317961703
 typedef|typedef
 enum|enum
 block|{
@@ -1251,7 +1251,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961803
+DECL|enum|__anon27c317961803
 typedef|typedef
 enum|enum
 block|{
@@ -1287,7 +1287,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961903
+DECL|enum|__anon27c317961903
 typedef|typedef
 enum|enum
 block|{
@@ -1320,7 +1320,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961a03
+DECL|enum|__anon27c317961a03
 typedef|typedef
 enum|enum
 block|{
@@ -1368,7 +1368,7 @@ comment|/* Grid units type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961b03
+DECL|enum|__anon27c317961b03
 typedef|typedef
 enum|enum
 block|{
@@ -1396,7 +1396,7 @@ comment|/* Guide orientation type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961c03
+DECL|enum|__anon27c317961c03
 typedef|typedef
 enum|enum
 block|{
@@ -1418,7 +1418,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961d03
+DECL|enum|__anon27c317961d03
 typedef|typedef
 enum|enum
 block|{
@@ -1442,7 +1442,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961e03
+DECL|enum|__anon27c317961e03
 typedef|typedef
 enum|enum
 block|{
@@ -1466,7 +1466,7 @@ comment|/* Layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bdd82961f03
+DECL|enum|__anon27c317961f03
 typedef|typedef
 enum|enum
 block|{
@@ -1545,7 +1545,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdd82962008
+DECL|struct|__anon27c317962008
 block|{
 DECL|member|width
 DECL|member|height
@@ -1585,21 +1585,6 @@ decl_stmt|;
 DECL|typedef|PSPimage
 block|}
 name|PSPimage
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2bdd82962108
-block|{
-DECL|member|compression
-name|PSPCompression
-name|compression
-decl_stmt|;
-DECL|typedef|PSPSaveVals
-block|}
-name|PSPSaveVals
 typedef|;
 end_typedef
 
@@ -1803,6 +1788,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GObject
+modifier|*
+name|config
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -1816,7 +1805,13 @@ specifier|static
 name|gboolean
 name|save_dialog
 parameter_list|(
-name|void
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+name|GObject
+modifier|*
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1840,18 +1835,6 @@ argument_list|)
 end_macro
 
 begin_decl_stmt
-specifier|static
-name|PSPSaveVals
-name|psvals
-init|=
-block|{
-name|PSP_COMP_LZ77
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|psp_ver_major
 specifier|static
 name|guint16
 name|psp_ver_major
@@ -2182,7 +2165,7 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
-literal|0
+name|PSP_COMP_LZ77
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -2331,6 +2314,10 @@ name|gpointer
 name|run_data
 parameter_list|)
 block|{
+name|GimpProcedureConfig
+modifier|*
+name|config
+decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
@@ -2355,6 +2342,24 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|config
+operator|=
+name|gimp_procedure_create_config
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_config_begin_run
+argument_list|(
+name|config
+argument_list|,
+name|image
+argument_list|,
+name|run_mode
+argument_list|,
+name|args
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -2416,62 +2421,30 @@ break|break;
 default|default:
 break|break;
 block|}
-switch|switch
+if|if
 condition|(
 name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
-case|case
-name|GIMP_RUN_INTERACTIVE
-case|:
-name|gimp_get_data
-argument_list|(
-name|SAVE_PROC
-argument_list|,
-operator|&
-name|psvals
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|save_dialog
-argument_list|()
+argument_list|(
+name|procedure
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
+argument_list|)
 condition|)
 name|status
 operator|=
 name|GIMP_PDB_CANCEL
 expr_stmt|;
-break|break;
-case|case
-name|GIMP_RUN_NONINTERACTIVE
-case|:
-name|psvals
-operator|.
-name|compression
-operator|=
-name|GIMP_VALUES_GET_INT
-argument_list|(
-name|args
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_RUN_WITH_LAST_VALS
-case|:
-name|gimp_get_data
-argument_list|(
-name|SAVE_PROC
-argument_list|,
-operator|&
-name|psvals
-argument_list|)
-expr_stmt|;
-break|break;
-default|default:
-break|break;
 block|}
 if|if
 condition|(
@@ -2482,6 +2455,7 @@ condition|)
 block|{
 if|if
 condition|(
+operator|!
 name|save_image
 argument_list|(
 name|file
@@ -2490,26 +2464,15 @@ name|image
 argument_list|,
 name|drawable
 argument_list|,
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
 operator|&
 name|error
 argument_list|)
 condition|)
-block|{
-name|gimp_set_data
-argument_list|(
-name|SAVE_PROC
-argument_list|,
-operator|&
-name|psvals
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|PSPSaveVals
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 block|{
 name|status
 operator|=
@@ -2517,6 +2480,18 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
+name|gimp_procedure_config_end_run
+argument_list|(
+name|config
+argument_list|,
+name|status
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|config
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|export
@@ -2544,15 +2519,25 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_dialog (void)
+DECL|function|save_dialog (GimpProcedure * procedure,GObject * config)
 name|save_dialog
 parameter_list|(
-name|void
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+name|GObject
+modifier|*
+name|config
 parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
 name|dialog
+decl_stmt|;
+name|GtkListStore
+modifier|*
+name|store
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2563,44 +2548,26 @@ name|run
 decl_stmt|;
 name|dialog
 operator|=
-name|gimp_export_dialog_new
+name|gimp_procedure_dialog_new
 argument_list|(
-name|_
+name|procedure
+argument_list|,
+name|GIMP_PROCEDURE_CONFIG
 argument_list|(
-literal|"PSP"
+name|config
 argument_list|)
 argument_list|,
-name|PLUG_IN_BINARY
-argument_list|,
-name|SAVE_PROC
+name|_
+argument_list|(
+literal|"Export Image as PSP"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  file save type  */
-name|frame
+name|store
 operator|=
-name|gimp_int_radio_group_new
+name|gimp_int_store_new
 argument_list|(
-name|TRUE
-argument_list|,
-name|_
-argument_list|(
-literal|"Data Compression"
-argument_list|)
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_radio_button_update
-argument_list|)
-argument_list|,
-operator|&
-name|psvals
-operator|.
-name|compression
-argument_list|,
-name|psvals
-operator|.
-name|compression
-argument_list|,
 name|C_
 argument_list|(
 literal|"compression"
@@ -2610,16 +2577,12 @@ argument_list|)
 argument_list|,
 name|PSP_COMP_NONE
 argument_list|,
-name|NULL
-argument_list|,
 name|_
 argument_list|(
 literal|"RLE"
 argument_list|)
 argument_list|,
 name|PSP_COMP_RLE
-argument_list|,
-name|NULL
 argument_list|,
 name|_
 argument_list|(
@@ -2629,8 +2592,25 @@ argument_list|,
 name|PSP_COMP_LZ77
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|frame
+operator|=
+name|gimp_prop_int_radio_frame_new
+argument_list|(
+name|config
 argument_list|,
-name|NULL
+literal|"compression"
+argument_list|,
+name|_
+argument_list|(
+literal|"Data Compression"
+argument_list|)
+argument_list|,
+name|GIMP_INT_STORE
+argument_list|(
+name|store
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -2647,9 +2627,12 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|gimp_export_dialog_get_content_area
+name|gtk_dialog_get_content_area
+argument_list|(
+name|GTK_DIALOG
 argument_list|(
 name|dialog
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
@@ -2657,14 +2640,9 @@ name|frame
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2674,17 +2652,13 @@ argument_list|)
 expr_stmt|;
 name|run
 operator|=
-operator|(
-name|gimp_dialog_run
+name|gimp_procedure_dialog_run
 argument_list|(
-name|GIMP_DIALOG
+name|GIMP_PROCEDURE_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|)
-operator|==
-name|GTK_RESPONSE_OK
-operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
@@ -8709,7 +8683,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GError ** error)
+DECL|function|save_image (GFile * file,GimpImage * image,GimpDrawable * drawable,GObject * config,GError ** error)
 name|save_image
 parameter_list|(
 name|GFile
@@ -8723,6 +8697,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GObject
+modifier|*
+name|config
 parameter_list|,
 name|GError
 modifier|*
