@@ -132,12 +132,14 @@ name|GimpConfig
 modifier|*
 name|grid2
 decl_stmt|;
-specifier|const
-name|gchar
+name|GFile
 modifier|*
-name|filename
+name|file
 init|=
+name|g_file_new_for_path
+argument_list|(
 literal|"foorc"
+argument_list|)
 decl_stmt|;
 name|gchar
 modifier|*
@@ -270,7 +272,10 @@ name|grid
 argument_list|)
 argument_list|)
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -280,7 +285,7 @@ name|gimp_config_serialize_to_file
 argument_list|(
 name|grid
 argument_list|,
-name|filename
+name|file
 argument_list|,
 literal|"foorc"
 argument_list|,
@@ -329,7 +334,10 @@ name|g_print
 argument_list|(
 literal|" Deserializing from '%s' ...\n"
 argument_list|,
-name|filename
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -339,7 +347,7 @@ name|gimp_config_deserialize_file
 argument_list|(
 name|grid
 argument_list|,
-name|filename
+name|file
 argument_list|,
 name|NULL
 argument_list|,
@@ -526,7 +534,10 @@ name|gimp_config_deserialize_file
 argument_list|(
 name|grid
 argument_list|,
+name|g_file_new_for_path
+argument_list|(
 literal|"gimpconfig.c"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
