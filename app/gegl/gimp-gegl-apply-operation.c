@@ -160,7 +160,9 @@ name|undo_desc
 argument_list|,
 name|operation
 argument_list|,
-name|TRUE
+name|src_buffer
+operator|!=
+name|NULL
 argument_list|,
 name|dest_buffer
 argument_list|,
