@@ -42,7 +42,7 @@ DECL|macro|SAVE_PROC
 define|#
 directive|define
 name|SAVE_PROC
-value|"file-gtm-save"
+value|"file-html-table-save"
 end_define
 
 begin_define
@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2766f97b0108
+DECL|struct|__anon29b2e45b0108
 block|{
 DECL|member|captiontxt
 name|gchar
