@@ -88,7 +88,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2a20d80103
+DECL|enum|__anon27f811990103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -4599,21 +4599,21 @@ name|gimp_int_store_new
 argument_list|(
 name|_
 argument_list|(
-literal|"16 bit (R5 G6 B5"
+literal|"16 bit (R5 G6 B5)"
 argument_list|)
 argument_list|,
 name|RGB_565
 argument_list|,
 name|_
 argument_list|(
-literal|"16 bit (A1 R5 G5 B5"
+literal|"16 bit (A1 R5 G5 B5)"
 argument_list|)
 argument_list|,
 name|RGBA_5551
 argument_list|,
 name|_
 argument_list|(
-literal|"16 bit (X1 R5 G5 B5"
+literal|"16 bit (X1 R5 G5 B5)"
 argument_list|)
 argument_list|,
 name|RGB_555
