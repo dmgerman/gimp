@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c547f530108
+DECL|struct|__anon2766f0d20108
 block|{
 DECL|member|tag
 name|gchar
@@ -70,7 +70,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_metadata_save_prepare:  * @image:           The image  * @mime_type:       The saved file's mime-type  * @suggested_flags: Suggested default values for the @flags passed to  *                   gimp_image_metadata_save_finish()  *  * Gets the image metadata for saving it using  * gimp_image_metadata_save_finish().  *  * The @suggested_flags are determined from what kind of metadata  * (Exif, XMP, ...) is actually present in the image and the preferences  * for metadata exporting.  * The calling application may still update @available_flags, for  * instance to follow the settings from a previous export in the same  * session, or a previous export of the same image. But it should not  * override the preferences without a good reason since it is a data  * leak.  *  * The suggested value for GIMP_METADATA_SAVE_THUMBNAIL is determined by  * whether there was a thumbnail in the previously imported image.  *  * Returns: (transfer full): The image's metadata, prepared for saving.  *  * Since: 2.10  */
+comment|/**  * gimp_image_metadata_save_prepare:  * @image:           The original image  * @mime_type:       The saved file's mime-type  * @suggested_flags: Suggested default values for the @flags passed to  *                   gimp_image_metadata_save_finish()  *  * Gets the image metadata for saving it using  * gimp_image_metadata_save_finish().  *  * The @suggested_flags are determined from what kind of metadata  * (Exif, XMP, ...) is actually present in the image and the preferences  * for metadata exporting.  * The calling application may still update @available_flags, for  * instance to follow the settings from a previous export in the same  * session, or a previous export of the same image. But it should not  * override the preferences without a good reason since it is a data  * leak.  *  * The suggested value for %GIMP_METADATA_SAVE_THUMBNAIL is determined by  * whether there was a thumbnail in the previously imported image.  *  * Returns: (transfer full): The image's metadata, prepared for saving.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -773,7 +773,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_metadata_save_finish:  * @image:     The image  * @mime_type: The saved file's mime-type  * @metadata:  The metadata to set on the image  * @flags:     Flags to specify what of the metadata to save  * @file:      The file to load the metadata from  * @error:     Return location for error message  *  * Saves the @metadata retrieved from the image with  * gimp_image_metadata_save_prepare() to @file, taking into account  * the passed @flags.  *  * Returns: Whether the save was successful.  *  * Since: 2.10  */
+comment|/**  * gimp_image_metadata_save_finish:  * @image:     The actually saved image  * @mime_type: The saved file's mime-type  * @metadata:  The metadata to write to @file  * @flags:     Flags to specify what of the metadata to save  * @file:      The file @image was saved to  * @error:     Return location for error message  *  * Saves the @metadata retrieved from the image with  * gimp_image_metadata_save_prepare() to @file, taking into account  * the passed @flags.  *  * Note that the @image passed to this function might be different  * from the image passed to gimp_image_metadata_save_prepare(), due  * to whatever file export conversion happened in the meantime  *  * Returns: Whether the save was successful.  *  * Since: 2.10  */
 end_comment
 
 begin_function
