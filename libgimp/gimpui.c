@@ -157,6 +157,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
+end_ifndef
+
 begin_function_decl
 specifier|static
 name|void
@@ -172,6 +178,11 @@ name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|static
@@ -1096,6 +1107,12 @@ block|}
 block|}
 end_function
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
+end_ifndef
+
 begin_function
 specifier|static
 name|void
@@ -1130,6 +1147,11 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
