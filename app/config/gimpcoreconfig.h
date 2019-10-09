@@ -371,6 +371,10 @@ DECL|member|export_color_profile
 name|gboolean
 name|export_color_profile
 decl_stmt|;
+DECL|member|export_comment
+name|gboolean
+name|export_comment
+decl_stmt|;
 DECL|member|export_metadata_exif
 name|gboolean
 name|export_metadata_exif

@@ -24,9 +24,9 @@ DECL|macro|GIMP_PROTOCOL_VERSION
 define|#
 directive|define
 name|GIMP_PROTOCOL_VERSION
-value|0x010D
+value|0x010E
 name|enum
-DECL|enum|__anon2b0eb1220103
+DECL|enum|__anon2794435d0103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -72,7 +72,7 @@ begin_typedef
 unit|};
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0eb1220203
+DECL|enum|__anon2794435d0203
 block|{
 DECL|enumerator|GP_PARAM_DEF_TYPE_DEFAULT
 name|GP_PARAM_DEF_TYPE_DEFAULT
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0eb1220303
+DECL|enum|__anon2794435d0303
 block|{
 DECL|enumerator|GP_PARAM_TYPE_INT
 name|GP_PARAM_TYPE_INT
@@ -384,9 +384,13 @@ DECL|member|use_opencl
 name|gint8
 name|use_opencl
 decl_stmt|;
-DECL|member|export_profile
+DECL|member|export_color_profile
 name|gint8
-name|export_profile
+name|export_color_profile
+decl_stmt|;
+DECL|member|export_comment
+name|gint8
+name|export_comment
 decl_stmt|;
 DECL|member|export_exif
 name|gint8
@@ -400,9 +404,9 @@ DECL|member|export_iptc
 name|gint8
 name|export_iptc
 decl_stmt|;
-DECL|member|gdisp_id
+DECL|member|default_display_id
 name|gint32
-name|gdisp_id
+name|default_display_id
 decl_stmt|;
 DECL|member|app_name
 name|gchar
@@ -703,7 +707,7 @@ name|guint
 name|flags
 decl_stmt|;
 union|union
-DECL|union|__anon2b0eb122040a
+DECL|union|__anon2794435d040a
 block|{
 DECL|member|m_int
 name|GPParamDefInt
@@ -824,7 +828,7 @@ modifier|*
 name|type_name
 decl_stmt|;
 union|union
-DECL|union|__anon2b0eb122050a
+DECL|union|__anon2794435d050a
 block|{
 DECL|member|d_int
 name|gint32

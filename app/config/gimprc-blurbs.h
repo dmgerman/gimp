@@ -592,6 +592,15 @@ define|\
 value|_("Export the image's color profile by default.")
 end_define
 
+begin_define
+DECL|macro|EXPORT_COMMENT_BLURB
+define|#
+directive|define
+name|EXPORT_COMMENT_BLURB
+define|\
+value|_("Export the image's comment by default.")
+end_define
+
 begin_comment
 comment|/* Translators: tooltip for configuration option (checkbox).  * It determines how file export plug-ins handle Exif by default.  */
 end_comment

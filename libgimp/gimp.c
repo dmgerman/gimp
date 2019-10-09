@@ -595,10 +595,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|_export_profile
+DECL|variable|_export_color_profile
 specifier|static
 name|gboolean
-name|_export_profile
+name|_export_color_profile
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_export_comment
+specifier|static
+name|gboolean
+name|_export_comment
 init|=
 name|FALSE
 decl_stmt|;
@@ -655,10 +665,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|_gdisp_id
+DECL|variable|_default_display_id
 specifier|static
 name|gint
-name|_gdisp_id
+name|_default_display_id
 init|=
 operator|-
 literal|1
@@ -762,7 +772,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon288d387e0103
+DECL|enum|__anon2ad8631f0103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2412,7 +2422,25 @@ name|void
 parameter_list|)
 block|{
 return|return
-name|_export_profile
+name|_export_color_profile
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_export_comment:  *  * Returns whether file plug-ins should default to exporting the  * image's comment.  *  * Returns: TRUE if preferences are set to export the comment.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_export_comment (void)
+name|gimp_export_comment
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_export_comment
 return|;
 block|}
 end_function
@@ -2523,7 +2551,7 @@ block|{
 return|return
 name|gimp_display_get_by_id
 argument_list|(
-name|_gdisp_id
+name|_default_display_id
 argument_list|)
 return|;
 block|}
@@ -3277,11 +3305,11 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
-name|_export_profile
+name|_export_color_profile
 operator|=
 name|config
 operator|->
-name|export_profile
+name|export_color_profile
 condition|?
 name|TRUE
 else|:
@@ -3317,11 +3345,11 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
-name|_gdisp_id
+name|_default_display_id
 operator|=
 name|config
 operator|->
-name|gdisp_id
+name|default_display_id
 expr_stmt|;
 name|_wm_class
 operator|=

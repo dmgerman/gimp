@@ -6541,6 +6541,25 @@ name|prefs_check_button_add
 argument_list|(
 name|object
 argument_list|,
+literal|"export-comment"
+argument_list|,
+name|_
+argument_list|(
+literal|"Export the image's comment by default"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|button
+operator|=
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
 literal|"export-metadata-exif"
 argument_list|,
 comment|/* Translators: label for                                     * configuration option (checkbox).                                     * It determines how file export                                     * plug-ins handle Exif by default.                                     */
@@ -13195,7 +13214,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a33273d0108
+DECL|struct|__anon2abd18890108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -14096,7 +14115,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a33273d0208
+DECL|struct|__anon2abd18890208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14227,7 +14246,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a33273d0308
+DECL|struct|__anon2abd18890308
 block|{
 DECL|member|tree_label
 specifier|const

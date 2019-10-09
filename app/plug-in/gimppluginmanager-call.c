@@ -845,11 +845,19 @@ name|use_opencl
 expr_stmt|;
 name|config
 operator|.
-name|export_profile
+name|export_color_profile
 operator|=
 name|core_config
 operator|->
 name|export_color_profile
+expr_stmt|;
+name|config
+operator|.
+name|export_comment
+operator|=
+name|core_config
+operator|->
+name|export_comment
 expr_stmt|;
 name|config
 operator|.
@@ -877,7 +885,7 @@ name|export_metadata_iptc
 expr_stmt|;
 name|config
 operator|.
-name|gdisp_id
+name|default_display_id
 operator|=
 name|display_id
 expr_stmt|;
@@ -943,6 +951,7 @@ name|config
 operator|.
 name|icon_theme_dir
 operator|=
+operator|(
 name|icon_theme_dir
 condition|?
 name|g_file_get_path
@@ -951,6 +960,7 @@ name|icon_theme_dir
 argument_list|)
 else|:
 name|NULL
+operator|)
 expr_stmt|;
 name|config
 operator|.
