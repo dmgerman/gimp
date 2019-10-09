@@ -33,7 +33,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef35c70103
+DECL|enum|__anon29cdade30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -193,7 +193,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28ef35c70208
+DECL|struct|__anon29cdade30208
 block|{
 DECL|member|name
 specifier|const
@@ -239,6 +239,12 @@ block|{
 literal|"save-color-profile"
 block|,
 name|GIMP_METADATA_SAVE_COLOR_PROFILE
+block|}
+block|,
+block|{
+literal|"save-comment"
+block|,
+name|GIMP_METADATA_SAVE_COMMENT
 block|}
 block|}
 struct|;

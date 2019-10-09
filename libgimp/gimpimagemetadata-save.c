@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2766f0d20108
+DECL|struct|__anon2c0b75a80108
 block|{
 DECL|member|tag
 name|gchar
@@ -670,6 +670,19 @@ name|suggested_flags
 operator|&=
 operator|~
 name|GIMP_METADATA_SAVE_COLOR_PROFILE
+expr_stmt|;
+comment|/* Comment */
+if|if
+condition|(
+operator|!
+name|gimp_export_comment
+argument_list|()
+condition|)
+operator|*
+name|suggested_flags
+operator|&=
+operator|~
+name|GIMP_METADATA_SAVE_COMMENT
 expr_stmt|;
 return|return
 name|metadata
@@ -1736,6 +1749,15 @@ name|GIMP_METADATA_SAVE_COLOR_PROFILE
 condition|)
 block|{
 comment|/* nothing to do, but if we ever need to modify metadata based        * on the exported color profile, this is probably the place to        * add it        */
+block|}
+if|if
+condition|(
+name|flags
+operator|&
+name|GIMP_METADATA_SAVE_COMMENT
+condition|)
+block|{
+comment|/* nothing to do, blah blah */
 block|}
 name|success
 operator|=

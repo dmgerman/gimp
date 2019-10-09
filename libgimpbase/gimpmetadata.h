@@ -90,7 +90,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b803680103
+DECL|enum|__anon2b97a1b40103
 block|{
 DECL|enumerator|GIMP_METADATA_LOAD_COMMENT
 name|GIMP_METADATA_LOAD_COMMENT
@@ -131,13 +131,13 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpMetadataSaveFlags:  * @GIMP_METADATA_SAVE_EXIF:          Save EXIF  * @GIMP_METADATA_SAVE_XMP:           Save XMP  * @GIMP_METADATA_SAVE_IPTC:          Save IPTC  * @GIMP_METADATA_SAVE_THUMBNAIL:     Save a thumbnail of the image  * @GIMP_METADATA_SAVE_COLOR_PROFILE: Save the image's color profile  *                                    Since: 2.10.10  * @GIMP_METADATA_SAVE_ALL:           Save all of the above  *  * What kinds of metadata to save when exporting images.  **/
+comment|/**  * GimpMetadataSaveFlags:  * @GIMP_METADATA_SAVE_EXIF:          Save EXIF  * @GIMP_METADATA_SAVE_XMP:           Save XMP  * @GIMP_METADATA_SAVE_IPTC:          Save IPTC  * @GIMP_METADATA_SAVE_THUMBNAIL:     Save a thumbnail of the image  * @GIMP_METADATA_SAVE_COLOR_PROFILE: Save the image's color profile  *                                    Since: 2.10.10  * @GIMP_METADATA_SAVE_COMMENT:       Save the image's comment  *                                    Since: 3.0  * @GIMP_METADATA_SAVE_ALL:           Save all of the above  *  * What kinds of metadata to save when exporting images.  **/
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b803680203
+DECL|enum|__anon2b97a1b40203
 block|{
 DECL|enumerator|GIMP_METADATA_SAVE_EXIF
 name|GIMP_METADATA_SAVE_EXIF
@@ -174,6 +174,13 @@ literal|1
 operator|<<
 literal|4
 block|,
+DECL|enumerator|GIMP_METADATA_SAVE_COMMENT
+name|GIMP_METADATA_SAVE_COMMENT
+init|=
+literal|1
+operator|<<
+literal|5
+block|,
 DECL|enumerator|GIMP_METADATA_SAVE_ALL
 name|GIMP_METADATA_SAVE_ALL
 init|=
@@ -191,7 +198,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b803680303
+DECL|enum|__anon2b97a1b40303
 block|{
 DECL|enumerator|GIMP_METADATA_COLORSPACE_UNSPECIFIED
 name|GIMP_METADATA_COLORSPACE_UNSPECIFIED
