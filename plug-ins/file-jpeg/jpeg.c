@@ -819,7 +819,8 @@ literal|"Comment"
 argument_list|,
 literal|"Image comment"
 argument_list|,
-name|NULL
+name|gimp_get_default_comment
+argument_list|()
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)

@@ -489,7 +489,8 @@ literal|"Comment"
 argument_list|,
 literal|"Comment"
 argument_list|,
-name|NULL
+name|gimp_get_default_comment
+argument_list|()
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -498,13 +499,14 @@ name|GIMP_PROC_AUX_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-literal|"use-comment"
+literal|"save-comment"
 argument_list|,
-literal|"Use comment"
+literal|"Save comment"
 argument_list|,
-literal|"Use comment"
+literal|"Save comment"
 argument_list|,
-name|FALSE
+name|gimp_export_comment
+argument_list|()
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -2042,7 +2044,7 @@ modifier|*
 name|config_comment
 decl_stmt|;
 name|gboolean
-name|config_use_comment
+name|config_save_comment
 decl_stmt|;
 name|gboolean
 name|config_glib_types
@@ -2076,10 +2078,10 @@ argument_list|,
 operator|&
 name|config_comment
 argument_list|,
-literal|"use-comment"
+literal|"save-comment"
 argument_list|,
 operator|&
-name|config_use_comment
+name|config_save_comment
 argument_list|,
 literal|"glib-types"
 argument_list|,
@@ -2936,7 +2938,7 @@ name|fail
 goto|;
 if|if
 condition|(
-name|config_use_comment
+name|config_save_comment
 condition|)
 block|{
 if|if
@@ -3110,7 +3112,7 @@ block|}
 block|}
 if|if
 condition|(
-name|config_use_comment
+name|config_save_comment
 operator|&&
 operator|!
 name|config_comment
@@ -3166,7 +3168,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|config_use_comment
+name|config_save_comment
 condition|)
 block|{
 name|gchar
@@ -4062,7 +4064,7 @@ name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"use-comment"
+literal|"save-comment"
 argument_list|,
 name|_
 argument_list|(

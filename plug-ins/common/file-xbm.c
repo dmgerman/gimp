@@ -698,9 +698,9 @@ name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
 argument_list|,
-literal|"use-comment"
+literal|"save-comment"
 argument_list|,
-literal|"Use comment"
+literal|"Save comment"
 argument_list|,
 name|_
 argument_list|(
@@ -709,6 +709,7 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
+comment|/* *NOT* gimp_export_comment() */
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
@@ -722,7 +723,8 @@ literal|"Comment"
 argument_list|,
 literal|"Image description (maximum 72 bytes)"
 argument_list|,
-literal|"Created with GIMP"
+name|gimp_get_default_comment
+argument_list|()
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -3518,7 +3520,7 @@ modifier|*
 name|intfmt
 decl_stmt|;
 name|gboolean
-name|config_use_comment
+name|config_save_comment
 decl_stmt|;
 name|gchar
 modifier|*
@@ -3540,10 +3542,10 @@ name|g_object_get
 argument_list|(
 name|config
 argument_list|,
-literal|"use-comment"
+literal|"save-comment"
 argument_list|,
 operator|&
-name|config_use_comment
+name|config_save_comment
 argument_list|,
 literal|"comment"
 argument_list|,
@@ -3852,7 +3854,7 @@ block|}
 comment|/* Maybe write the image comment. */
 if|if
 condition|(
-name|config_use_comment
+name|config_save_comment
 operator|&&
 name|config_comment
 operator|&&
@@ -4789,7 +4791,7 @@ name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"use-comment"
+literal|"save-comment"
 argument_list|,
 name|_
 argument_list|(
@@ -4897,7 +4899,7 @@ name|g_object_bind_property
 argument_list|(
 name|config
 argument_list|,
-literal|"use-comment"
+literal|"save-comment"
 argument_list|,
 name|grid
 argument_list|,
