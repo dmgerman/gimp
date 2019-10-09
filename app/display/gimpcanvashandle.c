@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e7d7f0103
+DECL|enum|__anon28914e1e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1643,7 +1643,7 @@ name|private
 operator|->
 name|width
 operator|/
-literal|2
+literal|2.0
 argument_list|,
 name|y
 argument_list|)
@@ -1658,7 +1658,7 @@ name|private
 operator|->
 name|width
 operator|/
-literal|2
+literal|2.0
 operator|-
 literal|0.5
 argument_list|,
@@ -1677,7 +1677,7 @@ name|private
 operator|->
 name|height
 operator|/
-literal|2
+literal|2.0
 argument_list|)
 expr_stmt|;
 name|cairo_line_to
@@ -1692,7 +1692,7 @@ name|private
 operator|->
 name|height
 operator|/
-literal|2
+literal|2.0
 operator|-
 literal|0.5
 argument_list|)
@@ -1756,7 +1756,7 @@ name|private
 operator|->
 name|width
 operator|/
-literal|2
+literal|2.0
 operator|)
 expr_stmt|;
 name|dashes
@@ -1814,7 +1814,7 @@ name|private
 operator|->
 name|width
 operator|/
-literal|2
+literal|2.0
 argument_list|,
 name|private
 operator|->
@@ -1905,7 +1905,7 @@ name|private
 operator|->
 name|width
 operator|/
-literal|2
+literal|2.0
 argument_list|,
 name|y
 argument_list|)
@@ -1935,7 +1935,7 @@ name|private
 operator|->
 name|width
 operator|/
-literal|2
+literal|2.0
 operator|-
 literal|0.5
 argument_list|,
@@ -1969,7 +1969,7 @@ name|private
 operator|->
 name|height
 operator|/
-literal|2
+literal|2.0
 argument_list|)
 expr_stmt|;
 name|cairo_line_to
@@ -2001,7 +2001,7 @@ name|private
 operator|->
 name|height
 operator|/
-literal|2
+literal|2.0
 operator|-
 literal|0.5
 argument_list|)
@@ -2215,7 +2215,7 @@ name|private
 operator|->
 name|width
 operator|/
-literal|2
+literal|2.0
 operator|-
 literal|2.0
 expr_stmt|;
@@ -2229,7 +2229,7 @@ name|private
 operator|->
 name|height
 operator|/
-literal|2
+literal|2.0
 operator|-
 literal|2.0
 expr_stmt|;
