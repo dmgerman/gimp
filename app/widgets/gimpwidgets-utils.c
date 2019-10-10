@@ -3156,6 +3156,12 @@ return|;
 block|}
 end_function
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
+end_ifndef
+
 begin_function
 specifier|static
 name|void
@@ -3240,6 +3246,11 @@ return|;
 block|}
 end_function
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function
 name|void
 DECL|function|gimp_window_set_transient_for (GtkWindow * window,guint32 parent_ID)
@@ -3253,7 +3264,7 @@ name|guint32
 name|parent_ID
 parameter_list|)
 block|{
-comment|/* Cross-process transient-for is broken in gdk/win32<= 2.10.6. It    * causes hangs, at least when used as by the gimp and script-fu    * processes. In some newer GTK+ version it will be fixed to be a    * no-op. If it eventually is fixed to actually work, change this to    * a run-time check of GTK+ version. Remember to change also the    * function with the same name in libgimp/gimpui.c    */
+comment|/* Cross-process transient-for is broken in gdk/win32<= 2.10.6. It    * causes hangs, at least when used as by the gimp and script-fu    * processes. In some newer GTK+ version it will be fixed to be a    * no-op. If it eventually is fixed to actually work, change this to    * a run-time check of GTK+ version. Remember to change also the    * function with the same name in libgimp/gimpui.c    *    * Note: this hanging bug is still happening with GTK+3 as of 2019-10,    * with steps described in comment 4 in:    * https://bugzilla.gnome.org/show_bug.cgi?id=359538    */
 ifndef|#
 directive|ifndef
 name|GDK_WINDOWING_WIN32
@@ -3916,7 +3927,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29318fbf0108
+DECL|struct|__anon2bbbe9890108
 block|{
 DECL|member|r
 name|guchar
@@ -4526,7 +4537,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29318fbf0208
+DECL|struct|__anon2bbbe9890208
 block|{
 DECL|member|timeout_id
 name|gint

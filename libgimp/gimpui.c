@@ -1175,6 +1175,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* To know why it is disabled on Win32, see    * gimp_window_set_transient_for() in app/widgets/gimpwidgets-utils.c.    */
 ifndef|#
 directive|ifndef
 name|GDK_WINDOWING_WIN32
