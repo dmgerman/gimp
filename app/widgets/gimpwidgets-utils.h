@@ -585,7 +585,7 @@ modifier|*
 name|button
 parameter_list|,
 name|gboolean
-name|suggestes
+name|destructive
 parameter_list|,
 name|GtkReliefStyle
 name|default_relief

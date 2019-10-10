@@ -1727,7 +1727,7 @@ argument_list|(
 name|paint_buffer
 argument_list|)
 expr_stmt|;
-comment|/*  Get the unclipped acumulator coordinates  */
+comment|/*  Get the unclipped accumulator coordinates  */
 name|gimp_smudge_accumulator_coords
 argument_list|(
 name|paint_core

@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ba6a50103
+DECL|enum|__anon2af3ff880103
 block|{
 DECL|enumerator|COMPUTING_START
 name|COMPUTING_START
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ba6a50203
+DECL|enum|__anon2af3ff880203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -259,7 +259,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3ba6a50308
+DECL|struct|__anon2af3ff880308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -291,7 +291,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3ba6a50408
+DECL|struct|__anon2af3ff880408
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -12818,7 +12818,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edgel_region_area:  * @mask: current state of closed line art buffer.  * @start_edgel: edgel to follow.  *  * Follows a line border, starting from @start_edgel to compute the area  * enclosed by this border.  * Unfortunately this may return a negative area when the line does not  * close a zone. In this case, there is an uncertaincy on the size of  * the created zone, and we should consider it a big size.  *  * Returns: the area enclosed by the followed line, or a negative value  * if the zone is not closed (hence actual area unknown).  */
+comment|/**  * gimp_edgel_region_area:  * @mask: current state of closed line art buffer.  * @start_edgel: edgel to follow.  *  * Follows a line border, starting from @start_edgel to compute the area  * enclosed by this border.  * Unfortunately this may return a negative area when the line does not  * close a zone. In this case, there is an uncertainty on the size of  * the created zone, and we should consider it a big size.  *  * Returns: the area enclosed by the followed line, or a negative value  * if the zone is not closed (hence actual area unknown).  */
 end_comment
 
 begin_function
