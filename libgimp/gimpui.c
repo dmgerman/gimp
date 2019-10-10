@@ -545,6 +545,12 @@ argument_list|(
 name|gdk_display_get_default
 argument_list|()
 argument_list|,
+operator|(
+name|HWND
+operator|)
+operator|(
+name|uintptr_t
+operator|)
 name|window
 argument_list|)
 return|;
