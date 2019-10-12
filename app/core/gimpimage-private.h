@@ -115,6 +115,11 @@ name|GimpUnit
 name|resolution_unit
 decl_stmt|;
 comment|/*  resolution unit              */
+DECL|member|resolution_set
+name|gboolean
+name|resolution_set
+decl_stmt|;
+comment|/*  resolution explicitly set    */
 DECL|member|base_type
 name|GimpImageBaseType
 name|base_type
