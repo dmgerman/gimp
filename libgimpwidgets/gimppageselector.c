@@ -82,7 +82,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a58e0530103
+DECL|enum|__anon275daa4d0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a58e0530203
+DECL|enum|__anon275daa4d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a58e0530303
+DECL|enum|__anon275daa4d0303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -2120,8 +2120,9 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|thumbnail
 argument_list|)
 expr_stmt|;
@@ -4766,6 +4767,12 @@ operator|!
 name|frame
 condition|)
 block|{
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|frame
 operator|=
 name|gtk_icon_theme_load_icon
@@ -4778,6 +4785,36 @@ argument_list|,
 literal|64
 argument_list|,
 literal|0
+argument_list|,
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"%s: %s\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
+name|g_return_val_if_fail
+argument_list|(
+name|frame
 argument_list|,
 name|NULL
 argument_list|)
