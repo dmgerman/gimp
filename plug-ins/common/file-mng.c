@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df9bcc0103
+DECL|enum|__anon28c485fd0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df9bcc0203
+DECL|enum|__anon28c485fd0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -5534,6 +5534,11 @@ literal|"Unable to mng_putchunk_ihdr() "
 literal|"in mng_save_image()"
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|infile
+argument_list|)
+expr_stmt|;
 goto|goto
 name|err3
 goto|;
@@ -5574,6 +5579,11 @@ literal|"Unable to mng_putchunk_idat() "
 literal|"in mng_save_image()"
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|infile
+argument_list|)
+expr_stmt|;
 goto|goto
 name|err3
 goto|;
@@ -5608,6 +5618,11 @@ name|g_warning
 argument_list|(
 literal|"Unable to mng_putchunk_iend() "
 literal|"in mng_save_image()"
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|infile
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -5661,6 +5676,11 @@ literal|"Unable to mng_putchunk_plte() "
 literal|"in mng_save_image()"
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|infile
+argument_list|)
+expr_stmt|;
 goto|goto
 name|err3
 goto|;
@@ -5699,6 +5719,11 @@ name|g_warning
 argument_list|(
 literal|"Unable to mng_putchunk_trns() "
 literal|"in mng_save_image()"
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|infile
 argument_list|)
 expr_stmt|;
 goto|goto
