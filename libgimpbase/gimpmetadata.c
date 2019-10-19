@@ -2281,7 +2281,7 @@ literal|0
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|tagstr
+name|strdata
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2493,7 +2493,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon2be492540108
+DECL|struct|__anon27c513440108
 block|{
 DECL|member|name
 name|gchar
