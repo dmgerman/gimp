@@ -164,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f2e760103
+DECL|enum|__anon2bc19d330103
 block|{
 DECL|enumerator|GIMP_PLUGIN_HGT_LOAD_ARGUMENT_ERROR
 name|GIMP_PLUGIN_HGT_LOAD_ARGUMENT_ERROR
@@ -195,7 +195,7 @@ end_function
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f2e760203
+DECL|enum|__anon2bc19d330203
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f2e760303
+DECL|enum|__anon2bc19d330303
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f2e760408
+DECL|struct|__anon2bc19d330408
 block|{
 DECL|member|image_type
 name|RawType
@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f2e760508
+DECL|struct|__anon2bc19d330508
 block|{
 DECL|member|run
 name|gboolean
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f2e760608
+DECL|struct|__anon2bc19d330608
 block|{
 DECL|member|file_offset
 name|gint32
@@ -380,7 +380,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f2e760708
+DECL|struct|__anon2bc19d330708
 block|{
 DECL|member|fp
 name|FILE
@@ -4671,6 +4671,11 @@ name|fp
 argument_list|)
 condition|)
 block|{
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -5047,6 +5052,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
 name|g_free
