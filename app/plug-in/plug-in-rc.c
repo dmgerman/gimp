@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9cca980103
+DECL|enum|__anon2a2368260103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -2583,7 +2583,7 @@ argument_list|)
 expr_stmt|;
 name|proc
 operator|->
-name|extensions
+name|prefixes
 operator|=
 name|prefixes
 expr_stmt|;
