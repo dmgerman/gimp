@@ -92,6 +92,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpimagewindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-open.h"
 end_include
 
@@ -374,7 +380,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9a43270108
+DECL|struct|__anon2c1cd7160108
 block|{
 DECL|member|file
 name|GFile
@@ -587,6 +593,10 @@ operator|*
 operator|)
 name|lParam
 decl_stmt|;
+name|GimpObject
+modifier|*
+name|display
+decl_stmt|;
 if|if
 condition|(
 name|copydata
@@ -698,6 +708,31 @@ name|source
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Deiconify the window if minimized. */
+name|display
+operator|=
+name|gimp_container_get_first_child
+argument_list|(
+name|unique_gimp
+operator|->
+name|displays
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|display
+condition|)
+name|gimp_display_shell_present
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
+name|GIMP_DISPLAY
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|TRUE
