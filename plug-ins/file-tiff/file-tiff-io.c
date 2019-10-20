@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d80220108
+DECL|struct|__anon2b5dacbb0108
 block|{
 DECL|member|file
 name|GFile
@@ -581,6 +581,11 @@ argument_list|,
 name|int
 argument_list|)
 expr_stmt|;
+name|va_end
+argument_list|(
+name|ap_test
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* for older versions of libtiff? */
 elseif|else
@@ -621,6 +626,11 @@ argument_list|(
 name|ap_test
 argument_list|,
 name|int
+argument_list|)
+expr_stmt|;
+name|va_end
+argument_list|(
+name|ap_test
 argument_list|)
 expr_stmt|;
 block|}
