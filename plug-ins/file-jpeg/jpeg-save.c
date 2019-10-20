@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa07d880108
+DECL|struct|__anon2accfd5e0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -399,7 +399,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa07d880208
+DECL|struct|__anon2accfd5e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -3097,10 +3097,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_dialog (void)
+DECL|function|save_dialog (GimpDrawable * drawable)
 name|save_dialog
 parameter_list|(
-name|void
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|JpegSaveGui
@@ -5254,7 +5256,7 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_global
+name|drawable
 argument_list|)
 condition|)
 block|{

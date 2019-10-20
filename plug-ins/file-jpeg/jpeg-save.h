@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c117dab0108
+DECL|struct|__anon2912182d0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -149,7 +149,9 @@ begin_function_decl
 name|gboolean
 name|save_dialog
 parameter_list|(
-name|void
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

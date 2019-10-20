@@ -295,13 +295,8 @@ end_macro
 begin_decl_stmt
 name|gboolean
 name|undo_touched
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|load_interactive
-name|gboolean
-name|load_interactive
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -310,6 +305,8 @@ DECL|variable|image_comment
 name|gchar
 modifier|*
 name|image_comment
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -318,6 +315,8 @@ DECL|variable|display
 name|GimpDisplay
 modifier|*
 name|display
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -325,6 +324,10 @@ begin_decl_stmt
 DECL|variable|jsvals
 name|JpegSaveVals
 name|jsvals
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -333,6 +336,8 @@ DECL|variable|orig_image_global
 name|GimpImage
 modifier|*
 name|orig_image_global
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -341,6 +346,8 @@ DECL|variable|drawable_global
 name|GimpDrawable
 modifier|*
 name|drawable_global
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -348,6 +355,8 @@ begin_decl_stmt
 DECL|variable|orig_quality
 name|gint
 name|orig_quality
+init|=
+literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -355,13 +364,22 @@ begin_decl_stmt
 DECL|variable|orig_subsmp
 name|JpegSubsampling
 name|orig_subsmp
+init|=
+name|JPEG_SUBSAMPLING_2x2_1x1_1x1
 decl_stmt|;
 end_decl_stmt
+
+begin_empty_stmt
+DECL|variable|orig_subsmp
+empty_stmt|;
+end_empty_stmt
 
 begin_decl_stmt
 DECL|variable|num_quant_tables
 name|gint
 name|num_quant_tables
+init|=
+literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -741,6 +759,7 @@ argument_list|,
 literal|"jpg,jpeg,jpe"
 argument_list|)
 expr_stmt|;
+comment|/* See bugs #63610 and #61088 for a discussion about the quality        * settings        */
 name|GIMP_PROC_ARG_DOUBLE
 argument_list|(
 name|procedure
@@ -891,9 +910,7 @@ literal|"dct"
 argument_list|,
 literal|"DCT"
 argument_list|,
-literal|"DCT method to use { "
-literal|"INTEGER (0), "
-literal|"FIXED (1), "
+literal|"DCT method to use { INTEGER (0), FIXED (1), "
 literal|"FLOAT (2) }"
 argument_list|,
 literal|0
@@ -948,6 +965,9 @@ modifier|*
 name|image
 decl_stmt|;
 name|gboolean
+name|interactive
+decl_stmt|;
+name|gboolean
 name|resolution_loaded
 init|=
 name|FALSE
@@ -976,18 +996,6 @@ name|preview_layer
 operator|=
 name|NULL
 expr_stmt|;
-name|orig_quality
-operator|=
-literal|0
-expr_stmt|;
-name|orig_subsmp
-operator|=
-name|JPEG_SUBSAMPLING_2x2_1x1_1x1
-expr_stmt|;
-name|num_quant_tables
-operator|=
-literal|0
-expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -1004,13 +1012,13 @@ argument_list|(
 name|PLUG_IN_BINARY
 argument_list|)
 expr_stmt|;
-name|load_interactive
+name|interactive
 operator|=
 name|TRUE
 expr_stmt|;
 break|break;
 default|default:
-name|load_interactive
+name|interactive
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1084,7 +1092,7 @@ name|metadata
 argument_list|,
 name|flags
 argument_list|,
-name|load_interactive
+name|interactive
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1209,18 +1217,6 @@ expr_stmt|;
 name|preview_layer
 operator|=
 name|NULL
-expr_stmt|;
-name|orig_quality
-operator|=
-literal|0
-expr_stmt|;
-name|orig_subsmp
-operator|=
-name|JPEG_SUBSAMPLING_2x2_1x1_1x1
-expr_stmt|;
-name|num_quant_tables
-operator|=
-literal|0
 expr_stmt|;
 name|image
 operator|=
@@ -1402,18 +1398,6 @@ expr_stmt|;
 name|preview_layer
 operator|=
 name|NULL
-expr_stmt|;
-name|orig_quality
-operator|=
-literal|0
-expr_stmt|;
-name|orig_subsmp
-operator|=
-name|JPEG_SUBSAMPLING_2x2_1x1_1x1
-expr_stmt|;
-name|num_quant_tables
-operator|=
-literal|0
 expr_stmt|;
 name|orig_image
 operator|=
@@ -2058,7 +2042,9 @@ if|if
 condition|(
 operator|!
 name|save_dialog
-argument_list|()
+argument_list|(
+name|drawable
+argument_list|)
 condition|)
 block|{
 name|status
