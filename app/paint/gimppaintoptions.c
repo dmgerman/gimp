@@ -342,7 +342,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293087c70103
+DECL|enum|__anon2b2f13a90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4030,10 +4030,10 @@ argument_list|,
 name|FALSE
 argument_list|,
 operator|&
-name|height
+name|width
 argument_list|,
 operator|&
-name|width
+name|height
 argument_list|)
 expr_stmt|;
 name|g_object_set
