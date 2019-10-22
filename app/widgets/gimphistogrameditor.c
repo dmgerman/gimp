@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a293e80103
+DECL|enum|__anon2b0a455f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2184,6 +2184,23 @@ operator|->
 name|trc
 argument_list|)
 expr_stmt|;
+name|gimp_histogram_clear_values
+argument_list|(
+name|editor
+operator|->
+name|histogram
+argument_list|,
+name|babl_format_get_n_components
+argument_list|(
+name|gimp_drawable_get_format
+argument_list|(
+name|editor
+operator|->
+name|drawable
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_histogram_view_set_histogram
 argument_list|(
 name|view
@@ -2246,6 +2263,8 @@ argument_list|(
 name|editor
 operator|->
 name|histogram
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_histogram_editor_info_update

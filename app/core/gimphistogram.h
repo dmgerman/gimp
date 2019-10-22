@@ -233,6 +233,9 @@ parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
+parameter_list|,
+name|gint
+name|n_components
 parameter_list|)
 function_decl|;
 end_function_decl
