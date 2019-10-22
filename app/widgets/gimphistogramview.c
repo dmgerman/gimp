@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baff76c0103
+DECL|enum|__anon2931a44b0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baff76c0203
+DECL|enum|__anon2931a44b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2913,7 +2913,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_return_if_fail (histogram == NULL ||                     view->bg_histogram == NULL ||                     gimp_histogram_n_channels (view->bg_histogram) ==                     gimp_histogram_n_channels (histogram));
+block|g_return_if_fail (histogram == NULL ||                     view->bg_histogram == NULL ||                     gimp_histogram_n_components (view->bg_histogram) ==                     gimp_histogram_n_components (histogram));
 endif|#
 directive|endif
 if|if
@@ -2983,13 +2983,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_histogram_has_channel
+argument_list|(
+name|histogram
+argument_list|,
 name|view
 operator|->
 name|channel
-operator|>=
-name|gimp_histogram_n_channels
-argument_list|(
-name|histogram
 argument_list|)
 condition|)
 name|gimp_histogram_view_set_channel
@@ -3071,7 +3072,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_return_if_fail (histogram == NULL ||                     view->histogram == NULL ||                     gimp_histogram_n_channels (view->histogram) ==                     gimp_histogram_n_channels (histogram));
+block|g_return_if_fail (histogram == NULL ||                     view->histogram == NULL ||                     gimp_histogram_n_components (view->histogram) ==                     gimp_histogram_n_components (histogram));
 endif|#
 directive|endif
 if|if
@@ -3141,13 +3142,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_histogram_has_channel
+argument_list|(
+name|histogram
+argument_list|,
 name|view
 operator|->
 name|channel
-operator|>=
-name|gimp_histogram_n_channels
-argument_list|(
-name|histogram
 argument_list|)
 condition|)
 name|gimp_histogram_view_set_channel

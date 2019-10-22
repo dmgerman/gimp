@@ -387,7 +387,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_histogram_n_channels
+name|gimp_histogram_n_components
 parameter_list|(
 name|GimpHistogram
 modifier|*
@@ -403,6 +403,20 @@ parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_histogram_has_channel
+parameter_list|(
+name|GimpHistogram
+modifier|*
+name|histogram
+parameter_list|,
+name|GimpHistogramChannel
+name|channel
 parameter_list|)
 function_decl|;
 end_function_decl

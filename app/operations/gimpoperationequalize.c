@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297fc6930103
+DECL|enum|__anon2bad411b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -597,7 +597,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_histogram_n_channels
+name|gimp_histogram_n_components
 argument_list|(
 name|self
 operator|->
@@ -606,7 +606,7 @@ argument_list|)
 operator|==
 literal|1
 operator|||
-name|gimp_histogram_n_channels
+name|gimp_histogram_n_components
 argument_list|(
 name|self
 operator|->
