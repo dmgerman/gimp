@@ -130,7 +130,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf659930103
+DECL|enum|__anon2a2ae0590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf659930208
+DECL|struct|__anon2a2ae0590208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf659930308
+DECL|struct|__anon2a2ae0590308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -1910,6 +1910,16 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|histogram
+operator|->
+name|priv
+operator|->
+name|n_channels
+operator|>
+literal|0
+condition|)
 return|return
 name|histogram
 operator|->
@@ -1918,6 +1928,10 @@ operator|->
 name|n_channels
 operator|-
 name|N_DERIVED_CHANNELS
+return|;
+else|else
+return|return
+literal|0
 return|;
 block|}
 end_function
