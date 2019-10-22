@@ -918,6 +918,22 @@ argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
+name|GIMP_PROC_AUX_ARG_STRING
+argument_list|(
+name|procedure
+argument_list|,
+literal|"comment"
+argument_list|,
+literal|"Comment"
+argument_list|,
+literal|"Image comment"
+argument_list|,
+name|gimp_get_default_comment
+argument_list|()
+argument_list|,
+name|G_PARAM_READWRITE
+argument_list|)
+expr_stmt|;
 name|GIMP_PROC_ARG_BOOLEAN
 argument_list|(
 name|procedure
@@ -4310,7 +4326,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba4cfda0108
+DECL|struct|__anon277c6d650108
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4572,6 +4588,10 @@ decl_stmt|;
 name|gboolean
 name|save_comment
 decl_stmt|;
+name|gchar
+modifier|*
+name|comment
+decl_stmt|;
 name|gboolean
 name|save_transp_pixels
 decl_stmt|;
@@ -4654,6 +4674,11 @@ literal|"save-comment"
 argument_list|,
 operator|&
 name|save_comment
+argument_list|,
+literal|"comment"
+argument_list|,
+operator|&
+name|comment
 argument_list|,
 literal|"save-transparent"
 argument_list|,
@@ -6226,65 +6251,20 @@ directive|endif
 if|if
 condition|(
 name|save_comment
-condition|)
-block|{
-name|GimpParasite
-modifier|*
-name|parasite
-decl_stmt|;
-name|gsize
-name|text_length
-init|=
-literal|0
-decl_stmt|;
-name|parasite
-operator|=
-name|gimp_image_get_parasite
-argument_list|(
-name|orig_image
-argument_list|,
-literal|"gimp-comment"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|parasite
-condition|)
-block|{
-name|gchar
-modifier|*
-name|comment
-init|=
-name|g_strndup
-argument_list|(
-name|gimp_parasite_data
-argument_list|(
-name|parasite
-argument_list|)
-argument_list|,
-name|gimp_parasite_data_size
-argument_list|(
-name|parasite
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|gimp_parasite_free
-argument_list|(
-name|parasite
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+operator|&&
 name|comment
 operator|&&
 name|strlen
 argument_list|(
 name|comment
 argument_list|)
-operator|>
-literal|0
 condition|)
 block|{
+name|gsize
+name|text_length
+init|=
+literal|0
+decl_stmt|;
 name|text
 operator|=
 name|g_new0
@@ -6356,7 +6336,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/* We can't convert to ISO-8859-1 without loss.                      Save the comment as iTXt (UTF-8). */
+comment|/* We can't convert to ISO-8859-1 without loss.            * Save the comment as iTXt (UTF-8).            */
 name|g_free
 argument_list|(
 name|text
@@ -6438,7 +6418,7 @@ directive|endif
 comment|/* PNG_zTXt_SUPPORTED */
 block|}
 else|else
-comment|/* The comment is ISO-8859-1 compatible, so we use tEXt                      even if there is iTXt support for compatibility to more                      png reading programs. */
+comment|/* The comment is ISO-8859-1 compatible, so we use tEXt even          * if there is iTXt support for compatibility to more png          * reading programs.          */
 endif|#
 directive|endif
 comment|/* PNG_iTXt_SUPPORTED */
@@ -6446,7 +6426,7 @@ block|{
 ifndef|#
 directive|ifndef
 name|PNG_iTXt_SUPPORTED
-comment|/* No iTXt support, so we are forced to use tEXt (ISO-8859-1).                      A broken comment is better than no comment at all, so the                      conversion does not fail on unknown character.                      They are simply ignored. */
+comment|/* No iTXt support, so we are forced to use tEXt            * (ISO-8859-1).  A broken comment is better than no comment            * at all, so the conversion does not fail on unknown            * character.  They are simply ignored.            */
 name|text
 index|[
 literal|0
@@ -6570,14 +6550,12 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+block|}
 name|g_free
 argument_list|(
 name|comment
 argument_list|)
 expr_stmt|;
-block|}
-block|}
-block|}
 ifdef|#
 directive|ifdef
 name|PNG_zTXt_SUPPORTED
