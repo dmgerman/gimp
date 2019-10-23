@@ -2031,6 +2031,8 @@ literal|"gegl:noise-solid"
 block|,
 literal|"gegl:noise-spread"
 block|,
+literal|"gegl:normal-map"
+block|,
 literal|"gegl:npd"
 block|,
 literal|"gegl:oilify"

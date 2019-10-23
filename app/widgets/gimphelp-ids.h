@@ -3062,6 +3062,14 @@ value|"gimp-filter-noise-spread"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_NORMAL_MAP
+define|#
+directive|define
+name|GIMP_HELP_FILTER_NORMAL_MAP
+value|"gimp-filter-normal-map"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_OILIFY
 define|#
 directive|define
