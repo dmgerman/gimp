@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fb67e0108
+DECL|struct|__anon28b8efdc0108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fb67e0208
+DECL|struct|__anon28b8efdc0208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2c2fb67e030a
+DECL|union|__anon28b8efdc030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -1910,6 +1910,11 @@ argument_list|(
 literal|"listen"
 argument_list|)
 expr_stmt|;
+name|freeaddrinfo
+argument_list|(
+name|ai
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 block|}
@@ -2041,6 +2046,11 @@ block|}
 name|server_progress_uninstall
 argument_list|(
 name|progress
+argument_list|)
+expr_stmt|;
+name|freeaddrinfo
+argument_list|(
+name|ai
 argument_list|)
 expr_stmt|;
 name|server_quit
