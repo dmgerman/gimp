@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2755cf1c0103
+DECL|enum|__anon2c7dfd670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,7 +299,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2755cf1c0203
+DECL|enum|__anon2c7dfd670203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -313,7 +313,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2755cf1c0303
+DECL|enum|__anon2c7dfd670303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -356,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2755cf1c0403
+DECL|enum|__anon2c7dfd670403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -9763,7 +9763,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tool_rectangle_apply_coord:  * @param:     A #GimpToolRectangle.  * @coord_x:   X of coord.  * @coord_y:   Y of coord.  *  * Adjust the rectangle to the new position specified by passed  * coordinate, taking fixed_center into account, which means it  * expands the rectagle around the center point.  */
+comment|/**  * gimp_tool_rectangle_apply_coord:  * @param:     A #GimpToolRectangle.  * @coord_x:   X of coord.  * @coord_y:   Y of coord.  *  * Adjust the rectangle to the new position specified by passed  * coordinate, taking fixed_center into account, which means it  * expands the rectangle around the center point.  */
 end_comment
 
 begin_function
