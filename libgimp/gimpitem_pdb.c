@@ -546,7 +546,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_id_is_selection:  * @item_id: The item ID.  *  * Returns whether the item ID is a selection.  *  * This procedure returns TRUE if the specified item ID is a selection.  *  * Returns: TRUE if the item ID is a selection, FALSE otherwise.  *  * Since: 3,0  **/
+comment|/**  * gimp_item_id_is_selection:  * @item_id: The item ID.  *  * Returns whether the item ID is a selection.  *  * This procedure returns TRUE if the specified item ID is a selection.  *  * Returns: TRUE if the item ID is a selection, FALSE otherwise.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
