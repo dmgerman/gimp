@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimageviewable.h"
+file|"core/gimpimageproxy.h"
 end_include
 
 begin_include
@@ -204,7 +204,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|GIMP_IS_IMAGE_VIEWABLE
+name|GIMP_IS_IMAGE_PROXY
 argument_list|(
 name|renderer
 operator|->
@@ -214,9 +214,9 @@ condition|)
 block|{
 name|image
 operator|=
-name|gimp_image_viewable_get_image
+name|gimp_image_proxy_get_image
 argument_list|(
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|renderer
 operator|->

@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimageviewable.h"
+file|"core/gimpimageproxy.h"
 end_include
 
 begin_include
@@ -630,7 +630,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_NAVIGATION_VIEW
 argument_list|,
-name|GIMP_TYPE_IMAGE_VIEWABLE
+name|GIMP_TYPE_IMAGE_PROXY
 argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
@@ -2253,7 +2253,7 @@ argument_list|(
 operator|&
 name|editor
 operator|->
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 if|if
@@ -2263,9 +2263,9 @@ condition|)
 block|{
 name|editor
 operator|->
-name|image_viewable
+name|image_proxy
 operator|=
-name|gimp_image_viewable_new
+name|gimp_image_proxy_new
 argument_list|(
 name|image
 argument_list|)
@@ -2274,7 +2274,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|image_viewable
+name|image_proxy
 argument_list|,
 literal|"size-changed"
 argument_list|,
@@ -2300,7 +2300,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|editor
 operator|->
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2459,7 +2459,7 @@ argument_list|(
 operator|&
 name|editor
 operator|->
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 block|}
@@ -2601,9 +2601,9 @@ name|bounding_box
 decl_stmt|;
 name|bounding_box
 operator|=
-name|gimp_image_viewable_get_bounding_box
+name|gimp_image_proxy_get_bounding_box
 argument_list|(
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|renderer
 operator|->
@@ -3321,7 +3321,7 @@ argument_list|(
 operator|&
 name|editor
 operator|->
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 if|if
@@ -3331,9 +3331,9 @@ condition|)
 block|{
 name|editor
 operator|->
-name|image_viewable
+name|image_proxy
 operator|=
-name|gimp_image_viewable_new
+name|gimp_image_proxy_new
 argument_list|(
 name|image
 argument_list|)
@@ -3342,7 +3342,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|image_viewable
+name|image_proxy
 argument_list|,
 literal|"size-changed"
 argument_list|,
@@ -3368,7 +3368,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|editor
 operator|->
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3492,9 +3492,9 @@ name|h
 decl_stmt|;
 name|image
 operator|=
-name|gimp_image_viewable_get_image
+name|gimp_image_proxy_get_image
 argument_list|(
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|renderer
 operator|->
@@ -3502,9 +3502,9 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_viewable_set_show_all
+name|gimp_image_proxy_set_show_all
 argument_list|(
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|renderer
 operator|->
@@ -3519,9 +3519,9 @@ argument_list|)
 expr_stmt|;
 name|bounding_box
 operator|=
-name|gimp_image_viewable_get_bounding_box
+name|gimp_image_proxy_get_bounding_box
 argument_list|(
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|renderer
 operator|->

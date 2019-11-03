@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpimageviewable.c  * Copyright (C) 2019 Ell  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpimageproxy.c  * Copyright (C) 2019 Ell  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimageviewable.h"
+file|"gimpimageproxy.h"
 end_include
 
 begin_include
@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299fa94e0103
+DECL|enum|__anon296641820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -116,9 +116,9 @@ enum|;
 end_enum
 
 begin_struct
-DECL|struct|_GimpImageViewablePrivate
+DECL|struct|_GimpImageProxyPrivate
 struct|struct
-name|_GimpImageViewablePrivate
+name|_GimpImageProxyPrivate
 block|{
 DECL|member|image
 name|GimpImage
@@ -148,7 +148,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_finalize
+name|gimp_image_proxy_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -160,7 +160,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_set_property
+name|gimp_image_proxy_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -184,7 +184,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_get_property
+name|gimp_image_proxy_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -207,7 +207,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_image_viewable_get_size
+name|gimp_image_proxy_get_size
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -227,7 +227,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_get_preview_size
+name|gimp_image_proxy_get_preview_size
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -256,7 +256,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_image_viewable_get_popup_size
+name|gimp_image_proxy_get_popup_size
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -286,7 +286,7 @@ begin_function_decl
 specifier|static
 name|GimpTempBuf
 modifier|*
-name|gimp_image_viewable_get_new_preview
+name|gimp_image_proxy_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -309,7 +309,7 @@ begin_function_decl
 specifier|static
 name|GdkPixbuf
 modifier|*
-name|gimp_image_viewable_get_new_pixbuf
+name|gimp_image_proxy_get_new_pixbuf
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -332,7 +332,7 @@ begin_function_decl
 specifier|static
 name|gchar
 modifier|*
-name|gimp_image_viewable_get_description
+name|gimp_image_proxy_get_description
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -349,7 +349,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_image_frozen_notify
+name|gimp_image_proxy_image_frozen_notify
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -360,9 +360,9 @@ name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|,
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -370,15 +370,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_image_invalidate_preview
+name|gimp_image_proxy_image_invalidate_preview
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -386,15 +386,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_image_size_changed
+name|gimp_image_proxy_image_size_changed
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -402,7 +402,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_image_bounds_changed
+name|gimp_image_proxy_image_bounds_changed
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -414,9 +414,9 @@ parameter_list|,
 name|gint
 name|old_y
 parameter_list|,
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -424,11 +424,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_set_image
+name|gimp_image_proxy_set_image
 parameter_list|(
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -440,11 +440,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_update_bounding_box
+name|gimp_image_proxy_update_bounding_box
 parameter_list|(
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -452,22 +452,21 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_viewable_update_frozen
+name|gimp_image_proxy_update_frozen
 parameter_list|(
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpImageViewable,gimp_image_viewable,GIMP_TYPE_VIEWABLE)
 name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
-argument|GimpImageViewable
+argument|GimpImageProxy
 argument_list|,
-argument|gimp_image_viewable
+argument|gimp_image_proxy
 argument_list|,
 argument|GIMP_TYPE_VIEWABLE
 argument_list|)
@@ -478,101 +477,100 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_image_viewable_parent_class
+value|gimp_image_proxy_parent_class
 end_define
 
 begin_comment
 comment|/*  private functions  */
 end_comment
 
-begin_function
+begin_expr_stmt
 specifier|static
 name|void
-name|gimp_image_viewable_class_init
-parameter_list|(
-name|GimpImageViewableClass
-modifier|*
-name|klass
-parameter_list|)
+operator|-
+name|gimp_image_proxy_class_init
+argument_list|(
+argument|GimpImageProxyClass *klass
+argument_list|)
 block|{
 name|GObjectClass
-modifier|*
+operator|*
 name|object_class
-init|=
+operator|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-decl_stmt|;
+block|;
 name|GimpViewableClass
-modifier|*
+operator|*
 name|viewable_class
-init|=
+operator|=
 name|GIMP_VIEWABLE_CLASS
 argument_list|(
 name|klass
 argument_list|)
-decl_stmt|;
+block|;
 name|object_class
 operator|->
 name|finalize
 operator|=
-name|gimp_image_viewable_finalize
-expr_stmt|;
+name|gimp_image_proxy_finalize
+block|;
 name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_image_viewable_set_property
-expr_stmt|;
+name|gimp_image_proxy_set_property
+block|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_image_viewable_get_property
-expr_stmt|;
+name|gimp_image_proxy_get_property
+block|;
 name|viewable_class
 operator|->
 name|default_icon_name
 operator|=
 literal|"gimp-image"
-expr_stmt|;
+block|;
 name|viewable_class
 operator|->
 name|get_size
 operator|=
-name|gimp_image_viewable_get_size
-expr_stmt|;
+name|gimp_image_proxy_get_size
+block|;
 name|viewable_class
 operator|->
 name|get_preview_size
 operator|=
-name|gimp_image_viewable_get_preview_size
-expr_stmt|;
+name|gimp_image_proxy_get_preview_size
+block|;
 name|viewable_class
 operator|->
 name|get_popup_size
 operator|=
-name|gimp_image_viewable_get_popup_size
-expr_stmt|;
+name|gimp_image_proxy_get_popup_size
+block|;
 name|viewable_class
 operator|->
 name|get_new_preview
 operator|=
-name|gimp_image_viewable_get_new_preview
-expr_stmt|;
+name|gimp_image_proxy_get_new_preview
+block|;
 name|viewable_class
 operator|->
 name|get_new_pixbuf
 operator|=
-name|gimp_image_viewable_get_new_pixbuf
-expr_stmt|;
+name|gimp_image_proxy_get_new_pixbuf
+block|;
 name|viewable_class
 operator|->
 name|get_description
 operator|=
-name|gimp_image_viewable_get_description
-expr_stmt|;
+name|gimp_image_proxy_get_description
+block|;
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -594,7 +592,7 @@ operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
-expr_stmt|;
+block|;
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -616,60 +614,48 @@ operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
+block|; }
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_init (GimpImageViewable * image_viewable)
-name|gimp_image_viewable_init
-parameter_list|(
-name|GimpImageViewable
-modifier|*
-name|image_viewable
-parameter_list|)
+DECL|function|gimp_image_proxy_init (GimpImageProxy * image_proxy)
+name|gimp_image_proxy_init
+argument_list|(
+argument|GimpImageProxy *image_proxy
+argument_list|)
 block|{
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|=
-name|gimp_image_viewable_get_instance_private
+name|gimp_image_proxy_get_instance_private
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
+block|; }
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_finalize (GObject * object)
-name|gimp_image_viewable_finalize
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|)
+DECL|function|gimp_image_proxy_finalize (GObject * object)
+name|gimp_image_proxy_finalize
+argument_list|(
+argument|GObject *object
+argument_list|)
 block|{
-name|GimpImageViewable
-modifier|*
-name|image_viewable
-init|=
-name|GIMP_IMAGE_VIEWABLE
+name|GimpImageProxy
+operator|*
+name|image_proxy
+operator|=
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|object
 argument_list|)
-decl_stmt|;
-name|gimp_image_viewable_set_image
+block|;
+name|gimp_image_proxy_set_image
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
+block|;
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -679,42 +665,30 @@ name|finalize
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
+block|; }
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_image_viewable_set_property
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|,
-name|guint
-name|property_id
-parameter_list|,
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
-parameter_list|)
+DECL|function|gimp_image_proxy_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_image_proxy_set_property
+argument_list|(
+argument|GObject      *object
+argument_list|,
+argument|guint         property_id
+argument_list|,
+argument|const GValue *value
+argument_list|,
+argument|GParamSpec   *pspec
+argument_list|)
 block|{
-name|GimpImageViewable
-modifier|*
-name|image_viewable
-init|=
-name|GIMP_IMAGE_VIEWABLE
+name|GimpImageProxy
+operator|*
+name|image_proxy
+operator|=
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|object
 argument_list|)
-decl_stmt|;
+block|;
 switch|switch
 condition|(
 name|property_id
@@ -723,9 +697,9 @@ block|{
 case|case
 name|PROP_IMAGE
 case|:
-name|gimp_image_viewable_set_image
+name|gimp_image_proxy_set_image
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|,
 name|g_value_get_object
 argument_list|(
@@ -737,9 +711,9 @@ break|break;
 case|case
 name|PROP_SHOW_ALL
 case|:
-name|gimp_image_viewable_set_show_all
+name|gimp_image_proxy_set_show_all
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|,
 name|g_value_get_boolean
 argument_list|(
@@ -760,14 +734,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-block|}
-end_function
+end_expr_stmt
 
 begin_function
-specifier|static
+unit|}  static
 name|void
-DECL|function|gimp_image_viewable_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_image_viewable_get_property
+DECL|function|gimp_image_proxy_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_image_proxy_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -785,11 +758,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 init|=
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|object
 argument_list|)
@@ -806,9 +779,9 @@ name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|gimp_image_viewable_get_image
+name|gimp_image_proxy_get_image
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -820,9 +793,9 @@ name|g_value_set_boolean
 argument_list|(
 name|value
 argument_list|,
-name|gimp_image_viewable_get_show_all
+name|gimp_image_proxy_get_show_all
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -845,8 +818,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_viewable_get_size (GimpViewable * viewable,gint * width,gint * height)
-name|gimp_image_viewable_get_size
+DECL|function|gimp_image_proxy_get_size (GimpViewable * viewable,gint * width,gint * height)
+name|gimp_image_proxy_get_size
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -861,11 +834,11 @@ modifier|*
 name|height
 parameter_list|)
 block|{
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 init|=
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|viewable
 argument_list|)
@@ -873,7 +846,7 @@ decl_stmt|;
 operator|*
 name|width
 operator|=
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -884,7 +857,7 @@ expr_stmt|;
 operator|*
 name|height
 operator|=
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -901,8 +874,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_get_preview_size (GimpViewable * viewable,gint size,gboolean is_popup,gboolean dot_for_dot,gint * width,gint * height)
-name|gimp_image_viewable_get_preview_size
+DECL|function|gimp_image_proxy_get_preview_size (GimpViewable * viewable,gint size,gboolean is_popup,gboolean dot_for_dot,gint * width,gint * height)
+name|gimp_image_proxy_get_preview_size
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -926,11 +899,11 @@ modifier|*
 name|height
 parameter_list|)
 block|{
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 init|=
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|viewable
 argument_list|)
@@ -939,7 +912,7 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1008,8 +981,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_viewable_get_popup_size (GimpViewable * viewable,gint width,gint height,gboolean dot_for_dot,gint * popup_width,gint * popup_height)
-name|gimp_image_viewable_get_popup_size
+DECL|function|gimp_image_proxy_get_popup_size (GimpViewable * viewable,gint width,gint height,gboolean dot_for_dot,gint * popup_width,gint * popup_height)
+name|gimp_image_proxy_get_popup_size
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -1122,8 +1095,8 @@ begin_function
 specifier|static
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_image_viewable_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
-name|gimp_image_viewable_get_new_preview
+DECL|function|gimp_image_proxy_get_new_preview (GimpViewable * viewable,GimpContext * context,gint width,gint height)
+name|gimp_image_proxy_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -1140,11 +1113,11 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 init|=
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|viewable
 argument_list|)
@@ -1153,7 +1126,7 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1187,7 +1160,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1213,9 +1186,9 @@ argument_list|)
 expr_stmt|;
 name|bounding_box
 operator|=
-name|gimp_image_viewable_get_bounding_box
+name|gimp_image_proxy_get_bounding_box
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 name|scale_x
@@ -1326,8 +1299,8 @@ begin_function
 specifier|static
 name|GdkPixbuf
 modifier|*
-DECL|function|gimp_image_viewable_get_new_pixbuf (GimpViewable * viewable,GimpContext * context,gint width,gint height)
-name|gimp_image_viewable_get_new_pixbuf
+DECL|function|gimp_image_proxy_get_new_pixbuf (GimpViewable * viewable,GimpContext * context,gint width,gint height)
+name|gimp_image_proxy_get_new_pixbuf
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -1344,11 +1317,11 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 init|=
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|viewable
 argument_list|)
@@ -1357,7 +1330,7 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1390,7 +1363,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1416,9 +1389,9 @@ argument_list|)
 expr_stmt|;
 name|bounding_box
 operator|=
-name|gimp_image_viewable_get_bounding_box
+name|gimp_image_proxy_get_bounding_box
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 name|scale_x
@@ -1674,8 +1647,8 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_image_viewable_get_description (GimpViewable * viewable,gchar ** tooltip)
-name|gimp_image_viewable_get_description
+DECL|function|gimp_image_proxy_get_description (GimpViewable * viewable,gchar ** tooltip)
+name|gimp_image_proxy_get_description
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -1687,11 +1660,11 @@ modifier|*
 name|tooltip
 parameter_list|)
 block|{
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 init|=
-name|GIMP_IMAGE_VIEWABLE
+name|GIMP_IMAGE_PROXY
 argument_list|(
 name|viewable
 argument_list|)
@@ -1700,7 +1673,7 @@ name|GimpImage
 modifier|*
 name|image
 init|=
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1743,8 +1716,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_image_frozen_notify (GimpImage * image,const GParamSpec * pspec,GimpImageViewable * image_viewable)
-name|gimp_image_viewable_image_frozen_notify
+DECL|function|gimp_image_proxy_image_frozen_notify (GimpImage * image,const GParamSpec * pspec,GimpImageProxy * image_proxy)
+name|gimp_image_proxy_image_frozen_notify
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1755,14 +1728,14 @@ name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|,
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 block|{
-name|gimp_image_viewable_update_frozen
+name|gimp_image_proxy_update_frozen
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 block|}
@@ -1771,23 +1744,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_image_invalidate_preview (GimpImage * image,GimpImageViewable * image_viewable)
-name|gimp_image_viewable_image_invalidate_preview
+DECL|function|gimp_image_proxy_image_invalidate_preview (GimpImage * image,GimpImageProxy * image_proxy)
+name|gimp_image_proxy_image_invalidate_preview
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 block|{
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1797,21 +1770,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_image_size_changed (GimpImage * image,GimpImageViewable * image_viewable)
-name|gimp_image_viewable_image_size_changed
+DECL|function|gimp_image_proxy_image_size_changed (GimpImage * image,GimpImageProxy * image_proxy)
+name|gimp_image_proxy_image_size_changed
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 block|{
-name|gimp_image_viewable_update_bounding_box
+name|gimp_image_proxy_update_bounding_box
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 block|}
@@ -1820,8 +1793,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_image_bounds_changed (GimpImage * image,gint old_x,gint old_y,GimpImageViewable * image_viewable)
-name|gimp_image_viewable_image_bounds_changed
+DECL|function|gimp_image_proxy_image_bounds_changed (GimpImage * image,gint old_x,gint old_y,GimpImageProxy * image_proxy)
+name|gimp_image_proxy_image_bounds_changed
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1833,14 +1806,14 @@ parameter_list|,
 name|gint
 name|old_y
 parameter_list|,
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 block|{
-name|gimp_image_viewable_update_bounding_box
+name|gimp_image_proxy_update_bounding_box
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 block|}
@@ -1849,12 +1822,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_set_image (GimpImageViewable * image_viewable,GimpImage * image)
-name|gimp_image_viewable_set_image
+DECL|function|gimp_image_proxy_set_image (GimpImageProxy * image_proxy,GimpImage * image)
+name|gimp_image_proxy_set_image
 parameter_list|(
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1863,7 +1836,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1872,59 +1845,59 @@ condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
 name|image
 argument_list|,
-name|gimp_image_viewable_image_frozen_notify
+name|gimp_image_proxy_image_frozen_notify
 argument_list|,
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
 name|image
 argument_list|,
-name|gimp_image_viewable_image_invalidate_preview
+name|gimp_image_proxy_image_invalidate_preview
 argument_list|,
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
 name|image
 argument_list|,
-name|gimp_image_viewable_image_size_changed
+name|gimp_image_proxy_image_size_changed
 argument_list|,
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
 name|image
 argument_list|,
-name|gimp_image_viewable_image_bounds_changed
+name|gimp_image_proxy_image_bounds_changed
 argument_list|,
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1932,7 +1905,7 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1942,7 +1915,7 @@ name|image
 expr_stmt|;
 if|if
 condition|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1951,7 +1924,7 @@ condition|)
 block|{
 name|g_object_ref
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1960,7 +1933,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1970,15 +1943,15 @@ literal|"notify::frozen"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_viewable_image_frozen_notify
+name|gimp_image_proxy_image_frozen_notify
 argument_list|)
 argument_list|,
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -1988,15 +1961,15 @@ literal|"invalidate-preview"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_viewable_image_invalidate_preview
+name|gimp_image_proxy_image_invalidate_preview
 argument_list|)
 argument_list|,
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2006,15 +1979,15 @@ literal|"size-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_viewable_image_size_changed
+name|gimp_image_proxy_image_size_changed
 argument_list|)
 argument_list|,
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2024,27 +1997,27 @@ literal|"bounds-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_viewable_image_bounds_changed
+name|gimp_image_proxy_image_bounds_changed
 argument_list|)
 argument_list|,
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
-name|gimp_image_viewable_update_bounding_box
+name|gimp_image_proxy_update_bounding_box
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
-name|gimp_image_viewable_update_frozen
+name|gimp_image_proxy_update_frozen
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2055,19 +2028,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_update_bounding_box (GimpImageViewable * image_viewable)
-name|gimp_image_viewable_update_bounding_box
+DECL|function|gimp_image_proxy_update_bounding_box (GimpImageProxy * image_proxy)
+name|gimp_image_proxy_update_bounding_box
 parameter_list|(
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 block|{
 name|GimpImage
 modifier|*
 name|image
 init|=
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2082,7 +2055,7 @@ name|gimp_viewable_preview_is_frozen
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 condition|)
@@ -2090,7 +2063,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2150,7 +2123,7 @@ operator|&
 name|bounding_box
 argument_list|,
 operator|&
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2158,7 +2131,7 @@ name|bounding_box
 argument_list|)
 condition|)
 block|{
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2170,7 +2143,7 @@ name|gimp_viewable_size_changed
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2181,12 +2154,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_viewable_update_frozen (GimpImageViewable * image_viewable)
-name|gimp_image_viewable_update_frozen
+DECL|function|gimp_image_proxy_update_frozen (GimpImageProxy * image_proxy)
+name|gimp_image_proxy_update_frozen
 parameter_list|(
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 block|{
 name|gboolean
@@ -2198,7 +2171,7 @@ name|gimp_viewable_preview_is_frozen
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2210,14 +2183,14 @@ if|if
 condition|(
 name|frozen
 operator|!=
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
 name|frozen
 condition|)
 block|{
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2234,7 +2207,7 @@ name|gimp_viewable_preview_freeze
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2245,13 +2218,13 @@ name|gimp_viewable_preview_thaw
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_viewable_update_bounding_box
+name|gimp_image_proxy_update_bounding_box
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 block|}
@@ -2264,10 +2237,10 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-DECL|function|gimp_image_viewable_new (GimpImage * image)
-name|gimp_image_viewable_new
+DECL|function|gimp_image_proxy_new (GimpImage * image)
+name|gimp_image_proxy_new
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2287,7 +2260,7 @@ expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_IMAGE_VIEWABLE
+name|GIMP_TYPE_IMAGE_PROXY
 argument_list|,
 literal|"image"
 argument_list|,
@@ -2302,26 +2275,26 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_image_viewable_get_image (GimpImageViewable * image_viewable)
-name|gimp_image_viewable_get_image
+DECL|function|gimp_image_proxy_get_image (GimpImageProxy * image_proxy)
+name|gimp_image_proxy_get_image
 parameter_list|(
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE_VIEWABLE
+name|GIMP_IS_IMAGE_PROXY
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2332,12 +2305,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_viewable_set_show_all (GimpImageViewable * image_viewable,gboolean show_all)
-name|gimp_image_viewable_set_show_all
+DECL|function|gimp_image_proxy_set_show_all (GimpImageProxy * image_proxy,gboolean show_all)
+name|gimp_image_proxy_set_show_all
 parameter_list|(
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|,
 name|gboolean
 name|show_all
@@ -2345,9 +2318,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE_VIEWABLE
+name|GIMP_IS_IMAGE_PROXY
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2355,14 +2328,14 @@ if|if
 condition|(
 name|show_all
 operator|!=
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
 name|show_all
 condition|)
 block|{
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2370,9 +2343,9 @@ name|show_all
 operator|=
 name|show_all
 expr_stmt|;
-name|gimp_image_viewable_update_bounding_box
+name|gimp_image_proxy_update_bounding_box
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 expr_stmt|;
 block|}
@@ -2381,26 +2354,26 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_viewable_get_show_all (GimpImageViewable * image_viewable)
-name|gimp_image_viewable_get_show_all
+DECL|function|gimp_image_proxy_get_show_all (GimpImageProxy * image_proxy)
+name|gimp_image_proxy_get_show_all
 parameter_list|(
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE_VIEWABLE
+name|GIMP_IS_IMAGE_PROXY
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->
@@ -2411,19 +2384,19 @@ end_function
 
 begin_function
 name|GeglRectangle
-DECL|function|gimp_image_viewable_get_bounding_box (GimpImageViewable * image_viewable)
-name|gimp_image_viewable_get_bounding_box
+DECL|function|gimp_image_proxy_get_bounding_box (GimpImageProxy * image_proxy)
+name|gimp_image_proxy_get_bounding_box
 parameter_list|(
-name|GimpImageViewable
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE_VIEWABLE
+name|GIMP_IS_IMAGE_PROXY
 argument_list|(
-name|image_viewable
+name|image_proxy
 argument_list|)
 argument_list|,
 operator|*
@@ -2440,7 +2413,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|image_viewable
+name|image_proxy
 operator|->
 name|priv
 operator|->

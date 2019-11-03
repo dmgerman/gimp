@@ -113,10 +113,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
-DECL|member|image_viewable
-name|GimpImageViewable
+DECL|member|image_proxy
+name|GimpImageProxy
 modifier|*
-name|image_viewable
+name|image_proxy
 decl_stmt|;
 DECL|member|view
 name|GtkWidget

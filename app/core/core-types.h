@@ -931,11 +931,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpImageViewable
+DECL|typedef|GimpImageProxy
 typedef|typedef
 name|struct
-name|_GimpImageViewable
-name|GimpImageViewable
+name|_GimpImageProxy
+name|GimpImageProxy
 typedef|;
 end_typedef
 
