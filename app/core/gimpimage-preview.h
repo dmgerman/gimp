@@ -16,6 +16,19 @@ directive|define
 name|__GIMP_IMAGE_PREVIEW_H__
 end_define
 
+begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_image_get_preview_format
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  *  virtual functions of GimpImage -- don't call directly  */
 end_comment
