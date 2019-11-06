@@ -48,7 +48,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430103
+DECL|enum|__anon2a21ba9d0103
 block|{
 DECL|enumerator|GIMP_XMP_NONE
 name|GIMP_XMP_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430203
+DECL|enum|__anon2a21ba9d0203
 block|{
 DECL|enumerator|COL_LICENSOR_NAME
 name|COL_LICENSOR_NAME
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430303
+DECL|enum|__anon2a21ba9d0303
 block|{
 DECL|enumerator|COL_CR_OWNER_NAME
 name|COL_CR_OWNER_NAME
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430403
+DECL|enum|__anon2a21ba9d0403
 block|{
 DECL|enumerator|COL_IMG_CR8_NAME
 name|COL_IMG_CR8_NAME
@@ -147,7 +147,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430503
+DECL|enum|__anon2a21ba9d0503
 block|{
 DECL|enumerator|COL_AOO_TITLE
 name|COL_AOO_TITLE
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430603
+DECL|enum|__anon2a21ba9d0603
 block|{
 DECL|enumerator|COL_REGSITRY_ORG_ID
 name|COL_REGSITRY_ORG_ID
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430703
+DECL|enum|__anon2a21ba9d0703
 block|{
 DECL|enumerator|COL_LOC_SHO_SUB_LOC
 name|COL_LOC_SHO_SUB_LOC
@@ -225,7 +225,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430803
+DECL|enum|__anon2a21ba9d0803
 block|{
 DECL|enumerator|COL_ORG_IMG_CODE
 name|COL_ORG_IMG_CODE
@@ -240,7 +240,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430903
+DECL|enum|__anon2a21ba9d0903
 block|{
 DECL|enumerator|COL_ORG_IMG_NAME
 name|COL_ORG_IMG_NAME
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430a03
+DECL|enum|__anon2a21ba9d0a03
 block|{
 DECL|enumerator|COL_MOD_REL_ID
 name|COL_MOD_REL_ID
@@ -270,7 +270,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e53430b03
+DECL|enum|__anon2a21ba9d0b03
 block|{
 DECL|enumerator|COL_PROP_REL_ID
 name|COL_PROP_REL_ID
@@ -2680,17 +2680,13 @@ begin_comment
 comment|/* Plus and IPTC extension tags */
 end_comment
 
-begin_decl_stmt
-DECL|variable|licensor_header
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|licensor_header
-init|=
-literal|"Xmp.plus.Licensor"
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|LICENSOR_HEADER
+define|#
+directive|define
+name|LICENSOR_HEADER
+value|"Xmp.plus.Licensor"
+end_define
 
 begin_decl_stmt
 DECL|variable|licensor
@@ -2727,17 +2723,13 @@ directive|ifdef
 name|USE_TAGS
 end_ifdef
 
-begin_decl_stmt
-DECL|variable|imagesupplier_header
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|imagesupplier_header
-init|=
-literal|"Xmp.plus.ImageSupplier"
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|IMAGESUPPLIER_HEADER
+define|#
+directive|define
+name|IMAGESUPPLIER_HEADER
+value|"Xmp.plus.ImageSupplier"
+end_define
 
 begin_decl_stmt
 DECL|variable|imagesupplier
@@ -2761,17 +2753,13 @@ endif|#
 directive|endif
 end_endif
 
-begin_decl_stmt
-DECL|variable|imagecreator_header
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|imagecreator_header
-init|=
-literal|"Xmp.plus.ImageCreator"
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|IMAGECREATOR_HEADER
+define|#
+directive|define
+name|IMAGECREATOR_HEADER
+value|"Xmp.plus.ImageCreator"
+end_define
 
 begin_decl_stmt
 DECL|variable|imagecreator
@@ -2790,17 +2778,13 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|copyrightowner_header
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|copyrightowner_header
-init|=
-literal|"Xmp.plus.CopyrightOwner"
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|COPYRIGHTOWNER_HEADER
+define|#
+directive|define
+name|COPYRIGHTOWNER_HEADER
+value|"Xmp.plus.CopyrightOwner"
+end_define
 
 begin_decl_stmt
 DECL|variable|copyrightowner
@@ -2819,17 +2803,13 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|registryid_header
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|registryid_header
-init|=
-literal|"Xmp.iptcExt.RegistryId"
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|REGISTRYID_HEADER
+define|#
+directive|define
+name|REGISTRYID_HEADER
+value|"Xmp.iptcExt.RegistryId"
+end_define
 
 begin_decl_stmt
 DECL|variable|registryid
@@ -2848,17 +2828,13 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|artworkorobject_header
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|artworkorobject_header
-init|=
-literal|"Xmp.iptcExt.ArtworkOrObject"
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|ARTWORKOROBJECT_HEADER
+define|#
+directive|define
+name|ARTWORKOROBJECT_HEADER
+value|"Xmp.iptcExt.ArtworkOrObject"
+end_define
 
 begin_decl_stmt
 DECL|variable|artworkorobject
@@ -2885,17 +2861,13 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|locationshown_header
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|locationshown_header
-init|=
-literal|"Xmp.iptcExt.LocationShown"
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|LOCATIONSHOWN_HEADER
+define|#
+directive|define
+name|LOCATIONSHOWN_HEADER
+value|"Xmp.iptcExt.LocationShown"
+end_define
 
 begin_decl_stmt
 DECL|variable|locationshown
@@ -2928,17 +2900,13 @@ directive|ifdef
 name|USE_TAGS
 end_ifdef
 
-begin_decl_stmt
-DECL|variable|locationcreated_header
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|locationcreated_header
-init|=
-literal|"Xmp.iptcExt.LocationCreated"
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|LOCATIONCREATED_HEADER
+define|#
+directive|define
+name|LOCATIONCREATED_HEADER
+value|"Xmp.iptcExt.LocationCreated"
+end_define
 
 begin_decl_stmt
 DECL|variable|locationcreated

@@ -935,7 +935,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.plus.Licensor"
+name|LICENSOR_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -1193,7 +1193,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.plus.ImageCreator"
+name|IMAGECREATOR_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -1367,7 +1367,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.iptcExt.ArtworkOrObject"
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -1597,7 +1597,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.iptcExt.RegistryId"
+name|REGISTRYID_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -1771,7 +1771,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.plus.CopyrightOwner"
+name|COPYRIGHTOWNER_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -1953,7 +1953,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.iptcExt.LocationShown"
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -3039,7 +3039,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.plus.Licensor"
+name|LICENSOR_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -3438,7 +3438,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.plus.CopyrightOwner"
+name|COPYRIGHTOWNER_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -3642,7 +3642,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.plus.ImageCreator"
+name|IMAGECREATOR_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -3825,7 +3825,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.iptcExt.ArtworkOrObject"
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -4152,7 +4152,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.iptcExt.RegistryId"
+name|REGISTRYID_HEADER
 argument_list|,
 name|name
 argument_list|)
@@ -4335,7 +4335,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Xmp.iptcExt.LocationShown"
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|name
 argument_list|)

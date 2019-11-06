@@ -13538,7 +13538,7 @@ name|count_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|licensor
 argument_list|,
@@ -13552,7 +13552,7 @@ name|get_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|licensor
 argument_list|,
@@ -14771,7 +14771,7 @@ name|count_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|copyrightowner_header
+name|COPYRIGHTOWNER_HEADER
 argument_list|,
 name|copyrightowner
 argument_list|,
@@ -14785,7 +14785,7 @@ name|get_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|copyrightowner_header
+name|COPYRIGHTOWNER_HEADER
 argument_list|,
 name|copyrightowner
 argument_list|,
@@ -15151,7 +15151,7 @@ name|count_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|imagecreator_header
+name|IMAGECREATOR_HEADER
 argument_list|,
 name|imagecreator
 argument_list|,
@@ -15165,7 +15165,7 @@ name|get_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|imagecreator_header
+name|IMAGECREATOR_HEADER
 argument_list|,
 name|imagecreator
 argument_list|,
@@ -15531,7 +15531,7 @@ name|count_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|artworkorobject_header
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|artworkorobject
 argument_list|,
@@ -15545,7 +15545,7 @@ name|get_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|artworkorobject_header
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|artworkorobject
 argument_list|,
@@ -16437,7 +16437,7 @@ name|count_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|registryid_header
+name|REGISTRYID_HEADER
 argument_list|,
 name|registryid
 argument_list|,
@@ -16451,7 +16451,7 @@ name|get_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|registryid_header
+name|REGISTRYID_HEADER
 argument_list|,
 name|registryid
 argument_list|,
@@ -16817,7 +16817,7 @@ name|count_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|locationshown_header
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|locationshown
 argument_list|,
@@ -16831,7 +16831,7 @@ name|get_tags
 argument_list|(
 name|metadata
 argument_list|,
-name|locationshown_header
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|locationshown
 argument_list|,
@@ -19673,7 +19673,7 @@ argument_list|(
 name|g_metadata
 argument_list|)
 argument_list|,
-name|locationshown_header
+name|LOCATIONSHOWN_HEADER
 argument_list|)
 expr_stmt|;
 name|output_data
@@ -19728,7 +19728,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|locationshown_header
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|row
 argument_list|,
@@ -19827,7 +19827,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|locationshown_header
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -19878,7 +19878,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|locationshown_header
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -19929,7 +19929,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|locationshown_header
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -19980,7 +19980,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|locationshown_header
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20031,7 +20031,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|locationshown_header
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20082,7 +20082,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|locationshown_header
+name|LOCATIONSHOWN_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20148,7 +20148,7 @@ argument_list|(
 name|g_metadata
 argument_list|)
 argument_list|,
-name|artworkorobject_header
+name|ARTWORKOROBJECT_HEADER
 argument_list|)
 expr_stmt|;
 name|output_data
@@ -20203,7 +20203,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|artworkorobject_header
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|row
 argument_list|,
@@ -20302,7 +20302,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|artworkorobject_header
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20353,7 +20353,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|artworkorobject_header
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20404,7 +20404,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|artworkorobject_header
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20455,7 +20455,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|artworkorobject_header
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20506,7 +20506,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|artworkorobject_header
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20557,7 +20557,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|artworkorobject_header
+name|ARTWORKOROBJECT_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20623,7 +20623,7 @@ argument_list|(
 name|g_metadata
 argument_list|)
 argument_list|,
-name|registryid_header
+name|REGISTRYID_HEADER
 argument_list|)
 expr_stmt|;
 name|output_data
@@ -20678,7 +20678,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|registryid_header
+name|REGISTRYID_HEADER
 argument_list|,
 name|row
 argument_list|,
@@ -20777,7 +20777,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|registryid_header
+name|REGISTRYID_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20828,7 +20828,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|registryid_header
+name|REGISTRYID_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -20894,7 +20894,7 @@ argument_list|(
 name|g_metadata
 argument_list|)
 argument_list|,
-name|imagecreator_header
+name|IMAGECREATOR_HEADER
 argument_list|)
 expr_stmt|;
 name|output_data
@@ -20949,7 +20949,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|imagecreator_header
+name|IMAGECREATOR_HEADER
 argument_list|,
 name|row
 argument_list|,
@@ -21048,7 +21048,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|imagecreator_header
+name|IMAGECREATOR_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -21099,7 +21099,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|imagecreator_header
+name|IMAGECREATOR_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -21165,7 +21165,7 @@ argument_list|(
 name|g_metadata
 argument_list|)
 argument_list|,
-name|copyrightowner_header
+name|COPYRIGHTOWNER_HEADER
 argument_list|)
 expr_stmt|;
 name|output_data
@@ -21220,7 +21220,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|copyrightowner_header
+name|COPYRIGHTOWNER_HEADER
 argument_list|,
 name|row
 argument_list|,
@@ -21319,7 +21319,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|copyrightowner_header
+name|COPYRIGHTOWNER_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -21370,7 +21370,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|copyrightowner_header
+name|COPYRIGHTOWNER_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -21436,7 +21436,7 @@ argument_list|(
 name|g_metadata
 argument_list|)
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|)
 expr_stmt|;
 name|output_data
@@ -21491,7 +21491,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|row
 argument_list|,
@@ -21605,7 +21605,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -21656,7 +21656,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -21707,7 +21707,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -21758,7 +21758,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -21872,7 +21872,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -21923,7 +21923,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -22070,7 +22070,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|counter
 argument_list|,
@@ -22121,7 +22121,7 @@ argument_list|)
 argument_list|,
 literal|"%s[%d]%s"
 argument_list|,
-name|licensor_header
+name|LICENSOR_HEADER
 argument_list|,
 name|counter
 argument_list|,
