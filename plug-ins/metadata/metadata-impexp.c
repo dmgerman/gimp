@@ -402,10 +402,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|G_N_ELEMENTS
-argument_list|(
-name|equivalent_metadata_tags
-argument_list|)
+name|n_equivalent_metadata_tags
 condition|;
 name|i
 operator|++
@@ -731,10 +728,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|G_N_ELEMENTS
-argument_list|(
-name|default_metadata_tags
-argument_list|)
+name|n_default_metadata_tags
 condition|;
 name|i
 operator|++
