@@ -57,31 +57,14 @@ directive|include
 file|"gimp-utils.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|PLATFORM_OSX
-end_ifdef
-
-begin_define
-DECL|macro|FINITE (x)
-define|#
-directive|define
-name|FINITE
-parameter_list|(
-name|x
-parameter_list|)
-value|isfinite(x)
-end_define
-
-begin_elif
-elif|#
-directive|elif
+begin_if
+if|#
+directive|if
 name|defined
 argument_list|(
 name|HAVE_FINITE
 argument_list|)
-end_elif
+end_if
 
 begin_define
 DECL|macro|FINITE (x)
@@ -161,7 +144,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2954d9ee0108
+DECL|struct|__anon278165000108
 block|{
 DECL|member|a
 DECL|member|b
