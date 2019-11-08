@@ -396,7 +396,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d9db4e0103
+DECL|enum|__anon27fefece0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -496,7 +496,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d9db4e0203
+DECL|enum|__anon27fefece0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9534,6 +9534,10 @@ operator|!
 name|private
 operator|->
 name|resolution_set
+operator|&&
+name|file
+operator|!=
+name|NULL
 condition|)
 block|{
 comment|/* Unlike new files (which follow technological progress and will        * use higher default resolution, or explicitly chosen templates),        * imported files have a more backward-compatible value.        *        * 72 PPI is traditionnally the default value when none other had        * been explicitly set (for instance it is the default when no        * resolution metadata was set in Exif version 2.32, and below,        * standard). This historical value will only ever apply to loaded        * images. New images will continue having more modern or        * templated defaults.        */
@@ -11332,6 +11336,12 @@ operator|>
 name|GIMP_MAX_RESOLUTION
 condition|)
 return|return;
+name|private
+operator|->
+name|resolution_set
+operator|=
+name|TRUE
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -11384,12 +11394,6 @@ operator|->
 name|yresolution
 operator|=
 name|yresolution
-expr_stmt|;
-name|private
-operator|->
-name|resolution_set
-operator|=
-name|TRUE
 expr_stmt|;
 name|gimp_image_resolution_changed
 argument_list|(
