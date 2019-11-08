@@ -258,7 +258,7 @@ if|#
 directive|if
 name|defined
 argument_list|(
-name|HAVE_FINITE
+name|HAVE_ISFINITE
 argument_list|)
 end_if
 
@@ -270,7 +270,7 @@ name|FINITE
 parameter_list|(
 name|x
 parameter_list|)
-value|finite(x)
+value|isfinite(x)
 end_define
 
 begin_elif
@@ -278,7 +278,7 @@ elif|#
 directive|elif
 name|defined
 argument_list|(
-name|HAVE_ISFINITE
+name|HAVE_FINITE
 argument_list|)
 end_elif
 
@@ -290,7 +290,7 @@ name|FINITE
 parameter_list|(
 name|x
 parameter_list|)
-value|isfinite(x)
+value|finite(x)
 end_define
 
 begin_elif
