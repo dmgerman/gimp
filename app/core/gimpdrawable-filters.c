@@ -851,6 +851,15 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* make sure we have a source node - this connects the filter stack to the    * underlying source node    */
+operator|(
+name|void
+operator|)
+name|gimp_drawable_get_source_node
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_gegl_apply_cached_operation
