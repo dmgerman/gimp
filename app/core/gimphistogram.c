@@ -130,7 +130,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c84ad220103
+DECL|enum|__anon28c80c5b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c84ad220208
+DECL|struct|__anon28c80c5b0208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c84ad220308
+DECL|struct|__anon28c80c5b0308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -588,14 +588,6 @@ name|gimp_histogram_get_instance_private
 argument_list|(
 name|histogram
 argument_list|)
-expr_stmt|;
-name|histogram
-operator|->
-name|priv
-operator|->
-name|n_bins
-operator|=
-literal|256
 expr_stmt|;
 block|}
 end_function
