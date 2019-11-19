@@ -7330,7 +7330,7 @@ literal|"The algorithm to use"
 argument_list|,
 name|GIMP_TYPE_FOREGROUND_EXTRACT_MODE
 argument_list|,
-name|GIMP_FOREGROUND_EXTRACT_SIOX
+name|GIMP_FOREGROUND_EXTRACT_MATTING
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
