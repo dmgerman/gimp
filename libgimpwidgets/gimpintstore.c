@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd79d00103
+DECL|enum|__anon290c70c40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -440,6 +440,13 @@ name|G_TYPE_STRING
 expr_stmt|;
 name|types
 index|[
+name|GIMP_INT_STORE_ABBREV
+index|]
+operator|=
+name|G_TYPE_STRING
+expr_stmt|;
+name|types
+index|[
 name|GIMP_INT_STORE_ICON_NAME
 index|]
 operator|=
@@ -470,13 +477,6 @@ name|user_data_type
 else|:
 name|G_TYPE_POINTER
 operator|)
-expr_stmt|;
-name|types
-index|[
-name|GIMP_INT_STORE_ABBREV
-index|]
-operator|=
-name|G_TYPE_STRING
 expr_stmt|;
 name|gtk_list_store_set_column_types
 argument_list|(
