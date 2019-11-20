@@ -121,7 +121,7 @@ name|DWORD
 name|tid
 decl_stmt|;
 union|union
-DECL|union|__anon2b75ddd1010a
+DECL|union|__anon2948cddf010a
 block|{
 DECL|member|name
 name|gchar
@@ -246,6 +246,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|LONG
+name|WINAPI
 name|gimp_backtrace_exception_handler
 parameter_list|(
 name|PEXCEPTION_POINTERS
@@ -808,6 +809,7 @@ end_function
 begin_function
 specifier|static
 name|LONG
+name|WINAPI
 DECL|function|gimp_backtrace_exception_handler (PEXCEPTION_POINTERS info)
 name|gimp_backtrace_exception_handler
 parameter_list|(
