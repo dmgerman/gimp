@@ -121,7 +121,7 @@ name|DWORD
 name|tid
 decl_stmt|;
 union|union
-DECL|union|__anon2948cddf010a
+DECL|union|__anon289f2592010a
 block|{
 DECL|member|name
 name|gchar
@@ -1639,7 +1639,7 @@ name|NULL
 argument_list|,
 name|SymFunctionTableAccess64
 argument_list|,
-name|SymGetModuleBase64
+name|SymGetModuleBase
 argument_list|,
 name|NULL
 argument_list|)
@@ -2457,7 +2457,7 @@ operator|=
 operator|(
 name|HMODULE
 operator|)
-name|SymGetModuleBase64
+name|SymGetModuleBase
 argument_list|(
 name|hProcess
 argument_list|,
