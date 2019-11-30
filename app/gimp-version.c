@@ -772,9 +772,17 @@ operator|=
 name|g_strdup_printf
 argument_list|(
 literal|"git-describe: %s\n"
-literal|"C compiler:\n%s\n%s"
+literal|"Build: %s rev %s for %s\n"
+literal|"# C compiler #\n%s\n"
+literal|"# Libraries #\n%s"
 argument_list|,
 name|GIMP_GIT_VERSION
+argument_list|,
+name|GIMP_BUILD_ID
+argument_list|,
+name|GIMP_BUILD_REVISION
+argument_list|,
+name|GIMP_BUILD_PLATFORM
 argument_list|,
 name|CC_VERSION
 argument_list|,
