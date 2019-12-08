@@ -5101,6 +5101,41 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/*  Internet access  */
+name|vbox2
+operator|=
+name|prefs_frame_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Network access"
+argument_list|)
+argument_list|,
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"check-updates"
+argument_list|,
+name|_
+argument_list|(
+literal|"Check for updates (requires internet)"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Image Thumbnails  */
 name|vbox2
 operator|=
@@ -13214,7 +13249,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2abd18890108
+DECL|struct|__anon2ba67ed10108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -14115,7 +14150,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2abd18890208
+DECL|struct|__anon2ba67ed10208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14246,7 +14281,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2abd18890308
+DECL|struct|__anon2ba67ed10308
 block|{
 DECL|member|tree_label
 specifier|const

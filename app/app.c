@@ -256,6 +256,12 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-update.h"
+end_include
+
 begin_comment
 comment|/*  local prototypes  */
 end_comment
@@ -633,6 +639,11 @@ name|font_error
 init|=
 name|NULL
 decl_stmt|;
+name|gboolean
+name|save_gimprc_at_exit
+init|=
+name|FALSE
+decl_stmt|;
 if|if
 condition|(
 name|filenames
@@ -895,6 +906,16 @@ argument_list|,
 name|alternate_system_gimprc
 argument_list|,
 name|alternate_gimprc
+argument_list|)
+expr_stmt|;
+comment|/* We usually only save gimprc when Preferences are edited.    * Thus we have to add a special flag when we make an update    * check so that the timestamp is saved.    */
+name|save_gimprc_at_exit
+operator|=
+name|gimp_update_check
+argument_list|(
+name|gimp
+operator|->
+name|config
 argument_list|)
 expr_stmt|;
 comment|/* Initialize the error handling after creating/migrating the config    * directory because it will create some folders for backup and crash    * logs in advance. Therefore running this before    * gimp_user_install_new() would break migration as well as initial    * folder creations.    *    * It also needs to be run after gimp_load_config() because error    * handling is based on Preferences. It means that early loading code    * is not handled by our debug code, but that's not a big deal.    */
@@ -1330,6 +1351,20 @@ argument_list|(
 literal|"EXIT: %s\n"
 argument_list|,
 name|G_STRFUNC
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|save_gimprc_at_exit
+condition|)
+name|gimp_rc_save
+argument_list|(
+name|GIMP_RC
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_main_loop_unref

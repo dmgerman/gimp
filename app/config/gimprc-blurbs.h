@@ -108,6 +108,24 @@ value|_("Specifies how the area around the image should be drawn.")
 end_define
 
 begin_define
+DECL|macro|CHECK_UPDATES_BLURB
+define|#
+directive|define
+name|CHECK_UPDATES_BLURB
+define|\
+value|_("Check for availability of GIMP updates through background internet queries.")
+end_define
+
+begin_define
+DECL|macro|CHECK_UPDATE_TIMESTAMP_BLURB
+define|#
+directive|define
+name|CHECK_UPDATE_TIMESTAMP_BLURB
+define|\
+value|_("Timestamp of the last update check.")
+end_define
+
+begin_define
 DECL|macro|COLOR_MANAGEMENT_BLURB
 define|#
 directive|define
@@ -683,6 +701,15 @@ directive|define
 name|LANGUAGE_BLURB
 define|\
 value|_("Specifies the language to use for the user interface.")
+end_define
+
+begin_define
+DECL|macro|LAST_KNOWN_RELEASE_BLURB
+define|#
+directive|define
+name|LAST_KNOWN_RELEASE_BLURB
+define|\
+value|_("The last known release version of GIMP as queried from official website.")
 end_define
 
 begin_define
